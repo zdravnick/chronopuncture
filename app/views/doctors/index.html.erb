@@ -1,21 +1,7 @@
-<p>
-  <%= form_with local: true, method: :get, url: doctors_linguibafa_path do %>
-  <%= label_tag(  "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Отправить") %>
-  <% end %>
-</p>
-<p>
-  <%= form_with local: true, method: :get, url: doctors_infusion_path do %>
-  <%= label_tag( "МЕТОД \"24 минуты \"" " Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Отправить") %>
-  <% end %>
-</p>
-<p>
-  <%= form_with local: true, method: :get, url: doctors_naganfa_path do %>
-  <%= label_tag( "МЕТОД НАГАНЬФА " "Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Отправить") %>
-  <% end %>
-</p>
+<h2>страница doctor/index</h2>
+
+
+
+
+
+<!-- solunar.get_data('2019-01-01', 1, 59.3, 53.0, 5, 4, 1) -->
