@@ -15,6 +15,8 @@ def create
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
       diagnosis: params["diagnosis"]
     )
+    redirect_to patients_path
+
 end
 
 def index
@@ -33,4 +35,15 @@ end
     end
   end
 
+def update
+    @patient = Patient.update(
+      doctor: current_doctor,
+      name: params[:name],
+      birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
+      params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
+      params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
+      diagnosis: params["diagnosis"]
+    )
+    redirect_to patients_path
+  end
 end

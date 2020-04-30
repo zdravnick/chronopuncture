@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birthdate: 2020-04-27
+  doctor: one
+
+two:
+  name: MyString
+  birthdate: 2020-04-27
+  doctor: two
