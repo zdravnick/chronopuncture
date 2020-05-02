@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
     <title>Chronopuncture</title>
     <%= csrf_meta_tags %>
@@ -11,10 +13,10 @@
 
 
   <body>
-    <%= link_to "страница доктора", patients_path %>
-    <p class="notice"><%= notice %></p> <!-- это от гема devise -->
-    <p class="alert"><%= alert %></p> <!--  это от гема devise -->
+      <%= link_to "страница доктора", patients_path  %>
+      <p class="notice"><%= notice %></p> <!-- это от гема devise -->
+      <p class="alert"><%= alert %></p>
+     <!--  это от гема devise -->
     <%= yield %>
-
   </body>
 </html>

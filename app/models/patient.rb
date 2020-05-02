@@ -4,5 +4,6 @@ class Patient < ApplicationRecord
                    length: { minimum: 2, maximum: 20 },
                    uniqueness: true
   belongs_to :doctor
+  has_many :visits, dependent: :destroy
 
 end

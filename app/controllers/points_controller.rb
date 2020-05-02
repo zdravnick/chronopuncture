@@ -9,7 +9,7 @@ class PointsController < ApplicationController
     @trunc_day = trunc_day_calculation(CITIES[0], @doctor_current_date)
     @opened_points_linguibafa = opened_point_linguibafa(CITIES[0], @doctor_current_date)
     @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(CITIES[0], @doctor_current_date)
-    render "doctors/linguibafa" and return
+    render "doctors/linguibafa"
  end
 
   def infusion

@@ -1,65 +1,65 @@
 
 
 
-<% if doctor_signed_in? %>
-    <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
-    <%= link_to 'Выйти', destroy_doctor_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_doctor_session_path %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
-<% end %>
+  <% if doctor_signed_in? %>
+      <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
+      <%= link_to 'Выйти', destroy_doctor_session_path, :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
+  <% else %>
+      <%= link_to 'Войти', new_doctor_session_path %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
+  <% end %>
 
-<p>
-  <div>
-    <h3><%= label_tag( "Добавить пациента") %></h3>
-    <%= form_with local: true, method: :post, url: patients_path do |f| %>
-      <%= f.label "Имя" %>
-      <%= f.text_field  :name  %>
+  <p>
+    <div>
+      <h3><%= label_tag( "Добавить пациента") %></h3>
+      <%= form_with local: true, method: :post, url: patients_path do |f| %>
+        <%= f.label "Имя" %>
+        <%= f.text_field  :name  %>
 
-      <%= f.label 'Дата рождения' %>
-      <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: -25.years.from_now) %>
-      <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
-      <p><%= f.submit "Внести в базу" %></p>
+        <%= f.label 'Дата рождения' %>
+        <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: -25.years.from_now) %>
+        <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
+        <p><%= f.submit "Внести в базу" %></p>
+      <% end %>
+    </div>
+  </p>
+
+  <br>
+  <p>
+    <%= form_with local: true, method: :get, url: points_linguibafa_path do %>
+    <%= label_tag(  "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
+    <%= datetime_select('user', 'date', default: DateTime.now) %>
+    <%= submit_tag( "Рассчитать") %>
     <% end %>
-  </div>
-</p>
-
-<br>
-<p>
-  <%= form_with local: true, method: :get, url: points_linguibafa_path do %>
-  <%= label_tag(  "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Рассчитать") %>
-  <% end %>
-</p>
-<p>
-  <%= form_with local: true, method: :get, url: points_infusion_path do %>
-  <%= label_tag( "МЕТОД \"24 минуты \"" " Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Рассчитать") %>
-  <% end %>
-</p>
-<p>
-  <%= form_with local: true, method: :get, url: points_naganfa_path do %>
-  <%= label_tag( "МЕТОД НАГАНЬФА " "Выберите день") %>
-  <%= datetime_select('user', 'date', default: DateTime.now) %>
-  <%= submit_tag( "Рассчитать") %>
-  <% end %>
-</p>
+  </p>
+  <p>
+    <%= form_with local: true, method: :get, url: points_infusion_path do %>
+    <%= label_tag( "МЕТОД \"24 минуты \"" " Выберите день") %>
+    <%= datetime_select('user', 'date', default: DateTime.now) %>
+    <%= submit_tag( "Рассчитать") %>
+    <% end %>
+  </p>
+  <p>
+    <%= form_with html: {target: '_blank'}, local: true, method: :get, url: points_naganfa_path do %>
+    <%= label_tag( "МЕТОД НАГАНЬФА " "Выберите день") %>
+    <%= datetime_select('user', 'date', default: DateTime.now) %>
+    <%= submit_tag( "Рассчитать") %>
+    <% end %>
+  </p>
 
 
-<h3>Список пациентов </h3>
-<table>
-  <tr>
-  <% @patients.each do |i| %>
-    <td><%= i.name %><td>
-    <td><%= i.birthdate %><td>
-    <td><%= i.diagnosis %><td>
-    <td><%= i.id %><td>
-    <td><%= link_to 'Грохнуть пацика', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Are you sure?' } %><td>
-    <td><%= link_to 'Страница пациента', patient_path(id: i.id), action: :show %><td>
-  </tr>
-  <% end %>
+  <h3>Список пациентов </h3>
+  <table>
+    <tr>
+    <% @patients.each do |i| %>
+      <td><%= i.name %><td>
+      <td><%= i.birthdate %><td>
+      <td><%= i.diagnosis %><td>
+      <td><%= i.id %><td>
+      <td><%= link_to 'Грохнуть пацика', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Are you sure?' } %><td>
+      <td><%= link_to 'Страница пациента', patient_path(id: i.id), action: :show %><td>
+    </tr>
+    <% end %>
 
-</table>
+  </table>
 
 

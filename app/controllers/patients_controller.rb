@@ -30,8 +30,10 @@ end
   def destroy
     if doctor_signed_in?
       Patient.find(params[:id]).destroy
-      flash[:success] = "Пацик убит!"
-      redirect_to patients_path
+      respond_to do |format|
+      format.html { redirect_to patients_path, notice: 'patient was successfully destroyed.' }
+      format.json { head :no_content }
+    end
     end
   end
 

@@ -1,9 +1,8 @@
 <h2>МЕТОД НАГАНЬФА</h2>
-<table>
-  <tr>
+ <ul>
   <% @opened_points_naganfa.each do |i| %>
-    <td><%= i %><td>
-  </tr>
+    <li><%= i %></li>
   <% end %>
-</table>
+</ul>
+
 <h2>Сейчас в г. <%= @user_city.values[0].to_s %> <%= DateTime.now.strftime("%H:%M, %d %B") %></h2>

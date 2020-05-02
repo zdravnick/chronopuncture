@@ -1,23 +1,49 @@
 <h3>show page</h3>
 <table>
-  <td><%= @patient.name %><td>
-  <td><%= @patient.birthdate %><td>
-  <td><%= @patient.diagnosis %><td>
-  <td><%= 'Номер карты: ' + @patient.id.to_s %><td>
+  <tr>
+    <td><%= @patient.name %><td>
+    <td><%= @patient.birthdate %><td>
+    <td><%= @patient.diagnosis %><td>
+    <td><%= 'Номер карты: ' + @patient.id.to_s %><td>
+    <td><%= 'Визитов: ' + @patient.visits.count.to_s %><td>
   </tr>
 </table>
+
+<h3>обЪем лечения:</h3>
+<ol>
+  <% @patient.visits.each do |t| %>
+  <li><%= t.visited_at.day.to_s + "." + t.visited_at.month.to_s + "." + t.visited_at.year.to_s + " в " + t.visited_at.hour.to_s + ":" + t.visited_at.min.to_s + " " + t.treatment.to_s %>
+  </li>
+  <% end %>
+</ol>
+
 
 <p>
   <div>
     <h3><%= label_tag( "Изменить данные пациента") %></h3>
-    <%= form_with local: true, method: :patch, url: patient_path(id: @patient.id) do |f| %>
+    <%= form_with local: true, method: :patch, url: patient_path(id: @patient.id), html: {onsubmit: "return confirm('Are you sure?');"} do |f| %>
       <%= f.label "Имя" %>
       <%= f.text_field  :name, value: @patient.name  %>
 
       <%= f.label 'Дата рождения' %>
       <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: @patient.birthdate) %>
       <p><%= text_area_tag :diagnosis,  @patient.diagnosis, size: "48x3" %></p>
-      <p><%= f.submit "Внести в базу" %></p>
+      <p><%= f.submit  "Обновить (Саша сказал!!!)" %></p>
     <% end %>
   </div>
 </p>
+<p>
+  <div>
+    <h3><%= label_tag( "Добавить посещение") %></h3>
+    <%= form_with local: true, method: :post, url: visits_path do |f| %>
+
+      <%= f.label "id пацика" %>
+      <%= hidden_field_tag(:patient_id, @patient.id) %>
+      <%= f.label 'Дата визита' %>
+      <%= f.datetime_select( :visited_at, default: DateTime.now) %>
+      <p><%= text_area_tag :treatment, nil, placeholder: 'лечение-с', size: "48x3" %></p>
+      <p><%= f.submit "Записать" %></p>
+    <% end %>
+  </div>
+</p>
+

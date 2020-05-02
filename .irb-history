@@ -1,149 +1,3 @@
-Patient.first
-Doctor.first
-Doctor.first.patients
-Doctor.first.patients.count
-Doctor.first.patients.any?
-Doctor.first.patients.each { |p| puts p.name   }
-Patient.all
-masha = Patient.new(name: "Masha", birthdate: 30.years.ago)
-masha
-masha.doctor = Doctor.first
-masha.save
-Patient.all
-p Patient.all
-p Patient.all.name
-@names =  Patient.all.name
-puts @names
-@names =  Patient.all.find_each{|p| puts  p.name}
-exit
-Patient.last
-Patient.all
-Patient.all.count
-exit
-Patient.all
-exit
-@patient = Patient.all
-@patient
-reload!
-v = Patient.new(name: 'Petya', birthdate: 25.years.ago
-v
-v = Patient.new(name: 'Petya', birthdate: 25.years.ago)
-v
-2-2
-2-2
-v = Patient.new(name: 'Petya', birthdate: 25.years.ago)
-v
-v.doctor = Doctor.first
-v.save
-Patients.all
-Patient.all
-Patient.all.count
-exit
-exit
-Doctor.all.name
-Doctor.all
-Doctor.each{ |p| puts p.name}
-Doctor.all.each{ |p| puts p.name}
-Doctor.first.patients
-Doctor.first.patients.name
-Doctor.first.patients.each{ |p| puts p.name}
-a = Patient.new(name: "Дима" birthdate: 27.years.ago)
-a
-2-2
-2-2
-a = Patient.new(name: "Дима" birthdate: 27.years.ago)
-a
-a = Patient.new
-a
-a = Patient.new(name: "Dima")
-a
-a = Patient.new(name: "Дима")
-ф
-a
-a = Patient.new(name: "Дима", birthdate: 27.years.ago)
-a
-a.doctor = Doctor.second
-a.save
-Patient.all.count
-exit
-Patient.last
-Patient.all.count
-reload!
-Patient.last
-Patient.all.count
-exit
-Doctor.last
-test - Doctor.last
-test = Doctor.last
-test
-Doctor.last.destroy
-Doctor.last
-Doctor.all.count
-reload!
-Patient.las.name
-Patient.last.name
-Patient.all.count
-Patient.all.each{|p| puts p.name}
-reload!
-Patient.last.name
-reload!
-Patient.last.name
-reload!
-Patient.last.name
-reload!
-Patient.last.name
-reload!
-Patient.last.name
-reload!
-Patient.all.ea
-Patient.all.each{|p| puts p.name}
-reload!
-Patient.all.each{|p| puts p.name}
-reload!
-Patient.all.each{|p| puts p.name}
-exit
-solunar = Solunar.new
-solunar.get_data('2020-29-04', 3, 59.3, 53.0, -5, 4,1)
-solunar = Solunar.new
-solunar.get_data('2020-29-04', 1, 59.3, 53.0, -5, 4,1)
-solunar = Solunar.new
-solunar.get_data('2019-29-04', 1, 59.3, 53.0, -5, 4,1)
-solunar = Solunar.new
-solunar.get_data('2019-29-04', 1, 59.3, 53.0, 5, 4, 1)
-solunar = Solunar.new
-solunar.get_data('2019-01-01', 1, 59.3, 53.0, 5, 4, 1)
-exit
-Patient.last
-Patient.last.doctor
-Patient.last.doctor.name = 'Tester'
-Patient.last.doctor.save
-Patient.last.doctor
-Patient.last.doctor.name = 'Tester'
-Patient.last.doctor.name
-Doctor[5]
-Doctors[5]
-Doctor.first
-Doctors[id: 5]
-Doctor[id: 5]
-Doctor.find(id=5)
-a = Doctor.find(id=5)
-a
-a.name = 'Tester'
-a.save
-Doctor.find(id=5)
-relload!
-reload!
-Patient.last
-Patient.last.destroy
-Patient.last
-reload!
-Patient.last
-reload!
-Patient.last
-reload!
-Patient.last
-Patient.last.destroy
-reload!
 Patient.last
 Patient.last.destroy
 reload!
@@ -197,4 +51,150 @@ Patient.sort_by.id
 Patient.sort_by(id)
 Patient.sort.id
 Patient.all.sort_by(id)
+exit
+DateTime.now
+exit
+visit = Visit.new
+visit
+Visit.last
+Visit.last.patient
+nil.to_i
+"2".to_i
+2 - "2"
+reload!
+Visit.last
+Visit.last.treatment
+Visit.last[6]
+Visit.last[5]
+Visit.last[4]
+Visit.last[3]
+a = Patient.last
+a
+a = Patient.id[38]
+a = Patient(id=38)
+a = Patients(id=38)
+a = Patients.find(id=38)
+a = Patient.find(id=38)
+a
+a.visits
+a.visits[1]
+a.visits[1][5]
+a.visits[1][4]
+a.visits[1].treatment
+a.visits.treatment
+a.visits.all.treatment
+a.visits.all.treatmentы
+a.visits.all.treatments
+a
+a.treatment
+a.visits.each{|t| puts t.treatment}
+reload!
+a = Patient.find(id=43)
+a.visits.all.treatments
+a.visits.treatment
+a.visits.treatments
+a.visits.treatments.last
+a.visits.treatment.last
+a.visits.all
+a.visits.treatment.first
+a.visits.treatment[1]
+a = Patient.find(id=38)
+a.visits.treatment[1]
+a.visits.each{|t| puts t.treatment}
+a.treatment
+a.visits[1].treatment
+a.visits.count
+a.visits[7].treatment.destroy
+a.visits[7].treatment
+a.visits[6].treatment
+a.visits[6].treatment.destroy
+a.visits[6].treatment.delete
+a.visits[6]
+a.visits[6].destroy
+a.visits.count
+a.visits[5].destroy
+a.visits[4].destroy
+a.visits.count
+a.visits.all
+a.visits.all.visited_at
+a.visits.each{|v| v.visited_at}
+a.visits.each{|v| p v.visited_at}
+a.visits.each{|v| puts v.visited_at}
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.visited_at}
+a.visits.count
+a.visits[4].destroy
+a.visits.count
+a.visits.each{|v| puts v.treatment}
+a.save
+a.visits.count
+a = Patient.find(id=38)
+a.visits[7].destroy
+a.visits[6].destroy
+a.visits[6]
+a.visits[5]
+a.visits[4]
+a.visits[3]
+a.visits.
+a.visits.each{|v| puts v.treatment}
+a.save
+a.visits.each{|v| puts v.treatment}
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.treatment}
+a.visits[4].destroy
+a.visits.each{|v| puts v.treatment}
+a.visits[4]
+a.visits[4].destory
+a.visits[4].destroy
+a = 
+a.visits.each{|v| puts v.treatment}
+reload!
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.treatment}
+a.visits.last.destroy
+a.save
+a.visits.each{|v| puts v.treatment}
+reload!
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.treatment}
+reload!
+a.visits.each{|v| puts v.treatment}
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.treatment}
+a.visits[(4..6)].destroy
+a.visits[(4,5,6)].destroy
+a.visits[(4,5,6)].to_a.flatten.each.destroy
+a.visits[(4..6)].to_a.flatten.each.destroy
+a.visits[4]destroy
+a.visits[4].destroy
+a.visits[5].destroy
+a.visits[6].destroy
+a.save
+a
+a.visits.each{|v| puts v.treatment}
+reload!
+a = Patient.find(id=43)
+a.visits.each{|v| puts v.treatment}\
+a.visits.each{|v| puts v.treatment}
+reload!
+a = Patient.find(id=43)
+a
+a.visits.each{|v| puts v.treatment}
+a.visits[6].destroy
+a.visits[5].destroy
+a.visits[4].destroy
+reload!
+a.visits.each{|v| puts v.treatment}
+a.visits[5].destroy
+a = Patient.find(id=43)
+a.visits[5].destroy
+a.visits[4].destroy
+a.visits.each{|v| puts v.treatment}
+DateTime.now
+DateTime.now[0]
+DateTime.now[year]
+DateTime.now[:year]
+DateTime.now[year:]
+DateTime.now.year
+учше
 exit
