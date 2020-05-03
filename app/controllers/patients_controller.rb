@@ -38,7 +38,7 @@ end
   end
 
 def update
-    @patient = Patient.update(
+    @patient = Patient.find(params[:id]).update(
       doctor: current_doctor,
       name: params[:name],
       birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
