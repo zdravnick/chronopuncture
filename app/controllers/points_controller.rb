@@ -43,9 +43,9 @@ class PointsController < ApplicationController
 
   def eot
     pi = (Math::PI) # pi
-    delta = (Time.now.getutc.yday - 1) # (Текущий день года - 1)
+    delta = (@doctor_current_date.getutc.yday - 1) # (Текущий день года - 1)
 
-    yy = Time.now.getutc.year
+    yy = @doctor_current_date.getutc.year
     np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
           when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
           when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
@@ -62,7 +62,7 @@ class PointsController < ApplicationController
           else ; 2
           end
 
-    a = Time.now.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
+    a = @doctor_current_date.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
 
     lambda = 23.4406 * pi / 180; # Earth's inclination in radians
     omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
@@ -82,7 +82,7 @@ class PointsController < ApplicationController
   user_city = CITIES[0]
 
   def sun_time(city, date)
-    DateTime.current + (city[:lng]*4).minutes + eot.seconds
+    @doctor_current_date.getutc + (city[:lng]*4).minutes + eot.seconds
   end
 
 

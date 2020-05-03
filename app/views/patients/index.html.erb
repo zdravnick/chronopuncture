@@ -56,7 +56,7 @@
       <td><%= i.birthdate %><td>
       <td><%= i.diagnosis %><td>
       <td><%= i.id %><td>
-      <td><%= link_to 'Грохнуть пацика', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Are you sure?' } %><td>
+      <td><%= link_to 'Грохнуть пациента', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' } %><td>
       <td><%= link_to 'Страница пациента', patient_path(id: i.id), action: :show %><td>
     </tr>
     <% end %>
