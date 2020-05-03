@@ -46,6 +46,7 @@ def update
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
       diagnosis: params["diagnosis"]
     )
-    redirect_to patients_path
+    redirect_back(fallback_location: patients_path)
+    flash[:notice] = 'Данные пациента обновлены, доктор'
   end
 end
