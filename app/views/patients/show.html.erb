@@ -3,6 +3,7 @@
     <td><%= @patient.name %><td>
     <td><%= @patient.birthdate %><td>
     <td><%= @patient.diagnosis %><td>
+    <td><%= @patient.description %><td>
     <td><%= 'Номер карты: ' + @patient.id.to_s %><td>
     <td><%= 'Визитов: ' + @patient.visits.count.to_s %><td>
   </tr>
@@ -12,11 +13,13 @@
   <div>
     <h3><%= label_tag( "Добавить посещение") %></h3>
     <%= form_with local: true, method: :post, url: visits_path do |f| %>
-
       <%= f.label "Скрытый id" %>
       <%= hidden_field_tag(:patient_id, @patient.id) %>
       <%= f.label 'Дата визита' %>
       <%= f.datetime_select( :visited_at, default: DateTime.now) %>
+      <h4>Описание сеанса:</h4>
+      <p><%= text_area_tag :visit_description, nil, placeholder: 'Описание', size: "48x3" %></p>
+
       <h4>Лечение:</h4>
       <p><%= text_area_tag  :treatment, nil, placeholder: 'лечение-с', size: "48x3" %></p>
       <p><%= f.submit "Записать" %></p>
@@ -26,10 +29,10 @@
 <h3>обЪем лечения:</h3>
 <ol>
   <% @patient.visits.each do |t| %>
-  <li><%= t.visited_at.day.to_s + "." + t.visited_at.month.to_s + "." + t.visited_at.year.to_s + " в " + t.visited_at.hour.to_s + ":" + t.visited_at.min.to_s + " " + t.treatment.to_s %>
+  <li><%= t.visited_at.day.to_s + "." + t.visited_at.month.to_s + "." + t.visited_at.year.to_s + " в " + t.visited_at.hour.to_s + ":" + t.visited_at.min.to_s + " " + t.visit_description.to_s %>
+    <ul><li><%= t.treatment %></li></ul>
     <%= link_to 'Удалить посещение', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить вашу встречу?' } %>
   </li>
-
   <% end %>
 </ol>
 
@@ -42,6 +45,8 @@
 
       <%= f.label 'Дата рождения' %>
       <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: @patient.birthdate) %>
+      <h4>Описание состояния:</h4>
+      <p><%= text_area_tag :description, @patient.description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>
       <p><%= text_area_tag :diagnosis,  @patient.diagnosis, size: "48x3" %></p>
       <p><%= f.submit  "Обновить (Саша сказал!!!)" %></p>

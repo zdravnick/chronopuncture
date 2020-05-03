@@ -17,6 +17,7 @@
 
         <%= f.label 'Дата рождения' %>
         <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: -25.years.from_now) %>
+        <p><%= text_area_tag :description, nil, placeholder: 'Описание', size: "48x3" %></p>
         <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
         <p><%= f.submit "Внести в базу" %></p>
       <% end %>

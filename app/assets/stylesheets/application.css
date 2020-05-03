@@ -15,9 +15,26 @@
  */
 
  body {
-  background-image: url(/assets/image_bg_coffee_11.jpg);
-  background-size: cover;
+  background-image: url(/assets/coffee_2.jpg);
+  background-size: 100% 100%;
+
  }
+ul>li {
+  color: #800000;
+}
+ol, td {
+  font-weight: bold;
+}
+
+a {
+  color: black;
+  background-color: #D3D3D3;
+  border-radius: 5px;
+  padding: 0.1%;
+  font-weight: normal;
+}
+
+
 
 /*.field_with_errors {
   padding: 5px;
