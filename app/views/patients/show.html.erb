@@ -12,25 +12,27 @@
 <p>
   <div>
     <h3><%= label_tag( "Добавить посещение") %></h3>
-    <%= form_with local: true, method: :post, url: visits_path do |f| %>
+    <%= form_with local: true, method: :post, url: visits_path, html: {onsubmit: "return confirm('Сохраняем сеанс?');"} do |f| %>
       <%= hidden_field_tag(:patient_id, @patient.id) %>
-      <%= f.label 'Дата визита' %>
+      <%= f.label 'Дата сеанса:' %>
       <%= f.datetime_select( :visited_at, default: DateTime.now) %>
-      <h4>Описание сеанса:</h4>
+      <h4>Примечание к сеанcу:</h4>
       <p><%= text_area_tag :visit_description, nil, placeholder: 'Описание', size: "48x3" %></p>
 
       <h4>Лечение:</h4>
       <p><%= text_area_tag  :treatment, nil, placeholder: 'лечение:', size: "48x3" %></p>
-      <p><%= f.submit "Записать" %></p>
+      <p><%= f.submit "Записать", class: 'btn-control' %></p>
     <% end %>
   </div>
 </p>
-<h3>обЪем лечения:</h3>
+<h3>Объем лечения:</h3>
 <ol>
   <% @patient.visits.each do |t| %>
   <li><%= t.visited_at.day.to_s + "." + t.visited_at.month.to_s + "." + t.visited_at.year.to_s + " в " + t.visited_at.hour.to_s + ":" + t.visited_at.min.to_s + " " + t.visit_description.to_s %>
-    <ul><li><%= t.treatment %></li></ul>
-    <%= link_to 'Удалить посещение', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' } %>
+    <ul>
+      <li><%= t.treatment %></li>
+   <%= link_to 'Удалить посещение', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control' %>
+    </ul>
   </li>
   <% end %>
 </ol>
@@ -48,7 +50,7 @@
       <p><%= text_area_tag :description, @patient.description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>
       <p><%= text_area_tag :diagnosis,  @patient.diagnosis, size: "48x3" %></p>
-      <p><%= f.submit  "Обновить данные пациента" %></p>
+      <p><%= f.submit  "Обновить данные пациента", class: 'btn-control' %></p>
     <% end %>
   </div>
 </p>

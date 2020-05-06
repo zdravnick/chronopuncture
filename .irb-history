@@ -1,150 +1,23 @@
-a = Patients.find(id=38)
-a = Patient.find(id=38)
-a
-a.visits
-a.visits[1]
-a.visits[1][5]
-a.visits[1][4]
-a.visits[1].treatment
-a.visits.treatment
-a.visits.all.treatment
-a.visits.all.treatmentы
-a.visits.all.treatments
-a
-a.treatment
-a.visits.each{|t| puts t.treatment}
-reload!
-a = Patient.find(id=43)
-a.visits.all.treatments
-a.visits.treatment
-a.visits.treatments
-a.visits.treatments.last
-a.visits.treatment.last
-a.visits.all
-a.visits.treatment.first
-a.visits.treatment[1]
-a = Patient.find(id=38)
-a.visits.treatment[1]
-a.visits.each{|t| puts t.treatment}
-a.treatment
-a.visits[1].treatment
-a.visits.count
-a.visits[7].treatment.destroy
-a.visits[7].treatment
-a.visits[6].treatment
-a.visits[6].treatment.destroy
-a.visits[6].treatment.delete
-a.visits[6]
-a.visits[6].destroy
-a.visits.count
-a.visits[5].destroy
-a.visits[4].destroy
-a.visits.count
-a.visits.all
-a.visits.all.visited_at
-a.visits.each{|v| v.visited_at}
-a.visits.each{|v| p v.visited_at}
-a.visits.each{|v| puts v.visited_at}
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.visited_at}
-a.visits.count
-a.visits[4].destroy
-a.visits.count
-a.visits.each{|v| puts v.treatment}
-a.save
-a.visits.count
-a = Patient.find(id=38)
-a.visits[7].destroy
-a.visits[6].destroy
-a.visits[6]
-a.visits[5]
-a.visits[4]
-a.visits[3]
-a.visits.
-a.visits.each{|v| puts v.treatment}
-a.save
-a.visits.each{|v| puts v.treatment}
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.treatment}
-a.visits[4].destroy
-a.visits.each{|v| puts v.treatment}
-a.visits[4]
-a.visits[4].destory
-a.visits[4].destroy
-a = 
-a.visits.each{|v| puts v.treatment}
-reload!
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.treatment}
-a.visits.last.destroy
-a.save
-a.visits.each{|v| puts v.treatment}
-reload!
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.treatment}
-reload!
-a.visits.each{|v| puts v.treatment}
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.treatment}
-a.visits[(4..6)].destroy
-a.visits[(4,5,6)].destroy
-a.visits[(4,5,6)].to_a.flatten.each.destroy
-a.visits[(4..6)].to_a.flatten.each.destroy
-a.visits[4]destroy
-a.visits[4].destroy
-a.visits[5].destroy
-a.visits[6].destroy
-a.save
-a
-a.visits.each{|v| puts v.treatment}
-reload!
-a = Patient.find(id=43)
-a.visits.each{|v| puts v.treatment}\
-a.visits.each{|v| puts v.treatment}
-reload!
-a = Patient.find(id=43)
-a
-a.visits.each{|v| puts v.treatment}
-a.visits[6].destroy
-a.visits[5].destroy
-a.visits[4].destroy
-reload!
-a.visits.each{|v| puts v.treatment}
-a.visits[5].destroy
-a = Patient.find(id=43)
-a.visits[5].destroy
-a.visits[4].destroy
-a.visits.each{|v| puts v.treatment}
-DateTime.now
-DateTime.now[0]
-DateTime.now[year]
-DateTime.now[:year]
-DateTime.now[year:]
-DateTime.now.year
-учше
-exit
-DateTime.now
-DateTime.now.hour
-def eot
+def eot_patient(birth_time)
   pi = (Math::PI) # pi
-  delta = (DateTime.now.getutc.yday - 1) # (Текущий день года - 1)
-  yy = Time.now.getutc.year
+  delta = birth_time.getutc.yday - 1 # (Текущий день года - 1)
+  yy = birth_time.getutc.year
   np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
         when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
         when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
-                   1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
-                   2005, 2008, 2013, 2016, 2021, 2029, 2043  ; 1
+             1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
+             2005, 2008, 2013, 2016, 2021, 2029, 2043  ; 1
         when 1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950, 1957, 1958,
-                   1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
-                   2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
-                   2046, 2048, 2049  ; 2
+             1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
+             2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
+             2046, 2048, 2049  ; 2
         when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
-                   1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
-                   2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 ; 3
+             1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
+             2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 ; 3
         when 2012, 2020, 2028, 2036, 2039, 2044, 2047 ; 4
-        else ; 2
-        end
-  a = DateTime.now.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
+       else ; 2
+       end
+  a = birth_time.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
   lambda = 23.4406 * pi / 180; # Earth's inclination in radians
   omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
   alpha = omega * ((delta + 10) % 365) # angle in (mean) circular orbit, solar year starts 21. Dec
@@ -152,49 +25,176 @@ def eot
   gamma = (alpha - Math.atan(Math.tan(beta) / Math.cos(lambda))) / pi # angular correction
   eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
 end
-eot
-def eot
-  pi = (Math::PI) # pi
-  delta = (DateTime.now.getutc.yday - 1) # (Текущий день года - 1)
-  yy = DateTime.now.getutc.year
-  np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
-        when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
-        when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
-                   1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
-                   2005, 2008, 2013, 2016, 2021, 2029, 2043  ; 1
-        when 1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950, 1957, 1958,
-                   1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
-                   2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
-                   2046, 2048, 2049  ; 2
-        when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
-                   1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
-                   2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 ; 3
-        when 2012, 2020, 2028, 2036, 2039, 2044, 2047 ; 4
-        else ; 2
-        end
-  a = DateTime.now.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
-  lambda = 23.4406 * pi / 180; # Earth's inclination in radians
-  omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
-  alpha = omega * ((delta + 10) % 365) # angle in (mean) circular orbit, solar year starts 21. Dec
-  beta = alpha + 0.03340560188317 * Math.sin(omega * ((delta - np) % 365)) # angle in elliptical orbit, from perigee  (radians)
-  gamma = (alpha - Math.atan(Math.tan(beta) / Math.cos(lambda))) / pi # angular correction
-  eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
-end
-eot
+eot_patient(patient_birth_time)
+user_date = Date.current
 CITIES = [
   {city: 'Magnitogorsk', lng: 59.6},
   {city: 'Moscow', lng: 37.64},
   {city: 'Novosibirsk', lng: 82.9}
 ]
+patient_city = CITIES[0]
 user_city = CITIES[0]
-user_date = DateTime.current
 def sun_time(city, date)
-  DateTime.current + (city[:lng]*4).minutes + eot.seconds
+  Time.current + (city[:lng]*4).minutes + eot_user
 end
 sun_time(user_city, user_date)
-Time.now
-@doctor_current_date
-DateTime.now
-DateTime.current
-DateTime.now.getutc
+# НОМЕР ГОДА по циклу-60
+def year_number_60th_calculation(birth)
+    y = birth.year % 60 - 3
+    if y < 1
+      y + 60
+    elsif y > 60
+      y - 60
+      else y
+    end
+end
+year_num = year_number_60th_calculation(patient_birth_time)
+# момент рождения пацика (по Солнцу)
+def moment_of_birth(time, city)
+  return (time + (city[:lng]*4).minutes + eot_patient(time)).hour
+end
+moment_of_birth(patient_birth_time, patient_city)
+# стража на момент рождения пацика.
+def guard_of_birth(time, city)
+  case moment_of_birth(time, city)
+  when 19...21 then 11
+  when 21...23 then 12
+  when 23, 0 then 1
+  when  1...3 then 2
+  when  3...5 then 3
+  when  5...7 then 4
+  when  7...9 then 5
+  when  9...11 then 6
+  when 11...13 then 7
+  when 13...15 then 8
+  when 15...17 then 9
+  when 17...19 then 10
+  end
+end
+guard = guard_of_birth(patient_birth_time, patient_city)
+def lunar_year_number(city, date) # лунный год
+  n = date.year - 1823
+  if n > 19
+    n = n%19
+  else
+    n
+  end
+end
+lunar_year_number(patient_city, patient_birth_time)
+def lunar_year_of_patient(base_of_years, birth_date) # ЛУННЫЙ(!)год и месяц по базе base_of_years
+  if base_of_years.include?(birth_date)
+    return base_of_years[birth_date]
+  else
+    p 'ups!'
+  end
+end
+lunar_year_of_patient(base_of_years, patient_birth_date)
+year_num = year_number_60th_calculation(patient_birth_time)
+2-2
+year_num = year_number_60th_calculation(patient_birth_time)
+year_num = year_number_60th_calculation(patient_birth_time)
+year_num
+probe = []
+probe\
+probe
+probe = []
+probe
+probe = [ 1: 'a', 2: 'b']
+probe
+probe.class
+2-2
+1-1
+probe = [ 1: 'a', 2: 'b']
+probe
+probe = [ 1 => 'a', 2 => 'b']
+probe
+probe = (1..64, nil).to_h
+probe = ((1..64) => nil).to_h
+h = {}
+(1..10).each {|x| h[x] = "{x}"}
+h
+h = {}
+h = {}
+(1..64).each {|x| h[x] = "a#{x}"}
+h
+h = {}
+(1..64).each {|x| h[x] = "nil#{x}"}
+h =
+2-2
+h
+h = {}
+(1..64).each {|x| h[x] = "nil#{x}"}
+h
+(1..64).each {|x| h[x] = "#{x}"}
+h
+probe
+probe = {}
+probe = {"1" => "a", "2" => "b"   }
+probe
+probe.1
+probe
+probe[1]
+probe.1.value
+probe[1].value
+probe["1"].value
+probe["1"].ley
+probe["1"].key
+probe["1"].keys
+probe = { 1 => "a", 2 => "b"   }
+probe[1].value
+probe[1].key
+probe[1]
+probe[2]
+probe = { [1, 'a"], [2,  "b"]   }
+probe
+probe = { [1, "a"], [2,  "b"]   }
+probe = { [1, "a"], [2,  "b"]   }2-2
+probe = { [1, "a"], [2,  "b"]   }
+probe = { [1, "a"], [2,  "b"]   }
+probe = { [1 => "a"], [2 =>  "b"]   }
+probe = [ {1 => "a"}, {2 =>  "b"}   ]
+probe
+probe.1.value
+probe[1].value
+probe[1].values
+probe = [ {"22" => "a"}, {"2" =>  "b"}   ]
+probe[1].values
+probe["22"].values
+probe =  {"22" => "a"}, "2" =>  "b"}   
+probe =  {"22" => "a", "2" =>  "b"}   
+probe
+probe[1].values
+probe["22"].values
+exit
+h = { "a" => 100, "b" => 200 }
+h[a]
+h["a"]
+h['a']
+h[1]
+h(1)
+h = { "22" => 100, "2" => 200 }
+h[1]
+h[22]
+h['22']
+h = { 22 => 100, 2 => 200 }
+h[22]
+h['22']
+h = { 22 => 'He-gu', 2 => 'Zu-lin -qi' }
+h['22']
+h[22]
+h[2]
+reload!
+gall_bladder = {
+  1=>'VB.44',   2=>'VB.43', 3=>'VB.41',  4=>'VB.40',     5=>'Vb.38(bad)', 6=>'VB.34',  7=>'F.1',   8=>'F.2',
+  9=>'F.3',     10=>'F.4',  11=>'F.8',   12=>'P.11 bad', 13=>'P.10',      14=>'P.9',   15=>'P.8',  16=>'P.5',
+  17=>'Gi.1',   18=>'Gi.2', 19=>'Gi.3',  20=>'Gi.4',     21=>'Gi.5',      22=>'Gi.11', 23=>'E.45', 24=>'E.44',
+  25=>'E.43',   26=>'E.42', 27=>'E.41',  28=>'E.36',     29=>'Rp.1',      30=>'Rp.2',  31=>'Rp.3', 32=>'Rp.5',
+  33=>'Rp.9',   34=>'C.7',  35=>'C.4',   36=>'C.3',      37=>'Ig.1',      38=>'Ig.2',  39=>'Ig.3', 40=>'Ig.4',
+  41=>'Ig.5',   42=>'Ig.8', 43=>'V.67',  44=>'V.66',     45=>'V.65',      46=>'V.64',  47=>'V.60', 48=>'V.40',
+  49=>'R.1',    50=>'R.2',  51=>'R.3',   52=>'R.7',      53=>'R.10',      54=>'MC.9',  55=>'MC.8', 56=>'MC.7',
+  57=>'MC.5',   58=>'MC.3', 59=>'TR.1',  60=>'TR.2',     61=>'TR.3',      62=>'TR.4',  63=>'TR.6', 64=>'TR.10'
+}
+gall_bladder
+gall_bladder[1]
+gall_bladder[57]
 exit

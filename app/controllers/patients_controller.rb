@@ -20,36 +20,49 @@ def create
 
 end
 
-def index
-  @patients = current_doctor.patients
-end
+  def index
+    @patients = current_doctor.patients
+    name = Patient.arel_table[:name]
+    Patient.where(name.matches("%#{params[:name]}%"))
+    if params[:name].present?
+      @patients = @patients.where(name.matches("%#{params[:name]}%"))
+      else
+      flash[:notice] = 'Нет никого, доктор'
+    end
+  end
 
   def show
     @patient = Patient.find(params[:id])
     @visit = @patient.visits
+
   end
 
-  def destroy
-    if doctor_signed_in?
-      Patient.find(params[:id]).destroy
-      respond_to do |format|
-      format.html { redirect_to patients_path, notice: 'patient was successfully destroyed.' }
-      format.json { head :no_content }
+
+
+
+  def update
+
+      @patient = Patient.find(params[:id]).update(
+        doctor: current_doctor,
+        name: params[:name],
+        birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
+        params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
+        params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
+        diagnosis: params["diagnosis"],
+        description: params["description"]
+      )
+      redirect_back(fallback_location: patients_path)
+      flash[:notice] = 'Данные пациента обновлены, доктор'
     end
+
+    def destroy
+      if doctor_signed_in?
+        Patient.find(params[:id]).destroy
+        respond_to do |format|
+        format.html { redirect_to patients_path, notice: 'patient was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
-def update
-    @patient = Patient.find(params[:id]).update(
-      doctor: current_doctor,
-      name: params[:name],
-      birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
-      params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
-      params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
-      diagnosis: params["diagnosis"],
-      description: params["description"]
-    )
-    redirect_back(fallback_location: patients_path)
-    flash[:notice] = 'Данные пациента обновлены, доктор'
-  end
 end
