@@ -1,11 +1,9 @@
 
-
-
   <% if doctor_signed_in? %>
       <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
-      <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
+       <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
   <% else %>
-      <%= link_to 'Войти',  new_doctor_session_path %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
+      <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
 
   <p>
@@ -16,7 +14,7 @@
         <%= f.text_field  :name  %>
 
         <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: -25.years.from_now) %>
+        <%= f.datetime_select( :birthdate, start_year: 1920, end_year: DateTime.current.year, default: {hour: 12, min: 00} )%>
         <p><%= text_area_tag :description, nil, placeholder: 'Описание', size: "48x3" %></p>
         <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
         <p><%= f.submit  "Внести в базу", class: 'btn-control' %></p>
@@ -24,15 +22,19 @@
     </div>
   </p>
 
-<div>
-<%= form_with  local: true, method: :get, url: patients_path do |f| %>
-  <%= f.label  'Поиск'  %>
-  <%= f.text_field :name %>
-  <%= f.submit "Искать", class: 'btn-control' %>
-  <% end %>
-</div>
+  <div>
+    <%= form_with  local: true, method: :get, url: patients_path do |f| %>
+    <%= f.label  'Поиск по имени'  %>
+    <%= f.text_field :name %>
+    <%= f.submit "Искать", class: 'btn-control' %>
+    <% end %>
 
-
+    <p><%= form_with  local: true, method: :get, url: patients_path do |f| %>
+    <%= f.label  'Поиск по диагнозу'  %>
+    <%= f.text_field :diagnosis %>
+    <%= f.submit "Искать", class: 'btn-control' %>
+    <% end %></p>
+  </div>
 
   <p>
     <%= form_with local: true, method: :get, url: points_linguibafa_path do %>
@@ -56,9 +58,19 @@
     <% end %>
   </p>
 
-
   <h3>Список пациентов </h3>
-  <table>
+
+    <% @patients.each do |i| %>
+      <div ><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.to_s + " " + i.diagnosis.to_s %></div>
+      <div class="li-control">
+        <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
+        <%= link_to 'Грохнуть пациента', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control' %></div>
+    <p></p>
+    <% end %>
+
+
+    <h3>Список пациентов </h3>
+    <table>
     <tr>
     <% @patients.each do |i| %>
       <td><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.to_s + " " + i.diagnosis.to_s %></td>

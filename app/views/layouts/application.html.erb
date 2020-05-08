@@ -13,10 +13,13 @@
 
 
   <body>
+
       <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
       <p class="notice"><%= notice %></p> <!-- это от гема devise -->
       <p class="alert"><%= alert %></p>
      <!--  это от гема devise -->
-    <%= yield %>
+      <%= yield %>
+
   </body>
+
 </html>

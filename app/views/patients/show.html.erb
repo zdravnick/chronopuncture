@@ -1,7 +1,6 @@
 <table>
   <tr>
-    <td><%= @patient.name %><td>
-    <td><%= @patient.birthdate %><td>
+    <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
     <td><%= @patient.diagnosis %><td>
     <td><%= @patient.description %><td>
     <td><%= 'Номер карты: ' + @patient.id.to_s %><td>
@@ -28,11 +27,12 @@
 <h3>Объем лечения:</h3>
 <ol>
   <% @patient.visits.each do |t| %>
-  <li><%= t.visited_at.day.to_s + "." + t.visited_at.month.to_s + "." + t.visited_at.year.to_s + " в " + t.visited_at.hour.to_s + ":" + t.visited_at.min.to_s + " " + t.visit_description.to_s %>
-    <ul>
-      <li><%= t.treatment %></li>
+  <li><%= t.visited_at.strftime( "%d %b %y") + " в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
+  <ul>
+    <li><%= t.visit_description.to_s %></li>
+    <li><%= t.treatment %></li>
    <%= link_to 'Удалить посещение', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control' %>
-    </ul>
+  </ul>
   </li>
   <% end %>
 </ol>
@@ -45,7 +45,7 @@
       <%= f.text_field  :name, value: @patient.name  %>
 
       <%= f.label 'Дата рождения' %>
-      <%= f.datetime_select( :birthdate, start_year: 1920, end_year: Date.current.year, default: @patient.birthdate) %>
+      <%= f.datetime_select( :birthdate, start_year: 1920, end_year: DateTime.current.year, default: @patient.birthdate) %>
       <h4>Описание состояния:</h4>
       <p><%= text_area_tag :description, @patient.description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>

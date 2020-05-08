@@ -14,11 +14,14 @@
  *= require_self
  */
 
+
  body {
   background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
-
+  background-attachment: fixed;
+  font-size:calc(10px + 1vw);
  }
+
 ul>li {
   color: #800000;
   list-style-type: disc;
@@ -26,13 +29,14 @@ ul>li {
 
 table {
   border-spacing: 5px 10px;
+
 }
 
 ol, td {
   font-weight: bold;
 }
 
-a, #btn_standart {
+a {
   margin-bottom: 10px;
   text-decoration: none;
   color: black;
@@ -42,13 +46,10 @@ a, #btn_standart {
   font-weight: normal;
 }
 
-/*a:hover {
-  color: white;
-}
-*/
 
 .btn-control {
   background-color: wheat;
+
 
   cursor: pointer;
   border: 2px solid white;
@@ -58,7 +59,6 @@ a:hover, .btn-control:hover {
   background-color: #630;
   color: white;
   border: 2px solid black;
-  /*font-weight: bold;*/
  /* transform: scale(1.1);*/
 }
 
@@ -66,6 +66,14 @@ a:active, .btn-control:active {
   background-color: darkorange;
   color: black;
   border: 2px solid orangered;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.li-control {
+  margin-top: 10px;
 }
 
 
