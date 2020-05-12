@@ -20,16 +20,17 @@
 
       <h4>Лечение:</h4>
       <p><%= text_area_tag  :treatment, nil, placeholder: 'лечение:', size: "48x3" %></p>
-      <p><%= f.submit "Записать", class: 'btn-control' %></p>
+      <p><%= f.submit "Записать сеанс", class: 'btn-control' %></p>
     <% end %>
   </div>
 </p>
 <h3>Объем лечения:</h3>
 <ol>
   <% @patient.visits.each do |t| %>
-  <li><%= t.visited_at.strftime( "%d %b %y") + " в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
+  <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
   <ul>
     <li><%= t.visit_description.to_s %></li>
+
     <li><%= t.treatment %></li>
    <%= link_to 'Удалить посещение', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control' %>
   </ul>
@@ -54,5 +55,11 @@
     <% end %>
   </div>
 </p>
+ <div class="li-control">
+
+      <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
+
+   </div>
+
 
 

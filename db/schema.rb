@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_121501) do
+ActiveRecord::Schema.define(version: 2020_05_11_130630) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.float "lng"
+    t.integer "doctor_id", null: false
+    t.integer "patient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_cities_on_doctor_id"
+    t.index ["patient_id"], name: "index_cities_on_patient_id"
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
@@ -51,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_05_08_121501) do
     t.index ["patient_id"], name: "index_visits_on_patient_id"
   end
 
+  add_foreign_key "cities", "doctors"
+  add_foreign_key "cities", "patients"
   add_foreign_key "patients", "doctors"
   add_foreign_key "visits", "patients"
 end

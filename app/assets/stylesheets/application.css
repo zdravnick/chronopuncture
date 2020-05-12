@@ -19,7 +19,7 @@
   background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
   background-attachment: fixed;
-  font-size:calc(10px + 1vw);
+  font-size: 100%;
  }
 
 ul>li {
@@ -32,6 +32,10 @@ table {
 
 }
 
+ul {
+    margin-bottom: 20px;
+}
+
 ol, td {
   font-weight: bold;
 }
@@ -40,42 +44,53 @@ a {
   margin-bottom: 10px;
   text-decoration: none;
   color: black;
-  border: 2px solid black;
+  box-shadow: 3px 3px 3px #630;
+ /* border: 2px solid black;*/
   border-radius: 5px;
   padding: 0.05%;
-  font-weight: normal;
+  /*font-size: 20px;*/
 }
-
 
 .btn-control {
   background-color: wheat;
-
-
+  box-shadow: 3px 3px 3px #630;
   cursor: pointer;
-  border: 2px solid white;
+  border: 2px solid #8B4513;
   border-radius: 10px;
 }
 a:hover, .btn-control:hover {
   background-color: #630;
   color: white;
   border: 2px solid black;
- /* transform: scale(1.1);*/
+  transform: scale(1.05);
+  box-shadow: 4px 4px 4px #630;
 }
 
-a:active, .btn-control:active {
-  background-color: darkorange;
-  color: black;
-  border: 2px solid orangered;
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
+
+a:active,  .btn-control:active {
+  background-color: #FFF8DC;
+  color: red;
+  transform: scale(0.95);
+  border: 2px transparent;
+  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630;
+  padding: 3px;
+
+/*  transform: scale(0.95);*/
+}
+
+.patient_delete_control {
+  margin-left: 15px;
+background-color: #FF6347;
+transform: scale(0.95);
 }
 
 .li-control {
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
+.form-control{
+  cursor: pointer;
+}
 
 /*.field_with_errors {
   padding: 5px;

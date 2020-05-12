@@ -42,9 +42,6 @@ end
 
   end
 
-
-
-
   def update
       @patient = Patient.find(params[:id]).update(
         doctor: current_doctor,
@@ -60,6 +57,7 @@ end
     end
 
   def destroy
+
     if doctor_signed_in?
       Patient.find(params[:id]).destroy
       respond_to do |format|

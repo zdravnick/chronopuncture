@@ -10,7 +10,7 @@ class Doctor < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true
 
-
+  has_one :city
   has_many :patients
   has_many :visits, through: :patients
 

@@ -10,11 +10,10 @@
     <div>
       <h3><%= label_tag( "Добавить пациента") %></h3>
       <%= form_with local: true, method: :post, url: patients_path do |f| %>
-        <%= f.label "Имя" %>
-        <%= f.text_field  :name  %>
-
+        <%= f.label  "Имя" %>
+        <%= f.text_field :name  %>
         <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select( :birthdate, start_year: 1920, end_year: DateTime.current.year, default: {hour: 12, min: 00} )%>
+        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {hour: 12, min: 00} )%>
         <p><%= text_area_tag :description, nil, placeholder: 'Описание', size: "48x3" %></p>
         <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
         <p><%= f.submit  "Внести в базу", class: 'btn-control' %></p>
@@ -38,8 +37,8 @@
 
   <p>
     <%= form_with local: true, method: :get, url: points_linguibafa_path do %>
-    <%= label_tag(  "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
-    <%= datetime_select('user', 'date', default: DateTime.now) %>
+    <%= label_tag( "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
+    <%=  datetime_select('user', 'date', default: DateTime.now)  %>
     <%= submit_tag( "Рассчитать") %>
     <% end %>
   </p>
@@ -61,23 +60,12 @@
   <h3>Список пациентов </h3>
 
     <% @patients.each do |i| %>
-      <div ><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.to_s + " " + i.diagnosis.to_s %></div>
-      <div class="li-control">
-        <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
-        <%= link_to 'Грохнуть пациента', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control' %></div>
+      <div class="patient_list_control" ><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.strftime( "%d.%m.%y") + "г.  в " + i.birthdate.strftime( "%H:%M")  + " " + i.diagnosis.to_s %></div>
+    <div class="li-control">
+      <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
+   </div>
     <p></p>
     <% end %>
 
-
-    <h3>Список пациентов </h3>
-    <table>
-    <tr>
-    <% @patients.each do |i| %>
-      <td><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.to_s + " " + i.diagnosis.to_s %></td>
-      <td><%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %></td>
-      <td><%= link_to 'Грохнуть пациента', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control' %></td>
-    </tr>
-    <% end %>
-  </table>
 
 
