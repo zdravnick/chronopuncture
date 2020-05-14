@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_182723) do
+ActiveRecord::Schema.define(version: 2020_05_14_043206) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.float "lng"
-    t.integer "doctor_id", null: false
-    t.integer "patient_id", null: false
+    t.integer "doctor_id"
+    t.integer "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["doctor_id"], name: "index_cities_on_doctor_id"

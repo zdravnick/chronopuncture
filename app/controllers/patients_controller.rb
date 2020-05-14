@@ -39,6 +39,7 @@ end
   def show
     @patient = Patient.find(params[:id])
     @visit = @patient.visits
+    @cities = City.all
 
   end
 
@@ -50,7 +51,8 @@ end
         params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
         params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
         diagnosis: params["diagnosis"],
-        description: params["description"]
+        description: params["description"],
+        city: (params["city"])
       )
       redirect_back(fallback_location: patients_path)
       # flash[:notice] = 'Данные пациента обновлены, доктор'

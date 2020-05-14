@@ -1,87 +1,3 @@
-#  получасие активного на момент ПРИЕМА ПАЦИЕНТА канала
-def half_hour_for_reception_time(a, b)
-  case a
-  when (0..23)
-    if (0..29).include?(b)
-      return half_hour_guard = a*2 + 1
-    end
-      if (30..59).include?(b)
-      return half_hour_guard = a*2 + 2
-    else
-      'Incorrect time'
-    end
-    else
-    'Incorrect time'
-  end
-end
-# получасие активного на момент приема пацика Канала
-p half_hour_visit = half_hour_for_reception_time(hour, min)
-# таблица активного канала на  МОМЕНТ ПРИЕМА пациента
-def meridian_for_lo_shu_square(h)
-  case h
-    when 1, 13, 25, 37 then 7 # BLADDER, V
-    when 2, 14, 26, 38 then 8 # KIDNEYS, R
-    when 3, 15, 27, 39 then 9  # MC
-    when 4, 16, 28, 40 then 10 # TR
-    when 5, 17, 29, 41 then 11  # VB
-    when 6, 18, 30, 42 then 12 # F
-    when 7, 19, 31, 43 then 1 # P
-    when 8, 20, 32, 44 then 2 # Gi
-    when 9, 21, 33, 45 then 3 # E
-    when 10, 22, 34, 46 then 4 # Rp
-    when 11, 23, 35, 47 then 5   # C
-    when 12, 24, 36, 48 then 6 # Ig small int
-    end
-end
-# выбор Таблицы Меридиана для заполнения квадрата Ло Шу
-p meridian_lo_shu = meridian_for_lo_shu_square(half_hour_visit)
-def points_matrix_lo_shu(meridian_lo_shu)
-  case meridian_lo_shu
-  when 11 # изменить, должно быть 11
-  gall_bladder =
-  [
-    { values: 21..24, points: 'VB.44(21) + MC.8(44), F.4(22) + TR.10(43),
-      VB.43(23-bad) + MC.7(42-bad), F.3(24) + TR.6(41)' },
-    { values: 41..44, points: 'MC.8(44) + VB.44(21), TR.10(43) + F.4(22),
-      MC.7(42-bad) + VB.43(23-bad), TR.6(41) + F.3(24)' }, # mirror 21..24
-    { values: 33..36, points: 'VB.41(33) + TR.3(32) ,P.11(34-bad) + MC.9(31-bad)
-      VB.40(35) + TR.4(30), F.8 + R.10' },
-    { values: 29..32, points: 'R.10(29) + F.8(36), TR.4(30) + VB.40(35),
-      MC.9(31-bad) + P.11(34-bad), TR.3(32) + VB.41(33)' }, #mirror 33..36
-    { values: 45..48, points: 'P.10(45) + R.3(20), VB.34(46) + TR.2(19),
-      P.9(47) + R.7(18), VB.38(48) + TR.1(17)' },
-    { values: 17..20, points: 'TR.1(17) + VB.38(48), R.7(18) + P.9(47),
-      TR.2(19) + VB.34(46), R.3(20) + P.10(45)' }, # mirror 45..48
-    { values: 25..28, points: 'P.8(25) + VC.5(40), F.2(26) + R.2(39),
-      P.5(27) + MC.3(38), F.1(28) + R.1(37)' },
-    { values: 37..40, points: 'R.1(37) + F.1(28), MC.3(38) + P.5(27),
-      R.2(39) + F.2(26), MC.5(40) + P.8(25)' }, # mirror 25..28
-    { values: 57..60, points: 'RP.9(57) + RP.3(8),  Ig.8(58) + E.44(7),
-    C.7(59) + RP.5(6), Ig.5(60) + E.45(5) ' },
-    { values: 5..8, points: 'E.45(5) + Ig.5(60), RP.5(6) + C.7(59),
-      E.44(7) + Ig.8(58), RP.3(8) + RP.9(57)' }, # mirror 57..60
-    { values: 13..16, points: 'C.4(13) + Gi.5(52), V.66(14) + RP.2(51),
-      C.3(15) + Gi.11(50), V.67(16) + RP.1(49)' },
-    { values: 49..52, points: 'RP.1(49) + V.67(16), Gi.11(50) + C.3(15),
-      RP.2(51) + V.66(14), Gi.5(52) + C.4(13) ' }, # mirror 13..16
-    { values: 1..4, points: 'V.65(1) + E.41(64), Ig.2(2) + Gi.4(63),
-      V.64(3) + E.36(62), Ig.1(4) + Gi.3(61)' },
-    { values: 61..64, points: 'Gi.3(61) + Ig.1(4), E.36(62) + V.64(3),
-      Gi.4(63) + Ig.2(2), E.41(64) + V.65(1) ' }, # mirror 1..4
-    { values: 53..56, points: 'V.60(53) + Gi.1(12), Ig.4-bad(54) + E.42-bad(11),
-      V.40(55) + Gi.2(10), Ig.3(56) + E.43(9)' },
-    { values: 9..12, points: 'E.43(9) + Ig.3(56), Gi.2(10) + V.40(55),
-     E.42-bad(11) + Ig.4-bad(54), Gi.1(12) + V.60(53)' }, # mirror 53..56
-  ]
-when 2
-  liver =
-  [
-    { values: 21..24, points: 'F.1(21) + TR.3(44), P.5(22) + Vb.34(43),
-      F.2(23-bad) + TR.4(42-bad), P.8(24) + VB.38(41)' },
-    { values: 41..44, points: 'VB.38(41) + P.8(24), TR.4-bad(42) + F.2-bad(23),
-      Vb.34(43) + P.5(22), TR.3(44) + F.1(21)' }, # mirror 21..24
-    { values: 33..36, points: 'F.3(33) + Vb.41(32) ,Gi.2(34-bad) + TR.2(31-bad)
-      F.4(35) + Vb.40(30), Gi.1(36) + TR.1(29)' },
     { values: 29..32, points: 'TR.1(29) + Gi.1(36), Vb.40(30) + F.4(35),
       TR.2-bad(31) + Gi.2-bad(34), Vb.41(32) + F.3(33)' }, #mirror 33..36
     { values: 45..48, points: 'Gi.3(45) + MC.5(20), P.11(46) + VB.43(19),
@@ -197,4 +113,88 @@ a.name = 'Magnitogorsk'
 a.lng = 59.6
 a.save
 a.errors
+exit
+a = City.new
+a.name = 'Magnitogorsk'
+a.lng = 59.6
+a.save!
+exit
+a = City.new
+a.name = 'Magnitogorsk'
+a
+a.lng = 59.6
+a
+a.save
+a.errors
+exit
+a = City.new
+a.name = 'Magnitogorsk'
+a.lng = 59.6
+a.save
+a.errors
+exit
+a = City.new
+a.name = 'Magnitogorsk'
+a.lng = 59.6
+a.save
+a.errors
+exit
+a = City.new
+a.name = 'Magnitogorsk'
+a.lng = 59.6
+a.save
+City.last
+a = City.new
+a.name = 'Moskow'
+a.lng = 37.64
+a.save
+a = City.new
+a.name = 'Novosibirsk'
+a.lng = 82.9
+a.save
+City.all.name
+City.all.names
+City.all.each{ |s| p s.name}
+exit
+a = Patient[11]
+a = Patient.id[11]
+a = Patient.id = [11]
+a = Patient.(id[11])
+a = Patient.(id=11)
+Patient.last
+Patient.first
+a = Patient.first
+a.id
+Patient.id(11)
+Patients.id(11)
+Patient.id[11]
+Patient.id=11
+a = Patient.where(id=11)
+a = Patient.where(id[11])
+exit
+Patient.last
+Patient.first
+exit
+Patient.first.city
+Patient.first.city
+Сityюдфые
+Сity.last
+Сities.last
+City.all
+City.first
+City.first.id
+exit
+Patient.first.city
+Patient.last.city
+exit
+Patient.last
+Patient.first.city
+Patient.first.city = "Smolensk"
+Patient.first.city = "Moscow"
+Patient.first.city = City.first
+City.first
+учше
+exit
+Patient.first
+Patient.first.city = City.first
 exit

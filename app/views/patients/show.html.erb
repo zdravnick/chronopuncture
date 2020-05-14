@@ -51,12 +51,21 @@
       <p><%= text_area_tag :description, @patient.description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>
       <p><%= text_area_tag :diagnosis,  @patient.diagnosis, size: "48x3" %></p>
+      <%= f.label 'Город, где родился пацик' %>
+      <%= f.collection_select(:city_id, City.all, :id, :name) %></p>
       <p><%= f.submit  "Обновить данные пациента", class: 'btn-control' %></p>
     <% end %>
   </div>
-</p>
- <div class="li-control">
 
+
+
+</p>
+
+
+
+
+
+ <div class="li-control">
       <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
 
    </div>
