@@ -7,6 +7,7 @@ class PatientsController < ApplicationController
   end
 
 def create
+
     Patient.create(
       doctor: current_doctor,
       name: params[:name],
@@ -14,7 +15,8 @@ def create
       params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
       diagnosis: params["diagnosis"],
-      description: params["description"]
+      description: params["description"],
+      city_id: params["city_id"]
     )
     redirect_to patients_path
 
@@ -43,17 +45,20 @@ end
 
   end
 
+
   def update
-      @patient = Patient.find(params[:id]).update(
+      @patient = Patient.find(params[:id])
+      @patient.update(
         doctor: current_doctor,
-        name: params[:name],
-        birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
-        params["birthdate(2i)"].to_i, params["birthdate(3i)"].to_i,
-        params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i),
-        diagnosis: params["diagnosis"],
-        description: params["description"],
-        city: (params["city"])
+        name: params[:patient][:name],
+        birthdate: DateTime.civil(params[:patient]["birthdate(1i)"].to_i,
+        params[:patient]["birthdate(2i)"].to_i, params[:patient]["birthdate(3i)"].to_i,
+        params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i),
+        diagnosis: params[:patient]["diagnosis"],
+        description: params[:patient]["description"],
+        city_id: params[:patient]["city_id"]
       )
+# binding.pry
       redirect_back(fallback_location: patients_path)
       # flash[:notice] = 'Данные пациента обновлены, доктор'
     end

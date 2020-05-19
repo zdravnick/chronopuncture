@@ -1,200 +1,200 @@
-    { values: 29..32, points: 'TR.1(29) + Gi.1(36), Vb.40(30) + F.4(35),
-      TR.2-bad(31) + Gi.2-bad(34), Vb.41(32) + F.3(33)' }, #mirror 33..36
-    { values: 45..48, points: 'Gi.3(45) + MC.5(20), P.11(46) + VB.43(19),
-      Gi.4(47) + MC.3(18), F.8(48) + VB.44(17)' },
-    { values: 17..20, points: 'VB.44(17) + F.8(48), MC.3(18) + Gi.4(47),
-      VB.43(19) + P.11(46), MC.5(20) + Gi.3(45)' }, # mirror 45..48
-    { values: 25..28, points: 'Gi.5(25) + TR.5(40), P.9(26) + MC.7(39),
-      Gi.11(27) + TR.10(38), P.10(28) + MC.8(37)' },
-    { values: 37..40, points: 'MC.8(37) + P.10(28), TR.10(38) + Gi.11(27),
-      MC.7(39) + P.9(26), TR.5(40) + Gi.5(25)' }, # mirror 25..28
-    { values: 57..60, points: 'Ig.3(57) + C.4(8), V.40(58) + Rp.2(7),
-      Ig.4(59) + C.3(6), V.60(60) + Rp.1(5) ' },
-    { values: 5..8, points: 'Rp.1(5) + V.60(60), C.3(6) + Ig.4(59),
-      Rp.2(7) + V.40(58), C.4(8) + Ig.3(57)' }, # mirror 57..60
-    { values: 13..16, points: 'Ig.5(13) + E.41(52), Rp.2(14) + C.7(51),
-      Ig.8(15) + E.36(50), R.1(16) + C.8(49)' },
-    { values: 49..52, points: 'C.8(49) + R.1(16), E.36(50) + Ig.8(15),
-      C.7(51) + Rp.2(14), E.41(52) + Ig.5(13) ' }, # mirror 13..16
-    { values: 1..4, points: 'R.3(1) + Rp.9(64), V.66(2) + E.42(63),
-      R.7(3) + C.9(62), V.67(4) + E.43(61)' },
-    { values: 61..64, points: 'E.43(61) + V.67(4), C.9(62) + R.7(3),
-      E.42(63) + V.66(2), Rp.9(64) + R.3(1) ' }, # mirror 1..4
-    { values: 53..56, points: 'R.10(53) + E.45(12), V.64-bad(54) + Rp.5-bad(11),
-      MC.9(55) + E.44(10), V.65(56) + Rp.3(9)' },
-    { values: 9..12, points: 'Rp.3(9) + V.65(56), E.44(10) + MC.9(55),
-     Rp.5-bad(11) + V.64-bad(54), E.45(12) + R.10(53)' }, # mirror 53..56
-  ]
+    mon = date.mon
+    year = date.year
+  end
+  n = ((((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)%12
+  if n < 3
+    number_of_day_60th = n + 10
+    else
+    number_of_day_60th = n - 2
   end
 end
-matrix = points_matrix_lo_shu(meridian_lo_shu)
-matrix
-def lo_shu_points(matrix, first_point_lo_shu)
-  matrix.find do |point|
-    point[:values].include?(first_point_lo_shu)
+p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
+ @patient_birthdate)
+def patient_birthdate_day_number(number_of_day_60th)
+  (number_of_day_60th - 14)%60
+    if number_of_day_60th == 0
+      number_of_day_60th = 60
+    else
+    number_of_day_60th
   end
 end
-lo_shu_points(matrix, first_point_lo_shu)
-p 'NOW ARE OPEN: ' + lo_shu_points(matrix, first_point_lo_shu)[:points].to_s
-first_point_lo_shu
-reload!
-City.all
-a = City.new
+p patient_birthdate_day_number(number_of_day)
+def number_of_day_calculation(city, year_num, date) # номер дня!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = ((((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)%12
+end
+p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
+ @patient_birthdate)
+def number_of_day_calculation(city, year_num, date) # номер дня!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
+end
+p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
+ @patient_birthdate)
+def number_of_day_calculation(city, year_num, date) # номер дня!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
+end
+p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
+ @patient_birthdate)
+def number_of_day_calculation(city, year_num, date) # номер дня!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
+end
+def number_of_day_calculation(city, year_num, date) # номер дня!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
+end
+p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
+ @patient_birthdate)
+def patient_birthdate_day_number(number_of_day_60th)
+  (number_of_day_60th - 14)%60
+    if number_of_day_60th == 0
+      number_of_day_60th = 60
+    else
+    number_of_day_60th
+  end
+end
+p patient_birthdate_day_number(number_of_day)
+DateTime.current.zone
+DateTime.current
+exit
+DateTime.now
+DateTime.zone.now
+Time.zone.now
+DateTime.current
+DateTime.current.zone
+DateTime.current.zone.now
+DateTime.current.zone
+DateTime.current.offset
+DateTime.now.offset
+DateTime.current.with_zone("Moscow")
+Time.zone.now
+Time.zone.now.to_s
+Time.zone.now.to_s :db
+Time.now.to_s :db
+DateTime.current.in_time_zone("Moscow")
+DateTime.current
+DateTime.current
+DateTime.current.getutc
+Time.now
+Time.now.getutc
+Doctor.last.city
+Doctor.last.city.update(name: "Москва")
+Doctor.last.city
+Doctor.last.city.update(name: "Магнитогорск")
+Doctor.last.city
+DateTime.now - DateTime.current
+(DateTime.now - DateTime.current).hour
+DateTime.now.huor - DateTime.current.hour
+DateTime.now.hour - DateTime.current.hour
+DateTime.now.min - DateTime.current.min
+a = DateTime.now.hour - DateTime.current.hour
 a
-a.name = "Moscow"
-a.lng = 37.64
-a.save
-a.save
-a.name = "Moscow"
-a.lng = 37.64
-a.save
-reload
-reload!
-a = City.new
-a.name = "Moscow"
+a = DateTime.now.hour - a
+a = DateTime.now.hour
+ DateTime.now.hour - a
+ DateTime.now.hour - a.hpur
+ DateTime.now.hour - a.hour
 a
-a.lng = 37.64
-a.save
+
+date = DateTime.now
+date
+current_date = DateTime.current
+offset = date.hour - DateTime.hour
+offset = date.hour - current_date.hour
+offset
+DateTime.new = date - offset.hour
+DateTime.new(date - offset.hour)
+DateTime.new(DateTime.now - offset.hour)
+DateTime.now - offset.hour
+a = DateTime.now - offset.hour
 a
-reload!
-a = City.new
-a.name = "Moscow"
-a.lng = 37.64
-a.save
-a.save.errors
-a.save.errors?
-a
+a.class
+@local_time = DateTime.now - offset.hour
+@local_time
+@local_time.class
+Time.now.in_time_zone('America/New_York').utc_offset
+Time.now.in_time_zone('Moscow').utc_offset
+Time.now.in_time_zone('Moscow').utc_offset.hour
+Time.now.in_time_zone('Moscow').utc_offset/3600
+Time.zone.now.strftime("%z")
+Time.zone.now
+DateTime.zone.now
+DateTime.zone
 exit
-City.all
-a = City.new
-a
+TIme.now
+Time.now
+Time.zone
+DateTime.zone
 exit
-a = City.new
-a.name = "Magnitogorsk"
-a
-a.lng = 59.6
-a.save
-a
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-a.errors
-reload!
-a.sasve
-a.save
-a.errors
-current_doctor
-exit
-Patient.last
-a = Patient.last
-exit
-Doctor.last
-exit
-Doctor.last
-a = City.new
-a.doctor
-Patient.last
-a = Patient.last.city
-a
-a.name = 'Magnitogorsk'
-reload
-exit
-Patient.last
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-a.errors
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-a.errors
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save!
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a
-a.lng = 59.6
-a
-a.save
-a.errors
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-a.errors
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-a.errors
-exit
-a = City.new
-a.name = 'Magnitogorsk'
-a.lng = 59.6
-a.save
-City.last
-a = City.new
-a.name = 'Moskow'
-a.lng = 37.64
-a.save
-a = City.new
-a.name = 'Novosibirsk'
-a.lng = 82.9
-a.save
-City.all.name
-City.all.names
-City.all.each{ |s| p s.name}
-exit
-a = Patient[11]
-a = Patient.id[11]
-a = Patient.id = [11]
-a = Patient.(id[11])
-a = Patient.(id=11)
-Patient.last
-Patient.first
-a = Patient.first
-a.id
-Patient.id(11)
-Patients.id(11)
-Patient.id[11]
-Patient.id=11
-a = Patient.where(id=11)
-a = Patient.where(id[11])
-exit
-Patient.last
-Patient.first
-exit
-Patient.first.city
-Patient.first.city
-Сityюдфые
-Сity.last
-Сities.last
-City.all
 City.first
-City.first.id
-exit
-Patient.first.city
-Patient.last.city
-exit
-Patient.last
-Patient.first.city
-Patient.first.city = "Smolensk"
-Patient.first.city = "Moscow"
-Patient.first.city = City.first
-City.first
+City.first.update(time_zone: "Ekaterinburg")
+City.first.time_zone
+City.find.id(1)
+City.find.1
+City.find(1)
+City.find(2)
+City.find(2).update(time_zone: "Moscow")
+City.find(2).time_zone
+City.find(3)
+City.find(3).update(time_zone: "Novosibirsk")
+City.find(4)
+City.find(4).update(time_zone: "St. Petersburg")
+City.find(5)
+City.find(5).update(time_zone: "Moscow")
+City.find(6)
+City.find(6).update(time_zone: "Kyiv")
+City.find(7)
+City.find(7).update(time_zone: "Astana")
+City.find(8)
+City.find(8).update(time_zone: "Moskow")
+City.find(9)
+City.find(9).update(time_zone: "Moskow")
+City.find(10)
+City.find(10).update(time_zone: Kyiv"")
+City.find(10).update(time_zone: "Kyiv")
+City.find(11)
+City.all.count
+Time.zone
+Time.zone.now
+Time.in_time_zone
+Tin_time_zone()
+City.all.each{ |s| p s.time_zone}
 учше
-exit
-Patient.first
-Patient.first.city = City.first
 exit

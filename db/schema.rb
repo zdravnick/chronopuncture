@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_043206) do
+ActiveRecord::Schema.define(version: 2020_05_19_132410) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_043206) do
     t.integer "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "time_zone", default: "UTC"
     t.index ["doctor_id"], name: "index_cities_on_doctor_id"
     t.index ["patient_id"], name: "index_cities_on_patient_id"
   end
@@ -36,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_043206) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "city"
+    t.integer "city_id"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["name"], name: "index_doctors_on_name", unique: true
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_043206) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "diagnosis"
     t.text "description"
-    t.string "city"
+    t.integer "city_id"
     t.index ["doctor_id"], name: "index_patients_on_doctor_id"
   end
 

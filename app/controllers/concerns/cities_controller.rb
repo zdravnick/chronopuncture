@@ -1,19 +1,26 @@
-def new
-  @city = City.new
-end
+class CitiesController < ApplicationController
 
-def show
-  @cities = City.all
-end
+  def new
+    @city = City.new
+  end
 
-def create
+  def show
+    @cities = City.all
+  end
 
-end
+  def create
 
-def update
+  end
 
-end
+  def update
+    @city = City.find(params[:id])
+    @city.update(
+      name: params["name"]
+    )
+  end
 
-def destroy
+  def destroy
+
+  end
 
 end

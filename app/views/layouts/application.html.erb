@@ -15,6 +15,7 @@
   <body>
 
       <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
+      <h3>Город доктора: <%= current_doctor.city.name %></h3>
       <p class="notice"><%= notice %></p> <!-- это от гема devise -->
       <p class="alert"><%= alert %></p>
      <!--  это от гема devise -->

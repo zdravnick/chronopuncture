@@ -4,6 +4,7 @@
   <td><%= @patient.birthdate %><td>
   <td><%= @patient.diagnosis %><td>
   <td><%= @patient.id %><td>
+
   <td><%= link_to 'Грохнуть пацика', patient_path(id: i.id), action: :delete,  method: :delete, data: { confirm: 'Are you sure?' } %><td>
   </tr>
   </tr>

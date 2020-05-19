@@ -1,25 +1,27 @@
 class PointsController < ApplicationController
+before_action :prepare
+def prepare
+  @doctor_city = current_doctor.city
+  Time.zone = current_doctor.city.time_zone
+  @doctor_current_date = Time.zone.local(params["date(1i)"].to_i,
+    params["date(2i)"].to_i,params["date(3i)"].to_i,
+    params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
+  @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_date)
+  @sun_time = sun_time(@doctor_city, @doctor_current_date)
+  @guard = guard(@doctor_city, @doctor_current_date)
+
+end
+
 
    def linguibafa
-      @doctor_current_date = DateTime.civil(params[:user]["date(1i)"].to_i,
-        params[:user]["date(2i)"].to_i,params[:user]["date(3i)"].to_i,
-        params[:user]["date(4i)"].to_i,params[:user]["date(5i)"].to_i)
-      @sun_time = sun_time(CITIES[0], @doctor_current_date)
-      @doctor_city = CITIES[0]
-      @trunc_day = trunc_day_calculation(CITIES[0], @doctor_current_date)
-      @opened_points_linguibafa = opened_point_linguibafa(CITIES[0], @doctor_current_date)
-      @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(CITIES[0], @doctor_current_date)
+     # binding.pry
+      @time_zone = params["time_zone"]
+      @opened_points_linguibafa = opened_point_linguibafa(@doctor_city, @doctor_current_date)
+      @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(@doctor_city, @doctor_current_date)
       render "doctors/linguibafa"
    end
 
     def infusion
-      @doctor_current_date = DateTime.civil(params[:user]["date(1i)"].to_i,
-        params[:user]["date(2i)"].to_i,params[:user]["date(3i)"].to_i,
-        params[:user]["date(4i)"].to_i,params[:user]["date(5i)"].to_i)
-      @sun_time = sun_time(CITIES[0], @doctor_current_date)
-      @doctor_city = CITIES[0]
-      @trunc_day = trunc_day_calculation(CITIES[0], @doctor_current_date)
-      @guard = guard(CITIES[0], @doctor_current_date)
       @points_infusion = points_infusion
       @opened_points_infusion = opened_points_infusion(@trunc_day, @guard, @points_infusion)
       render "doctors/infusion"
@@ -27,19 +29,42 @@ class PointsController < ApplicationController
     end
 
     def naganfa
-      @doctor_current_date = DateTime.civil(params[:user]["date(1i)"].to_i,
-        params[:user]["date(2i)"].to_i,params[:user]["date(3i)"].to_i,
-        params[:user]["date(4i)"].to_i,params[:user]["date(5i)"].to_i)
-      @sun_time = sun_time(CITIES[0], @doctor_current_date)
-      @doctor_city = CITIES[0]
-      @trunc_day = trunc_day_calculation(CITIES[0], @doctor_current_date)
-      @guard = guard(CITIES[0], @doctor_current_date)
+      # binding.pry
       @mark = time_mark(@doctor_current_date)
       @points_naganfa = points_naganfa
       @opened_points_naganfa = opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_date)
       render "doctors/naganfa"
       # There is TIME.now in the table!
     end
+
+      def complex_balance
+
+        @patient = Patient.find(params["patient_id"])
+        @patient_city = @patient.city
+        Time.zone = @patient.city.time_zone
+        # binding.pry
+        @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
+          params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
+          params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
+        @eot_patient = eot_patient(@patient_birthdate)
+        @year_num_patient = year_number_60th_calculation(@patient_birthdate)
+        @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
+            @patient_birthdate)
+        @moment = moment_of_birth(@patient_birthdate, @patient_city)
+        @guard_patient = guard(@patient_city, @patient_birthdate)
+        @guard_doctor = guard(@doctor_city, @doctor_current_date )
+        @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
+        @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
+          @number_of_day_60th, @guard_doctor)
+        @hour = sun_time( @doctor_city, @doctor_current_date).hour
+        @min = sun_time( @doctor_city, @doctor_current_date).min
+        # получасие активного на момент приема пацика Канала
+        @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
+        # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
+        @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
+        render "doctors/complex_balance"
+      end
+
 
     def eot
       pi = (Math::PI) # pi
@@ -73,16 +98,8 @@ class PointsController < ApplicationController
       eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
     end
 
-    CITIES = [
-      {city: 'Magnitogorsk', lng: 59.6},
-      {city: 'Moscow', lng: 37.64},
-      {city: 'Novosibirsk', lng: 82.9}
-    ]
-
-    doctor_city = CITIES[0]
-
     def sun_time(city, date)
-      DateTime.current.utc  + (city[:lng]*4).minutes + eot.seconds
+      date + (city[:lng]*4).minutes + eot.seconds
     end
 
     def number_of_day_calculation(city, date)
@@ -132,6 +149,7 @@ class PointsController < ApplicationController
       when 17, 18 then 10
       end
     end
+
 
     def trunc_hour_calculation(city, date)
       trunc_hour = (guard(city, date) + ((trunc_day_calculation(city, date) - 1) * 2))%10
@@ -1208,7 +1226,7 @@ class PointsController < ApplicationController
      ]
     end
 
-    def opened_points_naganfa(trunc, mark, points, date)
+  def opened_points_naganfa(trunc, mark, points, date)
     result = []
     case trunc
     when 1
@@ -1402,4 +1420,216 @@ class PointsController < ApplicationController
     end
     return result
   end
+end
+
+# метод Сложного Баланса
+
+  def eot_patient(birth_time)
+    pi = (Math::PI) # pi
+    delta = birth_time.getutc.yday - 1 # (Текущий день года - 1)
+
+    yy = birth_time.getutc.year
+    np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
+          when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
+          when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
+               1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
+               2005, 2008, 2013, 2016, 2021, 2029, 2043  ; 1
+          when 1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950, 1957, 1958,
+               1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
+               2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
+               2046, 2048, 2049  ; 2
+          when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
+               1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
+               2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 ; 3
+          when 2012, 2020, 2028, 2036, 2039, 2044, 2047 ; 4
+         else ; 2
+         end
+
+    a = birth_time.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
+
+    lambda = 23.4406 * pi / 180; # Earth's inclination in radians
+    omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
+    alpha = omega * ((delta + 10) % 365) # angle in (mean) circular orbit, solar year starts 21. Dec
+    beta = alpha + 0.03340560188317 * Math.sin(omega * ((delta - np) % 365)) # angle in elliptical orbit, from perigee  (radians)
+    gamma = (alpha - Math.atan(Math.tan(beta) / Math.cos(lambda))) / pi # angular correction
+
+    eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
+  end
+
+def year_number_60th_calculation(birth)
+    y = birth.year % 60 - 3
+    if y < 1
+      y + 60
+    elsif y > 60
+      y - 60
+      else y
+    end
+end
+
+def number_of_day__60th_cycle_calculation(year_num, date) # номер дня пациента!
+  y = year_num%12
+  if y < 3
+    mon = date.mon + 12
+    year = date.year - 1
+    else
+    mon = date.mon
+    year = date.year
+  end
+  n = ((((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)%12
+  number_of_day_60th = (n - 14)%60
+  if number_of_day_60th == 0
+    number_of_day_60th += 60
+    else
+    number_of_day_60th
+  end
+end
+
+#
+
+def moment_of_birth(time, city)
+  moment_of_birth = (time + (city[:lng]*4).minutes + eot_patient(time).seconds).hour
+end
+
+def guard(time, city)
+  case moment_of_birth(time, city)
+  when 19...21 then 11
+  when 21...23 then 12
+  when 23, 0 then 1
+  when  1...3 then 2
+  when  3...5 then 3
+  when  5...7 then 4
+  when  7...9 then 5
+  when  9...11 then 6
+  when 11...13 then 7
+  when 13...15 then 8
+  when 15...17 then 9
+  when 17...19 then 10
+  end
+end
+
+def ranges
+[
+
+  { value: 12, dates: DateTime.new(1974, 1, 1)..DateTime.new(1974, 1, 22) }, # it's 1973 !!!
+  { value: 1, dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 2, 21) },# 1974
+  { value: 2, dates: DateTime.new(1974, 2, 22)..DateTime.new(1974, 3, 23) },
+  { value: 3, dates: DateTime.new(1974, 3, 24)..DateTime.new(1974, 4, 21) },
+  { value: 4, dates: DateTime.new(1974, 4, 22)..DateTime.new(1974, 5, 21) },
+  { value: 4, dates: DateTime.new(1974, 5, 22)..DateTime.new(1974, 6, 19) }, # same 4th!
+  { value: 5, dates: DateTime.new(1974, 6, 20)..DateTime.new(1974, 7, 18) },
+  { value: 6, dates: DateTime.new(1974, 7, 19)..DateTime.new(1974, 8, 17) },
+  { value: 7, dates: DateTime.new(1974, 8, 18)..DateTime.new(1974, 9, 15) },
+  { value: 8, dates: DateTime.new(1974, 9, 16)..DateTime.new(1974, 10, 14) },
+  { value: 9, dates: DateTime.new(1974, 10, 15)..DateTime.new(1974, 11, 13) },
+  { value: 10, dates: DateTime.new(1974, 11, 14)..DateTime.new(1974, 12, 13) },
+  { value: 11, dates: DateTime.new(1974, 12, 14)..DateTime.new(1974, 12, 31) },
+
+  { value: 11, dates: DateTime.new(1975, 1, 1)..DateTime.new(1975, 1, 11) }, # 1975
+  { value: 12, dates: DateTime.new(1975, 1, 12)..DateTime.new(1975, 2, 10) },
+  { value: 1, dates: DateTime.new(1975, 2, 11)..DateTime.new(1975, 3, 12) },
+  { value: 2, dates: DateTime.new(1975, 3, 13)..DateTime.new(1975, 4, 11) },
+  { value: 3, dates: DateTime.new(1975, 4, 12)..DateTime.new(1975, 5, 10) },
+  { value: 4, dates: DateTime.new(1975, 5, 11)..DateTime.new(1975, 6, 9) },
+  { value: 5, dates: DateTime.new(1975, 6, 10)..DateTime.new(1975, 7, 8) },
+  { value: 6, dates: DateTime.new(1975, 7, 9)..DateTime.new(1975, 8, 6) },
+  { value: 7, dates: DateTime.new(1975, 8, 7)..DateTime.new(1975, 9, 5) },
+  { value: 8, dates: DateTime.new(1975, 9, 6)..DateTime.new(1975, 10, 4) },
+  { value: 9, dates: DateTime.new(1975, 10, 5)..DateTime.new(1975, 11, 2) },
+  { value: 10, dates: DateTime.new(1975, 11, 3)..DateTime.new(1975, 12, 2) },
+  { value: 11, dates: DateTime.new(1975, 12, 3)..DateTime.new(1975, 12, 31) },
+
+  { value: 12, dates: DateTime.new(1976, 1, 1)..DateTime.new(1976, 1, 30) }, # 1976
+  { value: 1, dates: DateTime.new(1976, 1, 31)..DateTime.new(1976, 2, 29) },
+  { value: 2, dates: DateTime.new(1976, 3, 1)..DateTime.new(1976, 3, 30) },
+  { value: 3, dates: DateTime.new(1976, 3, 31)..DateTime.new(1976, 4, 28) },
+  { value: 4, dates: DateTime.new(1976, 4, 29)..DateTime.new(1976, 5, 28) },
+  { value: 5, dates: DateTime.new(1976, 5, 29)..DateTime.new(1976, 6, 26) },
+  { value: 6, dates: DateTime.new(1976, 6, 27)..DateTime.new(1976, 7, 26) },
+  { value: 7, dates: DateTime.new(1976, 7, 27)..DateTime.new(1976, 8, 24) },
+  { value: 8, dates: DateTime.new(1976, 8, 25)..DateTime.new(1976, 9, 23) },
+  { value: 8, dates: DateTime.new(1976, 9, 24)..DateTime.new(1976, 10, 22) }, # the same 8th !
+  { value: 9, dates: DateTime.new(1976, 10, 23)..DateTime.new(1976, 11, 20) },
+  { value: 10, dates: DateTime.new(1976, 11, 21)..DateTime.new(1976, 12, 20) },
+  { value: 11, dates: DateTime.new(1976, 12, 21)..DateTime.new(1976, 12, 31) },
+
+  { value: 11, dates: DateTime.new(1977, 1, 1)..DateTime.new(1977, 1, 18) }, # 1977
+  { value: 12, dates: DateTime.new(1977, 1, 19)..DateTime.new(1977, 2, 17) },
+  { value: 1, dates: DateTime.new(1977, 2, 18)..DateTime.new(1977, 3, 19) },
+  { value: 2, dates: DateTime.new(1977, 3, 20)..DateTime.new(1977, 4, 17) },
+  { value: 3, dates: DateTime.new(1977, 4, 18)..DateTime.new(1977, 5, 17) },
+  { value: 4, dates: DateTime.new(1977, 5, 18)..DateTime.new(1977, 6, 16) },
+  { value: 5, dates: DateTime.new(1977, 6, 17)..DateTime.new(1977, 7, 15) },
+  { value: 6, dates: DateTime.new(1977, 7, 16)..DateTime.new(1977, 8, 14) },
+  { value: 7, dates: DateTime.new(1977, 8, 15)..DateTime.new(1977, 9, 12) },
+  { value: 8, dates: DateTime.new(1977, 9, 13)..DateTime.new(1977, 10, 12) },
+  { value: 9, dates: DateTime.new(1977, 10, 13)..DateTime.new(1977, 11, 10) },
+  { value: 10, dates: DateTime.new(1977, 11, 11)..DateTime.new(1977, 12, 10) },
+  { value: 11, dates: DateTime.new(1977, 12, 11)..DateTime.new(1977, 12, 31) },
+
+  { value: 11, dates: DateTime.new(1978, 1, 1)..DateTime.new(1978, 1, 8) }, # 1978
+  { value: 12, dates: DateTime.new(1978, 1, 9)..DateTime.new(1978, 2, 6) },
+  { value: 1, dates: DateTime.new(1978, 2, 7)..DateTime.new(1978, 3, 8) },
+  { value: 2, dates: DateTime.new(1978, 3, 9)..DateTime.new(1978, 4, 6) },
+  { value: 3, dates: DateTime.new(1978, 4, 7)..DateTime.new(1978, 5, 6) },
+  { value: 4, dates: DateTime.new(1978, 5, 7)..DateTime.new(1978, 6, 5) },
+  { value: 5, dates: DateTime.new(1978, 6, 6)..DateTime.new(1978, 7, 4) },
+  { value: 6, dates: DateTime.new(1978, 7, 5)..DateTime.new(1978, 8, 3) },
+  { value: 7, dates: DateTime.new(1978, 8, 4)..DateTime.new(1978, 9, 2) },
+  { value: 8, dates: DateTime.new(1978, 9, 3)..DateTime.new(1978, 10, 1) },
+  { value: 9, dates: DateTime.new(1978, 10, 2)..DateTime.new(1978, 10, 31) },
+  { value: 10, dates: DateTime.new(1978, 11, 1)..DateTime.new(1978, 11, 29) },
+  { value: 11, dates: DateTime.new(1978, 11, 30)..DateTime.new(1978, 12, 29) },
+  { value: 12, dates: DateTime.new(1978, 12, 30)..DateTime.new(1978, 12, 31) },
+
+]
+end
+
+def patient_month_calculation(birth) # month's number from Hongcong observatotie's table
+   ranges.find do |range|
+    range[:dates].include?(birth.to_date)
+  end
+end
+
+
+def first_point_lo_shu_number(year, month, day_p, day_d )
+  s = (year + month + day_p + day_d)%64
+  if s == 0
+    s = 64
+  else
+    s
+  end
+end
+
+#  получасие активного на момент ПРИЕМА ПАЦИЕНТА канала
+def half_hour_for_reception_time(hour:, min:)
+  case hour
+  when (0..23)
+    if (0..29).include?(min)
+      return half_hour_guard = hour*2 + 1
+    end
+      if (30..59).include?(min)
+      return half_hour_guard = hour*2 + 2
+    else
+      'Incorrect time'
+    end
+    else
+    'Incorrect time'
+  end
+end
+
+def meridian_for_lo_shu_square(h)
+  case h
+    when 1, 13, 25, 37 then 9 # BLADDER, V
+    when 2, 14, 26, 38 then 10 # KIDNEYS, R
+    when 3, 15, 27, 39 then 11  # MC
+    when 4, 16, 28, 40 then 12 # TR
+    when 5, 17, 29, 41 then 11 # VB
+    when 6, 18, 30, 42 then 2 # F
+    when 7, 19, 31, 43 then 3 # P
+    when 8, 20, 32, 44 then 4 # Gi
+    when 9, 21, 33, 45 then 5 # E
+    when 10, 22, 34, 46 then 6 # Rp
+    when 11, 23, 35, 47 then 7   # C
+    when 12, 24, 36, 48 then 8 # Ig small int
+    end
 end

@@ -2,11 +2,25 @@
   <tr>
     <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
     <td><%= @patient.diagnosis %><td>
-    <td><%= @patient.description %><td>
-    <td><%= 'Номер карты: ' + @patient.id.to_s %><td>
-    <td><%= 'Визитов: ' + @patient.visits.count.to_s %><td>
+    <% if  @patient.city %>
+      <td>Родился в г.: <%= @patient.city.name %><td>
+    <% end %>
+    <td >Номер карты: <%=  @patient.id %><td>
+    <td>Визитов: <%= @patient.visits.count %><td>
   </tr>
 </table>
+
+ <p>
+    <h3>МЕТОД СЛОЖНОГО БАЛАНСА</h3>
+    <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
+    <% hidden_field_tag(:city, current_doctor.city) %>
+    <%= hidden_field_tag(:patient_id, @patient.id) %>
+    <%= f.label " Выберите время: " %>
+    <%= f.datetime_select :date, default: DateTime.now %>
+    <%= f.datetime_select :birthdate, default: @patient.birthdate %>
+    <%= f.submit "Рассчитать" %>
+    <% end %>
+  </p>
 
 <p>
   <div>
@@ -20,7 +34,7 @@
 
       <h4>Лечение:</h4>
       <p><%= text_area_tag  :treatment, nil, placeholder: 'лечение:', size: "48x3" %></p>
-      <p><%= f.submit "Записать сеанс", class: 'btn-control' %></p>
+      <p><%= f.submit "Добавить сеанс", class: 'btn-control' %></p>
     <% end %>
   </div>
 </p>
@@ -41,34 +55,27 @@
 <p>
   <div>
     <h3><%= label_tag( "Изменить данные пациента") %></h3>
-    <%= form_with local: true, method: :patch, url: patient_path(id: @patient.id), html: {onsubmit: "return confirm('Вы уверены?');"} do |f| %>
+    <%= form_with model: @patient, local: true, method: :patch, html: {onsubmit: "return confirm('Вы уверены?');"} do |f| %>
       <%= f.label "Имя" %>
-      <%= f.text_field  :name, value: @patient.name  %>
-
+      <%= f.text_field  :name  %>
       <%= f.label 'Дата рождения' %>
       <%= f.datetime_select( :birthdate, start_year: 1920, end_year: DateTime.current.year, default: @patient.birthdate) %>
       <h4>Описание состояния:</h4>
-      <p><%= text_area_tag :description, @patient.description, placeholder: 'Описание', size: "48x3" %></p>
+      <p><%= f.text_area :description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>
-      <p><%= text_area_tag :diagnosis,  @patient.diagnosis, size: "48x3" %></p>
+      <p><%= f.text_area :diagnosis, size: "48x3" %></p>
       <%= f.label 'Город, где родился пацик' %>
-      <%= f.collection_select(:city_id, City.all, :id, :name) %></p>
+      <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name,  {:selected => @patient.city&.id} ) %></p>
       <p><%= f.submit  "Обновить данные пациента", class: 'btn-control' %></p>
     <% end %>
   </div>
 
-
-
 </p>
 
+<div class="li-control">
+    <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
 
-
-
-
- <div class="li-control">
-      <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
-
-   </div>
+</div>
 
 
 

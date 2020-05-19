@@ -13,13 +13,25 @@
  *= require_tree .
  *= require_self
  */
-
+/*html {
+  height: 100%;
+}*/
+*{
+outline: none !important
+}
 
  body {
-  background-image: url(/assets/coffee_4.jpg);
+/*  background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
+  height: 100%;
+  margin-bottom: 30px;
   font-size: 100%;
+  background-color: #DEB887 ;
+  /*background: #BDB76B;*/
+  /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', */
+
+  /*font-weight: bold;*/
  }
 
 ul>li {
@@ -34,6 +46,7 @@ table {
 
 ul {
     margin-bottom: 20px;
+
 }
 
 ol, td {
@@ -59,38 +72,65 @@ a {
   border-radius: 10px;
 }
 a:hover, .btn-control:hover {
-  background-color: #630;
-  color: white;
-  border: 2px solid black;
+  outline: none !important;
+  /*background-color: #DEB887;*/
+  background-color: #808000;
+  color: wheat;
+  border-radius: 10px;
+  /*border: 2px solid black;*/
   transform: scale(1.05);
-  box-shadow: 4px 4px 4px #630;
+  box-shadow: 3px 2px 3px 2px white;
+  /*box-shadow: 4px 4px 4px #630;*/
 }
 
 
 a:active,  .btn-control:active {
-  background-color: #FFF8DC;
-  color: red;
-  transform: scale(0.95);
-  border: 2px transparent;
-  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630;
-  padding: 3px;
+  outline: none !important;
+  background-color: #666600;
+  color: white;
+  transform: scale(0.99);
+  border: none;
+  border-radius: 10px;
+  box-shadow:   1px 1px 1px 1px white,  -1px -1px 1px 1px white;
+/*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown
+*/  padding: 3px;
 
 /*  transform: scale(0.95);*/
 }
 
 .patient_delete_control {
   margin-left: 15px;
-background-color: #FF6347;
-transform: scale(0.95);
+  background-color: #FF7F50;
+
+}
+
+.patient_delete_control:hover {
+  color: orangered;
+  border: 3px solid red;
+  background-color: black;
+  box-shadow: 4px 4px 4px #FF7F50;
+  transform: scale(1.05);
+}
+
+
+.patient_delete_control:active {
+  color: white;
+  border: 2px solid white;
+  background-color: black;
+  box-shadow: inset -2px -2px 2px white;
+  transform: scale(0.95);
+
 }
 
 .li-control {
   margin-top: 2px;
 }
 
-.form-control{
-  cursor: pointer;
-}
+/*
+.patient_list_control {
+  background-color: #F4A460;
+  opacity: 70%;
+}*/
 
 /*.field_with_errors {
   padding: 5px;

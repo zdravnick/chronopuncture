@@ -13,10 +13,11 @@
         <%= f.label  "Имя" %>
         <%= f.text_field :name  %>
         <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {hour: 12, min: 00} )%>
-        <p><%= text_area_tag :description, nil, placeholder: 'Описание', size: "48x3" %></p>
-        <p><%= text_area_tag :diagnosis, 'Диагноз:', size: "48x3" %></p>
-        <p><%= f.submit  "Внести в базу", class: 'btn-control' %></p>
+        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 00} )%>
+        <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
+        <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
+        <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
+        <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
       <% end %>
     </div>
   </p>
@@ -35,27 +36,34 @@
     <% end %></p>
   </div>
 
+<p>
+    <h3>МЕТОД ЛИНГУЙБАФА</h3>
+    <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%= f.submit "Рассчитать" %>
+    <% end %>
+
   <p>
-    <%= form_with local: true, method: :get, url: points_linguibafa_path do %>
-    <%= label_tag( "МЕТОД ЛИНГУЙБАФА " "Выберите день") %>
-    <%=  datetime_select('user', 'date', default: DateTime.now)  %>
-    <%= submit_tag( "Рассчитать") %>
+    <h3>МЕТОД "24 минуты"</h3>
+    <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
+    <%= f.label " Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%= f.submit "Рассчитать" %>
     <% end %>
   </p>
+
   <p>
-    <%= form_with local: true, method: :get, url: points_infusion_path do %>
-    <%= label_tag( "МЕТОД \"24 минуты \"" " Выберите день") %>
-    <%= datetime_select('user', 'date', default: DateTime.now) %>
-    <%= submit_tag( "Рассчитать") %>
+    <h3>МЕТОД НАГАНЬФА</h3>
+    <%= form_with html: {target: '_blank', class: "form-control"}, local: true, method: :get, url: points_naganfa_path do|f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%= f.submit  "Рассчитать"%>
     <% end %>
   </p>
-  <p>
-    <%= form_with html: {target: '_blank'}, local: true, method: :get, url: points_naganfa_path do %>
-    <%= label_tag( "МЕТОД НАГАНЬФА " "Выберите день") %>
-    <%= datetime_select('user', 'date', default: DateTime.now) %>
-    <%= submit_tag( "Рассчитать") %>
-    <% end %>
-  </p>
+
+
+
 
   <h3>Список пациентов </h3>
 

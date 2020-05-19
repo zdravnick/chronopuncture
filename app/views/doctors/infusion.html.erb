@@ -7,4 +7,4 @@
   <% end %>
 </table>
 
-  <h2>Солнечное время в г. <%= @doctor_city.values[0].to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
+  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>

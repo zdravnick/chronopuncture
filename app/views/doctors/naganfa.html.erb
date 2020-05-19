@@ -8,4 +8,4 @@
   <% end %>
 </table>
 
-<h2>Сейчас в г. <%= @doctor_city.values[0].to_s %> <%= DateTime.now.strftime("%H:%M, %d %B") %></h2>
+<h2>Сейчас в г. <%= @doctor_city.name.to_s %> <%= DateTime.now.strftime("%H:%M, %d %B") %></h2>
