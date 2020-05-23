@@ -24,25 +24,31 @@ end
 
   def index
     @patients = current_doctor.patients
-
     name = Patient.arel_table[:name]
     Patient.where(name.matches("%#{params[:name]}%"))
     if params[:name].present?
       @patients = @patients.where(name.matches("%#{params[:name]}%"))
+      if @patients.count == 1
+        redirect_to patient_path(@patients.first)
+      end
     end
 
     diagnosis = Patient.arel_table[:diagnosis]
     Patient.where(diagnosis.matches("%#{params[:diagnosis]}%"))
     if params[:diagnosis].present?
       @patients = @patients.where(diagnosis.matches("%#{params[:diagnosis]}%"))
+      if @patients.count == 1
+        redirect_to patient_path(@patients.first)
+      end
     end
   end
+
+
 
   def show
     @patient = Patient.find(params[:id])
     @visit = @patient.visits
     @cities = City.all
-
   end
 
 
@@ -51,9 +57,9 @@ end
       @patient.update(
         doctor: current_doctor,
         name: params[:patient][:name],
-        birthdate: DateTime.civil(params[:patient]["birthdate(1i)"].to_i,
+        birthdate: Time.zone.local(params[:patient]["birthdate(1i)"].to_i,
         params[:patient]["birthdate(2i)"].to_i, params[:patient]["birthdate(3i)"].to_i,
-        params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i),
+        params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i).in_time_zone('UTC'),
         diagnosis: params[:patient]["diagnosis"],
         description: params[:patient]["description"],
         city_id: params[:patient]["city_id"]

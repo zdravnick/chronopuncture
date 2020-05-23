@@ -1,200 +1,200 @@
-    mon = date.mon
-    year = date.year
-  end
-  n = ((((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)%12
-  if n < 3
-    number_of_day_60th = n + 10
-    else
-    number_of_day_60th = n - 2
-  end
+       [Point.find_or_create_by(name: 'Rp.3'), Point.find_by(name: 'F.3')],
+        Point.find_or_create_by(name: 'P.8'),
+        Point.find_or_create_by(name: 'R.10')
+      ],  # LIVER
+      '3d GUARD BING SMALL INT' => [
+        Point.find_or_create_by(name: 'Ig.1'),
+        Point.find_or_create_by(name: 'E.44'),
+       [Point.find_or_create_by(name: 'Gi.3'), Point.find_by(name: 'Ig.4')],
+        Point.find_or_create_by(name: 'V.60'),
+        Point.find_or_create_by(name: 'Vb.34')
+      ], # SMALL INT
+      '4th GUARD DIN HEART' => [
+        Point.find_or_create_by(name: 'C.9'),
+        Point.find_or_create_by(name: 'Rp.2'),
+       [Point.find_or_create_by(name: 'P.9'), Point.find_by(name: 'C.7')],
+        Point.find_or_create_by(name: 'R.7'),
+        Point.find_or_create_by(name: 'F.8')
+      ],  # HEART
+      '5th GUARD WU STOMACH' => [
+        Point.find_or_create_by(name: 'E.45'),
+        Point.find_or_create_by(name: 'Gi.2'),
+       [Point.find_or_create_by(name: 'V.65'), Point.find_by(name: 'E.42')],
+        Point.find_or_create_by(name: 'Vb.38'),
+        Point.find_or_create_by(name: 'Ig.8')
+      ], # STOMACH
+      '6th GUARD JI SPLEEN' => [
+        Point.find_or_create_by(name: 'Rp.1'),
+        Point.find_or_create_by(name: 'P.10'),
+       [Point.find_or_create_by(name: 'R.3'), Point.find_by(name: 'Rp.3')],
+        Point.find_or_create_by(name: 'F.4'),
+        Point.find_or_create_by(name: 'C.3')
+      ], # SPLEEN
+      '7th GUARD GENG LARGE INT' => [
+        Point.find_or_create_by(name: 'Gi.1'),
+        Point.find_or_create_by(name: 'V.66'),
+       [Point.find_or_create_by(name: 'Vb.41'), Point.find_by(name: 'Gi.4')],
+        Point.find_or_create_by(name: 'Ig.5'),
+        Point.find_or_create_by(name: 'E.36')
+      ], # LARGE INT
+      '8th XIN LUNGS' => [
+        Point.find_or_create_by(name: 'P.11'),
+        Point.find_or_create_by(name: 'R.2'),
+       [Point.find_or_create_by(name: 'F.3'), Point.find_by(name: 'P.9')],
+        Point.find_or_create_by(name: 'C.4'),
+        Point.find_or_create_by(name: 'Rp.9')
+      ], # LUNGS
+      '9th GUARD REN BLADDER' => [
+        Point.find_or_create_by(name: 'V.67'),
+        Point.find_or_create_by(name: 'Vb.43'),
+       [Point.find_or_create_by(name: 'Ig.3'), Point.find_by(name: 'V.64')],
+        Point.find_or_create_by(name: 'E.41'),
+        Point.find_or_create_by(name: 'Gi.11')
+      ], # BLADDER
+      '10th GUARD GUI KIDNEY' => [
+        Point.find_or_create_by(name: 'R.1'),
+        Point.find_or_create_by(name: 'F.2'),
+       [Point.find_or_create_by(name: 'C.7'), Point.find_by(name: 'R.3')],
+        Point.find_or_create_by(name: 'Rp.5'),
+        Point.find_or_create_by(name: 'P.5')
+      ], # GUI, 10 KIDNEY
+      '11th GUARD MC ' => [
+        Point.find_or_create_by(name: 'MC.9'),
+        Point.find_or_create_by(name: 'MC.8'),
+        Point.find_or_create_by(name: 'MC.7'),
+        Point.find_or_create_by(name: 'MC.5'),
+        Point.find_or_create_by(name: 'MC.3')
+      ], # MC  PERICARD
+      '12th GUARD SAN JIAO' => [
+        Point.find_or_create_by(name: 'TR.1'),
+        Point.find_or_create_by(name: 'TR.2'),
+       [Point.find_or_create_by(name: 'TR.3'), Point.find_by(name: 'TR.4')],
+        Point.find_or_create_by(name: 'TR.6'),
+        Point.find_or_create_by(name: 'TR.10')
+      ] # SAN JIAO
+  }
+point_infusion_2
+point_infusion_2[1]
+point_infusion_2[1].values
+point_infusion_2[1].value
+point_infusion_2.class
+point_infusion_2.valuse
+point_infusion_2.values
+point_infusion_2.keys
+point_infusion_2.keys[1].value
+point_infusion_2.keys[1].values
+point_infusion_2.keys[1]
+point_infusion_2.keys[1].values
+point_infusion_2.keys[1]
+point_infusion_2.keys[1]
+Points.all
+Point.all
+Point.first
+reload!
+Point.first
+def point_infusion_2
+  {
+    'FIRST GUARD  JIA GALL_BLADDER' => [
+       Point.find_or_create_by(name: 'Vb.44'),
+       Point.find_or_create_by(name: 'Ig.2'),
+      [Point.find_or_create_by(name: 'Vb.43'), Point.find_by(name: 'Vb.40')],
+       Point.find_or_create_by(name: 'Gi.5'),
+       Point.find_or_create_by(name: 'V.40')
+    ],  # GB
+   '2nd GUARD YI LIVER' => [
+        Point.find_or_create_by(name: 'F.1'),
+        Point.find_or_create_by(name: 'C.8'),
+       [Point.find_or_create_by(name: 'Rp.3'), Point.find_by(name: 'F.3')],
+        Point.find_or_create_by(name: 'P.8'),
+        Point.find_or_create_by(name: 'R.10')
+      ],  # LIVER
+      '3d GUARD BING SMALL INT' => [
+        Point.find_or_create_by(name: 'Ig.1'),
+        Point.find_or_create_by(name: 'E.44'),
+       [Point.find_or_create_by(name: 'Gi.3'), Point.find_by(name: 'Ig.4')],
+        Point.find_or_create_by(name: 'V.60'),
+        Point.find_or_create_by(name: 'Vb.34')
+      ], # SMALL INT
+      '4th GUARD DIN HEART' => [
+        Point.find_or_create_by(name: 'C.9'),
+        Point.find_or_create_by(name: 'Rp.2'),
+       [Point.find_or_create_by(name: 'P.9'), Point.find_by(name: 'C.7')],
+        Point.find_or_create_by(name: 'R.7'),
+        Point.find_or_create_by(name: 'F.8')
+      ],  # HEART
+      '5th GUARD WU STOMACH' => [
+        Point.find_or_create_by(name: 'E.45'),
+        Point.find_or_create_by(name: 'Gi.2'),
+       [Point.find_or_create_by(name: 'V.65'), Point.find_by(name: 'E.42')],
+        Point.find_or_create_by(name: 'Vb.38'),
+        Point.find_or_create_by(name: 'Ig.8')
+      ], # STOMACH
+      '6th GUARD JI SPLEEN' => [
+        Point.find_or_create_by(name: 'Rp.1'),
+        Point.find_or_create_by(name: 'P.10'),
+       [Point.find_or_create_by(name: 'R.3'), Point.find_by(name: 'Rp.3')],
+        Point.find_or_create_by(name: 'F.4'),
+        Point.find_or_create_by(name: 'C.3')
+      ], # SPLEEN
+      '7th GUARD GENG LARGE INT' => [
+        Point.find_or_create_by(name: 'Gi.1'),
+        Point.find_or_create_by(name: 'V.66'),
+       [Point.find_or_create_by(name: 'Vb.41'), Point.find_by(name: 'Gi.4')],
+        Point.find_or_create_by(name: 'Ig.5'),
+        Point.find_or_create_by(name: 'E.36')
+      ], # LARGE INT
+      '8th XIN LUNGS' => [
+        Point.find_or_create_by(name: 'P.11'),
+        Point.find_or_create_by(name: 'R.2'),
+       [Point.find_or_create_by(name: 'F.3'), Point.find_by(name: 'P.9')],
+        Point.find_or_create_by(name: 'C.4'),
+        Point.find_or_create_by(name: 'Rp.9')
+      ], # LUNGS
+      '9th GUARD REN BLADDER' => [
+        Point.find_or_create_by(name: 'V.67'),
+        Point.find_or_create_by(name: 'Vb.43'),
+       [Point.find_or_create_by(name: 'Ig.3'), Point.find_by(name: 'V.64')],
+        Point.find_or_create_by(name: 'E.41'),
+        Point.find_or_create_by(name: 'Gi.11')
+      ], # BLADDER
+      '10th GUARD GUI KIDNEY' => [
+        Point.find_or_create_by(name: 'R.1'),
+        Point.find_or_create_by(name: 'F.2'),
+       [Point.find_or_create_by(name: 'C.7'), Point.find_by(name: 'R.3')],
+        Point.find_or_create_by(name: 'Rp.5'),
+        Point.find_or_create_by(name: 'P.5')
+      ], # GUI, 10 KIDNEY
+      '11th GUARD MC ' => [
+        Point.find_or_create_by(name: 'MC.9'),
+        Point.find_or_create_by(name: 'MC.8'),
+        Point.find_or_create_by(name: 'MC.7'),
+        Point.find_or_create_by(name: 'MC.5'),
+        Point.find_or_create_by(name: 'MC.3')
+      ], # MC  PERICARD
+      '12th GUARD SAN JIAO' => [
+        Point.find_or_create_by(name: 'TR.1'),
+        Point.find_or_create_by(name: 'TR.2'),
+       [Point.find_or_create_by(name: 'TR.3'), Point.find_by(name: 'TR.4')],
+        Point.find_or_create_by(name: 'TR.6'),
+        Point.find_or_create_by(name: 'TR.10')
+      ] # SAN JIAO
+  }
 end
-p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
- @patient_birthdate)
-def patient_birthdate_day_number(number_of_day_60th)
-  (number_of_day_60th - 14)%60
-    if number_of_day_60th == 0
-      number_of_day_60th = 60
-    else
-    number_of_day_60th
-  end
-end
-p patient_birthdate_day_number(number_of_day)
-def number_of_day_calculation(city, year_num, date) # номер дня!
-  y = year_num%12
-  if y < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  n = ((((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)%12
-end
-p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
- @patient_birthdate)
-def number_of_day_calculation(city, year_num, date) # номер дня!
-  y = year_num%12
-  if y < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
-end
-p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
- @patient_birthdate)
-def number_of_day_calculation(city, year_num, date) # номер дня!
-  y = year_num%12
-  if y < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
-end
-p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
- @patient_birthdate)
-def number_of_day_calculation(city, year_num, date) # номер дня!
-  y = year_num%12
-  if y < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114)
-end
-def number_of_day_calculation(city, year_num, date) # номер дня!
-  y = year_num%12
-  if y < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  n = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
-end
-p number_of_day_60th = number_of_day_calculation(@doctor_city, year_num_patient,
- @patient_birthdate)
-def patient_birthdate_day_number(number_of_day_60th)
-  (number_of_day_60th - 14)%60
-    if number_of_day_60th == 0
-      number_of_day_60th = 60
-    else
-    number_of_day_60th
-  end
-end
-p patient_birthdate_day_number(number_of_day)
-DateTime.current.zone
-DateTime.current
-exit
-DateTime.now
-DateTime.zone.now
-Time.zone.now
-DateTime.current
-DateTime.current.zone
-DateTime.current.zone.now
-DateTime.current.zone
-DateTime.current.offset
-DateTime.now.offset
-DateTime.current.with_zone("Moscow")
-Time.zone.now
-Time.zone.now.to_s
-Time.zone.now.to_s :db
-Time.now.to_s :db
-DateTime.current.in_time_zone("Moscow")
-DateTime.current
-DateTime.current
-DateTime.current.getutc
-Time.now
-Time.now.getutc
-Doctor.last.city
-Doctor.last.city.update(name: "Москва")
-Doctor.last.city
-Doctor.last.city.update(name: "Магнитогорск")
-Doctor.last.city
-DateTime.now - DateTime.current
-(DateTime.now - DateTime.current).hour
-DateTime.now.huor - DateTime.current.hour
-DateTime.now.hour - DateTime.current.hour
-DateTime.now.min - DateTime.current.min
-a = DateTime.now.hour - DateTime.current.hour
+point_infusion_2.length
+Points.all.count
+Point.all.count
+Point.all.each{ |p| p p.name}
+Point.all.each{ |p| p p.name.sort_by('name')}
+Point.all.each{ |p| p p.name.sort_by(p.name)}
+Point.all.each{ |p| p p.name}
+a = []
+aPoint.all.each{ |p| a.push(p.name)}
+Point.all.each{ |p| a.push(p.name)}
 a
-a = DateTime.now.hour - a
-a = DateTime.now.hour
- DateTime.now.hour - a
- DateTime.now.hour - a.hpur
- DateTime.now.hour - a.hour
-a
-
-date = DateTime.now
-date
-current_date = DateTime.current
-offset = date.hour - DateTime.hour
-offset = date.hour - current_date.hour
-offset
-DateTime.new = date - offset.hour
-DateTime.new(date - offset.hour)
-DateTime.new(DateTime.now - offset.hour)
-DateTime.now - offset.hour
-a = DateTime.now - offset.hour
-a
-a.class
-@local_time = DateTime.now - offset.hour
-@local_time
-@local_time.class
-Time.now.in_time_zone('America/New_York').utc_offset
-Time.now.in_time_zone('Moscow').utc_offset
-Time.now.in_time_zone('Moscow').utc_offset.hour
-Time.now.in_time_zone('Moscow').utc_offset/3600
-Time.zone.now.strftime("%z")
-Time.zone.now
-DateTime.zone.now
-DateTime.zone
+a.sort
+a.sort_by("name")
+a.sort_by.name
+a.sort
 exit
-TIme.now
-Time.now
-Time.zone
-DateTime.zone
-exit
-City.first
-City.first.update(time_zone: "Ekaterinburg")
-City.first.time_zone
-City.find.id(1)
-City.find.1
-City.find(1)
-City.find(2)
-City.find(2).update(time_zone: "Moscow")
-City.find(2).time_zone
-City.find(3)
-City.find(3).update(time_zone: "Novosibirsk")
-City.find(4)
-City.find(4).update(time_zone: "St. Petersburg")
-City.find(5)
-City.find(5).update(time_zone: "Moscow")
-City.find(6)
-City.find(6).update(time_zone: "Kyiv")
-City.find(7)
-City.find(7).update(time_zone: "Astana")
-City.find(8)
-City.find(8).update(time_zone: "Moskow")
-City.find(9)
-City.find(9).update(time_zone: "Moskow")
-City.find(10)
-City.find(10).update(time_zone: Kyiv"")
-City.find(10).update(time_zone: "Kyiv")
-City.find(11)
-City.all.count
-Time.zone
-Time.zone.now
-Time.in_time_zone
-Tin_time_zone()
-City.all.each{ |s| p s.time_zone}
-учше
+git status
 exit

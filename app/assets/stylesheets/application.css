@@ -24,15 +24,18 @@ outline: none !important
 /*  background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
   background-attachment: fixed;*/
+ /* display: grid;*/
   height: 100%;
   margin-bottom: 30px;
   font-size: 100%;
-  background-color: #DEB887 ;
-  /*background: #BDB76B;*/
+  background-color:  #efdcc3 ;
+  /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
   /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', */
 
   /*font-weight: bold;*/
  }
+
+
 
 ul>li {
   color: #800000;
@@ -59,7 +62,7 @@ a {
   color: black;
   box-shadow: 3px 3px 3px #630;
  /* border: 2px solid black;*/
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 0.05%;
   /*font-size: 20px;*/
 }
@@ -74,7 +77,7 @@ a {
 a:hover, .btn-control:hover {
   outline: none !important;
   /*background-color: #DEB887;*/
-  background-color: #808000;
+  background-color: #999900;
   color: wheat;
   border-radius: 10px;
   /*border: 2px solid black;*/

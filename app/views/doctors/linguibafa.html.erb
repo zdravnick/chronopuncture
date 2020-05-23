@@ -2,7 +2,7 @@
   <h2>Ствол дня: <%= @trunc_day %></h2>
   <h2>Сумма дня: <%= @sum_of_numbers_linguibafa%></h2>
   <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
-  <h2>Расчетное время: <%=  @doctor_current_date.in_time_zone(@time_zone).to_s(:short) %></h2>
+  <h2>Расчетное время: <%=  @doctor_current_date.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h2>
   <h2>Time zone: <%=  current_doctor.city.time_zone %></h2>
 
 

@@ -16,7 +16,8 @@
         <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 00} )%>
         <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
         <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
-        <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
+                <%= f.label 'Место рождения (выбрать ближайший город): ' %>
+        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
         <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
       <% end %>
     </div>

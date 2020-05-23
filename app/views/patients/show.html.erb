@@ -3,7 +3,7 @@
     <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
     <td><%= @patient.diagnosis %><td>
     <% if  @patient.city %>
-      <td>Родился в г.: <%= @patient.city.name %><td>
+      <td>Родился в г. <%= @patient.city.name %><td>
     <% end %>
     <td >Номер карты: <%=  @patient.id %><td>
     <td>Визитов: <%= @patient.visits.count %><td>
@@ -30,10 +30,10 @@
       <%= f.label 'Дата сеанса:' %>
       <%= f.datetime_select( :visited_at, default: DateTime.now) %>
       <h4>Примечание к сеанcу:</h4>
-      <p><%= text_area_tag :visit_description, nil, placeholder: 'Описание', size: "48x3" %></p>
+      <p><%= f.text_area :visit_description, :value => @patient.visits.last&.visit_description.to_s, size: "48x3" %></p>
 
       <h4>Лечение:</h4>
-      <p><%= text_area_tag  :treatment, nil, placeholder: 'лечение:', size: "48x3" %></p>
+      <p><%= f.text_area :treatment, :value => @patient.visits.last&.treatment.to_s, size: "48x3" %></p>
       <p><%= f.submit "Добавить сеанс", class: 'btn-control' %></p>
     <% end %>
   </div>
@@ -43,7 +43,7 @@
   <% @patient.visits.each do |t| %>
   <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
   <ul>
-    <li><%= t.visit_description.to_s %></li>
+    <li><%= t.visit_description %></li>
 
     <li><%= t.treatment %></li>
    <%= link_to 'Удалить сеанс', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control' %>
@@ -64,7 +64,7 @@
       <p><%= f.text_area :description, placeholder: 'Описание', size: "48x3" %></p>
       <h4>Диагноз:</h4>
       <p><%= f.text_area :diagnosis, size: "48x3" %></p>
-      <%= f.label 'Город, где родился пацик' %>
+      <%= f.label 'Место рождения (выбрать ближайший областной центр' %>
       <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name,  {:selected => @patient.city&.id} ) %></p>
       <p><%= f.submit  "Обновить данные пациента", class: 'btn-control' %></p>
     <% end %>

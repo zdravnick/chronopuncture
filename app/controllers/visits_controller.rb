@@ -10,7 +10,6 @@ class VisitsController < ApplicationController
   end
 
   def create
-     binding.pry
     @visit = Visit.create(
       patient_id: params["patient_id"],
       visited_at: DateTime.civil(params["visited_at(1i)"].to_i,
