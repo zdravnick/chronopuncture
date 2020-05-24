@@ -1,0 +1,35 @@
+<h1> лингуй_7_дней </h1>
+<h1><%= @doctor_current_date.in_time_zone(current_doctor.city.time_zone)%></h1>
+
+<% if params[:a]%>
+  <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
+<% end %>
+<table><% @opened_points_linguibafa.each do |elem| %>
+  <tr>
+    <td><%= elem[:date].in_time_zone(current_doctor.city.time_zone).to_s(:short) %></td>
+    <td><%= elem[:point].to_s%></td>
+    <td>
+      <table>
+        <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
+          <% date = elem[:date].change(hour: hour) %>
+          <%  point = opened_point_linguibafa(@doctor_city, date) %>
+          <tr>
+           <td> <%= date.strftime("%H:%M") %> </td>
+           <td>
+            <% if params[:a]%>
+             <%  if point == params[:a] %>
+              <%= point %>
+              <%  end%>
+            <%  else %>
+            <%=  link_to point, params.permit!.merge({a: point})%>
+            <%  end %>
+
+           </td>
+          </tr>
+        <% end %>
+      </table>
+
+    </td>
+  </tr>
+  <% end %>
+</table>

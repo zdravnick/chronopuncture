@@ -1,0 +1,16 @@
+<h2>ВЛИВАНИЕ ПО 24 МИНУТЫ - 2 :</h2>
+<table>
+  <tr>
+  <% @opened_points_infusion.each do |elem| %>
+    <td><% if elem[:point].is_a?(Array) %><td>
+    <td><%= elem[:time] + "укалываем " + elem[:point][0][:name] + " и " + elem[:point][1][:name] %><td>
+    <td><% else %><td>
+    <td><%= elem[:time] + "укалываем " + elem[:point].name %><td>
+    <td><% end %><td>
+
+  </tr>
+  <% end %>
+</table>
+
+  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
+

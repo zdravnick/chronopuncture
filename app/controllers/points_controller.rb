@@ -18,13 +18,31 @@ end
       @time_zone = params["time_zone"]
       @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(@doctor_city, @doctor_current_date)
       @opened_points_linguibafa = opened_point_linguibafa(@doctor_city, @doctor_current_date)
-      render "doctors/linguibafa"
+      render  "doctors/linguibafa"
    end
+
+   def linguibafa_7_times
+      @time_zone = params["time_zone"]
+      # binding.pry
+      @opened_points_linguibafa =
+      (@doctor_current_date.to_datetime..@doctor_current_date.to_datetime+6.days).map do |date|
+       {date: date, point: opened_point_linguibafa(@doctor_city, date) }
+      end
+   end
+
+  helper_method :opened_point_linguibafa
 
     def infusion
       @points_infusion = points_infusion
       @opened_points_infusion = opened_points_infusion(@trunc_day, @guard, @points_infusion)
       render "doctors/infusion"
+      # There is SUN TIME in the table!
+    end
+
+    def infusion_2
+      @points_infusion = points_infusion_2
+      @opened_points_infusion = opened_points_infusion_2(@trunc_day, @guard, @points_infusion)
+      render "_infusion_2"
       # There is SUN TIME in the table!
     end
 
@@ -38,7 +56,6 @@ end
     end
 
       def complex_balance
-
         @patient = Patient.find(params["patient_id"])
         @patient_city = @patient.city
         Time.zone = @patient.city.time_zone
@@ -67,6 +84,7 @@ end
         @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
         render "doctors/complex_balance"
       end
+
 
 
     def eot
@@ -248,7 +266,7 @@ def point_infusion_2
     'FIRST GUARD  JIA GALL_BLADDER' => [
        Point.find_or_create_by(name: 'Vb.44'),
        Point.find_or_create_by(name: 'Ig.2'),
-      [Point.find_or_create_by(name: 'Vb.43'), Point.find_by(name: 'Vb.40')],
+      [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
        Point.find_or_create_by(name: 'Gi.5'),
        Point.find_or_create_by(name: 'V.40')
     ],  # GB
@@ -256,7 +274,7 @@ def point_infusion_2
    '2nd GUARD YI LIVER' => [
         Point.find_or_create_by(name: 'F.1'),
         Point.find_or_create_by(name: 'C.8'),
-       [Point.find_or_create_by(name: 'Rp.3'), Point.find_by(name: 'F.3')],
+       [Point.find_or_create_by(name: 'Rp.3'), Point.find_or_create_by(name: 'F.3')],
         Point.find_or_create_by(name: 'P.8'),
         Point.find_or_create_by(name: 'R.10')
       ],  # LIVER
@@ -264,7 +282,7 @@ def point_infusion_2
       '3d GUARD BING SMALL INT' => [
         Point.find_or_create_by(name: 'Ig.1'),
         Point.find_or_create_by(name: 'E.44'),
-       [Point.find_or_create_by(name: 'Gi.3'), Point.find_by(name: 'Ig.4')],
+       [Point.find_or_create_by(name: 'Gi.3'), Point.find_or_create_by(name: 'Ig.4')],
         Point.find_or_create_by(name: 'V.60'),
         Point.find_or_create_by(name: 'Vb.34')
       ], # SMALL INT
@@ -272,7 +290,7 @@ def point_infusion_2
       '4th GUARD DIN HEART' => [
         Point.find_or_create_by(name: 'C.9'),
         Point.find_or_create_by(name: 'Rp.2'),
-       [Point.find_or_create_by(name: 'P.9'), Point.find_by(name: 'C.7')],
+       [Point.find_or_create_by(name: 'P.9'), Point.find_or_create_by(name: 'C.7')],
         Point.find_or_create_by(name: 'R.7'),
         Point.find_or_create_by(name: 'F.8')
       ],  # HEART
@@ -280,7 +298,7 @@ def point_infusion_2
       '5th GUARD WU STOMACH' => [
         Point.find_or_create_by(name: 'E.45'),
         Point.find_or_create_by(name: 'Gi.2'),
-       [Point.find_or_create_by(name: 'V.65'), Point.find_by(name: 'E.42')],
+       [Point.find_or_create_by(name: 'V.65'), Point.find_or_create_by(name: 'E.42')],
         Point.find_or_create_by(name: 'Vb.38'),
         Point.find_or_create_by(name: 'Ig.8')
       ], # STOMACH
@@ -288,7 +306,7 @@ def point_infusion_2
       '6th GUARD JI SPLEEN' => [
         Point.find_or_create_by(name: 'Rp.1'),
         Point.find_or_create_by(name: 'P.10'),
-       [Point.find_or_create_by(name: 'R.3'), Point.find_by(name: 'Rp.3')],
+       [Point.find_or_create_by(name: 'R.3'), Point.find_or_create_by(name: 'Rp.3')],
         Point.find_or_create_by(name: 'F.4'),
         Point.find_or_create_by(name: 'C.3')
       ], # SPLEEN
@@ -296,7 +314,7 @@ def point_infusion_2
       '7th GUARD GENG LARGE INT' => [
         Point.find_or_create_by(name: 'Gi.1'),
         Point.find_or_create_by(name: 'V.66'),
-       [Point.find_or_create_by(name: 'Vb.41'), Point.find_by(name: 'Gi.4')],
+       [Point.find_or_create_by(name: 'Vb.41'), Point.find_or_create_by(name: 'Gi.4')],
         Point.find_or_create_by(name: 'Ig.5'),
         Point.find_or_create_by(name: 'E.36')
       ], # LARGE INT
@@ -304,7 +322,7 @@ def point_infusion_2
       '8th XIN LUNGS' => [
         Point.find_or_create_by(name: 'P.11'),
         Point.find_or_create_by(name: 'R.2'),
-       [Point.find_or_create_by(name: 'F.3'), Point.find_by(name: 'P.9')],
+       [Point.find_or_create_by(name: 'F.3'), Point.find_or_create_by(name: 'P.9')],
         Point.find_or_create_by(name: 'C.4'),
         Point.find_or_create_by(name: 'Rp.9')
       ], # LUNGS
@@ -312,7 +330,7 @@ def point_infusion_2
       '9th GUARD REN BLADDER' => [
         Point.find_or_create_by(name: 'V.67'),
         Point.find_or_create_by(name: 'Vb.43'),
-       [Point.find_or_create_by(name: 'Ig.3'), Point.find_by(name: 'V.64')],
+       [Point.find_or_create_by(name: 'Ig.3'), Point.find_or_create_by(name: 'V.64')],
         Point.find_or_create_by(name: 'E.41'),
         Point.find_or_create_by(name: 'Gi.11')
       ], # BLADDER
@@ -320,7 +338,7 @@ def point_infusion_2
       '10th GUARD GUI KIDNEY' => [
         Point.find_or_create_by(name: 'R.1'),
         Point.find_or_create_by(name: 'F.2'),
-       [Point.find_or_create_by(name: 'C.7'), Point.find_by(name: 'R.3')],
+       [Point.find_or_create_by(name: 'C.7'), Point.find_or_create_by(name: 'R.3')],
         Point.find_or_create_by(name: 'Rp.5'),
         Point.find_or_create_by(name: 'P.5')
       ], # GUI, 10 KIDNEY
@@ -336,7 +354,7 @@ def point_infusion_2
       '12th GUARD SAN JIAO' => [
         Point.find_or_create_by(name: 'TR.1'),
         Point.find_or_create_by(name: 'TR.2'),
-       [Point.find_or_create_by(name: 'TR.3'), Point.find_by(name: 'TR.4')],
+       [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
         Point.find_or_create_by(name: 'TR.6'),
         Point.find_or_create_by(name: 'TR.10')
       ] # SAN JIAO
@@ -452,683 +470,414 @@ end
       ] # SAN JIAO
       ]
     end
+# method infusion_2 with Model Points
 
-    def opened_points_infusion(trunc_day, guard, points_infusion)
-      result = []
-      case trunc_day
-        when 1
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[1][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[1][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[1][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[8][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[11][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[11][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[11][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[11][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[11][5] + ' is opened'
+  def points_infusion_2
+    {
+      'FIRST GUARD  JIA GALL_BLADDER' => [
+         Point.find_or_create_by(name: 'Vb.44'),
+         Point.find_or_create_by(name: 'Ig.2'),
+        [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
+         Point.find_or_create_by(name: 'Gi.5'),
+         Point.find_or_create_by(name: 'V.40')
+      ],  # GB
+
+      '2nd GUARD YI LIVER' => [
+          Point.find_or_create_by(name: 'F.1'),
+          Point.find_or_create_by(name: 'C.8'),
+         [Point.find_or_create_by(name: 'Rp.3'), Point.find_or_create_by(name: 'F.3')],
+          Point.find_or_create_by(name: 'P.8'),
+          Point.find_or_create_by(name: 'R.10')
+        ],  # LIVER
+
+        '3d GUARD BING SMALL INT' => [
+          Point.find_or_create_by(name: 'Ig.1'),
+          Point.find_or_create_by(name: 'E.44'),
+         [Point.find_or_create_by(name: 'Gi.3'), Point.find_or_create_by(name: 'Ig.4')],
+          Point.find_or_create_by(name: 'V.60'),
+          Point.find_or_create_by(name: 'Vb.34')
+        ], # SMALL INT
+
+        '4th GUARD DIN HEART' => [
+          Point.find_or_create_by(name: 'C.9'),
+          Point.find_or_create_by(name: 'Rp.2'),
+         [Point.find_or_create_by(name: 'P.9'), Point.find_or_create_by(name: 'C.7')],
+          Point.find_or_create_by(name: 'R.7'),
+          Point.find_or_create_by(name: 'F.8')
+        ],  # HEART
+
+        '5th GUARD WU STOMACH' => [
+          Point.find_or_create_by(name: 'E.45'),
+          Point.find_or_create_by(name: 'Gi.2'),
+         [Point.find_or_create_by(name: 'V.65'), Point.find_or_create_by(name: 'E.42')],
+          Point.find_or_create_by(name: 'Vb.38'),
+          Point.find_or_create_by(name: 'Ig.8')
+        ], # STOMACH
+
+        '6th GUARD JI SPLEEN' => [
+          Point.find_or_create_by(name: 'Rp.1'),
+          Point.find_or_create_by(name: 'P.10'),
+         [Point.find_or_create_by(name: 'R.3'), Point.find_or_create_by(name: 'Rp.3')],
+          Point.find_or_create_by(name: 'F.4'),
+          Point.find_or_create_by(name: 'C.3')
+        ], # SPLEEN
+
+        '7th GUARD GENG LARGE INT' => [
+          Point.find_or_create_by(name: 'Gi.1'),
+          Point.find_or_create_by(name: 'V.66'),
+         [Point.find_or_create_by(name: 'Vb.41'), Point.find_or_create_by(name: 'Gi.4')],
+          Point.find_or_create_by(name: 'Ig.5'),
+          Point.find_or_create_by(name: 'E.36')
+        ], # LARGE INT
+
+        '8th XIN LUNGS' => [
+          Point.find_or_create_by(name: 'P.11'),
+          Point.find_or_create_by(name: 'R.2'),
+         [Point.find_or_create_by(name: 'F.3'), Point.find_or_create_by(name: 'P.9')],
+          Point.find_or_create_by(name: 'C.4'),
+          Point.find_or_create_by(name: 'Rp.9')
+        ], # LUNGS
+
+        '9th GUARD REN BLADDER' => [
+          Point.find_or_create_by(name: 'V.67'),
+          Point.find_or_create_by(name: 'Vb.43'),
+         [Point.find_or_create_by(name: 'Ig.3'), Point.find_or_create_by(name: 'V.64')],
+          Point.find_or_create_by(name: 'E.41'),
+          Point.find_or_create_by(name: 'Gi.11')
+        ], # BLADDER
+
+        '10th GUARD GUI KIDNEY' => [
+          Point.find_or_create_by(name: 'R.1'),
+          Point.find_or_create_by(name: 'F.2'),
+         [Point.find_or_create_by(name: 'C.7'), Point.find_or_create_by(name: 'R.3')],
+          Point.find_or_create_by(name: 'Rp.5'),
+          Point.find_or_create_by(name: 'P.5')
+        ], # GUI, 10 KIDNEY
+
+        '11th GUARD MC' => [
+          Point.find_or_create_by(name: 'MC.9'),
+          Point.find_or_create_by(name: 'MC.8'),
+          Point.find_or_create_by(name: 'MC.7'),
+          Point.find_or_create_by(name: 'MC.5'),
+          Point.find_or_create_by(name: 'MC.3')
+        ], # MC  PERICARD
+
+        '12th GUARD SAN JIAO' => [
+          Point.find_or_create_by(name: 'TR.1'),
+          Point.find_or_create_by(name: 'TR.2'),
+         [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
+          Point.find_or_create_by(name: 'TR.6'),
+          Point.find_or_create_by(name: 'TR.10')
+        ] # SAN JIAO
+    }
+  end
+
+  def opened_points_infusion(trunc_day, guard, points_infusion)
+    result = []
+    case trunc_day
+      when 1
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[1][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[1][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[1][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[8][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[11][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[11][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[11][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[11][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[11][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[2][5] + ' is opened'
+        end
+      when 2
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[3][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[3][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[3][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[3][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[10][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[12][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[12][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[12][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[12][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[12][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[2][5] + ' is opened'
             elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[2][5] + ' is opened'
-          end
-        when 2
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[3][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[3][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[3][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[3][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[10][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[12][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[12][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[12][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[12][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[12][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[2][5] + ' is opened'
-              elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[4][5] + ' is opened'
-          end
-        when 3
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[5][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[5][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[5][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[5][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[10][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[11][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[11][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[11][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[11][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[11][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[4][5] + ' is opened'
+            result <<  '19:00 - 19:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[4][5] + ' is opened'
+        end
+      when 3
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[5][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[5][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[5][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[5][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[11][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[11][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[11][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[11][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[11][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[6][5] + ' is opened'
+        end
+      when 4
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[7][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[7][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[7][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[7][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[12][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[12][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[12][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[12][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[12][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[4][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[6][5] + ' is opened'
             elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[6][5] + ' is opened'
-          end
-        when 4
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[7][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[7][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[7][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[7][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[10][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[12][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[12][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[12][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[12][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[12][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[4][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[6][5] + ' is opened'
-              elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[8][5] + ' is opened'
-          end
-        when 5
-          if guard == 1
-              result <<  '23:00 - 23:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '23:24 - 23:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '23:48 - 00:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '00:12 - 00:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '00:36 - 00:59 ' + points_infusion[9][5] + ' is opened'
-              elsif guard == 2
-                result <<  '01:00 - 01:23 ' + points_infusion[10][1] + ' is opened'
-                result <<  '01:24 - 01:47 ' + points_infusion[10][2] + ' is opened'
-                result <<  '01:48 - 02:11 ' + points_infusion[10][3] + ' is opened'
-                result <<  '02:12 - 02:35 ' + points_infusion[10][4] + ' is opened'
-                result <<  '02:36 - 02:59 ' + points_infusion[10][5] + ' is opened'
-              elsif guard == 3
-                result <<  '03:00 - 03:23 ' + points_infusion[1][1] + ' is opened'
-                result <<  '03:24 - 03:47 ' + points_infusion[1][2] + ' is opened'
-                result <<  '03:48 - 04:11 ' + points_infusion[1][3] + ' is opened'
-                result <<  '04:11 - 04:35 ' + points_infusion[1][4] + ' is opened'
-                result <<  '04:36 - 04:59 ' + points_infusion[1][5] + ' is opened'
-              elsif guard == 4
-                result <<  '05:00 - 05:23 ' + points_infusion[2][1] + ' is opened'
-                result <<  '05:24 - 05:47 ' + points_infusion[2][2] + ' is opened'
-                result <<  '05:48 - 06:11 ' + points_infusion[2][3] + ' is opened'
-                result <<  '06:12 - 06:35 ' + points_infusion[2][4] + ' is opened'
-                result <<  '06:36 - 06:59 ' + points_infusion[2][5] + ' is opened'
-              elsif guard == 5
-                result <<  '07:00 - 07:23 ' + points_infusion[3][1] + ' is opened'
-                result <<  '07:24 - 07:47 ' + points_infusion[3][2] + ' is opened'
-                result <<  '07:48 - 08:11 ' + points_infusion[3][3] + ' is opened'
-                result <<  '08:12 - 08:35 ' + points_infusion[3][4] + ' is opened'
-                result <<  '08:36 - 08:59 ' + points_infusion[3][5] + ' is opened'
-              elsif guard == 6
-                result <<  '09:00 - 09:23 ' + points_infusion[11][1] + ' is opened'
-                result <<  '09:24 - 09:47 ' + points_infusion[11][2] + ' is opened'
-                result <<  '09:48 - 10:11 ' + points_infusion[11][3] + ' is opened'
-                result <<  '10:12 - 10:35 ' + points_infusion[11][4] + ' is opened'
-                result <<  '10:36 - 10:59 ' + points_infusion[11][5] + ' is opened'
-              elsif guard == 7
-                result <<  '11:00 - 11:23 ' + points_infusion[5][1] + ' is opened'
-                result <<  '11:24 - 11:47 ' + points_infusion[5][2] + ' is opened'
-                result <<  '11:48 - 12:11 ' + points_infusion[5][3] + ' is opened'
-                result <<  '12:12 - 12:35 ' + points_infusion[5][4] + ' is opened'
-                result <<  '12:36 - 12:59 ' + points_infusion[5][5] + ' is opened'
-              elsif guard == 8
-                result <<  '13:00 - 13:23 ' + points_infusion[6][1] + ' is opened'
-                result <<  '13:24 - 13:47 ' + points_infusion[6][2] + ' is opened'
-                result <<  '13:48 - 14:11 ' + points_infusion[6][3] + ' is opened'
-                result <<  '14:12 - 14:36 ' + points_infusion[6][4] + ' is opened'
-                result <<  '14:37 - 14:59 ' + points_infusion[6][5] + ' is opened'
-              elsif guard == 9
-                result <<  '15:00 - 15:23 ' + points_infusion[7][1] + ' is opened'
-                result <<  '15:24 - 15:47 ' + points_infusion[7][2] + ' is opened'
-                result <<  '15:48 - 16:11 ' + points_infusion[7][3] + ' is opened'
-                result <<  '16:12 - 16:35 ' + points_infusion[7][4] + ' is opened'
-                result <<  '16:36 - 16:59 ' + points_infusion[7][5] + ' is opened'
-              elsif guard == 10
-                result <<  '17:00 - 17:23 ' + points_infusion[8][1] + ' is opened'
-                result <<  '17:24 - 17:47 ' + points_infusion[8][2] + ' is opened'
-                result <<  '17:48 - 18:11 ' + points_infusion[8][3] + ' is opened'
-                result <<  '18:12 - 18:35 ' + points_infusion[8][4] + ' is opened'
-                result <<  '18:36 - 18:59 ' + points_infusion[8][5] + ' is opened'
-                elsif guard == 11
-                result <<  '19:00 - 19:23 ' + points_infusion[9][1] + ' is opened'
-                result <<  '19:24 - 19:47 ' + points_infusion[9][2] + ' is opened'
-                result <<  '19:48 - 20:11 ' + points_infusion[9][3] + ' is opened'
-                result <<  '20:12 - 20:35 ' + points_infusion[9][4] + ' is opened'
-                result <<  '20:36 - 20:59 ' + points_infusion[9][5] + ' is opened'
-              elsif guard == 12
-                result <<  '21:00 - 21:23 ' + points_infusion[10][1] + ' is opened'
-                result <<  '21:24 - 21:47 ' + points_infusion[10][2] + ' is opened'
-                result <<  '21:48 - 22:11 ' + points_infusion[10][3] + ' is opened'
-                result <<  '22:12 - 22:35 ' + points_infusion[10][4] + ' is opened'
-                result <<  '22:36 - 22:59 ' + points_infusion[10][5] + ' is opened'
-          end
-        when 6
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[1][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[1][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[1][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[12][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[12][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[12][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[12][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[12][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[8][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[10][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[2][5] + ' is opened'
-          end
-        when 7
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[3][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[3][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[3][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[3][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[11][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[11][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[11][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[11][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[11][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[10][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[4][5] + ' is opened'
-          end
-        when 8
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[5][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[5][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[5][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[5][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[12][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[12][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[12][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[12][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[12][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[10][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[2][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '19:48 - 20:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '21:48 - 22:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[6][5] + ' is opened'
-          end
-        when 9
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[7][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[7][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[7][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[7][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 2
-              result <<  '01:00 - 01:23 ' + points_infusion[11][1] + ' is opened'
-              result <<  '01:24 - 01:47 ' + points_infusion[11][2] + ' is opened'
-              result <<  '01:48 - 02:11 ' + points_infusion[11][3] + ' is opened'
-              result <<  '02:12 - 02:35 ' + points_infusion[11][4] + ' is opened'
-              result <<  '02:36 - 02:59 ' + points_infusion[11][5] + ' is opened'
-            elsif guard == 3
-              result <<  '03:00 - 03:23 ' + points_infusion[9][1] + ' is opened'
-              result <<  '03:24 - 03:47 ' + points_infusion[9][2] + ' is opened'
-              result <<  '03:48 - 04:11 ' + points_infusion[9][3] + ' is opened'
-              result <<  '04:11 - 04:35 ' + points_infusion[9][4] + ' is opened'
-              result <<  '04:36 - 04:59 ' + points_infusion[9][5] + ' is opened'
-            elsif guard == 4
-              result <<  '05:00 - 05:23 ' + points_infusion[10][1] + ' is opened'
-              result <<  '05:24 - 05:47 ' + points_infusion[10][2] + ' is opened'
-              result <<  '05:48 - 06:11 ' + points_infusion[10][3] + ' is opened'
-              result <<  '06:12 - 06:35 ' + points_infusion[10][4] + ' is opened'
-              result <<  '06:36 - 06:59 ' + points_infusion[10][5] + ' is opened'
-            elsif guard == 5
-              result <<  '07:00 - 07:23 ' + points_infusion[1][1] + ' is opened'
-              result <<  '07:24 - 07:47 ' + points_infusion[1][2] + ' is opened'
-              result <<  '07:48 - 08:11 ' + points_infusion[1][3] + ' is opened'
-              result <<  '08:12 - 08:35 ' + points_infusion[1][4] + ' is opened'
-              result <<  '08:36 - 08:59 ' + points_infusion[1][5] + ' is opened'
-            elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[2][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[2][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[2][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[2][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[2][5] + ' is opened'
-            elsif guard == 7
-              result <<  '11:00 - 11:23 ' + points_infusion[3][1] + ' is opened'
-              result <<  '11:24 - 11:47 ' + points_infusion[3][2] + ' is opened'
-              result <<  '11:48 - 12:11 ' + points_infusion[3][3] + ' is opened'
-              result <<  '12:12 - 12:35 ' + points_infusion[3][4] + ' is opened'
-              result <<  '12:36 - 12:59 ' + points_infusion[3][5] + ' is opened'
-            elsif guard == 8
-              result <<  '13:00 - 13:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '13:24 - 13:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '13:48 - 14:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '14:12 - 14:36 ' + points_infusion[4][4] + ' is opened'
-              result <<  '14:37 - 14:59 ' + points_infusion[4][5] + ' is opened'
-            elsif guard == 9
-              result <<  '15:00 - 15:23 ' + points_infusion[5][1] + ' is opened'
-              result <<  '15:24 - 15:47 ' + points_infusion[5][2] + ' is opened'
-              result <<  '15:48 - 16:11 ' + points_infusion[5][3] + ' is opened'
-              result <<  '16:12 - 16:35 ' + points_infusion[5][4] + ' is opened'
-              result <<  '16:36 - 16:59 ' + points_infusion[5][5] + ' is opened'
-            elsif guard == 10
-              result <<  '17:00 - 17:23 ' + points_infusion[6][1] + ' is opened'
-              result <<  '17:24 - 17:47 ' + points_infusion[6][2] + ' is opened'
-              result <<  '17:48 - 18:11 ' + points_infusion[6][3] + ' is opened'
-              result <<  '18:12 - 18:35 ' + points_infusion[6][4] + ' is opened'
-              result <<  '18:36 - 18:59 ' + points_infusion[6][5] + ' is opened'
-            elsif guard == 11
-              result <<  '19:00 - 19:23 ' + points_infusion[7][1] + ' is opened'
-              result <<  '19:24 - 19:47 ' + points_infusion[7][2] + ' is opened'
-              result <<  '19:48 - 22:11 ' + points_infusion[7][3] + ' is opened'
-              result <<  '22:12 - 22:35 ' + points_infusion[7][4] + ' is opened'
-              result <<  '22:36 - 22:59 ' + points_infusion[7][5] + ' is opened'
-            elsif guard == 12
-              result <<  '21:00 - 21:23 ' + points_infusion[8][1] + ' is opened'
-              result <<  '21:24 - 21:47 ' + points_infusion[8][2] + ' is opened'
-              result <<  '21:48 - 20:11 ' + points_infusion[8][3] + ' is opened'
-              result <<  '20:12 - 20:35 ' + points_infusion[8][4] + ' is opened'
-              result <<  '20:36 - 20:59 ' + points_infusion[8][5] + ' is opened'
-          end
-        when 10
-          if guard == 1
-            result <<  '23:00 - 23:23 ' + points_infusion[12][1] + ' is opened'
-            result <<  '23:24 - 23:47 ' + points_infusion[12][2] + ' is opened'
-            result <<  '23:48 - 00:11 ' + points_infusion[12][3] + ' is opened'
-            result <<  '00:12 - 00:35 ' + points_infusion[12][4] + ' is opened'
-            result <<  '00:36 - 00:59 ' + points_infusion[12][5] + ' is opened'
+            result <<  '19:00 - 19:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[8][5] + ' is opened'
+        end
+      when 5
+        if guard == 1
+            result <<  '23:00 - 23:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '23:24 - 23:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '23:48 - 00:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '00:12 - 00:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '00:36 - 00:59 ' + points_infusion[9][5] + ' is opened'
             elsif guard == 2
               result <<  '01:00 - 01:23 ' + points_infusion[10][1] + ' is opened'
               result <<  '01:24 - 01:47 ' + points_infusion[10][2] + ' is opened'
@@ -1154,11 +903,11 @@ end
               result <<  '08:12 - 08:35 ' + points_infusion[3][4] + ' is opened'
               result <<  '08:36 - 08:59 ' + points_infusion[3][5] + ' is opened'
             elsif guard == 6
-              result <<  '09:00 - 09:23 ' + points_infusion[4][1] + ' is opened'
-              result <<  '09:24 - 09:47 ' + points_infusion[4][2] + ' is opened'
-              result <<  '09:48 - 10:11 ' + points_infusion[4][3] + ' is opened'
-              result <<  '10:12 - 10:35 ' + points_infusion[4][4] + ' is opened'
-              result <<  '10:36 - 10:59 ' + points_infusion[4][5] + ' is opened'
+              result <<  '09:00 - 09:23 ' + points_infusion[11][1] + ' is opened'
+              result <<  '09:24 - 09:47 ' + points_infusion[11][2] + ' is opened'
+              result <<  '09:48 - 10:11 ' + points_infusion[11][3] + ' is opened'
+              result <<  '10:12 - 10:35 ' + points_infusion[11][4] + ' is opened'
+              result <<  '10:36 - 10:59 ' + points_infusion[11][5] + ' is opened'
             elsif guard == 7
               result <<  '11:00 - 11:23 ' + points_infusion[5][1] + ' is opened'
               result <<  '11:24 - 11:47 ' + points_infusion[5][2] + ' is opened'
@@ -1183,7 +932,7 @@ end
               result <<  '17:48 - 18:11 ' + points_infusion[8][3] + ' is opened'
               result <<  '18:12 - 18:35 ' + points_infusion[8][4] + ' is opened'
               result <<  '18:36 - 18:59 ' + points_infusion[8][5] + ' is opened'
-            elsif guard == 11
+              elsif guard == 11
               result <<  '19:00 - 19:23 ' + points_infusion[9][1] + ' is opened'
               result <<  '19:24 - 19:47 ' + points_infusion[9][2] + ' is opened'
               result <<  '19:48 - 20:11 ' + points_infusion[9][3] + ' is opened'
@@ -1195,11 +944,1247 @@ end
               result <<  '21:48 - 22:11 ' + points_infusion[10][3] + ' is opened'
               result <<  '22:12 - 22:35 ' + points_infusion[10][4] + ' is opened'
               result <<  '22:36 - 22:59 ' + points_infusion[10][5] + ' is opened'
+        end
+      when 6
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[1][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[1][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[1][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[12][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[12][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[12][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[12][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[12][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[8][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[2][5] + ' is opened'
+        end
+      when 7
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[3][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[3][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[3][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[3][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[11][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[11][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[11][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[11][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[11][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[10][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[4][5] + ' is opened'
+        end
+      when 8
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[5][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[5][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[5][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[5][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[12][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[12][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[12][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[12][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[12][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[2][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[6][5] + ' is opened'
+        end
+      when 9
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[7][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[7][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[7][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[7][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[11][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[11][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[11][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[11][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[11][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[4][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[6][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '19:48 - 22:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '21:48 - 20:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[8][5] + ' is opened'
+        end
+      when 10
+        if guard == 1
+          result <<  '23:00 - 23:23 ' + points_infusion[12][1] + ' is opened'
+          result <<  '23:24 - 23:47 ' + points_infusion[12][2] + ' is opened'
+          result <<  '23:48 - 00:11 ' + points_infusion[12][3] + ' is opened'
+          result <<  '00:12 - 00:35 ' + points_infusion[12][4] + ' is opened'
+          result <<  '00:36 - 00:59 ' + points_infusion[12][5] + ' is opened'
+          elsif guard == 2
+            result <<  '01:00 - 01:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '01:24 - 01:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '01:48 - 02:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '02:12 - 02:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '02:36 - 02:59 ' + points_infusion[10][5] + ' is opened'
+          elsif guard == 3
+            result <<  '03:00 - 03:23 ' + points_infusion[1][1] + ' is opened'
+            result <<  '03:24 - 03:47 ' + points_infusion[1][2] + ' is opened'
+            result <<  '03:48 - 04:11 ' + points_infusion[1][3] + ' is opened'
+            result <<  '04:11 - 04:35 ' + points_infusion[1][4] + ' is opened'
+            result <<  '04:36 - 04:59 ' + points_infusion[1][5] + ' is opened'
+          elsif guard == 4
+            result <<  '05:00 - 05:23 ' + points_infusion[2][1] + ' is opened'
+            result <<  '05:24 - 05:47 ' + points_infusion[2][2] + ' is opened'
+            result <<  '05:48 - 06:11 ' + points_infusion[2][3] + ' is opened'
+            result <<  '06:12 - 06:35 ' + points_infusion[2][4] + ' is opened'
+            result <<  '06:36 - 06:59 ' + points_infusion[2][5] + ' is opened'
+          elsif guard == 5
+            result <<  '07:00 - 07:23 ' + points_infusion[3][1] + ' is opened'
+            result <<  '07:24 - 07:47 ' + points_infusion[3][2] + ' is opened'
+            result <<  '07:48 - 08:11 ' + points_infusion[3][3] + ' is opened'
+            result <<  '08:12 - 08:35 ' + points_infusion[3][4] + ' is opened'
+            result <<  '08:36 - 08:59 ' + points_infusion[3][5] + ' is opened'
+          elsif guard == 6
+            result <<  '09:00 - 09:23 ' + points_infusion[4][1] + ' is opened'
+            result <<  '09:24 - 09:47 ' + points_infusion[4][2] + ' is opened'
+            result <<  '09:48 - 10:11 ' + points_infusion[4][3] + ' is opened'
+            result <<  '10:12 - 10:35 ' + points_infusion[4][4] + ' is opened'
+            result <<  '10:36 - 10:59 ' + points_infusion[4][5] + ' is opened'
+          elsif guard == 7
+            result <<  '11:00 - 11:23 ' + points_infusion[5][1] + ' is opened'
+            result <<  '11:24 - 11:47 ' + points_infusion[5][2] + ' is opened'
+            result <<  '11:48 - 12:11 ' + points_infusion[5][3] + ' is opened'
+            result <<  '12:12 - 12:35 ' + points_infusion[5][4] + ' is opened'
+            result <<  '12:36 - 12:59 ' + points_infusion[5][5] + ' is opened'
+          elsif guard == 8
+            result <<  '13:00 - 13:23 ' + points_infusion[6][1] + ' is opened'
+            result <<  '13:24 - 13:47 ' + points_infusion[6][2] + ' is opened'
+            result <<  '13:48 - 14:11 ' + points_infusion[6][3] + ' is opened'
+            result <<  '14:12 - 14:36 ' + points_infusion[6][4] + ' is opened'
+            result <<  '14:37 - 14:59 ' + points_infusion[6][5] + ' is opened'
+          elsif guard == 9
+            result <<  '15:00 - 15:23 ' + points_infusion[7][1] + ' is opened'
+            result <<  '15:24 - 15:47 ' + points_infusion[7][2] + ' is opened'
+            result <<  '15:48 - 16:11 ' + points_infusion[7][3] + ' is opened'
+            result <<  '16:12 - 16:35 ' + points_infusion[7][4] + ' is opened'
+            result <<  '16:36 - 16:59 ' + points_infusion[7][5] + ' is opened'
+          elsif guard == 10
+            result <<  '17:00 - 17:23 ' + points_infusion[8][1] + ' is opened'
+            result <<  '17:24 - 17:47 ' + points_infusion[8][2] + ' is opened'
+            result <<  '17:48 - 18:11 ' + points_infusion[8][3] + ' is opened'
+            result <<  '18:12 - 18:35 ' + points_infusion[8][4] + ' is opened'
+            result <<  '18:36 - 18:59 ' + points_infusion[8][5] + ' is opened'
+          elsif guard == 11
+            result <<  '19:00 - 19:23 ' + points_infusion[9][1] + ' is opened'
+            result <<  '19:24 - 19:47 ' + points_infusion[9][2] + ' is opened'
+            result <<  '19:48 - 20:11 ' + points_infusion[9][3] + ' is opened'
+            result <<  '20:12 - 20:35 ' + points_infusion[9][4] + ' is opened'
+            result <<  '20:36 - 20:59 ' + points_infusion[9][5] + ' is opened'
+          elsif guard == 12
+            result <<  '21:00 - 21:23 ' + points_infusion[10][1] + ' is opened'
+            result <<  '21:24 - 21:47 ' + points_infusion[10][2] + ' is opened'
+            result <<  '21:48 - 22:11 ' + points_infusion[10][3] + ' is opened'
+            result <<  '22:12 - 22:35 ' + points_infusion[10][4] + ' is opened'
+            result <<  '22:36 - 22:59 ' + points_infusion[10][5] + ' is opened'
+        end
+    end
+    return result
+  end
+
+ def opened_points_infusion_2(trunc_day, guard, points_infusion)
+      result = []
+      case trunc_day
+        when 1
+          if guard == 1
+            meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+              result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+              result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+              result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+              result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '6th GUARD JI SPLEEN'
+              result <<  { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
+              result <<  { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
+              result <<  { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
+              result <<  { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
+              result <<  { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '7th GUARD GENG LARGE INT'
+              result <<  { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result <<  { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result <<  { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result <<  { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result <<  { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '8th XIN LUNGS'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '11th GUARD MC'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 2
+          if guard == 1
+            meridian = '3d GUARD BING SMALL INT'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '6th GUARD JI SPLEEN'
+              result <<  { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
+              result <<  { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
+              result <<  { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
+              result <<  { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
+              result <<  { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '7th GUARD GENG LARGE INT'
+              result <<  { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
+              result <<  { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
+              result <<  { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
+              result <<  { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
+              result <<  { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '8th XIN LUNGS'
+              result << { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '11:00 - 11:23', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '13:00 - 13:23', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '12th GUARD SAN JIAO'
+              result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '17:00 - 17:23', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59', point: points_infusion[meridian][4] }
+              elsif guard == 11
+                meridian = '3d GUARD BING SMALL INT'
+              result <<  { time: '19:00 - 19:23', point: points_infusion[meridian][0] }
+              result <<  { time: '19:24 - 19:47', point: points_infusion[meridian][1] }
+              result <<  { time: '19:48 - 20:11', point: points_infusion[meridian][2] }
+              result <<  { time: '20:12 - 20:35', point: points_infusion[meridian][3] }
+              result <<  { time: '20:36 - 20:59', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '21:00 - 21:23', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59', point: points_infusion[meridian][4] }
+          end
+        when 3
+          if guard == 1
+            meridian = '5th GUARD WU STOMACH'
+            result << { time: '23:00 - 23:23', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '01:00 - 01:23', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '8th XIN LUNGS'
+              result << { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result <<  { time: '11:00 - 11:23', point: points_infusion[meridian][0] }
+              result <<  { time: '11:24 - 11:47', point: points_infusion[meridian][1] }
+              result <<  { time: '11:48 - 12:11', point: points_infusion[meridian][2] }
+              result <<  { time: '12:12 - 12:35', point: points_infusion[meridian][3] }
+              result <<  { time: '12:36 - 12:59', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '11th GUARD MC'
+              result << { time: '13:00 - 13:23', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11', point: points_infusion[meridian][3] }
+              result << { time: '16:12 - 16:35', point: points_infusion[meridian][4] }
+              result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '17:00 - 17:23', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11', point: points_infusion[meridian][3] }
+              result << { time: '18:12 - 18:35', point: points_infusion[meridian][4] }
+              result << { time: '18:36 - 18:59', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][3] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][4] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][3] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][4] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 4
+          if guard == 1
+            meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '23:00 - 23:23', point: points_infusion[meridian][0] }
+              result << { time: '23:24 - 23:47', point: points_infusion[meridian][1] }
+              result << { time: '23:48 - 00:11', point: points_infusion[meridian][2] }
+              result << { time: '00:12 - 00:35', point: points_infusion[meridian][3] }
+              result << { time: '00:36 - 00:59', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '8th XIN LUNGS'
+              result << { time: '01:00 - 01:23', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '12th GUARD SAN JIAO'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '8th XIN LUNGS'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 5
+          if guard == 1
+            meridian = '9th GUARD REN BLADDER'
+              result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+              result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+              result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+              result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+              result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 2
+                meridian = '10th GUARD GUI KIDNEY'
+                result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+                result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+                result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+                result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+                result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 3
+                meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+                result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+                result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+                result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+                result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+                result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 4
+                meridian = '2nd GUARD YI LIVER'
+                result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+                result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+                result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+                result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+                result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 5
+                meridian = '3d GUARD BING SMALL INT'
+                result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+                result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+                result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+                result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+                result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 6
+                meridian = '11th GUARD MC'
+                result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+                result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+                result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+                result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+                result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 7
+                meridian = '5th GUARD WU STOMACH'
+                result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+                result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+                result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+                result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+                result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 8
+                meridian = '6th GUARD JI SPLEEN'
+                result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+                result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+                result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+                result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+                result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 9
+                meridian = '7th GUARD GENG LARGE INT'
+                result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+                result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+                result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+                result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+                result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 10
+                meridian = '8th XIN LUNGS'
+                result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+                result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+                result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+                result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+                result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+                elsif guard == 11
+                  meridian = '9th GUARD REN BLADDER'
+                result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+                result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+                result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+                result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+                result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+              elsif guard == 12
+                meridian = '10th GUARD GUI KIDNEY'
+                result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+                result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+                result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+                result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+                result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 6
+          if guard == 1
+            meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian ='3d GUARD BING SMALL INT'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '12th GUARD SAN JIAO'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '8th XIN LUNGS'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 7
+          if guard == 1
+            meridian = '3d GUARD BING SMALL INT'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '11th GUARD MC'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '8th XIN LUNGS'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '17:00 - 17:23 ',  point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ',  point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ',  point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ',  point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ',  point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[4][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[4][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[4][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[4][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[4][4] }
+          end
+        when 8
+          if guard == 1
+            meridian = '5th GUARD WU STOMACH'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '12th GUARD SAN JIAO'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '8th XIN LUNGS'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+          end
+        when 9
+          if guard == 1
+            meridian = '7th GUARD GENG LARGE INT'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 2
+              meridian = '11th GUARD MC'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 3
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 4
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 5
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 6
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 7
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 8
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 9
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 10
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 11
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 22:11 ', point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            elsif guard == 12
+              meridian = '8th XIN LUNGS'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 20:11 ', point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+          end
+        when 10
+          if guard == 1
+            meridian = '12th GUARD SAN JIAO'
+            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][1] }
+            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][2] }
+            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][3] }
+            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][4] }
+            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 2
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][1] }
+              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][2] }
+              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][3] }
+              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][4] }
+              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 3
+              meridian = 'FIRST GUARD  JIA GALL_BLADDER'
+              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][1] }
+              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][2] }
+              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][3] }
+              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][4] }
+              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 4
+              meridian = '2nd GUARD YI LIVER'
+              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][1] }
+              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][2] }
+              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][3] }
+              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][4] }
+              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 5
+              meridian = '3d GUARD BING SMALL INT'
+              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][1] }
+              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][2] }
+              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][3] }
+              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][4] }
+              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 6
+              meridian = '4th GUARD DIN HEART'
+              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][1] }
+              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][2] }
+              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][3] }
+              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][4] }
+              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 7
+              meridian = '5th GUARD WU STOMACH'
+              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][1] }
+              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][2] }
+              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][3] }
+              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][4] }
+              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 8
+              meridian = '6th GUARD JI SPLEEN'
+              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][1] }
+              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][2] }
+              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][3] }
+              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][4] }
+              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 9
+              meridian = '7th GUARD GENG LARGE INT'
+              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][1] }
+              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][2] }
+              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][3] }
+              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][4] }
+              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 10
+              meridian = '8th XIN LUNGS'
+              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][1] }
+              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][2] }
+              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][3] }
+              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][4] }
+              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 11
+              meridian = '9th GUARD REN BLADDER'
+              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][1] }
+              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][2] }
+              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][3] }
+              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][4] }
+              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][5] }
+            elsif guard == 12
+              meridian = '10th GUARD GUI KIDNEY'
+              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][1] }
+              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][2] }
+              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][3] }
+              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][4] }
+              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][5] }
           end
       end
       return result
-    end
-
+ end
 
     # END OF 'INFUSION' METHOD (24 MINUTES)
 

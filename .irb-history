@@ -1,170 +1,154 @@
-       [Point.find_or_create_by(name: 'Rp.3'), Point.find_by(name: 'F.3')],
-        Point.find_or_create_by(name: 'P.8'),
-        Point.find_or_create_by(name: 'R.10')
-      ],  # LIVER
-      '3d GUARD BING SMALL INT' => [
-        Point.find_or_create_by(name: 'Ig.1'),
-        Point.find_or_create_by(name: 'E.44'),
-       [Point.find_or_create_by(name: 'Gi.3'), Point.find_by(name: 'Ig.4')],
-        Point.find_or_create_by(name: 'V.60'),
-        Point.find_or_create_by(name: 'Vb.34')
-      ], # SMALL INT
-      '4th GUARD DIN HEART' => [
-        Point.find_or_create_by(name: 'C.9'),
-        Point.find_or_create_by(name: 'Rp.2'),
-       [Point.find_or_create_by(name: 'P.9'), Point.find_by(name: 'C.7')],
-        Point.find_or_create_by(name: 'R.7'),
-        Point.find_or_create_by(name: 'F.8')
-      ],  # HEART
-      '5th GUARD WU STOMACH' => [
-        Point.find_or_create_by(name: 'E.45'),
-        Point.find_or_create_by(name: 'Gi.2'),
-       [Point.find_or_create_by(name: 'V.65'), Point.find_by(name: 'E.42')],
-        Point.find_or_create_by(name: 'Vb.38'),
-        Point.find_or_create_by(name: 'Ig.8')
-      ], # STOMACH
-      '6th GUARD JI SPLEEN' => [
-        Point.find_or_create_by(name: 'Rp.1'),
-        Point.find_or_create_by(name: 'P.10'),
-       [Point.find_or_create_by(name: 'R.3'), Point.find_by(name: 'Rp.3')],
-        Point.find_or_create_by(name: 'F.4'),
-        Point.find_or_create_by(name: 'C.3')
-      ], # SPLEEN
-      '7th GUARD GENG LARGE INT' => [
-        Point.find_or_create_by(name: 'Gi.1'),
-        Point.find_or_create_by(name: 'V.66'),
-       [Point.find_or_create_by(name: 'Vb.41'), Point.find_by(name: 'Gi.4')],
-        Point.find_or_create_by(name: 'Ig.5'),
-        Point.find_or_create_by(name: 'E.36')
-      ], # LARGE INT
-      '8th XIN LUNGS' => [
-        Point.find_or_create_by(name: 'P.11'),
-        Point.find_or_create_by(name: 'R.2'),
-       [Point.find_or_create_by(name: 'F.3'), Point.find_by(name: 'P.9')],
-        Point.find_or_create_by(name: 'C.4'),
-        Point.find_or_create_by(name: 'Rp.9')
-      ], # LUNGS
-      '9th GUARD REN BLADDER' => [
-        Point.find_or_create_by(name: 'V.67'),
-        Point.find_or_create_by(name: 'Vb.43'),
-       [Point.find_or_create_by(name: 'Ig.3'), Point.find_by(name: 'V.64')],
-        Point.find_or_create_by(name: 'E.41'),
-        Point.find_or_create_by(name: 'Gi.11')
-      ], # BLADDER
-      '10th GUARD GUI KIDNEY' => [
-        Point.find_or_create_by(name: 'R.1'),
-        Point.find_or_create_by(name: 'F.2'),
-       [Point.find_or_create_by(name: 'C.7'), Point.find_by(name: 'R.3')],
-        Point.find_or_create_by(name: 'Rp.5'),
-        Point.find_or_create_by(name: 'P.5')
-      ], # GUI, 10 KIDNEY
-      '11th GUARD MC ' => [
-        Point.find_or_create_by(name: 'MC.9'),
-        Point.find_or_create_by(name: 'MC.8'),
-        Point.find_or_create_by(name: 'MC.7'),
-        Point.find_or_create_by(name: 'MC.5'),
-        Point.find_or_create_by(name: 'MC.3')
-      ], # MC  PERICARD
-      '12th GUARD SAN JIAO' => [
-        Point.find_or_create_by(name: 'TR.1'),
-        Point.find_or_create_by(name: 'TR.2'),
-       [Point.find_or_create_by(name: 'TR.3'), Point.find_by(name: 'TR.4')],
-        Point.find_or_create_by(name: 'TR.6'),
-        Point.find_or_create_by(name: 'TR.10')
-      ] # SAN JIAO
-  }
-point_infusion_2
-point_infusion_2[1]
-point_infusion_2[1].values
-point_infusion_2[1].value
-point_infusion_2.class
-point_infusion_2.valuse
-point_infusion_2.values
-point_infusion_2.keys
-point_infusion_2.keys[1].value
-point_infusion_2.keys[1].values
-point_infusion_2.keys[1]
-point_infusion_2.keys[1].values
-point_infusion_2.keys[1]
-point_infusion_2.keys[1]
-Points.all
-Point.all
-Point.first
+a
+week = (DateTime.now..DateTime.now+7.days).to_a.to_time
+week = (DateTime.now..DateTime.now+7.days).to_a.each{|e| e.to_time}
+week
+week[1].clas
+week[1].class
+w
+week = (DateTime.now..DateTime.now+7.days).to_a
+week.each do |el|
+  p el.to_time
+end
+week = (DateTime.now..DateTime.now+7.days).to_a
+week.each do |el|
+  p el.to_time
+end
+week = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week.each do |el|
+  week_time.push.el.to_time
+end
+week = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week.each do |el|
+  el.to_time
+  week_time.push.el
+end
+  week_time.push.elweek = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week_time = week.each do |el|
+  el.to_time
+endweek = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week_time = week.each do |el|
+  el.to_time
+week = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week_time = week.each do |el|
+  el.to_time
+end
+week_time
+week = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week_time = week.each do |el|
+  el.to_time
+end
 reload!
-Point.first
-def point_infusion_2
+2-2
+week = (DateTime.now..DateTime.now+7.days).to_a
+week_time = []
+week_time = week.each do |el|
+  el.to_time
+end
+2-2
+week_time
+week_time[1].class
+week_time = week.each do |el|
+  el.to_time.push
+end
+a = Time.now.to_datetime
+a
+a.class
+DateTime.now
+DateTime.current
+a = [Time.now, Time.now+1.day]
+a
+  [Time.now, Time.now+1.day, TIme.now+2.day]
+  [Time.now, Time.now+1.day, TIme.now+2.day]
+  [Time.now, Time.now+1.day, Time.now+2.day]
+a =   [Time.now, Time.now+1.day, Time.now+2.day]
+a[1]
+a[1].clas
+a[1].class
+a[1].to_datetime
+week
+ee.each{ |e| p e}
+week.each{ |e| p e}
+Time.now+2.day
+Time.now+10.day
+exit
   {
     'FIRST GUARD  JIA GALL_BLADDER' => [
        Point.find_or_create_by(name: 'Vb.44'),
        Point.find_or_create_by(name: 'Ig.2'),
-      [Point.find_or_create_by(name: 'Vb.43'), Point.find_by(name: 'Vb.40')],
+      [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
        Point.find_or_create_by(name: 'Gi.5'),
        Point.find_or_create_by(name: 'V.40')
     ],  # GB
-   '2nd GUARD YI LIVER' => [
+    '2nd GUARD YI LIVER' => [
         Point.find_or_create_by(name: 'F.1'),
         Point.find_or_create_by(name: 'C.8'),
-       [Point.find_or_create_by(name: 'Rp.3'), Point.find_by(name: 'F.3')],
+       [Point.find_or_create_by(name: 'Rp.3'), Point.find_or_create_by(name: 'F.3')],
         Point.find_or_create_by(name: 'P.8'),
         Point.find_or_create_by(name: 'R.10')
       ],  # LIVER
       '3d GUARD BING SMALL INT' => [
         Point.find_or_create_by(name: 'Ig.1'),
         Point.find_or_create_by(name: 'E.44'),
-       [Point.find_or_create_by(name: 'Gi.3'), Point.find_by(name: 'Ig.4')],
+       [Point.find_or_create_by(name: 'Gi.3'), Point.find_or_create_by(name: 'Ig.4')],
         Point.find_or_create_by(name: 'V.60'),
         Point.find_or_create_by(name: 'Vb.34')
       ], # SMALL INT
       '4th GUARD DIN HEART' => [
         Point.find_or_create_by(name: 'C.9'),
         Point.find_or_create_by(name: 'Rp.2'),
-       [Point.find_or_create_by(name: 'P.9'), Point.find_by(name: 'C.7')],
+       [Point.find_or_create_by(name: 'P.9'), Point.find_or_create_by(name: 'C.7')],
         Point.find_or_create_by(name: 'R.7'),
         Point.find_or_create_by(name: 'F.8')
       ],  # HEART
       '5th GUARD WU STOMACH' => [
         Point.find_or_create_by(name: 'E.45'),
         Point.find_or_create_by(name: 'Gi.2'),
-       [Point.find_or_create_by(name: 'V.65'), Point.find_by(name: 'E.42')],
+       [Point.find_or_create_by(name: 'V.65'), Point.find_or_create_by(name: 'E.42')],
         Point.find_or_create_by(name: 'Vb.38'),
         Point.find_or_create_by(name: 'Ig.8')
       ], # STOMACH
       '6th GUARD JI SPLEEN' => [
         Point.find_or_create_by(name: 'Rp.1'),
         Point.find_or_create_by(name: 'P.10'),
-       [Point.find_or_create_by(name: 'R.3'), Point.find_by(name: 'Rp.3')],
+       [Point.find_or_create_by(name: 'R.3'), Point.find_or_create_by(name: 'Rp.3')],
         Point.find_or_create_by(name: 'F.4'),
         Point.find_or_create_by(name: 'C.3')
       ], # SPLEEN
       '7th GUARD GENG LARGE INT' => [
         Point.find_or_create_by(name: 'Gi.1'),
         Point.find_or_create_by(name: 'V.66'),
-       [Point.find_or_create_by(name: 'Vb.41'), Point.find_by(name: 'Gi.4')],
+       [Point.find_or_create_by(name: 'Vb.41'), Point.find_or_create_by(name: 'Gi.4')],
         Point.find_or_create_by(name: 'Ig.5'),
         Point.find_or_create_by(name: 'E.36')
       ], # LARGE INT
       '8th XIN LUNGS' => [
         Point.find_or_create_by(name: 'P.11'),
         Point.find_or_create_by(name: 'R.2'),
-       [Point.find_or_create_by(name: 'F.3'), Point.find_by(name: 'P.9')],
+       [Point.find_or_create_by(name: 'F.3'), Point.find_or_create_by(name: 'P.9')],
         Point.find_or_create_by(name: 'C.4'),
         Point.find_or_create_by(name: 'Rp.9')
       ], # LUNGS
       '9th GUARD REN BLADDER' => [
         Point.find_or_create_by(name: 'V.67'),
         Point.find_or_create_by(name: 'Vb.43'),
-       [Point.find_or_create_by(name: 'Ig.3'), Point.find_by(name: 'V.64')],
+       [Point.find_or_create_by(name: 'Ig.3'), Point.find_or_create_by(name: 'V.64')],
         Point.find_or_create_by(name: 'E.41'),
         Point.find_or_create_by(name: 'Gi.11')
       ], # BLADDER
       '10th GUARD GUI KIDNEY' => [
         Point.find_or_create_by(name: 'R.1'),
         Point.find_or_create_by(name: 'F.2'),
-       [Point.find_or_create_by(name: 'C.7'), Point.find_by(name: 'R.3')],
+       [Point.find_or_create_by(name: 'C.7'), Point.find_or_create_by(name: 'R.3')],
         Point.find_or_create_by(name: 'Rp.5'),
         Point.find_or_create_by(name: 'P.5')
       ], # GUI, 10 KIDNEY
-      '11th GUARD MC ' => [
+      '11th GUARD MC' => [
         Point.find_or_create_by(name: 'MC.9'),
         Point.find_or_create_by(name: 'MC.8'),
         Point.find_or_create_by(name: 'MC.7'),
@@ -174,27 +158,43 @@ def point_infusion_2
       '12th GUARD SAN JIAO' => [
         Point.find_or_create_by(name: 'TR.1'),
         Point.find_or_create_by(name: 'TR.2'),
-       [Point.find_or_create_by(name: 'TR.3'), Point.find_by(name: 'TR.4')],
+       [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
         Point.find_or_create_by(name: 'TR.6'),
         Point.find_or_create_by(name: 'TR.10')
       ] # SAN JIAO
   }
-end
-point_infusion_2.length
-Points.all.count
 Point.all.count
-Point.all.each{ |p| p p.name}
-Point.all.each{ |p| p p.name.sort_by('name')}
-Point.all.each{ |p| p p.name.sort_by(p.name)}
-Point.all.each{ |p| p p.name}
-a = []
-aPoint.all.each{ |p| a.push(p.name)}
-Point.all.each{ |p| a.push(p.name)}
-a
-a.sort
-a.sort_by("name")
-a.sort_by.name
-a.sort
-exit
+point = Point.all
+point.each{&p e.name}
+point.{& p e.name}
+point.{& p:name}
+point.{& p :name}
+point.{&  :name}
+point.each{& :name}
+point.each(& :name)
+point.each{&:name}
+point.each{& p :name}
+p point.each(& :name)
+point.each{&p e.name}
+point.each{|e| & p :name}
+point.each{|e| & p e.name}
+point.each{|e| p e.name}
+point.each{|e| p e.name}.sort
+point.each{|e| p e.name}.sort_by(name)
+point.each{|e| p e.name}.sort_by("name")
+point.each{|e| p e.name}.sort
+point.each{|e| p e.name}.sort_by("name")
+point.count
+Point.all.count
+Point.count
+(Time.now..Time.now+7.days)
+a = (Time.now..Time.now+7.days)
+a.class
+a.to_a
+a = (DateTime.now..DateTime.now+7.days)
+a.to_a
+DateTime.current.to_time
+Time.now.year
+Time.now.yday
 git status
 exit

@@ -42,8 +42,9 @@ ul>li {
   list-style-type: disc;
 }
 
-table {
+table, tr, td{
   border-spacing: 5px 10px;
+ /* border: 1px solid black;*/
 
 }
 

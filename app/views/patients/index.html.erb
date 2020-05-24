@@ -44,10 +44,29 @@
     <%=  f.datetime_select  :date, default: DateTime.now %>
     <%= f.submit "Рассчитать" %>
     <% end %>
+</p>
+
+<p>
+    <h3>ЛИНГУЙБАФА на неделю</h3>
+    <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%= f.submit "Рассчитать" %>
+    <% end %>
+</p>
 
   <p>
     <h3>МЕТОД "24 минуты"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
+    <%= f.label " Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%= f.submit "Рассчитать" %>
+    <% end %>
+  </p>
+
+  <p>
+    <h3>МЕТОД "24 минуты - 2"</h3>
+    <%= form_with local: true, method: :get, url: points_infusion_2_path do |f| %>
     <%= f.label " Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now %>
     <%= f.submit "Рассчитать" %>
