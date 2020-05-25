@@ -24,8 +24,9 @@ end
    def linguibafa_7_times
       @time_zone = params["time_zone"]
       # binding.pry
+      @offset_for_time_table = (@doctor_current_date.in_time_zone(@time_zone) - @sun_time)/3660
       @opened_points_linguibafa =
-      (@doctor_current_date.to_datetime..@doctor_current_date.to_datetime+6.days).map do |date|
+      (@doctor_current_date.in_time_zone(@time_zone).to_datetime..@doctor_current_date.in_time_zone(@time_zone).to_datetime+6.days).map do |date|
        {date: date, point: opened_point_linguibafa(@doctor_city, date) }
       end
    end
@@ -70,7 +71,6 @@ end
         @moment = moment_of_birth(@patient_birthdate, @patient_city)
         @guard_patient = guard(@patient_city, @patient_birthdate)
         @guard_doctor = guard(@doctor_city, @doctor_current_date )
-
         @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
         @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
           @number_of_day_60th, @guard_doctor)
@@ -2812,19 +2812,19 @@ def ranges
   { value: 11, dates: DateTime.new(1951, 11, 29)..DateTime.new(1951, 12, 27) },
   { value: 12, dates: DateTime.new(1951, 12, 28)..DateTime.new(1951, 12, 31) },
 
-  { value: 12, dates: DateTime.new(19, 1, 1)..DateTime.new(19, 1, 26) }, # 1952
-  { value: 1, dates: DateTime.new(19, 1, 27)..DateTime.new(19, 2, 24) },
-  { value: 2, dates: DateTime.new(19, 2, 25)..DateTime.new(19, 3, 25) },
-  { value: 3, dates: DateTime.new(19, 3, 26)..DateTime.new(19, 4, 23) },
-  { value: 4, dates: DateTime.new(19, 4, 24)..DateTime.new(19, 5, 23) },
-  { value: 5, dates: DateTime.new(19, 5, 24)..DateTime.new(19, 6, 21) },
-  { value: 5, dates: DateTime.new(19, 6, 22)..DateTime.new(19, 7, 21) },
-  { value: 6, dates: DateTime.new(19, 7, 22)..DateTime.new(19, 8, 19) },
-  { value: 7, dates: DateTime.new(19, 8, 20)..DateTime.new(19, 9, 18) },
-  { value: 8, dates: DateTime.new(19, 9, 19)..DateTime.new(19, 10, 18) },
-  { value: 9, dates: DateTime.new(19, 10, 19)..DateTime.new(19, 11, 16) },
-  { value: 10, dates: DateTime.new(19, 11, 17)..DateTime.new(19, 12, 16) },
-  { value: 11, dates: DateTime.new(19, 12, 17)..DateTime.new(19, 12, 31) },
+  { value: 12, dates: DateTime.new(1952, 1, 1)..DateTime.new(1952, 1, 26) }, # 1952
+  { value: 1, dates: DateTime.new(1952, 1, 27)..DateTime.new(1952, 2, 24) },
+  { value: 2, dates: DateTime.new(1952, 2, 25)..DateTime.new(1952, 3, 25) },
+  { value: 3, dates: DateTime.new(1952, 3, 26)..DateTime.new(1952, 4, 23) },
+  { value: 4, dates: DateTime.new(1952, 4, 24)..DateTime.new(1952, 5, 23) },
+  { value: 5, dates: DateTime.new(1952, 5, 24)..DateTime.new(1952, 6, 21) },
+  { value: 5, dates: DateTime.new(1952, 6, 22)..DateTime.new(1952, 7, 21) },
+  { value: 6, dates: DateTime.new(1952, 7, 22)..DateTime.new(1952, 8, 19) },
+  { value: 7, dates: DateTime.new(1952, 8, 20)..DateTime.new(1952, 9, 18) },
+  { value: 8, dates: DateTime.new(1952, 9, 19)..DateTime.new(1952, 10, 18) },
+  { value: 9, dates: DateTime.new(1952, 10, 19)..DateTime.new(1952, 11, 16) },
+  { value: 10, dates: DateTime.new(1952, 11, 17)..DateTime.new(1952, 12, 16) },
+  { value: 11, dates: DateTime.new(1952, 12, 17)..DateTime.new(1952, 12, 31) },
 
   { value: 11, dates: DateTime.new(1953, 1, 1)..DateTime.new(1953, 1, 14) }, # 1953
   { value: 12, dates: DateTime.new(1953, 1, 15)..DateTime.new(1953, 2, 13) },

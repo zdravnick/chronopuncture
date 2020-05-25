@@ -1,166 +1,3 @@
-a
-week = (DateTime.now..DateTime.now+7.days).to_a.to_time
-week = (DateTime.now..DateTime.now+7.days).to_a.each{|e| e.to_time}
-week
-week[1].clas
-week[1].class
-w
-week = (DateTime.now..DateTime.now+7.days).to_a
-week.each do |el|
-  p el.to_time
-end
-week = (DateTime.now..DateTime.now+7.days).to_a
-week.each do |el|
-  p el.to_time
-end
-week = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week.each do |el|
-  week_time.push.el.to_time
-end
-week = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week.each do |el|
-  el.to_time
-  week_time.push.el
-end
-  week_time.push.elweek = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week_time = week.each do |el|
-  el.to_time
-endweek = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week_time = week.each do |el|
-  el.to_time
-week = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week_time = week.each do |el|
-  el.to_time
-end
-week_time
-week = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week_time = week.each do |el|
-  el.to_time
-end
-reload!
-2-2
-week = (DateTime.now..DateTime.now+7.days).to_a
-week_time = []
-week_time = week.each do |el|
-  el.to_time
-end
-2-2
-week_time
-week_time[1].class
-week_time = week.each do |el|
-  el.to_time.push
-end
-a = Time.now.to_datetime
-a
-a.class
-DateTime.now
-DateTime.current
-a = [Time.now, Time.now+1.day]
-a
-  [Time.now, Time.now+1.day, TIme.now+2.day]
-  [Time.now, Time.now+1.day, TIme.now+2.day]
-  [Time.now, Time.now+1.day, Time.now+2.day]
-a =   [Time.now, Time.now+1.day, Time.now+2.day]
-a[1]
-a[1].clas
-a[1].class
-a[1].to_datetime
-week
-ee.each{ |e| p e}
-week.each{ |e| p e}
-Time.now+2.day
-Time.now+10.day
-exit
-  {
-    'FIRST GUARD  JIA GALL_BLADDER' => [
-       Point.find_or_create_by(name: 'Vb.44'),
-       Point.find_or_create_by(name: 'Ig.2'),
-      [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
-       Point.find_or_create_by(name: 'Gi.5'),
-       Point.find_or_create_by(name: 'V.40')
-    ],  # GB
-    '2nd GUARD YI LIVER' => [
-        Point.find_or_create_by(name: 'F.1'),
-        Point.find_or_create_by(name: 'C.8'),
-       [Point.find_or_create_by(name: 'Rp.3'), Point.find_or_create_by(name: 'F.3')],
-        Point.find_or_create_by(name: 'P.8'),
-        Point.find_or_create_by(name: 'R.10')
-      ],  # LIVER
-      '3d GUARD BING SMALL INT' => [
-        Point.find_or_create_by(name: 'Ig.1'),
-        Point.find_or_create_by(name: 'E.44'),
-       [Point.find_or_create_by(name: 'Gi.3'), Point.find_or_create_by(name: 'Ig.4')],
-        Point.find_or_create_by(name: 'V.60'),
-        Point.find_or_create_by(name: 'Vb.34')
-      ], # SMALL INT
-      '4th GUARD DIN HEART' => [
-        Point.find_or_create_by(name: 'C.9'),
-        Point.find_or_create_by(name: 'Rp.2'),
-       [Point.find_or_create_by(name: 'P.9'), Point.find_or_create_by(name: 'C.7')],
-        Point.find_or_create_by(name: 'R.7'),
-        Point.find_or_create_by(name: 'F.8')
-      ],  # HEART
-      '5th GUARD WU STOMACH' => [
-        Point.find_or_create_by(name: 'E.45'),
-        Point.find_or_create_by(name: 'Gi.2'),
-       [Point.find_or_create_by(name: 'V.65'), Point.find_or_create_by(name: 'E.42')],
-        Point.find_or_create_by(name: 'Vb.38'),
-        Point.find_or_create_by(name: 'Ig.8')
-      ], # STOMACH
-      '6th GUARD JI SPLEEN' => [
-        Point.find_or_create_by(name: 'Rp.1'),
-        Point.find_or_create_by(name: 'P.10'),
-       [Point.find_or_create_by(name: 'R.3'), Point.find_or_create_by(name: 'Rp.3')],
-        Point.find_or_create_by(name: 'F.4'),
-        Point.find_or_create_by(name: 'C.3')
-      ], # SPLEEN
-      '7th GUARD GENG LARGE INT' => [
-        Point.find_or_create_by(name: 'Gi.1'),
-        Point.find_or_create_by(name: 'V.66'),
-       [Point.find_or_create_by(name: 'Vb.41'), Point.find_or_create_by(name: 'Gi.4')],
-        Point.find_or_create_by(name: 'Ig.5'),
-        Point.find_or_create_by(name: 'E.36')
-      ], # LARGE INT
-      '8th XIN LUNGS' => [
-        Point.find_or_create_by(name: 'P.11'),
-        Point.find_or_create_by(name: 'R.2'),
-       [Point.find_or_create_by(name: 'F.3'), Point.find_or_create_by(name: 'P.9')],
-        Point.find_or_create_by(name: 'C.4'),
-        Point.find_or_create_by(name: 'Rp.9')
-      ], # LUNGS
-      '9th GUARD REN BLADDER' => [
-        Point.find_or_create_by(name: 'V.67'),
-        Point.find_or_create_by(name: 'Vb.43'),
-       [Point.find_or_create_by(name: 'Ig.3'), Point.find_or_create_by(name: 'V.64')],
-        Point.find_or_create_by(name: 'E.41'),
-        Point.find_or_create_by(name: 'Gi.11')
-      ], # BLADDER
-      '10th GUARD GUI KIDNEY' => [
-        Point.find_or_create_by(name: 'R.1'),
-        Point.find_or_create_by(name: 'F.2'),
-       [Point.find_or_create_by(name: 'C.7'), Point.find_or_create_by(name: 'R.3')],
-        Point.find_or_create_by(name: 'Rp.5'),
-        Point.find_or_create_by(name: 'P.5')
-      ], # GUI, 10 KIDNEY
-      '11th GUARD MC' => [
-        Point.find_or_create_by(name: 'MC.9'),
-        Point.find_or_create_by(name: 'MC.8'),
-        Point.find_or_create_by(name: 'MC.7'),
-        Point.find_or_create_by(name: 'MC.5'),
-        Point.find_or_create_by(name: 'MC.3')
-      ], # MC  PERICARD
-      '12th GUARD SAN JIAO' => [
-        Point.find_or_create_by(name: 'TR.1'),
-        Point.find_or_create_by(name: 'TR.2'),
-       [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
-        Point.find_or_create_by(name: 'TR.6'),
-        Point.find_or_create_by(name: 'TR.10')
       ] # SAN JIAO
   }
 Point.all.count
@@ -198,3 +35,166 @@ Time.now.year
 Time.now.yday
 git status
 exit
+Doctor.last
+Doctor.find_by(name: "Nick")
+Patient.doctors
+Patients.doctors
+Patient.all.doctors
+Patient.all.doctors.find
+Patient.all.doctor
+Patient.sort_by(doctor.name)
+Patient.sort_by(doctor(name: "Nick")
+Patient.sort_by(doctor(name: "Nick"))
+Doctor.where(name: "Nick")
+Doctor.where(name: "Nick").patient
+Doctor.where(name: "Nick").patients
+Patient.where(doctor.name: "Nick")
+Patient.where(doctor.name: => "Nick")
+Patient.where.doctor(name: => "Nick")
+Patient.where.doctor(name: "Nick")
+<ActiveRecord::QueryMethods
+ActiveRecord::QueryMethods
+ActiveRecord::QueryMethods.all
+p Patient.where.doctor(name: "Nick")
+p Patient.where.doctor("name: 'Nick'")
+p Patient.where(doctor"name: 'Nick'")
+p Patient.where(doctor.name: 'Nick'")
+p Patient.where("doctor.name: 'Nick'")
+p Patient.where("doctor.name 'Nick'")
+p Patient.where("doctor.name = 'Nick'")
+p Patient.where("doctors.name = 'Nick'")
+Doctor.last
+Doctor.last.name
+p Patient.where("Doctor.name = 'Nick'")
+p Patient.where("Doctor.find_by(name = 'Nick'"))
+p Patient.where("Doctor.find_by(name: 'Nick'"))
+
+p Patient.all.where("Doctor.find_by(name: 'Nick'")
+p Patient.all.where("Doctor.find_by(name: 'Nick'"))
+a = Doctor.find_by(name: "Nick")
+a.patients
+a.patients.name
+a.patients.each{|name| p name}
+a.patients.each{|name| p patient.name}
+a.patients.each{|name| p name=patient.name}
+a.patients.each{|name| p name = patient.name}
+a.patients.each{|name| p name = patients.name}
+a.patients.each{|n| p n.name}
+a.patients.find_by{|n| p n.name}
+a.patients.find_each{|n| p n.name}
+a.patients.find_each{|n| p n.name}
+a.patients.each{|n| p n.name}
+a.patients.find_each{|n| p n.name}
+a.parol
+Patient.all.sort_by(doctors.id)
+Patient.all.sort_by(patient.doctors.id)
+Patient.each{ |p| p.doctor.name}
+Patient.all.each{ |p| p.doctor.name}
+Patient.all.find_each{ |p| p.doctor.name}
+Patient.all.find_by{ |p| p.doctor.name}
+Patient.all.find_by.each{ |p| p.doctor.name}
+Patient.all.find_by(each{ |p| p.doctor.name})
+Patient.all.find_by{ |p| p.doctor}
+Patient.all.each{ |p| p.doctor}
+Patient.all.each{ |p|p  p.doctor.name}
+Patient.all.find_each{ |p|p  p.doctor.name
+DateTime.current
+DateTime.current.day
+DateTime.current.hours
+DateTime.current.offset
+DateTime.current.in_time_zone('Elaterinburg')
+DateTime.current.in_time_zone('Ekaterinburg')
+a = DateTime.current.in_time_zone('Ekaterinburg')
+a
+a
+a.offset
+a.utc.offset
+a.methods
+a.methods.dst?
+a.dst?
+a.methods grep "off"
+a.methods.grep "off"
+a.utc_offset
+a.utc_offset/3600
+a
+Doctor.last
+
+a = Doctor.last
+City.all(a)
+City.all.where(doctor: a)
+City.all.where(doctor: a).time_zone = "Moscow"
+City.all.where(doctor
+City.all.where(doctor: a).time_zone("Moscow")
+City.all.where(doctor: a)
+City.all.where(doctor: a) = City(2)
+a = City.all.where(doctor: a)
+City(2)
+City[2]
+City.all[2]
+a = City.all[2]
+City.all.where(doctor: a) = a
+City.all.where(doctor: a) 
+Doctor.last
+a
+doc = Doctor.last
+doc
+doc.city
+doc.city = City.all[2]
+doc
+doc.save
+doc.city = City.all[1]
+doc.save
+doc
+doc.city
+doc.city = City.all[0]
+doc.city = City.all[0]
+doc.save
+doc.city
+doc.city = City.all[1]
+doc.city
+doc.save
+doc.city = City.all[0]
+doc.city
+doc.save
+doc.city = City.all[2]
+doc.city
+doc.save
+doc.city = City.all[0]
+doc.save
+doc.city = City.all[3]
+doc.city
+doc.save
+doc.city = City.all[2]
+doc.city
+doc.save
+doc.city = City.all[0]
+doc.save
+doc.city = City.all[3]
+doc.city
+doc.save
+Time.now.zone
+reload!
+Time.now.zone
+doc.city = City.all[2]
+doc.city
+doc.save
+doc.city = City.all[0]
+doc.save
+doc.city = City.all[2]
+doc.save
+doc.city = City.all[1]
+doc.save
+doc.city = City.all[2]
+doc.save
+doc.city = City.all[0]
+doc.save
+doc.city = City.all[2]
+doc.save
+doc.city = City.all[0]
+doc.save
+doc.city = City.all[2]
+doc.save
+doc.city = City.all[1]
+doc.save
+doc.city = City.all[0]
+doc.save

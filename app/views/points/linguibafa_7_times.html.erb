@@ -1,5 +1,5 @@
 <h1> лингуй_7_дней </h1>
-<h1><%= @doctor_current_date.in_time_zone(current_doctor.city.time_zone)%></h1>
+<h1><%=  @doctor_current_date.in_time_zone(current_doctor.city.time_zone)%></h1>
 
 <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
@@ -10,11 +10,11 @@
     <td><%= elem[:point].to_s%></td>
     <td>
       <table>
-        <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
+        <% (0..23).select{ |h| h.even? }.each do  |hour| %>
           <% date = elem[:date].change(hour: hour) %>
           <%  point = opened_point_linguibafa(@doctor_city, date) %>
           <tr>
-           <td> <%= date.strftime("%H:%M") %> </td>
+            <td> <%= (date-@offset_for_time_table.hour).strftime("%H:%M")  %> </td>
            <td>
             <% if params[:a]%>
              <%  if point == params[:a] %>

@@ -28,7 +28,7 @@ outline: none !important
   height: 100%;
   margin-bottom: 30px;
   font-size: 100%;
-  background-color:  #efdcc3 ;
+  background-color:   #faf3eb ;
   /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
   /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', */
 
@@ -59,6 +59,7 @@ ol, td {
 
 a {
   margin-bottom: 10px;
+  background-color: lightgreen;
   text-decoration: none;
   color: black;
   box-shadow: 3px 3px 3px #630;
@@ -82,8 +83,8 @@ a:hover, .btn-control:hover {
   color: wheat;
   border-radius: 10px;
   /*border: 2px solid black;*/
-  transform: scale(1.05);
-  box-shadow: 3px 2px 3px 2px white;
+/*  transform: scale(1.05);
+*/  box-shadow: 3px 2px 3px 2px white;
   /*box-shadow: 4px 4px 4px #630;*/
 }
 
@@ -92,10 +93,10 @@ a:active,  .btn-control:active {
   outline: none !important;
   background-color: #666600;
   color: white;
-  transform: scale(0.99);
+ /* transform: scale(0.99);*/
   border: none;
   border-radius: 10px;
-  box-shadow:   1px 1px 1px 1px white,  -1px -1px 1px 1px white;
+  box-shadow:   1px 1px 1px 1px black,  -1px -1px 1px 1px black;
 /*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown
 */  padding: 3px;
 

@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
 
 def create
 
-    Patient.create(
+   @patient =  Patient.create(
       doctor: current_doctor,
       name: params[:name],
       birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
@@ -18,7 +18,7 @@ def create
       description: params["description"],
       city_id: params["city_id"]
     )
-    redirect_to patients_path
+    redirect_to patient_path(@patient) rescue redirect_to patients_path flash.notice = 'Имени у пациента нет!'
 
 end
 
