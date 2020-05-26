@@ -1,200 +1,200 @@
-      ] # SAN JIAO
-  }
-Point.all.count
-point = Point.all
-point.each{&p e.name}
-point.{& p e.name}
-point.{& p:name}
-point.{& p :name}
-point.{&  :name}
-point.each{& :name}
-point.each(& :name)
-point.each{&:name}
-point.each{& p :name}
-p point.each(& :name)
-point.each{&p e.name}
-point.each{|e| & p :name}
-point.each{|e| & p e.name}
-point.each{|e| p e.name}
-point.each{|e| p e.name}.sort
-point.each{|e| p e.name}.sort_by(name)
-point.each{|e| p e.name}.sort_by("name")
-point.each{|e| p e.name}.sort
-point.each{|e| p e.name}.sort_by("name")
-point.count
-Point.all.count
-Point.count
-(Time.now..Time.now+7.days)
-a = (Time.now..Time.now+7.days)
-a.class
-a.to_a
-a = (DateTime.now..DateTime.now+7.days)
-a.to_a
-DateTime.current.to_time
-Time.now.year
-Time.now.yday
-git status
+a
+doc.sity
+doc
+doc.sity
+doc.city
+doc.save
+a = City[0]
+a = City.all[0]
+a
+doc.city = a
+doc.city
+doc.save
 exit
-Doctor.last
-Doctor.find_by(name: "Nick")
-Patient.doctors
-Patients.doctors
-Patient.all.doctors
-Patient.all.doctors.find
-Patient.all.doctor
-Patient.sort_by(doctor.name)
-Patient.sort_by(doctor(name: "Nick")
-Patient.sort_by(doctor(name: "Nick"))
-Doctor.where(name: "Nick")
-Doctor.where(name: "Nick").patient
-Doctor.where(name: "Nick").patients
-Patient.where(doctor.name: "Nick")
-Patient.where(doctor.name: => "Nick")
-Patient.where.doctor(name: => "Nick")
-Patient.where.doctor(name: "Nick")
-<ActiveRecord::QueryMethods
-ActiveRecord::QueryMethods
-ActiveRecord::QueryMethods.all
-p Patient.where.doctor(name: "Nick")
-p Patient.where.doctor("name: 'Nick'")
-p Patient.where(doctor"name: 'Nick'")
-p Patient.where(doctor.name: 'Nick'")
-p Patient.where("doctor.name: 'Nick'")
-p Patient.where("doctor.name 'Nick'")
-p Patient.where("doctor.name = 'Nick'")
-p Patient.where("doctors.name = 'Nick'")
-Doctor.last
-Doctor.last.name
-p Patient.where("Doctor.name = 'Nick'")
-p Patient.where("Doctor.find_by(name = 'Nick'"))
-p Patient.where("Doctor.find_by(name: 'Nick'"))
-
-p Patient.all.where("Doctor.find_by(name: 'Nick'")
-p Patient.all.where("Doctor.find_by(name: 'Nick'"))
-a = Doctor.find_by(name: "Nick")
-a.patients
-a.patients.name
-a.patients.each{|name| p name}
-a.patients.each{|name| p patient.name}
-a.patients.each{|name| p name=patient.name}
-a.patients.each{|name| p name = patient.name}
-a.patients.each{|name| p name = patients.name}
-a.patients.each{|n| p n.name}
-a.patients.find_by{|n| p n.name}
-a.patients.find_each{|n| p n.name}
-a.patients.find_each{|n| p n.name}
-a.patients.each{|n| p n.name}
-a.patients.find_each{|n| p n.name}
-a.parol
-Patient.all.sort_by(doctors.id)
-Patient.all.sort_by(patient.doctors.id)
-Patient.each{ |p| p.doctor.name}
-Patient.all.each{ |p| p.doctor.name}
-Patient.all.find_each{ |p| p.doctor.name}
-Patient.all.find_by{ |p| p.doctor.name}
-Patient.all.find_by.each{ |p| p.doctor.name}
-Patient.all.find_by(each{ |p| p.doctor.name})
-Patient.all.find_by{ |p| p.doctor}
-Patient.all.each{ |p| p.doctor}
-Patient.all.each{ |p|p  p.doctor.name}
-Patient.all.find_each{ |p|p  p.doctor.name
-DateTime.current
-DateTime.current.day
-DateTime.current.hours
-DateTime.current.offset
-DateTime.current.in_time_zone('Elaterinburg')
-DateTime.current.in_time_zone('Ekaterinburg')
-a = DateTime.current.in_time_zone('Ekaterinburg')
-a
-a
-a.offset
-a.utc.offset
+City.all[0]
+City.all[0].lat = 53.4
+City.all[0].save
+City.all[0]
+City.all[0].update(lat: 53.4)
+City.all[0]
+Time.now
+Time.current
+Time.now.in_time_zone('Ekaterinburg')
+Time.current.in_time_zone('Ekaterinburg')
+Time.methods
+Time.now.utc
+Time.utc
+Time.now.zone_offset
+Time.now.yday
+Time.now.zone_offset('Moscow", year=self.now.year)
+Time.now.zone_offset('Moscow', year=self.now.year)
+Time.now.zone_offset('Moscow', year=2020)
+Time.zone_offset('EST')
+Time.zone_offset('Ekaterinburg')
+Time.now.zone
+DateTime.now.zone
+Time.zone_offset('UTC')
+Time.zone_offset('Moscow')
+Time.zone_offset('EKT')
+Time.zone_offset('MSK')
+Time.zone.names
+Time.zone ?
+2-2
+Time.zone help
+Time.zone.now
+Time.now
+Time.zone.now.in_time_zone( 'Europe/Moscow')
+Time.now.in_time_zone( 'Europe/Moscow')
+Time.now.in_time_zone( 'Moscow')
+Time.now.in_time_zone( 'Ekaterinburg')
+Time.now.in_time_zone( 'Europe/Ekaterinburg')
+Time.now.in_time_zone( 'Europe/Ekaterinburg')
+Time.zone.now.in_time_zone( 'Europe/Moscow')
+Time.zone.now.in_time_zone( 'Europe/Moscow').xmlschema
+Time.zone.now.
+Time.zone.now.in_time_zone( 'Europe/Moscow').class
+Time.zone.now.in_time_zone( 'Europe/Moscow').to_datetime
+a = Time.zone.now.in_time_zone( 'Europe/Moscow').to_datetime
+a.class
 a.methods
-a.methods.dst?
-a.dst?
-a.methods grep "off"
-a.methods.grep "off"
-a.utc_offset
-a.utc_offset/3600
+a.utc
+aa.next_week
+a.next_week
+(a..a.next_week).to_a
+week = (a..a.next_week).to_a
+week[1]
+rake time:zones:all
+a = Time.zone.now.in_time_zone( 'MSK')
+a = Time.zone.now.in_time_zone( 'YEKT')
+exit
+Citi.new( name: "Tbilisi UTC +04:00", lng: 41,69, lat: 44,83)
+City.new( name: "Tbilisi UTC +04:00", lng: 41,69, lat: 44,83)
+2-2
+City.new( name: "Tbilisi UTC +04:00", lng: 41,69, lat: 44,83)
+2-2
+202
+City.new( name: "Tbilisi UTC +04:00", lng: 41,69, lat: 44,83)
+City.last
+City.new( name: "Tbilisi UTC +04:00")
+a = City.last
 a
-Doctor.last
-
-a = Doctor.last
-City.all(a)
-City.all.where(doctor: a)
-City.all.where(doctor: a).time_zone = "Moscow"
-City.all.where(doctor
-City.all.where(doctor: a).time_zone("Moscow")
-City.all.where(doctor: a)
-City.all.where(doctor: a) = City(2)
-a = City.all.where(doctor: a)
-City(2)
-City[2]
+City.create( name: "Tbilisi UTC +04:00")
+City[11]
+City.[11]
+City.all[11]
+a = City.all[11]
+a
+a = City.all(11)
+a = City(11)
+a = City.all(1)
+City.last
+a = City.last
+a.update(lng: 41,69, lat: 44,83)
+a
+a
+a
+a
+a
+City.last.lng
+City.last.update(lng: 41,69, lat: 44,83)
+a=City.last.update(lng: 41,69, lat: 44,83)
+a
+202
+a=City.last.update(lng: 41,69, lat: 44,83)
+City.last.update(lng: 41,69, lat: 44,83)
+2-2
+City.last
+City.last.update(lng: 41,6)
+City.last.update("lng"= 41,6)
+a
+2-2
+City.all
+City.all
+City.last
+City.last.save
+City.last.update(lng: 41,69, lat: 44,83)
+City.last.update(lng: 41,69, lat: 44,83)
+2
+City.last
+City.last.update(lng: 41,69)
+City.last.update(lng = 41,69)
+City.last.update("lng"= 41,69)
+2
+2-2
+City.last.name
+a = City.last
+a.lng =  41,69
+a
+exit
+City.last
+City(1)
+City.all(1)
+City.all[1]
+b = City.all[1]
+b.update(lat: 100)
+b
+City.all[1]
+b = City.all[1]
+b.update(lat: 55.75)
+city.last
+City.last
+City.last.update(lat: 41.69)
+City.last.lat
+City.last.update(name: 'Tbilisi')
+City.last.name
+City.last.update(name: 'Тбилиси')
+City.last.update(time_zone: 'Tbilisi')
+City.last
+Time.now.zone("Tbilisi")
+Time.now.in_time_zone("Tbilisi")
+City.first
+City.all[1]
 City.all[2]
-a = City.all[2]
-City.all.where(doctor: a) = a
-City.all.where(doctor: a) 
+City.all[2].update(lat: 55.04)
+City.all[2].update(time_zone: 'Novosibirsk')
+Time.now.in_time_zone("Novosibirsk")
+City.all[2]
+City.all[3]
+City.all[3].update(lat: 59.94)
+City.all[4]
+City.all[4].update(lat: 56.33)
+City.all[5]
+City.all[5].update(lat: 50.45)
+City.all[6]
+City.all[6].update(lat: 52.97)
+City.all[7]
+City.all[7].update(lat: 53.25)
+City.all[8]
+City.all[8].update(lat: 46.35)
+City.all[9]
+City.all[8].update(lat: 49.81)
+City.all[10]
+City.all[11]
+Doctor.last.city
+Doctor.last.city = City.all[1]
+Doctor.last.save
+Doctor.last.city.update(
+a = Doctor.last.city
+a = Doctor.last.city
+a.city = City.all[1]
+City.all[1]
+Doctor.last.city = City.all[1]
+Doctor.last.save
+Doctor.last.city
 Doctor.last
+Doctor.last.city
 a
-doc = Doctor.last
-doc
-doc.city
-doc.city = City.all[2]
-doc
-doc.save
-doc.city = City.all[1]
-doc.save
-doc
-doc.city
-doc.city = City.all[0]
-doc.city = City.all[0]
-doc.save
-doc.city
-doc.city = City.all[1]
-doc.city
-doc.save
-doc.city = City.all[0]
-doc.city
-doc.save
-doc.city = City.all[2]
-doc.city
-doc.save
-doc.city = City.all[0]
-doc.save
-doc.city = City.all[3]
-doc.city
-doc.save
-doc.city = City.all[2]
-doc.city
-doc.save
-doc.city = City.all[0]
-doc.save
-doc.city = City.all[3]
-doc.city
-doc.save
-Time.now.zone
-reload!
-Time.now.zone
-doc.city = City.all[2]
-doc.city
-doc.save
-doc.city = City.all[0]
-doc.save
-doc.city = City.all[2]
-doc.save
-doc.city = City.all[1]
-doc.save
-doc.city = City.all[2]
-doc.save
-doc.city = City.all[0]
-doc.save
-doc.city = City.all[2]
-doc.save
-doc.city = City.all[0]
-doc.save
-doc.city = City.all[2]
-doc.save
-doc.city = City.all[1]
-doc.save
-doc.city = City.all[0]
-doc.save
+b = Doctor.last
+b
+b.city
+b.city.update(city: City.all[1])
+b.city = City.all[1]
+b
+b.city
+b.save
+Doctor.last.city
+b.city = City.all[0]
+b.save
+Doctor.last.city
+учше
+exit

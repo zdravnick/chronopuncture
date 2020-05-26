@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_104222) do
+ActiveRecord::Schema.define(version: 2020_05_26_064100) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_104222) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "time_zone", default: "UTC"
+    t.float "lat"
     t.index ["doctor_id"], name: "index_cities_on_doctor_id"
     t.index ["patient_id"], name: "index_cities_on_patient_id"
   end

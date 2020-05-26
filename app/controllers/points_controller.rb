@@ -1,14 +1,20 @@
 class PointsController < ApplicationController
+around_action :set_time_zone
+
 before_action :prepare
+
+def set_time_zone(&block)
+  Time.use_zone(current_doctor.city.time_zone, &block)
+end
+
 def prepare
   @doctor_city = current_doctor.city
-  Time.zone = current_doctor.city.time_zone
-  @doctor_current_date = Time.zone.local(params["date(1i)"].to_i,
+  @doctor_current_datetime_utc = Time.zone.local(params["date(1i)"].to_i,
     params["date(2i)"].to_i,params["date(3i)"].to_i,
     params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
-  @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_date)
-  @sun_time = sun_time(@doctor_city, @doctor_current_date)
-  @guard = guard(@doctor_city, @doctor_current_date)
+  @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+  @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
+  @guard = guard(@doctor_city, @doctor_current_datetime_utc)
 
 end
 
@@ -24,9 +30,9 @@ end
    def linguibafa_7_times
       @time_zone = params["time_zone"]
       # binding.pry
-      @offset_for_time_table = (@doctor_current_date.in_time_zone(@time_zone) - @sun_time)/3660
+      @offset_for_time_table = (@doctor_current_datetime_utc.in_time_zone(@time_zone) - @sun_time)/3600
       @opened_points_linguibafa =
-      (@doctor_current_date.in_time_zone(@time_zone).to_datetime..@doctor_current_date.in_time_zone(@time_zone).to_datetime+6.days).map do |date|
+      (@doctor_current_datetime_utc.in_time_zone(@time_zone).to_datetime..@doctor_current_datetime_utc.in_time_zone(@time_zone).to_datetime+6.days).map do |date|
        {date: date, point: opened_point_linguibafa(@doctor_city, date) }
       end
    end
@@ -59,30 +65,31 @@ end
       def complex_balance
         @patient = Patient.find(params["patient_id"])
         @patient_city = @patient.city
-        Time.zone = @patient.city.time_zone
-        # binding.pry
-        @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
-          params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
-          params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
-        @eot_patient = eot_patient(@patient_birthdate)
-        @year_num_patient = year_number_60th_calculation(@patient_birthdate)
-        @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
-            @patient_birthdate)
-        @moment = moment_of_birth(@patient_birthdate, @patient_city)
-        @guard_patient = guard(@patient_city, @patient_birthdate)
-        @guard_doctor = guard(@doctor_city, @doctor_current_date )
-        @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
-        @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
-          @number_of_day_60th, @guard_doctor)
-        @hour = sun_time( @doctor_city, @doctor_current_date).hour
-        @min = sun_time( @doctor_city, @doctor_current_date).min
-        # получасие активного на момент приема пацика Канала
-        @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
-        # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
-        @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
-        @matrix = points_matrix_lo_shu(@meridian_lo_shu)
-        @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
-        render "doctors/complex_balance"
+        Time.use_zone(@patient.city.time_zone) do
+          # binding.pry
+          @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
+            params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
+            params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
+          @eot_patient = eot_patient(@patient_birthdate)
+          @year_num_patient = year_number_60th_calculation(@patient_birthdate)
+          @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
+              @patient_birthdate)
+          @moment = moment_of_birth(@patient_birthdate, @patient_city)
+          @guard_patient = guard(@patient_city, @patient_birthdate)
+          @guard_doctor = guard(@doctor_city, @doctor_current_date )
+          @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
+          @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
+            @number_of_day_60th, @guard_doctor)
+          @hour = sun_time( @doctor_city, @doctor_current_date).hour
+          @min = sun_time( @doctor_city, @doctor_current_date).min
+          # получасие активного на момент приема пацика Канала
+          @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
+          # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
+          @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
+          @matrix = points_matrix_lo_shu(@meridian_lo_shu)
+          @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
+          render "doctors/complex_balance"
+        end
       end
 
 
