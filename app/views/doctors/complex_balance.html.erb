@@ -1,7 +1,8 @@
 <h3>Метод Сложного Баланса</h3>
+<h3>поправка EOT в секундах: <%= @eot  %> </h3>
 
 <h4>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h4>
-<h4>Расчетное время: <%=  @doctor_current_date.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
+<h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
 
 <h5>Солн. поправка для пацика <%= @eot_patient.to_i  %>  секунд</h5>
 

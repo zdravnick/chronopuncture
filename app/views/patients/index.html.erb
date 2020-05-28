@@ -6,23 +6,6 @@
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
 
-  <p>
-    <div>
-      <h3><%= label_tag( "Добавить пациента") %></h3>
-      <%= form_with local: true, method: :post, url: patients_path do |f| %>
-        <%= f.label  "Имя" %>
-        <%= f.text_field :name  %>
-        <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 00} )%>
-        <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
-        <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
-                <%= f.label 'Место рождения (выбрать ближайший город): ' %>
-        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
-        <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
-      <% end %>
-    </div>
-  </p>
-
   <div>
     <%= form_with  local: true, method: :get, url: patients_path do |f| %>
     <%= f.label  'Поиск по имени'  %>
@@ -82,8 +65,22 @@
     <% end %>
   </p>
 
-
-
+  <p>
+    <div>
+      <h3><%= label_tag( "Добавить пациента") %></h3>
+      <%= form_with local: true, method: :post, url: patients_path do |f| %>
+        <%= f.label  "Имя" %>
+        <%= f.text_field :name  %>
+        <%= f.label 'Дата рождения' %>
+        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 00} )%>
+        <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
+        <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
+                <%= f.label 'Место рождения (выбрать ближайший город): ' %>
+        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
+        <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
+      <% end %>
+    </div>
+  </p>
 
   <h3>Список пациентов </h3>
 

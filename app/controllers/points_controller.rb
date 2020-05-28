@@ -15,6 +15,7 @@ def prepare
   @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
   @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
   @guard = guard(@doctor_city, @doctor_current_datetime_utc)
+  @eot = eot(@doctor_current_datetime_utc).to_i
 
 end
 
@@ -22,17 +23,17 @@ end
    def linguibafa
      # binding.pry
       @time_zone = params["time_zone"]
-      @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(@doctor_city, @doctor_current_date)
-      @opened_points_linguibafa = opened_point_linguibafa(@doctor_city, @doctor_current_date)
+      @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+      @opened_points_linguibafa = opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
       render  "doctors/linguibafa"
    end
 
    def linguibafa_7_times
       @time_zone = params["time_zone"]
       # binding.pry
-      @offset_for_time_table = (@doctor_current_datetime_utc.in_time_zone(@time_zone) - @sun_time)/3600
+      @offset_for_time_table = (@doctor_current_datetime_utc - @sun_time)/3600
       @opened_points_linguibafa =
-      (@doctor_current_datetime_utc.in_time_zone(@time_zone).to_datetime..@doctor_current_datetime_utc.in_time_zone(@time_zone).to_datetime+6.days).map do |date|
+      (@doctor_current_datetime_utc.to_datetime..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
        {date: date, point: opened_point_linguibafa(@doctor_city, date) }
       end
    end
@@ -55,9 +56,10 @@ end
 
     def naganfa
       # binding.pry
-      @mark = time_mark(@doctor_current_date)
+      @mark = time_mark(@doctor_current_datetime_utc)
       @points_naganfa = points_naganfa
-      @opened_points_naganfa = opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_date)
+      @opened_points_naganfa =
+        opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_datetime_utc)
       render "doctors/naganfa"
       # There is TIME.now in the table!
     end
@@ -76,12 +78,12 @@ end
               @patient_birthdate)
           @moment = moment_of_birth(@patient_birthdate, @patient_city)
           @guard_patient = guard(@patient_city, @patient_birthdate)
-          @guard_doctor = guard(@doctor_city, @doctor_current_date )
+          @guard_doctor = guard(@doctor_city, @doctor_current_datetime_utc )
           @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
           @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
             @number_of_day_60th, @guard_doctor)
-          @hour = sun_time( @doctor_city, @doctor_current_date).hour
-          @min = sun_time( @doctor_city, @doctor_current_date).min
+          @hour = sun_time( @doctor_city, @doctor_current_datetime_utc).hour
+          @min = sun_time( @doctor_city, @doctor_current_datetime_utc).min
           # получасие активного на момент приема пацика Канала
           @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
           # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
@@ -94,7 +96,7 @@ end
 
 
 
-    def eot
+    def eot(date)
       pi = (Math::PI) # pi
       delta = (DateTime.now.getutc.yday - 1) # (Текущий день года - 1)
 
@@ -127,7 +129,7 @@ end
     end
 
     def sun_time(city, date)
-      date + (city[:lng]*4).minutes + eot.seconds
+      date + (city[:lng]*4).minutes + eot(date).seconds
     end
 
     def number_of_day_calculation(city, date)

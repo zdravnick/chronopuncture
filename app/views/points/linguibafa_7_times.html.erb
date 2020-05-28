@@ -1,18 +1,20 @@
 <h1> лингуй_7_дней </h1>
-<h1><%=  @doctor_current_datetime_utc %></h1>
+<h2>Поправка EOT <%= @eot %> секунды <h2>
+<h2>ГРИНВИЧ: <%=  @doctor_current_datetime_utc %></h2>
+<h2>СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time %></h2>
 <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
 <table><% @opened_points_linguibafa.each do |elem| %>
   <tr>
-    <td><%= elem[:date].in_time_zone(current_doctor.city.time_zone).to_s(:short) %></td>
+    <td><%= elem[:date].in_time_zone(current_doctor.city.time_zone) %></td>
     <td><%= elem[:point].to_s%></td>
     <td>
       <table>
         <% (0..23).select{ |h| h.even? }.each do  |hour| %>
-          <% date = elem[:date].change(hour: hour) %>
-          <%  point = opened_point_linguibafa(@doctor_city, date) %>
-          <tr>
+          <% date = elem[:date].in_time_zone(current_doctor.city.time_zone).change(hour: hour) %>
+          <%  point = opened_point_linguibafa(@doctor_city, date.in_time_zone(current_doctor.city.time_zone)) %>
+          <tr class="<%= (date-@offset_for_time_table.hour..date-@offset_for_time_table.hour+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight' : '' %>">
             <td> <%= (date-@offset_for_time_table.hour).strftime("%H:%M")  %> </td>
             <td> - </td>
             <td> <%= (date-@offset_for_time_table.hour+2.hour).strftime("%H:%M")  %> </td>
