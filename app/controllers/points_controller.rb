@@ -98,9 +98,9 @@ end
 
     def eot(date)
       pi = (Math::PI) # pi
-      delta = (DateTime.now.getutc.yday - 1) # (Текущий день года - 1)
+      delta = (date.getutc.yday - 1) # (Текущий день года - 1)
 
-      yy = DateTime.now.getutc.year
+      yy = date.getutc.year
       np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
             when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
             when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
@@ -117,7 +117,7 @@ end
             else ; 2
             end
 
-      a = DateTime.now.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
+      a = date.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
 
       lambda = 23.4406 * pi / 180; # Earth's inclination in radians
       omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
@@ -129,7 +129,23 @@ end
     end
 
     def sun_time(city, date)
-      date + (city[:lng]*4).minutes + eot(date).seconds
+        case city[:lng]
+        when (0..15) then base_meridian = 15
+        when (16..30) then base_meridian = 30
+        when (31..45) then base_meridian = 45
+        when (46..60) then base_meridian = 60
+        when (61..75) then base_meridian = 75
+        when (76..90) then base_meridian = 90
+        when (91..105) then base_meridian = 105
+        when (106..120) then base_meridian = 120
+        when (121..135) then base_meridian = 135
+        when (136..150) then base_meridian = 150
+        when (151..165) then base_meridian = 165
+        when (166..180) then base_meridian = 180
+
+        end
+        base = base_meridian*4.minutes
+      date + (base - (base - (city[:lng]*4).minutes )) + eot(date).seconds
     end
 
     def number_of_day_calculation(city, date)

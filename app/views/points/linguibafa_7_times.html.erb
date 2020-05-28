@@ -24,7 +24,8 @@
               <%= point %>
               <%  end%>
             <%  else %>
-            <%=  link_to point, params.permit!.merge({a: point})%>
+          <div  class="<%= (date-@offset_for_time_table.hour..date-@offset_for_time_table.hour+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight_2' : '' %>">  <%=  link_to point, params.permit!.merge({a: point})%>
+            </div>
             <%  end %>
 
            </td>
