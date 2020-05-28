@@ -21,19 +21,24 @@ end
 
 
    def linguibafa
+    @offset_for_time_table =
+      (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
      # binding.pry
-      @time_zone = params["time_zone"]
-      @sum_of_numbers_linguibafa = sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-      @opened_points_linguibafa = opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-      render  "doctors/linguibafa"
+      # @time_zone = params["time_zone"]
+      @sum_of_numbers_linguibafa =
+        sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+      @opened_points_linguibafa =
+      opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+        render  "doctors/linguibafa"
    end
 
    def linguibafa_7_times
-      @time_zone = params["time_zone"]
+      # @time_zone = params["time_zone"]
       # binding.pry
-      @offset_for_time_table = (@doctor_current_datetime_utc - @sun_time)/3600
+      @offset_for_time_table =
+      (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
       @opened_points_linguibafa =
-      (@doctor_current_datetime_utc.to_datetime..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
+      ((@doctor_current_datetime_utc.to_datetime-1.days)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
        {date: date, point: opened_point_linguibafa(@doctor_city, date) }
       end
    end
