@@ -37,7 +37,6 @@ outline: none !important
 
 .highlight, .highlight_2>a {
   color: red;
-  transform: scale(1.3);
   border: 1px solid red;
 }
 
