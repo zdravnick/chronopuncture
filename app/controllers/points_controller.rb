@@ -17,6 +17,7 @@ def prepare
   @guard = guard(@doctor_city, @doctor_current_datetime_utc)
   @eot = eot(@doctor_current_datetime_utc).to_i
 
+
 end
 
 
@@ -150,7 +151,7 @@ end
 
         end
         base = base_meridian*4.minutes
-      date + (base - (base - (city[:lng]*4).minutes )) + eot(date).seconds
+      date + (city[:lng]*4).minutes + eot(date).seconds
     end
 
     def number_of_day_calculation(city, date)
