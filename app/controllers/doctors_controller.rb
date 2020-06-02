@@ -17,9 +17,15 @@ class DoctorsController < ApplicationController
     )
   end
 
-def update
-  Doctor.updame:
-    name: params[:name],
-    email: params[:email],
-    city: params[:city_id]
+  def update
+    Doctor.updame:
+      name: params[:name],
+      email: params[:email],
+      city: params[:city_id]
+  end
+
+  def destroy
+    @doctor = Doctor.find(params[:id])
+  end
+
 end

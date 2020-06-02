@@ -1,104 +1,104 @@
 class PointsController < ApplicationController
-around_action :set_time_zone
+  around_action :set_time_zone
 
-before_action :prepare
+  before_action :prepare
 
-def set_time_zone(&block)
-  Time.use_zone(current_doctor.city.time_zone, &block)
-end
+  def set_time_zone(&block)
+    Time.use_zone(current_doctor.city.time_zone, &block)
+  end
 
-def prepare
-  @doctor_city = current_doctor.city
-  @doctor_current_datetime_utc = Time.zone.local(params["date(1i)"].to_i,
-    params["date(2i)"].to_i,params["date(3i)"].to_i,
-    params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
-  @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
-  @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
-  @guard = guard(@doctor_city, @doctor_current_datetime_utc)
-  @eot = eot(@doctor_current_datetime_utc).to_i
-
-
-end
+  def prepare
+    @doctor_city = current_doctor.city
+    @doctor_current_datetime_utc = Time.zone.local(params["date(1i)"].to_i,
+      params["date(2i)"].to_i,params["date(3i)"].to_i,
+      params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
+    @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
+    @guard = guard(@doctor_city, @doctor_current_datetime_utc)
+    @eot = eot(@doctor_current_datetime_utc).to_i
 
 
-   def linguibafa
+  end
+
+
+ def linguibafa
+  @offset_for_time_table =
+    (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
+   # binding.pry
+    # @time_zone = params["time_zone"]
+    @sum_of_numbers_linguibafa =
+      sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+    @opened_points_linguibafa =
+    opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+      render  "doctors/linguibafa"
+ end
+
+ def linguibafa_7_times
+    # @time_zone = params["time_zone"]
+    # binding.pry
     @offset_for_time_table =
-      (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
-     # binding.pry
-      # @time_zone = params["time_zone"]
-      @sum_of_numbers_linguibafa =
-        sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-      @opened_points_linguibafa =
-      opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-        render  "doctors/linguibafa"
-   end
+    (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
+    @opened_points_linguibafa =
+    ((@doctor_current_datetime_utc.to_datetime-1.days)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
+     {date: date, point: opened_point_linguibafa(@doctor_city, date) }
+    end
+ end
 
-   def linguibafa_7_times
-      # @time_zone = params["time_zone"]
+helper_method :opened_point_linguibafa
+
+  def infusion
+    @points_infusion = points_infusion
+    @opened_points_infusion = opened_points_infusion(@trunc_day, @guard, @points_infusion)
+    render "doctors/infusion"
+    # There is SUN TIME in the table!
+  end
+
+  def infusion_2
+    @points_infusion = points_infusion_2
+    @opened_points_infusion = opened_points_infusion_2(@trunc_day, @guard, @points_infusion)
+    render "_infusion_2"
+    # There is SUN TIME in the table!
+  end
+
+  def naganfa
+    # binding.pry
+    @mark = time_mark(@doctor_current_datetime_utc)
+    @points_naganfa = points_naganfa
+    @opened_points_naganfa =
+      opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_datetime_utc)
+    render "doctors/naganfa"
+    # There is TIME.now in the table!
+  end
+
+  def complex_balance
+    @patient = Patient.find(params["patient_id"])
+    @patient_city = @patient.city
+    Time.use_zone(@patient.city.time_zone) do
       # binding.pry
-      @offset_for_time_table =
-      (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time)/3600
-      @opened_points_linguibafa =
-      ((@doctor_current_datetime_utc.to_datetime-1.days)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
-       {date: date, point: opened_point_linguibafa(@doctor_city, date) }
-      end
-   end
-
-  helper_method :opened_point_linguibafa
-
-    def infusion
-      @points_infusion = points_infusion
-      @opened_points_infusion = opened_points_infusion(@trunc_day, @guard, @points_infusion)
-      render "doctors/infusion"
-      # There is SUN TIME in the table!
+      @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
+        params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
+        params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
+      @eot_patient = eot_patient(@patient_birthdate)
+      @year_num_patient = year_number_60th_calculation(@patient_birthdate)
+      @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
+          @patient_birthdate)
+      @moment = moment_of_birth(@patient_birthdate, @patient_city)
+      @guard_patient = guard(@patient_city, @patient_birthdate)
+      @guard_doctor = guard(@doctor_city, @doctor_current_datetime_utc )
+      @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
+      @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
+        @number_of_day_60th, @guard_doctor)
+      @hour = sun_time( @doctor_city, @doctor_current_datetime_utc).hour
+      @min = sun_time( @doctor_city, @doctor_current_datetime_utc).min
+      # получасие активного на момент приема пацика Канала
+      @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
+      # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
+      @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
+      @matrix = points_matrix_lo_shu(@meridian_lo_shu)
+      @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
+      render "doctors/complex_balance"
     end
-
-    def infusion_2
-      @points_infusion = points_infusion_2
-      @opened_points_infusion = opened_points_infusion_2(@trunc_day, @guard, @points_infusion)
-      render "_infusion_2"
-      # There is SUN TIME in the table!
-    end
-
-    def naganfa
-      # binding.pry
-      @mark = time_mark(@doctor_current_datetime_utc)
-      @points_naganfa = points_naganfa
-      @opened_points_naganfa =
-        opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_datetime_utc)
-      render "doctors/naganfa"
-      # There is TIME.now in the table!
-    end
-
-      def complex_balance
-        @patient = Patient.find(params["patient_id"])
-        @patient_city = @patient.city
-        Time.use_zone(@patient.city.time_zone) do
-          # binding.pry
-          @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
-            params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
-            params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
-          @eot_patient = eot_patient(@patient_birthdate)
-          @year_num_patient = year_number_60th_calculation(@patient_birthdate)
-          @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
-              @patient_birthdate)
-          @moment = moment_of_birth(@patient_birthdate, @patient_city)
-          @guard_patient = guard(@patient_city, @patient_birthdate)
-          @guard_doctor = guard(@doctor_city, @doctor_current_datetime_utc )
-          @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
-          @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
-            @number_of_day_60th, @guard_doctor)
-          @hour = sun_time( @doctor_city, @doctor_current_datetime_utc).hour
-          @min = sun_time( @doctor_city, @doctor_current_datetime_utc).min
-          # получасие активного на момент приема пацика Канала
-          @half_hour_visit = half_hour_for_reception_time(hour: @hour, min: @min)
-          # выбор Таблицы Меридиана для заполнения квадрата Ло Шу
-          @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
-          @matrix = points_matrix_lo_shu(@meridian_lo_shu)
-          @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
-          render "doctors/complex_balance"
-        end
-      end
+  end
 
 
 
@@ -109,9 +109,9 @@ end
       yy = date.getutc.year
       np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
             when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
-            when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
-                       1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
-                       2005, 2008, 2013, 2016, 2021, 2029, 2043  ; 1
+            when 1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,
+              1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986,1994,2002,
+                       2005,2008,2013,2016,2021,2029,2043  ; 1
             when 1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950, 1957, 1958,
                        1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
                        2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
@@ -134,162 +134,162 @@ end
       eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
     end
 
-    def sun_time(city, date)
-        case city[:lng]
-        when (0..15) then base_meridian = 15
-        when (16..30) then base_meridian = 30
-        when (31..45) then base_meridian = 45
-        when (46..60) then base_meridian = 60
-        when (61..75) then base_meridian = 75
-        when (76..90) then base_meridian = 90
-        when (91..105) then base_meridian = 105
-        when (106..120) then base_meridian = 120
-        when (121..135) then base_meridian = 135
-        when (136..150) then base_meridian = 150
-        when (151..165) then base_meridian = 165
-        when (166..180) then base_meridian = 180
+  def sun_time(city, date)
+    case city[:lng]
+    when (0..15) then base_meridian = 15
+    when (16..30) then base_meridian = 30
+    when (31..45) then base_meridian = 45
+    when (46..60) then base_meridian = 60
+    when (61..75) then base_meridian = 75
+    when (76..90) then base_meridian = 90
+    when (91..105) then base_meridian = 105
+    when (106..120) then base_meridian = 120
+    when (121..135) then base_meridian = 135
+    when (136..150) then base_meridian = 150
+    when (151..165) then base_meridian = 165
+    when (166..180) then base_meridian = 180
 
-        end
-        base = base_meridian*4.minutes
-      date + (city[:lng]*4).minutes + eot(date).seconds
     end
+    base = base_meridian*4.minutes
+  date + (city[:lng]*4).minutes + eot(date).seconds
+  end
 
-    def number_of_day_calculation(city, date)
-      if date < 3
-        mon = date.mon + 12
-        year = date.year - 1
-        else
-        mon = date.mon
-        year = date.year
-      end
-      number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
-    end
-
-    def trunc_day_calculation(city, date)
-      trunc_day = number_of_day_calculation(city, date) % 10
-      if trunc_day > 4
-        trunc_day -= 4
-        else
-        trunc_day += 6
-      end
-    end
-
-    def brunch_day_calculation(city, date)
-      brunch_day = number_of_day_calculation(city, date) % 12
-      if brunch_day < 3
-        brunch_day += 10
-      elsif brunch_day == 0
-        brunch_day = 12
-        else
-        brunch_day -= 2
-      end
-    end
-
-    def guard(city, date) # таблица Стражи Часа
-      case sun_time(city, date).hour
-      when 19, 20 then 11
-      when 21, 22 then 12
-      when 23, 0 then 1
-      when  1, 2 then 2
-      when  3, 4 then 3
-      when  5, 6 then 4
-      when  7, 8 then 5
-      when  9, 10 then 6
-      when 11, 12 then 7
-      when 13, 14 then 8
-      when 15, 16 then 9
-      when 17, 18 then 10
-      end
-    end
-
-
-    def trunc_hour_calculation(city, date)
-      trunc_hour = (guard(city, date) + ((trunc_day_calculation(city, date) - 1) * 2))%10
-      if trunc_hour == 0
-        trunc_hour = 10
+  def number_of_day_calculation(city, date)
+    if date < 3
+      mon = date.mon + 12
+      year = date.year - 1
       else
-        trunc_hour
-      end
+      mon = date.mon
+      year = date.year
+    end
+    number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
+  end
 
-      # if Date.current.leap?
-      #   trunc_hour += 1
-      # end
+  def trunc_day_calculation(city, date)
+    trunc_day = number_of_day_calculation(city, date) % 10
+    if trunc_day > 4
+      trunc_day -= 4
+      else
+      trunc_day += 6
+    end
+  end
+
+  def brunch_day_calculation(city, date)
+    brunch_day = number_of_day_calculation(city, date) % 12
+    if brunch_day < 3
+      brunch_day += 10
+    elsif brunch_day == 0
+      brunch_day = 12
+      else
+      brunch_day -= 2
+    end
+  end
+
+  def guard(city, date) # таблица Стражи Часа
+    case sun_time(city, date).hour
+    when 19, 20 then 11
+    when 21, 22 then 12
+    when 23, 0 then 1
+    when  1, 2 then 2
+    when  3, 4 then 3
+    when  5, 6 then 4
+    when  7, 8 then 5
+    when  9, 10 then 6
+    when 11, 12 then 7
+    when 13, 14 then 8
+    when 15, 16 then 9
+    when 17, 18 then 10
+    end
+  end
+
+
+  def trunc_hour_calculation(city, date)
+    trunc_hour = (guard(city, date) + ((trunc_day_calculation(city, date) - 1) * 2))%10
+    if trunc_hour == 0
+      trunc_hour = 10
+    else
+      trunc_hour
     end
 
-    def trunc_day_definition_linguibafa(city, date) # таблица соответствия условного числа стволу дня
-      case trunc_day_calculation(city, date)
-      when 1, 6 then 10
-      when 2, 7 then 9
-      when 4, 9 then 8
-      when 3, 5, 8, 10 then 7
-      end
-    end
+    # if Date.current.leap?
+    #   trunc_hour += 1
+    # end
+  end
 
-    def brunch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
-      case brunch_day_calculation(city, date)
-      when 2, 5, 8, 11 then 10
-      when 9, 10 then 9
-      when 3, 4 then 8
-      when 1, 6, 7, 12 then 7
-      end
+  def trunc_day_definition_linguibafa(city, date) # таблица соответствия условного числа стволу дня
+    case trunc_day_calculation(city, date)
+    when 1, 6 then 10
+    when 2, 7 then 9
+    when 4, 9 then 8
+    when 3, 5, 8, 10 then 7
     end
+  end
 
-    def trunc_hour_definition_linguibafa(city, date)
-      case trunc_hour_calculation(city, date)
-      when 1, 6 then 9
-      when 2, 7 then 8
-      when 3, 8 then 7
-      when 4, 9 then 6
-      when 5, 10 then 5
-      end
+  def brunch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
+    case brunch_day_calculation(city, date)
+    when 2, 5, 8, 11 then 10
+    when 9, 10 then 9
+    when 3, 4 then 8
+    when 1, 6, 7, 12 then 7
     end
+  end
 
-    def brunch_hour_definition_linguibafa(city, date)
-      case guard(city, date)
-      when 1, 7 then 9
-      when 2, 8 then 8
-      when 3, 9 then 7
-      when 4, 10 then 6
-      when 5, 11 then 5
-      when 6, 12 then 4
-      end
+  def trunc_hour_definition_linguibafa(city, date)
+    case trunc_hour_calculation(city, date)
+    when 1, 6 then 9
+    when 2, 7 then 8
+    when 3, 8 then 7
+    when 4, 9 then 6
+    when 5, 10 then 5
     end
+  end
 
-    def sum_of_numbers_linguibafa(city, date)
-      trunc_day_definition_linguibafa(city, date) + brunch_day_definition_linguibafa(city, date) +
-      trunc_hour_definition_linguibafa(city, date) + brunch_hour_definition_linguibafa(city, date)
+  def brunch_hour_definition_linguibafa(city, date)
+    case guard(city, date)
+    when 1, 7 then 9
+    when 2, 8 then 8
+    when 3, 9 then 7
+    when 4, 10 then 6
+    when 5, 11 then 5
+    when 6, 12 then 4
     end
+  end
 
-    def divider_trunc_day(city, date) # выбор делителя для иньского/янского дня
+  def sum_of_numbers_linguibafa(city, date)
+    trunc_day_definition_linguibafa(city, date) + brunch_day_definition_linguibafa(city, date) +
+    trunc_hour_definition_linguibafa(city, date) + brunch_hour_definition_linguibafa(city, date)
+  end
+
+  def divider_trunc_day(city, date) # выбор делителя для иньского/янского дня
+    if trunc_day_calculation(city, date).even?
+      6
+    else
+      9
+    end
+  end
+
+  def remainder_of_division_linguibafa(city, date) # остаток от деления
+    sum_of_numbers_linguibafa(city, date) % divider_trunc_day(city, date)
+  end
+
+  def opened_point_linguibafa(city, date) # таблица соответствия "расчетная цифра - точка"
+    case remainder_of_division_linguibafa(city, date)
+    when 1 then 'V.62 Shen-mai'
+    when 2, 5 then 'R.6 Zhao-hai'
+    when 3 then 'TR.5 Wai-guan'
+    when 4 then 'GB.41 Zu-lin-qi'
+    when 6 then 'RP.4 Gong-sun'
+    when 7 then 'IG.3 Hou-xi'
+    when 8 then 'MC.5 Nei-guan'
+    when 9 then 'P.7 Lie-que'
+    when 0
       if trunc_day_calculation(city, date).even?
-        6
+        'RP.4 Gong-sun'
       else
-        9
+        'P.7 Lie-que'
       end
     end
-
-    def remainder_of_division_linguibafa(city, date) # остаток от деления
-      sum_of_numbers_linguibafa(city, date) % divider_trunc_day(city, date)
-    end
-
-    def opened_point_linguibafa(city, date) # таблица соответствия "расчетная цифра - точка"
-      case remainder_of_division_linguibafa(city, date)
-      when 1 then 'V.62 Shen-mai'
-      when 2, 5 then 'R.6 Zhao-hai'
-      when 3 then 'TR.5 Wai-guan'
-      when 4 then 'GB.41 Zu-lin-qi'
-      when 6 then 'RP.4 Gong-sun'
-      when 7 then 'IG.3 Hou-xi'
-      when 8 then 'MC.5 Nei-guan'
-      when 9 then 'P.7 Lie-que'
-      when 0
-        if trunc_day_calculation(city, date).even?
-          'RP.4 Gong-sun'
-        else
-          'P.7 Lie-que'
-        end
-      end
-    end
+  end
 
     # END OF LINGUIBAFA METHOD
 def point_infusion_2

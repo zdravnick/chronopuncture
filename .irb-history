@@ -1,200 +1,200 @@
-b.save
-Doctor.last.city
-b.city = City.all[0]
-b.save
-Doctor.last.city
-учше
+               1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
+               2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
+               2046, 2048, 2049  then  2
+    when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
+               1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
+               2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 then  3
+    when 2012, 2020, 2028, 2036, 2039, 2044, 2047 then  4
+    else  2
+    end
+  end
+np
+np(date)
+ def np(date)
+    case date.getutc.year
+    when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 then 0
+    when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
+               1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
+               2005, 2008, 2013, 2016, 2021, 2029, 2043  then 1
+    when 1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950, 1957, 1958,
+               1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999, 2000, 2007, 2010,
+               2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037, 2038, 2040, 2041, 2045,
+               2046, 2048, 2049  then 2
+    when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
+               1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
+               2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 then 3
+    when 2012, 2020, 2028, 2036, 2039, 2044, 2047 then 4
+    else  2
+    end
+  end
+  np(date)
+yy.in?[1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997]
+yy.in_array?[1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997]
+yy
+arr_1 = [1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951,
+      1953, 1954, 1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983,
+      1986, 1994, 2002, 2005, 2008, 2013, 2016, 2021, 2029, 2043]
+arr_1
+arr_1.include?(2022)
+arr1 = (1921..1940).to_a
+arr1
+a2 = (1945...1965).to_a
+a2
+a3 = a2.each{ |e| a3.push(e.even?)}
+a3 = []
+a3 = a2.each{ |e| a3.push(e.even?)}
+a3
+a3 = []
+a3 = a2.each{ |e| (e.even?)h}
+a3 = a2.each{ |e| (e.even?)}
+a3
+a3 = a2.each{ |e| a3.push(e.even)}
+a3 = a2.each{ |e| a3.push(e.to_s)}
+a3
+a3[1]
+a3
+a3 = []
+a3
+a2
 exit
-Doctor.last.sity.update(City.all[1])
-Doctor.last.update(city: City.all[1])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[4])
-Doctor.last.update(city: City.all[5])
-Doctor.last.update(city: City.all[6])
-Doctor.last.update(city: City.all[7])
- City.all[7].time_zone
- City.all[7].update(time_zone: "Moscow")
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[2])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[7])
-Doctor.last.update(city: City.all[1])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[1])
-Doctor.last.city
-Doctor.last.update(city: City.all[0])
-Doctor.last.city
-Doctor.last.city.update(lng: 60)
-Doctor.last.city.update(lng: 59.6)
-Doctor.last.update(city: City.all[1])
-City.all[1].lng
-Doctor.last.update(city: City.all[0])
-(0..15)
-(0..15).to_a
-def base_meridian_lng(doctor_city)
-  case base_lng
-  when (0..15).cover?(doctor_city.lng)
-    base_lng = 15
-  when (16..30).cover?(doctor_city.lng)
-    base_lng = 30
-  when (31..45).cover?(doctor_city.lng)
-    base_lng = 45
-    when (46..60).cover?(doctor_city.lng)
-     base_lng = 60
-   when (61..75).cover?(doctor_city.lng)
-    base_lng = 75
-  when (76..90).cover?(doctor_city.lng)
-    base_lng = 90
-  when (91..105).cover?(doctor_city.lng)
-    base_lng = 105
-  when (106..120).cover?(doctor_city.lng)
-    base_lng = 45
-  when (121..135).cover?(doctor_city.lng)
-    base_lng = 135
-  when (136..150).cover?(doctor_city.lng)
-    base_lng = 150
-  when (151..165).cover?(doctor_city.lng)
-    base_lng = 165
-  when (166..180).cover?(doctor_city.lng)
-    base_lng = 180
-    end
+a2 = (1946..1960).to_a
+a2
+a2.each{|e
+a2.each{|e| e.to_s}
+a3
+a2
+a2
+a2[1]
+a2[1].to_s
+a2.each{|e| e.to_s}
+a2
+a3 = []
+a3 = a2.each{|e| e.to_s}
+a3
+a3[1].class
+a3 = []
+a3 = a2.each{|e| a3.push(e.to_s)}
+a3
+a3 = a2.each{|e| a3.push(e.to_s!)}
+exit
+a = (0..10).map!(&:to_i) 
+a = (0..10)to_a.map!(&:to_i) 
+a = (0..10)to_a
+a = (0..10).to_a.map!(&:to_i) 
+a
+a = (0..10).to_a.map!(&:to_s) 
+a
+arr_2 = [
+      1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950,
+      1957, 1958, 1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999,
+      2000, 2007, 2010, 2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037,
+      2038, 2040, 2041, 2045, 2046, 2048, 2049
+    ]
+arr_2
+arr2arr_2 = 
+      1920, 1922, 1925, 1927, 1930, 1931, 1933, 1938, 1939, 1941, 1949, 1950,
+      1957, 1958, 1966, 1969, 1972, 1977, 1980, 1984, 1985, 1988, 1991, 1992, 1999,
+      2000, 2007, 2010, 2011, 2018, 2019, 2024, 2026, 2027, 2030, 2032, 2035, 2037,
+
+arr_2.map!(&:to_s) 
+arr_2
+2-2
+arr_2.map!(&:to_s) 
+def array_for_yy
+  arr_2 =  ["1920", "1922", "1925", "1927", "1930", "1931", "1933", "1938", "1939",
+    "1941", "1949", "1950", "1957", "1958", "1966", "1969", "1972", "1977", "1980",
+    "1984", "1985", "1988", "1991", "1992", "1999", "2000", "2007", "2010", "2011",
+    "2018", "2019", "2024", "2026", "2027", "2030", "2032", "2035", "2037", "2038",
+    "2040", "2041", "2045", "2046", "2048", "2049"]
   end
-end
-base_meridian_lng(doctor_city=62)
- def base_meridian_lng(doctor_city)
-    case base_lng
-    when (0..15).cover?(doctor_city.lng)
-     base_lng = 15
-    when (16..30).cover?(doctor_city.lng)
-     base_lng = 30
-    when (31..45).cover?(doctor_city.lng)
-     base_lng = 45
-    when (46..60).cover?(doctor_city.lng)
-     base_lng = 60
-    when (61..75).cover?(doctor_city.lng)
-    base_lng = 75
-    when (76..90).cover?(doctor_city.lng)
-    base_lng = 90
-    when (91..105).cover?(doctor_city.lng)
-    base_lng = 105
-    when (106..120).cover?(doctor_city.lng)
-    base_lng = 45
-    when (121..135).cover?(doctor_city.lng)
-    base_lng = 135
-    when (136..150).cover?(doctor_city.lng)
-    base_lng = 150
-    when (151..165).cover?(doctor_city.lng)
-    base_lng = 165
-    when (166..180).cover?(doctor_city.lng)
-    base_lng = 180
-    end
+  array_for_yy
+Math
+Mathn
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
+arr_1
+arr_1.length
+  def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
   end
-  base_meridian_lng(doctor_city=60)
-base_lng
-base_lng =0
- def base_meridian_lng(doctor_city)
-    case base_lng
-    when (0..15).cover?(doctor_city.lng)
-     base_lng = 15
-    when (16..30).cover?(doctor_city.lng)
-     base_lng = 30
-    when (31..45).cover?(doctor_city.lng)
-     base_lng = 45
-    when (46..60).cover?(doctor_city.lng)
-     base_lng = 60
-    when (61..75).cover?(doctor_city.lng)
-    base_lng = 75
-    when (76..90).cover?(doctor_city.lng)
-    base_lng = 90
-    when (91..105).cover?(doctor_city.lng)
-    base_lng = 105
-    when (106..120).cover?(doctor_city.lng)
-    base_lng = 45
-    when (121..135).cover?(doctor_city.lng)
-    base_lng = 135
-    when (136..150).cover?(doctor_city.lng)
-    base_lng = 150
-    when (151..165).cover?(doctor_city.lng)
-    base_lng = 165
-    when (166..180).cover?(doctor_city.lng)
-    base_lng = 180
-    end
+array_for_yy
+arr_0
+ def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997],
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
   end
-  base_meridian_lng(doctor_city=60)
-base_lng = 0
-base_lng
- def base_meridian_lng(doctor_city)
-    case base_lng
-    when (0..15).cover?(doctor_city.lng)
-     base_lng = 15
-    when (16..30).cover?(doctor_city.lng)
-     base_lng = 30
-    when (31..45).cover?(doctor_city.lng)
-     base_lng = 45
-    when (46..60).cover?(doctor_city.lng)
-     base_lng = 60
-    when (61..75).cover?(doctor_city.lng)
-    base_lng = 75
-    when (76..90).cover?(doctor_city.lng)
-    base_lng = 90
-    when (91..105).cover?(doctor_city.lng)
-    base_lng = 105
-    when (106..120).cover?(doctor_city.lng)
-    base_lng = 45
-    when (121..135).cover?(doctor_city.lng)
-    base_lng = 135
-    when (136..150).cover?(doctor_city.lng)
-    base_lng = 150
-    when (151..165).cover?(doctor_city.lng)
-    base_lng = 165
-    when (166..180).cover?(doctor_city.lng)
-    base_lng = 180
-    end
+array_for_yy
+arr_0
+  def array_for_yy
+    arr_2 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
   end
-  base_meridian_lng(doctor_city=60)
- def base_meridian_lng(doctor_city)
-    case base_lng
-    when (0..15).cover?(doctor_city.lng)  then 15
-    when (16..30).cover?(doctor_city.lng) then 30
-    when (31..45).cover?(doctor_city.lng) then 45
-    when (46..60).cover?(doctor_city.lng) then 60
-    when (61..75).cover?(doctor_city.lng) then 75
-    when (76..90).cover?(doctor_city.lng) then 90
-    when (91..105).cover?(doctor_city.lng) then 105
-    when (106..120).cover?(doctor_city.lng) then 45
-    when (121..135).cover?(doctor_city.lng) then 135
-    when (136..150).cover?(doctor_city.lng) then 150
-    when (151..165).cover?(doctor_city.lng) then 165
-    when (166..180).cover?(doctor_city.lng) then 180
-    end
+array_for_yy
+arr_1
+arr_2
+exit
+  def array_for_yy
+    arr_2 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
   end
-  base_meridian_lng(doctor_city=60)
- def base_meridian_lng(doctor_city, base_lng)
-    case base_lng
-    when (0..15).cover?(doctor_city.lng)  then 15
-    when (16..30).cover?(doctor_city.lng) then 30
-    when (31..45).cover?(doctor_city.lng) then 45
-    when (46..60).cover?(doctor_city.lng) then 60
-    when (61..75).cover?(doctor_city.lng) then 75
-    when (76..90).cover?(doctor_city.lng) then 90
-    when (91..105).cover?(doctor_city.lng) then 105
-    when (106..120).cover?(doctor_city.lng) then 45
-    when (121..135).cover?(doctor_city.lng) then 135
-    when (136..150).cover?(doctor_city.lng) then 150
-    when (151..165).cover?(doctor_city.lng) then 165
-    when (166..180).cover?(doctor_city.lng) then 180
-    end
+array_for_yy
+arr_2
+arr_1
+array_for_yy[0]
+  def array_for_yy
+    arr_2 = [1986,1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983],
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
   end
-  base_meridian_lng(doctor_city=60)
-  base_meridian_lng(doctor_city=60, base_lng)
-Doctor.last.update(city: City.all[1])
-Doctor.last.update(city: City.all[0])
-reload!
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[0])
-Doctor.last.city
-reload!
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[2])
-Doctor.last.update(city: City.all[0])
+array_for_yy
+array_for_yy[0]
+array_for_yy[1]
+  def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997],
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
+  end
+array_for_yy
+array_for_yy[0]
+array_for_yy[1]
+  def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997],
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,1961,1962,1964,1965,1967,1973,1975,1981,1983,1986]
+  end
+array_for_yy
+array_for_yy[0]
+array_for_yy[1]
+  def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,
+      1961,1962,1964,1965,1967,1973,1975,1981,1983,1986,1994,2002,2005,2008,2013,2016,2021,
+      2029,2043]
+  end
+array_for_yy
+array_for_yy[0]
+def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997],
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,
+      1961,1962,1964,1965,1967,1973,1975,1981,1983,1986,1994,2002,2005,2008,2013,2016,2021,
+      2029,2043]
+  end
+array_for_yy
+  aarray_for_yy[0]
+  array_for_yy[0]
+  array_for_yy[0]
+def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,
+      1961,1962,1964,1965,1967,1973,1975,1981,1983,1986,1994,2002,2005,2008,2013,2016,2021,
+      2029,2043]
+  end
+def array_for_yy
+    arr_0 = [1921,1929,1937,1945,1970,1978,1989,1997]
+    arr_1 = [1923,1924,1926,1932,1934,1935,1940,1942,1943,1946,1948,1951,1953,1954,1956,1959,
+      1961,1962,1964,1965,1967,1973,1975,1981,1983,1986,1994,2002,2005,2008,2013,2016,2021,
+      2029,2043]
+  end
+array_for_y
+array_for_yy
+array_for_yy[arr_0]
+array_for_yy[arr_1]
+array_for_yy(arr_1)
 exit
