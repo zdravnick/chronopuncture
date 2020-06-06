@@ -14,12 +14,12 @@ def prepare
     params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
   @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
   @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
-  @sun_time_zone =
+  @sun_datetime_zone =
     ActiveSupport::TimeZone[current_doctor.city.time_zone].local(@sun_time.year, @sun_time.month, @sun_time.day, @sun_time.hour, @sun_time.min, @sun_time.sec)
   @offset_timezone_doctor =
-    (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time_zone).to_i
-  @guard = guard(@doctor_city, @doctor_current_datetime_utc)
-  @eot = eot(@doctor_current_datetime_utc).to_i
+    (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
+  @guard = guard(@doctor_city, @sun_datetime_zone)
+  @eot = eot(@sun_datetime_zone).to_i
 
 end
 
@@ -76,18 +76,18 @@ end
       def complex_balance
         @patient = Patient.find(params["patient_id"])
         @patient_city = @patient.city
+        @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
         Time.use_zone(@patient.city.time_zone) do
-          # binding.pry
           @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
             params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
-            params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i).in_time_zone('UTC')
-          @eot_patient = eot_patient(@patient_birthdate)
+            params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
+          @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
           @year_num_patient = year_number_60th_calculation(@patient_birthdate)
           @number_of_day_60th = number_of_day__60th_cycle_calculation(@year_num_patient,
               @patient_birthdate)
-          @moment = moment_of_birth(@patient_birthdate, @patient_city)
-          @guard_patient = guard(@patient_city, @patient_birthdate)
-          @guard_doctor = guard(@doctor_city, @doctor_current_datetime_utc )
+          @sun_time_patient = sun_time(@patient_city, @patient_birthdate_utc)
+          @eot_patient = eot_patient(@sun_time_patient)
+          @guard_patient = guard_patient(@sun_time_patient.hour)
           @month_patient_lo_shu = patient_month_calculation(@patient_birthdate)[:value]
           @first_point_lo_shu = first_point_lo_shu_number(@year_num_patient, @month_patient_lo_shu,
             @number_of_day_60th, @guard_doctor)
@@ -99,8 +99,10 @@ end
           @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
           @matrix = points_matrix_lo_shu(@meridian_lo_shu)
           @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
+           binding.pry
           render "doctors/complex_balance"
         end
+
       end
 
 
@@ -154,7 +156,7 @@ end
 
         end
         base = base_meridian*4.minutes
-      date + (base - (base - (city[:lng]*4).minutes )) + eot(date).seconds
+      date + (city[:lng]*4).minutes + eot(date).seconds
     end
 
     def number_of_day_calculation(city, date)
@@ -2607,12 +2609,10 @@ end
 
 #
 
-def moment_of_birth(time, city)
-  moment_of_birth = (time + (city[:lng]*4).minutes + eot_patient(time).seconds).hour
-end
 
-def guard(time, city)
-  case moment_of_birth(time, city)
+
+def guard_patient(sun_time)
+  case sun_time
   when 19...21 then 11
   when 21...23 then 12
   when 23, 0 then 1

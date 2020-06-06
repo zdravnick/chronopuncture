@@ -1,54 +1,3 @@
-b.save
-Doctor.last.city
-b.city = City.all[0]
-b.save
-Doctor.last.city
-учше
-exit
-Doctor.last.sity.update(City.all[1])
-Doctor.last.update(city: City.all[1])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[4])
-Doctor.last.update(city: City.all[5])
-Doctor.last.update(city: City.all[6])
-Doctor.last.update(city: City.all[7])
- City.all[7].time_zone
- City.all[7].update(time_zone: "Moscow")
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[2])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[7])
-Doctor.last.update(city: City.all[1])
-Doctor.last.update(city: City.all[0])
-Doctor.last.update(city: City.all[1])
-Doctor.last.city
-Doctor.last.update(city: City.all[0])
-Doctor.last.city
-Doctor.last.city.update(lng: 60)
-Doctor.last.city.update(lng: 59.6)
-Doctor.last.update(city: City.all[1])
-City.all[1].lng
-Doctor.last.update(city: City.all[0])
-(0..15)
-(0..15).to_a
-def base_meridian_lng(doctor_city)
-  case base_lng
-  when (0..15).cover?(doctor_city.lng)
-    base_lng = 15
-  when (16..30).cover?(doctor_city.lng)
-    base_lng = 30
-  when (31..45).cover?(doctor_city.lng)
-    base_lng = 45
-    when (46..60).cover?(doctor_city.lng)
-     base_lng = 60
-   when (61..75).cover?(doctor_city.lng)
-    base_lng = 75
-  when (76..90).cover?(doctor_city.lng)
-    base_lng = 90
-  when (91..105).cover?(doctor_city.lng)
-    base_lng = 105
-  when (106..120).cover?(doctor_city.lng)
-    base_lng = 45
   when (121..135).cover?(doctor_city.lng)
     base_lng = 135
   when (136..150).cover?(doctor_city.lng)
@@ -197,4 +146,55 @@ reload!
 Doctor.last.update(city: City.all[0])
 Doctor.last.update(city: City.all[2])
 Doctor.last.update(city: City.all[0])
+exit
+Time.now
+Time.now(:short)
+Time.now.to_s(:short)
+Time.local(2020, 1, 1, 12, 15)
+today.year = 1912
+today_year = 1912
+today_year
+Time.local(today_year, 5, 15, Time.now.hour, Time.now.min)
+Time.TimeZone['Yakutsk'].local(today_year, 5, 15, Time.now.hour, Time.now.min)
+AtiveSupport::TimeZone['Yakutsk'].local(today_year, 5, 15, Time.now.hour, Time.now.min)
+ActiveSupport::TimeZone['Yakutsk'].local(today_year, 5, 15, Time.now.hour, Time.now.min)
+birth = ActiveSupport::TimeZone['Yakutsk'].local(today_year, 5, 15, Time.now.hour, Time.now.min)
+birth
+birth
+birth.zone['YEKT']
+birth.in_time_zone('YEKT')
+birth.in_time_zone('Moscow')
+birth = ActiveSupport::TimeZone['Moscow'].local(today_year, 5, 15, Time.now.hour, Time.now.min)
+birth
+Patient.all[17]
+Patient.all[16]
+Patient.all[id: 17]
+Patient.all[id: '17']
+Patient(17)
+Patient.all(17)
+Patient.find(17)
+Patient.find(17).city
+ Time.zone_default 
+birth
+birtth.zone_default 
+birth.zone_default 
+birth.Time.zone_default 
+ def guard(city, date) # таблица Стражи Часа
+      case sun_time(city, date).hour
+      when 19, 20 then 11
+      when 21, 22 then 12
+      when 23, 0 then 1
+      when  1, 2 then 2
+      when  3, 4 then 3
+      when  5, 6 then 4
+      when  7, 8 then 5
+      when  9, 10 then 6
+      when 11, 12 then 7
+      when 13, 14 then 8
+      when 15, 16 then 9
+      when 17, 18 then 10
+      end
+    end
+учше
+exti
 exit

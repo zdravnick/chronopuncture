@@ -1,14 +1,16 @@
 <h3>Метод Сложного Баланса</h3>
 <h3>поправка EOT в секундах: <%= @eot  %> </h3>
 
-<h4>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h4>
+<h4>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_datetime_zone %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
 
 <h5>Солн. поправка для пацика <%= @eot_patient.to_i  %>  секунд</h5>
 
+<h5>Проверка @guard_patient <%= @guard_patient %></h5>
+<h5>@patient_birthdate Время рождения пациента: <%= @patient_birthdate %></h5>
+<h5>Проверка  @patient_birthdate_in_zone :  <%= @patient_birthdate_in_zone %></h5>
 <h5>Проверка Даты Рождения пациента:  <%= @year_num_patient %></h5>
 <h5>Проверка number_of_day пациента:  <%= @number_of_day_60th %></h5>
-<h5>Проверка moment_of_birth:  <%= @patient_birthdate %></h5>
 <h5>Проверка month_patient:  <%= @month_patient_lo_shu %></h5>
 <h5>Проверка 1ая точка Ло-Шу:  <%= @first_point_lo_shu %></h5>
 <h5>Проверка меридиан для заполнения Ло-шу  <%= @meridian_lo_shu %>  </h3>

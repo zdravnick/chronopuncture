@@ -1,10 +1,13 @@
 <h2> лингуй_7_дней </h2>
 <h4>ГРИНВИЧ: <%=  @doctor_current_datetime_utc %></h4>
 <h4>СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time %></h4>
-<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time_zone %></h4>
+<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
+<h4>EOT: <%=  @eot %></h4>
 <h4>разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
 <h4>Ствол дня: <%= @trunc_day %></h4>
+<h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
+
 <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
@@ -28,8 +31,6 @@
               <%  end%>
             <%  else %>
           <div  class="<%= (date-@offset_for_time_table.hour..date-@offset_for_time_table.hour+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight_2' : '' %>">  <%=  link_to point, params.permit!.merge({a: point})%>
-            разница солн/местн, сек:<%= @offset_timezone_doctor %>
-
             </div>
             <%  end %>
 
