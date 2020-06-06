@@ -14,6 +14,10 @@ def prepare
     params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
   @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
   @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
+  @sun_time_zone =
+    ActiveSupport::TimeZone[current_doctor.city.time_zone].local(@sun_time.year, @sun_time.month, @sun_time.day, @sun_time.hour, @sun_time.min, @sun_time.sec)
+  @offset_timezone_doctor =
+    (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time_zone).to_i
   @guard = guard(@doctor_city, @doctor_current_datetime_utc)
   @eot = eot(@doctor_current_datetime_utc).to_i
 
