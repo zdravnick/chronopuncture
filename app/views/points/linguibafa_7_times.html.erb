@@ -2,6 +2,7 @@
 <h4>ГРИНВИЧ: <%=  @doctor_current_datetime_utc %></h4>
 <h4>СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
+<h4>Ствол дня: <%= @trunc_day %></h4>
 <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
