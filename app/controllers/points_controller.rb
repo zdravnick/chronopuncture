@@ -99,7 +99,7 @@ end
           @meridian_lo_shu = meridian_for_lo_shu_square(@half_hour_visit)
           @matrix = points_matrix_lo_shu(@meridian_lo_shu)
           @opened_points_lo_shu = lo_shu_points(@matrix, @first_point_lo_shu)[:points]
-           binding.pry
+           # binding.pry
           render "doctors/complex_balance"
         end
 
@@ -160,7 +160,7 @@ end
     end
 
     def number_of_day_calculation(city, date)
-      if date < 3
+      if date.month < 3
         mon = date.mon + 12
         year = date.year - 1
         else
@@ -2590,8 +2590,7 @@ def year_number_60th_calculation(birth)
 end
 
 def number_of_day__60th_cycle_calculation(year_num, date) # номер дня пациента!
-  y = year_num%12
-  if y < 3
+  if date.mon < 3
     mon = date.mon + 12
     year = date.year - 1
     else

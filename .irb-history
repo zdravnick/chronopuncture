@@ -1,7 +1,3 @@
-  when (121..135).cover?(doctor_city.lng)
-    base_lng = 135
-  when (136..150).cover?(doctor_city.lng)
-    base_lng = 150
   when (151..165).cover?(doctor_city.lng)
     base_lng = 165
   when (166..180).cover?(doctor_city.lng)
@@ -197,4 +193,8 @@ birth.Time.zone_default
     end
 учше
 exti
+exit
+ DateTime.now
+ DateTime.now.mon
+ DateTime.now.month
 exit
