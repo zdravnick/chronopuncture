@@ -42,7 +42,7 @@
     <h3>МЕТОД "24 минуты"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
     <%= f.label " Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
     <% end %>
   </p>
