@@ -12,16 +12,20 @@ class PointsController < ApplicationController
     @doctor_current_datetime_utc = Time.zone.local(params["date(1i)"].to_i,
       params["date(2i)"].to_i,params["date(3i)"].to_i,
       params["date(4i)"].to_i,params["date(5i)"].to_i).in_time_zone('UTC')
-    @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
     @sun_datetime_zone =
       ActiveSupport::TimeZone[current_doctor.city.time_zone].local(@sun_time.year, @sun_time.month, @sun_time.day, @sun_time.hour, @sun_time.min, @sun_time.sec)
+    @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @offset_timezone_doctor =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
+    @brunch_day = brunch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @trunc_hour = trunc_hour_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @brunch_hour = brunch_hour_calculation(@doctor_city, @sun_datetime_zone)
     @guard = guard(@doctor_city, @doctor_current_datetime_utc)
     @eot = eot(@sun_datetime_zone).to_i
     @offset_for_time_table =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time).to_i
+
   end
 
 
@@ -179,6 +183,23 @@ class PointsController < ApplicationController
       brunch_day = 12
       else
       brunch_day -= 2
+    end
+  end
+
+  def brunch_hour_calculation(city, time)
+    case time.hour
+    when 19, 20 then 11
+    when 21, 22 then 12
+    when 23, 0 then 1
+    when  1, 2 then 2
+    when  3, 4 then 3
+    when  5, 6 then 4
+    when  7, 8 then 5
+    when  9, 10 then 6
+    when 11, 12 then 7
+    when 13, 14 then 8
+    when 15, 16 then 9
+    when 17, 18 then 10
     end
   end
 

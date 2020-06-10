@@ -7,6 +7,9 @@
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
 <h4>Ствол дня: <%= @trunc_day %></h4>
+<h4>Ветвь дня: <%= @brunch_day %></h4>
+<h4>ствол ЧАСА: <%= @trunc_hour %></h4>
+<h4>Ветвь ЧАСА: <%= @brunch_hour %></h4>
 <h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
 <h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
 
@@ -19,10 +22,12 @@
     <td><%= elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>
+
       <table>
+        <%= elem[:date].strftime("%A, %v")%>
         <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
          <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, elem[:date].min, elem[:date].sec).change(hour: hour)  )%>
-          .<%  point = opened_point_linguibafa(@doctor_city, date) %>
+          <%  point = opened_point_linguibafa(@doctor_city, date) %>
           <tr class="<%= (date-@offset_for_time_table-@offset_timezone_doctor..date-@offset_for_time_table-@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight' : '' %>">
             <td> <%= (date-@offset_for_time_table-@offset_timezone_doctor).strftime("%H:%M")  %> </td>
             <td> - </td>
