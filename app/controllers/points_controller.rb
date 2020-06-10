@@ -188,18 +188,19 @@ class PointsController < ApplicationController
 
   def brunch_hour_calculation(city, time)
     case time.hour
-    when 19, 20 then 11
-    when 21, 22 then 12
-    when 23, 0 then 1
-    when  1, 2 then 2
-    when  3, 4 then 3
-    when  5, 6 then 4
-    when  7, 8 then 5
-    when  9, 10 then 6
-    when 11, 12 then 7
-    when 13, 14 then 8
-    when 15, 16 then 9
-    when 17, 18 then 10
+    when 19..20 then 11
+    when 21..22 then 12
+    when 23 then 1
+    when 0 then 1
+    when  1..2 then 2
+    when  3..4 then 3
+    when  5..6 then 4
+    when  7..8 then 5
+    when  9..10 then 6
+    when 11..12 then 7
+    when 13..14 then 8
+    when 15..16 then 9
+    when 17..18 then 10
     end
   end
 
