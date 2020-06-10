@@ -26,7 +26,8 @@
       <table>
         <%= elem[:date].strftime("%A, %v")%>
         <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
-         <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, elem[:date].min, elem[:date].sec).change(hour: hour)  )%>
+         <% date =
+         (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, elem[:date].min, elem[:date].sec).change(hour: hour)  )%>
           <%  point = opened_point_linguibafa(@doctor_city, date) %>
           <tr class="<%= (date-@offset_for_time_table-@offset_timezone_doctor..date-@offset_for_time_table-@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight' : '' %>">
             <td> <%= (date-@offset_for_time_table-@offset_timezone_doctor).strftime("%H:%M")  %> </td>
