@@ -16,13 +16,13 @@
 <% end %>
 <table><% @opened_points_linguibafa.each do |elem| %>
   <tr>
-    <td><%= elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
+    <td><%=  elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
     <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
     <td>
       <table>
-          <h4  class="highlight" > <%= elem[:date].strftime("%v, %A") %></h4>
+          <h4  class="highlight" > <%=  I18n.l elem[:date].strftime("%v, %A").to_datetime  %></h4>
         <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
          <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-2.hours )%>
           <%  point = opened_point_linguibafa(@doctor_city, date+@offset_for_time_table) %>
