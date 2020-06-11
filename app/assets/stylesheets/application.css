@@ -44,6 +44,10 @@ outline: none !important
   background-color: yellow;
 }
 
+.navigation>ul>li>a{
+ background-color: lightblue;
+}
+
 ul>li {
   color: #800000;
   list-style-type: disc;

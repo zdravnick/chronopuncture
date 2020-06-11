@@ -13,6 +13,12 @@
 
 
   <body>
+      <nav class="navigation">
+        <ul>
+          <li><%= link_to 'English', root_path(locale: :en) %></li>
+          <li><%= link_to 'Русский', root_path(locale: :ru) %></li>
+        </ul>
+      </nav>
 
       <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
       <h3>Город доктора: <%= current_doctor.city.name %></h3>
