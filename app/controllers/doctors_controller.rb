@@ -18,8 +18,10 @@ class DoctorsController < ApplicationController
   end
 
 def update
-  Doctor.updame:
+  Doctor.update()
     name: params[:name],
     email: params[:email],
-    city: params[:city_id]
+    city: params[:city_id],
+    password: params[:password]
+  )
 end

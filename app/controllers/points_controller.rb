@@ -2383,6 +2383,22 @@ class PointsController < ApplicationController
       result <<  'from ' + ((mark['23-01'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['23-01'] + 1.hour).hour).to_s +
       ':00' + points[1][2].to_s
     when 2
+      result <<  'TRUNC DAY IS: ' + trunc.to_s
+      result <<  'from ' + ((mark['23-01'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['23-01'] + 1.hour).hour).to_s +
+      ':00' + points[1][2].to_s + ' from previous 1st trunc! - ' + date.yesterday.to_s(:short)
+       # doubled point from previous day
+      result <<  'from ' + ((mark['03-05'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['03-05'] + 1.hour).hour).to_s +
+      ':00' + points[1][3].to_s + ' from previous 1st trunc! - ' + date.yesterday.to_s(:short)
+      result <<  'from ' + ((mark['07-09'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['07-09'] + 1.hour).hour).to_s +
+      ':00' + points[1][4].to_s + ' from previous 1st trunc! - ' + date.yesterday.to_s(:short)
+      result <<  'from ' + ((mark['11-13'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['11-13'] + 1.hour).hour).to_s +
+      ':00' + points[1][5].to_s + ' from previous 1st trunc! - ' + date.yesterday.to_s(:short)
+      result <<  'from ' + ((mark['15-17'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['15-17'] + 1.hour).hour).to_s +
+      ':00' + points[1][6].to_s  + ' from previous 1st trunc! - ' + date.yesterday.to_s(:short)
+      result <<  'from ' + ((mark['17-19'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['17-19'] + 1.hour).hour).to_s +
+      ':00' + points[2][1].to_s
+      result <<  'from ' + ((mark['21-23'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['21-23'] + 1.hour).hour).to_s +
+      ':00' + points[2][2].to_s
     when 3
       result <<  'TRUNC DAY IS: ' + trunc.to_s
       result <<  'from ' + ((mark['01-03'] - 1.hour).hour).to_s + ':00' + ' to ' + ((mark['01-03'] + 1.hour).hour).to_s +
