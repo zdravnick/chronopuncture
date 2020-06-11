@@ -35,6 +35,13 @@ outline: none !important
   /*font-weight: bold;*/
  }
 
+.points_linguibafa_7>a, .highlight_2>a {
+  display: block;
+  text-align: center;
+  padding: 3px;
+
+}
+
 .highlight, .highlight_2>a {
   color: red;
   border: 1px solid red;
@@ -42,6 +49,7 @@ outline: none !important
 
 .highlight_2>a {
   background-color: yellow;
+
 }
 
 .navigation>ul>li>a{

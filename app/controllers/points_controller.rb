@@ -40,7 +40,7 @@ class PointsController < ApplicationController
 
   def linguibafa_7_times
   @opened_points_linguibafa =
-    ((@doctor_current_datetime_utc.to_datetime-1.days)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
+    ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
     {date: date, point: opened_point_linguibafa(@doctor_city, date) }
     end
   end
