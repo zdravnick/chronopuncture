@@ -42,6 +42,10 @@ outline: none !important
 
 }
 
+.highlight {
+  text-align: center;
+}
+
 .highlight, .highlight_2>a {
   color: red;
   border: 1px solid red;

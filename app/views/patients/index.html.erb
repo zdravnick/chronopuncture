@@ -1,7 +1,9 @@
 
   <% if doctor_signed_in? %>
       <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
+       <%= link_to 'Личный кабинет', doctor_registration_path, class: 'btn-control', :method => :put %>
        <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
+
   <% else %>
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
@@ -91,6 +93,5 @@
    </div>
     <p></p>
     <% end %>
-
 
 

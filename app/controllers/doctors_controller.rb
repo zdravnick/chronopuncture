@@ -17,11 +17,13 @@ class DoctorsController < ApplicationController
     )
   end
 
-def update
-  Doctor.update()
-    name: params[:name],
-    email: params[:email],
-    city: params[:city_id],
-    password: params[:password]
-  )
+  def update
+    Doctor.update(
+      name: params[:name],
+      email: params[:email],
+      city: params[:city_id]
+    )
+  end
+
+
 end
