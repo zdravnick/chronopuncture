@@ -1,10 +1,8 @@
 class ApplicationController < ActionController::Base
 
-  around_action :switch_locale
-
-  def switch_locale(&action)
-    locale = params[:locale] || I18n.default_locale
-    I18n.with_locale(locale, &action)
+def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:name, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :password, :password_confirmation, :email) }
   end
 
 

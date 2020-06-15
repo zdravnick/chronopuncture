@@ -13,19 +13,23 @@
 
 
   <body>
+
       <nav class="navigation">
         <ul>
           <li><%= link_to 'English', root_path(locale: :en) %> <%= link_to 'Русский', root_path(locale: :ru) %></li>
         </ul>
       </nav>
-
+  <% if doctor_signed_in? %>
       <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
       <h3>Город доктора: <%= current_doctor.city.name %></h3>
       <h3>Таймзона доктора: <%= current_doctor.city.time_zone %></h3>
+  <% end %>
       <p class="notice"><%= notice %></p> <!-- это от гема devise -->
       <p class="alert"><%= alert %></p>
      <!--  это от гема devise -->
       <%= yield %>
+
+
 
   </body>
 

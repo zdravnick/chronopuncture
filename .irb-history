@@ -1,68 +1,3 @@
-        when 1928, 1936, 1944, 1947, 1952, 1955, 1960, 1963, 1968, 1971, 1974, 1976, 1979, 1982,
-                   1987, 1990, 1993, 1995, 1996, 1998, 2001, 2003, 2004, 2006, 2009, 2014, 2015, 2017,
-                   2022, 2023, 2025, 2031, 2033, 2034, 2042, 2050 ; 3
-        when 2012, 2020, 2028, 2036, 2039, 2044, 2047 ; 4
-        else ; 2
-        end
-  a = DateTime.now.getutc.to_a; delta = delta + a[2].to_f / 24 + a[1].to_f / 60 / 24 # Поправка на дробную часть дня
-  lambda = 23.4406 * pi / 180; # Earth's inclination in radians
-  omega = 2 * pi / 365.2564 # angular velocity of annual revolution (radians/day)
-  alpha = omega * ((delta + 10) % 365) # angle in (mean) circular orbit, solar year starts 21. Dec
-  beta = alpha + 0.03340560188317 * Math.sin(omega * ((delta - np) % 365)) # angle in elliptical orbit, from perigee  (radians)
-  gamma = (alpha - Math.atan(Math.tan(beta) / Math.cos(lambda))) / pi # angular correction
-  eot = (43200 * (gamma - gamma.round)) # equation of time in seconds
-end
-eot
-CITIES = [
-  {city: 'Magnitogorsk', lng: 59.6},
-  {city: 'Moscow', lng: 37.64},
-  {city: 'Novosibirsk', lng: 82.9}
-]
-user_city = CITIES[0]
-user_date = DateTime.current
-  def sun_time(city, date)
-    date + (city[:lng]*4).minutes + eot.seconds
-  end
-sun_time(user_city, user_date)
-def number_of_day_calculation(city, date)
-  if date.month < 3
-    mon = date.mon + 12
-    year = date.year - 1
-    else
-    mon = date.mon
-    year = date.year
-  end
-  number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
-end
-number_of_day_calculation(user_city, user_date)
-def trunc_day_calculation(city, date)
-  trunc_day = number_of_day_calculation(city, date) % 10
-  if trunc_day > 4
-    trunc_day -= 4
-    else
-    trunc_day += 6
-  end
-end
-def brunch_day_calculation(city, date)
-  brunch_day = number_of_day_calculation(city, date) % 12
-  if brunch_day < 3
-    brunch_day += 10
-  elsif brunch_day == 0
-    brunch_day = 12
-    else
-    brunch_day -= 2
-  end
-end
-trunc_day_calculation(user_city, user_date)
-brunch_day_calculation(user_city, user_date)
-учше
-xit
-exit
-def eot
-  pi = (Math::PI) # pi
-  delta = (DateTime.now.getutc.yday - 1) # (Текущий день года - 1)
-  yy = DateTime.now.getutc.year
-  np = case yy #The number np is the number of days from 1 January to the date of the Earth's perihelion. (http://www.astropixels.com/ephemeris/perap2001.html)
         when 1921, 1929, 1937, 1945, 1970, 1978, 1989, 1997 ; 0
         when 1923, 1924, 1926, 1932, 1934, 1935, 1940, 1942, 1943, 1946, 1948, 1951, 1953, 1954,
                    1956, 1959, 1961, 1962, 1964, 1965, 1967, 1973, 1975, 1981, 1983, 1986, 1994, 2002,
@@ -197,4 +132,69 @@ Doctor.last.password
 exit
 I18n.l Time.now
 I18n.t Time.now
+exit
+Doctor.last
+Doctor.all.each{ |d| d.name}
+Doctor.all.each{ |d| p  d.name}
+Doctor.last.patients.each{ |p| p  p.name}
+exit
+Doctor.last
+Doctor.all.each{ |d| p  d.name}
+current_doctor = Doctor.last
+City.all
+exit
+current_doctor = Doctor.last
+current_doctor.update_attributes(unique_session_id: "")
+current_doctor.update_attributes(unique_session_id: "")
+@doctor = Doctor.find(params[:id])
+current_doctor
+sing_out current_doctor
+sign_out current_doctor
+exit
+@doctor.update_attributes(current_sign_in_token: "")
+include Devise::Controllers::SignInOut
+current_doctor.tokens = nil
+user.tokens = nil
+@doctor.tokens = nil
+current_doctor = Doctor.last
+current_doctor.update_column(:password_salt, 'reset') 
+current_doctor.update_column(:unique_password, 'reset') 
+current_doctor.update_column(:encrypted_password, 'reset') 
+current_doctor
+exit
+Doctor.all
+raw, hashed = Devise.token_generator.generate(User, :reset_password_token)
+raw, hashed = Devise.token_generator.generate(Doctor, :reset_password_token)
+current_doctor = Doctor.find(5)
+current_doctor.reset_password_token = hashed
+current_doctor.reset_password_sent_at = Time.now
+current_doctor
+current_doctor.save
+raw, hashed = Devise.token_generator.generate(Doctor, :reset_password_token)
+current_doctor = Doctor.find_by(email: 'consilium1@yandex.ru')
+current_doctor.reset_password_token = hashed
+current_doctor.reset_password_sent_at = Time.now
+current_doctor.save
+u = Doctor.find_by(email: 'consilium1@yandex.ru')
+puts u.password_digest
+puts u.password
+current_doctor.update_column(:encrypted_password, '123123') 
+puts u.password
+u = Doctor.find_by(email: 'consilium1@yandex.ru')
+puts u.password
+puts u.encrypted_password
+current_doctor.update_column(:encrypted_password, 'reset') 
+puts u.encrypted_password
+current_doctor.update_column(:encrypted_password, 'reset') 
+doctor = Doctor.find(5)
+doctor = Doctor.find_by(email: 'consilium1@yandex.ru')
+doctor
+doctor.reset_password_token = hashed
+doctor.reset_password_sent_at = Time.now
+doctor.save
+doctor = Doctor.find_by(email: 'lena@mail.ru')
+doctor.reset_password_token = hashed
+doctor.reset_password_sent_at = Time.now
+doctor.save
+reload!
 exit
