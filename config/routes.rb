@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   resources :patients
   resources :visits
 
-  # scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-  #   resources :doctors, :points
-  # end
-
-
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+    resources :doctors, :points, :patients, :visits
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

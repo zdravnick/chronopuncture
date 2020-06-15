@@ -22,7 +22,9 @@
     <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
     <td>
       <table>
-          <h4  class="highlight" > <%= (elem[:date].to_datetime, :format => '%d %b, %A')%></h4>
+          <h4  class="highlight" > <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%></h4>
+          <h4  class="highlight" > <%= elem[:date].strftime('%d %b, %A')%></h4>
+
 
 
 
