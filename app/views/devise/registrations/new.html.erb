@@ -9,6 +9,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :phone %><br />
+    <%= telephone_field(:doctor, :phone)  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name ) %></p>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

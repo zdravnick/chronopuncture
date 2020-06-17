@@ -25,17 +25,15 @@ class PointsController < ApplicationController
     @eot = eot(@sun_datetime_zone).to_i
     @offset_for_time_table =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time).to_i
-
   end
 
 
   def linguibafa
-  @sum_of_numbers_linguibafa =
-    sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-  @opened_points_linguibafa =
-    opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
-  render  "doctors/linguibafa"
-
+    @sum_of_numbers_linguibafa =
+      sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+    @opened_points_linguibafa =
+      opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+    render  "doctors/linguibafa"
   end
 
   def linguibafa_7_times
@@ -46,12 +44,20 @@ class PointsController < ApplicationController
   end
 
   helper_method :opened_point_linguibafa
+  helper_method :opened_points_naganfa
 
   def infusion
     @points_infusion = points_infusion
     @opened_points_infusion = opened_points_infusion(@trunc_day, @guard, @points_infusion)
     render "doctors/infusion"
     # There is SUN TIME in the table!
+  end
+
+  def infusion_7_times
+    @points_infusion = points_infusion_2
+    @opened_points_infusion = ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
+      {date: date, point: opened_points_infusion_2(@trunc_day, @guard, @points_infusion) }
+    end
   end
 
   def infusion_2
@@ -68,6 +74,18 @@ class PointsController < ApplicationController
     @opened_points_naganfa =
       opened_points_naganfa(@trunc_day, @mark, @points_naganfa, @doctor_current_datetime_utc)
     render "doctors/naganfa"
+    # There is TIME.now in the table!
+  end
+
+  def naganfa_7_times
+    @mark = time_mark(@doctor_current_datetime_utc)
+    @points_naganfa = points_naganfa
+    @date = ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).to_a
+    @opened_points_naganfa = @date.map do |date|
+      @trunc_day = trunc_day_calculation(@doctor_city, date)
+      {date: date, points: opened_points_naganfa(@trunc_day, @mark, @points_naganfa, date)
+      }
+  end
     # There is TIME.now in the table!
   end
 

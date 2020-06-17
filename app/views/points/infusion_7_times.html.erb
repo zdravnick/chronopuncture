@@ -1,20 +1,16 @@
-<h2> лингуй_7_дней </h2>
-<h4>ГРИНВИЧ: <%=  @doctor_current_datetime_utc %></h4>
-<h4>СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time %></h4>
-<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
-<h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)%></h4>
-<h4>EOT: <%=  @eot %></h4>
+<h3>ВЛИВАНИЕ ПО 24 МИНУТЫ:</h3>
 <td> Стража: <%= @guard %><td>
+<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
+<h4>EOT: <%=  @eot %></h4>
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
-<h4>Ствол дня: <%= @trunc_day %>, Ветвь дня: <%= @brunch_day %></h4>
-<h4></h4>
-<h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
-<h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
+<h4>Расчетное время: @doctor_current_datetime_utc.in_time_zone <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
 
-<% if params[:a]%>
+  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
+
+  <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
-<table><% @opened_points_linguibafa.each do |elem| %>
+<table><% @opened_points_infusion.each do |elem| %>
   <tr>
     <td><%=  elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
     <td><%= elem[:point].to_s%></td>
@@ -27,7 +23,7 @@
 
         <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
          <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-2.hours )%>
-          <%  point = opened_point_linguibafa(@doctor_city, date+@offset_for_time_table) %>
+          <%  point = opened_points_infusion_2(@trunc_day, date+@offset_for_time_table) %>
           <tr class="<%= (date+@offset_timezone_doctor..date+@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight' : '' %>">
             <td> <%= (date+@offset_timezone_doctor).strftime("%H:%M")  %> </td>
             <td> - </td>
