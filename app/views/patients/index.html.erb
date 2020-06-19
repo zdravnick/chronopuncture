@@ -36,7 +36,7 @@
     <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "Рассчитать" %>
+    <%= f.submit "На неделю" %>
     <% end %>
 </p>
 
@@ -63,7 +63,7 @@
     <%= form_with local: true, method: :get, url: points_infusion_7_times_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "Рассчитать" %>
+    <%= f.submit "На неделю" %>
     <% end %>
 </p>
 
@@ -81,7 +81,7 @@
       <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
       <%= f.label "Выберите время: " %>
       <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-      <%= f.submit "РАССЧИТАТЬ" %>
+      <%= f.submit "На неделю" %>
       <% end %>
     </p>
 

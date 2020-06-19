@@ -12,19 +12,22 @@
 
  <table > <% @opened_points_infusion.each do |day| %>
    <tr class = "infusion_7"><% day.each do |part| %>
-    <th class = "infusion_7"><%= part[:date].strftime('%d %b, %A')  %></th>
-
-         <table class = "infusion_7"> <% part[:point].each do |opened_points|  %>
-            <td> <%= opened_points[:time]  %>
-             <% if opened_points[:point].is_a?(Array)  %>
-                 <%= "открыты: " + opened_points[:point][0][:name] + " и " + opened_points[:point][1][:name] %>
-                    <% else  %>
-                  <%=  "открыта: " + opened_points[:point].name %>
-                </td>
-             <% end  %>
-              <% end  %>
-        </table>
-
+    <caption class = "infusion_7"><%= part[:date].strftime('%d %b, %A')  %></<caption>
+      <table class = "infusion_7"> <% part[:point].each do |opened_points|  %>
+        <tr>
+          <td>
+            <%= opened_points[:time]  %>
+          </td>
+          <td>
+            <% if opened_points[:point].is_a?(Array)  %>
+              <%= "открыты: " + opened_points[:point][0][:name] + " и " + opened_points[:point][1][:name] %>
+              <% else  %>
+              <%=  "открыта: " + opened_points[:point].name %>
+            <% end  %>
+          </td>
+        </tr>
+        <% end  %>
+      </table>
   </tr>
   <% end  %>
   <% end %>
