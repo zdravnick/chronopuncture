@@ -32,17 +32,16 @@
             <td> <%= (date+@offset_timezone_doctor).strftime("%H:%M")  %> </td>
             <td> - </td>
             <td> <%= (date+@offset_timezone_doctor+2.hour).strftime("%H:%M")  %> </td>
-           <td>
-            <% if params[:a]%>
-             <%  if point == params[:a] %>
-              <%= point %>
-              <%  end%>
-            <%  else %>
-          <div  class="<%= (date+@offset_timezone_doctor..date+@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%=  link_to point, params.permit!.merge({a: point})%>
-            </div>
-            <%  end %>
-
-           </td>
+             <td>
+              <% if params[:a]%>
+               <%  if point == params[:a] %>
+                <%= point %>
+                <%  end%>
+                <%  else %>
+               <div  class="<%= (date+@offset_timezone_doctor..date+@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%=  link_to point, params.permit!.merge({a: point})%>
+                </div>
+              <%  end %>
+             </td>
           </tr>
         <% end %>
       </table>

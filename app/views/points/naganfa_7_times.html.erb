@@ -15,6 +15,7 @@
     <td> <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%> </td>
       <table> <% elem[:points].each do |opened_points| %>
         <tr>
+
           <td> <%= opened_points %> </td>
         </tr>
       <% end %>

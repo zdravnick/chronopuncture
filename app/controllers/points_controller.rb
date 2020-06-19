@@ -45,6 +45,7 @@ class PointsController < ApplicationController
 
   helper_method :opened_point_linguibafa
   helper_method :opened_points_naganfa
+  helper_method :opened_points_infusion_2
 
   def infusion
     @points_infusion = points_infusion
@@ -54,10 +55,15 @@ class PointsController < ApplicationController
   end
 
   def infusion_7_times
+    @infusion_start_day = @doctor_current_datetime_utc.at_beginning_of_day.to_datetime
     @points_infusion = points_infusion_2
-    @opened_points_infusion = ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
-      {date: date, point: opened_points_infusion_2(@trunc_day, @guard, @points_infusion) }
+    @opened_points_infusion = ((@infusion_start_day)..@doctor_current_datetime_utc.end_of_day.to_datetime+6.days).map do |date|
+      @trunc_day = trunc_day_calculation(@doctor_city, date)
+      guard_infusion_7.map do |guard|
+        {date: date, point: opened_points_infusion_2(@trunc_day, guard, @points_infusion) }
+        end
     end
+
   end
 
   def infusion_2
@@ -119,6 +125,9 @@ class PointsController < ApplicationController
     end
   end
 
+  def guard_infusion_7
+    guard = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  end
 
 
   def eot(date)
@@ -334,7 +343,7 @@ class PointsController < ApplicationController
       'FIRST GUARD  JIA GALL_BLADDER' => [
          Point.find_or_create_by(name: 'Vb.44'),
          Point.find_or_create_by(name: 'Ig.2'),
-        [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
+        [Point.find_or_create_by(name: 'E.43'), Point.find_or_create_by(name: 'Vb.40')],
          Point.find_or_create_by(name: 'Gi.5'),
          Point.find_or_create_by(name: 'V.40')
       ],  # GB
@@ -545,7 +554,7 @@ class PointsController < ApplicationController
       'FIRST GUARD  JIA GALL_BLADDER' => [
          Point.find_or_create_by(name: 'Vb.44'),
          Point.find_or_create_by(name: 'Ig.2'),
-        [Point.find_or_create_by(name: 'Vb.43'), Point.find_or_create_by(name: 'Vb.40')],
+        [Point.find_or_create_by(name: 'E.43'), Point.find_or_create_by(name: 'Vb.40')],
          Point.find_or_create_by(name: 'Gi.5'),
          Point.find_or_create_by(name: 'V.40')
       ],  # GB

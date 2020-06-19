@@ -42,6 +42,11 @@ outline: none !important
 
 }
 
+.infusion_7{
+  border: 1px solid black;
+  text-align: center;
+}
+
 .highlight {
   text-align: center;
 }
