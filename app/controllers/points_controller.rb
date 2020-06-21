@@ -1995,11 +1995,11 @@ class PointsController < ApplicationController
             result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '4th GUARD DIN HEART'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[4][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[4][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[4][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[4][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[4][4] }
+            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
         end
       when 8
         if guard == 1

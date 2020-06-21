@@ -28,7 +28,7 @@ outline: none !important
   height: 100%;
   margin-bottom: 30px;
   font-size: 100%;
-  background-color:    #fffde6;
+  background-color:    #dfddb9;
   /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
   /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', #faf3eb - самый дохлый койот */
 
@@ -39,13 +39,35 @@ outline: none !important
   display: block;
   text-align: center;
   padding: 3px;
-
 }
 
-.infusion_7{
-  display: block;
+.infusion_7 {
+  display: inline-block;
+  text-align: left;
+  /*border-collapse :collapse;*/
+}
+
+.infusion_7 tr {
+/*border-bottom: 1px solid black;*/
+
+}
+.infusion_7 .table_next_day {
+  background-color: darkorange;
+}
+
+.infusion_7 caption:nth-of-type(1) {
+  border: 3px solid green;
+}
+
+.infusion_7 tr:nth-child(even) {
+background-color: #cfcc96;
+}
+
+.infusion_7_caption{
+  display: inline-block;
   border: 1px solid black;
   text-align: center;
+  background-color: #afaa50;
 }
 
 .highlight {
@@ -107,7 +129,7 @@ a:hover, .btn-control:hover {
   outline: none !important;
   /*background-color: #DEB887;*/
   background-color: #999900;
-  color: wheat;
+  color: white;
   border-radius: 10px;
   /*border: 2px solid black;*/
 /*  transform: scale(1.05);

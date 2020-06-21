@@ -10,11 +10,14 @@
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
 
- <table > <% @opened_points_infusion.each do |day| %>
-   <tr class = "infusion_7"><% day.each do |part| %>
-    <caption class = "infusion_7"><%= part[:date].strftime('%d %b, %A')  %></<caption>
-      <table class = "infusion_7"> <% part[:point].each do |opened_points|  %>
-        <tr>
+ <table class = "infusion_7" > <% @opened_points_infusion.each do |day| %>
+  <th class="table_next_day">Начало дня: </th>
+    <% day.each do |part| %>
+
+    <caption class = "infusion_7_caption"><%= part[:date].strftime('%d %b, %A')  %></caption>
+
+       <% part[:point].each do |opened_points|  %>
+        <tr class = "infusion_7_table_2">
           <td>
             <%= opened_points[:time]  %>
           </td>
@@ -25,10 +28,9 @@
               <%=  "открыта: " + opened_points[:point].name %>
             <% end  %>
           </td>
+          <% end  %>
         </tr>
-        <% end  %>
-      </table>
-  </tr>
+
   <% end  %>
   <% end %>
 </table>
