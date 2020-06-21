@@ -421,19 +421,19 @@ class PointsController < ApplicationController
         ], # GUI, 10 KIDNEY
 
         '11th GUARD MC ' => [
-          Point.find_or_create_by(name: 'MC.9'),
-          Point.find_or_create_by(name: 'MC.8'),
-          Point.find_or_create_by(name: 'MC.7'),
-          Point.find_or_create_by(name: 'MC.5'),
-          Point.find_or_create_by(name: 'MC.3')
+          Point.find_or_create_by(name: 'Mc.9'),
+          Point.find_or_create_by(name: 'Mc.8'),
+          Point.find_or_create_by(name: 'Mc.7'),
+          Point.find_or_create_by(name: 'Mc.5'),
+          Point.find_or_create_by(name: 'Mc.3')
         ], # MC  PERICARD
 
         '12th GUARD SAN JIAO' => [
-          Point.find_or_create_by(name: 'TR.1'),
-          Point.find_or_create_by(name: 'TR.2'),
-         [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
-          Point.find_or_create_by(name: 'TR.6'),
-          Point.find_or_create_by(name: 'TR.10')
+          Point.find_or_create_by(name: 'Tr.1'),
+          Point.find_or_create_by(name: 'Tr.2'),
+         [Point.find_or_create_by(name: 'Tr.3'), Point.find_or_create_by(name: 'TR.4')],
+          Point.find_or_create_by(name: 'Tr.6'),
+          Point.find_or_create_by(name: 'Tr.10')
         ] # SAN JIAO
 
     }
@@ -530,20 +530,20 @@ class PointsController < ApplicationController
     ], # GUI, 10 KIDNEY
 
     [ '11th GUARD MC ',
-      'MC.9 Zhong-chong',
-      'MC.8 Lao-gong',
-      'MC.7 Da-ling',
-      'MC.5 Jian-shi',
-      'MC.3 Qu-ze'
+      'Mc.9 Zhong-chong',
+      'Mc.8 Lao-gong',
+      'Mc.7 Da-ling',
+      'Mc.5 Jian-shi',
+      'Mc.3 Qu-ze'
     ], # MC  PERICARD
 
     [
       '12th GUARD SAN JIAO',
-      'TR.1 Guan-chong',
-      'TR.2 Ye-men',
-      'TR.3 Zhong-zhu' + ' and ' +  'TR.4 Yang-chi',
-      'TR.6 Zhi-gou',
-      'TR.10 Tian-jing'
+      'Tr.1 Guan-chong',
+      'Tr.2 Ye-men',
+      'Tr.3 Zhong-zhu' + ' and ' +  'TR.4 Yang-chi',
+      'Tr.6 Zhi-gou',
+      'Tr.10 Tian-jing'
     ] # SAN JIAO
     ]
   end
@@ -632,19 +632,19 @@ class PointsController < ApplicationController
         ], # GUI, 10 KIDNEY
 
         '11th GUARD MC' => [
-          Point.find_or_create_by(name: 'MC.9'),
-          Point.find_or_create_by(name: 'MC.8'),
-          Point.find_or_create_by(name: 'MC.7'),
-          Point.find_or_create_by(name: 'MC.5'),
-          Point.find_or_create_by(name: 'MC.3')
+          Point.find_or_create_by(name: 'Mc.9'),
+          Point.find_or_create_by(name: 'Mc.8'),
+          Point.find_or_create_by(name: 'Mc.7'),
+          Point.find_or_create_by(name: 'Mc.5'),
+          Point.find_or_create_by(name: 'Mc.3')
         ], # MC  PERICARD
 
         '12th GUARD SAN JIAO' => [
-          Point.find_or_create_by(name: 'TR.1'),
-          Point.find_or_create_by(name: 'TR.2'),
-         [Point.find_or_create_by(name: 'TR.3'), Point.find_or_create_by(name: 'TR.4')],
-          Point.find_or_create_by(name: 'TR.6'),
-          Point.find_or_create_by(name: 'TR.10')
+          Point.find_or_create_by(name: 'Tr.1'),
+          Point.find_or_create_by(name: 'Tr.2'),
+         [Point.find_or_create_by(name: 'Tr.3'), Point.find_or_create_by(name: 'TR.4')],
+          Point.find_or_create_by(name: 'Tr.6'),
+          Point.find_or_create_by(name: 'Tr.10')
         ] # SAN JIAO
     }
   end

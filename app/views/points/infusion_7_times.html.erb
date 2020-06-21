@@ -11,10 +11,10 @@
 <% end %>
 
  <table class = "infusion_7" > <% @opened_points_infusion.each do |day| %>
-  <th class="table_next_day">Начало дня: </th>
+  <th class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </th>
     <% day.each do |part| %>
 
-    <caption class = "infusion_7_caption"><%= I18n.l(part[:date].to_datetime, :format => '%d %b, %A')  %></caption>
+
 
        <% part[:point].each do |opened_points|  %>
         <tr class = "infusion_7_table_2">
@@ -35,26 +35,3 @@
   <% end %>
 </table>
 
-
-<table class = "infusion_7">
-  <% @opened_points_infusion.map do |elem, day| %>
-    <tr>
-      <tr>
-      <td><%= elem[:date].strftime('%d %b, %A') %></td>
-      <tr><%  elem[:point].each do |day| %></tr>
-        <td><%=  day[:time] %></td>
-
-            <% if day[:point].is_a?(Array) %>
-
-              <td><%= "укалываем " + day[:point][0][:name] + " и " + day[:point][1][:name] %></td>
-              <% else %>
-              <td><%=  "укалываем " + day[:point].name %></td>
-              <% end %>
-
-            <% end %>
-      </tr>
-
-
-    </tr>
- <% end %>
-</table>
