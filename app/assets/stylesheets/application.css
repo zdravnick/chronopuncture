@@ -44,46 +44,26 @@ outline: none !important
 .infusion_7 {
   display: inline-block;
   text-align: left;
-  border-collapse :collapse;
+  /*border-collapse :collapse;*/
 }
 
-.infusion_7 tr {
-/*border-bottom: 1px solid black;*/
 
-}
 .infusion_7 .table_next_day {
   background-color: darkorange;
-  display: inline-block;
+  display: block;
   text-align: center;
-  border-top: 5px solid #dfddb9 ;
-  border-bottom: 5px solid  #dfddb9;
-
-
+  border: 1px solid darkolivegreen;
 }
 
-/*.infusion_7 caption:nth-of-type(1) {
-  border: 3px solid darkorange;
-  font-weight: bold;
-}
-*/
-.infusion_7 tr:nth-child(even) {
+/*.infusion_7 tr:nth-child(even) {
 background-color: #cfcc96;
-border-bottom: 1px solid darkolivegreen ;
-border-top: 3px solid #dfddb9 ;
-border-bottom: 3px solid  #dfddb9;
-
 }*/
+.infusion_7_points:nth-child(odd) {
+background-color: #cfcc96;
+}
 
-/*# просто списком точки получаются )))
-.infusion_7_caption:nth-of-type(1n) {
-display: none;
-}*/
-
-.infusion_7_caption{
-  display: inline-block;
-  border: 1px solid black;
-  text-align: center;
-  background-color: #afaa50;
+.infusion_7_points:nth-child(even) {
+background-color: #bfbb73;
 }
 
 .highlight {
