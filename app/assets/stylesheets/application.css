@@ -56,7 +56,8 @@ outline: none !important
 }
 
 .infusion_7 caption:nth-of-type(1) {
-  border: 3px solid green;
+  border: 3px solid darkorange;
+  font-weight: bold;
 }
 
 .infusion_7 tr:nth-child(even) {

@@ -14,7 +14,7 @@
   <th class="table_next_day">Начало дня: </th>
     <% day.each do |part| %>
 
-    <caption class = "infusion_7_caption"><%= part[:date].strftime('%d %b, %A')  %></caption>
+    <caption class = "infusion_7_caption"><%= I18n.l(part[:date].to_datetime, :format => '%d %b, %A')  %></caption>
 
        <% part[:point].each do |opened_points|  %>
         <tr class = "infusion_7_table_2">
