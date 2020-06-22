@@ -42,15 +42,29 @@ outline: none !important
 }
 
 .infusion_7 {
-  display: inline-block;
-  text-align: left;
+  text-align: center;
+  white-space: nowrap;
   /*border-collapse :collapse;*/
 }
 
+.infusion_7>tr>td {
+
+}
+
+
+.infusion_7_points>td>a {
+
+  background-color: yellow;
+
+}
+
+.infusion_7_points>td>a {
+ text-decoration: none;
+}
 
 .infusion_7 .table_next_day {
   background-color: darkorange;
-  display: block;
+  display: inline-block;
   text-align: center;
   border: 1px solid darkolivegreen;
 }
@@ -64,6 +78,10 @@ background-color: #cfcc96;
 
 .infusion_7_points:nth-child(even) {
 background-color: #bfbb73;
+}
+
+.infusion_7_time_mark:nth-child(1n){
+  display: none;
 }
 
 .highlight {

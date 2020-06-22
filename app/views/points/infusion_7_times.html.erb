@@ -4,33 +4,46 @@
 <h4>EOT: <%=  @eot %></h4>
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
 <h4>Расчетное время: @doctor_current_datetime_utc.in_time_zone <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
-
-  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
   <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>
 <% end %>
+  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
+
 
  <table class = "infusion_7" > <% @opened_points_infusion.each do |day| %>
-  <th class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </th>
-    <% day.each do |part| %>
-
-
-       <% part[:point].each do |opened_points|  %>
+  <caption class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </caption>
+   <tr class="infusion_7_time_mark" > <% day.each do |part| %>
+    <td > <%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %a') %> </td>
+      <% part[:point].each do |opened_points|  %>
         <tr class = "infusion_7_points">
           <td>
-            <%= opened_points[:time]  %>
+            <%= opened_points[:time] %>
           </td>
           <td>
-            <% if opened_points[:point].is_a?(Array)  %>
-              <%= "открыты: " + opened_points[:point][0][:name] + " и " + opened_points[:point][1][:name] %>
+            <% if params[:a]%>
+              <% if opened_points[:point].is_a?(Array) %>
+                <% if    opened_points[:point][0].name == params[:a] || opened_points[:point][1].name  == params[:a] %>
+                  <%=  opened_points[:point][0].name %>
+                  <%= opened_points[:point][1].name %>
+                <% end  %>
+              <% elsif %>
+                <%  opened_points[:point].name == params[:a] %>
+                <%=  opened_points[:point].name %>
+              <% end  %>
+            <% else  %>
+              <% if opened_points[:point].is_a?(Array) %>
+               <% opened_points[:point].include?(params[:a]) %>
+                <%= link_to opened_points[:point][0].name,  params.permit!.merge({a: opened_points[:point][0].name})%>
+                <%= link_to opened_points[:point][1].name, params.permit!.merge({a: opened_points[:point][1].name})%>
               <% else  %>
-              <%=  "открыта: " + opened_points[:point].name %>
+                  <%= link_to opened_points[:point].name, params.permit!.merge({a: opened_points[:point].name})%>
+              <% end  %>
             <% end  %>
           </td>
-          <% end  %>
         </tr>
-
-  <% end  %>
+      </tr>
+      <% end  %>
+    <% end  %>
   <% end %>
 </table>
 
