@@ -12,34 +12,34 @@
 
  <table class = "infusion_7" > <% @opened_points_infusion.each do |day| %>
   <caption class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </caption>
-   <tr class="infusion_7_time_mark" > <% day.each do |part| %>
-    <td > <%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %a') %> </td>
-      <% part[:point].each do |opened_points|  %>
-        <tr class = "infusion_7_points">
-          <td>
-            <%= opened_points[:time] %>
-          </td>
-          <td>
-            <% if params[:a]%>
-              <% if opened_points[:point].is_a?(Array) %>
-                <% if    opened_points[:point][0].name == params[:a] || opened_points[:point][1].name  == params[:a] %>
-                  <%=  opened_points[:point][0].name %>
-                  <%= opened_points[:point][1].name %>
+   <tr class="infusion_7_time_mark" >
+    <% day.each do |part| %>
+      <td> <%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %a') %> </td>
+        <% part[:point].each do |opened_points|  %>
+          <tr class = "infusion_7_points">
+            <td>
+              <%= opened_points[:time] %>
+            </td>
+            <td>
+              <% if params[:a]%>
+                <% if opened_points[:point].is_a?(Array) %>
+                  <% if opened_points[:point][0].name == params[:a] || opened_points[:point][1].name  == params[:a] %>
+                    <%= opened_points[:point][0].name %>
+                    <%= opened_points[:point][1].name %>
+                  <% end  %>
+                <% elsif %>
+                  <% opened_points[:point].name == params[:a] %>
+                  <%= opened_points[:point].name %>
                 <% end  %>
-              <% elsif %>
-                <%  opened_points[:point].name == params[:a] %>
-                <%=  opened_points[:point].name %>
+              <% else %>
+                <% if opened_points[:point].is_a?(Array) %>
+                  <%= link_to opened_points[:point][0].name,  params.permit!.merge({a: opened_points[:point][0].name})%>
+                  <%= link_to opened_points[:point][1].name, params.permit!.merge({a: opened_points[:point][1].name})%>
+                <% else  %>
+                    <%= link_to opened_points[:point].name, params.permit!.merge({a: opened_points[:point].name})%>
+                <% end  %>
               <% end  %>
-            <% else  %>
-              <% if opened_points[:point].is_a?(Array) %>
-               <% opened_points[:point].include?(params[:a]) %>
-                <%= link_to opened_points[:point][0].name,  params.permit!.merge({a: opened_points[:point][0].name})%>
-                <%= link_to opened_points[:point][1].name, params.permit!.merge({a: opened_points[:point][1].name})%>
-              <% else  %>
-                  <%= link_to opened_points[:point].name, params.permit!.merge({a: opened_points[:point].name})%>
-              <% end  %>
-            <% end  %>
-          </td>
+            </td>
         </tr>
       </tr>
       <% end  %>

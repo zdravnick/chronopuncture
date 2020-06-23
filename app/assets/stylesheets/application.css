@@ -47,14 +47,10 @@ outline: none !important
   /*border-collapse :collapse;*/
 }
 
-.infusion_7>tr>td {
-
-}
 
 
 .infusion_7_points>td>a {
-
-  background-color: yellow;
+  padding: 0px 6px;
 
 }
 

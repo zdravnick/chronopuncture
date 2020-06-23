@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'points/linguibafa_7_times'
   get 'points/infusion_7_times'
   get 'points/naganfa_7_times'
+  get 'points/methods_mix'
   root 'patients#index'
   resources :points
   resources :doctors

@@ -63,8 +63,23 @@ class PointsController < ApplicationController
         {date: date, point: opened_points_infusion_2(@trunc_day, guard, @points_infusion) }
         end
     end
-
   end
+
+  def methods_mix
+    @infusion_start_day = @doctor_current_datetime_utc.at_beginning_of_day.to_datetime
+    @points_infusion = points_infusion_2
+    @opened_points = ((@infusion_start_day)..@doctor_current_datetime_utc.end_of_day.to_datetime+6.days).map do |date|
+      @trunc_day = trunc_day_calculation(@doctor_city, date)
+      guard_infusion_7.map do |guard|
+        {
+          date: date,
+          point: opened_points_infusion_2(@trunc_day, guard, @points_infusion),
+          linguibafa: opened_point_linguibafa(@doctor_city, date)
+        }
+        end
+    end
+  end
+
 
   def infusion_2
     @points_infusion = points_infusion_2
@@ -1402,7 +1417,7 @@ class PointsController < ApplicationController
       when 1
         if guard == 1
           meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
+            result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
             result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
             result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
             result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }

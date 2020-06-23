@@ -1,200 +1,200 @@
-   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].each do |g|
-    return g until g = 12
+    when 'tai yang'   then 'tai yin'
+    when 'jue yin'    then 'yang ming'
+    when 'shao yin'   then 'tai yang'
+    when 'tai yin'    then 'jue yin'
     end
+  end
+  half_year_control_layer('yang ming')
+reload!
+def half_year_control_layer(half_year_layer)
+    case half_year_layer
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
     end
   end
-  guard_infusion_7_times
-exit
- def guard_infusion_7
-    g +=1
-    if g < 13
-      return g
-    else
-      break
+  half_year_control_layer('yang ming')
+  half_year_control_layer('tai yang')
+def half_year_wu_yun # half_of_year to define season's energy
+    [
+      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
+      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+    ]
   end
-  guard_infusion_7
-  def guard_infusion_7
-   g = 0
-    g +=1
-    if g < 13
-      return g
-    else
-      break
+half_year_wu_yun
+half_year_wu_yun.class
+half_year_wu_yun[0]
+half_year_wu_yun[0].class
+half_year_wu_yun[0]['shao yang']
+half_year_wu_yun[0]['value']
+half_year_wu_yun[0].value
+half_year_wu_yun[0].values
+ birth = DateTime.new(1974, 3, 24)
+  def patient_half_year_calculation(birth)
+     half_year_wu_yun.find do |range|
+      range[:dates].include?(birth)
+    end
   end
-  guard_infusion_7
-g
-  def guard_infusion_7
-   g = 0
-    if g < 13
-      g
-    else
-      break
+  patient_half_year_calculation(birth)
+  patient_half_year_calculation(birth).values
+  patient_half_year_calculation(birth).values[0]
+  patient_half_year_calculation(birth).values[1]
+  patient_half_year_calculation(birth)[:value]
+layer =  patient_half_year_calculation(birth)[:value]
+layer
+layer.class
+half_year_layer =  patient_half_year_calculation(birth)[:value]
+  def half_year_layer_meridians(layer) # meridians of layer definition
+    {
+      'shao yang' => ['Gb', 'Th'],
+      'yang ming' => ['E', 'Gi'],
+      'tai yang' => ['Ig', 'V'],
+      'jue yin' => ['Mc', 'F'],
+      'shao yin' => ['R', 'C'],
+      'tai yin' => ['P', 'Rp'],
+    }
   end
-  guard_infusion_7
- def guard_infusion_7
-   g += 1
-    if g < 13
-      g
-    else
-      break
+  meridians = half_year_layer_meridians(half_year_layer)
+  meridians
+half_year_layer_meridians
+def half_year_layer_meridians(layer) # meridians of layer definition
+    {
+      'shao yang' => ['Gb', 'Th'],
+      'yang ming' => ['E', 'Gi'],
+      'tai yang' => ['Ig', 'V'],
+      'jue yin' => ['Mc', 'F'],
+      'shao yin' => ['R', 'C'],
+      'tai yin' => ['P', 'Rp'],
+    }
   end
-  guard_infusion_7
-  def guard_infusion_7
-   
-    if g < 13
-      g += 1
-    else
-      break
+half_year_layer_meridians
+half_year_layer
+  def half_year_control_layer(half_year_layer) # control layer  definition
+    case half_year_layer
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
+    end
   end
-  guard_infusion_7
-  def guard_infusion_7
-    g =0
-    if g < 13
-      g += 1
-    else
-      break
+half_year_control_layer(half_year_layer)
+half_year_control_layer(half_year_layer)
+control_meridian = half_year_control_layer(half_year_layer)
+control_meridian
+  layer = half_year_layer
+  def half_year_layer_meridians(layer) # meridians of layer definition
+    {
+      'shao yang' => ['Gb', 'Th'],
+      'yang ming' => ['E', 'Gi'],
+      'tai yang' => ['Ig', 'V'],
+      'jue yin' => ['Mc', 'F'],
+      'shao yin' => ['R', 'C'],
+      'tai yin' => ['P', 'Rp'],
+    }
   end
-  guard_infusion_7
-  def guard_infusion_7
-    g =0
-    if g < 13
-     p  g += 1
-    else
-      break
+  half_year_layer_meridians(layer)
+layer
+  half_year_layer_meridians
+  half_year_layer_meridians('jue yin')
+ def half_year_wu_yun # half_of_year to define season's energy
+    [
+      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
+      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+    ]
   end
-  guard_infusion_7
-  def guard_infusion_7
-    g =0
-    if g < 13
-     p  g += 1
-    else
-      break
+  birth = DateTime.new(1974, 9, 18)
+ишкер
+birth
+half_year_wu_yun(birth)
+ def half_year_wu_yun # half_of_year to define season's energy
+    [
+      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
+      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+    ]
   end
-  guard_infusion_7
- def guard_infusion_7
-    g =0
-    if g < 13
-     puts  g += 1
-    else
-      break
+  birth = DateTime.new(1974, 9, 18)
+  def patient_half_year_calculation(birth)
+    half_year_wu_yun.find do |range|
+      range[:dates].include?(birth)
+    end
   end
-  guard_infusion_7
-g = 0
-g
-2-2-
+  half_year_layer = patient_half_year_calculation(birth)
+half_year_layer
+half_year_layer[:value]
+layer = half_year_layer
+layer
+layer[:value]
+  def layer_meridians(layer) # meridians of layer definition
+    case layer[:value]
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+    }
+  end
+  layer_meridians(layer)  def layer_meridians(layer) # meridians of layer definition
+    case layer[:value]
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+  end
+  layer_meridians(layer)
+a=   layer_meridians(layer)
+a
 2-2
-2-2
-  def guard_infusion_7
-    g =0
-    if g < 13
-     puts  g += 1
-    else
-      break
-  end
-  guard_infusion_7
-g
-2-2
-array = [1,2,3,4,5]
-for item in array do
-  puts item
-end
-2-2
-  def guard_infusion_7
-array = [1,2,3,4,5]
-for item in array do
-  puts item
-end
-  guard_infusion_7
-2-2
-2-2
-учше
-exit
-  def guard_infusion_7
-array = [1,2,3,4,5]
-for item in array do
-  puts item
-end
-  guard_infusion_7
-2-2
-  def guard_infusion_7
-    array = [1,2,3,4,5]
-    for item in array do
-      puts item
-    end
+  def layer_meridians(layer) # meridians of layer definition
+    case layer[:value]
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
     end
   end
-  guard_infusion_7
-(1..12).to_a
- def guard_infusion_7
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    for item in array do
-      puts item
-    end
-    end
-  end
-  guard_infusion_7
- def guard_infusion_7
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    for item in array do
-      puts item
-    end
+  layer_meridians(layer)
+layer
+layer[:value]
+ layer_meridians = layer_meridians(layer)
+ layer_meridians
+  def half_year_control_layer(half_year_layer) # control layer  definition
+    case half_year_layer
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
     end
   end
-  guard_infusion_7
-exit
- def guard_infusion_7
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    for item in array do
-      puts item
-    end
-    end
-  end
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5]
-    for item in array do
-      puts item
-      end
+  control_meridian = half_year_control_layer(half_year_layer)
+  control_meridian
+half_year_layer
+  def half_year_control_layer(half_year_layer) # control layer  definition
+    case half_year_layer[:value]
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
     end
   end
-  guard_infusion_7xit
-exit
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5]
-    for item in array do
-      puts item
-      end
-    end
-  end
-  guard_infusion_7
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5]
-    for item in array do
-      puts item
-      end
-    end
-  end
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5]
-    for item in array do
-      puts item
-      end
-    end
-:guard_infusion_7
-guard_infusion_7
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5]
-    for item in array 
-      puts item
-      end
-    end
-  guard_infusion_7
-(1..12).to_a
-  def guard_infusion_7
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    for guard in array
-      puts guard
-      end
-    end
-  guard_infusion_7
-exit
+  control_meridian = half_year_control_layer(half_year_layer)
+  control_meridian
+half_year_layer
+half_year_layer[:value]
+  control_meridian
 exit
