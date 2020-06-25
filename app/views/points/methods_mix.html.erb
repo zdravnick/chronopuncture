@@ -15,12 +15,16 @@
     <caption class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </caption>
      <tr class="infusion_7_time_mark" >
       <% day.each do |part| %>
-        <td> <%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %a') %> </td>
-
+        <td>
+          <%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %a') %>
+        </td>
           <% part[:point].each do |opened_points|  %>
             <tr class = "infusion_7_points">
               <td>
                 <%= opened_points[:time] %>
+              </td>
+              <td>
+                <%= opened_point_linguibafa(@doctor_city, (day[0][:date].change(hour: opened_points[:hour])+@offset_for_time_table.seconds-@offset_timezone_doctor.seconds) ) %>
               </td>
               <td>
                 <% if params[:a]%>

@@ -1418,861 +1418,861 @@ class PointsController < ApplicationController
         if guard == 1
           meridian = 'FIRST GUARD  JIA GALL_BLADDER'
             result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
-            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '4th GUARD DIN HEART'
-            result << { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '6th GUARD JI SPLEEN'
-            result <<  { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
-            result <<  { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
-            result <<  { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
-            result <<  { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
-            result <<  { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            result <<  { time: '09:00 - 09:23', hour: 9, point: points_infusion[meridian][0] }
+            result <<  { time: '09:24 - 09:47', hour: 9, point: points_infusion[meridian][1] }
+            result <<  { time: '09:48 - 10:11', hour: 9, point: points_infusion[meridian][2] }
+            result <<  { time: '10:12 - 10:35', hour: 9, point: points_infusion[meridian][3] }
+            result <<  { time: '10:36 - 10:59', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '7th GUARD GENG LARGE INT'
-            result <<  { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result <<  { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result <<  { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result <<  { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result <<  { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result <<  { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result <<  { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result <<  { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result <<  { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result <<  { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '8th XIN LUNGS'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '11th GUARD MC'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 2
         if guard == 1
           meridian = '3d GUARD BING SMALL INT'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '4th GUARD DIN HEART'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '6th GUARD JI SPLEEN'
-            result <<  { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
-            result <<  { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
-            result <<  { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
-            result <<  { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
-            result <<  { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            result <<  { time: '05:00 - 05:23', hour: 5, point: points_infusion[meridian][0] }
+            result <<  { time: '05:24 - 05:47', hour: 5, point: points_infusion[meridian][1] }
+            result <<  { time: '05:48 - 06:11', hour: 5, point: points_infusion[meridian][2] }
+            result <<  { time: '06:12 - 06:35', hour: 5, point: points_infusion[meridian][3] }
+            result <<  { time: '06:36 - 06:59', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '7th GUARD GENG LARGE INT'
-            result <<  { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
-            result <<  { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
-            result <<  { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
-            result <<  { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
-            result <<  { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            result <<  { time: '07:00 - 07:23', hour: 7, point: points_infusion[meridian][0] }
+            result <<  { time: '07:24 - 07:47', hour: 7, point: points_infusion[meridian][1] }
+            result <<  { time: '07:48 - 08:11', hour: 7, point: points_infusion[meridian][2] }
+            result <<  { time: '08:12 - 08:35', hour: 7, point: points_infusion[meridian][3] }
+            result <<  { time: '08:36 - 08:59', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '8th XIN LUNGS'
-            result << { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '11:00 - 11:23', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '13:00 - 13:23', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '12th GUARD SAN JIAO'
-            result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '17:00 - 17:23', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59', hour: 17, point: points_infusion[meridian][4] }
             elsif guard == 11
               meridian = '3d GUARD BING SMALL INT'
-            result <<  { time: '19:00 - 19:23', point: points_infusion[meridian][0] }
-            result <<  { time: '19:24 - 19:47', point: points_infusion[meridian][1] }
-            result <<  { time: '19:48 - 20:11', point: points_infusion[meridian][2] }
-            result <<  { time: '20:12 - 20:35', point: points_infusion[meridian][3] }
-            result <<  { time: '20:36 - 20:59', point: points_infusion[meridian][4] }
+            result <<  { time: '19:00 - 19:23', hour: 19, point: points_infusion[meridian][0] }
+            result <<  { time: '19:24 - 19:47', hour: 19, point: points_infusion[meridian][1] }
+            result <<  { time: '19:48 - 20:11', hour: 19, point: points_infusion[meridian][2] }
+            result <<  { time: '20:12 - 20:35', hour: 19, point: points_infusion[meridian][3] }
+            result <<  { time: '20:36 - 20:59', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '4th GUARD DIN HEART'
-            result << { time: '21:00 - 21:23', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59', hour: 21, point: points_infusion[meridian][4] }
         end
       when 3
         if guard == 1
           meridian = '5th GUARD WU STOMACH'
-          result << { time: '23:00 - 23:23', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '01:00 - 01:23', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '8th XIN LUNGS'
-            result << { time: '05:00 - 05:23', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '07:00 - 07:23', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '09:00 - 09:23', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result <<  { time: '11:00 - 11:23', point: points_infusion[meridian][0] }
-            result <<  { time: '11:24 - 11:47', point: points_infusion[meridian][1] }
-            result <<  { time: '11:48 - 12:11', point: points_infusion[meridian][2] }
-            result <<  { time: '12:12 - 12:35', point: points_infusion[meridian][3] }
-            result <<  { time: '12:36 - 12:59', point: points_infusion[meridian][4] }
+            result <<  { time: '11:00 - 11:23', hour: 11, point: points_infusion[meridian][0] }
+            result <<  { time: '11:24 - 11:47', hour: 11, point: points_infusion[meridian][1] }
+            result <<  { time: '11:48 - 12:11', hour: 11, point: points_infusion[meridian][2] }
+            result <<  { time: '12:12 - 12:35', hour: 11, point: points_infusion[meridian][3] }
+            result <<  { time: '12:36 - 12:59', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '11th GUARD MC'
-            result << { time: '13:00 - 13:23', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '15:00 - 15:23', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11', point: points_infusion[meridian][3] }
-            result << { time: '16:12 - 16:35', point: points_infusion[meridian][4] }
-            result << { time: '16:36 - 16:59', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:12 - 16:35', hour: 15, point: points_infusion[meridian][4] }
+            result << { time: '16:36 - 16:59', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '4th GUARD DIN HEART'
-            result << { time: '17:00 - 17:23', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11', point: points_infusion[meridian][3] }
-            result << { time: '18:12 - 18:35', point: points_infusion[meridian][4] }
-            result << { time: '18:36 - 18:59', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:12 - 18:35', hour: 17, point: points_infusion[meridian][4] }
+            result << { time: '18:36 - 18:59', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][3] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][4] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][4] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][3] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][4] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][4] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 4
         if guard == 1
           meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '23:00 - 23:23', point: points_infusion[meridian][0] }
-            result << { time: '23:24 - 23:47', point: points_infusion[meridian][1] }
-            result << { time: '23:48 - 00:11', point: points_infusion[meridian][2] }
-            result << { time: '00:12 - 00:35', point: points_infusion[meridian][3] }
-            result << { time: '00:36 - 00:59', point: points_infusion[meridian][4] }
+            result << { time: '23:00 - 23:23', hour: 23, point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47', hour: 23, point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11', hour: 23, point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35', hour: 23, point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '8th XIN LUNGS'
-            result << { time: '01:00 - 01:23', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '03:00 - 03:23', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '12th GUARD SAN JIAO'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '4th GUARD DIN HEART'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '8th XIN LUNGS'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 5
         if guard == 1
           meridian = '9th GUARD REN BLADDER'
-            result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-            result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-            result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-            result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-            result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+            result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+            result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+            result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+            result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+            result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
             elsif guard == 2
               meridian = '10th GUARD GUI KIDNEY'
-              result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-              result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-              result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-              result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-              result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+              result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+              result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+              result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+              result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+              result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
             elsif guard == 3
               meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-              result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-              result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-              result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-              result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-              result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+              result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+              result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+              result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+              result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+              result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
             elsif guard == 4
               meridian = '2nd GUARD YI LIVER'
-              result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-              result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-              result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-              result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-              result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+              result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+              result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+              result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+              result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+              result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
             elsif guard == 5
               meridian = '3d GUARD BING SMALL INT'
-              result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-              result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-              result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-              result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-              result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+              result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+              result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+              result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+              result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+              result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
             elsif guard == 6
               meridian = '11th GUARD MC'
-              result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-              result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-              result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-              result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-              result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+              result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+              result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+              result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+              result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+              result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
             elsif guard == 7
               meridian = '5th GUARD WU STOMACH'
-              result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-              result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-              result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-              result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-              result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+              result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+              result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+              result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+              result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+              result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
             elsif guard == 8
               meridian = '6th GUARD JI SPLEEN'
-              result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-              result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-              result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-              result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-              result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+              result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+              result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+              result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+              result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+              result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
             elsif guard == 9
               meridian = '7th GUARD GENG LARGE INT'
-              result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-              result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-              result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-              result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-              result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+              result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+              result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+              result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+              result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+              result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
             elsif guard == 10
               meridian = '8th XIN LUNGS'
-              result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-              result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-              result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-              result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-              result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+              result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+              result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+              result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+              result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+              result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
               elsif guard == 11
                 meridian = '9th GUARD REN BLADDER'
-              result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-              result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-              result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-              result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-              result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+              result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+              result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+              result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+              result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+              result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
             elsif guard == 12
               meridian = '10th GUARD GUI KIDNEY'
-              result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-              result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-              result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-              result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-              result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+              result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+              result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+              result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+              result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+              result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 6
         if guard == 1
           meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian ='3d GUARD BING SMALL INT'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '4th GUARD DIN HEART'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '12th GUARD SAN JIAO'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '8th XIN LUNGS'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 7
         if guard == 1
           meridian = '3d GUARD BING SMALL INT'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '4th GUARD DIN HEART'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '11th GUARD MC'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '8th XIN LUNGS'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '17:00 - 17:23 ',  point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ',  point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ',  point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ',  point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ',  point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '4th GUARD DIN HEART'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 8
         if guard == 1
           meridian = '5th GUARD WU STOMACH'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '12th GUARD SAN JIAO'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '8th XIN LUNGS'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '4th GUARD DIN HEART'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 9
         if guard == 1
           meridian = '7th GUARD GENG LARGE INT'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '11th GUARD MC'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '4th GUARD DIN HEART'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 22:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '8th XIN LUNGS'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 20:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
       when 10
         if guard == 1
           meridian = '12th GUARD SAN JIAO'
-          result << { time: '23:00 - 23:23 ', point: points_infusion[meridian][0] }
-          result << { time: '23:24 - 23:47 ', point: points_infusion[meridian][1] }
-          result << { time: '23:48 - 00:11 ', point: points_infusion[meridian][2] }
-          result << { time: '00:12 - 00:35 ', point: points_infusion[meridian][3] }
-          result << { time: '00:36 - 00:59 ', point: points_infusion[meridian][4] }
+          result << { time: '23:00 - 23:23 ', hour: 23, point: points_infusion[meridian][0] }
+          result << { time: '23:24 - 23:47 ', hour: 23, point: points_infusion[meridian][1] }
+          result << { time: '23:48 - 00:11 ', hour: 23, point: points_infusion[meridian][2] }
+          result << { time: '00:12 - 00:35 ', hour: 23, point: points_infusion[meridian][3] }
+          result << { time: '00:36 - 00:59 ', hour: 23, point: points_infusion[meridian][4] }
           elsif guard == 2
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '01:00 - 01:23 ', point: points_infusion[meridian][0] }
-            result << { time: '01:24 - 01:47 ', point: points_infusion[meridian][1] }
-            result << { time: '01:48 - 02:11 ', point: points_infusion[meridian][2] }
-            result << { time: '02:12 - 02:35 ', point: points_infusion[meridian][3] }
-            result << { time: '02:36 - 02:59 ', point: points_infusion[meridian][4] }
+            result << { time: '01:00 - 01:23 ', hour: 1, point: points_infusion[meridian][0] }
+            result << { time: '01:24 - 01:47 ', hour: 1, point: points_infusion[meridian][1] }
+            result << { time: '01:48 - 02:11 ', hour: 1, point: points_infusion[meridian][2] }
+            result << { time: '02:12 - 02:35 ', hour: 1, point: points_infusion[meridian][3] }
+            result << { time: '02:36 - 02:59 ', hour: 1, point: points_infusion[meridian][4] }
           elsif guard == 3
             meridian = 'FIRST GUARD  JIA GALL_BLADDER'
-            result << { time: '03:00 - 03:23 ', point: points_infusion[meridian][0] }
-            result << { time: '03:24 - 03:47 ', point: points_infusion[meridian][1] }
-            result << { time: '03:48 - 04:11 ', point: points_infusion[meridian][2] }
-            result << { time: '04:11 - 04:35 ', point: points_infusion[meridian][3] }
-            result << { time: '04:36 - 04:59 ', point: points_infusion[meridian][4] }
+            result << { time: '03:00 - 03:23 ', hour: 3, point: points_infusion[meridian][0] }
+            result << { time: '03:24 - 03:47 ', hour: 3, point: points_infusion[meridian][1] }
+            result << { time: '03:48 - 04:11 ', hour: 3, point: points_infusion[meridian][2] }
+            result << { time: '04:11 - 04:35 ', hour: 3, point: points_infusion[meridian][3] }
+            result << { time: '04:36 - 04:59 ', hour: 3, point: points_infusion[meridian][4] }
           elsif guard == 4
             meridian = '2nd GUARD YI LIVER'
-            result << { time: '05:00 - 05:23 ', point: points_infusion[meridian][0] }
-            result << { time: '05:24 - 05:47 ', point: points_infusion[meridian][1] }
-            result << { time: '05:48 - 06:11 ', point: points_infusion[meridian][2] }
-            result << { time: '06:12 - 06:35 ', point: points_infusion[meridian][3] }
-            result << { time: '06:36 - 06:59 ', point: points_infusion[meridian][4] }
+            result << { time: '05:00 - 05:23 ', hour: 5, point: points_infusion[meridian][0] }
+            result << { time: '05:24 - 05:47 ', hour: 5, point: points_infusion[meridian][1] }
+            result << { time: '05:48 - 06:11 ', hour: 5, point: points_infusion[meridian][2] }
+            result << { time: '06:12 - 06:35 ', hour: 5, point: points_infusion[meridian][3] }
+            result << { time: '06:36 - 06:59 ', hour: 5, point: points_infusion[meridian][4] }
           elsif guard == 5
             meridian = '3d GUARD BING SMALL INT'
-            result << { time: '07:00 - 07:23 ', point: points_infusion[meridian][0] }
-            result << { time: '07:24 - 07:47 ', point: points_infusion[meridian][1] }
-            result << { time: '07:48 - 08:11 ', point: points_infusion[meridian][2] }
-            result << { time: '08:12 - 08:35 ', point: points_infusion[meridian][3] }
-            result << { time: '08:36 - 08:59 ', point: points_infusion[meridian][4] }
+            result << { time: '07:00 - 07:23 ', hour: 7, point: points_infusion[meridian][0] }
+            result << { time: '07:24 - 07:47 ', hour: 7, point: points_infusion[meridian][1] }
+            result << { time: '07:48 - 08:11 ', hour: 7, point: points_infusion[meridian][2] }
+            result << { time: '08:12 - 08:35 ', hour: 7, point: points_infusion[meridian][3] }
+            result << { time: '08:36 - 08:59 ', hour: 7, point: points_infusion[meridian][4] }
           elsif guard == 6
             meridian = '4th GUARD DIN HEART'
-            result << { time: '09:00 - 09:23 ', point: points_infusion[meridian][0] }
-            result << { time: '09:24 - 09:47 ', point: points_infusion[meridian][1] }
-            result << { time: '09:48 - 10:11 ', point: points_infusion[meridian][2] }
-            result << { time: '10:12 - 10:35 ', point: points_infusion[meridian][3] }
-            result << { time: '10:36 - 10:59 ', point: points_infusion[meridian][4] }
+            result << { time: '09:00 - 09:23 ', hour: 9, point: points_infusion[meridian][0] }
+            result << { time: '09:24 - 09:47 ', hour: 9, point: points_infusion[meridian][1] }
+            result << { time: '09:48 - 10:11 ', hour: 9, point: points_infusion[meridian][2] }
+            result << { time: '10:12 - 10:35 ', hour: 9, point: points_infusion[meridian][3] }
+            result << { time: '10:36 - 10:59 ', hour: 9, point: points_infusion[meridian][4] }
           elsif guard == 7
             meridian = '5th GUARD WU STOMACH'
-            result << { time: '11:00 - 11:23 ', point: points_infusion[meridian][0] }
-            result << { time: '11:24 - 11:47 ', point: points_infusion[meridian][1] }
-            result << { time: '11:48 - 12:11 ', point: points_infusion[meridian][2] }
-            result << { time: '12:12 - 12:35 ', point: points_infusion[meridian][3] }
-            result << { time: '12:36 - 12:59 ', point: points_infusion[meridian][4] }
+            result << { time: '11:00 - 11:23 ', hour: 11, point: points_infusion[meridian][0] }
+            result << { time: '11:24 - 11:47 ', hour: 11, point: points_infusion[meridian][1] }
+            result << { time: '11:48 - 12:11 ', hour: 11, point: points_infusion[meridian][2] }
+            result << { time: '12:12 - 12:35 ', hour: 11, point: points_infusion[meridian][3] }
+            result << { time: '12:36 - 12:59 ', hour: 11, point: points_infusion[meridian][4] }
           elsif guard == 8
             meridian = '6th GUARD JI SPLEEN'
-            result << { time: '13:00 - 13:23 ', point: points_infusion[meridian][0] }
-            result << { time: '13:24 - 13:47 ', point: points_infusion[meridian][1] }
-            result << { time: '13:48 - 14:11 ', point: points_infusion[meridian][2] }
-            result << { time: '14:12 - 14:36 ', point: points_infusion[meridian][3] }
-            result << { time: '14:37 - 14:59 ', point: points_infusion[meridian][4] }
+            result << { time: '13:00 - 13:23 ', hour: 13, point: points_infusion[meridian][0] }
+            result << { time: '13:24 - 13:47 ', hour: 13, point: points_infusion[meridian][1] }
+            result << { time: '13:48 - 14:11 ', hour: 13, point: points_infusion[meridian][2] }
+            result << { time: '14:12 - 14:36 ', hour: 13, point: points_infusion[meridian][3] }
+            result << { time: '14:37 - 14:59 ', hour: 13, point: points_infusion[meridian][4] }
           elsif guard == 9
             meridian = '7th GUARD GENG LARGE INT'
-            result << { time: '15:00 - 15:23 ', point: points_infusion[meridian][0] }
-            result << { time: '15:24 - 15:47 ', point: points_infusion[meridian][1] }
-            result << { time: '15:48 - 16:11 ', point: points_infusion[meridian][2] }
-            result << { time: '16:12 - 16:35 ', point: points_infusion[meridian][3] }
-            result << { time: '16:36 - 16:59 ', point: points_infusion[meridian][4] }
+            result << { time: '15:00 - 15:23 ', hour: 15, point: points_infusion[meridian][0] }
+            result << { time: '15:24 - 15:47 ', hour: 15, point: points_infusion[meridian][1] }
+            result << { time: '15:48 - 16:11 ', hour: 15, point: points_infusion[meridian][2] }
+            result << { time: '16:12 - 16:35 ', hour: 15, point: points_infusion[meridian][3] }
+            result << { time: '16:36 - 16:59 ', hour: 15, point: points_infusion[meridian][4] }
           elsif guard == 10
             meridian = '8th XIN LUNGS'
-            result << { time: '17:00 - 17:23 ', point: points_infusion[meridian][0] }
-            result << { time: '17:24 - 17:47 ', point: points_infusion[meridian][1] }
-            result << { time: '17:48 - 18:11 ', point: points_infusion[meridian][2] }
-            result << { time: '18:12 - 18:35 ', point: points_infusion[meridian][3] }
-            result << { time: '18:36 - 18:59 ', point: points_infusion[meridian][4] }
+            result << { time: '17:00 - 17:23 ', hour: 17, point: points_infusion[meridian][0] }
+            result << { time: '17:24 - 17:47 ', hour: 17, point: points_infusion[meridian][1] }
+            result << { time: '17:48 - 18:11 ', hour: 17, point: points_infusion[meridian][2] }
+            result << { time: '18:12 - 18:35 ', hour: 17, point: points_infusion[meridian][3] }
+            result << { time: '18:36 - 18:59 ', hour: 17, point: points_infusion[meridian][4] }
           elsif guard == 11
             meridian = '9th GUARD REN BLADDER'
-            result << { time: '19:00 - 19:23 ', point: points_infusion[meridian][0] }
-            result << { time: '19:24 - 19:47 ', point: points_infusion[meridian][1] }
-            result << { time: '19:48 - 20:11 ', point: points_infusion[meridian][2] }
-            result << { time: '20:12 - 20:35 ', point: points_infusion[meridian][3] }
-            result << { time: '20:36 - 20:59 ', point: points_infusion[meridian][4] }
+            result << { time: '19:00 - 19:23 ', hour: 19, point: points_infusion[meridian][0] }
+            result << { time: '19:24 - 19:47 ', hour: 19, point: points_infusion[meridian][1] }
+            result << { time: '19:48 - 20:11 ', hour: 19, point: points_infusion[meridian][2] }
+            result << { time: '20:12 - 20:35 ', hour: 19, point: points_infusion[meridian][3] }
+            result << { time: '20:36 - 20:59 ', hour: 19, point: points_infusion[meridian][4] }
           elsif guard == 12
             meridian = '10th GUARD GUI KIDNEY'
-            result << { time: '21:00 - 21:23 ', point: points_infusion[meridian][0] }
-            result << { time: '21:24 - 21:47 ', point: points_infusion[meridian][1] }
-            result << { time: '21:48 - 22:11 ', point: points_infusion[meridian][2] }
-            result << { time: '22:12 - 22:35 ', point: points_infusion[meridian][3] }
-            result << { time: '22:36 - 22:59 ', point: points_infusion[meridian][4] }
+            result << { time: '21:00 - 21:23 ', hour: 21, point: points_infusion[meridian][0] }
+            result << { time: '21:24 - 21:47 ', hour: 21, point: points_infusion[meridian][1] }
+            result << { time: '21:48 - 22:11 ', hour: 21, point: points_infusion[meridian][2] }
+            result << { time: '22:12 - 22:35 ', hour: 21, point: points_infusion[meridian][3] }
+            result << { time: '22:36 - 22:59 ', hour: 21, point: points_infusion[meridian][4] }
         end
     end
     return result

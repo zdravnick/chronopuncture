@@ -1,187 +1,6 @@
-    when 'tai yang'   then 'tai yin'
-    when 'jue yin'    then 'yang ming'
-    when 'shao yin'   then 'tai yang'
-    when 'tai yin'    then 'jue yin'
-    end
-  end
-  half_year_control_layer('yang ming')
-reload!
-def half_year_control_layer(half_year_layer)
-    case half_year_layer
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
-  half_year_control_layer('yang ming')
-  half_year_control_layer('tai yang')
-def half_year_wu_yun # half_of_year to define season's energy
-    [
-      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
-      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
-    ]
-  end
-half_year_wu_yun
-half_year_wu_yun.class
-half_year_wu_yun[0]
-half_year_wu_yun[0].class
-half_year_wu_yun[0]['shao yang']
-half_year_wu_yun[0]['value']
-half_year_wu_yun[0].value
-half_year_wu_yun[0].values
- birth = DateTime.new(1974, 3, 24)
-  def patient_half_year_calculation(birth)
-     half_year_wu_yun.find do |range|
-      range[:dates].include?(birth)
-    end
-  end
-  patient_half_year_calculation(birth)
-  patient_half_year_calculation(birth).values
-  patient_half_year_calculation(birth).values[0]
-  patient_half_year_calculation(birth).values[1]
-  patient_half_year_calculation(birth)[:value]
-layer =  patient_half_year_calculation(birth)[:value]
-layer
-layer.class
-half_year_layer =  patient_half_year_calculation(birth)[:value]
-  def half_year_layer_meridians(layer) # meridians of layer definition
-    {
-      'shao yang' => ['Gb', 'Th'],
-      'yang ming' => ['E', 'Gi'],
-      'tai yang' => ['Ig', 'V'],
-      'jue yin' => ['Mc', 'F'],
-      'shao yin' => ['R', 'C'],
-      'tai yin' => ['P', 'Rp'],
-    }
-  end
-  meridians = half_year_layer_meridians(half_year_layer)
-  meridians
-half_year_layer_meridians
-def half_year_layer_meridians(layer) # meridians of layer definition
-    {
-      'shao yang' => ['Gb', 'Th'],
-      'yang ming' => ['E', 'Gi'],
-      'tai yang' => ['Ig', 'V'],
-      'jue yin' => ['Mc', 'F'],
-      'shao yin' => ['R', 'C'],
-      'tai yin' => ['P', 'Rp'],
-    }
-  end
-half_year_layer_meridians
-half_year_layer
-  def half_year_control_layer(half_year_layer) # control layer  definition
-    case half_year_layer
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
-half_year_control_layer(half_year_layer)
-half_year_control_layer(half_year_layer)
-control_meridian = half_year_control_layer(half_year_layer)
-control_meridian
-  layer = half_year_layer
-  def half_year_layer_meridians(layer) # meridians of layer definition
-    {
-      'shao yang' => ['Gb', 'Th'],
-      'yang ming' => ['E', 'Gi'],
-      'tai yang' => ['Ig', 'V'],
-      'jue yin' => ['Mc', 'F'],
-      'shao yin' => ['R', 'C'],
-      'tai yin' => ['P', 'Rp'],
-    }
-  end
-  half_year_layer_meridians(layer)
-layer
-  half_year_layer_meridians
-  half_year_layer_meridians('jue yin')
- def half_year_wu_yun # half_of_year to define season's energy
-    [
-      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
-      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
-    ]
-  end
-  birth = DateTime.new(1974, 9, 18)
-ишкер
-birth
-half_year_wu_yun(birth)
- def half_year_wu_yun # half_of_year to define season's energy
-    [
-      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
-      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
-    ]
-  end
-  birth = DateTime.new(1974, 9, 18)
-  def patient_half_year_calculation(birth)
-    half_year_wu_yun.find do |range|
-      range[:dates].include?(birth)
     end
   end
   half_year_layer = patient_half_year_calculation(birth)
-half_year_layer
-half_year_layer[:value]
-layer = half_year_layer
-layer
-layer[:value]
-  def layer_meridians(layer) # meridians of layer definition
-    case layer[:value]
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-    }
-  end
-  layer_meridians(layer)  def layer_meridians(layer) # meridians of layer definition
-    case layer[:value]
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-  layer_meridians(layer)
-a=   layer_meridians(layer)
-a
-2-2
-  def layer_meridians(layer) # meridians of layer definition
-    case layer[:value]
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-  layer_meridians(layer)
-layer
-layer[:value]
- layer_meridians = layer_meridians(layer)
- layer_meridians
-  def half_year_control_layer(half_year_layer) # control layer  definition
-    case half_year_layer
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
-  control_meridian = half_year_control_layer(half_year_layer)
-  control_meridian
-half_year_layer
   def half_year_control_layer(half_year_layer) # control layer  definition
     case half_year_layer[:value]
     when 'shao yang'  then ['tai yang']
@@ -193,8 +12,189 @@ half_year_layer
     end
   end
   control_meridian = half_year_control_layer(half_year_layer)
-  control_meridian
-half_year_layer
-half_year_layer[:value]
-  control_meridian
+  layer = half_year_layer # just for example, any layer may be
+  def layer_meridians(layer) # meridians of layer definition
+    case layer[:value]
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+  end
+  layer_meridians = layer_meridians(layer)
+layer_meridians
+layer[:value]
+layer
+exit
+ def half_year_wu_yun_liu_tsi # half_of_year to define season's energy
+    [
+      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
+      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+    ]
+  end
+  birth = DateTime.new(1974, 9, 18)
+  def patient_half_year_calculation(birth)
+    half_year_wu_yun_liu_tsi.find do |range|
+      range[:dates].include?(birth)
+    end
+  end
+  half_year_bad_layer = patient_half_year_calculation(birth)
+  def half_year_good_layer(bad_layer) # control layer  definition
+    case bad_layer[:value]
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
+    end
+  end
+  good_layer = half_year_good_layer(half_year_bad_layer)
+  good_layer
+  def good_layer_meridians(layer) # meridians of layer definition
+    case layer
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+  end
+  good_meridians = good_layer_meridians(good_layer)
+  good_meridians
+good_layer
+good_layer_meridians(good_layer)
+ def good_layer_meridians(layer) # meridians of layer definition
+    case layer.to_s
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+  end
+  good_meridians = good_layer_meridians(good_layer)
+  good_meridians
+good_layer.to_s
+good_layer.flatten.to_s
+good_layer[0]
+good_layer[0].to_s
+exit
+Point.last
+a = Point.last
+a
+a
+b = Point.first
+b
+a+b
+[a, b]
+c = [a, b]
+c
+c = Point.all.where{name: 'Gb*'}
+c = Point.all.where{name: '*Gb'}
+c = Point.all.find.where{name: 'Gb*'}
+c = Point.all.find.where{name: '*Gb'}
+c = Point.all.find.where{name: 'Gb'}
+Point.where(name: "Gb')
+2-2
+2-2
+a
+m = Point.where{"name: '*Gb'"}
+m
+m.each{|n| p n.name}
+m.to_a
+m.to_s
+m.class
+p m.name
+m.class
+m.methods
+merid = m.deep_dup.to_a
+merid = m.deep_dup
+merid
+merid.lenth
+m = []
+m = Point.where{"name: '*Gb' m.push"}
+m
+m.class
+m = Point.find{"name: '*Gb' m.push"}
+m
+m = Point.find_all{"name: '*Gb' m.push"}
+m = Point.find_by{"name: '*Gb' m.push"}
+m = Point.select_all{"name: '*Gb' m.push"}
+m = Point.select_all{"name: '*Gb'"}
+m = Point.select_all{name: '*Gb'}
+m = Point.find_each{|u| u.name: '*Gb'}
+m = Point.find_each{|u| u.name = '*Gb'}
+m
+m = Point.find_each{|u| u.name = 'Gb'}
+m
+m = Point.find_each{|u| u.name = *Gb}
+m = Point.find_each{|u|" u.name = 'Gb'"}
+m
+m = Point.find_each{|u| u.name = *'Gb'}
+m
+m = Point.find_each{|u| u.name.contain('Gb')}
+m = Point.where{"name: '*Gb' m.push"}
+m
+ p m
+m = Point.where{"name: '*Gb' m.push"}m
+m
+m = []
+m
+m = Point.where{"name: '*Gb' m.push"}
+m
+m = []
+m = Point.where{"name: '*Gb'"}
+m
+m = []
+m = Point.where{"name: '*Gb'"}.select(:id)
+m
+m = Point.where{"name: '*Gb'"}.select(:id).all
+m
+m = Point.find_each{"name: '*Gb'"}
+m
+m = Point.find_each{"name: 'Gb'"}
+m
+m = Point.find_each{"name: 'Gb.42'"}
+m
+m = Point.find_each{name: 'Gb.42'}
+m = Point.find_each{name: "C.8"}
+m = Point.find_each{|point| point.name 'Gb.42'}
+m = Point.find_each{|point| point.name = 'Gb.42'}
+m
+m = Point.find_each{|point| point.name = 'C.7'}
+m
+m = Point.find_each{|point| point.name == 'C.7'}
+m
+m = Point.find_each{name: *'Gb'}.map{|point| m.push}
+m = Point.find_each(name: *'Gb').map{|point| m.push}
+m = Point.find_each(name: 'Gb').map{|point| m.push}
+m = Point.find_each("name: 'Gb'").map{|point| m.push}
+m = Point.find_each("name: 'Gb'")
+m = Point.find_each(name: 'Gb')
+m = Point.find_each.select(|p| p. name: 'Gb')
+m
+2-2
+m = Point.find_each.select{|p| p. name: 'Gb'}
+m = Point.find_each.select{|p| p.name: 'Gb'}
+m = Point.find_each.select{|p| p.name == 'Gb'}
+m
+m = Point.find_each.select{|p| p.name ==  *'Gb'}
+m = Point.find_each.select{|p| p.name == '*Gb'}
+m
+m = Point.find_each.select{|p| p.name == 'Gb*'}
+m
+m = Point.find_each.select{|p| p.name == 'Gb'*}
+m = Point.find_each.select{|p| p.name == 'Gb.42'}
+m
+m = Point.find_each.select{|p| p.name == 'C.8'}
+m
+m = Point.find_each.select{|p| p.name == 'GB.42'}
+m
+m = Point.find_each.select{|p| p.name == (*'C')}
+exit}
 exit
