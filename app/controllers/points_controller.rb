@@ -80,7 +80,6 @@ class PointsController < ApplicationController
     end
   end
 
-
   def infusion_2
     @points_infusion = points_infusion_2
     @opened_points_infusion = opened_points_infusion_2(@trunc_day, @guard, @points_infusion)
@@ -108,6 +107,25 @@ class PointsController < ApplicationController
       }
   end
     # There is TIME.now in the table!
+  end
+
+  def wu_yun_liu_thi
+    @patient = Patient.find(params["patient_id"])
+    @patient_city = @patient.city
+    @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
+    Time.use_zone(@patient.city.time_zone) do
+    @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
+      params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
+      params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
+    @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
+    @full_layer = Layer.all.find_by(name: full_layer_calculation(@patient_birthdate_utc)[:value])
+    @empty_layer = Layer.all.find_by(name: empty_layer_wu_yun(@full_layer))
+    @full_trunc_year = trunc_year_wu_yun_definition(@patient_birthdate_utc)
+    @empty_trunc_year = empty_trunc_year_wu_yun_definition(@full_trunc_year)
+
+    binding.pry
+    end
+    render "doctors/wu_yun_liu_thi"
   end
 
   def complex_balance
@@ -3595,7 +3613,6 @@ class PointsController < ApplicationController
     end
   end
 
-
   def first_point_lo_shu_number(year, month, day_p, day_d )
     s = (year + month + day_p + day_d)%64
     if s == 0
@@ -4081,5 +4098,91 @@ class PointsController < ApplicationController
       point[:values].include?(first_point_lo_shu)
     end
   end
+
+  # метод У_Юнь_Лю_Ци
+
+  def full_layer_wu_yun # half_of_year to define season's energy
+    [
+      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
+      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+    ]
+  end
+
+  def full_layer_calculation(birth)
+    full_layer_wu_yun.find do |range|
+      range[:dates].include?(birth.to_date)
+    end
+  end
+
+  def empty_layer_wu_yun(full_layer) # control layer  definition
+    case full_layer.name
+    when 'shao yang'  then ['tai yang']
+    when 'yang ming'  then ['shao yin', 'shao yang']
+    when 'tai yang'   then ['tai yin']
+    when 'jue yin'    then ['yang ming']
+    when 'shao yin'   then ['tai yang']
+    when 'tai yin'    then ['jue yin']
+    end
+  end
+
+  def layer_merididians(layer) # meridians of any layer. Looks like unused method (model Layer)
+    case layer
+    when 'shao yang' then ['Gb', 'Th']
+    when 'yang ming' then ['E', 'Gi']
+    when 'tai yang' then ['Ig', 'V']
+    when 'jue yin' then ['Mc', 'F']
+    when 'shao yin' then ['R', 'C']
+    when 'tai yin' then ['P', 'Rp']
+    end
+  end
+
+  def trunc_year_wu_yun_table
+  [
+    {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+      1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+    {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+     2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+    {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+     1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+    {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+     1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+    {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+     1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+    {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+     1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+    {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
+     1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
+    {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
+     1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
+    {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
+     1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
+    {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
+     1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
+  ]
+  end
+
+  def trunc_year_wu_yun_definition(birth)
+    trunc_year_wu_yun_table.each do |elem|
+      if elem[:year].include?(birth.year)
+        return elem[:value], elem[:element]
+      end
+    end
+  end
+
+  def empty_trunc_year_wu_yun_definition(full_trunc)
+    case full_trunc[0]
+    when 'gall bladder' then ['spleen', 'earth']
+    when 'liver' then ['large intestine', 'metal']
+    when 'small intestine' then [ 'lung', 'water' ]
+    when 'heart' then ['bladder', 'wood']
+    when 'stomach' then ['kidney', 'fire']
+    when 'large intestine' then ['liver',  'metal']
+    when 'spleen' then ['gall bladder', 'earth' ]
+    when 'lung' then ['small intestine', 'water']
+    when 'bladder' then ['heart', 'wood']
+    when 'kidney' then ['stomach', 'fire']
+    end
+  end
+
 
 end

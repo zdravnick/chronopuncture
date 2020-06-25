@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'points/infusion_7_times'
   get 'points/naganfa_7_times'
   get 'points/methods_mix'
+  get 'points/wu_yun_liu_thi'
   root 'patients#index'
   resources :points
   resources :doctors

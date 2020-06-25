@@ -1,16 +1,16 @@
-<table>
-  <tr>
-    <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
-    <td><%= @patient.diagnosis %><td>
-    <% if  @patient.city %>
-      <td>Родился в г. <%= @patient.city.name %><td>
-    <% end %>
-    <td >Номер карты: <%=  @patient.id %><td>
-    <td>Визитов: <%= @patient.visits.count %><td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
+      <td><%= @patient.diagnosis %><td>
+      <% if  @patient.city %>
+        <td>Родился в г. <%= @patient.city.name %><td>
+      <% end %>
+      <td >Номер карты: <%=  @patient.id %><td>
+      <td>Визитов: <%= @patient.visits.count %><td>
+    </tr>
+  </table>
 
- <p>
+  <p>
     <h3>МЕТОД СЛОЖНОГО БАЛАНСА</h3>
     <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
     <% hidden_field_tag(:city, current_doctor.city) %>
@@ -22,7 +22,19 @@
     <% end %>
   </p>
 
-<p>
+  <p>
+  <h3>МЕТОД У ЮНЬ ЛЮ ЦИ</h3>
+  <%= form_with local: true, method: :get, url: points_wu_yun_liu_thi_path do |f| %>
+  <%  hidden_field_tag(:city, current_doctor.city) %>
+  <%= hidden_field_tag(:patient_id, @patient.id) %>
+  <%= f.label " Выберите время: " %>
+  <%= f.datetime_select :date, default: DateTime.now %>
+  <%= f.datetime_select :birthdate, default: @patient.birthdate %>
+  <%= f.submit "Рассчитать" %>
+  <% end %>
+  </p>
+
+  <p>
   <div>
     <h3><%= label_tag( "Добавить сеанс") %></h3>
     <%= form_with local: true, method: :post, url: visits_path, html: {onsubmit: "return confirm('Сохраняем сеанс?');"} do |f| %>
@@ -37,9 +49,9 @@
       <p><%= f.submit "Добавить сеанс", class: 'btn-control' %></p>
     <% end %>
   </div>
-</p>
-<h3>Объем лечения:</h3>
-<ol>
+  </p>
+  <h3>Объем лечения:</h3>
+  <ol>
   <% @patient.visits.each do |t| %>
   <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
   <ul>
@@ -50,9 +62,9 @@
   </ul>
   </li>
   <% end %>
-</ol>
+  </ol>
 
-<p>
+  <p>
   <div>
     <h3><%= label_tag( "Изменить данные пациента") %></h3>
     <%= form_with model: @patient, local: true, method: :patch, html: {onsubmit: "return confirm('Вы уверены?');"} do |f| %>
@@ -70,12 +82,12 @@
     <% end %>
   </div>
 
-</p>
+  </p>
 
-<div class="li-control">
+  <div class="li-control">
     <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
 
-</div>
+  </div>
 
 
 

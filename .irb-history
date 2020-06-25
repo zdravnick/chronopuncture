@@ -1,200 +1,200 @@
-    end
-  end
-  half_year_layer = patient_half_year_calculation(birth)
-  def half_year_control_layer(half_year_layer) # control layer  definition
-    case half_year_layer[:value]
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
-  control_meridian = half_year_control_layer(half_year_layer)
-  layer = half_year_layer # just for example, any layer may be
-  def layer_meridians(layer) # meridians of layer definition
-    case layer[:value]
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-  layer_meridians = layer_meridians(layer)
-layer_meridians
-layer[:value]
-layer
-exit
- def half_year_wu_yun_liu_tsi # half_of_year to define season's energy
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+    ]
+  def trunc_year_table
     [
-      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
-      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+    ]
+exit
+exit
+  def trunc_year_table
+    [
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
     ]
   end
-  birth = DateTime.new(1974, 9, 18)
-  def patient_half_year_calculation(birth)
-    half_year_wu_yun_liu_tsi.find do |range|
-      range[:dates].include?(birth)
-    end
+trunc_year_table
+  def trunc_year_table
+    [
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
+       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
+      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
+       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
+    ]
   end
-  half_year_bad_layer = patient_half_year_calculation(birth)
-  def half_year_good_layer(bad_layer) # control layer  definition
-    case bad_layer[:value]
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
-  good_layer = half_year_good_layer(half_year_bad_layer)
-  good_layer
-  def good_layer_meridians(layer) # meridians of layer definition
-    case layer
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-  good_meridians = good_layer_meridians(good_layer)
-  good_meridians
-good_layer
-good_layer_meridians(good_layer)
- def good_layer_meridians(layer) # meridians of layer definition
-    case layer.to_s
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-  good_meridians = good_layer_meridians(good_layer)
-  good_meridians
-good_layer.to_s
-good_layer.flatten.to_s
-good_layer[0]
-good_layer[0].to_s
+trunc_year_table
 exit
-Point.last
-a = Point.last
-a
-a
-b = Point.first
-b
-a+b
-[a, b]
-c = [a, b]
-c
-c = Point.all.where{name: 'Gb*'}
-c = Point.all.where{name: '*Gb'}
-c = Point.all.find.where{name: 'Gb*'}
-c = Point.all.find.where{name: '*Gb'}
-c = Point.all.find.where{name: 'Gb'}
-Point.where(name: "Gb')
+ def trunc_year_table
+    [
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
+       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
+      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
+       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
+      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
+       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
+      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
+       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
+    ]
+  end
+trunc_year_table
+birth = DateTime.new(1999, 9, 18)
+birth
+def trunc_year_wu_yun_definition(birth)
+    trunc_year_table.each do |elem|
+      if elem[:year].include?(birth.year)
+        return elem[:value], elem[:element]
+      end
+    end
+  end
+  trunc_year_wu_yun_definition(birth)
+ def trunc_year_wu_yun_table
+    [
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
+       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
+      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
+       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
+      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
+       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
+      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
+       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
+    ]
+  end
+  def trunc_year_wu_yun_definition(birth)
+    trunc_year_wu_yun_table.each do |elem|
+      if elem[:year].include?(birth.year)
+        return elem[:value], elem[:element]
+      end
+    end
 2-2
-2-2
-a
-m = Point.where{"name: '*Gb'"}
-m
-m.each{|n| p n.name}
-m.to_a
-m.to_s
-m.class
-p m.name
-m.class
-m.methods
-merid = m.deep_dup.to_a
-merid = m.deep_dup
-merid
-merid.lenth
-m = []
-m = Point.where{"name: '*Gb' m.push"}
-m
-m.class
-m = Point.find{"name: '*Gb' m.push"}
-m
-m = Point.find_all{"name: '*Gb' m.push"}
-m = Point.find_by{"name: '*Gb' m.push"}
-m = Point.select_all{"name: '*Gb' m.push"}
-m = Point.select_all{"name: '*Gb'"}
-m = Point.select_all{name: '*Gb'}
-m = Point.find_each{|u| u.name: '*Gb'}
-m = Point.find_each{|u| u.name = '*Gb'}
-m
-m = Point.find_each{|u| u.name = 'Gb'}
-m
-m = Point.find_each{|u| u.name = *Gb}
-m = Point.find_each{|u|" u.name = 'Gb'"}
-m
-m = Point.find_each{|u| u.name = *'Gb'}
-m
-m = Point.find_each{|u| u.name.contain('Gb')}
-m = Point.where{"name: '*Gb' m.push"}
-m
- p m
-m = Point.where{"name: '*Gb' m.push"}m
-m
-m = []
-m
-m = Point.where{"name: '*Gb' m.push"}
-m
-m = []
-m = Point.where{"name: '*Gb'"}
-m
-m = []
-m = Point.where{"name: '*Gb'"}.select(:id)
-m
-m = Point.where{"name: '*Gb'"}.select(:id).all
-m
-m = Point.find_each{"name: '*Gb'"}
-m
-m = Point.find_each{"name: 'Gb'"}
-m
-m = Point.find_each{"name: 'Gb.42'"}
-m
-m = Point.find_each{name: 'Gb.42'}
-m = Point.find_each{name: "C.8"}
-m = Point.find_each{|point| point.name 'Gb.42'}
-m = Point.find_each{|point| point.name = 'Gb.42'}
-m
-m = Point.find_each{|point| point.name = 'C.7'}
-m
-m = Point.find_each{|point| point.name == 'C.7'}
-m
-m = Point.find_each{name: *'Gb'}.map{|point| m.push}
-m = Point.find_each(name: *'Gb').map{|point| m.push}
-m = Point.find_each(name: 'Gb').map{|point| m.push}
-m = Point.find_each("name: 'Gb'").map{|point| m.push}
-m = Point.find_each("name: 'Gb'")
-m = Point.find_each(name: 'Gb')
-m = Point.find_each.select(|p| p. name: 'Gb')
-m
-2-2
-m = Point.find_each.select{|p| p. name: 'Gb'}
-m = Point.find_each.select{|p| p.name: 'Gb'}
-m = Point.find_each.select{|p| p.name == 'Gb'}
-m
-m = Point.find_each.select{|p| p.name ==  *'Gb'}
-m = Point.find_each.select{|p| p.name == '*Gb'}
-m
-m = Point.find_each.select{|p| p.name == 'Gb*'}
-m
-m = Point.find_each.select{|p| p.name == 'Gb'*}
-m = Point.find_each.select{|p| p.name == 'Gb.42'}
-m
-m = Point.find_each.select{|p| p.name == 'C.8'}
-m
-m = Point.find_each.select{|p| p.name == 'GB.42'}
-m
-m = Point.find_each.select{|p| p.name == (*'C')}
-exit}
+birth = DateTime.new(1965, 2, 18)
+birt
+birth
+  def trunc_year_wu_yun_table
+    [
+      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
+        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
+      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
+       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
+      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
+       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
+      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
+       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
+      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
+       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
+      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
+       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
+      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
+       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
+      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
+       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
+      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
+       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
+      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
+       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
+    ]
+  end
+  def trunc_year_wu_yun_definition(birth)
+    trunc_year_wu_yun_table.each do |elem|
+      if elem[:year].include?(birth.year)
+        return elem[:value], elem[:element]
+      end
+    end
+  end
+  trunc_year_full = trunc_year_wu_yun_definition(birth)
+  trunc_year_full
+birth+=1.year
+  trunc_year_full = trunc_year_wu_yun_definition(birth)
+  trunc_year_full
+full_trunc = 'large intestine'
+  def empty_trunc_year_wu_yun_definition(full_trunc)
+    case full_trunc
+    when 'gall bladder' then [ 'spleen', 'earth' ]
+    when 'liver' then [ 'large intestine', 'metal' ]
+    when 'small intestine' then [ 'lung', 'water' ]
+    when 'heart' then [ 'bladder', 'wood' ]
+    when 'stomach' then [ 'kidney', 'fire' ]
+    end
+  end
+empty_trunc = empty_trunc_year_wu_yun_definition(full_trunc)
+empty_trunс
+empty_trunc
+full_trunc
+ def empty_trunc_year_wu_yun_definition(full_trunc)
+    case full_trunc
+    when 'gall bladder' then [ 'spleen', 'earth' ]
+    when 'liver' then [ 'large intestine', 'metal' ]
+    when 'small intestine' then [ 'lung', 'water' ]
+    when 'heart' then [ 'bladder', 'wood' ]
+    when 'stomach' then [ 'kidney', 'fire' ]
+    when 'large intestine' then [ 'liver',  'metal' ]
+    when 'spleen' then ['gall bladder', 'earth' ]
+    when 'small intestine' then [ 'lung', 'water']
+    when 'bladder' then ['heart', 'wood' ]
+    when 'kidney' then ['stomach', 'fire' ]
+    end
+  end
+empty_trunc = empty_trunc_year_wu_yun_definition(full_trunc)
+empty_trunc 
+empty_trunc[0]
 exit
