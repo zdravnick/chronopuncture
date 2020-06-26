@@ -118,12 +118,10 @@ class PointsController < ApplicationController
       params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
     @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
-    @full_layer = Layer.all.find_by(name: full_layer_calculation(@patient_birthdate_utc)[:value])
-    @empty_layer = Layer.all.find_by(name: empty_layer_wu_yun(@full_layer))
+    @full_layer = Layer.find_by(name: full_layer_calculation(@patient_birthdate_utc)[:value])
+    @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
     @full_trunc_year = trunc_year_wu_yun_definition(@patient_birthdate_utc)
     @empty_trunc_year = empty_trunc_year_wu_yun_definition(@full_trunc_year)
-
-    binding.pry
     end
     render "doctors/wu_yun_liu_thi"
   end
@@ -4111,6 +4109,9 @@ class PointsController < ApplicationController
   def full_layer_calculation(birth)
     full_layer_wu_yun.find do |range|
       range[:dates].include?(birth.to_date)
+    end
+    Layer.all.find do |layer|
+      birth.between?(layer.from_date, layer.to_date)
     end
   end
 

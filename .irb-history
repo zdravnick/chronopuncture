@@ -1,200 +1,200 @@
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-    ]
-  def trunc_year_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-    ]
-exit
-exit
-  def trunc_year_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-       {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-       {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-    ]
-  end
-trunc_year_table
-  def trunc_year_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
-       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
-      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
-       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
-    ]
-  end
-trunc_year_table
-exit
- def trunc_year_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
-       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
-      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
-       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
-      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
-       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
-      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
-       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
-    ]
-  end
-trunc_year_table
-birth = DateTime.new(1999, 9, 18)
-birth
-def trunc_year_wu_yun_definition(birth)
-    trunc_year_table.each do |elem|
-      if elem[:year].include?(birth.year)
-        return elem[:value], elem[:element]
-      end
-    end
-  end
-  trunc_year_wu_yun_definition(birth)
- def trunc_year_wu_yun_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
-       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
-      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
-       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
-      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
-       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
-      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
-       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
-    ]
-  end
-  def trunc_year_wu_yun_definition(birth)
-    trunc_year_wu_yun_table.each do |elem|
-      if elem[:year].include?(birth.year)
-        return elem[:value], elem[:element]
-      end
-    end
+Layer.all.map{ |l| p l.name, l.hand_meridian}
+Layer.all.map{ |l| p l.name, p l.hand_meridian}
+Layer.all.map{ |l| p l.hand_meridian}
+Layer.find(3)
+tai_yin = Layer.find(3)
+tai_yin
+tai_yin.update(hand_meridian: Meridian.find_by(name: 'lung'), foot_meridian: Meridian.find_by(name: 'spleen'))
+tai_yin.errors
+lung = Meridian.create(name: 'lung', energy_name: 'metal')
+lung
+lung.update(alias_ru: 'легкие')
+lung.save
+lung
+spleen = Meridian.create(name: 'spleen', energy_name: 'earth', alias_ru: 'селезенка')
+spleen
+tai_yin
+tai_yin.update(hand_meridian: Meridian.find_by(name: 'lung'), foot_meridian: Meridian.find_by(name: 'spleen'))
+tai_yin
+tai_yin.hand_meridian
+tai_yin.hand_meridian.energy_name
+tai_yin.hand_meridian.alias_ru
+Layer.all.map{ 
 2-2
-birth = DateTime.new(1965, 2, 18)
-birt
-birth
-  def trunc_year_wu_yun_table
-    [
-      {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-        1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-      {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-       2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-      {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-       1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-      {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-       1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-      {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-       1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-      {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-       1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-      {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
-       1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
-      {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
-       1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
-      {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
-       1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
-      {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
-       1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
-    ]
-  end
-  def trunc_year_wu_yun_definition(birth)
-    trunc_year_wu_yun_table.each do |elem|
-      if elem[:year].include?(birth.year)
-        return elem[:value], elem[:element]
-      end
-    end
-  end
-  trunc_year_full = trunc_year_wu_yun_definition(birth)
-  trunc_year_full
-birth+=1.year
-  trunc_year_full = trunc_year_wu_yun_definition(birth)
-  trunc_year_full
-full_trunc = 'large intestine'
-  def empty_trunc_year_wu_yun_definition(full_trunc)
-    case full_trunc
-    when 'gall bladder' then [ 'spleen', 'earth' ]
-    when 'liver' then [ 'large intestine', 'metal' ]
-    when 'small intestine' then [ 'lung', 'water' ]
-    when 'heart' then [ 'bladder', 'wood' ]
-    when 'stomach' then [ 'kidney', 'fire' ]
-    end
-  end
-empty_trunc = empty_trunc_year_wu_yun_definition(full_trunc)
-empty_trunс
-empty_trunc
-full_trunc
- def empty_trunc_year_wu_yun_definition(full_trunc)
-    case full_trunc
-    when 'gall bladder' then [ 'spleen', 'earth' ]
-    when 'liver' then [ 'large intestine', 'metal' ]
-    when 'small intestine' then [ 'lung', 'water' ]
-    when 'heart' then [ 'bladder', 'wood' ]
-    when 'stomach' then [ 'kidney', 'fire' ]
-    when 'large intestine' then [ 'liver',  'metal' ]
-    when 'spleen' then ['gall bladder', 'earth' ]
-    when 'small intestine' then [ 'lung', 'water']
-    when 'bladder' then ['heart', 'wood' ]
-    when 'kidney' then ['stomach', 'fire' ]
-    end
-  end
-empty_trunc = empty_trunc_year_wu_yun_definition(full_trunc)
-empty_trunc 
-empty_trunc[0]
+Layer.all.map{ |l| p l.name }
+tai_yan = Layer.where{name: 'tai yang'}
+tai_yan = Layer.where{name == 'tai yang'}
+tai_yan
+tai_yang = Layer.find(4)
+tai_yan
+tai_yang
+tai_yang
+bladder = Meridian.find_by(name: 'bladder')
+bladder
+bladder = Meridian.create(name: 'bladder', energy_name: 'water', alias_ru: 'мочевой пузырь', short_name_en: 'V')
+bladder
+small = Meridian.create(name: 'small intestine', energy_name: 'fire', alias_ru: 'тонкий кишечник', short_name_en: 'Ig')
+yang
+tai_yang.update(hand_meridian: Meridian.find_by(name: 'small intestine'), foot_meridian: Meridian.find_by(name: 'bladder'))
+tai_yang
+tai_yin
+stomach = Meridian.create(name: 'stomach', energy_name: 'earth', alias_ru: 'желудок', short_name_en: 'E')
+stomach
+large = Meridian.create(name: 'large intestine', energy_name: 'metal', alias_ru: 'толстый кишечник', short_name_en: 'Gi')
+large
+yang_ming.update(hand_meridian: Meridian.find_by(name: 'large intestine'), foot_meridian: Meridian.find_by(name: 'stomach'))
+yang_ming = Layer.find(5)
+yang_ming
+yang_ming.update(hand_meridian: Meridian.find_by(name: 'large intestine'), foot_meridian: Meridian.find_by(name: 'stomach'))
+yang_ming
+yang_ming.hand_meridian
+yang_ming.hand_meridian.alias_ru
+yang_ming.save
+tai_yin.save
+shao_yin.save
+shao_yang
+Layer.find(6)
+shao_yang = Layer.find(6)
+th = Meridian.create(name: 'triple heater', energy_name: 'fire', alias_ru: 'тройной обогреватель', short_name_en: 'Th')
+gb = Meridian.create(name: 'Gall Bladder', energy_name: 'wood', alias_ru: 'Желчный Пузырь', short_name_en: 'Gb')
+th.update name: 'Triple Heater'
+shao_yang.update(hand_meridian: Meridian.find_by(name: 'Triple Heater'), foot_meridian: Meridian.find_by(name: 'Gall Bladder'))
+shao_yang
+shao_yang.foot_meridian
+shao_yang.update foot_meridian_name: 'Gall Bladder'
+shao_yang.update hand_meridian_name: 'Triple Heater'
+shao_yang
+shao_ying
+shao_yin
+shao_yang
+tai_yin
+tai_yin.update foot_meridian_name: "Spleen"
+tai_yin.update hand_meridian_name: "Lung"
+lung
+lung.update name: 'Lung'
+spleen
+spleen.update name: 'Spleen'
+jue_yin
+jue_yin = Layer.find(1)
+jue_yin
+jue_yin.update  foot_meridian_name: "Liver"
+jue_yin.update  hand_meridian_name: "Pericardium"
+jue_yin
+Meridian.find(2).update name: 'Liver'
+Meridian.find(2)
+Meridian.find(2).update energy_name: wood, alias_ru: 'Печень', short_name_en: 'F'
+Meridian.find(2).update energy_name: 'wood', alias_ru: 'Печень', short_name_en: 'F'
+Meridian.find(1).update name: 'Pericardium', energy_name: 'fire', alias_ru: 'Перикард', short_name_en: 'Mc'
+Meridian.find(3)
+Meridian.find(1)
+Meridian.find(3).update name: 'Heart', energy_name: "fire", alias_ru: 'Сердце', short_name_en: 'C'
+Meridian.find(3)
+Layer.find(3)
+Layer.find(1)
+jue)yin
+
+Layer.find(2)
+jue_yin.update name: 'Jue Yin'
+jue_yin
+jue_yin.update foot_meridian_element: 'Wood', hand_meridian_element: 'Fire'
+jue_yin.hand_meridian
+jue_yin.hand_meridian.update name: 'Pericardium'
+jue_yin.hand_meridian.update energy_name: 'Fire'
+jue_yin.hand_meridian.update alias_ru: 'Перикард', short_name_en: 'Mc'
+jue_yin.hand_meridian.save
+jue_yin.hand_meridian
+jue_yin
+jue_yin.foot_meridian
+jue_yin.foot_meridian.update energy_name: 'Wood', alias_ru: 'Печень', short_name_en: 'F'
+jue_yin.foot_meridian.save
+jue_yin.foot_meridian
+reload!
+jue_yin.foot_meridian
+jue_yin
+shao_yin = Layer.find(2)
+shao_yin
+shao_yin.update name: 'Shao Yin', foot_meridian_name: "Kidney", hand_meridian_name: "Heart", foot_meridian_element: "Water", hand_meridian_element: "Fire"
+shao_yin.save
+shao_yin
+shao_yin.foot_meridian
+shao_yin.foot_meridian.update name: 'Kidney', energy_name: "Water", alias_ru: 'Почки',  short_name_en: 'R'
+shao_yin.foot_meridian.save
+shao_yin.foot_meridian
+shao_yin.hand_meridian
+shao_yin.hand_meridian.update energy_name: "Fire"
+shao_yin.hand_meridian.save
+shao_yin.hand_meridian
+tai_yin
+tai_yin.update name: 'Tai Yin',  foot_meridian_element: Earth", hand_meridian_element: "Metal"
+tai_yin.update name: 'Tai Yin',  foot_meridian_element: "Earth", hand_meridian_element: "Metal"
+tai_yin.save
+tai_yin
+tai_yin.foot_meridian
+tai_yin.foot_meridian.update name: 'Spleen', energy_name: "Earth", alias_ru: "Селезенка", short_name_en: 'Rp'
+tai_yin.foot_meridian.save
+tai_yin.foot_meridian
+tai_yin.hand_meridian
+tai_yin.hand_meridian.update name: 'Lung', energy_name: "Metal", alias_ru: 'Легкие', short_name_en: 'P'
+tai_yin.hand_meridian.save
+tai_yin.hand_meridian
+tai_yin
+tai_yang
+tai_yang.update name: 'Tai Yang', foot_meridian_name: "Bladder", hand_meridian_name: "Small Intestine", foot_meridian_element: "Water", hand_meridian_element: "Fire"
+tai_yang.save
+tai_yang
+tai_yang
+tai_yang.foot_meridian
+tai_yang.foot_meridian.update name: 'Bladder', energy_name: "Water", alias_ru: "Мочевой Пузырь"
+tai_yang.foot_meridian.save
+tai_yang.foot_meridian
+tai_yang.hand_meridian
+tai_yang.hand_meridian.update name: "Small Intestine", energy_name: "Fire", alias_ru: "Тонкий Кишечник"
+tai_yang.hand_meridian.save
+tai_yang.hand_meridian
+tai_yang
+yang_ming
+yang_ming.update name:  "Yang Ming", foot_meridian_name: "Stomach", hand_meridian_name: "Large Intestine", foot_meridian_element: "Earth", hand_meridian_element: "Metal"
+yang_ming.save
+yang_ming
+Layer.find(5)
+yang_ming.foot_meridian
+yang_ming.foot_meridian.update name: 'Stomach', energy_name: "Earth", alias_ru: "Желудок"
+yang_ming.foot_meridian.save
+Meridian.find(9)
+Meridian.find(10)
+yang_ming.hand_meridian
+yang_ming.hand_meridian.update name: "Large Intestine", energy_name: "Metal", alias_ru: "Толстый Кишечник"
+yang_ming.hand_meridian.save
+Meridian.find(10)
+shao_yang
+shao_yang.update name: "Shao Yang", foot_meridian_name: "Gall Bladder", hand_meridian_name: "Triple Heater", foot_meridian_element: "Wood", hand_meridian_element: "Fire"
+shao_yang.save
+shao_yang
+shao_yang.foot_meridian
+shao_yang.foot_meridian.update energy_name: "Wood"
+shao_yang.foot_meridian.save
+shao_yang.foot_meridian
+shao_yang.hand_meridian
+shao_yang.hand_meridian.update energy_name: "Fire", alias_ru: "Тройной Обогреватель"
+shao_yang.hand_meridian.save
+shao_yang.hand_meridian
+Layer.each{ |l| p l.name }
+Layer.all.each{ |l| p l.name }
+Meridian.all.each{ |l| p l.name }
+Layer.all.each{ |l| p l.foot_meridian }
+Layer.all.each{ |l| p l.foot_meridian.name }
+Layer.all.each{ |l| puts l.foot_meridian.name }
+Layer.all.each{ |l| puts l.hand_meridian.name }
+Layer.first
+Meridian.find(1)
+Meridian.find(0)
+mc = Meridian.find(0)
+mc = Meridian.find(1)
+ Meridian.find(2)
+f = Meridian.find(2)
+f
+f.update element_trunc: 'Metal'
+f.save
+f
+ Meridian.find(2)
 exit
