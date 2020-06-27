@@ -12,7 +12,7 @@ class Layer < ApplicationRecord
     SHAO_YANG = 'Shao Yang'
   end
 
-  def self.full_layer_wu_yun_liu_thi(date)
+  def self.full_layer_wu_yun(date)
     ranges = {
       DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) =>  Layer::NAMES::JUE_YIN
     }
@@ -23,4 +23,5 @@ class Layer < ApplicationRecord
       Layer.find_by(name: layer_name)
     end
   end
+
 end

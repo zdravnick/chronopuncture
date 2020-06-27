@@ -118,8 +118,9 @@ class PointsController < ApplicationController
       params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
     @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
-    @full_layer = Layer.find_by(name: full_layer_calculation(@patient_birthdate_utc)[:value])
+    @full_layer = Layer.all.full_layer_wu_yun(@patient_birthdate_utc.to_date)
     @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
+    # binding.pry
     @full_trunc_year = trunc_year_wu_yun_definition(@patient_birthdate_utc)
     @empty_trunc_year = empty_trunc_year_wu_yun_definition(@full_trunc_year)
     end
@@ -4098,22 +4099,6 @@ class PointsController < ApplicationController
   end
 
   # метод У_Юнь_Лю_Ци
-
-  def full_layer_wu_yun # half_of_year to define season's energy
-    [
-      { value: 'shao yang', dates: DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) },
-      { value: 'jue yin', dates: DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) },
-    ]
-  end
-
-  def full_layer_calculation(birth)
-    full_layer_wu_yun.find do |range|
-      range[:dates].include?(birth.to_date)
-    end
-    Layer.all.find do |layer|
-      birth.between?(layer.from_date, layer.to_date)
-    end
-  end
 
   def empty_layer_wu_yun(full_layer) # control layer  definition
     case full_layer.name

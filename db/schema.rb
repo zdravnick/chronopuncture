@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_142310) do
+ActiveRecord::Schema.define(version: 2020_06_27_175740) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_06_26_142310) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "foot_meridian_id", default: 0, null: false
     t.integer "hand_meridian_id", default: 0, null: false
+    t.string "element_ke"
     t.index ["name"], name: "index_layers_on_name"
   end
 

@@ -2,12 +2,11 @@
 
 <h5>@patient_birthdate Время рождения пациента: <%= @patient_birthdate %></h5>
 <h5>Проверка  @patient_birthdate_utc:  <%= @patient_birthdate_utc %></h5>
-<h5>СИЛЬНЫЙ СЛОЙ НА МОМЕНТ РОЖДЕНИЯ: <%= @full_layer.name %></h5>
-<h5>СИЛЬНЫЙ слой, меридианы: <%=  @full_layer.foot_meridian_name %>, <%= @full_layer.hand_meridian_name %> </h5>
+<h5>СИЛЬНЫЙ СЛОЙ НА МОМЕНТ РОЖДЕНИЯ: <%= @full_layer.name %> (<%= @full_layer.element_ke %>)</h5>
+<h5>СИЛЬНЫЙ слой, меридианы: <%= @full_layer.foot_meridian_name %> (<%= @full_layer.foot_meridian_element %>) , <%= @full_layer.hand_meridian_name %> (<%= @full_layer.hand_meridian_element %>)</h5>
 <h5>СИЛЬНЫЙ СТВОЛ: <%= @full_trunc_year[0] %> (<%= @full_trunc_year[1] %>) </h5>
 <h5>слабый ствол: <%= @empty_trunc_year[0] %> (<%= @empty_trunc_year[1] %>) </h5>
-<h5>Слабый слой: <%= @empty_layer.name %></h5>
-<h5>Слабый слой, меридианы: <%=  @empty_layer.foot_meridian_name %> (<%=  @empty_layer.foot_meridian_element %>); <%= @empty_layer.hand_meridian_name %> (<%= @empty_layer.hand_meridian_element %>) </h5>
+
 
 
 
