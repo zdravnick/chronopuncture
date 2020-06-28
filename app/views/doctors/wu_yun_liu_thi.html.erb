@@ -2,10 +2,32 @@
 
 <h5>@patient_birthdate Время рождения пациента: <%= @patient_birthdate %></h5>
 <h5>Проверка  @patient_birthdate_utc:  <%= @patient_birthdate_utc %></h5>
-<h5>СИЛЬНЫЙ СЛОЙ НА МОМЕНТ РОЖДЕНИЯ: <%= @full_layer.name %> (<%= @full_layer.element_ke %>)</h5>
-<h5>СИЛЬНЫЙ слой, меридианы: <%= @full_layer.foot_meridian_name %> (<%= @full_layer.foot_meridian_element %>) , <%= @full_layer.hand_meridian_name %> (<%= @full_layer.hand_meridian_element %>)</h5>
+<h5>Cильный слой: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>  (<%= @full_layer.foot_meridian_element %>) , <%= @full_layer.hand_meridian_name %> (<%= @full_layer.hand_meridian_element %>)</h5>
+<h5>СИЛЬНЫЙ слой, меридианы: <%=link_to @full_layer.foot_meridian_name , meridian_path(id: @full_layer.foot_meridian.id), action: :show  %> (<%= @full_layer.foot_meridian_element %>) , <%= link_to  @full_layer.hand_meridian_name, meridian_path(id: @full_layer.hand_meridian.id) %> (<%= @full_layer.hand_meridian_element %>)</h5>
+
 <h5>СИЛЬНЫЙ СТВОЛ: <%= @full_trunc_year[0] %> (<%= @full_trunc_year[1] %>) </h5>
 <h5>слабый ствол: <%= @empty_trunc_year[0] %> (<%= @empty_trunc_year[1] %>) </h5>
+
+
+
+ <ul>
+  Слабый слой(слои):
+   <% @empty_layer.each do |elem| %>
+    <li>
+
+          <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
+    </li>
+      <ul>
+        <li>
+          меридианы: <%= link_to elem.foot_meridian_name, meridian_path(id:  elem.foot_meridian.id),action: :show  %>
+          <%= link_to elem.hand_meridian_name, meridian_path(id: elem.hand_meridian.id), action: :show %>
+        </li>
+      </ul>
+  <% end %>
+
+</ul>
+
+
 
 
 

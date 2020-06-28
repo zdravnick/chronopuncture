@@ -1,12 +1,3 @@
-tai_yin.hand_meridian.save
-tai_yin.hand_meridian
-tai_yin
-tai_yang
-tai_yang.update name: 'Tai Yang', foot_meridian_name: "Bladder", hand_meridian_name: "Small Intestine", foot_meridian_element: "Water", hand_meridian_element: "Fire"
-tai_yang.save
-tai_yang
-tai_yang
-tai_yang.foot_meridian
 tai_yang.foot_meridian.update name: 'Bladder', energy_name: "Water", alias_ru: "Мочевой Пузырь"
 tai_yang.foot_meridian.save
 tai_yang.foot_meridian
@@ -197,4 +188,13 @@ Layer.full_layer_wu_yun(Datetime.new(1974, 9,18))
 a = Datetime.new(1974, 9,18)
 Layer.full_layer_wu_yun(DateTime.new(1974, 9,18))
 Layer.first
+exit
+Layer.fires
+Layer.first
+JUE_YIN
+Layer.all
+Layer.all.NAMES
+Layer.all.map{|n| n.NAMES}
+Meridian.first
+учше
 exit

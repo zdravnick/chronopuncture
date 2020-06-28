@@ -3,6 +3,7 @@ class PointsController < ApplicationController
 
   before_action :prepare
 
+
   def set_time_zone(&block)
     Time.use_zone(current_doctor.city.time_zone, &block)
   end
@@ -119,7 +120,12 @@ class PointsController < ApplicationController
       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
     @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
     @full_layer = Layer.all.full_layer_wu_yun(@patient_birthdate_utc.to_date)
-    @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
+    @empty_layer_name = Layer.all.empty_layer_wu_yun_table(@full_layer)
+    @empty_layer = (@empty_layer_name.map do |elem|
+      Layer.all.empty_layer_wu_yun(elem)
+      end
+      )
+    # @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
     # binding.pry
     @full_trunc_year = trunc_year_wu_yun_definition(@patient_birthdate_utc)
     @empty_trunc_year = empty_trunc_year_wu_yun_definition(@full_trunc_year)
@@ -683,7 +689,7 @@ class PointsController < ApplicationController
 
   def opened_points_infusion(trunc_day, guard, points_infusion)
     result = []
-    case trunc_day
+  case trunc_day
     when 1
       if guard == 1
         result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
@@ -4100,16 +4106,16 @@ class PointsController < ApplicationController
 
   # метод У_Юнь_Лю_Ци
 
-  def empty_layer_wu_yun(full_layer) # control layer  definition
-    case full_layer.name
-    when 'shao yang'  then ['tai yang']
-    when 'yang ming'  then ['shao yin', 'shao yang']
-    when 'tai yang'   then ['tai yin']
-    when 'jue yin'    then ['yang ming']
-    when 'shao yin'   then ['tai yang']
-    when 'tai yin'    then ['jue yin']
-    end
-  end
+  # def empty_layer_wu_yun(full_layer) # control layer  definition
+  #   case full_layer.name
+  #   when 'shao yang'  then ['tai yang']
+  #   when 'yang ming'  then ['shao yin', 'shao yang']
+  #   when 'tai yang'   then ['tai yin']
+  #   when 'jue yin'    then ['yang ming']
+  #   when 'shao yin'   then ['tai yang']
+  #   when 'tai yin'    then ['jue yin']
+  #   end
+  # end
 
   def layer_merididians(layer) # meridians of any layer. Looks like unused method (model Layer)
     case layer

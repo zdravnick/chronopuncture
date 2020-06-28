@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :patients
   resources :visits
   resources :layers
+  resources :meridians
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     resources :doctors, :points, :patients, :visits, :layers
