@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  foot_meridian_name: MyString
-  hand_meridian_name: MyString
-  foot_meridian_element: MyString
-  hand_meridian_element: MyString
+  leg_meridian_name: MyString
+  arm_meridian_name: MyString
+  leg_meridian_element: MyString
+  arm_meridian_element: MyString
 
 two:
   name: MyString
-  foot_meridian_name: MyString
-  hand_meridian_name: MyString
-  foot_meridian_element: MyString
-  hand_meridian_element: MyString
+  leg_meridian_name: MyString
+  arm_meridian_name: MyString
+  leg_meridian_element: MyString
+  arm_meridian_element: MyString

@@ -1,200 +1,200 @@
-tai_yang.foot_meridian.update name: 'Bladder', energy_name: "Water", alias_ru: "Мочевой Пузырь"
-tai_yang.foot_meridian.save
-tai_yang.foot_meridian
-tai_yang.hand_meridian
-tai_yang.hand_meridian.update name: "Small Intestine", energy_name: "Fire", alias_ru: "Тонкий Кишечник"
-tai_yang.hand_meridian.save
-tai_yang.hand_meridian
-tai_yang
-yang_ming
-yang_ming.update name:  "Yang Ming", foot_meridian_name: "Stomach", hand_meridian_name: "Large Intestine", foot_meridian_element: "Earth", hand_meridian_element: "Metal"
-yang_ming.save
-yang_ming
-Layer.find(5)
-yang_ming.foot_meridian
-yang_ming.foot_meridian.update name: 'Stomach', energy_name: "Earth", alias_ru: "Желудок"
-yang_ming.foot_meridian.save
-Meridian.find(9)
-Meridian.find(10)
-yang_ming.hand_meridian
-yang_ming.hand_meridian.update name: "Large Intestine", energy_name: "Metal", alias_ru: "Толстый Кишечник"
-yang_ming.hand_meridian.save
-Meridian.find(10)
-shao_yang
-shao_yang.update name: "Shao Yang", foot_meridian_name: "Gall Bladder", hand_meridian_name: "Triple Heater", foot_meridian_element: "Wood", hand_meridian_element: "Fire"
-shao_yang.save
-shao_yang
-shao_yang.foot_meridian
-shao_yang.foot_meridian.update energy_name: "Wood"
-shao_yang.foot_meridian.save
-shao_yang.foot_meridian
-shao_yang.hand_meridian
-shao_yang.hand_meridian.update energy_name: "Fire", alias_ru: "Тройной Обогреватель"
-shao_yang.hand_meridian.save
-shao_yang.hand_meridian
-Layer.each{ |l| p l.name }
-Layer.all.each{ |l| p l.name }
-Meridian.all.each{ |l| p l.name }
-Layer.all.each{ |l| p l.foot_meridian }
-Layer.all.each{ |l| p l.foot_meridian.name }
-Layer.all.each{ |l| puts l.foot_meridian.name }
-Layer.all.each{ |l| puts l.hand_meridian.name }
-Layer.first
-Meridian.find(1)
-Meridian.find(0)
-mc = Meridian.find(0)
-mc = Meridian.find(1)
- Meridian.find(2)
-f = Meridian.find(2)
-f
-f.update element_trunc: 'Metal'
-f.save
-f
- Meridian.find(2)
-exit
-a = (0..10).to_a
-a
-b = (0..12).to_a
-b
-c = a | b
-c
-Layer.all{ |l| puts l.name}
-Layer.all{ |l| p l.name}
-Layer.all.map{ |l| p l.name}
-Meridian.all.map{ |l| p l.name}
-Meridian.first
-Meridian.all.map{ |l| p l.name l.energy_name l.}
-Meridian.all.map{ |l| p l.name l.energy_name }
-Meridian.all.map{ |l| p l.name, l.energy_name }
-Meridian.all.map{ |l| p l.name, l.energy_name, ***}
-Meridian.all.map{ |l| p l.name, l.energy_name, '###'}
-Meridian.all.map{ |l| p l.name, l.energy_name, '_____'}
-Meridian.all.map{ |l| p l.name, l.id, '_____'}d
-Meridian.all.map{ |l| p l.name, l.id, '_____'}
-Meridian.all.map{ |l| p l.name, l.id, '_____'}
-f = Meridian.find(2)
-Meridian.all.map{ |l| p l.name, l.id, '_____'}
-Meridian.all.map{ |l| p l.name, l.id, '_____'}
-Meridian.all.map{ |l| p l.name, l.energy_name, '_____'}
-Meridian.first
-Layer.first
-Layer.first.name
-Layer.first.foot_meridian_name
-Layer.first.hand_meridian_name
-Layer.first.hand_meridian_element
-a = []
-a.class
-a[0] = Layer.first.hand_meridian_element
-a
-a[1] = Layer.first.foot_meridian_element
-a
-test = Layer.all.map{ |l| test.push l.foot_meridian_element}
-test = Layer.all.map{ |l| test.push(l.foot_meridian_element)}
-test = []
-test = Layer.all.map{ |l| test.push(l.foot_meridian_element)}
-test
-Layer.first.foot_meridian_element
-Layer.second.foot_meridian_element
-Layer.third.foot_meridian_element
-Layer.third
-Layer.ашкые
-Layer.fisrt
-Layer.first
-Layer.first*
-2-2
-
-Layer.first.foot_meridia
-Layer.first.foot_meridian
-exit
-Layer.find(1)
-Layer.find(1).update foot_meridian_element_ke: 'Wood', hand_meridian_element_ke: 'Wood'
 exit
 Layer.first
-Layer.first
-Layer.first.update element_ke: 'Wood'
-Layer.first.save
-Layer.first
-Layer.find(2)
-Layer.find(2).update element_ke: 'Fire'
-Layer.find(2)
-Layer.find(2).save
-Layer.find(3)
-Layer.find(3).update element_ke: 'Earth'
-Layer.find(3).save
-Layer.find(4)
-Layer.find(4).upate element_ke: 'Water'
-Layer.find(4).update element_ke: 'Water'
-Layer.find(4).save
-Layer.find(5)
-Layer.find(5).update element_ke: 'Metal'
-Layer.find(5).save
-Layer.find(6)
-Layer.find(6).update element_ke: 'Fire'
-Layer.find(6).save
-Layer.all.map{ |l| p l.name, l.element_ke, '......'}
-Layer.first
-Meridian.first
-Meridian.first.update element_brunch: 'Earth'
-Meridian.first.save
-Meridian.first.element_brunch
-Meridian.find(2)
-Meridian.find.update element_brunch: 'Earth'
-Meridian.find(2).update element_brunch: 'Earth'
-Meridian.find(2).save
-Meridian.find(3)
-Meridian.find(3).update element_trunc: 'Wood', element_brunch: 'Fire'
-Meridian.find(3).save
-Meridian.find(4)
-Meridian.find(4).update  element_trunc: 'Fire', element_brunch: 'Metal'
-Meridian.find(4).save
-Meridian.find(5)
-Meridian.find(5).update element_trunc: 'Water', element_brunch: 'Wood'
-Meridian.find(5).save
-Meridian.find(6)
-Meridian.find(6).update element_trunc: 'Earth', element_brunch: 'Fire'
-Meridian.find(6).save
-Meridian.find(7)
-Meridian.find(7).update element_trunc: 'Wood', element_brunch: 'Metal'
-Meridian.find(7).save
-Meridian.find(8)
-Meridian.find(8).update element_trunc: 'Water', element_brunch: 'Earth'
-Meridian.find(8).save
-Meridian.find(9)
-Meridian.find(9).update element_trunc: 'Fire', element_brunch: 'Earth'
-Meridian.find(9).save
-Meridian.find(10)
-Meridian.find(10).update element_trunc: 'Metal', element_brunch: 'Wood'
-Meridian.find(10).save
-Meridian.find(11)
-Meridian.find(11).update element_brunch: 'Water'
-Meridian.find(11).save
-Meridian.find(12)
-Meridian.find(12).update element_trunc: 'Earth', element_brunch: 'Water'
-Meridian.find(12).save
-Meridian.all.map{|m| p m.name, 'ствол', m.element_trunc, 'ветвь', m.elemetn_brunch, '......'}
-Meridian.all.map{|m| p m.name, 'ствол', m.element_trunc, 'ветвь', m.element_brunch, '......'}
-Meridian.first
-Meridian.find_by(name: 'Gall Bladder')
-Gb = Meridian.find_by(name: 'Gall Bladder')
-Пи
-Gb
-Gb.element_brunch
-JUE_YIN 
-Layer.full_layer_wu_yun(@patient_birthdate)
+Layer.all.find(1)
+Branch.find(1)
+Meridian.last.meridian_branch
+Meridian.find(1).meridian_branch
 exit
-Layer.full_layer_wu_yun(@patient_birthdate)
-Layer.first.full_layer_wu_yun(@patient_birthdate)
-Layer.full_layer_wu_yun(Datetime.new(1974, 9,18))
-a = Datetime.new(1974, 9,18)
-Layer.full_layer_wu_yun(DateTime.new(1974, 9,18))
-Layer.first
+Meridian.find(1).meridian_branch
+Meridian.find(1).earth_branch
 exit
-Layer.fires
-Layer.first
-JUE_YIN
-Layer.all
-Layer.all.NAMES
-Layer.all.map{|n| n.NAMES}
-Meridian.first
+Meridian.find(1).earth_branch
+Layer.first.arm_meridian
+Layer.first.arm_meridian.energy_name
+Meridian.first.earth_branch
+Layer.first.arm_meridian
+Layer.last
+exit
+Branch.last.day_meridian_id
+Layer.last.arm_meridian_id
+Layer.last
+Layer.last.arm_meridian
+Layer.last.arm_meridian.name
+Meridian.last.earth_branc
+Meridian.last.earth_branch
+exit
+Meridian.last.earth_branch
+Branch.last.earth_branc
+Branch.last.meridian.earth_branc
+Branch.last.meridian
+Branch.last.meridian
 учше
+exit
+Branch.last.meridian
+Branch.last.day_meridian
+Branch.last.meridian.day_meridian
+Branch.last.meridian
+Branch.last.day_meridian
+Meridian.last.branch
+Meridian.last.branch
+Branch.last.day_meridian
+учше
+exit
+Branch.last.day_meridian
+exit
+Branch.last.day_meridian
+Branch.last.day_meridian_id
+Branch.last
+Branch.last.day_meridian 
+exit
+Branch.last.day_meridian
+Branch.last
+Meridian.all.map{ |m| p m.alias_ru, m.id, '______'}
+Branch.find(1)
+a = Branch.find(1)
+a.update day_meridian_id: 12
+a.save
+a
+a = Branch.find(2)
+a.update day_meridian_id: 2
+a.save
+a
+a = Branch.find(3)
+a
+a.update day_meridian_id: 5
+a.save
+a
+a = Branch.find(4)
+a
+a.update day_meridian_id: 10
+a.save
+a
+a = Branch.find(5)
+a
+a.update day_meridian_id: 9
+a.save
+a
+a = Branch.find(6)
+a
+a.update day_meridian_id: 6
+a.save
+a
+a = Branch.find(7)
+a
+a.update day_meridian_id: 3
+a.sve
+a.sve
+a.save
+a
+a = Branch.find(8)
+a
+a.update day_meridian_id: 8
+a.save
+a
+a = Branch.find(9)
+a
+a.update day_meridian_id: 7
+a.save
+a
+a = Branch.find(10)
+a
+a.update day_meridian_id: 4
+a.save
+a
+a = Branch.find(11)
+a
+a.update day_meridian_id: 1
+a.save
+a
+a = Branch.find(12)
+a
+a.update day_meridian_id: 11
+a.save
+a
+exit
+Branch.first.day_meridian
+Meridian.last.branch
+Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
+exit
+exit
+Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.last
+exit
+Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
+Layer.last
+Branch.last
+Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.last
+Branch.find_by(serial_number: 1) 
+Branch.all.map{ |b| p b.id, 'serial=',  b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| p 'serial=',  b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| p b.id, puts 'serial= ' +  b.serial_number, p b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| puts 'serial= ',  b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| puts b.id, 'serial= ' +  b.serial_number, p b.day_meridian.alias_ru, '______'}
+Branch.all.map{ |b| puts b.id, 'serial= ',  b.serial_number, b.day_meridian.alias_ru, '______'}
+Branch.find_by(serial_number: 3)
+Branch.find_by(serial_number: 3).day_meridian
+Branch.find_by(serial_number: 9).day_meridian
+exit
+a = Trunc.create( serial_number: 1, name: 'Jia', element: 'Earth', year_meridian_id: 12, alias_ru: 'Желчный Пузырь', alias_ch: '甲')
+a.save
+a
+a.meridian
+a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
+2-2
+2-2
+a = Trunc.create( serial_number: 2, name: 'Yi', element: 'Metal', year_meridian_id: 2, alias_ru: 'И', alias_ch: '乙')
+a.save
+a
+Trunc.first.update alias_ru: 'Цзя'
+Trunc.first.save
+Trunc.first
+a = Trunc.create( serial_number: 3, name: 'Bing', element: 'Water', year_meridian_id: 8, alias_ru: 'Бин', alias_ch: '丙')
+a.save
+a
+Trunc.second
+a = Trunc.create( serial_number: 4, name: 'Ding', element: 'Wood', year_meridian_id: 3, alias_ru: 'Дин', alias_ch: '丁')
+a.save
+a.id
+a
+a = Trunc.create( serial_number: 5, name: 'Wu', element: 'Fire', year_meridian_id: 9, alias_ru: 'У', alias_ch: '戊')
+a.save
+a
+a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
+a = Trunc.create( serial_number: 6, name: 'Ji', element: 'Earth', year_meridian_id: 6, alias_ru: 'Цзи', alias_ch: '己')
+a.save
+a
+a = Trunc.create( serial_number: 7, name: 'Geng', element: 'Metal', year_meridian_id: 10, alias_ru: 'Гэн', alias_ch: '庚')
+a.save
+a
+a = Trunc.create( serial_number: 8, name: 'Xin', element: 'Water', year_meridian_id: 5, alias_ru: 'Синь', alias_ch: '辛')
+a.save
+a
+a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
+a = Trunc.create( serial_number: 9, name: 'Ren', element: 'Wood', year_meridian_id: 7, alias_ru: 'Жэнь', alias_ch: '壬')
+a.save
+a
+a = Trunc.create( serial_number: 10, name: 'Gui', element: 'Fire', year_meridian_id: 4, alias_ru: 'Гуй', alias_ch: '癸')
+a.save
+a
+Trunc.all.map{|t| puts t.name, t.element, '___'}
+exit
+Trunc.year_meridian
+Trunc.first.year_meridian
+Trunc.first.year_meridian.energy_name
+Trunc.find_by(serial_number: 1)
+Trunc.all.map{|t| puts t.id, t.year_meridian.name, '___'}
+Trunc.last
+Trunc.all.map{|t| puts t.id, t.serial_number, t.year_meridian.name, '___'}
+Trunc.find(10)
+Meridian.find(10)
+Trunc.serial_number
+Trunc.find_by(serial_number: 7)
+Trunc.last.element
+Trunc.first
+Trunc.first.year_meridian
+Trunc.first.year_meridian.name
+a = (1923..2100).step(12).to_a
+a
 exit

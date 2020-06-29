@@ -19,9 +19,9 @@ class PointsController < ApplicationController
     @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @offset_timezone_doctor =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
-    @brunch_day = brunch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @branch_day = branch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @trunc_hour = trunc_hour_calculation(@doctor_city, @doctor_current_datetime_utc)
-    @brunch_hour = brunch_hour_calculation(@doctor_city, @sun_datetime_zone)
+    @branch_hour = branch_hour_calculation(@doctor_city, @sun_datetime_zone)
     @guard = guard(@doctor_city, @doctor_current_datetime_utc)
     @eot = eot(@sun_datetime_zone).to_i
     @offset_for_time_table =
@@ -127,8 +127,12 @@ class PointsController < ApplicationController
       )
     # @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
     # binding.pry
-    @full_trunc_year = trunc_year_wu_yun_definition(@patient_birthdate_utc)
-    @empty_trunc_year = empty_trunc_year_wu_yun_definition(@full_trunc_year)
+
+    @full_trunc_year_probe = Trunc.all.trunc_year_wu_yun_definition_probe(@patient_birthdate_utc)
+    @empty_trunc_year_probe = Trunc.all.empty_trunc_year_wu_yun_definition_probe(@full_trunc_year_probe)
+
+    @full_branch_year_probe = Branch.all.full_branch_year_wu_yun(@patient_birthdate_utc)
+    @empty_branch_year_probe = Branch.all.empty_branch_year_wu_yun_probe(@full_branch_year_probe)
     end
     render "doctors/wu_yun_liu_thi"
   end
@@ -240,18 +244,18 @@ class PointsController < ApplicationController
     end
   end
 
-  def brunch_day_calculation(city, date)
-    brunch_day = number_of_day_calculation(city, date) % 12
-    if brunch_day < 3
-      brunch_day += 10
-    elsif brunch_day == 0
-      brunch_day = 12
+  def branch_day_calculation(city, date)
+    branch_day = number_of_day_calculation(city, date) % 12
+    if branch_day < 3
+      branch_day += 10
+    elsif branch_day == 0
+      branch_day = 12
       else
-      brunch_day -= 2
+      branch_day -= 2
     end
   end
 
-  def brunch_hour_calculation(city, time)
+  def branch_hour_calculation(city, time)
     case time.hour
     when 19..20 then 11
     when 21..22 then 12
@@ -309,8 +313,8 @@ class PointsController < ApplicationController
     end
   end
 
-  def brunch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
-    case brunch_day_calculation(city, date)
+  def branch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
+    case branch_day_calculation(city, date)
     when 2, 5, 8, 11 then 10
     when 9, 10 then 9
     when 3, 4 then 8
@@ -328,7 +332,7 @@ class PointsController < ApplicationController
     end
   end
 
-  def brunch_hour_definition_linguibafa(city, date)
+  def branch_hour_definition_linguibafa(city, date)
     case guard(city, date)
     when 1, 7 then 9
     when 2, 8 then 8
@@ -340,8 +344,8 @@ class PointsController < ApplicationController
   end
 
   def sum_of_numbers_linguibafa(city, date)
-    trunc_day_definition_linguibafa(city, date) + brunch_day_definition_linguibafa(city, date) +
-    trunc_hour_definition_linguibafa(city, date) + brunch_hour_definition_linguibafa(city, date)
+    trunc_day_definition_linguibafa(city, date) + branch_day_definition_linguibafa(city, date) +
+    trunc_hour_definition_linguibafa(city, date) + branch_hour_definition_linguibafa(city, date)
   end
 
   def divider_trunc_day(city, date) # выбор делителя для иньского/янского дня
@@ -4128,53 +4132,21 @@ class PointsController < ApplicationController
     end
   end
 
-  def trunc_year_wu_yun_table
-  [
-    {value: 'gall bladder', element: 'earth', year: [1924, 1934, 1944, 1954, 1964, 1974, 1984,
-      1994, 2004, 2014, 2024, 2034, 2044, 2054, 2064, 2074, 2084, 2094]  },
-    {value: 'liver', element: 'metal', year: [1925, 1935, 1945, 1955, 1965, 1975, 1985, 1995,
-     2005, 2015, 2025, 2035, 2045, 2055, 2065, 2075, 2085, 2095]  },
-    {value: 'small intestine', element: 'water', year: [1926, 1936, 1946, 1956, 1966, 1976,
-     1986, 1996, 2006, 2016, 2026, 2036, 2046, 2056, 2066, 2076, 2086, 2096]  },
-    {value: 'heart', element: 'wood', year: [1927, 1937, 1947, 1957, 1967, 1977,
-     1987, 1997, 2007, 2017, 2027, 2037, 2047, 2057, 2067, 2077, 2087, 2097]  },
-    {value: 'stomach', element: 'fire', year: [1928, 1938, 1948, 1958, 1968, 1978,
-     1988, 1998, 2008, 2018, 2028, 2038, 2048, 2058, 2068, 2078, 2088, 2098]  },
-    {value: 'spleen', element: 'earth', year: [1929, 1939, 1949, 1959, 1969, 1979,
-     1989, 1999, 2009, 2019, 2029, 2039, 2049, 2059, 2069, 2079, 2089, 2099]  },
-    {value: 'large intestine', element: 'metal', year: [1920, 1930, 1940, 1950, 1960, 1970,
-     1980, 1990, 2000, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]  },
-    {value: 'lung', element: 'water', year: [1921, 1931, 1941, 1951, 1961, 1971,
-     1981, 1991, 2001, 2011, 2021, 2031, 2041, 2051, 2061, 2071, 2081, 2091, 2101]  },
-    {value: 'bladder', element: 'wood', year: [1922, 1932, 1942, 1952, 1962, 1972,
-     1982, 1992, 2002, 2012, 2022, 2032, 2042, 2052, 2062, 2072, 2082, 2092, 2102]  },
-    {value: 'kidney', element: 'fire', year: [1923, 1933, 1943, 1953, 1963, 1973,
-     1983, 1993, 2003, 2013, 2023, 2033, 2043, 2053, 2063, 2073, 2083, 2093, 2103]  },
-  ]
-  end
 
-  def trunc_year_wu_yun_definition(birth)
-    trunc_year_wu_yun_table.each do |elem|
-      if elem[:year].include?(birth.year)
-        return elem[:value], elem[:element]
-      end
-    end
-  end
 
-  def empty_trunc_year_wu_yun_definition(full_trunc)
-    case full_trunc[0]
-    when 'gall bladder' then ['spleen', 'earth']
-    when 'liver' then ['large intestine', 'metal']
-    when 'small intestine' then [ 'lung', 'water' ]
-    when 'heart' then ['bladder', 'wood']
-    when 'stomach' then ['kidney', 'fire']
-    when 'large intestine' then ['liver',  'metal']
-    when 'spleen' then ['gall bladder', 'earth' ]
-    when 'lung' then ['small intestine', 'water']
-    when 'bladder' then ['heart', 'wood']
-    when 'kidney' then ['stomach', 'fire']
-    end
-  end
-
+  # def empty_trunc_year_wu_yun_definition(full_trunc)
+  #   case full_trunc[0]
+  #   when 'gall bladder' then ['spleen', 'earth']
+  #   when 'liver' then ['large intestine', 'metal']
+  #   when 'small intestine' then [ 'lung', 'water' ]
+  #   when 'heart' then ['bladder', 'wood']
+  #   when 'stomach' then ['kidney', 'fire']
+  #   when 'large intestine' then ['liver',  'metal']
+  #   when 'spleen' then ['gall bladder', 'earth' ]
+  #   when 'lung' then ['small intestine', 'water']
+  #   when 'bladder' then ['heart', 'wood']
+  #   when 'kidney' then ['stomach', 'fire']
+  #   end
+  # end
 
 end

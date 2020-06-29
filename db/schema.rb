@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_175740) do
+ActiveRecord::Schema.define(version: 2020_06_29_184135) do
+
+  create_table "branches", force: :cascade do |t|
+    t.integer "serial_number"
+    t.string "name"
+    t.integer "active_hour_offset"
+    t.string "element"
+    t.string "animal"
+    t.string "alias_ru"
+    t.string "alias_ch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "day_meridian_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -47,14 +60,14 @@ ActiveRecord::Schema.define(version: 2020_06_27_175740) do
 
   create_table "layers", force: :cascade do |t|
     t.string "name"
-    t.string "foot_meridian_name"
-    t.string "hand_meridian_name"
-    t.string "foot_meridian_element"
-    t.string "hand_meridian_element"
+    t.string "leg_meridian_name"
+    t.string "arm_meridian_name"
+    t.string "leg_meridian_element"
+    t.string "arm_meridian_element"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "foot_meridian_id", default: 0, null: false
-    t.integer "hand_meridian_id", default: 0, null: false
+    t.integer "leg_meridian_id", default: 0, null: false
+    t.integer "arm_meridian_id", default: 0, null: false
     t.string "element_ke"
     t.index ["name"], name: "index_layers_on_name"
   end
@@ -63,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_06_27_175740) do
     t.string "name"
     t.string "energy_name"
     t.string "element_trunc"
-    t.string "element_brunch"
+    t.string "element_branch"
     t.string "element_ke"
     t.string "alias_ru"
     t.string "short_name_en"
@@ -92,6 +105,17 @@ ActiveRecord::Schema.define(version: 2020_06_27_175740) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_points_on_name"
+  end
+
+  create_table "truncs", force: :cascade do |t|
+    t.integer "serial_number"
+    t.string "name"
+    t.string "element"
+    t.integer "year_meridian_id"
+    t.string "alias_ru"
+    t.string "alias_ch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "visits", force: :cascade do |t|

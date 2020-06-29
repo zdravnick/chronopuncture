@@ -2,13 +2,17 @@
 
 <h5>@patient_birthdate Время рождения пациента: <%= @patient_birthdate %></h5>
 <h5>Проверка  @patient_birthdate_utc:  <%= @patient_birthdate_utc %></h5>
-<h5>Cильный слой: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>  (<%= @full_layer.foot_meridian_element %>) , <%= @full_layer.hand_meridian_name %> (<%= @full_layer.hand_meridian_element %>)</h5>
-<h5>СИЛЬНЫЙ слой, меридианы: <%=link_to @full_layer.foot_meridian_name , meridian_path(id: @full_layer.foot_meridian.id), action: :show  %> (<%= @full_layer.foot_meridian_element %>) , <%= link_to  @full_layer.hand_meridian_name, meridian_path(id: @full_layer.hand_meridian.id) %> (<%= @full_layer.hand_meridian_element %>)</h5>
-
-<h5>СИЛЬНЫЙ СТВОЛ: <%= @full_trunc_year[0] %> (<%= @full_trunc_year[1] %>) </h5>
-<h5>слабый ствол: <%= @empty_trunc_year[0] %> (<%= @empty_trunc_year[1] %>) </h5>
+<h5>Cильный слой: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>  (<%= @full_layer.leg_meridian_name %> , <%= @full_layer.arm_meridian_name %>)</h5>
+<h5>СИЛЬНЫЙ слой, меридианы: <%=link_to @full_layer.leg_meridian_name , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian_name, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)</h5>
 
 
+<h3>СИЛЬНЫЙ СТВОЛ: <%= @full_trunc_year_probe.serial_number %>, <%= link_to @full_trunc_year_probe.year_meridian.name, meridian_path(id: @full_trunc_year_probe.year_meridian.id), action: :show %>,  ( Энергия Ствола: <%=  @full_trunc_year_probe.element %>), Энергия Меридиана: <%= @full_trunc_year_probe.year_meridian.energy_name %> </h5>
+
+<h3>слабый ствол:  <%= @empty_trunc_year_probe.serial_number %>, <%= link_to @empty_trunc_year_probe.year_meridian.name, meridian_path(id: @empty_trunc_year_probe.year_meridian.id), action: :show %>,<%= @empty_trunc_year_probe.element %>, Энергия меридиана: (<%= @empty_trunc_year_probe.year_meridian.energy_name %>) </h3>
+
+
+<h3>СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year_probe.day_meridian.name, meridian_path(id: @full_branch_year_probe.day_meridian.id), action: :show %> (<%= @full_branch_year_probe.day_meridian.energy_name %>) </h3>
+<h3>слабенькая веточка: <%= link_to @empty_branch_year_probe.day_meridian.name, meridian_path(id:  @empty_branch_year_probe.day_meridian.id), action: :show %> (<%= @empty_branch_year_probe.day_meridian.energy_name %>) </h3>
 
  <ul>
   Слабый слой(слои):
@@ -19,8 +23,8 @@
     </li>
       <ul>
         <li>
-          меридианы: <%= link_to elem.foot_meridian_name, meridian_path(id:  elem.foot_meridian.id),action: :show  %>
-          <%= link_to elem.hand_meridian_name, meridian_path(id: elem.hand_meridian.id), action: :show %>
+          меридианы: <%= link_to elem.leg_meridian_name, meridian_path(id:  elem.leg_meridian.id),action: :show  %>
+          <%= link_to elem.arm_meridian_name, meridian_path(id: elem.arm_meridian.id), action: :show %>
         </li>
       </ul>
   <% end %>

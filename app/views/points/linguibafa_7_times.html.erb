@@ -6,7 +6,7 @@
 <h4>EOT: <%=  @eot %></h4>
 <td> Стража: <%= @guard %><td>
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
-<h4>Ствол дня: <%= @trunc_day %>, Ветвь дня: <%= @brunch_day %></h4>
+<h4>Ствол дня: <%= @trunc_day %>, Ветвь дня: <%= @branch_day %></h4>
 <h4></h4>
 <h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
 <h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
@@ -19,7 +19,7 @@
     <td><%=  elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
-    <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
+    <td>Ветвь ЧАСА: <%= @branch_hour %> </td>
     <td>
       <table>
           <h4  class="highlight" > <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%></h4>

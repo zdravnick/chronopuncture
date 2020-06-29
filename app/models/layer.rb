@@ -1,7 +1,7 @@
 class Layer < ApplicationRecord
 
-  belongs_to :hand_meridian, class_name: 'Meridian'
-  belongs_to :foot_meridian, class_name: 'Meridian'
+  belongs_to :arm_meridian, class_name: 'Meridian'
+  belongs_to :leg_meridian, class_name: 'Meridian'
 
   module NAMES
     JUE_YIN = 'Jue Yin'

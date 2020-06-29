@@ -4,7 +4,7 @@ class CreateMeridians < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :energy_name
       t.string :element_trunc
-      t.string :element_brunch
+      t.string :element_branch
       t.string :element_ke
       t.string :alias_ru
       t.string :short_name_en
