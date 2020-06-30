@@ -2,7 +2,7 @@ class Trunc < ApplicationRecord
 
   belongs_to :year_meridian, class_name: 'Meridian'
 
-  def self.trunc_year_wu_yun_definition_probe(date)
+  def self.trunc_year_wu_yun_definition(date)
     if
       [1924, 1934, 1944, 1954, 1964, 1974, 1984, 1994, 2004, 2014, 2024, 2034, 2044, 2054,
         2064, 2074, 2084, 2094].include?(date.year)
@@ -36,7 +36,7 @@ class Trunc < ApplicationRecord
       Trunc.all.find_by(serial_number: 10)
     end
   end
-  def self.empty_trunc_year_wu_yun_definition_probe(full_trunc)
+  def self.empty_trunc_year_wu_yun_definition(full_trunc)
     if
       full_trunc == Trunc.find_by(serial_number: 1)
         Trunc.find_by(serial_number: 6)

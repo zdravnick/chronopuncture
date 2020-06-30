@@ -42,7 +42,7 @@ class Branch < ApplicationRecord
     end
   end
 
-  def self.empty_branch_year_wu_yun_probe(full_branch)
+  def self.empty_branch_year_wu_yun(full_branch)
     if full_branch == Branch.find_by(serial_number: 1)
       Branch.find_by(serial_number: 7)
     elsif full_branch == Branch.find_by(serial_number: 2)

@@ -1,200 +1,200 @@
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+empty_en = []
+Meridian.all.map  do |m|
+  m.energy_name
+    empty_en.each do |empty|
+      if m.energy_name == empty
+        empty_en.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_en
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_en.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_en
 exit
-Layer.first
-Layer.all.find(1)
-Branch.find(1)
-Meridian.last.meridian_branch
-Meridian.find(1).meridian_branch
+base_star = [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+base_star
+star_1 = [ 'Fire', 'Earth', 'Metal', 'Wood' ]
+star_1
+star_2 = [ 'Fire', 'Earth', 'Metal' ]
+star_2
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+empty_en = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_en.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_en
+rest
 exit
-Meridian.find(1).meridian_branch
-Meridian.find(1).earth_branch
+base_star = [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+base_star
+star_1 = [ 'Fire', 'Earth', 'Metal' ]
+star_1
+star_2 = [ 'Fire', 'Earth', 'Metal' ]
+star_2
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+empty_en = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_en.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_en
+base_star = [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+base_star
+star_1 = [  'Earth', 'Metal', 'Water']
+star_1
+star_2 = [ 'Fire', 'Earth', 'Metal' ]
+star_2
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+star_1
+star_2
+ssstar_sum
+star_sum
+empty_en = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_en.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_en
+rest
+empty_energy = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_energy.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_energy
+rest
+rest.each{ |empty| p empty}
 exit
-Meridian.find(1).earth_branch
-Layer.first.arm_meridian
-Layer.first.arm_meridian.energy_name
-Meridian.first.earth_branch
-Layer.first.arm_meridian
-Layer.last
-exit
-Branch.last.day_meridian_id
-Layer.last.arm_meridian_id
-Layer.last
+base_star = [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+base_star
+star_1 = [  'Earth', 'Metal', 'Water']
+star_1
+star_2 = [ 'Earth', 'Metal' ]
+star_2
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+empty_energy = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_energy.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_energy
+base_star = [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+base_star
+star_1 = [ 'Wood', 'Earth', 'Metal', 'Water']
+star_1
+star_2 = [ 'Wood', 'Earth', 'Metal' ]
+star_2
+star_sum = star_1 | star_2
+star_sum
+rest = base_star - star_sum
+rest
+empty_energy = []
+Meridian.all.map  do |m|
+  m.energy_name
+    rest.each do |empty|
+      if m.energy_name == empty
+        empty_energy.push(m.alias_ru)
+      else
+      end
+  end
+end
+empty_energy
+empty_energy
+Meridian.find_by(energy_name: 'Wood')
+Meridian.all.map{|m| m.energy_name: 'Wood'}
+Meridian.all.map{|m| m.energy_name == 'Wood'}
+Meridian.all.map{|m| puts m.alias_ru if m.energy_name == 'Wood'}
+Meridian.last
+Meridian.all.map{|m| puts m.alias_ru if m.element_trunc == 'Wood'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Wood'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Water'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Earth'}
+  def base_star_wu_yun
+    [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+  end
+base_star_wu_yun
+@base_star_wu_yun =  [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+@base_star_wu_yun
+Meridian.last
+Meridian.last.element
+Meridian.last.energy_name
+Layer.last.leg_meridian.element
+Layer.last.leg_meridian
+Layer.last.leg_meridian_element
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Earth'}
+Layer.last.element_branch
+Layer.last.arm_meridian.element_branch
 Layer.last.arm_meridian
-Layer.last.arm_meridian.name
-Meridian.last.earth_branc
-Meridian.last.earth_branch
-exit
-Meridian.last.earth_branch
-Branch.last.earth_branc
-Branch.last.meridian.earth_branc
-Branch.last.meridian
-Branch.last.meridian
-учше
-exit
-Branch.last.meridian
-Branch.last.day_meridian
-Branch.last.meridian.day_meridian
-Branch.last.meridian
-Branch.last.day_meridian
-Meridian.last.branch
-Meridian.last.branch
-Branch.last.day_meridian
-учше
-exit
-Branch.last.day_meridian
-exit
-Branch.last.day_meridian
-Branch.last.day_meridian_id
-Branch.last
-Branch.last.day_meridian 
-exit
-Branch.last.day_meridian
-Branch.last
-Meridian.all.map{ |m| p m.alias_ru, m.id, '______'}
-Branch.find(1)
-a = Branch.find(1)
-a.update day_meridian_id: 12
-a.save
-a
-a = Branch.find(2)
-a.update day_meridian_id: 2
-a.save
-a
-a = Branch.find(3)
-a
-a.update day_meridian_id: 5
-a.save
-a
-a = Branch.find(4)
-a
-a.update day_meridian_id: 10
-a.save
-a
-a = Branch.find(5)
-a
-a.update day_meridian_id: 9
-a.save
-a
-a = Branch.find(6)
-a
-a.update day_meridian_id: 6
-a.save
-a
-a = Branch.find(7)
-a
-a.update day_meridian_id: 3
-a.sve
-a.sve
-a.save
-a
-a = Branch.find(8)
-a
-a.update day_meridian_id: 8
-a.save
-a
-a = Branch.find(9)
-a
-a.update day_meridian_id: 7
-a.save
-a
-a = Branch.find(10)
-a
-a.update day_meridian_id: 4
-a.save
-a
-a = Branch.find(11)
-a
-a.update day_meridian_id: 1
-a.save
-a
-a = Branch.find(12)
-a
-a.update day_meridian_id: 11
-a.save
-a
-exit
-Branch.first.day_meridian
-Meridian.last.branch
-Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
-exit
-exit
-Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.last
-exit
-Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
 Layer.last
-Branch.last
-Branch.all.map{ |b| p b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.last
-Branch.find_by(serial_number: 1) 
-Branch.all.map{ |b| p b.id, 'serial=',  b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| p 'serial=',  b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| p b.id, puts 'serial= ' +  b.serial_number, p b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| puts 'serial= ',  b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| puts b.id, 'serial= ' +  b.serial_number, p b.day_meridian.alias_ru, '______'}
-Branch.all.map{ |b| puts b.id, 'serial= ',  b.serial_number, b.day_meridian.alias_ru, '______'}
-Branch.find_by(serial_number: 3)
-Branch.find_by(serial_number: 3).day_meridian
-Branch.find_by(serial_number: 9).day_meridian
-exit
-a = Trunc.create( serial_number: 1, name: 'Jia', element: 'Earth', year_meridian_id: 12, alias_ru: 'Желчный Пузырь', alias_ch: '甲')
-a.save
-a
-a.meridian
-a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
-2-2
-2-2
-a = Trunc.create( serial_number: 2, name: 'Yi', element: 'Metal', year_meridian_id: 2, alias_ru: 'И', alias_ch: '乙')
-a.save
-a
-Trunc.first.update alias_ru: 'Цзя'
-Trunc.first.save
-Trunc.first
-a = Trunc.create( serial_number: 3, name: 'Bing', element: 'Water', year_meridian_id: 8, alias_ru: 'Бин', alias_ch: '丙')
-a.save
-a
-Trunc.second
-a = Trunc.create( serial_number: 4, name: 'Ding', element: 'Wood', year_meridian_id: 3, alias_ru: 'Дин', alias_ch: '丁')
-a.save
-a.id
-a
-a = Trunc.create( serial_number: 5, name: 'Wu', element: 'Fire', year_meridian_id: 9, alias_ru: 'У', alias_ch: '戊')
-a.save
-a
-a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
-a = Trunc.create( serial_number: 6, name: 'Ji', element: 'Earth', year_meridian_id: 6, alias_ru: 'Цзи', alias_ch: '己')
-a.save
-a
-a = Trunc.create( serial_number: 7, name: 'Geng', element: 'Metal', year_meridian_id: 10, alias_ru: 'Гэн', alias_ch: '庚')
-a.save
-a
-a = Trunc.create( serial_number: 8, name: 'Xin', element: 'Water', year_meridian_id: 5, alias_ru: 'Синь', alias_ch: '辛')
-a.save
-a
-a = Trunc.creat( serial_number: , name: '', element: '', year_meridian_id: , alias_ru: '', alias_ch: '')
-a = Trunc.create( serial_number: 9, name: 'Ren', element: 'Wood', year_meridian_id: 7, alias_ru: 'Жэнь', alias_ch: '壬')
-a.save
-a
-a = Trunc.create( serial_number: 10, name: 'Gui', element: 'Fire', year_meridian_id: 4, alias_ru: 'Гуй', alias_ch: '癸')
-a.save
-a
-Trunc.all.map{|t| puts t.name, t.element, '___'}
-exit
-Trunc.year_meridian
-Trunc.first.year_meridian
-Trunc.first.year_meridian.energy_name
-Trunc.find_by(serial_number: 1)
-Trunc.all.map{|t| puts t.id, t.year_meridian.name, '___'}
-Trunc.last
-Trunc.all.map{|t| puts t.id, t.serial_number, t.year_meridian.name, '___'}
-Trunc.find(10)
-Meridian.find(10)
-Trunc.serial_number
-Trunc.find_by(serial_number: 7)
-Trunc.last.element
-Trunc.first
-Trunc.first.year_meridian
-Trunc.first.year_meridian.name
-a = (1923..2100).step(12).to_a
-a
+Layer.last.leg_meridian.energy_name
+Meridian.last
+Meridian.all.map{|m| puts m.alias_ru where m.element_branch == 'Earth'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Earth'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Water}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Water'}
+Meridian.all.map{|m| puts m.alias_ru if m.element_branch == 'Water'}
+Meridian.last
+star_1_wu_yun = [ 'Wood', 'Earth', 'Metal', 'Water']
+star_1_wu_yun
+star_2_wu_yun = [ 'Wood', 'Earth', 'Metal' ]
+star_2_wu_yun
+star_sum = star_1_wu_yun | star_2_wu_yun
+star_sum
+star_sum = star_1_wu_yun & star_2_wu_yun
+star_sum
+star_1_wu_yun = [ 'Wood', 'Earth', 'Metal', 'Water']
+star_1_wu_yunstar_2_wu_yun = [ 'Wood', 'Wood', 'Wood', 'Earth' ]
+star_sum = star_1_wu_yun & star_2_wu_yun
+star_sum
 exit

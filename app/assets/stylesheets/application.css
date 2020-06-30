@@ -101,6 +101,7 @@ background-color: #bfbb73;
 ul>li {
   color: #800000;
   list-style-type: disc;
+  padding: 5px;
 }
 
 table, tr, td, td>a{
@@ -142,7 +143,6 @@ a:hover, .btn-control:hover {
   color: white;
   border-radius: 10px;
   /*border: 2px solid black;*/
-/*  transform: scale(1.05);
 */  box-shadow: 3px 2px 3px 2px white;
   /*box-shadow: 4px 4px 4px #630;*/
 }
@@ -152,14 +152,10 @@ a:active,  .btn-control:active {
   outline: none !important;
   background-color: #666600;
   color: white;
- /* transform: scale(0.99);*/
   border: none;
-  border-radius: 10px;
-  box-shadow:   1px 1px 1px 1px black,  -1px -1px 1px 1px black;
-/*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown
-*/  padding: 3px;
+  box-shadow: none;
+/*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown */
 
-/*  transform: scale(0.95);*/
 }
 
 .patient_delete_control {

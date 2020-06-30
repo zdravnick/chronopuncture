@@ -115,24 +115,60 @@ class PointsController < ApplicationController
     @patient_city = @patient.city
     @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
     Time.use_zone(@patient.city.time_zone) do
-    @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
-      params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
-      params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
-    @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
-    @full_layer = Layer.all.full_layer_wu_yun(@patient_birthdate_utc.to_date)
-    @empty_layer_name = Layer.all.empty_layer_wu_yun_table(@full_layer)
-    @empty_layer = (@empty_layer_name.map do |elem|
-      Layer.all.empty_layer_wu_yun(elem)
+      @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
+        params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
+        params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
+      @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
+      @full_layer = Layer.all.full_layer_wu_yun(@patient_birthdate_utc.to_date)
+      @empty_layer_name = Layer.all.empty_layer_wu_yun_table(@full_layer)
+      @empty_layer = (@empty_layer_name.map do |elem|
+        Layer.all.empty_layer_wu_yun(elem)
+        end
+        )
+      @full_trunc_year = Trunc.all.trunc_year_wu_yun_definition(@patient_birthdate_utc)
+      @empty_trunc_year = Trunc.all.empty_trunc_year_wu_yun_definition(@full_trunc_year)
+
+      @full_branch_year = Branch.all.full_branch_year_wu_yun(@patient_birthdate_utc)
+      @empty_branch_year = Branch.all.empty_branch_year_wu_yun(@full_branch_year)
+      @base_star_wu_yun =  [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
+      @star_1_wu_yun =
+        [ @full_layer.leg_meridian_element, @full_layer.arm_meridian_element,
+          @full_trunc_year.element, @full_trunc_year.year_meridian.energy_name,
+          @full_branch_year.day_meridian.energy_name
+        ]
+      @star_2_wu_yun =
+        [
+          @full_layer.leg_meridian.element_branch , @full_layer.arm_meridian.element_branch ,
+          @full_trunc_year.year_meridian.element_branch, @full_branch_year.day_meridian.element_branch
+        ]
+      @star_1_wu_yun_reminder = @base_star_wu_yun - @star_1_wu_yun
+      @star_2_wu_yun_reminder = @base_star_wu_yun - @star_2_wu_yun
+      @star_1_wu_yun_reminder_meridians = Meridian.all.map do |meridian|
+        @star_1_wu_yun_reminder.map do |elem|
+          if meridian.energy_name == elem
+            meridian
+            else
+            end
+          end
+        end
+      @star_2_wu_yun_reminder_meridians = Meridian.all.map do |meridian|
+        @star_2_wu_yun_reminder.map do |elem|
+          if meridian.element_branch == elem
+            meridian
+            else
+          end
+        end
       end
-      )
-    # @empty_layer = Layer.find_by(name: empty_layer_wu_yun(@full_layer))
-    # binding.pry
-
-    @full_trunc_year_probe = Trunc.all.trunc_year_wu_yun_definition_probe(@patient_birthdate_utc)
-    @empty_trunc_year_probe = Trunc.all.empty_trunc_year_wu_yun_definition_probe(@full_trunc_year_probe)
-
-    @full_branch_year_probe = Branch.all.full_branch_year_wu_yun(@patient_birthdate_utc)
-    @empty_branch_year_probe = Branch.all.empty_branch_year_wu_yun_probe(@full_branch_year_probe)
+      @star_1_star_2_reminder =
+        @star_1_wu_yun_reminder_meridians.compact.flatten & @star_2_wu_yun_reminder_meridians.compact.flatten
+      @missing_energy_meridians = Meridian.all.find(
+        @star_1_star_2_reminder.compact.map do |elem|
+            elem.id
+          end
+        )
+      @missing_energy = @missing_energy_meridians.map do |elem|
+        elem.energy_name
+      end
     end
     render "doctors/wu_yun_liu_thi"
   end
@@ -4109,44 +4145,5 @@ class PointsController < ApplicationController
   end
 
   # метод У_Юнь_Лю_Ци
-
-  # def empty_layer_wu_yun(full_layer) # control layer  definition
-  #   case full_layer.name
-  #   when 'shao yang'  then ['tai yang']
-  #   when 'yang ming'  then ['shao yin', 'shao yang']
-  #   when 'tai yang'   then ['tai yin']
-  #   when 'jue yin'    then ['yang ming']
-  #   when 'shao yin'   then ['tai yang']
-  #   when 'tai yin'    then ['jue yin']
-  #   end
-  # end
-
-  def layer_merididians(layer) # meridians of any layer. Looks like unused method (model Layer)
-    case layer
-    when 'shao yang' then ['Gb', 'Th']
-    when 'yang ming' then ['E', 'Gi']
-    when 'tai yang' then ['Ig', 'V']
-    when 'jue yin' then ['Mc', 'F']
-    when 'shao yin' then ['R', 'C']
-    when 'tai yin' then ['P', 'Rp']
-    end
-  end
-
-
-
-  # def empty_trunc_year_wu_yun_definition(full_trunc)
-  #   case full_trunc[0]
-  #   when 'gall bladder' then ['spleen', 'earth']
-  #   when 'liver' then ['large intestine', 'metal']
-  #   when 'small intestine' then [ 'lung', 'water' ]
-  #   when 'heart' then ['bladder', 'wood']
-  #   when 'stomach' then ['kidney', 'fire']
-  #   when 'large intestine' then ['liver',  'metal']
-  #   when 'spleen' then ['gall bladder', 'earth' ]
-  #   when 'lung' then ['small intestine', 'water']
-  #   when 'bladder' then ['heart', 'wood']
-  #   when 'kidney' then ['stomach', 'fire']
-  #   end
-  # end
 
 end
