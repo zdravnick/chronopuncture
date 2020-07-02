@@ -1,18 +1,18 @@
 
 
-  <h5> КУЧКА ЭНЕРГИЙ № РАЗ: <%= @star_1_wu_yun %> </h5>
-  <h5> ОСТАТОЧЕК № РАЗ: <%= @star_1_wu_yun_reminder %> </h5>
-  <h5> КУЧКА ЭНЕРГИЙ № КВА: <%= @star_2_wu_yun %> </h5>
-  <h5> ОСТАТОЧЕК № КВА: <%= @star_2_wu_yun_reminder %> </h5>
-    <ul>Меридианы остатка № РАЗ:
-      <% @star_1_wu_yun_reminder_meridians.flatten.compact.map do |meridian| %>
+  <h5> Энергии у-син <%= @star_5_energies_wu_yun %> </h5>
+  <h5> Пустые Дома У-син <%= @star_5_energies_wu_yun_remainder %> </h5>
+  <h5> Сезонные Энергии: <%= @star_season_energies_wu_yun %> </h5>
+  <h5> Пустые Дома Сезонов: <%= @star_season_energies_wu_yun_remainder %> </h5>
+    <ul>Меридианы Пустых домов У-СИН
+      <% @star_5_energies_wu_yun_remainder_meridians.map do |meridian| %>
         <li>
           <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
         </li>
       <% end %>
     </ul>
-    <ul>Меридианы остатка № КВА:
-      <% @star_2_wu_yun_reminder_meridians.flatten.compact.map do |meridian| %>
+    <ul>Меридианы Пустых Домов Сезонов
+      <% @star_season_energies_wu_yun_remainder_meridians.map do |meridian| %>
         <li>
           <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
         </li>
@@ -21,16 +21,16 @@
 
 <h4>Отсутствующая Ци:</h4>
 <ul>
-  <% @missing_energy.uniq.each do |elem| %>
+  <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
     <li>
-      <%= elem %>
+      <%= energy_name %>
     </li>
 <% end %>
 </ul>
 
 <p>
 Меридианы Отсутствующей Ци:
-<% @missing_energy_meridians.compact.each do |elem| %>
+<% @missing_energies_meridians.compact.each do |elem| %>
 <%= link_to elem.alias_ru, meridian_path(id: elem.id), action: :show %>
 <% end %>
 </p>

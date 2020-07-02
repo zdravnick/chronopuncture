@@ -3,7 +3,6 @@ class PointsController < ApplicationController
 
   before_action :prepare
 
-
   def set_time_zone(&block)
     Time.use_zone(current_doctor.city.time_zone, &block)
   end
@@ -19,9 +18,9 @@ class PointsController < ApplicationController
     @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @offset_timezone_doctor =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
-    @branch_day = branch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @brunch_day = brunch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
     @trunc_hour = trunc_hour_calculation(@doctor_city, @doctor_current_datetime_utc)
-    @branch_hour = branch_hour_calculation(@doctor_city, @sun_datetime_zone)
+    @brunch_hour = brunch_hour_calculation(@doctor_city, @sun_datetime_zone)
     @guard = guard(@doctor_city, @doctor_current_datetime_utc)
     @eot = eot(@sun_datetime_zone).to_i
     @offset_for_time_table =
@@ -81,6 +80,7 @@ class PointsController < ApplicationController
     end
   end
 
+
   def infusion_2
     @points_infusion = points_infusion_2
     @opened_points_infusion = opened_points_infusion_2(@trunc_day, @guard, @points_infusion)
@@ -110,6 +110,7 @@ class PointsController < ApplicationController
     # There is TIME.now in the table!
   end
 
+
   def wu_yun_liu_thi
     @patient = Patient.find(params["patient_id"])
     @patient_city = @patient.city
@@ -125,53 +126,36 @@ class PointsController < ApplicationController
         Layer.all.empty_layer_wu_yun(elem)
         end
         )
-      @full_trunc_year = Trunc.all.trunc_year_wu_yun_definition(@patient_birthdate_utc)
-      @empty_trunc_year = Trunc.all.empty_trunc_year_wu_yun_definition(@full_trunc_year)
-
-      @full_branch_year = Branch.all.full_branch_year_wu_yun(@patient_birthdate_utc)
-      @empty_branch_year = Branch.all.empty_branch_year_wu_yun(@full_branch_year)
+      @full_trunc_year =
+        Trunc.trunc_year_wu_yun_definition(@patient_birthdate_utc.to_date)[:value]
+      @empty_trunc_year = Trunc.empty_trunc_year_wu_yun_definition(@full_trunc_year)
+      @full_branch_year = Branch.full_branch_year_wu_yun(@patient_birthdate_utc)
+      @empty_branch_year = Branch.empty_branch_year_wu_yun(@full_branch_year)
       @base_star_wu_yun =  [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
-      @star_1_wu_yun =
+      @star_5_energies_wu_yun =
         [ @full_layer.leg_meridian_element, @full_layer.arm_meridian_element,
           @full_trunc_year.element, @full_trunc_year.year_meridian.energy_name,
           @full_branch_year.day_meridian.energy_name
         ]
-      @star_2_wu_yun =
+      @star_season_energies_wu_yun =
         [
           @full_layer.leg_meridian.element_branch , @full_layer.arm_meridian.element_branch ,
           @full_trunc_year.year_meridian.element_branch, @full_branch_year.day_meridian.element_branch
         ]
-      @star_1_wu_yun_reminder = @base_star_wu_yun - @star_1_wu_yun
-      @star_2_wu_yun_reminder = @base_star_wu_yun - @star_2_wu_yun
-      @star_1_wu_yun_reminder_meridians = Meridian.all.map do |meridian|
-        @star_1_wu_yun_reminder.map do |elem|
-          if meridian.energy_name == elem
-            meridian
-            else
-            end
-          end
-        end
-      @star_2_wu_yun_reminder_meridians = Meridian.all.map do |meridian|
-        @star_2_wu_yun_reminder.map do |elem|
-          if meridian.element_branch == elem
-            meridian
-            else
-          end
-        end
-      end
-      @star_1_star_2_reminder =
-        @star_1_wu_yun_reminder_meridians.compact.flatten & @star_2_wu_yun_reminder_meridians.compact.flatten
-      @missing_energy_meridians = Meridian.all.find(
-        @star_1_star_2_reminder.compact.map do |elem|
-            elem.id
-          end
-        )
-      @missing_energy = @missing_energy_meridians.map do |elem|
-        elem.energy_name
-      end
+
+      @star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
+      @star_5_energies_wu_yun_remainder_meridians = Meridian.where(energy_name: @star_5_energies_wu_yun_remainder)
+
+      @star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
+      @star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
+
+      @ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
+      @missing_energies_meridians = Meridian.where(id: @ids)
+
     end
     render "doctors/wu_yun_liu_thi"
   end
+
 
   def complex_balance
     @patient = Patient.find(params["patient_id"])
@@ -280,18 +264,18 @@ class PointsController < ApplicationController
     end
   end
 
-  def branch_day_calculation(city, date)
-    branch_day = number_of_day_calculation(city, date) % 12
-    if branch_day < 3
-      branch_day += 10
-    elsif branch_day == 0
-      branch_day = 12
+  def brunch_day_calculation(city, date)
+    brunch_day = number_of_day_calculation(city, date) % 12
+    if brunch_day < 3
+      brunch_day += 10
+    elsif brunch_day == 0
+      brunch_day = 12
       else
-      branch_day -= 2
+      brunch_day -= 2
     end
   end
 
-  def branch_hour_calculation(city, time)
+  def brunch_hour_calculation(city, time)
     case time.hour
     when 19..20 then 11
     when 21..22 then 12
@@ -349,8 +333,8 @@ class PointsController < ApplicationController
     end
   end
 
-  def branch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
-    case branch_day_calculation(city, date)
+  def brunch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
+    case brunch_day_calculation(city, date)
     when 2, 5, 8, 11 then 10
     when 9, 10 then 9
     when 3, 4 then 8
@@ -368,7 +352,7 @@ class PointsController < ApplicationController
     end
   end
 
-  def branch_hour_definition_linguibafa(city, date)
+  def brunch_hour_definition_linguibafa(city, date)
     case guard(city, date)
     when 1, 7 then 9
     when 2, 8 then 8
@@ -380,8 +364,8 @@ class PointsController < ApplicationController
   end
 
   def sum_of_numbers_linguibafa(city, date)
-    trunc_day_definition_linguibafa(city, date) + branch_day_definition_linguibafa(city, date) +
-    trunc_hour_definition_linguibafa(city, date) + branch_hour_definition_linguibafa(city, date)
+    trunc_day_definition_linguibafa(city, date) + brunch_day_definition_linguibafa(city, date) +
+    trunc_hour_definition_linguibafa(city, date) + brunch_hour_definition_linguibafa(city, date)
   end
 
   def divider_trunc_day(city, date) # выбор делителя для иньского/янского дня
@@ -729,7 +713,7 @@ class PointsController < ApplicationController
 
   def opened_points_infusion(trunc_day, guard, points_infusion)
     result = []
-  case trunc_day
+    case trunc_day
     when 1
       if guard == 1
         result <<  '23:00 - 23:23 ' + points_infusion[1][1] + ' is opened'
@@ -3658,6 +3642,7 @@ class PointsController < ApplicationController
     end
   end
 
+
   def first_point_lo_shu_number(year, month, day_p, day_d )
     s = (year + month + day_p + day_d)%64
     if s == 0
@@ -4143,7 +4128,5 @@ class PointsController < ApplicationController
       point[:values].include?(first_point_lo_shu)
     end
   end
-
-  # метод У_Юнь_Лю_Ци
 
 end
