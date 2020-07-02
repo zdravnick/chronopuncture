@@ -74,7 +74,7 @@ class Layer < ApplicationRecord
       DateTime.new(1972, 8, 9)..DateTime.new(1973, 2, 2) =>  Layer::NAMES::YANG_MING,
       DateTime.new(1973, 2, 3)..DateTime.new(1973, 7, 29) =>  Layer::NAMES::TAI_YIN,
       DateTime.new(1973, 7, 30)..DateTime.new(1974, 1, 22) =>  Layer::NAMES::TAI_YANG,
-      DateTime.new(1971, 1, 23)..DateTime.new(1974, 8, 17) =>  Layer::NAMES::SHAO_YANG,
+      DateTime.new(1974, 1, 23)..DateTime.new(1974, 8, 17) =>  Layer::NAMES::SHAO_YANG,
       DateTime.new(1974, 8, 18)..DateTime.new(1975, 2, 10) =>  Layer::NAMES::JUE_YIN,
       DateTime.new(1975, 2, 11)..DateTime.new(1975, 8, 6) =>  Layer::NAMES::YANG_MING,
       DateTime.new(1975, 8, 7)..DateTime.new(1976, 1, 30) =>  Layer::NAMES::SHAO_YIN,
