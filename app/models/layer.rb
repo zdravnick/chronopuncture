@@ -14,6 +14,12 @@ class Layer < ApplicationRecord
 
   def self.full_layer_wu_yun(date)
     ranges = {
+      DateTime.new(1941, 1, 27)..DateTime.new(1941, 8, 22) =>  Layer::NAMES::JUE_YIN,
+      DateTime.new(1941, 8, 23)..DateTime.new(1942, 2, 14) =>  Layer::NAMES::SHAO_YANG,
+      DateTime.new(1942, 2, 15)..DateTime.new(1942, 8, 11) =>  Layer::NAMES::SHAO_YIN,
+      DateTime.new(1942, 8, 12)..DateTime.new(1943, 2, 4) =>  Layer::NAMES::YANG_MING,
+      DateTime.new(1943, 2, 5)..DateTime.new(1943, 7, 31) =>  Layer::NAMES::TAI_YIN,
+      DateTime.new(1943, 8, 1)..DateTime.new(1944, 1, 24) =>  Layer::NAMES::TAI_YANG,
       DateTime.new(1944, 1, 25)..DateTime.new(1944, 8, 18) =>  Layer::NAMES::SHAO_YANG,
       DateTime.new(1944, 8, 19)..DateTime.new(1945, 2, 12) =>  Layer::NAMES::JUE_YIN,
       DateTime.new(1945, 2, 13)..DateTime.new(1945, 8, 7) =>  Layer::NAMES::YANG_MING,
