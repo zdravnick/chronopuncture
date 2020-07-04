@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_112927) do
+ActiveRecord::Schema.define(version: 2020_07_04_185702) do
 
   create_table "branches", force: :cascade do |t|
     t.integer "serial_number"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_112927) do
     t.string "alias_en"
     t.string "alias_ru"
     t.string "alias_cn"
-    t.string "element"
+    t.string "point_energy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_points_on_name"
