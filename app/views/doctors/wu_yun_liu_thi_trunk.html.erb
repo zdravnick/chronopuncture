@@ -3,7 +3,7 @@
 
 <h5>СИЛЬНЫЙ СЛОЙ: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>  (<%= @full_layer.leg_meridian_name %> , <%= @full_layer.arm_meridian_name %>), меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)</h5>
 
-<h5>СИЛЬНЫЙ СТВОЛ: <%= @full_trunc_year.serial_number %>, <%= link_to @full_trunc_year.year_meridian.alias_ru, meridian_path(id: @full_trunc_year.year_meridian.id), action: :show %>,  ( Энергия Ствола: <%=  @full_trunc_year.element %>),  Энергия Ветви: <%= @full_trunc_year.year_meridian.element_branch %>, Энергия Меридиана: <%= @full_trunc_year.year_meridian.energy_name %> </h5>
+<h5>СИЛЬНЫЙ СТВОЛ: <%= @full_trunk_year.serial_number %>, <%= link_to @full_trunk_year.year_meridian.alias_ru, meridian_path(id: @full_trunk_year.year_meridian.id), action: :show %>,  ( Энергия Ствола: <%=  @full_trunk_year_trunk_energy %>),  Энергия Ветви: <%= @full_trunk_year.year_meridian.element_branch %>, Энергия Меридиана: <%= @full_trunk_year.year_meridian.energy_name %> </h5>
 
 <h5>СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %> (<%= @full_branch_year.day_meridian.energy_name %>) </h5>
 
@@ -21,7 +21,7 @@
     <% end %>
 </ul>
 
-<h4>слабый ствол:  <%= @empty_trunc_year.serial_number %>, <%= link_to @empty_trunc_year.year_meridian.alias_ru, meridian_path(id: @empty_trunc_year.year_meridian.id), action: :show %>,<%= @empty_trunc_year.element %>, Энергия меридиана: (<%= @empty_trunc_year.year_meridian.energy_name %>) </h4>
+<h4>слабый ствол:  <%= @empty_trunk_year.serial_number %>, <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %>,<%= @empty_trunk_year_trunk_energy %>, Энергия меридиана: (<%= @empty_trunk_year.year_meridian.energy_name %>) </h4>
 
 <h4>слабая ветка: <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (<%= @empty_branch_year.day_meridian.energy_name %>) </h4>
 
