@@ -1,108 +1,3 @@
-      { value: Trunc.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
-      { value: Trunc.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) },
-      { value: Trunc.find_by(serial_number: 2), dates: DateTime.new(1995, 1, 30)..DateTime.new(1996, 2, 17) },
-      { value: Trunc.find_by(serial_number: 3), dates: DateTime.new(1996, 2, 18)..DateTime.new(1997, 2, 6) },
-      { value: Trunc.find_by(serial_number: 4), dates: DateTime.new(1997, 2, 7)..DateTime.new(1998, 1, 27) },
-      { value: Trunc.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
-      { value: Trunc.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) }
-      ]
-    end
-r
-exit
-Layer.last
-Point.last
-Point.all.count
-Trunks.find(10
-Trunks.find(2)
-Trunk.find(2)
-Trunk.find_by(serial_number: 1)
-exit
-Point.last
-Point.last
-exit
-Point.find_by(name: 'E.36')
-a = Point.find_by(name: 'E.36'
-a.update point_energy: 'Earth'
-a.save
-a
-a = Point.find_by(name: 'E.36')
-Point.find_by(name: 'E.36')
-a.update alias_ru: 'Цзу-сань-ли'
-a.save
-a
-exxit
-exit
-Point.find_by(name: 'P.5')
-a = Point.find_by(name: 'P.5')
-a.update alias_ru: 'Чи-цзе', point_energy: 'Water'
-a.save
-a
-a = Point.find_by(name: 'P.11')
-a
-a.update alias_ru: 'Шао-шан', point_energy: 'Wood'
-a = Point.find_by(name: 'P.10')
-a
-a.update alias_ru: 'Юй-цзи', point_energy: 'Fire'
-a.save
-a = Point.find_by(name: 'P.11')
-a
-a = Point.find_by(name: 'P.9')
-a
-a.update alias_ru: 'Тай-юань', point_energy: 'Earth'
-a.save
-a
-a = Point.find_by(name: 'P.8')
-a
-a.update alias_ru: 'Цзин-цюй', point_energy: 'Metal'
-a.save
-a
-a = Point.find_by(name: 'Rp.1')
-a
-a.update alias_ru: 'Инь-бай', point_energy: 'Wood'
-a.save
-a = Point.find_by(name: 'Rp.2')
-a
-a.update alias_ru: 'Да-ду', point_energy: 'Fire'
-a.save
-a
-a = Point.find_by(name: 'Rp.3')
-a
-a.update alias_ru: 'Тай-бай', point_energy: 'Earth'
-a.save
-a
-a = Point.find_by(name: 'Rp.5')
-a.update alias_ru: 'Шан-цю', point_energy: 'Metal'
-a.save
-a = Point.find_by(name: 'Rp.9')
-a
-a.update alias_ru: 'Инь-лин-цюань', point_energy: 'Water'
-a.save
-a
-a = Point.find_by(name: 'C.3')
-a
-a.update alias_ru: 'Шао-хай', point_energy: 'Water'
-a.save
-a
-a = Point.find_by(name: 'C.4')
-a
-a.update alias_ru: 'Лин-дао', point_energy: 'Metal'
-a.save
-a
-a = Point.find_by(name: 'C.7')
-a
-a.update alias_ru: 'Шэнь-мэнь', point_energy: 'Earth'
-a.save
-a
-a = Point.find_by(name: 'C.8')
-a.update alias_ru: 'Шао-фу', point_energy: 'Fire'
-a.save
-a
-a = Point.find_by(name: 'C.9')
-a
-a.update alias_ru: 'Шао-чун', point_energy: 'Wood'
-a.save
-a
-a = Point.find_by(name: 'R.10')
 a
 a.update alias_ru: 'Инь-гу', point_energy: 'Water'
 a.save
@@ -197,4 +92,109 @@ a = Point.where(point_energy: 'Water')
 a
 a[1]
 a.each{ |b| p b.name, b.point_energy, '____'}
+exit
+Point.fin_by name: 'Gi.1'
+Point.find_by name: 'Gi.1'
+Point.find_by name: 'Gi.1'
+a = Point.find_by name: 'Gi.1'
+a.update alias_ru: 'Шан-ян', point_energy: 'Metal'
+a = Point.find_by name: 'Gi.w'
+a = Point.find_by name: 'Gi.2'
+a.update alias_ru: 'Эр-цзянь', point_energy: 'Water'
+a = Point.find_by name: 'Gi.3'
+a.update alias_ru: 'Сань-цзянь', point_energy: 'Wood'
+a = Point.find_by name: 'Gi.5'
+a.update alias_ru: 'Ян-си', point_energy: 'Fire'
+a = Point.find_by name: 'Gi.11'
+ф
+a
+a.update alias_ru: 'Цюй-чи', point_energy: 'Earth'
+Point.last(5)
+a = Point.find_by name: 'E.45'
+a.update alias_ru: 'Ли-дуй', point_energy: 'Metal'
+a = Point.find_by name: 'E.44'
+a.update alias_ru: 'Нэй-тин', point_energy: 'Water'
+a.update alias_ru: 'Ли-дуй', point_energy: 'E.42'
+a.update alias_ru: 'Сянь-гу', point_energy: 'Wood'
+a = Point.find_by name: 'E.42'
+a.update alias_ru: 'Чун-ян', point_energy: 'Wood'
+a = Point.find_by name: 'E.41'
+a.update alias_ru: 'Цзе-си', point_energy: 'Fire'
+a = Point.find_by name: 'E.36'
+a.update alias_ru: 'Цзу-сань-ли', point_energy: 'Earth'
+a.update alias_ru: 'Цзе-си', point_energy: 'Fire'
+ф
+a
+a.update alias_ru: 'Цзу-сань-ли', point_energy: 'Earth'
+a
+a = Point.find_by name: 'E.41'
+a
+a = Point.find_by name: 'Ig.1'
+a.update alias_ru: 'Шао-цзе', point_energy: 'Metal'
+a = Point.find_by name: 'Ig.1'
+a.update alias_ru: 'Цянь-гу', point_energy: 'Water'
+a = Point.find_by name: 'Ig.3'
+ф
+a
+a.update alias_ru: 'Хоу-си', point_energy: 'Wood'
+a = Point.find_by name: 'Ig.4'
+a.update alias_ru: 'Вань-гу'
+a = Point.find_by name: 'Ig.5'
+a.update alias_ru: 'Ян-гу', point_energy: 'Fire'
+a = Point.find_by name: 'Ig.8'
+a.update alias_ru: 'Сяо-хай', point_energy: 'Earth'
+a = Point.find_by name: 'V.67'
+a.update alias_ru: 'Чжи-инь', point_energy:  'Metal'
+a = Point.find_by name: 'V.66'
+a.update alias_ru: 'Цзу-тун-гу', point_energy:  'Water'
+a = Point.find_by name: 'V.65'
+a.update alias_ru: 'Шу-гу', point_energy:  'Wood'
+a = Point.find_by name: 'V.64'
+a.update alias_ru: 'Цзин-гу', point_energy:  ''
+a = Point.find_by name: 'V.60'
+a.update alias_ru: 'Кунь-лунь', point_energy:  'Fire'
+a = Point.find_by name: 'V.40'
+a.update alias_ru: 'Вэй-чжун', point_energy:  'Earth'
+a = Point.find_by name: 'Tr.1'
+a.update alias_ru: 'Вэй-чжун', point_energy:  'Earth'
+a.update alias_ru: 'Гуань-чун', point_energy:  'Metal'
+ф
+a
+a = Point.find_by name: 'V.40'
+a
+a = Point.find_by name: 'Tr.2'
+a.update alias_ru: 'Е-мэнь', point_energy:  'Water'
+a = Point.find_by name: 'Tr.3'
+a.update alias_ru: 'Чжун-чжу', point_energy:  'Wood'
+a = Point.find_by name: 'Tr.6'
+a.update alias_ru: 'Чжи-гоу', point_energy:  'Fire'
+a = Point.find_by name: 'Tr.10'
+a.update alias_ru: 'Тянь-цзин', point_energy:  'Earth'
+ф
+a
+a = Point.find_by name: 'Vb.44'
+a
+a.update alias_ru: 'Цзу-цяо-инь', point_energy:  'Metal'
+a = Point.find_by name: 'Vb.43'
+a.update alias_ru: 'Ся-си', point_energy:  'Water'
+a = Point.find_by name: 'Vb.41'
+a.update alias_ru: 'Цзу-линь-ци', point_energy:  'Wood'
+a = Point.find_by name: 'Vb.38'
+a.update alias_ru: 'Ян-фу', point_energy:  'Fire'
+a = Point.find_by name: 'Vb.34'
+a.update alias_ru: 'Ян-лин-цюань', point_energy:  'Earth'
+a = Point.find_by name: 'E.42'
+a
+a.update point_energy: nil
+a
+a = Point.find_by name: 'Ig.4'
+a
+a = Point.find_by name: 'V.64'
+a
+a.update point_energy: nil
+a
+a = Point.all.where(point_energy: 'Wood')
+a
+a.each{ |a| p a.alias_ru, a.point_energy, '_ _ _ _'}
+a.each{ |a| puts a.name, a.alias_ru, a.point_energy, '_____'}
 exit
