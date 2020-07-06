@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  leg_meridian_name: MyString
+  arm_meridian_name: MyString
+  leg_meridian_element: MyString
+  arm_meridian_element: MyString
+
+two:
+  name: MyString
+  leg_meridian_name: MyString
+  arm_meridian_name: MyString
+  leg_meridian_element: MyString
+  arm_meridian_element: MyString

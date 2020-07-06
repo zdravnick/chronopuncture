@@ -7,6 +7,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :phone %><br />
+    <%= telephone_field(:doctor, :phone)  %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
@@ -19,8 +24,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "В-в-войти (log_in)" %>
+    <%= f.submit "Войти (log_in)" %>
   </div>
 <% end %>
+
+
 
 <%= render "devise/shared/links" %>

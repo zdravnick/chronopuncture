@@ -5,7 +5,17 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email,  autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= telephone_field(:doctor, :phone)  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name ) %></p>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -28,7 +38,7 @@
 
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.password_field :current_password, autofocus: true, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">

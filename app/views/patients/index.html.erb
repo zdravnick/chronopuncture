@@ -1,11 +1,12 @@
 
   <% if doctor_signed_in? %>
       <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
+       <%= link_to 'Личный кабинет', edit_doctor_registration_path, class: 'btn-control', :method => :get %>
        <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
+  <h4>Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :)</h4>
   <% else %>
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
-
   <div>
     <%= form_with  local: true, method: :get, url: patients_path do |f| %>
     <%= f.label  'Поиск по имени'  %>
@@ -34,7 +35,7 @@
     <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "Рассчитать" %>
+    <%= f.submit "На неделю" %>
     <% end %>
 </p>
 
@@ -42,7 +43,7 @@
     <h3>МЕТОД "24 минуты"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
     <%= f.label " Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
     <% end %>
   </p>
@@ -51,8 +52,26 @@
     <h3>МЕТОД "24 минуты - 2"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_2_path do |f| %>
     <%= f.label " Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
+    <% end %>
+  </p>
+
+  <p>
+    <h3>24 минуты на неделю</h3>
+    <%= form_with local: true, method: :get, url: points_infusion_7_times_path do |f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+    <%= f.submit "На неделю" %>
+    <% end %>
+</p>
+
+   <p>
+    <h3>methods_mix</h3>
+    <%= form_with local: true, method: :get, url: points_methods_mix_path do |f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+    <%= f.submit "На неделю" %>
     <% end %>
   </p>
 
@@ -60,10 +79,19 @@
     <h3>МЕТОД НАГАНЬФА</h3>
     <%= form_with html: {target: '_blank', class: "form-control"}, local: true, method: :get, url: points_naganfa_path do|f| %>
     <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit  "Рассчитать"%>
     <% end %>
   </p>
+
+    <p>
+      <h3>НАГАНЬФА на неделю</h3>
+      <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
+      <%= f.label "Выберите время: " %>
+      <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+      <%= f.submit "На неделю" %>
+      <% end %>
+    </p>
 
   <p>
     <div>
@@ -72,7 +100,7 @@
         <%= f.label  "Имя" %>
         <%= f.text_field :name  %>
         <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 00} )%>
+        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
         <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
         <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
                 <%= f.label 'Место рождения (выбрать ближайший город): ' %>
@@ -92,5 +120,36 @@
     <p></p>
     <% end %>
 
+
+<h5>ТОЧКИ ТРАНСФОРМАЦИИ У-СИН:</h5>
+
+<h5>ИНЬСКИЕ:</h5><ul>
+  <li>Печень питаем:  R.7 Фу-лю (металл)</li>
+  <li>Сердце питаем:    F.8 Цюй-цюань (вода)</li>
+  <li>Селезенку питаем:   C.9 Шао-чун (дерево)</li>
+  <li>Легкие питаем:   Rp.2 Да-ду (огонь)</li>
+  <li>Почки питаем:   P.9 Тай-юань (земля)</li>
+</ul>
+
+<h5>ЯНСКИЕ:</h5>
+<ul>
+  <li>Желчный питаем:  V.67 Чжи-инь (металл)</li>
+  <li>Тонкий питаем:   Gb.43 Ся-си (вода)</li>
+  <li>Желудок питаем:    Ig.3 Хоу-си (дерево)</li>
+  <li>Толстый питаем:  E.41 Цзе-си (огонь)</li>
+  <li>Мочевой питаем:   Gi.11 Цюй-чи (земля)</li>
+</ul>
+
+
+
+<h5>ТОЧКИ ТРАНСФОРМАЦИИ СЕЗОННОЙ ЦИ: ("элемент в элементе")</h5>
+
+<h5>ИНЬСКИЕ:</h5><ul>
+  <li>Печень питаем:  R.10 Инь-гу (вода) </li>
+  <li>Сердце питаем:    F.1 Да-дунь(дерево) </li>
+  <li>Селезенку питаем:   C.8 Шао-фу(огонь) </li>
+  <li>Легкие питаем:   Rp.3 Тай-бай(земля) </li>
+  <li>Почки питаем:   P.8 Цзин-цюй(металл)  </li>
+</ul>
 
 

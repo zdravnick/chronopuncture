@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_064100) do
+ActiveRecord::Schema.define(version: 2020_07_04_185702) do
+
+  create_table "branches", force: :cascade do |t|
+    t.integer "serial_number"
+    t.string "name"
+    t.integer "active_hour_offset"
+    t.string "element"
+    t.string "animal"
+    t.string "alias_ru"
+    t.string "alias_ch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "day_meridian_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -39,9 +52,36 @@ ActiveRecord::Schema.define(version: 2020_05_26_064100) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "city_id"
+    t.string "phone"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["name"], name: "index_doctors_on_name", unique: true
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
+  end
+
+  create_table "layers", force: :cascade do |t|
+    t.string "name"
+    t.string "leg_meridian_name"
+    t.string "arm_meridian_name"
+    t.string "leg_meridian_element"
+    t.string "arm_meridian_element"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "leg_meridian_id", default: 0, null: false
+    t.integer "arm_meridian_id", default: 0, null: false
+    t.string "element_ke"
+    t.index ["name"], name: "index_layers_on_name"
+  end
+
+  create_table "meridians", force: :cascade do |t|
+    t.string "name"
+    t.string "energy_name"
+    t.string "element_trunc"
+    t.string "element_branch"
+    t.string "element_ke"
+    t.string "alias_ru"
+    t.string "short_name_en"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -61,10 +101,33 @@ ActiveRecord::Schema.define(version: 2020_05_26_064100) do
     t.string "alias_en"
     t.string "alias_ru"
     t.string "alias_cn"
-    t.string "element"
+    t.string "point_energy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_points_on_name"
+  end
+
+  create_table "truncs", force: :cascade do |t|
+    t.integer "serial_number"
+    t.string "name"
+    t.string "element"
+    t.integer "year_meridian_id"
+    t.string "alias_ru"
+    t.string "alias_ch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trunks", force: :cascade do |t|
+    t.string "name"
+    t.string "serial_number"
+    t.string "trunk_energy"
+    t.integer "year_meridian_id"
+    t.integer "day_meridian_id"
+    t.string "alias_ru"
+    t.string "alias_ch"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "visits", force: :cascade do |t|

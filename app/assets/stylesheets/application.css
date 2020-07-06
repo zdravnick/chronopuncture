@@ -28,12 +28,127 @@ outline: none !important
   height: 100%;
   margin-bottom: 30px;
   font-size: 100%;
-  background-color:   #faf3eb ;
+  background-color:    #dfddb9;
   /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
-  /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', */
+  /*background: rgba(0, 0, 0, 0.2); #D2B48C - 'tan', #faf3eb - самый дохлый койот */
 
   /*font-weight: bold;*/
  }
+
+.fire {
+  grid-area: fire;
+  background-color: #ff4d4d;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.wood {
+  grid-area: wood;
+  background-color: #00b300;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.earth {
+  grid-area: earth;
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.water {
+  grid-area: water;
+  background-color: #76bdd5;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.metal {
+  grid-area: metal;
+  background-color: #999999;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+
+ .grid_container_star {
+  display: grid;
+  grid-gap: 5px;
+  width: 600px;
+  height: 600px;
+  align-items: center;
+  justify-items: cente10;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 80px 120px 120px;
+  grid-template-areas: "..... fire ..... "
+                       "wood  .... earth"
+                       "water .... metal"
+ }
+
+
+.points_linguibafa_7>a, .highlight_2>a {
+  display: block;
+  text-align: center;
+  padding: 3px;
+}
+
+.infusion_7 {
+  text-align: center;
+  white-space: nowrap;
+  /*border-collapse :collapse;*/
+}
+
+
+
+.infusion_7_points>td>a {
+  padding: 0px 6px;
+
+}
+
+.infusion_7_points>td>a {
+ text-decoration: none;
+}
+
+.infusion_7 .table_next_day {
+  background-color: darkorange;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid darkolivegreen;
+}
+
+/*.infusion_7 tr:nth-child(even) {
+background-color: #cfcc96;
+}*/
+.infusion_7_points:nth-child(odd) {
+background-color: #cfcc96;
+}
+
+.infusion_7_points:nth-child(even) {
+background-color: #bfbb73;
+}
+
+.infusion_7_time_mark:nth-child(1n){
+  display: none;
+}
+
+.highlight {
+  text-align: center;
+}
 
 .highlight, .highlight_2>a {
   color: red;
@@ -42,22 +157,26 @@ outline: none !important
 
 .highlight_2>a {
   background-color: yellow;
+
+}
+
+.navigation>ul>li>a{
+ background-color: lightblue;
 }
 
 ul>li {
   color: #800000;
   list-style-type: disc;
+  padding: 5px;
 }
 
-table, tr, td{
+table, tr, td, td>a{
   border-spacing: 5px 10px;
  /* border: 1px solid black;*/
-
 }
 
 ul {
     margin-bottom: 20px;
-
 }
 
 ol, td {
@@ -66,7 +185,7 @@ ol, td {
 
 a {
   margin-bottom: 10px;
-  background-color: lightgreen;
+  background-color: #afaa50;
   text-decoration: none;
   color: black;
   box-shadow: 3px 3px 3px #630;
@@ -87,10 +206,9 @@ a:hover, .btn-control:hover {
   outline: none !important;
   /*background-color: #DEB887;*/
   background-color: #999900;
-  color: wheat;
+  color: white;
   border-radius: 10px;
   /*border: 2px solid black;*/
-/*  transform: scale(1.05);
 */  box-shadow: 3px 2px 3px 2px white;
   /*box-shadow: 4px 4px 4px #630;*/
 }
@@ -100,14 +218,10 @@ a:active,  .btn-control:active {
   outline: none !important;
   background-color: #666600;
   color: white;
- /* transform: scale(0.99);*/
   border: none;
-  border-radius: 10px;
-  box-shadow:   1px 1px 1px 1px black,  -1px -1px 1px 1px black;
-/*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown
-*/  padding: 3px;
+  box-shadow: none;
+/*  box-shadow:  inset 4px 4px 4px #630, inset -4px -4px 4px #630; #8B4513-SaddleBrown */
 
-/*  transform: scale(0.95);*/
 }
 
 .patient_delete_control {

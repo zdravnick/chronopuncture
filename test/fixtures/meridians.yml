@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  energy_name: MyString
+  element_trunc: MyString
+  element_branch: MyString
+  element_ke: MyString
+  alias_ru: MyString
+  short_name_en: MyString
+
+two:
+  name: MyString
+  energy_name: MyString
+  element_trunc: MyString
+  element_branch: MyString
+  element_ke: MyString
+  alias_ru: MyString
+  short_name_en: MyString

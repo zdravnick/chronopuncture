@@ -1,4 +1,11 @@
-<h2>ВЛИВАНИЕ ПО 24 МИНУТЫ:</h2>
+<h3>ВЛИВАНИЕ ПО 24 МИНУТЫ:</h3>
+<td> Стража: <%= @guard %><td>
+<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
+<h4>EOT: <%=  @eot %></h4>
+<h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
+<h4>Расчетное время: @doctor_current_datetime_utc.in_time_zone <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
+<h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
+
 <table>
   <tr>
   <% @opened_points_infusion.each do |point| %>
@@ -8,4 +15,3 @@
   <% end %>
 </table>
 
-  <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>

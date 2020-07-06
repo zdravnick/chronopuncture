@@ -1,0 +1,25 @@
+<h2> НАГАНЬФА_7_дней </h2>
+<h4>ГРИНВИЧ: <%=  @doctor_current_datetime_utc %></h4>
+<h4>СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_time %></h4>
+<h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
+<h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)%></h4>
+<h4>EOT: <%=  @eot %></h4>
+<td> Стража: <%= @guard %><td>
+<h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
+<h4>Ствол дня: <%= @trunc_day %>, Ветвь дня: <%= @branch_day %></h4>
+<h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
+<h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
+
+<table> <% @opened_points_naganfa.each do |elem| %>
+  <tr>
+    <td> <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%> </td>
+      <table> <% elem[:points].each do |opened_points| %>
+        <tr>
+
+          <td> <%= opened_points %> </td>
+        </tr>
+      <% end %>
+     </table>
+  </tr>
+  <% end %>
+</table>
