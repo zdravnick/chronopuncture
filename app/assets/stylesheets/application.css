@@ -35,6 +35,72 @@ outline: none !important
   /*font-weight: bold;*/
  }
 
+.fire {
+  grid-area: fire;
+  background-color: #ff4d4d;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.wood {
+  grid-area: wood;
+  background-color: #00b300;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.earth {
+  grid-area: earth;
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.water {
+  grid-area: water;
+  background-color: #76bdd5;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+.metal {
+  grid-area: metal;
+  background-color: #999999;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+}
+
+
+ .grid_container_star {
+  display: grid;
+  grid-gap: 5px;
+  width: 600px;
+  height: 600px;
+  align-items: center;
+  justify-items: cente10;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 80px 120px 120px;
+  grid-template-areas: "..... fire ..... "
+                       "wood  .... earth"
+                       "water .... metal"
+ }
+
+
 .points_linguibafa_7>a, .highlight_2>a {
   display: block;
   text-align: center;

@@ -44,6 +44,11 @@ end
   end
 
 
+  def display_point
+    @point = Point.find(params[:id])
+    render "points/show"
+  end
+
 
   def show
     @patient = Patient.find(params[:id])

@@ -1,7 +1,9 @@
 class PointsController < ApplicationController
+
   around_action :set_time_zone
 
   before_action :prepare
+
 
   def set_time_zone(&block)
     Time.use_zone(current_doctor.city.time_zone, &block)

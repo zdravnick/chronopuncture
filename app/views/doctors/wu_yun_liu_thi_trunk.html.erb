@@ -1,5 +1,5 @@
 
-  <h5> Дата рождения пациента: <%= @patient.birthdate.strftime("%d.%m.%Y") %> </h5>
+  <h4> Пациент: <%= @patient.name %>,  Дата рождения: <%= @patient.birthdate.strftime("%d.%m.%Y") %></h4>
 
 <h5>СИЛЬНЫЙ СЛОЙ: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>  (<%= @full_layer.leg_meridian_name %> , <%= @full_layer.arm_meridian_name %>), меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)</h5>
 
@@ -62,7 +62,15 @@
   <% end %>
 </p>
 
+<p>Тут дожна быть звезда:</p>
 
+  <div class="grid_container_star">
+    <div class="fire">Fire</div>
+    <div class="wood">Wood</div>
+    <div class="earth">Earth</div>
+    <div class="water">Water</div>
+    <div class="metal">Metal</div>
+ </div>
 
 
 

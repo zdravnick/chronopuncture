@@ -1,7 +1,4 @@
 a
-a.update alias_ru: 'Инь-гу', point_energy: 'Water'
-a.save
-a
 a = Point.find_by(name: 'R.1')
 a
 a.update alias_ru: 'Юн-цюань', point_energy: 'Wood'
@@ -197,4 +194,7 @@ a = Point.all.where(point_energy: 'Wood')
 a
 a.each{ |a| p a.alias_ru, a.point_energy, '_ _ _ _'}
 a.each{ |a| puts a.name, a.alias_ru, a.point_energy, '_____'}
+exit
+Point.find(10)
+Point.find_by(name: 'C.41')
 exit
