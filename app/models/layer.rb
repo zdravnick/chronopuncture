@@ -2,6 +2,8 @@ class Layer < ApplicationRecord
 
   belongs_to :arm_meridian, class_name: 'Meridian'
   belongs_to :leg_meridian, class_name: 'Meridian'
+  belongs_to :own_element, class_name: 'Element'
+
 
   module NAMES
     JUE_YIN = 'Jue Yin'
@@ -142,26 +144,26 @@ class Layer < ApplicationRecord
   end
 
   def self.empty_layer_wu_yun_table(full_layer)
-  include NAMES
-  result = []
-    if full_layer.name == JUE_YIN
-     result << YANG_MING
-    elsif full_layer.name ==  SHAO_YIN
-     result << TAI_YANG
-    elsif full_layer.name ==  SHAO_YANG
-     result << TAI_YANG
-    elsif full_layer.name ==  TAI_YIN
-     result << JUE_YIN
-    elsif full_layer.name ==  TAI_YANG
-     result << TAI_YIN
-    elsif full_layer.name == YANG_MING
-     result << [ SHAO_YIN, SHAO_YANG ]
-     return result.flatten
+    include NAMES
+    result = []
+      if full_layer.name == JUE_YIN
+       result << YANG_MING
+      elsif full_layer.name ==  SHAO_YIN
+       result << TAI_YANG
+      elsif full_layer.name ==  SHAO_YANG
+       result << TAI_YANG
+      elsif full_layer.name ==  TAI_YIN
+       result << JUE_YIN
+      elsif full_layer.name ==  TAI_YANG
+       result << TAI_YIN
+      elsif full_layer.name == YANG_MING
+       result << [ SHAO_YIN, SHAO_YANG ]
+       return result.flatten
     end
   end
 
   def self.empty_layer_wu_yun(empty_layer_name)
-   Layer.find_by(name: empty_layer_name)
+    Layer.find_by(name: empty_layer_name)
   end
 
 end

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_185702) do
+ActiveRecord::Schema.define(version: 2020_07_08_182510) do
 
   create_table "branches", force: :cascade do |t|
     t.integer "serial_number"
     t.string "name"
     t.integer "active_hour_offset"
-    t.string "element"
+    t.string "own_element"
     t.string "animal"
     t.string "alias_ru"
     t.string "alias_ch"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 2020_07_04_185702) do
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
 
+  create_table "elements", force: :cascade do |t|
+    t.string "name"
+    t.string "yin_yang"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "wu_xing_meridian_id"
+    t.integer "season_meridian_id"
+    t.integer "trunk_meridian_id"
+  end
+
   create_table "layers", force: :cascade do |t|
     t.string "name"
     t.string "leg_meridian_name"
@@ -69,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_185702) do
     t.integer "leg_meridian_id", default: 0, null: false
     t.integer "arm_meridian_id", default: 0, null: false
     t.string "element_ke"
+    t.integer "own_element_id"
     t.index ["name"], name: "index_layers_on_name"
   end
 
@@ -101,9 +112,10 @@ ActiveRecord::Schema.define(version: 2020_07_04_185702) do
     t.string "alias_en"
     t.string "alias_ru"
     t.string "alias_cn"
-    t.string "point_energy"
+    t.string "own_element"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "own_element_id"
     t.index ["name"], name: "index_points_on_name"
   end
 

@@ -7,50 +7,50 @@
 
 <h5>СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %> (<%= @full_branch_year.day_meridian.energy_name %>) </h5>
 
- <ul>Слабый слой(слои):
-   <% @empty_layer.each do |elem| %>
-    <li>
-      <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
-    </li>
-      <ul>
-        <li>
-          меридианы: <%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>
-          <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %>
-        </li>
-      </ul>
-    <% end %>
+<ul>Слабый слой(слои):
+ <% @empty_layer.each do |elem| %>
+  <li>
+    <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
+  </li>
+    <ul>
+      <li>
+        меридианы: <%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>
+        <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %>
+      </li>
+    </ul>
+  <% end %>
 </ul>
 
-<h4>слабый ствол:  <%= @empty_trunk_year.serial_number %>, <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %>,<%= @empty_trunk_year_trunk_energy %>, Энергия меридиана: (<%= @empty_trunk_year.year_meridian.energy_name %>) </h4>
+<h4>слабый ствол:  <%= @empty_trunk_year.serial_number %>, <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %> <%= @empty_trunk_year_trunk_energy %>, Энергия меридиана: (<%= @empty_trunk_year.year_meridian.energy_name %>) </h4>
 
 <h4>слабая ветка: <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (<%= @empty_branch_year.day_meridian.energy_name %>) </h4>
 
-  <h5> Энергии у-син <%= @star_5_energies_wu_yun %> </h5>
-  <h5> Пустые Дома У-син <%= @star_5_energies_wu_yun_remainder %> </h5>
-  <h5> Сезонные Энергии: <%= @star_season_energies_wu_yun %> </h5>
-  <h5> Пустые Дома Сезонов: <%= @star_season_energies_wu_yun_remainder %> </h5>
+<h5> Энергии у-син <%= @star_5_energies_wu_yun %> </h5>
+<h5> Пустые Дома У-син <%= @star_5_energies_wu_yun_remainder %> </h5>
+<h5> Сезонные Энергии: <%= @star_season_energies_wu_yun %> </h5>
+<h5> Пустые Дома Сезонов: <%= @star_season_energies_wu_yun_remainder %> </h5>
 
-    <ul>Меридианы Пустых домов У-СИН
-      <% @star_5_energies_wu_yun_remainder_meridians.map do |meridian| %>
-        <li>
-          <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
-        </li>
-      <% end %>
-    </ul>
+<ul>Меридианы Пустых домов У-СИН
+  <% @star_5_energies_wu_yun_remainder_meridians.map do |meridian| %>
+    <li>
+      <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
+    </li>
+  <% end %>
+</ul>
 
-    <ul>Меридианы Пустых Домов Сезонов
-      <% @star_season_energies_wu_yun_remainder_meridians.map do |meridian| %>
-        <li>
-          <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
-        </li>
-      <% end %>
-    </ul>
+<ul>Меридианы Пустых Домов Сезонов
+  <% @star_season_energies_wu_yun_remainder_meridians.map do |meridian| %>
+    <li>
+      <%= link_to meridian.alias_ru, meridian_path(id: meridian.id) %>
+    </li>
+  <% end %>
+</ul>
 
 <h4>Отсутствующая Ци:</h4>
 <ul>
   <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
     <li>
-      <%= energy_name %>
+      <%= @missing_energy_name = energy_name %>
     </li>
   <% end %>
 </ul>
@@ -62,14 +62,14 @@
   <% end %>
 </p>
 
-<p>Тут дожна быть звезда:</p>
 
+<p>Тут дожна быть звезда:</p>
   <div class="grid_container_star">
-    <div class="fire">Fire</div>
-    <div class="wood">Wood</div>
-    <div class="earth">Earth</div>
-    <div class="water">Water</div>
-    <div class="metal">Metal</div>
+    <div class="fire" class=" <%= 'Fire' == @missing_energy_name ? '.highlight'  : '' %>" >Fire</div>
+    <div class="wood" class=" <%= 'Wood' == @missing_energy_name ? '.highlight'  : '' %>" >Wood</div>
+    <div class="earth" class=" <%= 'Earth' == @missing_energy_name ? '.highlight'  : '' %>" >Earth</div>
+    <div class="water" class=" <%= 'Water' == @missing_energy_name ? '.highlight'  : '' %>" >Water</div>
+    <div class="metal" class=" <%= @missing_energy_name == 'Metal' ? '.highlight_3'  : '' %>" >Metal</div>
  </div>
 
 
