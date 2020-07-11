@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'points/methods_mix'
   get 'points/wu_yun_liu_thi'
   get 'points/wu_yun_liu_thi_trunk'
+  get 'points/show_point', to: 'points#show_point'
   root 'patients#index'
   resources :points
   resources :doctors

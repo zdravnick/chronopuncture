@@ -3,4 +3,13 @@
 <h3> Название: <%= @meridian.alias_ru%> </h3>
 <h3> Энергия: <%= @meridian.energy_name %> </h3>
 <h3> Элемент ВЕТВИ: <%= @meridian.element_branch %> </h3>
-<h3> Элемент СТВОЛА: <%= @meridian.element_trunc %> </h3>
+<h3> Элемент СТВОЛА: <%= @meridian.element_trunk %> </h3>
+<h3>
+ <p> всего точек: <%= @meridian.points.count %> </p>
+ Точки <% @meridian.points.sort_by(&:serial_number).each do |point| %>
+ <%= point.id %>
+   <%= link_to point.name.to_s + " " + point.alias_ru.to_s, controller: :points, action: :show_point, id: point.id %>
+   <% end %>
+</h3>
+
+

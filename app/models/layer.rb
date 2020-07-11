@@ -159,6 +159,7 @@ class Layer < ApplicationRecord
       elsif full_layer.name == YANG_MING
        result << [ SHAO_YIN, SHAO_YANG ]
        return result.flatten
+
     end
   end
 

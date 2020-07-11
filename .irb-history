@@ -1,200 +1,200 @@
-a = Point.find_by name: 'Vb.44'
+Point.find(70)
+a = Point.find(70)
+a.update name: 'C.7'
+Point.where(name: 'C.7')
+a = Point.find(70)
+a.destroy
+a = Point.find(70)
+a = Point.find(52)
+p a = Point.find(52)
+p a = Point.find(53)
+Point.find_all{ |a|p a.id if  a.name == 'Mc.8'}
+Point.find_each{ |a|p a.id if  a.name == 'Mc.8'}
+Point.find_each{ |a|p a.id if  a.name == 'Mc.5'}
+Point.find_each{ |a|p a.id if  a.name == 'MC.5'}
+a = Point.find(72)
 a
-a.update alias_ru: 'Цзу-цяо-инь', point_energy:  'Metal'
-a = Point.find_by name: 'Vb.43'
-a.update alias_ru: 'Ся-си', point_energy:  'Water'
-a = Point.find_by name: 'Vb.41'
-a.update alias_ru: 'Цзу-линь-ци', point_energy:  'Wood'
-a = Point.find_by name: 'Vb.38'
-a.update alias_ru: 'Ян-фу', point_energy:  'Fire'
-a = Point.find_by name: 'Vb.34'
-a.update alias_ru: 'Ян-лин-цюань', point_energy:  'Earth'
-a = Point.find_by name: 'E.42'
+a = Point.find(53)
 a
-a.update point_energy: nil
+a.destroy
+a = Point.find(72)
 a
-a = Point.find_by name: 'Ig.4'
+a.update  serial_number: 5, meridian_id: 1
+p  a.serial_number, a.name, a.meridian.alias_ru
+a = Point.find(54)
+p a = Point.find(54)
+Point.find_each{ |a|p a.id if  a.name == 'MC.5'}
+Point.find_each{ |a|p a.id if  a.name == 'MC.3'}
+Point.find_each{ |a|p a.id if  a.name == 'Mc.3'}
+Point.find(54).destroy
+Point.find(55)
+Point.find(55).destroy
+Point.where(name: 'Tr.1')
+a = Point.where(name: 'Tr.1')
+a.update  serial_number: 1, meridian_id: 11
+p  a.serial_number, a.name, a.meridian.alias_ru
+p  a.serial_number, a.name, a.meridian
+a = Point.where(name: 'Tr.1')
 a
-a = Point.find_by name: 'V.64'
+a.serial_number
+a = Point.find(75)
 a
-a.update point_energy: nil
+a.update  serial_number: 1, meridian_id: 11
 a
-a = Point.all.where(point_energy: 'Wood')
+Point.find(56)
+a = Point.where(name: 'Tr.2')
 a
-a.each{ |a| p a.alias_ru, a.point_energy, '_ _ _ _'}
-a.each{ |a| puts a.name, a.alias_ru, a.point_energy, '_____'}
-exit
-Point.find(10)
-Point.find_by(name: 'C.41')
-exit
-exit
- Element.create name: 'Wood' yin_yang: 'Yang'
- Element.create name:( 'Wood' yin_yang: 'Yang')
-Element.last
-reload!
- Element.create name:( 'Wood' yin_yang: 'Yang')
- Element.create name:( 'Wood', yin_yang: 'Yang')
- Element.create(name: 'Wood' yin_yang: 'Yang')
-2-2
- Element.create(name: 'Wood', yin_yang: 'Yang')
-Element.last
-'Metal' == 'Metal'
-exit
-Point.last
-Meridian.last
-Trunk.last
-exit
-Element.last
-exit
-Layer.all.each{ |l| l.name, l.id, '____'}
-Layer.all.each{ |l| p  l.name, l.id, '____'}
-exit
-Layer.all.each{ |l| l.name, l.id, '____"}
-2
-Layer.all.each{ |l| p l.name, l.id, '____"}
-Layer.all.each{ |l| p l.name, l.id, '____'}
-Meridian.all.each{ |l| p l.alias_ru, l.id, '____'}
-Lyaer.find(3)
-Layer.find(3)
-element.find(30
-Element.find(3)
-Element.find(3).layer
-Element.find(4)
-Element.find(4). season_meridian
-Element.find(3)
-Element.find(3).season_meridian
-Element.find(4).season_meridian
-Element.find(4)
-Layer.all.each{ |l| p l.name, l.id, l.element}
-Lyaer.last
-Layer.last
-Element.all.each{ |l| p l.name, l.id, l.element}
-Element.last
-Element.all.each{ |l| p l.name, l.id}
-Layer.all.each{ |l| p l.name, l.id}
-Layer.find(4)
-Layer.find(4).element
-Layer.find(4)
-Layer.all.each{ |l| if l.layer_id: 4 p l.name, l.id}
-2
-Layer.last
-Element.all.each{ |l| if l.layer_id: 4 p l.name, l.id}
-2-2
-2
-Element.all.each{ |l| if l.layer_id: 4 p l.name, l.id end}
-Element.all.each{ |l| if l.layer_id: '4' p l.name, l.id end}
-2
-Element.all.each{ |l| if l.layer_id: '4' p l.name, l.id }
-2
-32
-Element.last.layer_id
-Element.all.each{ |l| where l.layer_id: '4' p l.name, l.id }
-Element.all.each{ |l| p l.name, l.id, l.layer_id }
-Element.all.each{ |l| p l.name,  l.layer_id }
-exit
-Element.last
-Element.last.destroy
-Element.all.each{ |l| p l.name,  l.layer_id }
-exit
-Element.all.each{ |l| p l.name,  l.layer_id }
-Element.find(5)
-Element.find(6)
-Element.find(4)
-Element.find(3)
-Element.find(3)
-Element.find(4)
-exit
-Element.find(4)
-Layer.find_by(name: 'Shao Yin')
-a = Layer.find_by(name: 'Shao Yin')
+Point.find(56).destroy
+Point.find(67)
+a.update  serial_number: 2, meridian_id: 11
+p  a.serial_number, a.name, a.meridian.alias_ru
 a
-a.own.element
-a.own_element
-a.own_element
-exit
-a = Layer.find_by(name: 'Shao Yin')
-a.own_element
-a = Layer.find_by(name: 'Shao Yang')
+Point.find(67)
+p  a.serial_number, a.name, a.meridian
+a = Point.find(67)
+p  a.serial_number, a.name, a.meridian
+p  a.serial_number, a.name, a.meridian
+a = Point.find(67)
 a
-a.own_element
-exit
-a = Layer.find_by(name: 'Shao Yang')
+p  a.serial_number, a.name, a.meridian.alias_ru
+Point.find(57)
+Point.find_by(name: 'Tr.3')
+a = Point.find_by(name: 'Tr.3')
 a
-a.own_element
-a = Layer.find_by(name: 'Shao Yin')
+Point.find(57).destroy
+a = Point.find_by(name: 'Tr.3')
+a.update  serial_number: 10, meridian_id: 11
 a
-a.own_element
-a.update own_element_id: 4
+Point.find(58)
+a = Point.find_by(name: 'Tr.6')
 a
-a.own_element
-a.own_element
-a = Layer.find_by(name: 'Shao Yang')
-a.own_element
-exit
-a = Layer.find_by(name: 'Shao Yang')
+Point.find(58).destroy
+a = Point.find_by(name: 'Tr.6')
 a
-a.own_element
-a = Layer.find_by(name: 'Shao Yin')
+a.update  serial_number: 6, meridian_id: 11
 a
-a.own_element
+p  a.serial_number, a.name, a.meridian.alias_ru
+Point.find(59)
+Point.find(58)
+Point.find(57)
+Point.find(56)
+Point.find(55)
+Point.find(54)
+Point.find(53)
+Point.find(52)
+Point.find(60)
+Point.find(59)
+Point.find_by(name: 'Tr.10')
+a = Point.find(73)
+a.update  serial_number: 10, meridian_id: 11
+a
+p  a.serial_number, a.name, a.meridian.alias_ru
+a = Point.find(61)
+a
+p a = Point.find(60)
+a.update alias_ru: 'Цю-сюй', meridian_id: 12, serial_number: 40
+a
+p a = Point.find(61)
+a.update  meridian_id: 8, serial_number: 4
+p  a.serial_number, a.name, a.meridian.alias_ru
+p a = Point.find(62)
+a.update  meridian_id: 9, serial_number: 42
+p  a.serial_number, a.name, a.meridian.alias_ru
 exit
-Element.all.each{ |e| p '___', e.name, e.id }
-Element.find(3)
-Element.find(4)
-Element.find(1)
-Element.find(2)
-Element.find(30
-Element.find(3)
-Element.find(4)
-Element.find(4).wu_xing_meridian_id
-Element.find(4).wu_xing_meridian
-Element.дфые
-Element.last
-Element.last.layer
-Element.last.layers
+p a = Point.find(60)
+a.update  function: 'Yuan'
+a.function
+p a = Point.find(60)
+a.update  function: 'Yuan'
+p a = Point.find(60)
+p a = Point.find(61)
+a.update  function: 'Yuan'
+p a = Point.find(60)
+p a = Point.find(61)
+p a = Point.find(62)
+a.update  function: 'Yuan'
+a
+p a = Point.find(63)
+a.update alias_ru: 'Хэ-гу',  meridian_id: 10, serial_number: 4,  function: 'Yuan'
+a
+p a = Point.find(64)
+a.update alias_ru: 'Цзин-гу',  meridian_id: 7, serial_number: 64,  function: 'Yuan'
+a
+a.meridian.alias_ru
+p a = Point.find(65)
+p a = Point.find_by(name: 'Tr.4')
+p a = Point.find_by{name: 'Tr.4'}
+p a = Point.find_by{name == 'Tr.4'}
+p a = Point.where{name: 'Tr.4'}
+p a = Point.where(name: 'Tr.4')
+p a = Point.where(name: 'TR.4')
+Point.find(65)
+p a = Point.where(name: 'Tr.4')
+p a = Point.where(alias_ru: 'Вань-гу')
+p a = Point.where(alias_ru: 'Ян-чи')
+Point.find(65)
+p a = Point.find(65)
+a.update alias_ru: 'Ян-чи',  meridian_id: 11, serial_number: 4,  function: 'Yuan'
+ф
+a
+a.update name: 'Tr.4'
+a
+Point.where(name: 'Tr.4').count
+Point.find(62)
+p a = Point.find(66)
+Point.find(50)
+Point.where(name: 'Mc.9')
+Point.find(50).destroy
+Meridian.find(1)
+Meridian.find(1).points
+Meridian.find(1).points.each{|a| p  a.name}
+Point.find(50)
+p a = Point.find(66)
+a.update alias_ru: 'Ян-чи',  meridian_id: 9, serial_number: 43
+p  a.serial_number, a.name, a.meridian
+p  a.serial_number, a.name, a.meridian.alias_ru
+p a = Point.find(67)
+p  a.serial_number, a.name, a.meridian.alias_ru
+p a = Point.find(68)
+a.update meridian_id: 3, serial_number: 8
+p  a.serial_number, a.name, a.meridian.alias_ru
+p a = Point.find(69)
+p  a.serial_number, a.name, a.meridian.alias_ru
+p a = Point.find(70)
+p a = Point.find(71)
+p a = Point.find(712)
+p a = Point.find(72)
+p a = Point.find(73)
+p a = Point.find(74)
+p a = Point.find(745)
+p a = Point.find(75)
+p a = Point.find(76)
+p a = Point.find(77)
+p a = Point.find(78)
+Point.all.count
+Point.all.compact
+Point.all.compact.count
+Point.all.compact.size
+Point.all.size
+Point.find(id.last)
+Point(id.last)
+Point.last.id
+Point.firstt.id
+Point.first.id
+Point.second.id
+Point.where(meridian.energy_name == 'Water')
+Point.find_each{ |a|p a.alias_ru if  a.meridian.energy_name == 'Water'}
+Point.find_each{ |a| p a.alias_ru if  a.meridian.energy_name == 'Water'}
+Point.find_each{ |a| p a.alias_ru if  a.meridian.energy_name == 'Wood'}
+Meridian.where(energy_name: 'Water')
+Meridian.where(energy_name: 'Water').each{ |a| p a.alias_ru}
+Meridian.where(energy_name: 'Water' && element_trunk: "Wood").each{ |a| p a.alias_ru}
+Meridian.where(energy_name: 'Water', element_trunk: "Wood").each{ |a| p a.alias_ru}
+Meridian.where(energy_name: 'Water', element_trunk: "Fire").each{ |a| p a.alias_ru}
 exit
-Element.last
-Element.create( name: 'Fire', yin_yang: 'Yang', wu_xing_meridian_id: 1, earthly: true)
-Element.create( name: 'Fire', yin_yang: 'Yang', wu_xing_meridian_id: 1, earthly: true).errors
-Point.last.point_energy
-Point.last
-exit
-Point.last
-Point.first
-Point.find_all.where(own_element: "Metal")
-Point.find_each.where(own_element: "Metal")
-Point.find_each(own_element: "Metal")
-Point.find_by(own_element: "Metal")
-Point.where(own_element: "Metal")
-Point.find_each{|e| p if e.own_element: "Metal")
-Point.find_each{|e| p if e.own_element: "Metal" end)
-Point.find_each{|e| p if e.own_element: "Metal" end}
-Point.find_each{|e| p if e.own_element: "Metal"}
-Point.find_each{|e| p  e.own_element: "Metal"}
-Point.find_each{|e| p  e.own_element == "Metal"}
-Point.find_each{|e| p  e.own_element if e.own_element  == "Metal"}
-Point.find_each{|e| p '_ _ _',  e.alias_ru, e.own_element if e.own_element  == "Metal"}
-Point.find_each{|e| p '_ _ _',  e.alias_ru, e.own_element if e.own_element  == "Metal" end}
-Point.find_each{|e| p '_ _ _',  e.alias_ru, e.own_element if e.own_element  == "Metal" }
-Branch.last
-exit
-Branch.last
-exit
-Element.last
-Element.last.layer
-Element.last.layers
-exit
-Element.last.layer
-Element.last.layers
-Layer.last
-Layer.last.own_element
-Layer.last.own_element.season_meridian
-Layer.last.own_element.season_meridian.find_each{ |e| p e = Point.each{ |m| if m.own_element == 'Metal'}}
-2-2
-Layer.last.own_element.season_meridian.map{ |e| p e = Point.each{ |m| if m.own_element == 'Metal'}}
-Layer.last.own_element.season_meridian.map{ |e| p e = Point.all.each{ |m| if m.own_element == 'Metal'}}
-2-2
-Point.all.each{ |m| if m.own_element == 'Metal'}
-Point.last
-Point.last.own_element
+Meridian.each{ |a| puts a.id, a.alias_ru}
+Meridian.each{ |a| p a.id, a.alias_ru}
+Meridian.all.each{ |a| puts a.id, a.alias_ru}
+Meridian.all.each{ |a| puts a.id + ' ' + a.alias_ru}
+Meridian.all.each{ |a| puts a.id.to_s + ' ' + a.alias_ru}
 exit

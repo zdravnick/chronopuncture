@@ -1,8 +1,19 @@
 class PointsController < ApplicationController
 
+
   around_action :set_time_zone
 
   before_action :prepare
+
+
+  skip_before_action :prepare, only: [:show_point]
+  skip_before_action :prepare, only: [:show_point_of_meridian]
+
+  def show_point
+    @point = Point.all.find(params[:id])
+    render 'points/show'
+  end
+
 
 
   def set_time_zone(&block)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_182510) do
+ActiveRecord::Schema.define(version: 2020_07_10_182135) do
 
   create_table "branches", force: :cascade do |t|
     t.integer "serial_number"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_182510) do
   create_table "meridians", force: :cascade do |t|
     t.string "name"
     t.string "energy_name"
-    t.string "element_trunc"
+    t.string "element_trunk"
     t.string "element_branch"
     t.string "element_ke"
     t.string "alias_ru"
@@ -116,6 +116,9 @@ ActiveRecord::Schema.define(version: 2020_07_08_182510) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "own_element_id"
+    t.integer "meridian_id"
+    t.integer "serial_number"
+    t.string "function"
     t.index ["name"], name: "index_points_on_name"
   end
 

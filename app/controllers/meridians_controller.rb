@@ -4,6 +4,4 @@ class MeridiansController < ApplicationController
     @meridian = Meridian.find(params[:id])
   end
 
-
-
 end
