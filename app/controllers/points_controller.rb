@@ -7,12 +7,23 @@ class PointsController < ApplicationController
 
 
   skip_before_action :prepare, only: [:show_point]
+  skip_before_action :prepare, only: [:change_color]
   skip_before_action :prepare, only: [:show_point_of_meridian]
 
   def show_point
     @point = Point.all.find(params[:id])
     render 'points/show'
   end
+
+
+  def change_color
+    if params["wood"].to_i == 1
+      @change_color = "red"
+      else
+      @change_color = "#ffb3b3"
+    end
+  end
+
 
 
 
@@ -59,6 +70,11 @@ class PointsController < ApplicationController
   helper_method :opened_point_linguibafa
   helper_method :opened_points_naganfa
   helper_method :opened_points_infusion_2
+  helper_method :slider
+
+  def slider
+
+  end
 
   def infusion
     @points_infusion = points_infusion
@@ -208,7 +224,7 @@ class PointsController < ApplicationController
 
       @ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
       @missing_energies_meridians = Meridian.where(id: @ids)
-
+      @change_color = change_color
     end
     render "doctors/wu_yun_liu_thi_trunk"
   end

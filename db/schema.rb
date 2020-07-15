@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_182135) do
+ActiveRecord::Schema.define(version: 2020_07_14_184150) do
 
   create_table "branches", force: :cascade do |t|
     t.integer "serial_number"
@@ -64,8 +64,9 @@ ActiveRecord::Schema.define(version: 2020_07_10_182135) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "wu_xing_meridian_id"
-    t.integer "season_meridian_id"
+    t.integer "season_meridian_first_id"
     t.integer "trunk_meridian_id"
+    t.integer "season_meridian_second_id"
   end
 
   create_table "layers", force: :cascade do |t|
@@ -93,6 +94,10 @@ ActiveRecord::Schema.define(version: 2020_07_10_182135) do
     t.string "short_name_en"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "strong_nutrition_wu_xin_point_id"
+    t.integer "weak_nutrition_wu_xin_point_id"
+    t.integer "strong_nutrition_season_point_id"
+    t.integer "weak_nutrition_season_point_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -119,6 +124,8 @@ ActiveRecord::Schema.define(version: 2020_07_10_182135) do
     t.integer "meridian_id"
     t.integer "serial_number"
     t.string "function"
+    t.string "big_nutrition_point"
+    t.string "small_nutrition_point"
     t.index ["name"], name: "index_points_on_name"
   end
 

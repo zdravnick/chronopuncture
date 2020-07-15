@@ -34,6 +34,19 @@ outline: none !important
 
   /*font-weight: bold;*/
  }
+.empty {
+  grid-area: .;
+  background-color: lightgrey;
+}
+
+
+.fire_descr{
+  grid-area: fire_descr;
+/*  background-color: #ffb3b3;*/
+/*  width: 150px;
+  height: 100px;*/
+  text-align: left;
+}
 
 .fire {
   grid-area: fire;
@@ -55,6 +68,15 @@ outline: none !important
   line-height: 100px;
 }
 
+.wood_descr {
+  grid-area: wood_descr;
+  background-color: #99ff99;
+/*  width: 150px;
+  height: 100px;*/
+  text-align: left;
+
+}
+
 .earth {
   grid-area: earth;
   background-color: yellow;
@@ -63,6 +85,22 @@ outline: none !important
   border-radius: 50%;
   text-align: center;
   line-height: 100px;
+}
+.earth_descr {
+  grid-area: earth_descr;
+  background-color:  #ffffb3;
+/*   width: 150px;
+  height: 100px;*/
+  text-align: left;
+
+}
+
+.water_descr {
+  grid-area: water_descr;
+  background-color:  #b1dae7;
+/*   width: 150px;
+  height: 100px;*/
+  text-align: left;
 }
 
 .water {
@@ -75,6 +113,8 @@ outline: none !important
   line-height: 100px;
 }
 
+
+
 .metal {
   grid-area: metal;
   background-color: #999999;
@@ -85,19 +125,24 @@ outline: none !important
   line-height: 100px;
 }
 
+.metal_descr {
+  grid-area: metal_descr;
+  background-color:  #cccccc;
+  text-align: left;
+}
+
 
  .grid_container_star {
   display: grid;
   grid-gap: 5px;
-  width: 600px;
-  height: 600px;
-  align-items: center;
-  justify-items: cente10;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 80px 120px 120px;
-  grid-template-areas: "..... fire ..... "
-                       "wood  .... earth"
-                       "water .... metal"
+/*  width: 800px;
+  height: 800px;*/
+/* place-items: stretch;*/
+  grid-template-columns: repeat( 5, 1fr);
+  grid-template-rows: 1fr 1fr 1fr ;
+  grid-template-areas: "    .....   fire_descr  fire  ...   ...........  "
+                       " wood_descr    wood       .  earth  earth_descr"
+                       " water_descr   water      .  metal  metal_descr "
  }
 
 

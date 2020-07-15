@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'points/wu_yun_liu_thi'
   get 'points/wu_yun_liu_thi_trunk'
   get 'points/show_point', to: 'points#show_point'
+  get 'points/change_color'
   root 'patients#index'
+
   resources :points
   resources :doctors
   resources :patients

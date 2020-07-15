@@ -1,200 +1,200 @@
-Point.find(70)
-a = Point.find(70)
-a.update name: 'C.7'
-Point.where(name: 'C.7')
-a = Point.find(70)
-a.destroy
-a = Point.find(70)
-a = Point.find(52)
-p a = Point.find(52)
-p a = Point.find(53)
-Point.find_all{ |a|p a.id if  a.name == 'Mc.8'}
-Point.find_each{ |a|p a.id if  a.name == 'Mc.8'}
-Point.find_each{ |a|p a.id if  a.name == 'Mc.5'}
-Point.find_each{ |a|p a.id if  a.name == 'MC.5'}
-a = Point.find(72)
-a
-a = Point.find(53)
-a
-a.destroy
-a = Point.find(72)
-a
-a.update  serial_number: 5, meridian_id: 1
-p  a.serial_number, a.name, a.meridian.alias_ru
-a = Point.find(54)
-p a = Point.find(54)
-Point.find_each{ |a|p a.id if  a.name == 'MC.5'}
-Point.find_each{ |a|p a.id if  a.name == 'MC.3'}
-Point.find_each{ |a|p a.id if  a.name == 'Mc.3'}
-Point.find(54).destroy
-Point.find(55)
-Point.find(55).destroy
-Point.where(name: 'Tr.1')
-a = Point.where(name: 'Tr.1')
-a.update  serial_number: 1, meridian_id: 11
-p  a.serial_number, a.name, a.meridian.alias_ru
-p  a.serial_number, a.name, a.meridian
-a = Point.where(name: 'Tr.1')
-a
-a.serial_number
-a = Point.find(75)
-a
-a.update  serial_number: 1, meridian_id: 11
-a
-Point.find(56)
-a = Point.where(name: 'Tr.2')
-a
-Point.find(56).destroy
-Point.find(67)
-a.update  serial_number: 2, meridian_id: 11
-p  a.serial_number, a.name, a.meridian.alias_ru
-a
-Point.find(67)
-p  a.serial_number, a.name, a.meridian
-a = Point.find(67)
-p  a.serial_number, a.name, a.meridian
-p  a.serial_number, a.name, a.meridian
-a = Point.find(67)
-a
-p  a.serial_number, a.name, a.meridian.alias_ru
-Point.find(57)
-Point.find_by(name: 'Tr.3')
-a = Point.find_by(name: 'Tr.3')
-a
-Point.find(57).destroy
-a = Point.find_by(name: 'Tr.3')
-a.update  serial_number: 10, meridian_id: 11
-a
-Point.find(58)
-a = Point.find_by(name: 'Tr.6')
-a
-Point.find(58).destroy
-a = Point.find_by(name: 'Tr.6')
-a
-a.update  serial_number: 6, meridian_id: 11
-a
-p  a.serial_number, a.name, a.meridian.alias_ru
-Point.find(59)
-Point.find(58)
-Point.find(57)
-Point.find(56)
-Point.find(55)
-Point.find(54)
-Point.find(53)
-Point.find(52)
-Point.find(60)
-Point.find(59)
-Point.find_by(name: 'Tr.10')
-a = Point.find(73)
-a.update  serial_number: 10, meridian_id: 11
-a
-p  a.serial_number, a.name, a.meridian.alias_ru
-a = Point.find(61)
-a
-p a = Point.find(60)
-a.update alias_ru: 'Цю-сюй', meridian_id: 12, serial_number: 40
-a
-p a = Point.find(61)
-a.update  meridian_id: 8, serial_number: 4
-p  a.serial_number, a.name, a.meridian.alias_ru
-p a = Point.find(62)
-a.update  meridian_id: 9, serial_number: 42
-p  a.serial_number, a.name, a.meridian.alias_ru
+      when 8 then 0
+      when 9 then 10
+      when 10 then 10
+      end
+      end
+    end
+  end.compact.sum
+end
+change_balance_energy(points, elem)
+Element.map{ |e| e.name}
+Element.all.map{ |e| e.name}
+Element.all.map{ |e| p '..', e.name, e,yin_yang }
+Element.all.map{ |e| p '..', e.name, e.yin_yang }
+{c: 3, b: 2, a: 1}.to_query
+{a:1, c: 3, b: 2}.to_query
+def energy_balance(points)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points)
+points = Point.all
+elem = Element.all
+def change_balance_energy(points, elem)
+  points.map do |point|
+    case point.id
+    when 3
+     elem.map do |e|
+      case e.id
+      when 1 then 0
+      when 2 then 0
+      when 3 then 5
+      when 4 then -5
+      when 5 then 10
+      when 6 then 10
+      when 7 then 0
+      when 8 then 0
+      when 9 then 10
+      when 10 then 10
+      end
+      end
+    end
+  end.compact.sum
+end
+change_balance_energy(points, elem)
+id = 1
+def energy_balance(points)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points)
+id = 1
+def energy_balance(points)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points)id = 1
+def energy_balance(points, id)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points, id)
+def energy_balance(points)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points)
 exit
-p a = Point.find(60)
-a.update  function: 'Yuan'
-a.function
-p a = Point.find(60)
-a.update  function: 'Yuan'
-p a = Point.find(60)
-p a = Point.find(61)
-a.update  function: 'Yuan'
-p a = Point.find(60)
-p a = Point.find(61)
-p a = Point.find(62)
-a.update  function: 'Yuan'
-a
-p a = Point.find(63)
-a.update alias_ru: 'Хэ-гу',  meridian_id: 10, serial_number: 4,  function: 'Yuan'
-a
-p a = Point.find(64)
-a.update alias_ru: 'Цзин-гу',  meridian_id: 7, serial_number: 64,  function: 'Yuan'
-a
-a.meridian.alias_ru
-p a = Point.find(65)
-p a = Point.find_by(name: 'Tr.4')
-p a = Point.find_by{name: 'Tr.4'}
-p a = Point.find_by{name == 'Tr.4'}
-p a = Point.where{name: 'Tr.4'}
-p a = Point.where(name: 'Tr.4')
-p a = Point.where(name: 'TR.4')
-Point.find(65)
-p a = Point.where(name: 'Tr.4')
-p a = Point.where(alias_ru: 'Вань-гу')
-p a = Point.where(alias_ru: 'Ян-чи')
-Point.find(65)
-p a = Point.find(65)
-a.update alias_ru: 'Ян-чи',  meridian_id: 11, serial_number: 4,  function: 'Yuan'
-ф
-a
-a.update name: 'Tr.4'
-a
-Point.where(name: 'Tr.4').count
-Point.find(62)
-p a = Point.find(66)
-Point.find(50)
-Point.where(name: 'Mc.9')
-Point.find(50).destroy
-Meridian.find(1)
-Meridian.find(1).points
-Meridian.find(1).points.each{|a| p  a.name}
-Point.find(50)
-p a = Point.find(66)
-a.update alias_ru: 'Ян-чи',  meridian_id: 9, serial_number: 43
-p  a.serial_number, a.name, a.meridian
-p  a.serial_number, a.name, a.meridian.alias_ru
-p a = Point.find(67)
-p  a.serial_number, a.name, a.meridian.alias_ru
-p a = Point.find(68)
-a.update meridian_id: 3, serial_number: 8
-p  a.serial_number, a.name, a.meridian.alias_ru
-p a = Point.find(69)
-p  a.serial_number, a.name, a.meridian.alias_ru
-p a = Point.find(70)
-p a = Point.find(71)
-p a = Point.find(712)
-p a = Point.find(72)
-p a = Point.find(73)
-p a = Point.find(74)
-p a = Point.find(745)
-p a = Point.find(75)
-p a = Point.find(76)
-p a = Point.find(77)
-p a = Point.find(78)
-Point.all.count
-Point.all.compact
-Point.all.compact.count
-Point.all.compact.size
-Point.all.size
-Point.find(id.last)
-Point(id.last)
-Point.last.id
-Point.firstt.id
-Point.first.id
-Point.second.id
-Point.where(meridian.energy_name == 'Water')
-Point.find_each{ |a|p a.alias_ru if  a.meridian.energy_name == 'Water'}
-Point.find_each{ |a| p a.alias_ru if  a.meridian.energy_name == 'Water'}
-Point.find_each{ |a| p a.alias_ru if  a.meridian.energy_name == 'Wood'}
-Meridian.where(energy_name: 'Water')
-Meridian.where(energy_name: 'Water').each{ |a| p a.alias_ru}
-Meridian.where(energy_name: 'Water' && element_trunk: "Wood").each{ |a| p a.alias_ru}
-Meridian.where(energy_name: 'Water', element_trunk: "Wood").each{ |a| p a.alias_ru}
-Meridian.where(energy_name: 'Water', element_trunk: "Fire").each{ |a| p a.alias_ru}
+points = Point.all
+def energy_balance(points)
+  points.map do |point|
+    case point.id
+    when 1
+      case id # это айди элемента
+      when 1
+        -10
+      when 2
+        10
+      end
+    when 2
+    end
+  end.sum
+end
+energy_balance(points)
+energy_balance(points)
 exit
-Meridian.each{ |a| puts a.id, a.alias_ru}
-Meridian.each{ |a| p a.id, a.alias_ru}
-Meridian.all.each{ |a| puts a.id, a.alias_ru}
-Meridian.all.each{ |a| puts a.id + ' ' + a.alias_ru}
-Meridian.all.each{ |a| puts a.id.to_s + ' ' + a.alias_ru}
+Point.last
+a = Point.last
+a.update serial_number: 9
+a.save
+a
+a
+exit
+Meridian.last.big_nourish_point
+exit
+Element.first
+Element.first.energy_balance(Point.find(1))
+Element.first.energy_balance(Point.all)
+exit
+Element.first.energy_balance(Point.all)
+exit
+Element.first.energy_balance
+Element.first.energy_balance(Point.all)
+Element.first.energy_balance(Point.find(1))
+Element.first.energy_balance(Point.find(1))
+Element.first.energy_balance(Point.all)
+Удуьутеюашкые
+Element.first
+Element.first.energy_balance(Point.all)
+Element.first.energy_balance(Point.all)
+exit
+учше
+exit
+Point.last
+exit
+Meridian.last
+Meridian.last.points
+Meridian.last.points.each{ |a| p 'Точка: ', a.serial_number, a.alias_ru}
+Point.last
+Meridian.last.element
+Meridian.last
+Element.last
+water_yin = Element.last
+water_yin
+water_yin.season_meridian_first
+water_yin.season_meridian_second
+water_yin.big_nutrition_point
+exit
+Element.first.energy_balance(Point.all)
+Element.first.energy_balance(Point.all)
+strong nutrition point iexit
+exit
+Element.first
+exit
+Point.find_by( name: 'V.67')
+exit
+Branch.all.size
+Branch.first
+Branch.first.day_meridian
+Branch.find(2).day_meridian
+Branch.find(3).day_meridian
+Branch.find_by(name: 'Перикард')
+Branch.day_meridian.find_by(name: 'Перикард')
+Branch.all.map{ |a| a.day_meridian.find_by(name: 'Перикард')}
+Branch.all.map{ |a| a.alias_ru, a.id,  a.day_meridian}
+Branch.map{ |a| a.alias_ru, a.id,  a.day_meridian}
+Branch.all.map{ |a|p  a.alias_ru, a.id,  a.day_meridian}
+Branch.find(1)
+Branch.find(1).day_meridian
+Branch.find(1)
 exit

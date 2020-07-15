@@ -1,0 +1,226 @@
+<% @title="star" %>
+
+<p>ЗВЕЗДА:</p>
+<h4> @change_color =  <%= @change_color %> </h4>
+  <div class="grid_container_star">
+
+    <div class="fire_descr"  style=" background-color: <%= @change_color %>;" >
+      <table>
+        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
+        <tr>
+          <td>
+            <%= f.check_box :wood %>
+            <%= f.label :element, Point.find_by(name: 'C.9').alias_ru +  ' (' + Point.find_by(name: 'C.9').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :fire %>
+            <%= f.label :element, Point.find_by(name: 'C.8').alias_ru +  ' (' + Point.find_by(name: 'C.8').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :earth %>
+            <%= f.label :element, Point.find_by(name: 'C.7').alias_ru +  ' (' + Point.find_by(name: 'C.7').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :metal %>
+            <%= f.label :element, Point.find_by(name: 'C.4').alias_ru +  ' (' + Point.find_by(name: 'C.4').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :water %>
+            <%= f.label :element, Point.find_by(name: 'C.3').alias_ru +  ' (' + Point.find_by(name: 'C.3').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit "Действуй", class: 'btn-control' %>
+          </td>
+        </tr>
+        <%  end %>
+      </table>
+    </div>
+
+    <div class="fire" class=" <%= 'Fire' == @missing_energy_name ? '.highlight'  : '' %>" >Fire</div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="wood_descr">
+      <table>
+        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
+        <tr>
+
+          <td>
+             <%= f.check_box :wood %>
+          <%= f.label :element, Point.find_by(name: 'F.1').alias_ru +  ' (' + Point.find_by(name: 'F.1').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :fire %>
+            <%= f.label :element, Point.find_by(name: 'F.2').alias_ru +  ' (' + Point.find_by(name: 'F.2').own_element + ')' %>
+        </tr>
+          </td>
+        <tr>
+          <td>
+            <%= f.check_box :earth %>
+            <%= f.label :element, Point.find_by(name: 'F.3').alias_ru +  ' (' + Point.find_by(name: 'F.3').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :metal %>
+            <%= f.label :element, Point.find_by(name: 'F.4').alias_ru +  ' (' + Point.find_by(name: 'F.4').own_element + ')'%>
+          </td>
+        </tr>
+        <tr>
+         <td>
+          <%= f.check_box :water %>
+          <%= f.label :element, Point.find_by(name: 'F.8').alias_ru +  ' (' + Point.find_by(name: 'F.8').own_element + ')' %>
+         </td>
+        </tr>
+         <tr>
+            <td>
+              <%= f.submit "Действуй", class: 'btn-control' %>
+            </td>
+         </tr>
+          <%  end %>
+      </table>
+    </div>
+    <div class="wood" class=" <%= 'Wood' == @missing_energy_name ? '.highlight'  : '' %>" >Wood</div>
+    <div class="empty"></div>
+    <div class="earth" class=" <%= 'Earth' == @missing_energy_name ? '.highlight'  : '' %>" >Earth</div>
+    <div class="earth_descr">
+      <table>
+        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
+        <tr>
+          <td>
+            <%= f.check_box :wood %>
+            <%= f.label :element, Point.find_by(name: 'Rp.1').alias_ru +  ' (' + Point.find_by(name: 'Rp.1').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :fire %>
+            <%= f.label :element, Point.find_by(name: 'Rp.2').alias_ru +  ' (' + Point.find_by(name: 'Rp.2').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :earth %>
+            <%= f.label :element, Point.find_by(name: 'Rp.3').alias_ru +  ' (' + Point.find_by(name: 'Rp.3').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :metal %>
+            <%= f.label :element, Point.find_by(name: 'Rp.5').alias_ru +  ' (' + Point.find_by(name: 'Rp.5').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :water %>
+            <%= f.label :element, Point.find_by(name: 'Rp.9').alias_ru +  ' (' + Point.find_by(name: 'Rp.9').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit "Действуй", class: 'btn-control' %>
+          </td>
+        </tr>
+        <%  end %>
+      </table>
+    </div>
+    <div class="water_descr">
+      <table>
+        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
+        <tr>
+          <td>
+            <%= f.check_box :wood %>
+            <%= f.label :element, Point.find_by(name: 'R.1').alias_ru +  ' (' + Point.find_by(name: 'R.1').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :fire %>
+            <%= f.label :element, Point.find_by(name: 'R.2').alias_ru +  ' (' + Point.find_by(name: 'R.2').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :earth %>
+            <%= f.label :element, Point.find_by(name: 'R.3').alias_ru +  ' (' + Point.find_by(name: 'R.3').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :metal %>
+            <%= f.label :element, Point.find_by(name: 'R.7').alias_ru +  ' (' + Point.find_by(name: 'R.7').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.check_box :water %>
+            <%= f.label :element, Point.find_by(name: 'R.10').alias_ru +  ' (' + Point.find_by(name: 'R.10').own_element + ')' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit "Действуй", class: 'btn-control' %>
+          </td>
+        </tr>
+        <%  end %>
+      </table>
+    </div>
+
+    <div class="water" class=" <%= 'Water' == @missing_energy_name ? '.highlight'  : '' %>" >Water</div>
+    <div class="empty"></div>
+
+    <div class="metal" class=" <%= @missing_energy_name == 'Metal' ? '.highlight_3'  : '' %>" >Metal</div>
+    <div class="metal_descr">
+      <div>
+        <table>
+          <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
+          <tr>
+            <td>
+              <%= f.check_box :wood %>
+              <%= f.label :element, Point.find_by(name: 'P.11').alias_ru +  ' (' + Point.find_by(name: 'P.11').own_element + ')' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.check_box :fire %>
+              <%= f.label :element, Point.find_by(name: 'P.10').alias_ru +  ' (' + Point.find_by(name: 'P.10').own_element + ')' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.check_box :earth %>
+              <%= f.label :element, Point.find_by(name: 'P.9').alias_ru +  ' (' + Point.find_by(name: 'P.9').own_element + ')' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.check_box :metal %>
+              <%= f.label :element, Point.find_by(name: 'P.8').alias_ru +  ' (' + Point.find_by(name: 'P.8').own_element + ')' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.check_box :water %>
+              <%= f.label :element, Point.find_by(name: 'P.5').alias_ru +  ' (' + Point.find_by(name: 'P.5').own_element + ')' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.submit "Действуй", class: 'btn-control' %>
+            </td>
+          </tr>
+          <%  end %>
+        </table>
+      </div>
+    </div>
