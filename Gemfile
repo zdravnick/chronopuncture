@@ -9,6 +9,8 @@ gem 'pry'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 gem 'devise'
+gem 'uglifier'
+gem 'coffee-rails'
 # for Lunar days
 gem 'solunar'
 gem 'rails-i18n', '~> 6.0.0'

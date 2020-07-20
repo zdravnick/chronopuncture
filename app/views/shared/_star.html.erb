@@ -1,226 +1,245 @@
 <% @title="star" %>
 
-<p>ЗВЕЗДА:</p>
-<h4> @change_color =  <%= @change_color %> </h4>
-  <div class="grid_container_star">
+<div class="histogramme">
 
-    <div class="fire_descr"  style=" background-color: <%= @change_color %>;" >
-      <table>
-        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
-        <tr>
-          <td>
-            <%= f.check_box :wood %>
-            <%= f.label :element, Point.find_by(name: 'C.9').alias_ru +  ' (' + Point.find_by(name: 'C.9').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :fire %>
-            <%= f.label :element, Point.find_by(name: 'C.8').alias_ru +  ' (' + Point.find_by(name: 'C.8').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :earth %>
-            <%= f.label :element, Point.find_by(name: 'C.7').alias_ru +  ' (' + Point.find_by(name: 'C.7').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :metal %>
-            <%= f.label :element, Point.find_by(name: 'C.4').alias_ru +  ' (' + Point.find_by(name: 'C.4').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :water %>
-            <%= f.label :element, Point.find_by(name: 'C.3').alias_ru +  ' (' + Point.find_by(name: 'C.3').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit "Действуй", class: 'btn-control' %>
-          </td>
-        </tr>
-        <%  end %>
-      </table>
+  <div class="w0"> 2
+    <div class="indicator_wrapper">
+      <div class="indicator" id="w0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_wood_yin">Инь
+    </div>
+  </div>
+
+  <div class="w1"> 3
+    <div class="indicator_wrapper">
+      <div class="indicator" id="w1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_wood_yang">Ян
+    </div>
+  </div>
+
+  <div class="f0"> 5
+    <div class="indicator_wrapper">
+      <div class="indicator" id="f0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_fire_yin">Инь
+    </div>
+  </div>
+
+  <div class="f1"> 6
+    <div class="indicator_wrapper">
+      <div class="indicator" id="f1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_fire_yang">Ян
+    </div>
+  </div>
+
+  <div class="fe0"> 8
+    <div class="indicator_wrapper">
+      <div class="indicator" id="fe0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+     <input type="range" value="50" id="slide_fire_in_earth_yin">Инь
+     </div>
+  </div>
+
+  <div class="fe1"> 9
+    <div class="indicator_wrapper">
+      <div class="indicator" id="fe1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_fire_in_earth_yang">Ян
+    </div>
+  </div>
+
+  <div class="e0"> 11
+    <div class="indicator_wrapper">
+      <div class="indicator" id="e0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_earth_yin">Инь
+    </div>
+  </div>
+
+  <div class="e1"> 12
+    <div class="indicator_wrapper">
+      <div class="indicator" id="e1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_earth_yang">Ян
+    </div>
+  </div>
+
+  <div class="m0"> 14
+    <div class="indicator_wrapper">
+      <div class="indicator" id="m0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+     <input type="range" value="50" id="slide_metal_yin">Инь
+   </div>
+  </div>
+
+  <div class="m1"> 15
+    <div class="indicator_wrapper">
+      <div class="indicator" id="m1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_metal_yang">Ян
+    </div>
+  </div>
+
+  <div class="wt0"> 17
+    <div class="indicator_wrapper">
+      <div class="indicator" id="wt0"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+      <input type="range" value="50" id="slide_water_yin">Инь
+    </div>
+  </div>
+
+  <div class="wt1"> 18
+    <div class="indicator_wrapper">
+      <div class="indicator" id="wt1"></div>
+    </div>
+    <div class="slyder"> slyder </div>
+    <div class="histogramme_slider">
+     <input type="range" value="50" id="slide_water_yang">Ян
+   </div>
+  </div>
+
+
+
+
+
+
+<!--   <div class="empty"> 31 </div>
+  <div class="empty"> 32 </div>
+  <div class="empty"> 33 </div>
+  <div class="empty"> 34 </div>
+  <div class="empty"> 35 </div>
+  <div class="empty"> 36 </div> -->
+
+
+
+
+
+
+
+
+</div>
+
+
+<div>
+  <p>
+    Диаграмма
+  </p>
+  <div class="bar_chart">
+<!--
+    <div class="wood_points">
+      <div class="wood_div ">
+        <input type="range" value="50" id="slide_wood_yin">Инь
+        <input type="range" value="50" id="slide_wood_yang">Ян
+    </div> -->
+     <p>
+      Точки дерева
+      красная
+      зеленая
+      синяя
+      </p>
+    </div>
+    <div class="wood_bar_yin">
+      wood Ying
+    </div>
+    <div class="wood_bar_yang">
+      wood Yang
+    </div>
+<!--
+     <div class="fire_points">
+      <div class="fire_div">
+        <input type="range" value="50" id="slide_fire_yin">Инь
+        <input type="range" value="50" id="slide_fire_yang">Ян
+      </div> -->
+      <p>
+        Точки огня:
+        зеленая
+        красная
+        синяя
+      </p>
+    </div>
+    <div class="fire_bar_yin">
+      fire Yin
+    </div>
+    <div class="fire_bar_yang">
+      fire Yang
     </div>
 
-    <div class="fire" class=" <%= 'Fire' == @missing_energy_name ? '.highlight'  : '' %>" >Fire</div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="wood_descr">
-      <table>
-        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
-        <tr>
-
-          <td>
-             <%= f.check_box :wood %>
-          <%= f.label :element, Point.find_by(name: 'F.1').alias_ru +  ' (' + Point.find_by(name: 'F.1').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :fire %>
-            <%= f.label :element, Point.find_by(name: 'F.2').alias_ru +  ' (' + Point.find_by(name: 'F.2').own_element + ')' %>
-        </tr>
-          </td>
-        <tr>
-          <td>
-            <%= f.check_box :earth %>
-            <%= f.label :element, Point.find_by(name: 'F.3').alias_ru +  ' (' + Point.find_by(name: 'F.3').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :metal %>
-            <%= f.label :element, Point.find_by(name: 'F.4').alias_ru +  ' (' + Point.find_by(name: 'F.4').own_element + ')'%>
-          </td>
-        </tr>
-        <tr>
-         <td>
-          <%= f.check_box :water %>
-          <%= f.label :element, Point.find_by(name: 'F.8').alias_ru +  ' (' + Point.find_by(name: 'F.8').own_element + ')' %>
-         </td>
-        </tr>
-         <tr>
-            <td>
-              <%= f.submit "Действуй", class: 'btn-control' %>
-            </td>
-         </tr>
-          <%  end %>
-      </table>
+    <div class="earth_points">
+      Точки для земли
     </div>
-    <div class="wood" class=" <%= 'Wood' == @missing_energy_name ? '.highlight'  : '' %>" >Wood</div>
-    <div class="empty"></div>
-    <div class="earth" class=" <%= 'Earth' == @missing_energy_name ? '.highlight'  : '' %>" >Earth</div>
-    <div class="earth_descr">
-      <table>
-        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
-        <tr>
-          <td>
-            <%= f.check_box :wood %>
-            <%= f.label :element, Point.find_by(name: 'Rp.1').alias_ru +  ' (' + Point.find_by(name: 'Rp.1').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :fire %>
-            <%= f.label :element, Point.find_by(name: 'Rp.2').alias_ru +  ' (' + Point.find_by(name: 'Rp.2').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :earth %>
-            <%= f.label :element, Point.find_by(name: 'Rp.3').alias_ru +  ' (' + Point.find_by(name: 'Rp.3').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :metal %>
-            <%= f.label :element, Point.find_by(name: 'Rp.5').alias_ru +  ' (' + Point.find_by(name: 'Rp.5').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :water %>
-            <%= f.label :element, Point.find_by(name: 'Rp.9').alias_ru +  ' (' + Point.find_by(name: 'Rp.9').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit "Действуй", class: 'btn-control' %>
-          </td>
-        </tr>
-        <%  end %>
-      </table>
+    <div class="earth_bar_yin">
+      земля Инь
     </div>
-    <div class="water_descr">
-      <table>
-        <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
-        <tr>
-          <td>
-            <%= f.check_box :wood %>
-            <%= f.label :element, Point.find_by(name: 'R.1').alias_ru +  ' (' + Point.find_by(name: 'R.1').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :fire %>
-            <%= f.label :element, Point.find_by(name: 'R.2').alias_ru +  ' (' + Point.find_by(name: 'R.2').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :earth %>
-            <%= f.label :element, Point.find_by(name: 'R.3').alias_ru +  ' (' + Point.find_by(name: 'R.3').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :metal %>
-            <%= f.label :element, Point.find_by(name: 'R.7').alias_ru +  ' (' + Point.find_by(name: 'R.7').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.check_box :water %>
-            <%= f.label :element, Point.find_by(name: 'R.10').alias_ru +  ' (' + Point.find_by(name: 'R.10').own_element + ')' %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.submit "Действуй", class: 'btn-control' %>
-          </td>
-        </tr>
-        <%  end %>
-      </table>
+    <div class="earth_bar_yang">
+      земля Ян
     </div>
 
-    <div class="water" class=" <%= 'Water' == @missing_energy_name ? '.highlight'  : '' %>" >Water</div>
-    <div class="empty"></div>
-
-    <div class="metal" class=" <%= @missing_energy_name == 'Metal' ? '.highlight_3'  : '' %>" >Metal</div>
-    <div class="metal_descr">
-      <div>
-        <table>
-          <%= form_with url: points_change_color_path, action: '/change_color', method: :get do |f| %>
-          <tr>
-            <td>
-              <%= f.check_box :wood %>
-              <%= f.label :element, Point.find_by(name: 'P.11').alias_ru +  ' (' + Point.find_by(name: 'P.11').own_element + ')' %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.check_box :fire %>
-              <%= f.label :element, Point.find_by(name: 'P.10').alias_ru +  ' (' + Point.find_by(name: 'P.10').own_element + ')' %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.check_box :earth %>
-              <%= f.label :element, Point.find_by(name: 'P.9').alias_ru +  ' (' + Point.find_by(name: 'P.9').own_element + ')' %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.check_box :metal %>
-              <%= f.label :element, Point.find_by(name: 'P.8').alias_ru +  ' (' + Point.find_by(name: 'P.8').own_element + ')' %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.check_box :water %>
-              <%= f.label :element, Point.find_by(name: 'P.5').alias_ru +  ' (' + Point.find_by(name: 'P.5').own_element + ')' %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.submit "Действуй", class: 'btn-control' %>
-            </td>
-          </tr>
-          <%  end %>
-        </table>
-      </div>
+    <div class="metal_points">
+      Точки для металла
     </div>
+    <div class="metal_bar_yin">
+      metal Yin
+    </div>
+    <div class="metal_bar_yang">
+      metal Yang
+    </div>
+
+    <div class="water_points">
+      Точки для воды
+    </div>
+    <div class="water_bar_yin">
+      water Yin
+    </div>
+    <div class="water_bar_yang">
+      water Yang
+    </div>
+  </div>
+
+
+
+</div>
+<script type="text/javascript">
+      slide_wood_yin.addEventListener( "change", function() {
+        document.querySelector("#w0").style.height=(slide_wood_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_wood_yang.addEventListener( "change", function() {
+        document.querySelector("#w1").style.height=(slide_wood_yang.value+"%");
+    });
+</script>
+
+<script type="text/javascript">
+      slide_fire_yin.addEventListener( "change", function() {
+        document.querySelector("#f0").style.height=(slide_fire_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_fire_yang.addEventListener( "change", function() {
+        document.querySelector("#f1").style.height=(slide_fire_yang.value+"%");
+    });
+</script>
