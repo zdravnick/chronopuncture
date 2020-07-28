@@ -65,7 +65,7 @@
 
   <h3>Объем лечения:</h3>
   <ol>
-  <% @patient.visits.each do |t| %>
+  <% @patient.visits.reverse.each do |t| %>
   <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %></li>
   <ul>
     <li><%= t.visit_description %></li>

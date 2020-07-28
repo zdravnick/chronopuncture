@@ -9,6 +9,12 @@
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
   <div>
+
+<div data-controller="hello">
+  <input type="text">
+  <button  class="theme-button" data-action="click->hello#switchTheme">Сделать ночь</button>
+</div>
+
     <%= form_with  local: true, method: :get, url: patients_path do |f| %>
     <%= f.label  'Поиск по имени'  %>
     <%= f.text_field :name %>

@@ -1,7 +1,3 @@
-      when 8 then 0
-      when 9 then 10
-      when 10 then 10
-      end
       end
     end
   end.compact.sum
@@ -197,4 +193,8 @@ Branch.all.map{ |a|p  a.alias_ru, a.id,  a.day_meridian}
 Branch.find(1)
 Branch.find(1).day_meridian
 Branch.find(1)
+exit
+Point.find_by(name: 'C.41')
+Point.find_by(name: 'F.8')
+учше
 exit

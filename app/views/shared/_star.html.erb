@@ -1,165 +1,285 @@
 <% @title="star" %>
 
+<main>
+  <form oninput="output.value = Math.round(range.valueAsNumber / 1000)">
+    <h2>
+      Range slider
+    </h2>
+    <div class="range">
+      <input name="range" type="range" min="0" max="100000">
+      <div class="range-output">
+        <output class="output" name="output" for="range">
+          50
+        </output>
+      </div>
+    </div>
+  </form>
+</main>
+
+
 <div class="histogramme">
 
+
+
   <div class="w0"> 2
+
     <div class="indicator_wrapper">
-      <div class="indicator" id="w0"></div>
+
+      <div class="indicator_background">
+        <div class="indicator" id="w0"></div>
+      </div>
     </div>
+
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_wood_yin">Инь
-    </div>
+        <form oninput="output.value = Math.round(slide_wood_yin.value)">
+          <div class="slider_wrapper ">
+            <input type="range" value="50" id="slide_wood_yin" >Инь
+              <output class="output" name="output" for="range">
+               50
+              </output>
+            </div>
+        </form>
+
+
+    <input type="checkbox" id="liver2"
+    data-controller="barChartCheckboxes"
+    data-target="barChartCheckboxes.liver2"
+    data-action="change->barChartCheckboxes#liver2Effect"  >F.8
+
+     <input type="checkbox" id="liver3"
+    data-controller="barChartCheckboxes"
+    data-target="barChartCheckboxes.liver3"
+    data-action="change->barChartCheckboxes#liver3Effect"  >F.1 Да-дунь
+
   </div>
+
+
+
+
 
   <div class="w1"> 3
     <div class="indicator_wrapper">
-      <div class="indicator" id="w1"></div>
+      <div class="indicator_background">
+        <div class="indicator" id="w1"></div>
+      </div>
     </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_wood_yang">Ян
-    </div>
+
+      <form oninput="output.value = Math.round(slide_wood_yang.value)">
+        <div class="slider_wrapper ">
+          <input type="range" value="50" id="slide_wood_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+
   </div>
 
   <div class="f0"> 5
     <div class="indicator_wrapper">
-      <div class="indicator" id="f0"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="f0"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_fire_yin">Инь
-    </div>
+
+    <form oninput="output.value = Math.round(slide_fire_yin.value)">
+        <div class="slider_wrapper ">
+         <input type="range" value="50" id="slide_fire_yin">Инь
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+
   </div>
 
   <div class="f1"> 6
     <div class="indicator_wrapper">
-      <div class="indicator" id="f1"></div>
+      <div class="indicator_background">
+        <div class="indicator" id="f1"></div>
+        </div>
     </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_fire_yang">Ян
-    </div>
+    <form oninput="output.value = Math.round(slide_fire_yang.value)">
+        <div class="slider_wrapper ">
+         <input type="range" value="50" id="slide_fire_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+
   </div>
 
   <div class="fe0"> 8
     <div class="indicator_wrapper">
-      <div class="indicator" id="fe0"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="fe0"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
+    <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
+        <div class="slider_wrapper ">
      <input type="range" value="50" id="slide_fire_in_earth_yin">Инь
-     </div>
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+
   </div>
 
   <div class="fe1"> 9
     <div class="indicator_wrapper">
-      <div class="indicator" id="fe1"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="fe1"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
+    <form oninput="output.value = Math.round(slide_fire_in_earth_yang.value)">
+        <div class="slider_wrapper ">
       <input type="range" value="50" id="slide_fire_in_earth_yang">Ян
-    </div>
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+
   </div>
 
   <div class="e0"> 11
     <div class="indicator_wrapper">
-      <div class="indicator" id="e0"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="e0"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_earth_yin">Инь
-    </div>
-  </div>
+    <form oninput="output.value = Math.round(slide_earth_yin.value)">
+        <div class="slider_wrapper ">
+       <input type="range" value="50" id="slide_earth_yin">Инь
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+   </div>
 
   <div class="e1"> 12
     <div class="indicator_wrapper">
-      <div class="indicator" id="e1"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="e1"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_earth_yang">Ян
-    </div>
-  </div>
+    <form oninput="output.value = Math.round(slide_earth_yang.value)">
+        <div class="slider_wrapper ">
+       <input type="range" value="50" id="slide_earth_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+   </div>
 
   <div class="m0"> 14
     <div class="indicator_wrapper">
-      <div class="indicator" id="m0"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="m0"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-     <input type="range" value="50" id="slide_metal_yin">Инь
+    <form oninput="output.value = Math.round(slide_metal_yin.value)">
+        <div class="slider_wrapper ">
+      <input type="range" value="50" id="slide_metal_yin">Инь
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
    </div>
-  </div>
 
   <div class="m1"> 15
     <div class="indicator_wrapper">
-      <div class="indicator" id="m1"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="m1"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_metal_yang">Ян
-    </div>
-  </div>
+    <form oninput="output.value = Math.round(slide_metal_yang.value)">
+        <div class="slider_wrapper ">
+       <input type="range" value="50" id="slide_metal_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+   </div>
 
   <div class="wt0"> 17
     <div class="indicator_wrapper">
-      <div class="indicator" id="wt0"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="wt0"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-      <input type="range" value="50" id="slide_water_yin">Инь
-    </div>
-  </div>
+        <form oninput="output.value = Math.round(slide_water_yin.value)">
+        <div class="slider_wrapper ">
+       <input type="range" value="50" id="slide_water_yin">Инь
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
+   </div>
 
   <div class="wt1"> 18
     <div class="indicator_wrapper">
-      <div class="indicator" id="wt1"></div>
-    </div>
+      <div class="indicator_background">
+        <div class="indicator" id="wt1"></div>
+        </div>
+      </div>
     <div class="slyder"> slyder </div>
-    <div class="histogramme_slider">
-     <input type="range" value="50" id="slide_water_yang">Ян
+    <form oninput="output.value = Math.round(slide_water_yang.value)">
+        <div class="slider_wrapper ">
+      <input type="range" value="50" id="slide_water_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
+          </div>
+      </form>
    </div>
-  </div>
-
-
-
-
-
-
-<!--   <div class="empty"> 31 </div>
-  <div class="empty"> 32 </div>
-  <div class="empty"> 33 </div>
-  <div class="empty"> 34 </div>
-  <div class="empty"> 35 </div>
-  <div class="empty"> 36 </div> -->
-
-
-
-
-
-
-
 
 </div>
 
 
+<form data-controller="search checkbox">
+  Раз<input type="checkbox" data-target="search.result checkbox.input" name="green" id="example1" data-action="change->search#probe" >
+  Два<input type="checkbox" data-target="search.black" name="black" id="example2"  data-action="change->search#check1">
+<!--   <span data-target="search#connect">Коннект</span> -->
+<span data-target="search.output">Аутпут</span>
+</form>
+
+
+
+<div data-controller="choice">
+  Галочка для w0<input type="checkbox" data-target="choice.name1"  data-action="change->choice#probe">
+
+  <div  class="probe" data-target="choice.probe">probe</div>
+</div>
+
+
+
+<canvas width="500" height="500" id="canvas">
+
+</canvas>
+
 <div>
-  <p>
-    Диаграмма
-  </p>
-  <div class="bar_chart">
-<!--
-    <div class="wood_points">
-      <div class="wood_div ">
-        <input type="range" value="50" id="slide_wood_yin">Инь
-        <input type="range" value="50" id="slide_wood_yang">Ян
-    </div> -->
+<div class="bar_chart">
+
      <p>
-      Точки дерева
-      красная
-      зеленая
-      синяя
+
       </p>
     </div>
     <div class="wood_bar_yin">
@@ -168,12 +288,7 @@
     <div class="wood_bar_yang">
       wood Yang
     </div>
-<!--
-     <div class="fire_points">
-      <div class="fire_div">
-        <input type="range" value="50" id="slide_fire_yin">Инь
-        <input type="range" value="50" id="slide_fire_yang">Ян
-      </div> -->
+
       <p>
         Точки огня:
         зеленая
@@ -218,6 +333,11 @@
       water Yang
     </div>
   </div>
+</div>
+
+
+
+
 
 
 
@@ -241,5 +361,45 @@
 <script type="text/javascript">
       slide_fire_yang.addEventListener( "change", function() {
         document.querySelector("#f1").style.height=(slide_fire_yang.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_fire_in_earth_yin.addEventListener( "change", function() {
+        document.querySelector("#fe0").style.height=(slide_fire_in_earth_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_fire_in_earth_yang.addEventListener( "change", function() {
+        document.querySelector("#fe1").style.height=(slide_fire_in_earth_yang.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_earth_yin.addEventListener( "change", function() {
+        document.querySelector("#e0").style.height=(slide_earth_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_earth_yang.addEventListener( "change", function() {
+        document.querySelector("#e1").style.height=(slide_earth_yang.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_metal_yin.addEventListener( "change", function() {
+        document.querySelector("#m0").style.height=(slide_metal_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_metal_yang.addEventListener( "change", function() {
+        document.querySelector("#m1").style.height=(slide_metal_yang.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_water_yin.addEventListener( "change", function() {
+        document.querySelector("#wt0").style.height=(slide_water_yin.value+"%");
+    });
+</script>
+<script type="text/javascript">
+      slide_water_yang.addEventListener( "change", function() {
+        document.querySelector("#wt1").style.height=(slide_water_yang.value+"%");
     });
 </script>
