@@ -18,7 +18,6 @@ export default class extends Controller {
       }
   }
 
-  probe() {
-      this.resultTargets.forEach(console.log);
-  }
+
+
 };

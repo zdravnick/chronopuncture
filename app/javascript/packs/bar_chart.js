@@ -8,3 +8,4 @@ console.log('Lingam for u all from application.js')
            p.innerHTML==wood_yin;
         };
 
+

@@ -19,8 +19,6 @@
 
 <div class="histogramme">
 
-
-
   <div class="w0"> 2
 
     <div class="indicator_wrapper">
@@ -262,7 +260,6 @@
 </form>
 
 
-
 <div data-controller="choice">
   Галочка для w0<input type="checkbox" data-target="choice.name1"  data-action="change->choice#probe">
 
@@ -271,70 +268,14 @@
 
 
 
-<canvas width="500" height="500" id="canvas">
 
-</canvas>
 
-<div>
-<div class="bar_chart">
-
-     <p>
-
-      </p>
-    </div>
-    <div class="wood_bar_yin">
-      wood Ying
-    </div>
-    <div class="wood_bar_yang">
-      wood Yang
-    </div>
-
-      <p>
-        Точки огня:
-        зеленая
-        красная
-        синяя
-      </p>
-    </div>
-    <div class="fire_bar_yin">
-      fire Yin
-    </div>
-    <div class="fire_bar_yang">
-      fire Yang
-    </div>
-
-    <div class="earth_points">
-      Точки для земли
-    </div>
-    <div class="earth_bar_yin">
-      земля Инь
-    </div>
-    <div class="earth_bar_yang">
-      земля Ян
-    </div>
-
-    <div class="metal_points">
-      Точки для металла
-    </div>
-    <div class="metal_bar_yin">
-      metal Yin
-    </div>
-    <div class="metal_bar_yang">
-      metal Yang
-    </div>
-
-    <div class="water_points">
-      Точки для воды
-    </div>
-    <div class="water_bar_yin">
-      water Yin
-    </div>
-    <div class="water_bar_yang">
-      water Yang
-    </div>
-  </div>
+<div data-controller="canvas" >
+    <button    data-action="click->canvas#probe">
+    Канвас
+  </button>
+  <canvas id="eprst" width="500" height="500" data-target="canvas.output" ></canvas>
 </div>
-
 
 
 
@@ -344,7 +285,7 @@
 </div>
 <script type="text/javascript">
       slide_wood_yin.addEventListener( "change", function() {
-        document.querySelector("#w0").style.height=(slide_wood_yin.value+"%");
+       document.querySelector("#w0").getComputedStyle.height=(slide_wood_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
