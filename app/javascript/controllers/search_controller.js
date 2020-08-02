@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = [ "result", "black", "output" ]
 
   connect(){
-    console.log('search controller');
+    // console.log('search controller');
   }
 
   check1(){

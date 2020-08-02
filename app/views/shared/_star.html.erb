@@ -1,5 +1,8 @@
 <% @title="star" %>
 
+<div id="myDiv" data-controller="plottychart" data-target="plottychart.myDiv" style="width:800px;height:400px;"></div>
+
+
 <main>
   <form oninput="output.value = Math.round(range.valueAsNumber / 1000)">
     <h2>
@@ -21,12 +24,12 @@
 
   <div class="w0"> 2
 
-    <div class="indicator_wrapper">
+      <div class="indicator_wrapper">
 
-      <div class="indicator_background">
-        <div class="indicator" id="w0"></div>
+        <div class="indicator_background">
+          <div class="indicator" id="w0"></div>
+        </div>
       </div>
-    </div>
 
     <div class="slyder"> slyder </div>
         <form oninput="output.value = Math.round(slide_wood_yin.value)">
@@ -50,9 +53,6 @@
     data-action="change->barChartCheckboxes#liver3Effect"  >F.1 Да-дунь
 
   </div>
-
-
-
 
 
   <div class="w1"> 3
@@ -266,12 +266,15 @@
   <div  class="probe" data-target="choice.probe">probe</div>
 </div>
 
+Вот тут С3 у нас:
+<div id="chart" data-controller="mychart" data-target="mychart.chart" ></div>
+
 
 
 
 
 <div data-controller="canvas" >
-    <button    data-action="click->canvas#probe">
+    <button  data-action="click->canvas#probe">
     Канвас
   </button>
   <canvas id="eprst" width="500" height="500" data-target="canvas.output" ></canvas>
@@ -281,11 +284,11 @@
 
 
 
-
 </div>
+
 <script type="text/javascript">
       slide_wood_yin.addEventListener( "change", function() {
-       document.querySelector("#w0").getComputedStyle.height=(slide_wood_yin.value+"%");
+       document.querySelector("#w0").style.height=(slide_wood_yin.value+"%");
     });
 </script>
 <script type="text/javascript">

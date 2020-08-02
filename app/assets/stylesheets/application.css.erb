@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require c3
 
  */
 /*html {
@@ -183,7 +184,7 @@ outline: none !important
   min-width: 100%;
 /*  box-shadow:   0px   -5px  3px lightgreen ;
 */  height: 50%;
-  border-top: 1px solid black;
+  border-top: 3px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
@@ -199,24 +200,22 @@ outline: none !important
   border-left: 1px solid grey;
   border-right: 1px solid grey;
   background-color: #F5F5DC;
-  box-shadow: inset 4px 4px 3px  #A9A9A9, inset -4px -4px 3px #A9A9A9;
+  box-shadow: inset 4px 4px 5px  2px #A9A9A9, inset -4px -4px 5px 2px #A9A9A9;
   justify-items: center;
   align-items: end;
 
 }
 
-.middle_line {
-  display: grid;
-  border-top: 1px solid #000;
-  height: 40%;
-}
 
 .indicator_wrapper {
   display: grid;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
   height: 80%;
   justify-items: center;
   align-items: end;
+background: rgb(208,204,149);
+background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%, rgba(223,221,185,1) 51%);
 }
 
 .slider_wrapper {
@@ -225,6 +224,7 @@ outline: none !important
 }
 
 #w0 {
+  height: 50%;
   background: -webkit-linear-gradient(left, rgba(130,244,130,1) 0%, rgba(0,128,0,1) 30%, rgba(0,128,0,1) 70%, rgba(130,244,130,1) 100%);
   background: -o-linear-gradient(left, rgba(130,244,130,1) 0%, rgba(0,128,0,1) 30%, rgba(0,128,0,1) 70%, rgba(130,244,130,1) 100%);
   background: linear-gradient(to right, rgba(130,244,130,1) 0%, rgba(0,128,0,1) 30%, rgba(0,128,0,1) 70%, rgba(130,244,130,1) 100%);

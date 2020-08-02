@@ -4,13 +4,22 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
    connect(){
-    console.log('barChart');
+    // console.log('barChart');
+
   }
     static targets = [ "liver2", "liver3"]
 
+
    liver2Effect() {
+    let indicatorHeight
+    indicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    let containerHeight
+    containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
+    let a
+    a = (parseInt(indicatorHeight)/parseInt(containerHeight)*100)+"%";
   if (liver2.checked) {
-      var a = document.querySelector("#w0").style.height=((Math.round(slide_wood_yin.value)-10) + "%" );
+      a = parseInt(a) - 10 + "%";
+      document.querySelector("#w0").style.height = a ;
       document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+10) + "%" );
       document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+10) + "%" );
       document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-10) + "%" );
@@ -20,7 +29,7 @@ export default class extends Controller {
     }
 
     else {
-      var a = document.querySelector("#w0").style.height=((Math.round(slide_wood_yin.value)) + "%" );
+       a = document.querySelector("#w0").style.height;
       document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
       document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
       document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
@@ -35,14 +44,15 @@ export default class extends Controller {
   }
 
   liver3Effect(a) {
-    if (liver3.checked) {
-      a = document.querySelector("#w0").style.height;
-     var  b = document.querySelector("#w0").style.height=((parseInt(a)-5) + "%");
+if (liver3.checked) {
+
+      var b = ((parseInt(a)-5) + "%");
+      document.querySelector("#w0").style.height = b ;
       document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+5) + "%" );
       document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+5) + "%" );
       document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-5) + "%" );
     } else {
-      b = document.querySelector("#w0").style.height=((Math.round(slide_wood_yin.value)) + "%" );
+      var b = document.querySelector("#w0").style.height;
       document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
       document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
       document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
@@ -51,6 +61,23 @@ export default class extends Controller {
         b
         + console.log('b= ' + b)
         );
+
+    // if (liver3.checked) {
+    //   var a = document.querySelector("#w0").style.height;
+    //   var b = document.querySelector("#w0").style.height=((parseInt(a)-5) + "%");
+    //   document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+5) + "%" );
+    //   document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+5) + "%" );
+    //   document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-5) + "%" );
+    // } else {
+    //   b = document.querySelector("#w0").style.height=((Math.round(slide_wood_yin.value)) + "%" );
+    //   document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
+    //   document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
+    //   document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
+    // }
+    // return (
+    //     a = b
+    //     + console.log('b= ' + b)
+    //     );
   }
 
 };

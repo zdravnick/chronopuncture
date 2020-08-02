@@ -5,10 +5,10 @@ export default class extends Controller {
  static targets = ["output"]
 
   connect(){
-    console.log('canvas controller');
-    console.log(this.application);
-    console.log(this.outputTarget.style);
-    console.log(this.outputTarget.id);
+    // console.log('canvas controller');
+    // console.log(this.application);
+    // console.log(this.outputTarget.style);
+    // console.log(this.outputTarget.id);
     this.outputTarget.classList.add("canvas-style");
     // this.huiTarget.style.backgroundColor="green";
     let chart = this.outputTarget;

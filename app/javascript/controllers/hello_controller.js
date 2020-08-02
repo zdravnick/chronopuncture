@@ -6,7 +6,7 @@ export default class extends Controller {
   static targets = [ "name1", "probe" ]
 
   connect(){
-    console.log('hello controller');
+    // console.log('hello controller');
   }
 
   switchTheme() {
