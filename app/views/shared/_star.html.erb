@@ -3,26 +3,9 @@
 <div id="myDiv" data-controller="plottychart" data-target="plottychart.myDiv" style="width:800px;height:400px;"></div>
 
 
-<main>
-  <form oninput="output.value = Math.round(range.valueAsNumber / 1000)">
-    <h2>
-      Range slider
-    </h2>
-    <div class="range">
-      <input name="range" type="range" min="0" max="100000">
-      <div class="range-output">
-        <output class="output" name="output" for="range">
-          50
-        </output>
-      </div>
-    </div>
-  </form>
-</main>
-
-
 <div class="histogramme">
 
-  <div class="w0"> 2
+  <div class="w0">
 
       <div class="indicator_wrapper">
 
@@ -34,7 +17,7 @@
     <div class="slyder"> slyder </div>
         <form oninput="output.value = Math.round(slide_wood_yin.value)">
           <div class="slider_wrapper ">
-            <input type="range" value="50" id="slide_wood_yin" >Инь
+            <input type="range" value="50" step="5" id="slide_wood_yin" >Инь
               <output class="output" name="output" for="range">
                50
               </output>
@@ -42,20 +25,38 @@
         </form>
 
 
-    <input type="checkbox" id="liver2"
-    data-controller="barChartCheckboxes"
-    data-target="barChartCheckboxes.liver2"
-    data-action="change->barChartCheckboxes#liver2Effect"  >F.8
+    <label>
+      <input type="checkbox" id="liver8"
+        data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.liver8"
+        data-action="change->barChartCheckboxes#liver8Effect" >F.8
+    </label>
 
-     <input type="checkbox" id="liver3"
-    data-controller="barChartCheckboxes"
-    data-target="barChartCheckboxes.liver3"
-    data-action="change->barChartCheckboxes#liver3Effect"  >F.1 Да-дунь
+    <label>
+      <input type="checkbox" id="liver1"
+        data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.liver1"
+        data-action="change->barChartCheckboxes#liver1Effect" >F.1
+    </label>
+
+    <label>
+      <input type="checkbox" id="kidney10"
+        data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.kidney10"
+        data-action="change->barChartCheckboxes#kidney10Effect" >R.3
+    </label>
+
+    <label>
+      <input type="checkbox" id="kidney7"
+        data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.kidney7"
+        data-action="change->barChartCheckboxes#kidney7Effect" >R.7
+    </label>
 
   </div>
 
 
-  <div class="w1"> 3
+  <div class="w1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="w1"></div>
@@ -65,7 +66,7 @@
 
       <form oninput="output.value = Math.round(slide_wood_yang.value)">
         <div class="slider_wrapper ">
-          <input type="range" value="50" id="slide_wood_yang">Ян
+          <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
@@ -74,7 +75,7 @@
 
   </div>
 
-  <div class="f0"> 5
+  <div class="f0">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="f0"></div>
@@ -84,7 +85,7 @@
 
     <form oninput="output.value = Math.round(slide_fire_yin.value)">
         <div class="slider_wrapper ">
-         <input type="range" value="50" id="slide_fire_yin">Инь
+         <input type="range" value="50" step="5" id="slide_fire_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
@@ -93,7 +94,7 @@
 
   </div>
 
-  <div class="f1"> 6
+  <div class="f1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="f1"></div>
@@ -102,7 +103,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_fire_yang.value)">
         <div class="slider_wrapper ">
-         <input type="range" value="50" id="slide_fire_yang">Ян
+         <input type="range" value="50" step="5" id="slide_fire_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
@@ -111,7 +112,7 @@
 
   </div>
 
-  <div class="fe0"> 8
+  <div class="fe0">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="fe0"></div>
@@ -120,7 +121,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
         <div class="slider_wrapper ">
-     <input type="range" value="50" id="slide_fire_in_earth_yin">Инь
+     <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
@@ -129,7 +130,7 @@
 
   </div>
 
-  <div class="fe1"> 9
+  <div class="fe1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="fe1"></div>
@@ -138,7 +139,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_fire_in_earth_yang.value)">
         <div class="slider_wrapper ">
-      <input type="range" value="50" id="slide_fire_in_earth_yang">Ян
+      <input type="range" value="50" step="5" id="slide_fire_in_earth_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
@@ -147,7 +148,7 @@
 
   </div>
 
-  <div class="e0"> 11
+  <div class="e0">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="e0"></div>
@@ -156,7 +157,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_earth_yin.value)">
         <div class="slider_wrapper ">
-       <input type="range" value="50" id="slide_earth_yin">Инь
+       <input type="range" value="50" step="5" id="slide_earth_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
@@ -164,7 +165,7 @@
       </form>
    </div>
 
-  <div class="e1"> 12
+  <div class="e1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="e1"></div>
@@ -173,7 +174,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_earth_yang.value)">
         <div class="slider_wrapper ">
-       <input type="range" value="50" id="slide_earth_yang">Ян
+       <input type="range" value="50" step="5" id="slide_earth_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
@@ -181,7 +182,7 @@
       </form>
    </div>
 
-  <div class="m0"> 14
+  <div class="m0">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="m0"></div>
@@ -190,7 +191,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_metal_yin.value)">
         <div class="slider_wrapper ">
-      <input type="range" value="50" id="slide_metal_yin">Инь
+      <input type="range" value="50" step="5" id="slide_metal_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
@@ -198,7 +199,7 @@
       </form>
    </div>
 
-  <div class="m1"> 15
+  <div class="m1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="m1"></div>
@@ -207,7 +208,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_metal_yang.value)">
         <div class="slider_wrapper ">
-       <input type="range" value="50" id="slide_metal_yang">Ян
+       <input type="range" value="50" step="5" id="slide_metal_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
@@ -215,7 +216,7 @@
       </form>
    </div>
 
-  <div class="wt0"> 17
+  <div class="wt0">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="wt0"></div>
@@ -224,7 +225,7 @@
     <div class="slyder"> slyder </div>
         <form oninput="output.value = Math.round(slide_water_yin.value)">
         <div class="slider_wrapper ">
-       <input type="range" value="50" id="slide_water_yin">Инь
+       <input type="range" value="50" step="5" id="slide_water_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
@@ -232,7 +233,7 @@
       </form>
    </div>
 
-  <div class="wt1"> 18
+  <div class="wt1">
     <div class="indicator_wrapper">
       <div class="indicator_background">
         <div class="indicator" id="wt1"></div>
@@ -241,7 +242,7 @@
     <div class="slyder"> slyder </div>
     <form oninput="output.value = Math.round(slide_water_yang.value)">
         <div class="slider_wrapper ">
-      <input type="range" value="50" id="slide_water_yang">Ян
+      <input type="range" value="50" step="5" id="slide_water_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>

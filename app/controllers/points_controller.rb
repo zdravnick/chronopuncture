@@ -4016,8 +4016,8 @@ class PointsController < ApplicationController
       small_intestine =
       [
         { values: 21..24, points: 'Ig.1(21) + Rp.1(44), V.64(22) + C.3(43),
-          Ig.2(23-bad) + Rp.2(42-bad), V.65(24) + C.41(41)' },
-        { values: 41..44, points: 'C.41(41) + V.65(24), Rp.2(42-bad) + Ig.2(23-bad),
+          Ig.2(23-bad) + Rp.2(42-bad), V.65(24) + C.4(41)' },
+        { values: 41..44, points: 'C.4(41) + V.65(24), Rp.2(42-bad) + Ig.2(23-bad),
           C.3(43) + V.64(22), Rp.1(44) + Ig.1(21),' }, # mirror 21..24
         { values: 33..36, points: 'Ig.3(33) + C.8(32) , V.40(34-bad) + E.36(31-bad)
           Ig.4(35) + C.7(30), V.60(36) + E.41(29)' },

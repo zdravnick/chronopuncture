@@ -7,77 +7,138 @@ export default class extends Controller {
     // console.log('barChart');
 
   }
-    static targets = [ "liver2", "liver3"]
+    static targets = [ "liver8", "liver1", "kidney10", "kidney7" ]
 
 
-   liver2Effect() {
-    let indicatorHeight
-    indicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
-    let containerHeight
+   liver8Effect() {
+    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
+    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight;
     containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
-    let a
-    a = (parseInt(indicatorHeight)/parseInt(containerHeight)*100)+"%";
-  if (liver2.checked) {
-      a = parseInt(a) - 10 + "%";
-      document.querySelector("#w0").style.height = a ;
-      document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+10) + "%" );
-      document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+10) + "%" );
-      document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-10) + "%" );
-      document.querySelector("#fe0").style.height=((Math.round(slide_fire_in_earth_yin.value)+5) + "%" );
-      document.querySelector("#fe1").style.height=((Math.round(slide_fire_in_earth_yang.value)-5) + "%" );
-      document.querySelector("#e0").style.height=((Math.round(slide_earth_yin.value)-5) + "%" );
-    }
 
+    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
+    fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+
+
+    if (liver8.checked) {
+      document.querySelector("#w0").style.height = (woodYinCurrentValue - 10) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue + 10) + "%";
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue - 5) + "%";
+      }
     else {
-       a = document.querySelector("#w0").style.height;
-      document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
-      document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
-      document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
-      document.querySelector("#fe0").style.height=((Math.round(slide_fire_in_earth_yin.value)) + "%" );
-      document.querySelector("#fe1").style.height=((Math.round(slide_fire_in_earth_yang.value)) + "%" );
-      document.querySelector("#e0").style.height=((Math.round(slide_earth_yin.value)) + "%" );
+      document.querySelector("#w0").style.height = (woodYinCurrentValue + 10) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue - 10) + "%";
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue + 5) + "%";
+
     }
-      return (
-        a
-        + console.log('a= ' + a)
+    return (
+      document.querySelector("#w0").style.height
+      + document.querySelector("#f0").style.height
+      + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
+      + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
+      + console.log('water_yin= ' + document.querySelector("#wt0").style.height)
+      );
+  }
+
+  liver1Effect() {
+    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
+    fireYinIndicatorHeight;
+    containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
+
+    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
+    fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    if (liver1.checked) {
+      document.querySelector("#w0").style.height = (woodYinCurrentValue - 5) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue + 5) + "%";
+    } else {
+      document.querySelector("#w0").style.height = (woodYinCurrentValue + 5) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue - 5) + "%";
+    }
+    return (
+      document.querySelector("#w0").style.height
+      + document.querySelector("#f0").style.height
+      + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
+      + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
         );
   }
 
-  liver3Effect(a) {
-if (liver3.checked) {
 
-      var b = ((parseInt(a)-5) + "%");
-      document.querySelector("#w0").style.height = b ;
-      document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+5) + "%" );
-      document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+5) + "%" );
-      document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-5) + "%" );
+
+  kidney10Effect() {
+    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
+    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight;
+    containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
+
+    waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
+    fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+
+    if (kidney10.checked) {
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue - 5) + "%";
+      document.querySelector("#w0").style.height = (woodYinCurrentValue + 5) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue - 5) + "%";
+
     } else {
-      var b = document.querySelector("#w0").style.height;
-      document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
-      document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
-      document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue + 5) + "%";
+      document.querySelector("#w0").style.height = (woodYinCurrentValue - 5) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue + 5) + "%";
+
     }
     return (
-        b
-        + console.log('b= ' + b)
+      document.querySelector("#w0").style.height
+      + document.querySelector("#f0").style.height
+      + console.log('water_yin= ' + document.querySelector("#wt0").style.height)
+      + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
+      + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
         );
+  }
 
-    // if (liver3.checked) {
-    //   var a = document.querySelector("#w0").style.height;
-    //   var b = document.querySelector("#w0").style.height=((parseInt(a)-5) + "%");
-    //   document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)+5) + "%" );
-    //   document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)+5) + "%" );
-    //   document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)-5) + "%" );
-    // } else {
-    //   b = document.querySelector("#w0").style.height=((Math.round(slide_wood_yin.value)) + "%" );
-    //   document.querySelector("#w1").style.height=((Math.round(slide_wood_yang.value)) + "%" );
-    //   document.querySelector("#f0").style.height=((Math.round(slide_fire_yin.value)) + "%" );
-    //   document.querySelector("#f1").style.height=((Math.round(slide_fire_yang.value)) + "%" );
-    // }
-    // return (
-    //     a = b
-    //     + console.log('b= ' + b)
-    //     );
+  kidney7Effect() {
+    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
+    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight;
+    containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
+
+    waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
+    fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    if (kidney7.checked) {
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue - 10) + "%";
+      document.querySelector("#w0").style.height = (woodYinCurrentValue + 10) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue - 5) + "%";
+    } else {
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue + 10) + "%";
+      document.querySelector("#w0").style.height = (woodYinCurrentValue - 10) + "%";
+      document.querySelector("#f0").style.height = (fireYinCurrentValue + 5) + "%";
+    }
+    return (
+      document.querySelector("#w0").style.height
+      + document.querySelector("#f0").style.height
+      + console.log('water_yin= ' + document.querySelector("#wt0").style.height)
+      + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
+      + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
+        );
   }
 
 };
