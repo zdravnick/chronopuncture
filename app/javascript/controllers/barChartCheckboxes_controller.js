@@ -7,10 +7,216 @@ export default class extends Controller {
     // console.log('barChart');
 
   }
-    static targets = [ "liver8", "liver1", "kidney10", "kidney7" ]
+    static targets = ["sliderContainer", "myRange", "liver8", "liver1", "kidney10", "kidney7", "w0", "indicator", "wood_yin_range", "indicatorWrapper" ]
 
+
+
+
+// чужой слайдер
+
+slider2() {
+    // html elements
+    var container = document.getElementById("slider-container");
+    var slider = document.getElementById("slider-bar");
+    var handle = document.getElementById("slider-handle");
+    var submitVal = document.getElementById("submit-value");
+
+
+    // initial values
+    var minVal = Number( document.getElementById("minimum-value").value );
+    var maxVal = Number( document.getElementById("maximum-value").value );
+    var range = maxVal - minVal;
+    var isSliding = false;
+
+
+
+    // recalculate range
+    submitVal.onclick = function() {
+      minVal = Number( document.getElementById("minimum-value").value );
+      maxVal = Number( document.getElementById("maximum-value").value );
+      range = maxVal - minVal;
+
+    };
+
+    // the sliding function
+    var move = function(e) {
+
+      var mouseY = 0;
+      var containerTop = 0;
+      var newHeight = 0;
+      var containerHeight = 0;
+      var percentHght = 0;
+      var x = 0;
+      var y = 0;
+      var sliderValue = 0;
+
+      if (!e) var e = window.event;
+
+      if( e.pageY ){ // all browsers except IE before version 9
+        mouseY = e.pageY;
+
+      } else if ( e.clientY ) { // IE before version 9
+        mouseY = e.clientY;
+      }
+
+      containerTop = container.offsetTop;
+      newHeight = mouseY - containerTop;
+      containerHeight = container.offsetHeight;
+      percentHght = newHeight * 100 / containerHeight;
+
+      if( (percentHght <= 100) && (percentHght >= 0) ) {
+        slider.style.height = (percentHght) + '%';
+        y = 100 - percentHght;
+        x = y * range / 100;
+
+      } else if( percentHght < 0 ) {
+        percentHght = 0;
+        slider.style.height = (percentHght) + '%';
+        y = 100 - percentHght;
+        x = y * range / 100;
+
+      } else if( percentHght > 100 ) {
+        percentHght = 100;
+        slider.style.height = (percentHght) + '%';
+        y = 100 - percentHght;
+        x = y * range / 100;
+      }
+      sliderValue = Math.round(x);
+      document.getElementById('sliderValue').innerHTML = sliderValue + minVal;
+    };
+
+    // adding the slide functionality
+     var addSlide
+     addSlide = function() {
+      isSliding = true;
+      if ( !window.addEventListener ){
+        document.attachEvent('onmousemove',move);
+      } else {
+        document.addEventListener('mousemove', move, false);
+      }
+    };
+
+    // removing the slide functionality
+     var cancelSlide
+     cancelSlide = function() {
+      if( isSliding ) {
+        if ( window.removeEventListener ) {
+          document.removeEventListener('mousemove', move, false);
+        } else if ( window.detachEvent ) {
+          document.detachEvent('onmousemove', move );
+        }
+      }
+    };
+
+    // cancelling event bubbling
+    // cancelling default event action
+    var cancelBubble = function(e) {
+      var evt = e ? e:window.event;
+
+      if( evt.stopPropagation ){
+        evt.stopPropagation();
+      }
+
+      if( evt.cancelBubble != null ){
+        evt.cancelBubble = true;
+      }
+
+      if( evt.preventDefault ){
+        evt.preventDefault();
+      } else {
+        evt.returnValue = false;
+      }
+    };
+
+    // capture events
+    //capturing the mousedown on the handle
+    handle.onmousedown = function(e) {
+      addSlide();
+      cancelBubble(e);
+    }
+
+    //capture the mouseup on the handle
+    handle.onmouseup = function(e) {
+      cancelSlide();
+      cancelBubble(e);
+    }
+
+    // capture the mouse up on the slider
+    slider.onmouseup = function(e) {
+      cancelSlide();
+      cancelBubble(e);
+    }
+
+    // capture the mouse down on the slider
+    slider.onmousedown = function(e) {
+      move(e);
+      cancelBubble(e);
+    }
+
+    // capture the mouse up on the container
+    container.onmouseup = function(e) {
+      cancelSlide();
+      cancelBubble(e);
+    }
+
+    // capture the mouse down on the container
+    container.onmousedown = function(e) {
+      move(e);
+      cancelBubble(e);
+    }
+
+    // capture the mouse up on the window
+    document.onmouseup = function(e) {
+      cancelSlide();
+      cancelBubble(e);
+    }
+
+  }
+
+
+// конец чужого слайдера
+
+    slider(){
+      var slider = document.getElementById("my_range");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+      let a;
+      a = slider.value;
+      console.log(a);
+      // this.myRangeTarget.style.background = `linear-gradient(90deg, black ${a}, #eee ${(a+1) + '%'}, red ${(a+2) + '%'})`;
+      document.getElementById("my_range").style.background = `linear-gradient(90deg, #00b300 ${parseInt(a) + '%'}, #eee ${(parseInt(a)+1) + '%'}, #CCC0C0C0 ${(parseInt(a)+1) + '%'})`;
+      slider.oninput = function() {
+      output.innerHTML = this.value;
+  }
+    }
+
+
+    IndicatorWrapperRange(){
+    let container, containerOffset, containerCoords, box, boxTop, boxBottom, woodYinHeight, coordMouseY;
+    this.indicatorWrapperTarget;
+    containerOffset = this.indicatorWrapperTarget.offsetHeight;
+    box = this.indicatorWrapperTarget.getBoundingClientRect();
+    boxTop = Math.round(box.top);
+    boxBottom = Math.round(box.bottom);
+
+    this.indicatorWrapperTarget.addEventListener('click', changeHeight, true)
+    function changeHeight(evt) {
+    coordMouseY = evt.offsetY;
+    woodYinHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
+    document.querySelector("#w0").style.height = (parseInt(woodYinHeight) + "%" );
+    return document.querySelector("#w0").style.height
+    + console.log('woodYinheight: ' + woodYinHeight)
+    + console.log('containerOffset ' + containerOffset)
+    + console.log('Мышь: ' + coordMouseY)
+    + console.log('Элемент:' + evt.target.tagName)
+    // + console.log('Фаза: ' + evt.eventPhase)
+    + console.log(document.querySelector("#w0").style.height);
+  }
+
+  }
 
    liver8Effect() {
+
     let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
     fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight;
     containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;

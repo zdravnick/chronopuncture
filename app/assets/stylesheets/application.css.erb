@@ -1,4 +1,4 @@
-/*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -52,119 +52,6 @@ outline: none !important
   border: 10px solid blue;
 }
 
-.empty {
-  grid-area: .;
-  background-color: lightgrey;
-}
-
-.fire_descr{
-  grid-area: fire_descr;
-/*  background-color: #ffb3b3;*/
-/*  width: 150px;
-  height: 100px;*/
-  text-align: left;
-}
-
-.fire {
-  grid-area: fire;
-  background-color: #ff4d4d;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 100px;
-}
-
-.wood {
-  grid-area: wood;
-  background-color: #00b300;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 100px;
-}
-
-.wood_descr {
-  grid-area: wood_descr;
-  background-color: #99ff99;
-/*  width: 150px;
-  height: 100px;*/
-  text-align: left;
-
-}
-
-.earth {
-  grid-area: earth;
-  background-color: yellow;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 100px;
-}
-.earth_descr {
-  grid-area: earth_descr;
-  background-color:  #ffffb3;
-/*   width: 150px;
-  height: 100px;*/
-  text-align: left;
-
-}
-
-.water_descr {
-  grid-area: water_descr;
-  background-color:  #b1dae7;
-/*   width: 150px;
-  height: 100px;*/
-  text-align: left;
-}
-
-.water {
-  grid-area: water;
-  background-color: #76bdd5;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 100px;
-}
-
-
-
-.metal {
-  grid-area: metal;
-  background-color: #999999;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 100px;
-}
-
-.metal_descr {
-  grid-area: metal_descr;
-  background-color:  #cccccc;
-  text-align: left;
-}
-
-
- .grid_container_star {
-  display: grid;
-  grid-gap: 5px;
-/*  width: 800px;
-  height: 800px;*/
-/* place-items: stretch;*/
-  grid-template-columns: repeat( 5, 1fr);
-  grid-template-rows: 1fr 1fr 1fr ;
-  grid-template-areas: "    .....   fire_descr  fire  ...   ...........  "
-                       " wood_descr    wood       .  earth  earth_descr"
-                       " water_descr   water      .  metal  metal_descr "
- }
-
-
-
-
 .histogramme {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -172,19 +59,13 @@ outline: none !important
 
 }
 
-.probe {
-  height: 100%;
-  width: 50px;
-  background-color: violet;
-}
-
-
 .indicator {
   max-width: 100%;
   min-width: 100%;
  /* box-shadow:   0px -3px  2px #c9c483 ;*/
   box-shadow: 5px 2px 8px 0px #595527;
   height: 50%;
+  max-height: 100%;
   transition: height 0.3s cubic-bezier(0, .5, .5, 1);
   border-top: 3px solid black;
   border-left: 1px solid black;
@@ -192,6 +73,27 @@ outline: none !important
   border-radius: 2px;
 }
 
+.indicator_wrapper {
+  display: grid;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  height: 80%;
+  justify-items: center;
+  align-items: end;
+background: rgb(208,204,149);
+background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%, rgba(223,221,185,1) 51%);
+}
+
+#wood_yin_range {
+  display: grid;
+
+  opacity: 100%;
+  background-color: rgba(238, 130, 238, 0.3);
+  height: 100%;
+  width: 100%;
+  justify-items: center;
+  align-items: end;
+}
 
 .indicator_background {
   display: grid;
@@ -213,17 +115,6 @@ background: linear-gradient(90deg, rgba(183,179,123,1) 8%, rgba(210,207,173,1) 2
 
 }
 
-
-.indicator_wrapper {
-  display: grid;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  height: 80%;
-  justify-items: center;
-  align-items: end;
-background: rgb(208,204,149);
-background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%, rgba(223,221,185,1) 51%);
-}
 
 .slider_wrapper {
    display: grid;
@@ -298,21 +189,10 @@ background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%
   width: 1fr;
 }
 
-
-
 .p {
   background-color: violet;
   width: 1fr;
   }
-
-
-
-.slider {
-  display: grid;
-  width: 5%;
-  -webkit-appearance: slider-vertical;
-}
-
 
 .wood_points, .fire_points, .earth_points, .metal_points, .water_points {
   width: 1fr;
@@ -349,18 +229,126 @@ background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%
 
 input {
 cursor: pointer;
-
 }
 
-
+/*.slider {
+  display: grid;
+  width: 5%;
+  -webkit-appearance: slider-vertical;
+}
+*/
 #slide_wood_yang, #slide_wood_yin, #slide_fire_yin, #slide_fire_yang, #slide_fire_in_earth_yin,
 #slide_fire_in_earth_yang, #slide_earth_yin, #slide_earth_yang, #slide_metal_yin, #slide_metal_yang,
 #slide_water_yin, #slide_water_yang {
   display: grid;
   width: 5%;
-  height: 80px;
+  height: 250px;
+ /* appearance: none;*/
   -webkit-appearance: slider-vertical;
 }
+
+/*НАЧАЛО ЧУЖОГО СЛАЙДЕРА*/
+
+#slider2-container {
+      width: 20px;
+      height: 325px;
+      margin: 10px;
+      margin-top: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      background: red;
+      /* Safari 3-4, iOS 1-3.2, Android 1.6 */
+      -webkit-border-radius: 20px 20px 20px 20px;
+      /* Firefox 1-3.6 */
+      -moz-border-radius: 20px 20px 20px 20px;
+      /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    #slider-bar {
+      width: 100%;
+      height: 100%;
+      background: #E6E6E6;
+      /* Safari 3-4. iOS 1-3.2, Android 1.6 */
+      -webkit-border-radius: 20px 20px 20px 20px;
+      /* Firefox 1-3.6 */
+      -moz-border-radius: 20px 20px 20px 20px;
+      /* Opera 10.5, IE9, Safari 5, Chromer, Firefox 4, iOS 4, Android 2.1+ */
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    #slider-handle {
+      width: 25px;
+      height: 25px;
+      background: #7C7D82;
+      position: relative;
+      left: -2.5px;
+      top: -10px;
+      /* Safari 3-4, iOS 1-3.2, Android 1.6 */
+      -webkit-border-radius: 2px 20px 20px 20px;
+      /* Firefox 1-3.6 */
+      -moz-border-radius: 20px 20px 20px 20px;
+      /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+      border-radius: 20px 20px 20px 20px;
+    }
+
+/*КОНЕЦ ЧУЖОГО СЛАЙДЕРА*/
+
+
+/*input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}*/
+.slider1-container {
+  display: grid;
+  justify-items: center;
+  align-items: end;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #000;
+}
+
+#my_range {
+  -webkit-appearance: none;
+  -webkit-appearance: media-volume-slider;
+ transform:rotate(270deg);
+  transform-origin: center;
+    width: 200px;
+    height: 20px;
+    /* appearance: none;
+/*  -webkit-appearance: media-volume-slider;
+*/  cursor: pointer;
+  background:  #00b300;
+background: -webkit-linear-gradient(left, #00b300 49%, rgba(0,0,0,1) 50%, rgba(249,35,79,1) 50%);
+background: -o-linear-gradient(left, #00b300 49%, rgba(0,0,0,1) 50%, rgba(249,35,79,1) 50%);
+background: linear-gradient(to right, #00b300 49%, rgba(0,0,0,1) 50%, rgba(249,35,79,1) 50%);
+    outline: none;
+    opacity: 0.8;
+      box-shadow: 3px 3px 3px 1px #000000;
+
+}
+
+
+/*input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  background: yellow;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Добавляем классные эффекты для слайдера!
+}*/
+*/
+input[type=range]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #000000;
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 1px;
+  border: 1px solid black;
+}
+
+
+
 
 .wood_bar_yang {
   grid-area: w1;
@@ -599,4 +587,4 @@ a:active,  .btn-control:active {
 }*/
 /*table {
 border: 2px solid black;
-}*/
+}

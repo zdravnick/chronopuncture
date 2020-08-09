@@ -1,7 +1,3 @@
-      end
-    end
-  end.compact.sum
-end
 change_balance_energy(points, elem)
 Element.map{ |e| e.name}
 Element.all.map{ |e| e.name}
@@ -196,5 +192,9 @@ Branch.find(1)
 exit
 Point.find_by(name: 'C.41')
 Point.find_by(name: 'F.8')
+учше
+exit
+Date.new(1974, 9, 18)
+Date.new(1974, 9, 18).yday
 учше
 exit
