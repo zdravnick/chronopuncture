@@ -10,10 +10,6 @@
   <% end %>
   <div>
 
-<div data-controller="hello">
-  <button  class="theme-button" data-action="click->hello#switchTheme">Сделать ночь</button>
-</div>
-
     <%= form_with  local: true, method: :get, url: patients_path do |f| %>
     <%= f.label  'Поиск по имени'  %>
     <%= f.text_field :name %>
@@ -118,13 +114,14 @@
 
   <h3>Список пациентов </h3>
 
-    <% @patients.each do |i| %>
+    <%  @patients.each do |i| %>
       <div class="patient_list_control" ><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.strftime( "%d.%m.%y") + "г.  в " + i.birthdate.strftime( "%H:%M")  + " " + i.diagnosis.to_s %></div>
     <div class="li-control">
       <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
    </div>
     <p></p>
     <% end %>
+    <%= paginate @patients %>
 
 
 <h5>ТОЧКИ ТРАНСФОРМАЦИИ У-СИН:</h5>

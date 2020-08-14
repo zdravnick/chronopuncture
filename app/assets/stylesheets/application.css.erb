@@ -15,22 +15,20 @@
  *= require c3
 
  */
-/*html {
-  height: 100%;
-}*/
+
+
 *{
 outline: none !important
 }
 
- body {
+html, body {
 /*  background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
   background-attachment: fixed;*/
  /* display: grid;*/
-
   height: 100%;
   margin-bottom: 30px;
-  background-color:    #dfddb9;
+
   font-size: 100%;
 
   /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
@@ -39,11 +37,22 @@ outline: none !important
   /*font-weight: bold;*/
  }
 
-.dark-theme {
-  background-color: black;
-  color: violet;
+.theme-light {
+  filter: invert(0%);
+   background-color:    #dfddb9;
 }
 
+.theme-dark {
+  filter: invert(20%);
+  background-color:  darkolivegreen;
+  color: #F0E68C;
+}
+
+.theme-grey {
+  filter: invert(20%);
+  background-color: dimgrey;
+  color: gold;
+}
 .canvas-style {
     border: 5px solid red;
 }
@@ -52,10 +61,69 @@ outline: none !important
   border: 10px solid blue;
 }
 
+.reversed_list {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.reversed_list>li {
+  margin-right: 20px;
+  margin-bottom: 25px;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.reversed_list_without_bullets {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-bottom: 0px;
+}
+
+.reversed_list_without_bullets>li {
+  list-style: none;
+}
+
 .histogramme {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 400px 400px ;
+  grid-template-rows: 400px 400px;
+
+}
+
+#input22-wrapper {
+  display: grid;
+  border: 1px solid orangered;
+  height: 400px;
+/*  width: 80px;*/
+   justify-items: center;
+  align-items: center;
+}
+
+ input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 35px;
+  border: 3px solid #000000;
+
+  background: orange;
+  cursor: pointer;
+  box-shadow: -2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#input22 {
+-webkit-appearance: none;
+    -webkit-appearance: media-volume-slider;
+    transform: rotate(270deg);
+    transform-origin: center;
+  background: linear-gradient( 90deg, green 0%, lime 50%, #fff 50%, grey 100%);
+  border: solid 1px black;
+  border-radius: 8px;
+  width: 300px;
+  height: 30px;
+  outline: none;
+  transition: background 0.5s cubic-bezier(0, .5, .5, 1);
+    box-shadow: -3px 2px 3px #000000;
+
 
 }
 
@@ -330,14 +398,7 @@ background: linear-gradient(to right, #00b300 49%, rgba(0,0,0,1) 50%, rgba(249,3
 }
 
 
-/*input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 1px solid #000000;
-  border-radius: 3px;
-  background: yellow;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Добавляем классные эффекты для слайдера!
-}*/
+
 */
 input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;

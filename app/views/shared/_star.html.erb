@@ -1,7 +1,9 @@
 <% @title="star" %>
 
-
-
+Хром слайдер тут:
+<div id="input22-wrapper">
+    <input id="input22" type="range" value="50" data-controller="barChartCheckboxes" data-action="change->barChartCheckboxes#sliderChange"  data-target="barChartCheckboxes.input22"/>
+</div>
 
 
 <div id="myDiv" data-controller="plottychart" data-target="plottychart.myDiv" style="width:800px;height:400px;"></div>
@@ -11,6 +13,9 @@
   <input type="range" min="1" max="100" value="50" class="slider1" id="my_range" data-controller="barChartCheckboxes" data-action="click->barChartCheckboxes#slider" data-target="barChartCheckboxes.myRange" >
   <p>Value: <span id="demo"></span></p>
 </div>
+
+
+
   Minimum Value: <input id="minimum-value" type="text" value="0"  /> <br/>
     Maximum Value: <input id="maximum-value" type="text" value="100"  /> <br/>
     <input id="submit-value" type="submit" value="Submit"/> <br/>
@@ -21,10 +26,6 @@
     </div>
 
 
-
-
-
-
 <div class="histogramme">
 
   <div class="w0">
@@ -33,7 +34,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
         <div class="indicator_background" id="wood_yin_indicator_background">
-          <div class="indicator" id="w0" ></div>
+          <div class="indicator" id="w0" data-target="barChartCheckboxes.w0"></div>
         </div>
       </div>
     </div>

@@ -7,20 +7,22 @@ export default class extends Controller {
     // console.log('barChart');
 
   }
-    static targets = ["sliderContainer", "myRange", "liver8", "liver1", "kidney10", "kidney7", "w0", "indicator", "wood_yin_range", "indicatorWrapper" ]
+    static targets = ["slider2Container", "input22",  "w0Indicator",  "myRange", "liver8", "liver1", "kidney10", "kidney7", "w0", "indicator", "wood_yin_range", "indicatorWrapper" ]
 
 
-
+sliderChange() {
+    this.input22Target.style.background = 'linear-gradient(90deg, green 0%, lime ' + this.input22Target.value + '%, #fff ' + this.input22Target.value + '%, grey 100%)';
+    console.log(this.input22Target.value);
+}
 
 // чужой слайдер
 
 slider2() {
     // html elements
-    var container = document.getElementById("slider-container");
+    var container = document.getElementById("slider2-container");
     var slider = document.getElementById("slider-bar");
     var handle = document.getElementById("slider-handle");
     var submitVal = document.getElementById("submit-value");
-
 
     // initial values
     var minVal = Number( document.getElementById("minimum-value").value );
@@ -28,14 +30,11 @@ slider2() {
     var range = maxVal - minVal;
     var isSliding = false;
 
-
-
     // recalculate range
     submitVal.onclick = function() {
       minVal = Number( document.getElementById("minimum-value").value );
       maxVal = Number( document.getElementById("maximum-value").value );
       range = maxVal - minVal;
-
     };
 
     // the sliding function
@@ -176,6 +175,7 @@ slider2() {
 
 // конец чужого слайдера
 
+
     slider(){
       var slider = document.getElementById("my_range");
       var output = document.getElementById("demo");
@@ -192,27 +192,23 @@ slider2() {
 
 
     IndicatorWrapperRange(){
-    let container, containerOffset, containerCoords, box, boxTop, boxBottom, woodYinHeight, coordMouseY;
-    this.indicatorWrapperTarget;
-    containerOffset = this.indicatorWrapperTarget.offsetHeight;
-    box = this.indicatorWrapperTarget.getBoundingClientRect();
-    boxTop = Math.round(box.top);
-    boxBottom = Math.round(box.bottom);
+      let container, containerOffset, containerCoords, box, boxTop, boxBottom, woodYinHeight, coordMouseY;
+      this.indicatorWrapperTarget;
+      containerOffset = this.indicatorWrapperTarget.offsetHeight;
+      // box = this.indicatorWrapperTarget.getBoundingClientRect();
+      // boxTop = Math.round(box.top);
+      // boxBottom = Math.round(box.bottom);
 
-    this.indicatorWrapperTarget.addEventListener('click', changeHeight, true)
-    function changeHeight(evt) {
-    coordMouseY = evt.offsetY;
-    woodYinHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
-    document.querySelector("#w0").style.height = (parseInt(woodYinHeight) + "%" );
-    return document.querySelector("#w0").style.height
-    + console.log('woodYinheight: ' + woodYinHeight)
-    + console.log('containerOffset ' + containerOffset)
-    + console.log('Мышь: ' + coordMouseY)
-    + console.log('Элемент:' + evt.target.tagName)
-    // + console.log('Фаза: ' + evt.eventPhase)
-    + console.log(document.querySelector("#w0").style.height);
-  }
+        coordMouseY = event.pageY - event.currentTarget.offsetTop;
 
+
+      woodYinHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
+      this.w0Target.style.height = (parseInt(woodYinHeight) + "%" );
+      return this.w0Target.style.height
+      + console.log('woodYinheight: ' + woodYinHeight)
+      + console.log('Мышь: ' + coordMouseY)
+      + console.log('Фаза: ' + event.eventPhase)
+      + console.log(this.w0Target.style.height);
   }
 
    liver8Effect() {

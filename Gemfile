@@ -7,7 +7,8 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pry'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
+gem 'mysql2'
 gem 'devise'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -21,6 +22,7 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem "d3-rails"
 gem 'c3-rails'
+gem 'kaminari'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

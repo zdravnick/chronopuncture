@@ -1,6 +1,13 @@
 class PatientsController < ApplicationController
 
-  before_action :authenticate_doctor!
+  before_action :authenticate_doctor!, except: :color_mode_action
+
+
+
+def color_mode_action
+    cookies.signed[:color_mode_cookie] = params[:color_mode_param]
+    redirect_back fallback_location: root_path
+  end
 
   def new
     @patient =  Patient.new
@@ -23,7 +30,7 @@ def create
 end
 
   def index
-    @patients = current_doctor.patients
+    @patients = current_doctor.patients.order(updated_at: :desc).page params[:page]
     name = Patient.arel_table[:name]
     Patient.where(name.matches("%#{params[:name]}%"))
     if params[:name].present?
@@ -69,7 +76,7 @@ end
         description: params[:patient]["description"],
         city_id: params[:patient]["city_id"]
       )
-# binding.pry
+
       redirect_back(fallback_location: patients_path)
       # flash[:notice] = 'Данные пациента обновлены, доктор'
     end

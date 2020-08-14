@@ -1,4 +1,5 @@
 <h4>Метод Сложного Баланса</h4>
+
 <h4>поправка EOT в секундах: <%= @eot  %> </h4>
 <h4>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_datetime_zone %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
@@ -13,6 +14,7 @@
 <h5>Проверка 1ая точка Ло-Шу:  <%= @first_point_lo_shu %></h5>
 <h5>Проверка меридиан для заполнения Ло-шу  <%= @meridian_lo_shu %>  </h3>
 <h3>Часовой пояс пациента:  <%= @patient.city.time_zone %></h3>
+<h4> Пациент: <%= @patient.name %>,  Дата рождения: <%= @patient.birthdate.strftime("%d.%m.%Y") %></h4>
 <h3>Открытые Точки: <%= @opened_points_lo_shu  %>  </h3>
 
 

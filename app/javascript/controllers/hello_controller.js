@@ -9,11 +9,7 @@ export default class extends Controller {
     // console.log('hello controller');
   }
 
-  switchTheme() {
-    var mysite = document.querySelector("body");
-    var themeButton = document.querySelector(".themeButton");
-    var theme = mysite.classList.toggle('dark-theme');
-  };
+
 
  probe() {
     if (this.name1Target.checked) {

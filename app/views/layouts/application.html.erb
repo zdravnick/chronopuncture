@@ -18,7 +18,11 @@
 
 
   </head>
-  <body>
+  <body class="<%= cookies.signed[:color_mode_cookie] || 'theme-light' %>">
+  <%= change_theme_link('theme-light', 'День')%>
+  <%= change_theme_link('theme-dark', 'Ночь')%>
+  <%= change_theme_link('theme-grey', 'Серый')%>
+
 
 
   <% if doctor_signed_in? %>
