@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_184150) do
+ActiveRecord::Schema.define(version: 2020_08_26_123732) do
 
-  create_table "branches", force: :cascade do |t|
+  create_table "branches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "serial_number"
     t.string "name"
     t.integer "active_hour_offset"
@@ -25,18 +25,42 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.integer "day_meridian_id"
   end
 
-  create_table "cities", force: :cascade do |t|
+  create_table "chinese_disease_element_influences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "chinese_disease_id", null: false
+    t.bigint "element_id", null: false
+    t.integer "influence"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chinese_disease_id"], name: "index_chinese_disease_element_influences_on_chinese_disease_id"
+    t.index ["element_id"], name: "index_chinese_disease_element_influences_on_element_id"
+  end
+
+  create_table "chinese_diseases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "chinese_diseases_patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "chinese_disease_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "kind"
+    t.index ["chinese_disease_id"], name: "index_chinese_diseases_patients_on_chinese_disease_id"
+    t.index ["patient_id"], name: "index_chinese_diseases_patients_on_patient_id"
+  end
+
+  create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "lng"
-
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "time_zone", default: "UTC"
     t.float "lat"
-
   end
 
-  create_table "doctors", force: :cascade do |t|
+  create_table "doctors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
@@ -56,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
 
-  create_table "elements", force: :cascade do |t|
+  create_table "elements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "yin_yang"
     t.datetime "created_at", precision: 6, null: false
@@ -67,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.integer "season_meridian_second_id"
   end
 
-  create_table "layers", force: :cascade do |t|
+  create_table "layers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "leg_meridian_name"
     t.string "arm_meridian_name"
@@ -82,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.index ["name"], name: "index_layers_on_name"
   end
 
-  create_table "meridians", force: :cascade do |t|
+  create_table "meridians", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "energy_name"
     t.string "element_trunk"
@@ -98,7 +122,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.integer "weak_nutrition_season_point_id"
   end
 
-  create_table "patients", force: :cascade do |t|
+  create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "birthdate"
     t.integer "doctor_id", null: false
@@ -110,7 +134,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.index ["doctor_id"], name: "index_patients_on_doctor_id"
   end
 
-  create_table "points", force: :cascade do |t|
+  create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "alias_en"
     t.string "alias_ru"
@@ -127,7 +151,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.index ["name"], name: "index_points_on_name"
   end
 
-  create_table "truncs", force: :cascade do |t|
+  create_table "truncs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "serial_number"
     t.string "name"
     t.string "element"
@@ -138,7 +162,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "trunks", force: :cascade do |t|
+  create_table "trunks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "serial_number"
     t.string "trunk_energy"
@@ -150,7 +174,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "visits", force: :cascade do |t|
+  create_table "visits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "visited_at"
     t.string "treatment"
     t.integer "patient_id", null: false
@@ -160,4 +184,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_184150) do
     t.index ["patient_id"], name: "index_visits_on_patient_id"
   end
 
+  add_foreign_key "chinese_disease_element_influences", "chinese_diseases"
+  add_foreign_key "chinese_disease_element_influences", "elements"
+  add_foreign_key "chinese_diseases_patients", "chinese_diseases"
+  add_foreign_key "chinese_diseases_patients", "patients"
 end

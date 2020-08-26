@@ -96,6 +96,14 @@
       <p><%= f.text_area :diagnosis, size: "48x3" %></p>
       <%= f.label 'Место рождения (выбрать ближайший областной центр' %>
       <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name,  {:selected => @patient.city&.id} ) %></p>
+      <div>
+        <h5>Tongue</h5>
+        <%= f.collection_check_boxes :tongue_chinese_disease_ids, ChineseDisease.all, :id, :name %>
+      </div>
+      <div>
+        <h5>Pulse</h5>
+        <%= f.collection_check_boxes :pulse_chinese_disease_ids, ChineseDisease.all, :id, :name %>
+      </div>
       <p><%= f.submit  "Обновить данные пациента", class: 'btn-control' %></p>
     <% end %>
   </div>

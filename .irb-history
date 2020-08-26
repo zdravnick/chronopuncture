@@ -1,200 +1,200 @@
-      when 10 then 10
-      end
-      end
-    end
-  end.compact.sum
-end
-change_balance_energy(points, elem)
-id = 1
-def energy_balance(points)
-  points.map do |point|
-    case point.id
-    when 1
-      case id # это айди элемента
-      when 1
-        -10
-      when 2
-        10
-      end
-    when 2
-    end
-  end.sum
-end
-energy_balance(points)
-id = 1
-def energy_balance(points)
-  points.map do |point|
-    case point.id
-    when 1
-      case id # это айди элемента
-      when 1
-        -10
-      when 2
-        10
-      end
-    when 2
-    end
-  end.sum
-end
-energy_balance(points)id = 1
-def energy_balance(points, id)
-  points.map do |point|
-    case point.id
-    when 1
-      case id # это айди элемента
-      when 1
-        -10
-      when 2
-        10
-      end
-    when 2
-    end
-  end.sum
-end
-energy_balance(points, id)
-def energy_balance(points)
-  points.map do |point|
-    case point.id
-    when 1
-      case id # это айди элемента
-      when 1
-        -10
-      when 2
-        10
-      end
-    when 2
-    end
-  end.sum
-end
-energy_balance(points)
-exit
-points = Point.all
-def energy_balance(points)
-  points.map do |point|
-    case point.id
-    when 1
-      case id # это айди элемента
-      when 1
-        -10
-      when 2
-        10
-      end
-    when 2
-    end
-  end.sum
-end
-energy_balance(points)
-energy_balance(points)
-exit
-Point.last
-a = Point.last
-a.update serial_number: 9
-a.save
-a
-a
-exit
-Meridian.last.big_nourish_point
-exit
-Element.first
-Element.first.energy_balance(Point.find(1))
-Element.first.energy_balance(Point.all)
-exit
-Element.first.energy_balance(Point.all)
-exit
-Element.first.energy_balance
-Element.first.energy_balance(Point.all)
-Element.first.energy_balance(Point.find(1))
-Element.first.energy_balance(Point.find(1))
-Element.first.energy_balance(Point.all)
-Удуьутеюашкые
-Element.first
-Element.first.energy_balance(Point.all)
-Element.first.energy_balance(Point.all)
-exit
-учше
-exit
-Point.last
-exit
+Trunc.find_by(serial_number: range[:value])
+range[:dates].include?(date.to_date)
+range[:dates
+  range[:dates]
+range[:dates]
+@base_star_wu_yun
+@star_5_energies_wu_yun
+@star_season_energies_wu_yun
+star_5_energies_wu_yun
+@star_5_energies_wu_yun
+@star_5_energies_wu_yun.uniq
+@star_season_energies_wu_yun
+@star_season_energies_wu_yun.uniq
+@full_layer.leg_meridian
+@full_layer.leg_meridian@full_layer.leg_meridian_element
+@full_layer.leg_meridian_element
+@full_trunc_year.year_meridian
+@full_trunc_year.element
+@full_trunc_year
+@star_5_energies_wu_yun
+@star_season_energies_wu_yun
+@star_5_energies_wu_yun.uniq
+@star_5_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
+@star_season_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+@a = @star_5_energies_wu_yun_remainder & @star_5_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+@a = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
 Meridian.last
-Meridian.last.points
-Meridian.last.points.each{ |a| p 'Точка: ', a.serial_number, a.alias_ru}
-Point.last
-Meridian.last.element
-Meridian.last
+@star_5_energies_wu_yun_remainder
+Meridian.where(energy_name: @star_5_energies_wu_yun_remainder)
+@star_5_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder_meridians
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder
+@star_1_star_2_intersection =
+@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
+@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatte
+@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
+@star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
+@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
+@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
+@star_1_star_2_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
+@star_1_star_2_energy_names_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
+@star_1_star_2_energies_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
+[1, 1] & [1,2]
+star_1_star_2_energies_intersection
+@star_1_star_2_energies_intersection
+@missing_energies_meridians
+@missing_energies_meridians = Meridian.where(energy_name: @star_1_star_2_energies_intersection)
+@star_1_star_2_energies_intersection
+@missing_energies_meridians.class
+@missing_energies_meridians.to_a
+@missing_energies_meridians
+exit
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+star_5_energies_wu_yun_remainder_meridians@
+@star_5_energies_wu_yun_remainder
+Meridian.where(energy_name:@star_5_energies_wu_yun_remainder)
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+exit
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun
+@star_5_energies_wu_yun.uniq
+@star_season_energies_wu_yun
+@star_season_energies_wu_yun.uniq
+Meridian.where(element_branch: 'Metal')
+@star_season_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
+@star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder
+@star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder_meridians
+@star_5_energies_wu_yun_remainder_meridians.map &:name
+@star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
+@star_season_energies_wu_yun_remainder_meridians.map &:name
+@star_season_energies_wu_yun_remainder
+@star_5_energies_wu_yun_remainder_meridians.map &:name
+@star_season_energies_wu_yun_remainder_meridians.map &:name
+@star_5_energies_wu_yun_remainder_meridians.map(&:id)
+@star_season_energies_wu_yun_remainder_meridians.map(&:id)
+@a = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
+@ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
+@a = Meridian.where(id: @ids)
+exit
+params
+self.empty_layer_wu_yun_table(full_layer)
+result
+result.flatten
+result.class
+result.flatten.class
+result[1]
+result.flatten[1]
+params
+Point.all.find(params[:id])
+params
+@points
+Point.all.find(params[:id])
+@points = Point.all.find(params[:id])
+@points
+@points = Point.all.find(params[:id])
+params
+@point = Point.all.find(params[:id])
+@point
+params
+∂
+params
+@bolt
+@bolt = "wood"
+@bolt = params["wood"]
+@bolt = params["wood"].to_s
+params
+params[]
+params[1]
+params[0]
+params["wood"]
+params["water"]
+params["earth"]
+@bolt
+[params["wood"], params["earth"]]
+@bolt
+exit
+@change_color
+params["wood"]
+params
+params["wood"]
+if params["wood"] == 1
+  21:     @change_color == 'red'
+  @change_color
+@change_color
+params["wood"]
+params["wood"].to_e
+params["wood"].to_i
+@change_color
+params["wood"].to_i
+change_color
+@change_color
+slide_wood_yin
+<input type="range" min="5" max="95" value="50" javascript: onInput:"change_heigth()"; >
+range
+params
+cookies.signed[:color_mode_cookie]
+cookies
+params
+:color_mode_cookie
+:color_mode_cookie[value]
+:color_mode_cookie[:value]
+:color_mode_cookie[0]
+params
+@theme 
+cookies.signed[:color_mode_cookie] = params[:color_mode_param]
+@theme =  cookies.signed[:color_mode_cookie]
+cd Patient.find(78)
+id
+element = Element.first
+chinese_diseases
+chinese_diseases.first
+chinese_diseases.first.influences
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).influence
+end
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).influence
+end
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+end
+chinese_diseases.first.influences
+chinese_diseases.first.influences.where(element: element)
+element = Element.find 2
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+end
+chinese_diseases.first.influences.where(element_id: element.id).sum(:influence)
+chinese_diseases.last.influences.where(element_id: element.id).sum(:influence)
+chinese_diseases.last.influences.where(element_id: element.id)
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+end.sum
+element
+chinese_diseases.first.influences.where(element_id: element.id)
+ChineseDiseaseElementInfluence.create chinese_disease_id: 3, element_id: 2, influence: 50
+chinese_diseases.map do |chinese_disease|
+  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+end.sum
+ChineseDiseaseElementInfluence.last.destroy
 Element.last
-water_yin = Element.last
-water_yin
-water_yin.season_meridian_first
-water_yin.season_meridian_second
-water_yin.big_nutrition_point
-exit
-Element.first.energy_balance(Point.all)
-Element.first.energy_balance(Point.all)
-strong nutrition point iexit
-exit
-Element.first
-exit
-Point.find_by( name: 'V.67')
-exit
-Branch.all.size
-Branch.first
-Branch.first.day_meridian
-Branch.find(2).day_meridian
-Branch.find(3).day_meridian
-Branch.find_by(name: 'Перикард')
-Branch.day_meridian.find_by(name: 'Перикард')
-Branch.all.map{ |a| a.day_meridian.find_by(name: 'Перикард')}
-Branch.all.map{ |a| a.alias_ru, a.id,  a.day_meridian}
-Branch.map{ |a| a.alias_ru, a.id,  a.day_meridian}
-Branch.all.map{ |a|p  a.alias_ru, a.id,  a.day_meridian}
-Branch.find(1)
-Branch.find(1).day_meridian
-Branch.find(1)
-exit
-Point.find_by(name: 'C.41')
-Point.find_by(name: 'F.8')
-учше
-exit
-Date.new(1974, 9, 18)
-Date.new(1974, 9, 18).yday
-учше
-exit
-User.where("name like '%Куч%' ")
-Patient.where("name like '%Куч%' ")
-Patient.where("name like '%куч%' ")
-Patient.where("name ilike '%куч%' ")
-Patient.where("UPPER(name) like '%куч%' ")
-Patient.where("UPPER(name) like '%Куч%' ")
-Patient.where("UPPER(name) like '%куч%' ")
-Patient.where("UPPER(name) like '%КУЧ%' ")
-Patient.where("UPPER(name) like '%КУЧ%' ")
-Patient.where("UPPER(name) like '%куч%' ")
-man sqlite
-exit
-Patient.last
-Patient.create
-City.create name: 'aaa'
-exit
-Branch.last
-City.last
-Patient.last
-doctor.last
-Doctor.last
-Element.last
-Layer.last
-Meridian.last
-Patient.last
-Point.last
-Trunc.last
-Trunk.last
-Trunk.last
-Patient.last.visits
-Patient.last
-Patient.where("UPPER(name) like '%КУЧ%' ")
-Patient.where("UPPER(name) like '%куч%' ")
-Patient.where("UPPER(name) like '%куЧ%' ")
-Patient.where("name like '%куЧ%' ")
-Patient.where("name like '%бОб%' ")
-Patient.where("name like '%,j,%' ")
-Patient.where("name like '%б%' ")
+Element.find_by(name: 'Wood', yin_yang: 'Yin')
+element = Element.find_by(name: 'Wood', yin_yang: 'Yin')
 exit

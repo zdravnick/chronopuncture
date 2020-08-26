@@ -38,13 +38,17 @@
         </div>
       </div>
     </div>
-
+    <div>
+      <% element = Element.find_by(name: 'Wood', yin_yang: 'Yin') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
+    </div>
     <div class="slider" > slider </div>
         <form oninput="output.value = Math.round(slide_wood_yin.value)">
           <div class="slider_wrapper ">
-            <input type="range" value="50" step="5" id="slide_wood_yin" >Инь
+            <input type="range" value="<%= value %>" step="5" id="slide_wood_yin" >Инь
               <output class="output" name="output" for="range">
-               50
+               <%= value %>
               </output>
             </div>
         </form>

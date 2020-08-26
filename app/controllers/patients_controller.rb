@@ -74,7 +74,9 @@ end
         params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i).in_time_zone('UTC'),
         diagnosis: params[:patient]["diagnosis"],
         description: params[:patient]["description"],
-        city_id: params[:patient]["city_id"]
+        city_id: params[:patient]["city_id"],
+        pulse_chinese_disease_ids: params[:patient][:pulse_chinese_disease_ids],
+        tongue_chinese_disease_ids: params[:patient][:tongue_chinese_disease_ids],
       )
 
       redirect_back(fallback_location: patients_path)
