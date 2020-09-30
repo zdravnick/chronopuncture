@@ -1,0 +1,24 @@
+<h3>Метод Лунных Дворцов</h3>
+<h3> Для мужчины:</h3>
+<% @points_of_lunar_palaces[0][:men].map do |point| %>
+<%= link_to point.name.to_s + " " + point.alias_ru.to_s, controller: :points, action: :show_point, id: point.id %>
+<% end %>
+<h3> Для женщины:</h3>
+<% @points_of_lunar_palaces[0][:woman].map do |point|  %>
+<%= link_to point.name.to_s + " " + point.alias_ru.to_s, controller: :points, action: :show_point, id: point.id %>
+<% end %>
+
+
+<h4> Расчетный день:  <%= @day.to_s +  '.' + @month.to_s + '.' + @year.to_s %> </h4>
+<h4> @lunar_palaces_year_num <%= @lunar_palaces_year_num %> </h4>
+<h4> @lunar_palaces_month_num <%= @lunar_palaces_month_num %> </h4>
+<h4> @leap_correction <%= @leap_correction %> </h4>
+<h4> @lunar_palace <%= @lunar_palace %> </h4>
+<h4> @lunar_palace_opposite <%= @lunar_palace_opposite %> </h4>
+
+
+
+
+
+
+
