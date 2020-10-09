@@ -1,200 +1,200 @@
-Trunc.find_by(serial_number: range[:value])
-range[:dates].include?(date.to_date)
-range[:dates
-  range[:dates]
-range[:dates]
-@base_star_wu_yun
-@star_5_energies_wu_yun
-@star_season_energies_wu_yun
-star_5_energies_wu_yun
-@star_5_energies_wu_yun
-@star_5_energies_wu_yun.uniq
-@star_season_energies_wu_yun
-@star_season_energies_wu_yun.uniq
-@full_layer.leg_meridian
-@full_layer.leg_meridian@full_layer.leg_meridian_element
-@full_layer.leg_meridian_element
-@full_trunc_year.year_meridian
-@full_trunc_year.element
-@full_trunc_year
-@star_5_energies_wu_yun
-@star_season_energies_wu_yun
-@star_5_energies_wu_yun.uniq
-@star_5_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
-@star_season_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-@a = @star_5_energies_wu_yun_remainder & @star_5_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-@a = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
-Meridian.last
-@star_5_energies_wu_yun_remainder
-Meridian.where(energy_name: @star_5_energies_wu_yun_remainder)
-@star_5_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder_meridians
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder
-@star_1_star_2_intersection =
-@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
-@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatte
-@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
-@star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
-@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
-@star_5_energies_wu_yun_remainder_meridians.compact.flatten & @star_season_energies_wu_yun_remainder_meridians.compact.flatten
-@star_1_star_2_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
-@star_1_star_2_energy_names_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
-@star_1_star_2_energies_intersection = @star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
-[1, 1] & [1,2]
-star_1_star_2_energies_intersection
-@star_1_star_2_energies_intersection
-@missing_energies_meridians
-@missing_energies_meridians = Meridian.where(energy_name: @star_1_star_2_energies_intersection)
-@star_1_star_2_energies_intersection
-@missing_energies_meridians.class
-@missing_energies_meridians.to_a
-@missing_energies_meridians
-exit
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-star_5_energies_wu_yun_remainder_meridians@
-@star_5_energies_wu_yun_remainder
-Meridian.where(energy_name:@star_5_energies_wu_yun_remainder)
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-exit
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun
-@star_5_energies_wu_yun.uniq
-@star_season_energies_wu_yun
-@star_season_energies_wu_yun.uniq
-Meridian.where(element_branch: 'Metal')
-@star_season_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
-@star_5_energies_wu_yun_remainder & @star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder
-@star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder_meridians
-@star_5_energies_wu_yun_remainder_meridians.map &:name
-@star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
-@star_season_energies_wu_yun_remainder_meridians.map &:name
-@star_season_energies_wu_yun_remainder
-@star_5_energies_wu_yun_remainder_meridians.map &:name
-@star_season_energies_wu_yun_remainder_meridians.map &:name
-@star_5_energies_wu_yun_remainder_meridians.map(&:id)
-@star_season_energies_wu_yun_remainder_meridians.map(&:id)
-@a = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
-@ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
-@a = Meridian.where(id: @ids)
-exit
-params
-self.empty_layer_wu_yun_table(full_layer)
-result
-result.flatten
-result.class
-result.flatten.class
-result[1]
-result.flatten[1]
-params
-Point.all.find(params[:id])
-params
-@points
-Point.all.find(params[:id])
-@points = Point.all.find(params[:id])
-@points
-@points = Point.all.find(params[:id])
-params
-@point = Point.all.find(params[:id])
-@point
-params
-∂
-params
-@bolt
-@bolt = "wood"
-@bolt = params["wood"]
-@bolt = params["wood"].to_s
-params
-params[]
-params[1]
-params[0]
-params["wood"]
-params["water"]
-params["earth"]
-@bolt
-[params["wood"], params["earth"]]
-@bolt
-exit
-@change_color
-params["wood"]
-params
-params["wood"]
-if params["wood"] == 1
-  21:     @change_color == 'red'
-  @change_color
-@change_color
-params["wood"]
-params["wood"].to_e
-params["wood"].to_i
-@change_color
-params["wood"].to_i
-change_color
-@change_color
-slide_wood_yin
-<input type="range" min="5" max="95" value="50" javascript: onInput:"change_heigth()"; >
-range
-params
-cookies.signed[:color_mode_cookie]
-cookies
-params
-:color_mode_cookie
-:color_mode_cookie[value]
-:color_mode_cookie[:value]
-:color_mode_cookie[0]
-params
-@theme 
-cookies.signed[:color_mode_cookie] = params[:color_mode_param]
-@theme =  cookies.signed[:color_mode_cookie]
-cd Patient.find(78)
-id
-element = Element.first
-chinese_diseases
-chinese_diseases.first
-chinese_diseases.first.influences
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).influence
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return our_array = array_fibonacci
 end
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).influence
+fibonacci_numbers
+our_array
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return our_array = array_fibonacci
 end
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+fibonacci_numbers
+our_array
+our_array = []
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return our_array = array_fibonacci
 end
-chinese_diseases.first.influences
-chinese_diseases.first.influences.where(element: element)
-element = Element.find 2
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).sum(:influence)
+fibonacci_numbers
+our_array
+array_fibonacci
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return our_array = array_fibonacci
 end
-chinese_diseases.first.influences.where(element_id: element.id).sum(:influence)
-chinese_diseases.last.influences.where(element_id: element.id).sum(:influence)
-chinese_diseases.last.influences.where(element_id: element.id)
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).sum(:influence)
-end.sum
-element
-chinese_diseases.first.influences.where(element_id: element.id)
-ChineseDiseaseElementInfluence.create chinese_disease_id: 3, element_id: 2, influence: 50
-chinese_diseases.map do |chinese_disease|
-  chinese_disease.influences.where(element_id: element.id).sum(:influence)
-end.sum
-ChineseDiseaseElementInfluence.last.destroy
-Element.last
-Element.find_by(name: 'Wood', yin_yang: 'Yin')
-element = Element.find_by(name: 'Wood', yin_yang: 'Yin')
+fibonacci_numbers
+array_fibonacci
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return our_array = array_fibonacci
+end
+array_fibonacci
+@array_fibonacci
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return array_fibonacci
+end
+fibonacci_numbers
+@array_fibonacci
+@array_fibonacci
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return @array_fibonacci
+end
+fibonacci_numbers
+@array_fibonacci
 exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return array_fibonacci
+end
+@array_fibonacci = fibonacci_numbers
+sss
+@array_fibonacci
+exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+end
+@array_fibonacci = fibonacci_numbers
+@array_fibonacci
+exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+end
+fibonacci_numbers
+fibonacci_numbers
+fibonacci_numbersarray_fibonacci
+array_fibonacci
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return array_fibonacci
+end
+fibonacci_numbers
+array_fibonacci
+exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return @numbers = array_fibonacci
+end
+fibonacci_numbers
+@numbers
+exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+end
+@numbers = fibonacci_numbers
+@numbers
+exit
+def fibonacci_numbers
+  puts 'Укажите верхнюю границу(число)'
+  num = gets.chomp.to_i
+  array_fibonacci = [0, 1, 1]
+  loop do |n|
+    new_num = array_fibonacci.last + array_fibonacci[-2]
+    break if new_num > num
+    array_fibonacci << new_num
+  end
+  return array_fibonacci
+end
+@numbers = fibonacci_numbers
+@numbers
+@numbers.last
+@numbers.seventh
+@numbers.forth
+@numbers.third
+@numbers.fifth
+@numbers.sixth
+@numbers
+@numbers.first
+@numbers.second
+@numbers.fifth
+@numbers[6]
+@numbers.last
+@numbers[-2]
+var changedIndicators = ["#wood_yin_range", "#wood_yang_range"];

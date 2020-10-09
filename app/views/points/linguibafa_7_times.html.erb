@@ -22,26 +22,37 @@
     <td><%=  elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
-    <td>Ветвь ЧАСА: <%= @branch_hour %> </td>
+    <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
     <td>
       <table>
           <h4  class="highlight" > <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%></h4>
           <h4  class="highlight" > <%= elem[:date].strftime('%d %b, %A')%></h4>
 
         <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
-         <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-2.hours )%>
-          <%  point = opened_point_linguibafa(@doctor_city, date+@offset_for_time_table) %>
-          <tr class="<%= (date+@offset_timezone_doctor..date+@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight' : '' %>">
-            <td> <%= (date+@offset_timezone_doctor).strftime("%H:%M")  %> </td>
+
+         <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-2.hours)+@offset_timezone_doctor%>
+         <% date2_utc = Time.now.utc.change(hour: hour, min: Time.now.utc.strftime('%M'))  %>
+         <% date3_in_doctor_time_zone = Time.now.in_time_zone(current_doctor.city.time_zone).change(hour: hour, min: Time.now.utc.strftime('%M'))  %>
+
+         <% date4_in_sun_time_in_doctor_time_zone = Time.now.in_time_zone(current_doctor.city.time_zone).change(hour: hour) + sun_time_difference(@doctor_city, date3_in_doctor_time_zone.in_time_zone('UTC')) %>
+         <% date2_in_doctor_time_zone = date2_utc.in_time_zone(current_doctor.city.time_zone)  %>
+         <% date2_in_doctor_time_zone_from = date4_in_sun_time_in_doctor_time_zone %>
+         <% date2_in_doctor_time_zone_to = date4_in_sun_time_in_doctor_time_zone + 2.hours %>
+          <%  point = opened_point_linguibafa(@doctor_city, date3_in_doctor_time_zone.in_time_zone('UTC')) %>
+        <% highlight = (date2_in_doctor_time_zone_from..date2_in_doctor_time_zone_to).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
+
+
+          <tr class="<%= highlight ? 'highlight' : '' %>">
+            <td> <%= date2_in_doctor_time_zone_from.strftime("%H:%M")  %> </td>
             <td> - </td>
-            <td> <%= (date+@offset_timezone_doctor+2.hour).strftime("%H:%M")  %> </td>
+            <td> <%= date2_in_doctor_time_zone_to.strftime("%H:%M")  %> </td>
              <td>
               <% if params[:a]%>
                <%  if point == params[:a] %>
                 <%= point %>
                 <%  end%>
                 <%  else %>
-               <div  class="<%= (date+@offset_timezone_doctor..date+@offset_timezone_doctor+2.hour).cover?(@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)) ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%= link_to point, params.permit!.merge({a: point})%>
+               <div  class="<%= highlight ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%= link_to point, params.permit!.merge({a: point})%>
                 </div>
               <%  end %>
              </td>

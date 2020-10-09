@@ -43,9 +43,9 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <div class="slider" > slider </div>
         <form oninput="output.value = Math.round(slide_wood_yin.value)">
           <div class="slider_wrapper ">
+            <div class="slider" > Печень </div>
             <input type="range" value="<%= value %>" step="5" id="slide_wood_yin" >Инь
               <output class="output" name="output" for="range">
                <%= value %>
@@ -72,7 +72,7 @@
       <input type="checkbox" id="kidney10"
         data-controller="barChartCheckboxes"
         data-target="barChartCheckboxes.kidney10"
-        data-action="change->barChartCheckboxes#kidney10Effect" >R.3
+        data-action="change->barChartCheckboxes#kidney10Effect" >R.10
     </label>
 
     <label>
@@ -86,15 +86,18 @@
 
 
   <div class="w1">
-    <div class="indicator_wrapper">
-      <div class="indicator_background">
-        <div class="indicator" id="w1"></div>
+    <div class="indicator_wrapper" >
+      <div id="wood_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
+        <div class="indicator_background">
+          <div class="indicator" id="w1"></div>
+        </div>
       </div>
     </div>
-    <div class="slider"> slider </div>
-
       <form oninput="output.value = Math.round(slide_wood_yang.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Желчный </div>
           <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
             <output class="output" name="output" for="range">
               50
@@ -106,14 +109,17 @@
 
   <div class="f0">
     <div class="indicator_wrapper">
+      <div id="fire_yin_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
         <div class="indicator" id="f0"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
-
+    </div>
     <form oninput="output.value = Math.round(slide_fire_yin.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Сердце  </div>
          <input type="range" value="50" step="5" id="slide_fire_yin">Инь
             <output class="output" name="output" for="range">
               50
@@ -125,13 +131,17 @@
 
   <div class="f1">
     <div class="indicator_wrapper">
-      <div class="indicator_background">
+      <div id="fire_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
+          <div class="indicator_background">
         <div class="indicator" id="f1"></div>
         </div>
+      </div>
     </div>
-    <div class="slider"> slider </div>
     <form oninput="output.value = Math.round(slide_fire_yang.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Тонкий</div>
          <input type="range" value="50" step="5" id="slide_fire_yang">Ян
             <output class="output" name="output" for="range">
               50
@@ -143,13 +153,17 @@
 
   <div class="fe0">
     <div class="indicator_wrapper">
+      <div id="fire_in_earth_yin_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
         <div class="indicator" id="fe0"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
+    </div>
     <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Перикард </div>
      <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
             <output class="output" name="output" for="range">
               50
@@ -165,9 +179,9 @@
         <div class="indicator" id="fe1"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
     <form oninput="output.value = Math.round(slide_fire_in_earth_yang.value)">
         <div class="slider_wrapper ">
+         <div class="slider"> Тройной </div>
       <input type="range" value="50" step="5" id="slide_fire_in_earth_yang">Ян
             <output class="output" name="output" for="range">
               50
@@ -183,9 +197,9 @@
         <div class="indicator" id="e0"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
     <form oninput="output.value = Math.round(slide_earth_yin.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Селезенка </div>
        <input type="range" value="50" step="5" id="slide_earth_yin">Инь
             <output class="output" name="output" for="range">
               50
@@ -200,9 +214,9 @@
         <div class="indicator" id="e1"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
     <form oninput="output.value = Math.round(slide_earth_yang.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Желудок </div>
        <input type="range" value="50" step="5" id="slide_earth_yang">Ян
             <output class="output" name="output" for="range">
               50
@@ -217,9 +231,9 @@
         <div class="indicator" id="m0"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
     <form oninput="output.value = Math.round(slide_metal_yin.value)">
         <div class="slider_wrapper ">
+         <div class="slider"> Легкие </div>
       <input type="range" value="50" step="5" id="slide_metal_yin">Инь
             <output class="output" name="output" for="range">
               50
@@ -230,13 +244,17 @@
 
   <div class="m1">
     <div class="indicator_wrapper">
+      <div id="metal_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
         <div class="indicator" id="m1"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
+    </div>
     <form oninput="output.value = Math.round(slide_metal_yang.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Толстый </div>
        <input type="range" value="50" step="5" id="slide_metal_yang">Ян
             <output class="output" name="output" for="range">
               50
@@ -247,13 +265,18 @@
 
   <div class="wt0">
     <div class="indicator_wrapper">
+      <div id="water_yin_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
         <div class="indicator" id="wt0"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
+    </div>
+
         <form oninput="output.value = Math.round(slide_water_yin.value)">
         <div class="slider_wrapper ">
+          <div class="slider"> Почки </div>
        <input type="range" value="50" step="5" id="slide_water_yin">Инь
             <output class="output" name="output" for="range">
               50
@@ -264,13 +287,17 @@
 
   <div class="wt1">
     <div class="indicator_wrapper">
+      <div id="water_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
         <div class="indicator" id="wt1"></div>
         </div>
       </div>
-    <div class="slider"> slider </div>
+    </div>
     <form oninput="output.value = Math.round(slide_water_yang.value)">
         <div class="slider_wrapper ">
+              <div class="slider"> Мочевой </div>
       <input type="range" value="50" step="5" id="slide_water_yang">Ян
             <output class="output" name="output" for="range">
               50

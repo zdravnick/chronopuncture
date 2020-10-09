@@ -61,8 +61,10 @@ class PointsController < ApplicationController
   end
 
   def linguibafa_7_times
+    # binding.pry
   @opened_points_linguibafa =
     ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
+      puts date
     {date: date, point: opened_point_linguibafa(@doctor_city, date) }
     end
   end
@@ -70,6 +72,8 @@ class PointsController < ApplicationController
   helper_method :opened_point_linguibafa
   helper_method :opened_points_naganfa
   helper_method :opened_points_infusion_2
+  helper_method :sun_time
+  helper_method :sun_time_difference
   helper_method :slider
 
   def slider
@@ -314,6 +318,10 @@ class PointsController < ApplicationController
       end
       base = base_meridian*4.minutes
     date + (city[:lng]*4).minutes + eot(date).seconds
+  end
+
+  def sun_time_difference(city, date)
+    (city[:lng]*4).minutes + eot(date).seconds
   end
 
   def number_of_day_calculation(city, date)

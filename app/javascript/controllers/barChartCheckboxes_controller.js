@@ -211,37 +211,84 @@ slider2() {
       + console.log(this.w0Target.style.height);
   }
 
+  kidneyEffects(){
+    let kidneyPoints = [kidney10, kidney7];
+    for (let point of kidneyPoints){
+      if (point.checked){
+        console.log('ok');
+      };
+    }
+  }
+
+
    liver8Effect() {
 
-    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
-    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight;
+    let containerHeight, woodYangIndicatorHeight, woodYangCurrentValue, fireYinCurrentValue,
+    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight,
+    waterYangIndicatorHeight, fireInEarthYinIndicatorHeight, fireInEarthYinCurrentValue,
+    metalYangIndicatorHeight, waterYangCurrentValue, metalYangCurrentValue,
+    fireYangIndicatorHeight, fireYangCurrentValue;
+
     containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
 
-    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
-    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+    woodYangIndicatorHeight = getComputedStyle(document.querySelector("#w1")).height;
+    woodYangCurrentValue = parseInt(woodYangIndicatorHeight)/parseInt(containerHeight)*100;
 
     fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
     fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
 
+    fireInEarthYinIndicatorHeight = getComputedStyle(document.querySelector("#fe0")).height;
+    fireInEarthYinCurrentValue = parseInt(fireInEarthYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    metalYangIndicatorHeight = getComputedStyle(document.querySelector("#m1")).height;
+    metalYangCurrentValue = parseInt(metalYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireYangIndicatorHeight = getComputedStyle(document.querySelector("#f1")).height;
+    fireYangCurrentValue = parseInt(fireYangIndicatorHeight)/parseInt(containerHeight)*100;
+
     waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
     waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
 
+    waterYangIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYangCurrentValue = parseInt(waterYangIndicatorHeight)/parseInt(containerHeight)*100;
 
 
-    if (liver8.checked) {
-      document.querySelector("#w0").style.height = (woodYinCurrentValue - 10) + "%";
+    let changedIndicators = ["#wood_yang_range", "#fire_yin_range", "#fire_yang_range",
+    "#fire_in_earth_yin_range", "#metal_yang_range", "#water_yin_range", "#water_yang_range"];
+
+
+    if (liver8.checked){
+      document.querySelector("#w1").style.height = (woodYangCurrentValue - 10) + "%";
       document.querySelector("#f0").style.height = (fireYinCurrentValue + 10) + "%";
-      document.querySelector("#wt0").style.height = (waterYinCurrentValue - 5) + "%";
+      document.querySelector("#f1").style.height = (fireYangCurrentValue  - 5) + "%";
+      document.querySelector("#fe0").style.height = (fireInEarthYinCurrentValue  + 10) + "%";
+      document.querySelector("#m1").style.height = (metalYangCurrentValue  - 10) + "%";
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue + 10) + "%";
+      document.querySelector("#wt1").style.height = (waterYangCurrentValue + 10) + "%";
+
+      for (var element of changedIndicators) {
+        document.querySelector(element).classList.add('indicator_selected');
+      }
       }
     else {
-      document.querySelector("#w0").style.height = (woodYinCurrentValue + 10) + "%";
+      document.querySelector("#w1").style.height = (woodYangCurrentValue + 10) + "%";
       document.querySelector("#f0").style.height = (fireYinCurrentValue - 10) + "%";
-      document.querySelector("#wt0").style.height = (waterYinCurrentValue + 5) + "%";
+      document.querySelector("#f1").style.height = (fireYangCurrentValue + 5) + "%";
+      document.querySelector("#fe0").style.height = (fireInEarthYinCurrentValue  - 10) + "%";
+      document.querySelector("#m1").style.height = (metalYangCurrentValue  + 10) + "%";
+      document.querySelector("#wt0").style.height = (waterYinCurrentValue - 10) + "%";
+      document.querySelector("#wt1").style.height = (waterYangCurrentValue - 10) + "%";
 
+
+      for (var element of changedIndicators) {
+        document.querySelector(element).classList.remove('indicator_selected');
+      }
     }
     return (
-      document.querySelector("#w0").style.height
-      + document.querySelector("#f0").style.height
+      // document.querySelector("#w0").style.height
+      // document.querySelector("#w1").style.height
+      // + document.querySelector("#f0").style.height
+      // + document.querySelector("#wt0").style.height
       + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
       + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
       + console.log('water_yin= ' + document.querySelector("#wt0").style.height)
@@ -269,8 +316,8 @@ slider2() {
     return (
       document.querySelector("#w0").style.height
       + document.querySelector("#f0").style.height
-      + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
-      + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
+      // + console.log('wood_yin= ' + document.querySelector("#w0").style.height)
+      // + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
         );
   }
 
