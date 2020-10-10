@@ -212,14 +212,17 @@ slider2() {
   }
 
   kidneyPointsEffect(){
+    let changedIndicators = ["#wood_yin_range", "#water_yang_range"];
     let kidneyPoints = [kidney10, kidney7];
-    for (let point of kidneyPoints){
-      if (point.checked){
-        console.log('ok');
-      };
+    if (kidneyPoints.some(point => point.checked))
+       for (var element of changedIndicators) {
+        document.querySelector(element).classList.add('indicator_selected');
+      }
+   else if (kidneyPoints.some(point => point.checked == false))
+    for (var element of changedIndicators) {
+      document.querySelector(element).classList.remove('indicator_selected');
     }
   }
-
 
   liver8Effect(){
     let containerHeight, woodYangIndicatorHeight, woodYangCurrentValue, fireYinCurrentValue,
