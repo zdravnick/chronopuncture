@@ -211,7 +211,7 @@ slider2() {
       + console.log(this.w0Target.style.height);
   }
 
-  kidneyEffects(){
+  kidneyPointsEffect(){
     let kidneyPoints = [kidney10, kidney7];
     for (let point of kidneyPoints){
       if (point.checked){
@@ -221,13 +221,12 @@ slider2() {
   }
 
 
-   liver8Effect() {
-
+  liver8Effect(){
     let containerHeight, woodYangIndicatorHeight, woodYangCurrentValue, fireYinCurrentValue,
-    fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight,
-    waterYangIndicatorHeight, fireInEarthYinIndicatorHeight, fireInEarthYinCurrentValue,
-    metalYangIndicatorHeight, waterYangCurrentValue, metalYangCurrentValue,
-    fireYangIndicatorHeight, fireYangCurrentValue;
+      fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight,
+      waterYangIndicatorHeight, fireInEarthYinIndicatorHeight, fireInEarthYinCurrentValue,
+      metalYangIndicatorHeight, waterYangCurrentValue, metalYangCurrentValue,
+      fireYangIndicatorHeight, fireYangCurrentValue;
 
     containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
 
@@ -249,7 +248,7 @@ slider2() {
     waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
     waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
 
-    waterYangIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYangIndicatorHeight = getComputedStyle(document.querySelector("#wt1")).height;
     waterYangCurrentValue = parseInt(waterYangIndicatorHeight)/parseInt(containerHeight)*100;
 
 
@@ -320,8 +319,6 @@ slider2() {
       // + console.log('fire_yin= ' + document.querySelector("#f0").style.height)
         );
   }
-
-
 
   kidney10Effect() {
     let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, fireYinCurrentValue,
