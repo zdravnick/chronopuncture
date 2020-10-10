@@ -216,11 +216,11 @@ slider2() {
     let kidneyPoints = [kidney10, kidney7];
     if (kidneyPoints.some(point => point.checked))
        for (var element of changedIndicators) {
-        document.querySelector(element).classList.add('indicator_selected');
+        document.querySelector(element).classList.add('indicator_selected_kidney');
       }
    else if (kidneyPoints.some(point => point.checked == false))
     for (var element of changedIndicators) {
-      document.querySelector(element).classList.remove('indicator_selected');
+      document.querySelector(element).classList.remove('indicator_selected_kidney');
     }
   }
 
