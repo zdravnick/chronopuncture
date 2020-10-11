@@ -212,15 +212,62 @@ slider2() {
   }
 
   kidneyPointsEffect(){
-    let changedIndicators = ["#wood_yin_range", "#water_yang_range"];
+    let containerHeight, woodYinIndicatorHeight, woodYinCurrentValue, woodYangIndicatorHeight, woodYangCurrentValue, fireYinCurrentValue,
+      fireYinIndicatorHeight, waterYinCurrentValue, waterYinIndicatorHeight, waterYangCurrentValue,
+      waterYangIndicatorHeight, fireInEarthYinIndicatorHeight, fireInEarthYinCurrentValue,
+      fireInEarthYangIndicatorHeight, fireInEarthYangCurrentValue, earthYangIndicatorHeight,
+      earthYangCurrentValue, metalYangIndicatorHeight, metalYangCurrentValue, fireYangIndicatorHeight, fireYangCurrentValue;
+      containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
+
+    woodYinIndicatorHeight = getComputedStyle(document.querySelector("#w0")).height;
+    woodYinCurrentValue = parseInt(woodYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    let changedIndicators = ["#wood_yin_range", "#wood_yang_range", "#water_yang_range",
+     "#fire_in_earth_yang_range", "#earth_yin_range", "#earth_yang_range", "#metal_yang_range"];
+
     let kidneyPoints = [kidney10, kidney7];
+
     if (kidneyPoints.some(point => point.checked))
-       for (var element of changedIndicators) {
-        document.querySelector(element).classList.add('indicator_selected_kidney');
+      for (var element of changedIndicators) {
+      document.querySelector(element).classList.add('indicator_selected_kidney');
       }
-   else if (kidneyPoints.some(point => point.checked == false))
-    for (var element of changedIndicators) {
-      document.querySelector(element).classList.remove('indicator_selected_kidney');
+    else if (kidneyPoints.some(point => point.checked == false))
+      for (var element of changedIndicators) {
+        document.querySelector(element).classList.remove('indicator_selected_kidney');
+    };
+
+    waterYinIndicatorHeight = getComputedStyle(document.querySelector("#wt0")).height;
+    waterYinCurrentValue = parseInt(waterYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+    waterYangIndicatorHeight = getComputedStyle(document.querySelector("#wt1")).height;
+    waterYangCurrentValue = parseInt(waterYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    woodYangIndicatorHeight = getComputedStyle(document.querySelector("#w1")).height;
+    woodYangCurrentValue = parseInt(woodYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    fireInEarthYangIndicatorHeight = getComputedStyle(document.querySelector("#fe1")).height;
+    fireInEarthYangCurrentValue = parseInt(fireInEarthYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    earthYangIndicatorHeight = getComputedStyle(document.querySelector("#e1")).height;
+    earthYangCurrentValue = parseInt(earthYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    metalYangIndicatorHeight = getComputedStyle(document.querySelector("#m1")).height;
+    metalYangCurrentValue = parseInt(metalYangIndicatorHeight)/parseInt(containerHeight)*100;
+
+    if (kidney7.checked){
+      document.querySelector("#w0").style.height = (woodYinCurrentValue + 10) + "%";
+      document.querySelector("#w1").style.height = (woodYangCurrentValue + 10) + "%";
+      document.querySelector("#fe1").style.height = (fireInEarthYangCurrentValue + 10) + "%";
+      document.querySelector("#e1").style.height = (earthYangCurrentValue - 10) + "%";
+      document.querySelector("#m1").style.height = (metalYangCurrentValue  - 10) + "%";
+      document.querySelector("#wt1").style.height = (waterYangCurrentValue  - 10) + "%";
+    } else {
+      document.querySelector("#w0").style.height = (woodYinCurrentValue - 10) + "%";
+      document.querySelector("#w1").style.height = (woodYangCurrentValue - 10) + "%";
+      document.querySelector("#fe1").style.height = (fireInEarthYangCurrentValue - 10) + "%";
+      document.querySelector("#e1").style.height = (earthYangCurrentValue + 10) + "%";
+      document.querySelector("#m1").style.height = (metalYangCurrentValue  + 10) + "%";
+      document.querySelector("#wt1").style.height = (waterYangCurrentValue + 10) + "%";
     }
   }
 
@@ -269,7 +316,7 @@ slider2() {
       document.querySelector("#wt1").style.height = (waterYangCurrentValue + 10) + "%";
 
       for (var element of changedIndicators) {
-        document.querySelector(element).classList.add('indicator_selected');
+        document.querySelector(element).classList.add('indicator_selected_liver');
       }
       }
     else {
@@ -283,7 +330,7 @@ slider2() {
 
 
       for (var element of changedIndicators) {
-        document.querySelector(element).classList.remove('indicator_selected');
+        document.querySelector(element).classList.remove('indicator_selected_liver');
       }
     }
     return (
@@ -371,6 +418,8 @@ slider2() {
 
     fireYinIndicatorHeight = getComputedStyle(document.querySelector("#f0")).height;
     fireYinCurrentValue = parseInt(fireYinIndicatorHeight)/parseInt(containerHeight)*100;
+
+
 
     if (kidney7.checked) {
       document.querySelector("#wt0").style.height = (waterYinCurrentValue - 10) + "%";
