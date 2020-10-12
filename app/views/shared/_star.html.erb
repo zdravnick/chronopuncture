@@ -28,13 +28,13 @@
 
 <div class="histogramme">
 
-  <div class="w0">
+  <div class="wood_yin">
     <div class="indicator_wrapper" id="indicator_wrapper">
       <div id="wood_yin_range" data-controller="barChartCheckboxes"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
         <div class="indicator_background" id="wood_yin_indicator_background">
-          <div class="indicator" id="w0" data-target="barChartCheckboxes.w0"></div>
+          <div class="indicator" id="wood_yin" data-target="barChartCheckboxes.woodYin"></div>
         </div>
       </div>
     </div>
@@ -53,35 +53,35 @@
             </div>
         </form>
 
+    <div class="container_label">
+      <label>
+        <input type="checkbox" id="liver8"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.liver8"
+          data-action="change->barChartCheckboxes#liver8Effect" >F.8
+      </label>
 
-    <label>
-      <input type="checkbox" id="liver8"
-        data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.liver8"
-        data-action="change->barChartCheckboxes#liver8Effect" >F.8
-    </label>
+      <label>
+        <input type="checkbox" id="liver1"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.liver1"
+          data-action="change->barChartCheckboxes#liver1Effect" >F.1
+      </label>
 
-    <label>
-      <input type="checkbox" id="liver1"
-        data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.liver1"
-        data-action="change->barChartCheckboxes#liver1Effect" >F.1
-    </label>
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >F.
+      </label>
 
-    <label>
-      <input type="checkbox" id="kidney10"
-        data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.kidney10"
-        data-action="change->barChartCheckboxes#kidneyPointsEffect" >R.10
-    </label>
-
-    <label>
-      <input type="checkbox" id="kidney7"
-        data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.kidney7"
-        data-action="change->barChartCheckboxes#kidneyPointsEffect" >R.7
-    </label>
-
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >F.
+      </label>
+    </div>
   </div>
 
 
@@ -91,7 +91,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
         <div class="indicator_background">
-          <div class="indicator" id="w1"></div>
+          <div class="indicator" id="wood_yang"></div>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="f0"></div>
+        <div class="indicator" id="fire_yin"></div>
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
           <div class="indicator_background">
-        <div class="indicator" id="f1"></div>
+        <div class="indicator" id="fire_yang"></div>
         </div>
       </div>
     </div>
@@ -157,7 +157,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="fe0"></div>
+        <div class="indicator" id="fire_in_earth_yin"></div>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="fe1"></div>
+        <div class="indicator" id="fire_in_earth_yang"></div>
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="e0"></div>
+        <div class="indicator" id="earth_yin"></div>
         </div>
       </div>
     </div>
@@ -222,7 +222,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="e1"></div>
+        <div class="indicator" id="earth_yang"></div>
         </div>
       </div>
     </div>
@@ -243,7 +243,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="m0"></div>
+        <div class="indicator" id="metal_yin"></div>
         </div>
       </div>
     </div>
@@ -256,6 +256,35 @@
             </output>
           </div>
       </form>
+      <div class="container_label">
+      <label>
+        <input type="checkbox" id="lung9"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.lung9"
+          data-action="change->barChartCheckboxes#lung9Effect" >P.9
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >P.8
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.kidney10"
+          data-action="change->barChartCheckboxes#" >P.
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >P.
+      </label>
+    </div>
    </div>
 
   <div class="m1">
@@ -264,7 +293,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="m1"></div>
+        <div class="indicator" id="metal_yang"></div>
         </div>
       </div>
     </div>
@@ -277,6 +306,35 @@
             </output>
           </div>
       </form>
+      <div class="container_label">
+        <label>
+        <input type="checkbox" id=""
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >F.8
+        </label>
+
+        <label>
+          <input type="checkbox" id=""
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >F.1
+        </label>
+
+        <label>
+          <input type="checkbox" id=""
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >R.10
+        </label>
+
+        <label>
+          <input type="checkbox" id=""
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >R.7
+        </label>
+      </div>
    </div>
 
   <div class="wt0">
@@ -284,21 +342,51 @@
       <div id="water_yin_range" data-controller="barChartCheckboxes"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="wt0"></div>
+        <div class="indicator_background">
+          <div class="indicator" id="water_yin"></div>
         </div>
       </div>
     </div>
-
-        <form oninput="output.value = Math.round(slide_water_yin.value)">
+      <form oninput="output.value = Math.round(slide_water_yin.value)">
         <div class="slider_wrapper ">
-          <div class="slider"> Почки </div>
-       <input type="range" value="50" step="5" id="slide_water_yin">Инь
-            <output class="output" name="output" for="range">
-              50
-            </output>
+          <div class="slider">
+            Почки
           </div>
+          <input type="range" value="50" step="5" id="slide_water_yin">Инь
+          <output class="output" name="output" for="range">
+            50
+          </output>
+        </div>
       </form>
+      <div class="container_label">
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >R
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >R
+      </label>
+
+      <label>
+        <input type="checkbox" id="kidney10"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.kidney10"
+          data-action="change->barChartCheckboxes#kidney10Effect" >R.10
+      </label>
+
+      <label>
+        <input type="checkbox" id="kidney7"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.kidney7"
+          data-action="change->barChartCheckboxes#kidney7Effect" >R.7
+      </label>
+    </div>
    </div>
 
   <div class="wt1">
@@ -307,7 +395,7 @@
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
-        <div class="indicator" id="wt1"></div>
+        <div class="indicator" id="water_yang"></div>
         </div>
       </div>
     </div>
@@ -320,6 +408,35 @@
             </output>
           </div>
       </form>
+      <div class="container_label">
+      <label>
+        <input type="checkbox" id="bladder67"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.67
+      </label>
+
+      <label>
+        <input type="checkbox" id="bladder66"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.66
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.65
+      </label>
+
+      <label>
+        <input type="checkbox" id=""
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.40
+      </label>
+    </div>
    </div>
 
 </div>
@@ -358,62 +475,62 @@
 
 <script type="text/javascript">
       slide_wood_yin.addEventListener( "change", function() {
-       document.querySelector("#w0").style.height=(slide_wood_yin.value+"%");
+       document.querySelector("#wood_yin").style.height=(slide_wood_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_wood_yang.addEventListener( "change", function() {
-        document.querySelector("#w1").style.height=(slide_wood_yang.value+"%");
+        document.querySelector("#wood_yang").style.height=(slide_wood_yang.value+"%");
     });
 </script>
 
 <script type="text/javascript">
       slide_fire_yin.addEventListener( "change", function() {
-        document.querySelector("#f0").style.height=(slide_fire_yin.value+"%");
+        document.querySelector("fire_yin").style.height=(slide_fire_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_fire_yang.addEventListener( "change", function() {
-        document.querySelector("#f1").style.height=(slide_fire_yang.value+"%");
+        document.querySelector("#fire_yang").style.height=(slide_fire_yang.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_fire_in_earth_yin.addEventListener( "change", function() {
-        document.querySelector("#fe0").style.height=(slide_fire_in_earth_yin.value+"%");
+        document.querySelector("#fire_in_earth_yin").style.height=(slide_fire_in_earth_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_fire_in_earth_yang.addEventListener( "change", function() {
-        document.querySelector("#fe1").style.height=(slide_fire_in_earth_yang.value+"%");
+        document.querySelector("#fire_in_earth_yin").style.height=(slide_fire_in_earth_yang.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_earth_yin.addEventListener( "change", function() {
-        document.querySelector("#e0").style.height=(slide_earth_yin.value+"%");
+        document.querySelector("#earth_yin").style.height=(slide_earth_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_earth_yang.addEventListener( "change", function() {
-        document.querySelector("#e1").style.height=(slide_earth_yang.value+"%");
+        document.querySelector("#earth_yang").style.height=(slide_earth_yang.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_metal_yin.addEventListener( "change", function() {
-        document.querySelector("#m0").style.height=(slide_metal_yin.value+"%");
+        document.querySelector("#metal_yin").style.height=(slide_metal_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_metal_yang.addEventListener( "change", function() {
-        document.querySelector("#m1").style.height=(slide_metal_yang.value+"%");
+        document.querySelector("#metal_yang").style.height=(slide_metal_yang.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_water_yin.addEventListener( "change", function() {
-        document.querySelector("#wt0").style.height=(slide_water_yin.value+"%");
+        document.querySelector("#water_yin").style.height=(slide_water_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
       slide_water_yang.addEventListener( "change", function() {
-        document.querySelector("#wt1").style.height=(slide_water_yang.value+"%");
+        document.querySelector("#water_yang").style.height=(slide_water_yang.value+"%");
     });
 </script>
