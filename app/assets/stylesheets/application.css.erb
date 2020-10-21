@@ -28,7 +28,6 @@ html, body {
  /* display: grid;*/
   height: 100%;
   margin-bottom: 30px;
-
   font-size: 100%;
 
   /*background: #BDB76B; #e9d0af - типа " посветлее-койот". Совсем койот: #deb887 */
@@ -189,9 +188,10 @@ background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%
   border-left: 1px solid #4d4d00;
 }*/
 .liver1_selected, .liver8_selected, .gallBladder44_selected, .spleen2_selected,
- .spleen3_selected, .kidney10_selected, .kidney7_selected, .lung9_selected, .heart9_selected,
- .smallInt1_selected, .heartGuard9_selected, .tripleHeater1_selected, .stomach41_selected,
- .stomach36_selected {
+ .spleen3_selected, .kidney10_selected, .kidney7_selected, .lung9_selected, .lung9Copy1_selected, .lung8_selected,
+  .heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,
+  .heartGuard9_selected, .heartGuard8_selected, .heartGuard7_selected, .tripleHeater1_selected,
+  .tripleHeater3_selected, .tripleHeater6_selected, .stomach41_selected, .stomach36_selected {
   background: rgb(72,61,139,0.75);
   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
   border-right: 1px solid #4d4d00;
@@ -201,6 +201,16 @@ background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%
 .container_label{
   display: grid;
   justify-content: space-evenly;
+}
+
+.similar_points {
+  background-color: rgba(72,61,139, 0.4);
+  border-radius: 5px;
+}
+
+.checked_point {
+  background-color: rgba(255, 69, 0, 0.5);
+  border-radius: 5px;
 }
 
 .indicator_background {
@@ -265,12 +275,12 @@ background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,221,26,1) 20%,
 
 #earth_yang {
   /*background-color: #ffffb3;*/
-  background: rgb(255,255,0);
-background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,255,102,1) 20%, rgba(255,255,179,1) 50%, rgba(255,255,102,1) 80%, rgba(255,255,0,1) 100%);
+  /*background: rgb(255,255,0);
+background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,255,102,1) 20%, rgba(255,255,179,1) 50%, rgba(255,255,102,1) 80%, rgba(255,255,0,1) 100%);*/
 
-background: rgb(255,224,51);
-background: linear-gradient(90deg, rgba(255,224,51,1) 0%, rgba(255,236,128,1) 20%, rgba(255,255,128,1) 50%, rgba(255,236,128,1) 80%, rgba(255,224,51,1) 100%);}
-
+background: rgb(255, 221, 26);
+background: linear-gradient(90deg, rgba(255, 221, 26, 1) 0%, rgba(255,236,128,1) 20%, rgba(255,255,128,1) 50%, rgba(255,236,128,1) 80%, rgba(255, 221, 26, 1) 100%);
+}
 #metal_yin {
  background: rgb(204,204,204);
 background: linear-gradient(90deg, rgba(204,204,204,1) 5%, rgba(153,153,153,1) 20%, rgba(115,115,115,1) 50%, rgba(153,153,153,1) 80%, rgba(204,204,204,1) 95%);

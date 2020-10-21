@@ -1,46 +1,3 @@
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return our_array = array_fibonacci
-end
-fibonacci_numbers
-our_array
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return our_array = array_fibonacci
-end
-fibonacci_numbers
-our_array
-our_array = []
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return our_array = array_fibonacci
-end
-fibonacci_numbers
-our_array
-array_fibonacci
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
     array_fibonacci << new_num
   end
   return our_array = array_fibonacci
@@ -198,3 +155,46 @@ end
 @numbers.last
 @numbers[-2]
 var changedIndicators = ["#wood_yin_range", "#wood_yang_range"];
+a = 'abcd'
+b = 
+abc'
+a = b
+a
+b = 
+b
+b = 'abc'
+a =b
+ a = b 
+2
+b
+a
+a == b
+b = 'abcd'
+a == b
+if a == b puts 'ok'
+if a != b puts 'ok'
+a
+a
+b
+if a != b puts 'ok'
+ puts 'ok' if a == b
+ puts 'ok' if a != b
+function stopDefaultAction(evt) {
+    evt.preventDefault();
+}
+let lungPoints = [ '#lung9', '#lungCopy', '#lung88'];
+var index;
+for (index = 0; index < lungPoints.length; ++index) {
+    console.log("lungPoints[index]" + lungPoints[index]);
+  }
+for (target of lungPoints)
+  if (target.includes('#lung9')){
+  console.log("target" + target);
+  document.querySelector( target).classList.toggle('red');
+    if (target != '#lung9'){
+    for (let target of lungPoints)
+      document.querySelector(elem).addEventListener(
+      'click', stopDefaultAction, false
+       );
+    }
+2

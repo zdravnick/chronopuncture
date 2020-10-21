@@ -1,29 +1,7 @@
 <% @title="star" %>
 
-Хром слайдер тут:
-<div id="input22-wrapper">
-    <input id="input22" type="range" value="50" data-controller="barChartCheckboxes" data-action="change->barChartCheckboxes#sliderChange"  data-target="barChartCheckboxes.input22"/>
-</div>
 
 
-<div id="myDiv" data-controller="plottychart" data-target="plottychart.myDiv" style="width:800px;height:400px;"></div>
-
-
-<div class="slider1-container"  >Вот мой новый ползунок
-  <input type="range" min="1" max="100" value="50" class="slider1" id="my_range" data-controller="barChartCheckboxes" data-action="click->barChartCheckboxes#slider" data-target="barChartCheckboxes.myRange" >
-  <p>Value: <span id="demo"></span></p>
-</div>
-
-
-
-  Minimum Value: <input id="minimum-value" type="text" value="0"  /> <br/>
-    Maximum Value: <input id="maximum-value" type="text" value="100"  /> <br/>
-    <input id="submit-value" type="submit" value="Submit"/> <br/>
-    Slider Value: <span id="sliderValue"></span> <br/>
-    <div id="slider2-container" data-controller="barChartCheckboxes" data-action="click->barChartCheckboxes#slider2" data-target="barChartCheckboxes.sliderContainer">
-      <div id="slider-bar" ></div>
-      <div id="slider-handle" ></div>
-    </div>
 
 
 <div class="histogramme">
@@ -53,12 +31,15 @@
             </div>
         </form>
     <div class="container_label">
-      <label>
-        <input type="checkbox" id="liver8"
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes.liver8"
-          data-action="change->barChartCheckboxes#liver8Effect" >F.8
-      </label>
+      <div class="container_label">
+        <div class="liver8_wrapper" id=liver8_wrapper>
+          <label>
+            <input type="checkbox" id="liver8"
+              data-controller="barChartCheckboxes"
+              data-target="barChartCheckboxes.liver8"
+              data-action="change->barChartCheckboxes#liver8Effect" >F.8
+          </label>
+        </div>
 
       <label>
         <input type="checkbox" id="liver1"
@@ -80,6 +61,7 @@
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >F.
       </label>
+      </div>
     </div>
   </div>
 
@@ -160,27 +142,29 @@
             data-target="barChartCheckboxes.heart9"
             data-action="change->barChartCheckboxes#heart9Effect" >C.9
         </label>
-
-        <label>
-          <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#Effect" >C
-        </label>
-
-        <label>
-          <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >C
-        </label>
-
+        <div class="stomach36_wrapper" id="stomach36Copy1_wrapper">
+          <label>
+            <input type="checkbox" class="stomach36" id="stomach36Copy1" data-same-name-points="stomach36"
+              data-controller="barChartCheckboxes"
+              data-target="barChartCheckboxes.stomach36Copy1"
+              data-action="change->barChartCheckboxes#stomach36Effect" >E.36/1
+          </label>
+        </div>
         <label>
           <input type="checkbox" id=""
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >C
         </label>
+
+        <div class="lung9_wrapper" id="lung9Copy2_wrapper" >
+        <label>
+           <input type="checkbox" class="lung9 " id="lung9Copy2" data-same-name-points="lung9Copy2"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.lung9Copy2"
+          data-action="change->barChartCheckboxes#lung9Copy1Effect" >P.9/2
+        </label>
+      </div>
     </div>
 
   </div>
@@ -206,24 +190,24 @@
       </form>
       <div class="container_label">
         <label>
-          <input type="checkbox" id="smallInt1"
+          <input type="checkbox" id="smallInt3"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.smallInt1"
-            data-action="change->barChartCheckboxes#smallInt1Effect" >Ig.1
+            data-target="barChartCheckboxes.smallInt3"
+            data-action="change->barChartCheckboxes#smallInt3Effect" >Ig.3
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="smallInt5"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#Effect" >Ig
+            data-target="barChartCheckboxes.smallInt5"
+            data-action="change->barChartCheckboxes#smallInt5Effect" >Ig.5
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="smallInt8"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Ig
+            data-target="barChartCheckboxes.smallInt8"
+            data-action="change->barChartCheckboxes#smallInt8Effect" >Ig.8
         </label>
 
         <label>
@@ -264,17 +248,17 @@
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="heartGuard8"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#Effect" >Mc
+            data-target="barChartCheckboxes.heartGuard8"
+            data-action="change->barChartCheckboxes#heartGuard8Effect" >Mc.8
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="heartGuard7"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Mc
+            data-target="barChartCheckboxes.heartGuard7"
+            data-action="change->barChartCheckboxes#heartGuard7Effect" >Mc.7
         </label>
 
         <label>
@@ -316,17 +300,17 @@
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="tripleHeater3"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#Effect" >Tr
+            data-target="barChartCheckboxes.tripleHeater3"
+            data-action="change->barChartCheckboxes#tripleHeater3Effect" >Tr.3
         </label>
 
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" id="tripleHeater6"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Tr
+            data-target="barChartCheckboxes.tripleHeater6"
+            data-action="change->barChartCheckboxes#tripleHeater6Effect" >Tr.6
         </label>
 
         <label>
@@ -409,20 +393,22 @@
           </div>
       </form>
       <div class="container_label">
+        <div class="lung9_wrapper" id="lung9Copy_wrapper" >
         <label>
-          <input type="checkbox" id="stomach41"
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.stomach41"
-            data-action="change->barChartCheckboxes#stomach41Effect">E.41
+           <input type="checkbox" class="lung9" id="lung9Copy1" data-same-name-points="lung9"
+          data-controller="barChartCheckboxes"
+          data-target="barChartCheckboxes.lung9Copy"
+          data-action="change->barChartCheckboxes#lung9Copy1Effect" >P.9/1
         </label>
-
+      </div>
+      <div class="stomach36_wrapper" id="stomach36_wrapper">
         <label>
-          <input type="checkbox" id="stomach36"
+          <input type="checkbox" class="stomach36" id="stomach36" data-same-name-points="stomach36"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.stomach36"
             data-action="change->barChartCheckboxes#stomach36Effect" >E.36
         </label>
-
+      </div>
         <label>
           <input type="checkbox" id=""
             data-controller="barChartCheckboxes"
@@ -459,26 +445,24 @@
           </div>
       </form>
     <div class="container_label">
-      <label>
-        <input type="checkbox" id="lung9"
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes.lung9"
-          data-action="change->barChartCheckboxes#lung9Effect" >P.9
-      </label>
+      <div class="lung9_wrapper" id=lung9_wrapper>
+        <label>
+          <input type="checkbox"  class="lung9" id="lung9" data-same-name-points="lung9"
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes.lung9"
+            data-action="change->barChartCheckboxes#lung9Effect"  >P.9
+        </label>
+      </div>
+      <div class="lung8_wrapper" id=lung8_wrapper>
+        <label>
+          <input type="checkbox" id="lung8"
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes.lung8"
+            data-action="change->barChartCheckboxes#lung8Effect" >P.8
+        </label>
+      </div>
 
-      <label>
-        <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >P.8
-      </label>
 
-      <label>
-        <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes.kidney10"
-          data-action="change->barChartCheckboxes#" >P.
-      </label>
 
       <label>
         <input type="checkbox" id=""
@@ -487,7 +471,8 @@
           data-action="change->barChartCheckboxes#" >P.
       </label>
     </div>
-   </div>
+
+  </div>
 
   <div class="m1">
     <div class="indicator_wrapper">
@@ -561,13 +546,14 @@
         </div>
       </form>
       <div class="container_label">
-      <label>
-        <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >R
-      </label>
-
+        <div class="stomach36_wrapper" id="stomach36Copy2_wrapper">
+          <label>
+            <input type="checkbox" class="stomach36" id="stomach36Copy2" data-same-name-points="stomach36"
+              data-controller="barChartCheckboxes"
+              data-target="barChartCheckboxes.stomach36Copy2"
+              data-action="change->barChartCheckboxes#stomach36Effect" >E.36/2
+          </label>
+        </div>
       <label>
         <input type="checkbox" id=""
           data-controller="barChartCheckboxes"
@@ -643,37 +629,6 @@
 
 </div>
 
-
-<form data-controller="search checkbox">
-  Раз<input type="checkbox" data-target="search.result checkbox.input" name="green" id="example1" data-action="change->search#probe" >
-  Два<input type="checkbox" data-target="search.black" name="black" id="example2"  data-action="change->search#check1">
-<!--   <span data-target="search#connect">Коннект</span> -->
-<span data-target="search.output">Аутпут</span>
-</form>
-
-
-<div data-controller="choice">
-  Галочка для w0<input type="checkbox" data-target="choice.name1"  data-action="change->choice#probe">
-
-  <div  class="probe" data-target="choice.probe">probe</div>
-</div>
-
-Вот тут С3 у нас:
-<div id="chart" data-controller="mychart" data-target="mychart.chart" ></div>
-
-
-
-
-
-<div data-controller="canvas" >
-    <button  data-action="click->canvas#probe">
-    Канвас
-  </button>
-  <canvas id="eprst" width="500" height="500" data-target="canvas.output" ></canvas>
-</div>
-
-
-</div>
 
 <script type="text/javascript">
       slide_wood_yin.addEventListener( "change", function() {
