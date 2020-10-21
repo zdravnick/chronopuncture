@@ -86,14 +86,8 @@ export default class extends Controller {
         water_yin: 10,
         water_yang: -5
       }
-    if (event.target.dataset.name == "lung9"){
-      this.colorateEnergies('lung9', energies);
-    } else if (event.target.dataset.name == "lung9Copy1"){
-        this.colorateEnergies('lung9Copy1', energies);
-    } else if (event.target.dataset.name == "lung9Copy2"){
-      this.colorateEnergies('lung9Copy2', energies);
-    }
-    console.log("точка: " + event.target.dataset.name)
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   lung8Effect() {
