@@ -76,26 +76,6 @@ export default class extends Controller {
     }
   }
 
-
-// lung9Energies() {
-//   let energies = {
-//     wood_yin: -10,
-//     fire_yin: 10,
-//     fire_yang:  -10,
-//     earth_yin: 10,
-//     metal_yang: -5,
-//     water_yin: 10,
-//     water_yang: -5
-//   }
-// return energies;
-
-// }
-
-// lung9Copy2Effect(energies){
-// energies = lung9Energies;
-//   console.log("energies" + energies);
-// }
-
   lung9Effect() {
      let energies = {
         wood_yin: -10,
@@ -106,21 +86,15 @@ export default class extends Controller {
         water_yin: 10,
         water_yang: -5
       }
-    this.colorateEnergies('lung9', energies);
-  }
-
-   lung9Copy1Effect() {
-       let energies = {
-          wood_yin: -10,
-          fire_yin: 10,
-          fire_yang:  -10,
-          earth_yin: 10,
-          metal_yang: -5,
-          water_yin: 10,
-          water_yang: -5
-        }
-      this.colorateEnergies('lung9Copy1', energies);
+    if (event.target.dataset.name == "lung9"){
+      this.colorateEnergies('lung9', energies);
+    } else if (event.target.dataset.name == "lung9Copy1"){
+        this.colorateEnergies('lung9Copy1', energies);
+    } else if (event.target.dataset.name == "lung9Copy2"){
+      this.colorateEnergies('lung9Copy2', energies);
     }
+    console.log("точка: " + event.target.dataset.name)
+  }
 
   lung8Effect() {
     let energies = {
