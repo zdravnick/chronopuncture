@@ -28,8 +28,8 @@ export default class extends Controller {
   static targets = ["input22",  "w0Indicator",  "myRange", "liver8",
   "liver1", "lung9", "lungCopy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
   "smallInt3", "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
-  "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", 'woodYang',
-  "indicator", "wood_yin_range", "indicatorWrapper" ]
+  "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", "woodYang",
+  "fireYin", "indicator", "wood_yin_range", "indicatorWrapper" ]
 
 //  кликаем меняем высоту столбиков-"энергий"
 //
@@ -44,11 +44,14 @@ export default class extends Controller {
     targetHeight = target + 'Height';
     targetHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
     if (target == "woodYang") {
-      this.woodYangTarget.style.height = (parseInt(targetHeight) + "%" );
+      this.woodYangTarget.style.height = targetHeight + "%" ;
       return this.woodYangTarget.style.height;
     } else if (target == "woodYin"){
-        this.woodYinTarget.style.height = (parseInt(targetHeight) + "%" );
+        this.woodYinTarget.style.height = targetHeight + "%" ;
         return this.woodYinTarget.style.height;
+    } else if (target == "fireYin"){
+        this.fireYinTarget.style.height = targetHeight + "%" ;
+        return this.fireYinTarget.style.height;
     }
   }
 

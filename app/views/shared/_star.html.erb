@@ -124,15 +124,22 @@
 
   </div>
 
-  <div class="f0">
+  <div class="fire_yin">
     <div class="indicator_wrapper">
       <div id="fire_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="fire_yin"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYin"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYin">
+        <div class="indicator_background" id="fire_yin_indicator_background" data-id="fireYin" >
+          <div class="indicator" id="fire_yin" data-target="barChartCheckboxes.fireYin"
+              data-id="fireYin">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Fire', yin_yang: 'Yin') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_fire_yin.value)">
         <div class="slider_wrapper ">
@@ -143,7 +150,7 @@
             </output>
           </div>
       </form>
-      <div class="container_label">
+    <div class="container_label">
         <label>
           <input type="checkbox" id="heart9"
             data-controller="barChartCheckboxes"
@@ -177,7 +184,6 @@
         </label>
       </div>
     </div>
-
   </div>
 
   <div class="f1">
@@ -228,8 +234,8 @@
             data-action="change->barChartCheckboxes#" >Ig
         </label>
     </div>
-
   </div>
+
 
   <div class="fe0">
     <div class="indicator_wrapper">
