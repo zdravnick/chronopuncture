@@ -1,11 +1,3 @@
-    array_fibonacci << new_num
-  end
-  return our_array = array_fibonacci
-end
-fibonacci_numbers
-array_fibonacci
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
   num = gets.chomp.to_i
   array_fibonacci = [0, 1, 1]
   loop do |n|
@@ -198,3 +190,11 @@ for (target of lungPoints)
        );
     }
 2
+Energie.last
+Energiea.last
+Energies.last
+Energyes.last
+Energye.last
+Element.firs
+Element.first
+exit

@@ -26,42 +26,34 @@ export default class extends Controller {
   }
 
   static targets = ["input22",  "w0Indicator",  "myRange", "liver8",
-  "liver1", "lung9", "lungCopy", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36", "smallInt3",
-  "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
-  "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin",
+  "liver1", "lung9", "lungCopy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
+  "smallInt3", "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
+  "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", 'woodYang',
   "indicator", "wood_yin_range", "indicatorWrapper" ]
 
+//  кликаем меняем высоту столбиков-"энергий"
+//
   IndicatorWrapperRange(){
-    let container, containerOffset, containerCoords, box, boxTop, boxBottom, woodYinHeight, coordMouseY;
+    let container, containerOffset, containerCoords, box, boxTop, boxBottom, woodYinHeight,
+    woodYangHeight, coordMouseY, target, targetHeight;
     this.indicatorWrapperTarget;
     containerOffset = this.indicatorWrapperTarget.offsetHeight;
 
-    coordMouseY = event.pageY - event.currentTarget.offsetTop;
-
-    woodYinHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
-    this.woodYinTarget.style.height = (parseInt(woodYinHeight) + "%" );
-    return this.woodYinTarget.style.height
-    + console.log('woodYinheight: ' + woodYinHeight)
-    + console.log('Мышь: ' + coordMouseY)
-    + console.log('Фаза: ' + event.eventPhase)
-    + console.log('woodYinTarget: ' + this.woodYinTarget.style.height);
+    coordMouseY = event.pageY - event.currentTarget.offsetTop;;
+    target = event.target.dataset.id;
+    targetHeight = target + 'Height';
+    targetHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
+    if (target == "woodYang") {
+      this.woodYangTarget.style.height = (parseInt(targetHeight) + "%" );
+      return this.woodYangTarget.style.height;
+    } else if (target == "woodYin"){
+        this.woodYinTarget.style.height = (parseInt(targetHeight) + "%" );
+        return this.woodYinTarget.style.height;
+    }
   }
-// pointDefininion(pointAttr, energies){
-  //   var pointsGroup = document.querySelectorAll("[" + "data-same-name-points =" + pointAttr + "]");
-  //   let pointsArray = Array.prototype.slice.call(pointsGroup);
-  //   var point =  pointsArray.filter(function(point) {
-  //     if (point.checked){
-  //       point.setAttribute((pointAttr + '-data-checked'), 'checked');
-  //       return  point
-  //      + console.log("point= " + point.id);
-  //    } else if (point.checked == false){
-  //     point.setAttribute((pointAttr + '-data-checked'), 'unchecked');
-  //      console.log("unchecked point= " + point.id);
-  //    }
-  //   })
-  // this.colorateEnergies(energies);
-  // }
 
+// раскрашиваем изменившиеся при выборе чекбокса-"точки" столбики-"энергии"
+//
   colorateEnergies(point, energies) {
     let containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
     for (let energy in energies) {
@@ -101,7 +93,8 @@ export default class extends Controller {
       water_yin: 10,
       water_yang: -5
     }
-    this.colorateEnergies('lung8', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   liver8Effect() {

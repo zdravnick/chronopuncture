@@ -10,9 +10,10 @@
     <div class="indicator_wrapper" id="indicator_wrapper">
       <div id="wood_yin_range" data-controller="barChartCheckboxes"
         data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-        <div class="indicator_background" id="wood_yin_indicator_background">
-          <div class="indicator" id="wood_yin" data-target="barChartCheckboxes.woodYin"></div>
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYin">
+        <div class="indicator_background" id="wood_yin_indicator_background" data-id="woodYin">
+          <div class="indicator" id="wood_yin" data-target="barChartCheckboxes.woodYin"
+          data-id="woodYin"></div>
         </div>
       </div>
     </div>
@@ -65,15 +66,22 @@
     </div>
   </div>
 
-  <div class="w1">
+  <div class="wood_yang">
     <div class="indicator_wrapper">
       <div id="wood_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-        <div class="indicator_background">
-          <div class="indicator" id="wood_yang"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="woodYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYang">
+        <div class="indicator_background" id="wood_yang_indicator_background" data-id="woodYang" >
+          <div class="indicator" id="wood_yang" data-target="barChartCheckboxes.woodYang"
+              data-id="woodYang">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Wood', yin_yang: 'Yang') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
       <form oninput="output.value = Math.round(slide_wood_yang.value)">
         <div class="slider_wrapper ">
@@ -150,12 +158,14 @@
               data-action="change->barChartCheckboxes#stomach36Effect" >E.36/1
           </label>
         </div>
+      <div class="lung8_wrapper" id=lung8_wrapper>
         <label>
-          <input type="checkbox" id=""
+          <input type="checkbox" class="lung8" id="lung8Copy2" data-name="lung8Copy2"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >C
+            data-target="barChartCheckboxes.lung8"
+            data-action="change->barChartCheckboxes#lung8Effect" >P.8
         </label>
+      </div>
 
         <div class="lung9_wrapper" id="lung9Copy2_wrapper" >
         <label>
@@ -458,7 +468,7 @@
       </div>
       <div class="lung8_wrapper" id=lung8_wrapper>
         <label>
-          <input type="checkbox" id="lung8"
+          <input type="checkbox" class="lung8" id="lung8" data-name="lung8"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.lung8"
             data-action="change->barChartCheckboxes#lung8Effect" >P.8
@@ -557,12 +567,14 @@
               data-action="change->barChartCheckboxes#stomach36Effect" >E.36/2
           </label>
         </div>
-      <label>
-        <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >R
-      </label>
+      <div class="lung8_wrapper" id=lung8_wrapper>
+        <label>
+          <input type="checkbox" class="lung8" id="lung8Copy1" data-name="lung8Copy1"
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes.lung8"
+            data-action="change->barChartCheckboxes#lung8Effect" >P.8/1
+        </label>
+      </div>
 
       <label>
         <input type="checkbox" id="kidney10"
