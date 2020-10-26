@@ -159,7 +159,7 @@
         </label>
         <div class="stomach36_wrapper" id="stomach36Copy1_wrapper">
           <label>
-            <input type="checkbox" class="stomach36" id="stomach36Copy1" data-same-name-points="stomach36"
+            <input type="checkbox" class="stomach36" id="stomach36Copy1"
               data-controller="barChartCheckboxes"
               data-target="barChartCheckboxes.stomach36Copy1"
               data-action="change->barChartCheckboxes#stomach36Effect" >E.36/1
@@ -176,7 +176,7 @@
 
         <div class="lung9_wrapper" id="lung9Copy2_wrapper" >
         <label>
-           <input type="checkbox" class="lung9" id="lung9Copy2" data-same-name-points="lung9Copy2"
+           <input type="checkbox" class="lung9" id="lung9Copy2"
            data-name="lung9Copy2"
           data-controller="barChartCheckboxes"
           data-target="barChartCheckboxes.lung9Copy2"
@@ -186,15 +186,22 @@
     </div>
   </div>
 
-  <div class="f1">
+  <div class="fire_yang">
     <div class="indicator_wrapper">
       <div id="fire_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-          <div class="indicator_background">
-        <div class="indicator" id="fire_yang"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYang">
+        <div class="indicator_background" id="fire_yang_indicator_background" data-id="fireYang" >
+          <div class="indicator" id="fire_yang" data-target="barChartCheckboxes.fireYang"
+            data-id="fireYang">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Fire', yin_yang: 'Yang') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_fire_yang.value)">
         <div class="slider_wrapper ">
@@ -340,15 +347,22 @@
 
   </div>
 
-  <div class="e0">
+  <div class="earth_yin">
     <div class="indicator_wrapper">
       <div id="earth_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="earth_yin"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="earthYin"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="earthYin">
+        <div class="indicator_background" id="earth_yin_indicator_background" data-id="earthYin" >
+          <div class="indicator" id="earth_yin" data-target="barChartCheckboxes.earthYin"
+            data-id="earthYin">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Earth', yin_yang: 'Yin') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_earth_yin.value)">
         <div class="slider_wrapper ">
@@ -390,15 +404,22 @@
     </div>
    </div>
 
-  <div class="e1">
+  <div class="earth_yang">
     <div class="indicator_wrapper">
       <div id="earth_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="earth_yang"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="earthYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="earthYang">
+        <div class="indicator_background" id="earth_yin_indicator_background" data-id="earthYang" >
+          <div class="indicator" id="earth_yang" data-target="barChartCheckboxes.earthYang"
+            data-id="earthYang">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Earth', yin_yang: 'Yang') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_earth_yang.value)">
         <div class="slider_wrapper ">
@@ -412,7 +433,7 @@
       <div class="container_label">
         <div class="lung9_wrapper" id="lung9Copy_wrapper" >
         <label>
-           <input type="checkbox" class="lung9" id="lung9Copy1" data-same-name-points="lung9"
+           <input type="checkbox" class="lung9" id="lung9Copy1"
             data-name="lung9Copy1"
           data-controller="barChartCheckboxes"
           data-target="barChartCheckboxes.lung9Copy"
@@ -421,7 +442,7 @@
       </div>
       <div class="stomach36_wrapper" id="stomach36_wrapper">
         <label>
-          <input type="checkbox" class="stomach36" id="stomach36" data-same-name-points="stomach36"
+          <input type="checkbox" class="stomach36" id="stomach36"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.stomach36"
             data-action="change->barChartCheckboxes#stomach36Effect" >E.36
@@ -443,15 +464,22 @@
     </div>
    </div>
 
-  <div class="m0">
+  <div class="metal_yin">
     <div class="indicator_wrapper">
       <div id="metal_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="metal_yin"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="metalYin"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="metalYin">
+        <div class="indicator_background" id="metal_yin_indicator_background" data-id="metalYin" >
+          <div class="indicator" id="metal_yin" data-target="barChartCheckboxes.metalYin"
+            data-id="metalYin">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Metal', yin_yang: 'Yin') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_metal_yin.value)">
         <div class="slider_wrapper ">
@@ -465,7 +493,7 @@
     <div class="container_label">
       <div class="lung9_wrapper" id=lung9_wrapper>
         <label>
-          <input type="checkbox"  class="lung9" id="lung9" data-same-name-points="lung9"
+          <input type="checkbox"  class="lung9" id="lung9"
           data-name="lung9"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.lung9"
@@ -493,15 +521,22 @@
 
   </div>
 
-  <div class="m1">
-    <div class="indicator_wrapper">
+  <div class="metal_yang">
+     <div class="indicator_wrapper">
       <div id="metal_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="metal_yang"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="metalYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="metalYang">
+        <div class="indicator_background" id="metal_yang_indicator_background" data-id="metalYang" >
+          <div class="indicator" id="metal_yang" data-target="barChartCheckboxes.metalYang"
+            data-id="metalYang">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Metal', yin_yang: 'Yang') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_metal_yang.value)">
         <div class="slider_wrapper ">
@@ -543,15 +578,22 @@
       </div>
    </div>
 
-  <div class="wt0">
+  <div class="water_yin">
     <div class="indicator_wrapper">
       <div id="water_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-        <div class="indicator_background">
-          <div class="indicator" id="water_yin"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="waterYin"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="waterYin">
+        <div class="indicator_background" id="water_yin_indicator_background" data-id="waterYin" >
+          <div class="indicator" id="water_yin" data-target="barChartCheckboxes.waterYin"
+            data-id="waterYin">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Water', yin_yang: 'Yin') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
       <form oninput="output.value = Math.round(slide_water_yin.value)">
         <div class="slider_wrapper ">
@@ -567,7 +609,7 @@
       <div class="container_label">
         <div class="stomach36_wrapper" id="stomach36Copy2_wrapper">
           <label>
-            <input type="checkbox" class="stomach36" id="stomach36Copy2" data-same-name-points="stomach36"
+            <input type="checkbox" class="stomach36" id="stomach36Copy2"
               data-controller="barChartCheckboxes"
               data-target="barChartCheckboxes.stomach36Copy2"
               data-action="change->barChartCheckboxes#stomach36Effect" >E.36/2
@@ -598,15 +640,22 @@
     </div>
    </div>
 
-  <div class="wt1">
+  <div class="water_yang">
     <div class="indicator_wrapper">
       <div id="water_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="water_yang"></div>
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="waterYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="waterYang">
+        <div class="indicator_background" id="water_yang_indicator_background" data-id="waterYang" >
+          <div class="indicator" id="water_yang" data-target="barChartCheckboxes.waterYang"
+            data-id="waterYang">
+          </div>
         </div>
       </div>
+    </div>
+    <div>
+      <% element = Element.find_by(name: 'Water', yin_yang: 'Yang') %>
+      <% total_element_influence = @patient.total_element_influence(element) %>
+      <% value = 50 + total_element_influence %>
     </div>
     <form oninput="output.value = Math.round(slide_water_yang.value)">
         <div class="slider_wrapper ">

@@ -25,11 +25,11 @@ export default class extends Controller {
     })();
   }
 
-  static targets = ["input22",  "w0Indicator",  "myRange", "liver8",
-  "liver1", "lung9", "lungCopy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
+  static targets = ["liver8",  "liver1", "lungCopy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
   "smallInt3", "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
   "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", "woodYang",
-  "fireYin", "indicator", "wood_yin_range", "indicatorWrapper" ]
+  "fireYin", "fireYang", "earthYin", "earthYang", "metalYin", "metalYang", "waterYin", "waterYang",
+  "indicator", "wood_yin_range", "indicatorWrapper" ]
 
 //  кликаем меняем высоту столбиков-"энергий"
 //
@@ -45,16 +45,29 @@ export default class extends Controller {
     targetHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
     if (target == "woodYang") {
       this.woodYangTarget.style.height = targetHeight + "%" ;
-      return this.woodYangTarget.style.height;
     } else if (target == "woodYin"){
         this.woodYinTarget.style.height = targetHeight + "%" ;
-        return this.woodYinTarget.style.height;
     } else if (target == "fireYin"){
         this.fireYinTarget.style.height = targetHeight + "%" ;
-        return this.fireYinTarget.style.height;
+    } else if (target == "fireYang"){
+        this.fireYangTarget.style.height = targetHeight + "%" ;
+    } else if (target == "earthYin"){
+        this.earthYinTarget.style.height = targetHeight + "%" ;
+    } else if (target == "earthYang"){
+        this.earthYangTarget.style.height = targetHeight + "%" ;
+    } else if (target == "metalYin"){
+        this.metalYinTarget.style.height = targetHeight + "%" ;
+    } else if (target == "metalYang"){
+        this.metalYangTarget.style.height = targetHeight + "%" ;
+    } else if (target == "waterYin"){
+        this.waterYinTarget.style.height = targetHeight + "%" ;
+    } else if (target == "waterYang"){
+        this.waterYangTarget.style.height = targetHeight + "%" ;
     }
+    console.log("target= " + target);
   }
 
+ // + console.log("target= " + target);
 // раскрашиваем изменившиеся при выборе чекбокса-"точки" столбики-"энергии"
 //
   colorateEnergies(point, energies) {

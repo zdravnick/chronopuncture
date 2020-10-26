@@ -1,200 +1,37 @@
-  end
-  return array_fibonacci
-end
-fibonacci_numbers
-@array_fibonacci
-@array_fibonacci
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return @array_fibonacci
-end
-fibonacci_numbers
-@array_fibonacci
+Dat.now.yday
+Date.now.yday
+Time.now.yday
 exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return array_fibonacci
-end
-@array_fibonacci = fibonacci_numbers
-sss
-@array_fibonacci
-exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-end
-@array_fibonacci = fibonacci_numbers
-@array_fibonacci
-exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-end
-fibonacci_numbers
-fibonacci_numbers
-fibonacci_numbersarray_fibonacci
-array_fibonacci
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return array_fibonacci
-end
-fibonacci_numbers
-array_fibonacci
-exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return @numbers = array_fibonacci
-end
-fibonacci_numbers
-@numbers
-exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-end
-@numbers = fibonacci_numbers
-@numbers
-exit
-def fibonacci_numbers
-  puts 'Укажите верхнюю границу(число)'
-  num = gets.chomp.to_i
-  array_fibonacci = [0, 1, 1]
-  loop do |n|
-    new_num = array_fibonacci.last + array_fibonacci[-2]
-    break if new_num > num
-    array_fibonacci << new_num
-  end
-  return array_fibonacci
-end
-@numbers = fibonacci_numbers
-@numbers
-@numbers.last
-@numbers.seventh
-@numbers.forth
-@numbers.third
-@numbers.fifth
-@numbers.sixth
-@numbers
-@numbers.first
-@numbers.second
-@numbers.fifth
-@numbers[6]
-@numbers.last
-@numbers[-2]
-var changedIndicators = ["#wood_yin_range", "#wood_yang_range"];
-a = 'abcd'
-b = 
-abc'
-a = b
-a
-b = 
-b
-b = 'abc'
-a =b
- a = b 
-2
-b
-a
-a == b
-b = 'abcd'
-a == b
-if a == b puts 'ok'
-if a != b puts 'ok'
-a
-a
-b
-if a != b puts 'ok'
- puts 'ok' if a == b
- puts 'ok' if a != b
-function stopDefaultAction(evt) {
-    evt.preventDefault();
-}
-let lungPoints = [ '#lung9', '#lungCopy', '#lung88'];
-var index;
-for (index = 0; index < lungPoints.length; ++index) {
-    console.log("lungPoints[index]" + lungPoints[index]);
-  }
-for (target of lungPoints)
-  if (target.includes('#lung9')){
-  console.log("target" + target);
-  document.querySelector( target).classList.toggle('red');
-    if (target != '#lung9'){
-    for (let target of lungPoints)
-      document.querySelector(elem).addEventListener(
-      'click', stopDefaultAction, false
-       );
-    }
-2
-Energie.last
-Energiea.last
-Energies.last
-Energyes.last
-Energye.last
-Element.firs
-Element.first
-exit
-Element.all.map{|e| puts e.name}
-Element.second
-Element[3]
-Element(3)
-Element.[3]
-Elements[3]
-Element.third
-Element.find(3)
-words = %w(dog, cat, mouse)
-words
-words = []
-words = %w( dog cat mouse)
-words
-words[1]
-words[0]
-Element.find(3)
-Element.find(4)
-eixt
+2003%60
+2016%60
+2016-3
+2013%60
+2016%60
+30.3*4
+Date.today.yday
+2*3.14*(298-81)/365
+(10+1)*30.6 
+365.25*2020
+336 + 737805
+336 + 737805 +24 -114
+738051%10
+738051%12
+738051%10
+738051%12
+738051/12
+738051.0/12
+61504.25*12
+738051.0%12
+Date.new(1974, 18,9)
+Date.new(1974, 9, 18)
+a = Date.new(1974, 9, 18)
+a.yady
+a.yday
+a.yday
+((9+1)*30.6
+((9+1)*30.6)
+1974*365.25
+306 + 721003 + 18 - 144
+721183%10
+721183%12
 exit
