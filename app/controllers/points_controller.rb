@@ -39,13 +39,13 @@ class PointsController < ApplicationController
     @sun_time = sun_time(@doctor_city, @doctor_current_datetime_utc)
     @sun_datetime_zone =
       ActiveSupport::TimeZone[current_doctor.city.time_zone].local(@sun_time.year, @sun_time.month, @sun_time.day, @sun_time.hour, @sun_time.min, @sun_time.sec)
-    @trunc_day = trunc_day_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @trunc_day = trunc_day_calculation(@doctor_city, @sun_datetime_zone)
     @offset_timezone_doctor =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
-    @brunch_day = brunch_day_calculation(@doctor_city, @doctor_current_datetime_utc)
-    @trunc_hour = trunc_hour_calculation(@doctor_city, @doctor_current_datetime_utc)
+    @brunch_day = brunch_day_calculation(@doctor_city, @sun_datetime_zone)
+    @trunc_hour = trunc_hour_calculation(@doctor_city, @sun_datetime_zone)
     @brunch_hour = brunch_hour_calculation(@doctor_city, @sun_datetime_zone)
-    @guard = guard(@doctor_city, @doctor_current_datetime_utc)
+    @guard = guard(@doctor_city, @sun_datetime_zone)
     @eot = eot(@sun_datetime_zone).to_i
     @offset_for_time_table =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time).to_i
@@ -54,19 +54,21 @@ class PointsController < ApplicationController
 
   def linguibafa
     @sum_of_numbers_linguibafa =
-      sum_of_numbers_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+      sum_of_numbers_linguibafa(@doctor_city, @sun_datetime_zone)
     @opened_points_linguibafa =
-      opened_point_linguibafa(@doctor_city, @doctor_current_datetime_utc)
+      opened_point_linguibafa(@doctor_city, @sun_datetime_zone)
     render  "doctors/linguibafa"
   end
 
   def linguibafa_7_times
-    # binding.pry
   @opened_points_linguibafa =
-    ((@doctor_current_datetime_utc.to_datetime)..@doctor_current_datetime_utc.to_datetime+6.days).map do |date|
-      puts date
+    (@sun_datetime_zone.to_datetime..@sun_datetime_zone.to_datetime+6.days).map do |date|
+      # puts date
+      @sum_of_numbers_linguibafa =
+      sum_of_numbers_linguibafa(@doctor_city, date)
     {date: date, point: opened_point_linguibafa(@doctor_city, date) }
     end
+
   end
 
   helper_method :opened_point_linguibafa
@@ -301,22 +303,22 @@ class PointsController < ApplicationController
   end
 
   def sun_time(city, date)
-      case city[:lng]
-      when (0..15) then base_meridian = 15
-      when (16..30) then base_meridian = 30
-      when (31..45) then base_meridian = 45
-      when (46..60) then base_meridian = 60
-      when (61..75) then base_meridian = 75
-      when (76..90) then base_meridian = 90
-      when (91..105) then base_meridian = 105
-      when (106..120) then base_meridian = 120
-      when (121..135) then base_meridian = 135
-      when (136..150) then base_meridian = 150
-      when (151..165) then base_meridian = 165
-      when (166..180) then base_meridian = 180
+      # case city[:lng]
+      # when (0..15) then base_meridian = 15
+      # when (16..30) then base_meridian = 30
+      # when (31..45) then base_meridian = 45
+      # when (46..60) then base_meridian = 60
+      # when (61..75) then base_meridian = 75
+      # when (76..90) then base_meridian = 90
+      # when (91..105) then base_meridian = 105
+      # when (106..120) then base_meridian = 120
+      # when (121..135) then base_meridian = 135
+      # when (136..150) then base_meridian = 150
+      # when (151..165) then base_meridian = 165
+      # when (166..180) then base_meridian = 180
 
-      end
-      base = base_meridian*4.minutes
+      # end
+      # base = base_meridian*4.minutes
     date + (city[:lng]*4).minutes + eot(date).seconds
   end
 
@@ -374,7 +376,7 @@ class PointsController < ApplicationController
   end
 
   def guard(city, date) # таблица Стражи Часа
-    case sun_time(city, date).hour
+    case date.hour
     when 19, 20 then 11
     when 21, 22 then 12
     when 23, 0 then 1
@@ -461,6 +463,7 @@ class PointsController < ApplicationController
   end
 
   def opened_point_linguibafa(city, date) # таблица соответствия "расчетная цифра - точка"
+
     case remainder_of_division_linguibafa(city, date)
     when 1 then 'V.62 Shen-mai'
     when 2, 5 then 'R.6 Zhao-hai'
@@ -468,7 +471,7 @@ class PointsController < ApplicationController
     when 4 then 'GB.41 Zu-lin-qi'
     when 6 then 'RP.4 Gong-sun'
     when 7 then 'IG.3 Hou-xi'
-    when 8 then 'MC.5 Nei-guan'
+    when 8 then 'MC.6 Nei-guan'
     when 9 then 'P.7 Lie-que'
     when 0
       if trunc_day_calculation(city, date).even?

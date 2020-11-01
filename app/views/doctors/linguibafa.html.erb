@@ -1,11 +1,13 @@
   <h4>ЛИНГУЙБАФА: открыта точка  <%=  @opened_points_linguibafa %></h4>
   <h4>МЕСТНОЕ ВРЕМЯ: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
-    <h4>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time %></h4>
+    <h4>Солнечное время (@sun_time ) в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time %></h4>
   <h4>Поправка EOT <%= @eot %> секунды <h4>
-  <%=  current_doctor.city.time_zone %>
-  <h4>Ствол дня: <%= @trunc_day %></h4>
-  <h4>Ветвь дня: <%= @branch_day %></h4>
-  <h4>Сумма дня: <%= @sum_of_numbers_linguibafa%></h4>
+   <h4>@sun_datetime_zone <%= @sun_datetime_zone %></h4>
+  <h4>Поправка EOT <%= @eot %> секунды <h4>
+   <h4> Таймзона: <%=  current_doctor.city.time_zone %> </h4>
+  <h4>Ствол/ветвь дня: <%= @trunc_day %>/<%= @brunch_day %></h4>
+  <h4>Ствол/ветвь часа: <%= @trunc_hour %>/<%= @brunch_hour %></h4>
+  <h4>Стража @guard: <%=  @guard %></h4>
 
   <h4>Расчетное время: </h4>
   <h4>Конец активности точки: <%= %></h4>

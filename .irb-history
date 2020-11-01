@@ -35,3 +35,23 @@ a.yday
 721183%10
 721183%12
 exit
+Time.now
+Time.now.zone
+City.last
+City(4)
+City[4]
+City.find(4)
+a = City.find(4)
+a
+arake time:zones:all
+rake time:zones:all
+exit
+a = City.find(4)
+a.update
+a
+a.update time_zone: "Moscow"
+a
+a.save
+exit
+date = Time.now
+date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-1.hours)

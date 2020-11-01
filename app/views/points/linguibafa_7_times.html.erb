@@ -7,9 +7,11 @@
 <h4>МЕСТНОЕ СОЛНЕЧНОЕ ВРЕМЯ: <%=  @sun_datetime_zone %></h4>
 <h4>Расчетное время: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone)%></h4>
 <h4>EOT: <%=  @eot %></h4>
-<td> Стража: <%= @guard %><td>
+<h4> @sum_of_numbers_linguibafa <%= @sum_of_numbers_linguibafa %></h4>
+   <h4>Ствол/ветвь дня: <%= @trunc_day %>/<%= @brunch_day %></h4>
+  <h4>Ствол/ветвь часа: <%= @trunc_hour %>/<%= @brunch_hour %></h4>
+  <h4>Стража @guard: <%=  @guard %></h4>
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
-<h4>Ствол дня: <%= @trunc_day %>, Ветвь дня: <%= @branch_day %></h4>
 <h4></h4>
 <h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
 <h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
@@ -19,7 +21,7 @@
 <% end %>
 <table><% @opened_points_linguibafa.each do |elem| %>
   <tr>
-    <td><%=  elem[:date].in_time_zone(current_doctor.city.time_zone)  %></td>
+    <td><%= elem[:date]  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
     <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
@@ -28,35 +30,32 @@
           <h4  class="highlight" > <%= I18n.l(elem[:date].to_datetime, :format => '%d %b, %A')%></h4>
           <h4  class="highlight" > <%= elem[:date].strftime('%d %b, %A')%></h4>
 
-        <% (0..23).select{ |h| h.odd? }.each do  |hour| %>
+        <% (1..23).select{ |h| h.odd? }.each do  |hour| %>
 
-         <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour)-2.hours)+@offset_timezone_doctor%>
-         <% date2_utc = Time.now.utc.change(hour: hour, min: Time.now.utc.strftime('%M'))  %>
-         <% date3_in_doctor_time_zone = Time.now.in_time_zone(current_doctor.city.time_zone).change(hour: hour, min: Time.now.utc.strftime('%M'))  %>
+           <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour))%>
+           <% calculation_date = date.change(hour: hour, min: date.strftime('%M'))  %>
 
-         <% date4_in_sun_time_in_doctor_time_zone = Time.now.in_time_zone(current_doctor.city.time_zone).change(hour: hour) + sun_time_difference(@doctor_city, date3_in_doctor_time_zone.in_time_zone('UTC')) %>
-         <% date2_in_doctor_time_zone = date2_utc.in_time_zone(current_doctor.city.time_zone)  %>
-         <% date2_in_doctor_time_zone_from = date4_in_sun_time_in_doctor_time_zone %>
-         <% date2_in_doctor_time_zone_to = date4_in_sun_time_in_doctor_time_zone + 2.hours %>
-          <%  point = opened_point_linguibafa(@doctor_city, date3_in_doctor_time_zone.in_time_zone('UTC')) %>
-        <% highlight = (date2_in_doctor_time_zone_from..date2_in_doctor_time_zone_to).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
+          <% point = opened_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
 
+        <% highlight = ((date+@offset_timezone_doctor.seconds)..(date+@offset_timezone_doctor.seconds+2.hours)).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
 
           <tr class="<%= highlight ? 'highlight' : '' %>">
-            <td> <%= date2_in_doctor_time_zone_from.strftime("%H:%M")  %> </td>
+            <td> <%= (date+@offset_timezone_doctor.seconds).strftime("%H:%M")   %> </td>
             <td> - </td>
-            <td> <%= date2_in_doctor_time_zone_to.strftime("%H:%M")  %> </td>
+            <td> <%= (date+@offset_timezone_doctor.seconds+2.hours).strftime("%H:%M")  %> </td>
              <td>
               <% if params[:a]%>
                <%  if point == params[:a] %>
                 <%= point %>
                 <%  end%>
                 <%  else %>
+                  <%= date %>
                <div  class="<%= highlight ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%= link_to point, params.permit!.merge({a: point})%>
                 </div>
               <%  end %>
              </td>
           </tr>
+
         <% end %>
       </table>
 

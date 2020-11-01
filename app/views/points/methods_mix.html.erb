@@ -24,7 +24,7 @@
                 <%= opened_points[:time] %>
               </td>
               <td>
-                <%= opened_point_linguibafa(@doctor_city, (day[0][:date].change(hour: opened_points[:hour])+@offset_for_time_table.seconds-@offset_timezone_doctor.seconds) ) %>
+                <%= opened_point_linguibafa(@doctor_city, (day[0][:date].change(hour: opened_points[:hour])+@offset_timezone_doctor.seconds) ) %>
               </td>
               <td>
                 <% if params[:a]%>
