@@ -21,7 +21,7 @@
 <% end %>
 <table><% @opened_points_linguibafa.each do |elem| %>
   <tr>
-    <td><%= elem[:date]  %></td>
+    <td><%= elem[:date]+@offset_timezone_doctor.seconds  %></td>
     <td><%= elem[:point].to_s%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
     <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
@@ -37,7 +37,7 @@
 
           <% point = opened_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
 
-        <% highlight = ((date+@offset_timezone_doctor.seconds)..(date+@offset_timezone_doctor.seconds+2.hours)).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
+        <% highlight = ((calculation_date)..(calculation_date+2.hours)).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
 
           <tr class="<%= highlight ? 'highlight' : '' %>">
             <td> <%= (date+@offset_timezone_doctor.seconds).strftime("%H:%M")   %> </td>
