@@ -32,24 +32,22 @@
 
         <% (1..23).select{ |h| h.odd? }.each do  |hour| %>
 
-           <% date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour))%>
-           <% calculation_date = date.change(hour: hour, min: date.strftime('%M'))  %>
-
+           <% calculation_date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour))%>
           <% point = opened_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
-
-        <% highlight = ((calculation_date)..(calculation_date+2.hours)).cover?(elem[:date].in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
+          <%= puts calculation_date %>
+        <% highlight = ((calculation_date)..(calculation_date+2.hours)).cover?((elem[:date]).in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
 
           <tr class="<%= highlight ? 'highlight' : '' %>">
-            <td> <%= (date+@offset_timezone_doctor.seconds).strftime("%H:%M")   %> </td>
+            <td> <%= (calculation_date+@offset_timezone_doctor.seconds).strftime("%H:%M")   %> </td>
             <td> - </td>
-            <td> <%= (date+@offset_timezone_doctor.seconds+2.hours).strftime("%H:%M")  %> </td>
+            <td> <%= (calculation_date+@offset_timezone_doctor.seconds+2.hours).strftime("%H:%M")  %> </td>
              <td>
               <% if params[:a]%>
                <%  if point == params[:a] %>
                 <%= point %>
                 <%  end%>
                 <%  else %>
-                  <%= date %>
+                  <%= calculation_date %>
                <div  class="<%= highlight ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%= link_to point, params.permit!.merge({a: point})%>
                 </div>
               <%  end %>
