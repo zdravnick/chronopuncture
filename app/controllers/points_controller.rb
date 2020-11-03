@@ -25,8 +25,6 @@ class PointsController < ApplicationController
   end
 
 
-
-
   def set_time_zone(&block)
     Time.use_zone(current_doctor.city.time_zone, &block)
   end
