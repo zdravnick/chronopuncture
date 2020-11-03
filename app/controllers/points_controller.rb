@@ -49,6 +49,10 @@ class PointsController < ApplicationController
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_time).to_i
   end
 
+  def lunar_palaces
+    @service =  LunarPalace.new(year: 2020, month: 1, day:1)
+    @service.points_of_lunar_palaces
+  end
 
   def linguibafa
     @sum_of_numbers_linguibafa =

@@ -46,6 +46,15 @@
     <% end %>
   </p>
 
+  <p>
+    <h3>МЕТОД ЛУННЫХ ДВОРЦОВ </h3>
+    <%= form_tag points_lunar_palaces_path do  %>
+    <%= hidden_field_tag(:patient_id, @patient.id) %>
+    <%= label_tag " Выберите время: " %>
+    <%= datetime_select :date, start_year: 1920, default: DateTime.now %>
+    <%= submit_tag "Рассчитать" %>
+    <% end %>
+    </p>
 
     <div>
       <h3><%= label_tag( "Добавить сеанс") %></h3>

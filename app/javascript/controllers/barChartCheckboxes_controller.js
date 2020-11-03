@@ -175,7 +175,9 @@ export default class extends Controller {
       water_yin: 5,
       water_yang: 10
     }
-    this.colorateEnergies('stomach36', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
+    console.log(point);
   }
 
   spleen2Effect() {
