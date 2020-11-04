@@ -7,7 +7,6 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pry'
 # Use sqlite3 as the database for Active Record
-
 gem 'mysql2'
 gem 'devise'
 gem 'uglifier'
