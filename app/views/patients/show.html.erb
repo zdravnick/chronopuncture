@@ -48,7 +48,7 @@
 
   <p>
     <h3>МЕТОД ЛУННЫХ ДВОРЦОВ </h3>
-    <%= form_tag points_lunar_palaces_path do  %>
+    <%= form_tag points_lunar_palaces_path, method: "get" do  %>
     <%= hidden_field_tag(:patient_id, @patient.id) %>
     <%= label_tag " Выберите время события: " %>
     <%= date_select(:date, nil, { start_year: 1930, end_year: Date.today.year, default: Date.today-30.years, order: [:day, :month, :year] } )%>
