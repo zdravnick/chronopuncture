@@ -53,6 +53,7 @@ class PointsController < ApplicationController
   def lunar_palaces
     @lunarpalace =
       LunarPalace.new(year: params["date"].values[2].to_i, month: params["date"].values[1].to_i, day:params["date"].values[0].to_i)
+    @lunar_palace_opposite = @lunarpalace.lunar_palace_opposite
     @points_of_lunar_palaces = @lunarpalace.points_of_lunar_palaces
     render "doctors/lunar_palaces"
   end
