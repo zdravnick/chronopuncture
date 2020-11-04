@@ -64,7 +64,7 @@ export default class extends Controller {
     } else if (target == "waterYang"){
         this.waterYangTarget.style.height = targetHeight + "%" ;
     }
-    console.log("target= " + target);
+    // console.log("target= " + target);
   }
 
  // + console.log("target= " + target);
@@ -177,7 +177,6 @@ export default class extends Controller {
     }
     let point = event.target.dataset.name;
     this.colorateEnergies(point, energies);
-    console.log(point);
   }
 
   spleen2Effect() {

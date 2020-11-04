@@ -9,6 +9,7 @@ class PointsController < ApplicationController
   skip_before_action :prepare, only: [:show_point]
   skip_before_action :prepare, only: [:change_color]
   skip_before_action :prepare, only: [:show_point_of_meridian]
+  skip_before_action :prepare, only: [:lunar_palaces]
 
   def show_point
     @point = Point.all.find(params[:id])
@@ -50,8 +51,10 @@ class PointsController < ApplicationController
   end
 
   def lunar_palaces
-    @service =  LunarPalace.new(year: 2020, month: 1, day:1)
-    @service.points_of_lunar_palaces
+    @lunarpalace =
+      LunarPalace.new(year: params["date"].values[2].to_i, month: params["date"].values[1].to_i, day:params["date"].values[0].to_i)
+    @points_of_lunar_palaces = @lunarpalace.points_of_lunar_palaces
+    render "doctors/lunar_palaces"
   end
 
   def linguibafa

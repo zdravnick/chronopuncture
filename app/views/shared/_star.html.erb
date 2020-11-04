@@ -7,16 +7,6 @@
 <div class="histogramme">
 
   <div class="wood_yin">
-    <div class="indicator_wrapper" id="indicator_wrapper">
-      <div id="wood_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYin">
-        <div class="indicator_background" id="wood_yin_indicator_background" data-id="woodYin">
-          <div class="indicator" id="wood_yin" data-target="barChartCheckboxes.woodYin"
-          data-id="woodYin"></div>
-        </div>
-      </div>
-    </div>
     <div>
       <% element = Element.find_by(name: 'Wood', yin_yang: 'Yin') %>
       <% total_element_influence = @patient.total_element_influence(element) %>
@@ -31,6 +21,17 @@
               </output>
             </div>
         </form>
+    <div class="indicator_wrapper" id="indicator_wrapper">
+      <div id="wood_yin_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYin">
+        <div class="indicator_background" id="wood_yin_indicator_background" data-id="woodYin">
+          <div class="indicator" id="wood_yin" data-target="barChartCheckboxes.woodYin"
+          data-id="woodYin"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="container_label">
       <div class="container_label">
         <div class="liver8_wrapper" id=liver8_wrapper>
@@ -67,17 +68,6 @@
   </div>
 
   <div class="wood_yang">
-    <div class="indicator_wrapper">
-      <div id="wood_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"  data-id="woodYang"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYang">
-        <div class="indicator_background" id="wood_yang_indicator_background" data-id="woodYang" >
-          <div class="indicator" id="wood_yang" data-target="barChartCheckboxes.woodYang"
-              data-id="woodYang">
-          </div>
-        </div>
-      </div>
-    </div>
     <div>
       <% element = Element.find_by(name: 'Wood', yin_yang: 'Yang') %>
       <% total_element_influence = @patient.total_element_influence(element) %>
@@ -92,6 +82,18 @@
             </output>
           </div>
       </form>
+    <div class="indicator_wrapper">
+      <div id="wood_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="woodYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYang">
+        <div class="indicator_background" id="wood_yang_indicator_background" data-id="woodYang" >
+          <div class="indicator" id="wood_yang" data-target="barChartCheckboxes.woodYang"
+              data-id="woodYang">
+          </div>
+        </div>
+      </div>
+    </div>
+
       <div class="container_label">
         <label>
           <input type="checkbox" id="gallBladder44"
@@ -125,17 +127,6 @@
   </div>
 
   <div class="fire_yin">
-    <div class="indicator_wrapper">
-      <div id="fire_yin_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYin"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYin">
-        <div class="indicator_background" id="fire_yin_indicator_background" data-id="fireYin" >
-          <div class="indicator" id="fire_yin" data-target="barChartCheckboxes.fireYin"
-              data-id="fireYin">
-          </div>
-        </div>
-      </div>
-    </div>
     <div>
       <% element = Element.find_by(name: 'Fire', yin_yang: 'Yin') %>
       <% total_element_influence = @patient.total_element_influence(element) %>
@@ -150,6 +141,18 @@
             </output>
           </div>
       </form>
+    <div class="indicator_wrapper">
+      <div id="fire_yin_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYin"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYin">
+        <div class="indicator_background" id="fire_yin_indicator_background" data-id="fireYin" >
+          <div class="indicator" id="fire_yin" data-target="barChartCheckboxes.fireYin"
+              data-id="fireYin">
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container_label">
         <label>
           <input type="checkbox" id="heart9"
@@ -188,17 +191,6 @@
   </div>
 
   <div class="fire_yang">
-    <div class="indicator_wrapper">
-      <div id="fire_yang_range" data-controller="barChartCheckboxes"
-        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYang"
-        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYang">
-        <div class="indicator_background" id="fire_yang_indicator_background" data-id="fireYang" >
-          <div class="indicator" id="fire_yang" data-target="barChartCheckboxes.fireYang"
-            data-id="fireYang">
-          </div>
-        </div>
-      </div>
-    </div>
     <div>
       <% element = Element.find_by(name: 'Fire', yin_yang: 'Yang') %>
       <% total_element_influence = @patient.total_element_influence(element) %>
@@ -213,6 +205,18 @@
             </output>
           </div>
       </form>
+    <div class="indicator_wrapper">
+      <div id="fire_yang_range" data-controller="barChartCheckboxes"
+        data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYang"
+        data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYang">
+        <div class="indicator_background" id="fire_yang_indicator_background" data-id="fireYang" >
+          <div class="indicator" id="fire_yang" data-target="barChartCheckboxes.fireYang"
+            data-id="fireYang">
+          </div>
+        </div>
+      </div>
+    </div>
+
       <div class="container_label">
         <label>
           <input type="checkbox" id="smallInt3"

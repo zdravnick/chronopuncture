@@ -1,5 +1,3 @@
-a = Date.new(1974, 9, 18)
-a.yady
 a.yday
 a.yday
 ((9+1)*30.6
@@ -198,3 +196,5 @@ exit
 LunarPalaces
 LunarPalace
 exit
+LunarPalace.new(year: , month: , day: )
+LunarPalace.new(year: 2020, month:1 , day:1 )
