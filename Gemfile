@@ -10,7 +10,6 @@ gem 'pry'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 gem 'devise'
-gem 'uglifier'
 gem 'coffee-rails'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'russian', '~> 0.6.0'
