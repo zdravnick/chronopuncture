@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # gem "rails_12factor", group: :production
-gem "yui-compressor", group: :production
-# gem 'yui-compressor', '~> 0.12.0'
+# gem "yui-compressor", group: :production
 ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,7 +36,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'yui-compressor', '~> 0.12.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
