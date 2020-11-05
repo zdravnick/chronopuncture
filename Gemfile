@@ -12,16 +12,14 @@ gem 'mysql2'
 gem 'devise'
 gem 'uglifier'
 gem 'coffee-rails'
-# for Lunar days
-# gem 'solunar'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'russian', '~> 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-gem "d3-rails"
-gem 'c3-rails'
+# gem "d3-rails"
+# gem 'c3-rails'
 gem 'kaminari'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'

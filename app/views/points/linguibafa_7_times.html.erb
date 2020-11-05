@@ -34,7 +34,6 @@
 
            <% calculation_date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour))%>
           <% point = opened_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
-          <%= puts calculation_date %>
         <% highlight = ((calculation_date)..(calculation_date+2.hours)).cover?((elem[:date]).in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
 
           <tr class="<%= highlight ? 'highlight' : '' %>">
