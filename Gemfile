@@ -13,7 +13,7 @@ gem 'devise'
 gem 'uglifier'
 gem 'coffee-rails'
 # for Lunar days
-gem 'solunar'
+# gem 'solunar'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'russian', '~> 0.6.0'
 # Use Puma as the app server
