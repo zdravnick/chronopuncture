@@ -10,7 +10,7 @@ gem 'pry'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 gem 'devise'
-
+gem 'uglifier', '~> 2.7', '>= 2.7.2'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'russian', '~> 0.6.0'
 # Use Puma as the app server
