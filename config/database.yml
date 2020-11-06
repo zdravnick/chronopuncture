@@ -4,3 +4,9 @@ development:
   database: chronopuncture
   username: root
   password:
+
+production:
+  <<: *default
+  database: chrhonopuncture_production
+  username: chrhonopuncture
+  password: <%= ENV['CHRHONOPUNCTURE_DATABASE_PASSWORD'] %>

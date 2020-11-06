@@ -8,7 +8,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pry'
 # Use sqlite3 as the database for Active Record
-gem 'mysql2'
+gem 'pg', '>= 0.18', '< 2.0'
 # ЛИШНИЕ №1, 2, 3, 4
 gem 'devise'
 gem 'uglifier', '~> 2.7', '>= 2.7.2'
@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'yui-compressor', '~> 0.12.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
