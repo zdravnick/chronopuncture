@@ -11,7 +11,6 @@ gem 'pry'
 gem 'pg', '>= 0.18', '< 2.0'
 # ЛИШНИЕ №1, 2, 3, 4
 gem 'devise'
-gem 'uglifier', '~> 2.7', '>= 2.7.2'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'russian', '~> 0.6.0'
 # Use Puma as the app server
