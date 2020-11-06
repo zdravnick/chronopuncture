@@ -77,7 +77,7 @@ class LunarPalace
     end
   end
 
-  def ActiveRecord::Base.connection.adapter_name == 'MySQL'git push heroku master
+  def lunar_palace_opposite
     lunar_palace_result = lunar_palace
 
     if lunar_palace_result.between?(15, 28)

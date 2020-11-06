@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 
-//= require c3
 
 require("@rails/ujs").start()
 require("turbolinks").start()
