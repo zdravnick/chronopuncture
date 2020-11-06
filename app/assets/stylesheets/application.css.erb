@@ -121,7 +121,6 @@ html, body {
 .indicator {
   max-width: 100%;
   min-width: 100%;
- /* box-shadow:   0px -3px  2px #c9c483 ;*/
   box-shadow: 5px 2px 8px 0px #595527;
   height: 50%;
   max-height: 100%;
@@ -139,8 +138,8 @@ html, body {
   height: 80%;
   justify-items: center;
   align-items: end;
-background: rgb(208,204,149);
-background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%, rgba(223,221,185,1) 51%);
+  background: rgb(208,204,149);
+  background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%, rgba(223,221,185,1) 51%);
 }
 
 #wood_yin_range, #wood_yang_range, #fire_yin_range, #fire_yang_range,
@@ -161,7 +160,7 @@ background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%
   .heartGuard9_selected, .heartGuard8_selected, .heartGuard7_selected, .tripleHeater1_selected,
   .tripleHeater3_selected, .tripleHeater6_selected, .stomach41_selected, .stomach36_selected,
   .stomach36Copy1_selected, .stomach36Copy2_selected {
-  background: rgb(72,61,139,0.75);
+  background: rgba(72,61,139,0.75);
   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
   border-right: 1px solid #4d4d00;
   border-left: 1px solid #4d4d00;
@@ -196,14 +195,11 @@ background: linear-gradient(0deg, rgba(208,204,149,1) 50%, rgba(153,0,204,1) 50%
   border-radius: 2px;
   box-shadow: 5px 2px 8px 0px #8e883e;
   background: rgb(183,179,123);
-background: linear-gradient(90deg, rgba(183,179,123,1) 8%, rgba(210,207,173,1) 25%, rgba(237,236,222,1) 50%, rgba(210,207,173,1) 75%, rgba(183,179,123,1) 92%);
-  /*  background-color: #F5F5DC;
-*//*  box-shadow: inset 3px 4px 5px  2px #A9A9A9, inset -3px -4px 5px 2px #A9A9A9;
-*/  justify-items: center;
+  background: linear-gradient(90deg, rgba(183,179,123,1) 8%, rgba(210,207,173,1) 25%, rgba(237,236,222,1) 50%, rgba(210,207,173,1) 75%, rgba(183,179,123,1) 92%);
+  justify-items: center;
   align-items: end;
 
 }
-
 
 .slider_wrapper {
    display: grid;
@@ -271,19 +267,12 @@ background: linear-gradient(90deg, rgba(157,208,225,1) 5%, rgba(54,145,176,1) 20
 background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%, rgba(177,218,231,1) 50%, rgba(99,180,207,1) 80%, rgba(42,113,137,1) 95%);
 }
 
-
-
  .wood_yin, .wood_yang, .fire_yin, .fire_yang, .fe0, .fe1, .earth_yin, .earth_yang, .metal_yin,
  .metal_yang, .water_yin, .water_yang {
   height: 100%;
   width: 1fr;
 }
 
-/*.p {
-  background-color: violet;
-  width: 1fr;
-  }
-*/
 .wood_points, .fire_points, .earth_points, .metal_points, .water_points {
   width: 1fr;
 }
@@ -299,23 +288,6 @@ background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%
 .wood_points {
   grid-area: wp;
 }
-
-/*.wood_bar_yin {
-  grid-area: w0;
-  background-color: #00b300;
-}
-
-.wood_div {
-  display: grid;
-  justify-items: center;
-}
-
-
-
-.fire_div {
-  display: grid;
-  justify-items: center;
-}*/
 
 input {
 cursor: pointer;
