@@ -4,3 +4,7 @@ development:
   database: chronopuncture
   username: root
   password:
+
+production:
+  adapter: mysql2
+  advisory_locks: false
