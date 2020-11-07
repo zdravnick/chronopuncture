@@ -64,10 +64,8 @@ export default class extends Controller {
     } else if (target == "waterYang"){
         this.waterYangTarget.style.height = targetHeight + "%" ;
     }
-    // console.log("target= " + target);
   }
 
- // + console.log("target= " + target);
 // раскрашиваем изменившиеся при выборе чекбокса-"точки" столбики-"энергии"
 //
   colorateEnergies(point, energies) {
