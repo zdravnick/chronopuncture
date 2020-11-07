@@ -13,7 +13,8 @@
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
   },
-  "scripts": {
-    "build": "webpack"
+ "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   }
 }
