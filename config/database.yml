@@ -1,10 +1,19 @@
+default: &default
+adapter: mysql2
+encoding: utf8
+username: root
+password:
+host: 127.0.0.1
+port: 3306
+
 development:
-  adapter: mysql2
-  host: 127.0.0.1
-  database: chronopuncture
-  username: root
-  password:
+  <<: *default
+  database: development_chronopuncture
+
+test:
+  <<: *default
+  database: test_chronopuncture
 
 production:
-  adapter: mysql2
-  advisory_locks: false
+  <<: *default
+  database: production_chronopuncture
