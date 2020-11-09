@@ -6,7 +6,6 @@ class VisitsController < ApplicationController
 
 
   def edit
-
   end
 
   def create
@@ -26,8 +25,8 @@ class VisitsController < ApplicationController
   end
 
   def show
-      @visit = Visit.find.patient(params[:id])
-    end
+    @visit = Visit.find.patient(params[:id])
+  end
 
 
   def destroy
