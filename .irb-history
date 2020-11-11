@@ -1,8 +1,3 @@
-  when 1923, 1945, 1968, 1990, 2035 then 5
-  when 1924, 1946, 1991, 2013, 2036 then 6
-  when 1947, 1969, 1992, 2014 then 7
-  when 1925, 1948, 1970, 2015, 2037 then 8
-  when 1926, 1971, 1993, 2016, 2038 then 9
   when 1927, 1949, 1972, 1994, 2039 then 10
   when 1928, 1950, 1995, 2017, 2040 then 11
   when 1951, 1973, 1996, 2018 then 12
@@ -197,4 +192,9 @@ exit
 exit
 Patient.last
 Visit.last
+exit
+Point.last
+Visit.last
+exit
+RAILS_ENV = test bin / rake webpacker: clobber
 exit
