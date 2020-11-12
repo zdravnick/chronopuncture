@@ -9,7 +9,7 @@ gem 'pry'
 # Use sqlite3 as the database for Active Record
 
 # gem 'mysql2'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 2.0', group: :production
 gem 'devise'
 gem 'coffee-rails'
 # for Lunar days
