@@ -23,4 +23,5 @@ development:
 
 production:
   adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
+  username: nick
+  database: postgresql-crystalline-10757
