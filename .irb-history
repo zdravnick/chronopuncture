@@ -1,13 +1,3 @@
-  when 1927, 1949, 1972, 1994, 2039 then 10
-  when 1928, 1950, 1995, 2017, 2040 then 11
-  when 1951, 1973, 1996, 2018 then 12
-  when 1929, 1952, 1974, 2019, 2041 then 13
-  when 1930, 1975, 1997, 2020, 2042 then 14
-  when 1931, 1953, 1976, 1998, 2043 then 15
-  when 1932, 1954, 1999, 2021, 204 then 16
-  when 1955, 1977, 2000, 2022 then 17
-  when 1933, 1956, 1978, 2023, 2045 then 18
-  when 1934, 1979, 2001, 2024, 2046 then 19
   when 1935, 1957, 1980, 2002, 2047 then 20
   when 1936, 1958, 2003, 2025, 2048 then 21
   when 1959, 1981, 2004, 2026 then 22
@@ -197,4 +187,14 @@ Point.last
 Visit.last
 exit
 RAILS_ENV = test bin / rake webpacker: clobber
+exit
+ActiveRecord::Base.connection.adapter_name
+exit
+ActiveRecord::Base.connection.adapter_name
+exit
+Patient.last
+Visit.last
+Visit.last.patient
+exit
+Visit.last
 exit
