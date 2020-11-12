@@ -24,4 +24,4 @@ development:
 production:
   adapter: postgresql
   username: nick
-  database: postgresql-crystalline-10757
+  database: DATABASE_URL
