@@ -23,4 +23,4 @@ development:
 
 production:
   adapter: postgresql
-  database: chronopuncture_production
+  url: <%= ENV['DATABASE_URL'] %>
