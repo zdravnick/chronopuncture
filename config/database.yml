@@ -20,8 +20,3 @@ development:
   database: chronopuncture
   pool: 5
 
-
-production:
-  adapter: postgresql
-  username: nick
-  database: HEROKU_POSTGRESQL_BLACK
