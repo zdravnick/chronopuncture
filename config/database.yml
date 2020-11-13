@@ -19,3 +19,9 @@ development:
   username: nick
   database: chronopuncture
   pool: 5
+
+
+production:
+  adapter: postgresql
+  prepared_statements: false
+  advisory_locks: false
