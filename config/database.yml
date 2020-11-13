@@ -23,5 +23,3 @@ development:
 
 production:
   adapter: postgresql
-  username: nick
-  database: chronopuncture_production
