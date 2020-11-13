@@ -13,15 +13,19 @@
 #   password:
 
 
-development:
+default: &default
   adapter: postgresql
-  host: localhost
-  username: nick
-  database: chronopuncture
-  pool: 5
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+ development:
+  <<: *default
+  database: chronopuncture_development
 
 
 production:
-  adapter: postgresql
-  username: nick
-  url: <%= ENV['DATABASE_URL'] %>
+   <<: *default
+  database: chronopuncture_production
+  username: chronopuncture
+  password: <%= ENV['CHRONOPUNCTURE_DATABASE_PASSWORD'] %>
