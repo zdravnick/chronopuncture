@@ -1,6 +1,3 @@
-    else 0
-  end
-end
 # число-эквивалент месяца
 #
 def lunar_palaces_month_num(month)
@@ -197,4 +194,7 @@ exit
 ActiveRecord::Base.connection.adapter_name
 heroku pg:info
 heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
+exit
+config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
+puts config
 exit
