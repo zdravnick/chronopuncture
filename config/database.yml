@@ -20,3 +20,6 @@ development:
   database: chronopuncture
   pool: 5
 
+
+production:
+  adapter: postgresql
