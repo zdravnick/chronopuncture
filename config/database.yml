@@ -23,5 +23,5 @@ development:
 
 production:
   adapter: postgresql
-  prepared_statements: false
-  advisory_locks: false
+  username: nick
+  url: <%= ENV['DATABASE_URL'] %>
