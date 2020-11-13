@@ -1,7 +1,3 @@
-  when 1935, 1957, 1980, 2002, 2047 then 20
-  when 1936, 1958, 2003, 2025, 2048 then 21
-  when 1959, 1981, 2004, 2026 then 22
-  when 1937, 1960, 1982, 2027, 2049 then 23
   when 1938, 1983, 2005, 2028, 2050 then 24
   when 1939, 1961, 1984, 2006, 2051 then 25
   when 1940, 1962, 2007, 2029, 2052 then 26
@@ -197,4 +193,8 @@ Visit.last
 Visit.last.patient
 exit
 Visit.last
+exit
+ActiveRecord::Base.table_name
+Rails.configuration
+ Rails.configuration.database_configuration[Rails.env]
 exit

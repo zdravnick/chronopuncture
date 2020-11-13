@@ -22,6 +22,3 @@ development:
 
 
 production:
-  adapter: postgresql
-  username: nick
-  database: HEROKU_POSTGRESQL_DATABASE
