@@ -1,5 +1,3 @@
-  end
-def lunar_palace(equ_day, equ_month, equ_year, correction)
   sum = equ_day + equ_month + equ_year + correction
   if sum > 28
     lunar_palace = sum%28
@@ -197,4 +195,6 @@ database.size
 config.database.size
 exit
 City.all
+exit
+City.last
 exit
