@@ -67,11 +67,10 @@ class LunarPalace
   end
 
   def lunar_palace
+    # binding.pry
     sum = day + month + year + lunar_palaces_leap_correction
     if sum > 28
       sum%28
-    elsif sum == 0
-      28
     else
       sum
     end
@@ -82,6 +81,8 @@ class LunarPalace
 
     if lunar_palace_result.between?(15, 28)
       lunar_palace_result - 14
+    elsif lunar_palace_result == 0
+      14
     elsif lunar_palace_result.between?(1, 14)
       lunar_palace_result + 14
     else

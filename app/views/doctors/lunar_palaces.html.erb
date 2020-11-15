@@ -8,6 +8,8 @@
 <% @points_of_lunar_palaces[0][:woman].map do |point|  %>
 <%= link_to point.name.to_s + " " + point.alias_ru.to_s, controller: :points, action: :show_point, id: point.id %>
 <% end %>
+<h4> @lunar_palaces_year_num: (год) <%= @lunar_palaces_year_num %> </h4>
+<h4> @lunar_palaces_month_num: (месяц) <%= @lunar_palaces_month_num %> </h4>
 <h4> Лунный дворец на выбранную дату: <%= @lunar_palace_opposite %> </h4>
 
 
