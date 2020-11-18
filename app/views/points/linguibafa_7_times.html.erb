@@ -22,7 +22,7 @@
 <table><% @opened_points_linguibafa.each do |elem| %>
   <tr>
     <td><%= elem[:date]+@offset_timezone_doctor.seconds  %></td>
-    <td><%= elem[:point].to_s%></td>
+    <td><%= elem[:point].alias_ru%></td>
     <td>Ствол ЧАСА: <%= @trunc_hour %> </td>
     <td>Ветвь ЧАСА: <%= @brunch_hour %> </td>
     <td>
@@ -34,6 +34,7 @@
 
            <% calculation_date = (ActiveSupport::TimeZone[current_doctor.city.time_zone].local(elem[:date].year, elem[:date].month, elem[:date].day, elem[:date].hour, 0, 0).change(hour: hour))%>
           <% point = opened_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
+          <% tie_point = tie_point_linguibafa(@doctor_city, (calculation_date+@offset_timezone_doctor.seconds)) %>
         <% highlight = ((calculation_date)..(calculation_date+2.hours)).cover?((elem[:date]).in_time_zone(current_doctor.city.time_zone)) && point == elem[:point] %>
 
           <tr class="<%= highlight ? 'highlight' : '' %>">
@@ -42,12 +43,15 @@
             <td> <%= (calculation_date+@offset_timezone_doctor.seconds+2.hours).strftime("%H:%M")  %> </td>
              <td>
               <% if params[:a]%>
-               <%  if point == params[:a] %>
-                <%= point %>
-                <%  end%>
+               <% if params[:a].include?(point.id.to_s || tie_point.id.to_s) %>
+                    <%= point.name %> <%= point.alias_ru %>
+                    <%= tie_point.name %> <%= tie_point.alias_ru %>
+               <% end %>
                 <%  else %>
                   <%= calculation_date %>
-               <div  class="<%= highlight ? 'highlight_2' : '' 'points_linguibafa_7' %>"> <%= link_to point, params.permit!.merge({a: point})%>
+               <div  class="<%= highlight ? 'highlight_2' : '' 'points_linguibafa_7' %>">
+                <%= link_to point.alias_ru , params.permit!.merge({a: point})%>
+                <%= link_to tie_point.alias_ru , params.permit!.merge({a: tie_point})%>
                 </div>
               <%  end %>
              </td>

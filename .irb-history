@@ -1,9 +1,3 @@
-    lunar_palace
-  end
-end
-# выбираем сектор с точками
-#
-def lunar_palace_opposite(lunar_palace)
   if lunar_palace.between?(15, 28)
     lunar_palace_opposite = lunar_palace - 14
   elsif lunar_palace.between?(1, 14)
@@ -197,4 +191,10 @@ exit
 City.first
 exit
 2015%28
+exit
+учше
+exit
+City.last
+config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
+puts config
 exit

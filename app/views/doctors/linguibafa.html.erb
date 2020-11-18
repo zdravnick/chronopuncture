@@ -1,4 +1,5 @@
-  <h4>ЛИНГУЙБАФА: открыта точка  <%=  @opened_points_linguibafa %></h4>
+  <h4>ЛИНГУЙБАФА: открыта точка:  <%=  @opened_points_linguibafa.alias_ru %></h4>
+  <h4>ЛИНГУЙБАФА: связующая точка:  <%=  @tie_point_linguibafa.alias_ru %></h4>
   <h4>МЕСТНОЕ ВРЕМЯ: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>
     <h4>Солнечное время (@sun_time ) в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time %></h4>
   <h4>Поправка EOT <%= @eot %> секунды <h4>

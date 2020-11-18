@@ -39,30 +39,30 @@ export default class extends Controller {
     this.indicatorWrapperTarget;
     containerOffset = this.indicatorWrapperTarget.offsetHeight;
 
-    coordMouseY = event.pageY - event.currentTarget.offsetTop;;
+    coordMouseY = event.pageY - event.currentTarget.offsetTop;
     target = event.target.dataset.id;
     targetHeight = target + 'Height';
     targetHeight = Math.round((containerOffset-coordMouseY)/containerOffset*100);
     if (target == "woodYang") {
-      this.woodYangTarget.style.height = targetHeight + "%" ;
+      this.woodYangTarget.style.height = targetHeight + "%";
     } else if (target == "woodYin"){
-        this.woodYinTarget.style.height = targetHeight + "%" ;
+        this.woodYinTarget.style.height = targetHeight + "%";
     } else if (target == "fireYin"){
-        this.fireYinTarget.style.height = targetHeight + "%" ;
+        this.fireYinTarget.style.height = targetHeight + "%";
     } else if (target == "fireYang"){
-        this.fireYangTarget.style.height = targetHeight + "%" ;
+        this.fireYangTarget.style.height = targetHeight + "%";
     } else if (target == "earthYin"){
-        this.earthYinTarget.style.height = targetHeight + "%" ;
+        this.earthYinTarget.style.height = targetHeight + "%";
     } else if (target == "earthYang"){
-        this.earthYangTarget.style.height = targetHeight + "%" ;
+        this.earthYangTarget.style.height = targetHeight + "%";
     } else if (target == "metalYin"){
-        this.metalYinTarget.style.height = targetHeight + "%" ;
+        this.metalYinTarget.style.height = targetHeight + "%";
     } else if (target == "metalYang"){
-        this.metalYangTarget.style.height = targetHeight + "%" ;
+        this.metalYangTarget.style.height = targetHeight + "%";
     } else if (target == "waterYin"){
-        this.waterYinTarget.style.height = targetHeight + "%" ;
+        this.waterYinTarget.style.height = targetHeight + "%";
     } else if (target == "waterYang"){
-        this.waterYangTarget.style.height = targetHeight + "%" ;
+        this.waterYangTarget.style.height = targetHeight + "%";
     }
   }
 
@@ -73,13 +73,13 @@ export default class extends Controller {
     for (let energy in energies) {
       let percentage = energies[energy];
       let energyIndicatorHeight = getComputedStyle(document.querySelector("#" + energy)).height;
-      let energyCurrentValue = parseInt(energyIndicatorHeight)/parseInt(containerHeight)*100;
+      let energyCurrentValue = Math.round((parseInt(energyIndicatorHeight)/parseInt(containerHeight))*100);
       if (document.querySelector("#" + point).checked == false){
         percentage = percentage * -1
       }
     document.querySelector("#" + energy).style.height = (energyCurrentValue + percentage) + "%";
     document.querySelector("#" + energy + "_range").classList.toggle(point + "_selected");
-    }
+  }
   }
 
   lung9Effect() {

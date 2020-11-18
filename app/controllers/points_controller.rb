@@ -65,21 +65,29 @@ class PointsController < ApplicationController
       sum_of_numbers_linguibafa(@doctor_city, @sun_datetime_zone)
     @opened_points_linguibafa =
       opened_point_linguibafa(@doctor_city, @sun_datetime_zone)
+      @tie_point_linguibafa =
+      tie_point_linguibafa(@doctor_city, @sun_datetime_zone)
     render  "doctors/linguibafa"
   end
 
   def linguibafa_7_times
   @opened_points_linguibafa =
     (@sun_datetime_zone.to_datetime..@sun_datetime_zone.to_datetime+6.days).map do |date|
-      # puts date
       @sum_of_numbers_linguibafa =
       sum_of_numbers_linguibafa(@doctor_city, date)
     {date: date, point: opened_point_linguibafa(@doctor_city, date) }
+    end
+     @tie_points_linguibafa =
+    (@sun_datetime_zone.to_datetime..@sun_datetime_zone.to_datetime+6.days).map do |date|
+      @sum_of_numbers_linguibafa =
+      sum_of_numbers_linguibafa(@doctor_city, date)
+    {date: date, tie_point: tie_point_linguibafa(@doctor_city, date) }
     end
 
   end
 
   helper_method :opened_point_linguibafa
+  helper_method :tie_point_linguibafa
   helper_method :opened_points_naganfa
   helper_method :opened_points_infusion_2
   helper_method :sun_time
@@ -473,19 +481,38 @@ class PointsController < ApplicationController
   def opened_point_linguibafa(city, date) # таблица соответствия "расчетная цифра - точка"
 
     case remainder_of_division_linguibafa(city, date)
-    when 1 then 'V.62 Shen-mai'
-    when 2, 5 then 'R.6 Zhao-hai'
-    when 3 then 'TR.5 Wai-guan'
-    when 4 then 'GB.41 Zu-lin-qi'
-    when 6 then 'RP.4 Gong-sun'
-    when 7 then 'IG.3 Hou-xi'
-    when 8 then 'MC.6 Nei-guan'
-    when 9 then 'P.7 Lie-que'
+    when 1 then Point.find_by(alias_ru: 'Шэнь-май')
+    when 2, 5 then Point.find_by(alias_ru: 'Чжао-хай')
+    when 3 then Point.find_by(alias_ru: 'Вай-гуань')
+    when 4 then Point.find_by(alias_ru: 'Цзу-линь-ци')
+    when 6 then Point.find_by(alias_ru: 'Гунь-сунь')
+    when 7 then Point.find_by(alias_ru: 'Хоу-си')
+    when 8 then Point.find_by(alias_ru: 'Нэй-гуань')
+    when 9 then Point.find_by(alias_ru: 'Ле-цюе')
     when 0
       if trunc_day_calculation(city, date).even?
-        'RP.4 Gong-sun'
+        Point.find_by(alias_ru: 'Гунь-сунь')
       else
-        'P.7 Lie-que'
+        Point.find_by(alias_ru: 'Ле-цюе')
+      end
+    end
+  end
+
+  def tie_point_linguibafa(city, date)
+    case remainder_of_division_linguibafa(city, date)
+    when 1 then Point.find_by(alias_ru: 'Хоу-си')
+    when 2, 5 then Point.find_by(alias_ru: 'Ле-цюе')
+    when 3 then Point.find_by(alias_ru: 'Цзу-линь-ци')
+    when 4 then Point.find_by(alias_ru: 'Вай-гуань')
+    when 6 then Point.find_by(alias_ru: 'Нэй-гуань')
+    when 7 then Point.find_by(alias_ru: 'Шэнь-май')
+    when 8 then Point.find_by(alias_ru: 'Гунь-сунь')
+    when 9 then Point.find_by(alias_ru: 'Чжао-хай')
+    when 0
+      if trunc_day_calculation(city, date).even?
+        Point.find_by(alias_ru: 'Нэй-гуань')
+      else
+        Point.find_by(alias_ru: 'Чжао-хай')
       end
     end
   end
