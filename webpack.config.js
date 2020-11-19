@@ -18,6 +18,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin('public/packs/js', {} )
+    new CleanWebpackPlugin()
   ]
 }
