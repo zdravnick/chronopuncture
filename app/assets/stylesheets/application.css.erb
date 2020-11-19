@@ -60,7 +60,7 @@ html, body {
 .page.current {
   background-color: yellow;
   border: 2px solid red;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .theme-grey {
@@ -73,7 +73,7 @@ html, body {
 }
 
 .canvas-style-2 {
-  border: 10px solid blue;
+  border: 4px solid blue;
 }
 
 .reversed_list {
@@ -443,6 +443,7 @@ background-color: #bfbb73;
 .highlight_2>a {
   background-color: yellow;
 }
+
 /*
 .highlight_3 {
   display: grid;
@@ -461,7 +462,7 @@ ul>li {
 }
 
 table, tr, td, td>a{
-  border-spacing: 5px 10px;
+  border-spacing: 5px 4px;
  /* border: 1px solid black;*/
 }
 
@@ -473,8 +474,20 @@ ol, td {
   font-weight: bold;
 }
 
+input[type=submit] {
+  margin-bottom: 4px;
+  background-color: #afaa50;
+  text-decoration: none;
+  color: black;
+  box-shadow: 3px 3px 3px #630;
+  border: 2px solid olive;
+  border-radius: 4px;
+  padding: 3px 4px 1px 4px;
+  margin: 10px;
+}
+
 a {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   background-color: #afaa50;
   text-decoration: none;
   color: black;
@@ -482,6 +495,7 @@ a {
   border: 2px solid olive;
   border-radius: 4px;
   padding: 0.05%;
+  margin: 10px;
   /*font-size: 20px;*/
 }
 
@@ -490,23 +504,28 @@ a {
   box-shadow: 3px 3px 3px #630;
   cursor: pointer;
   border: 2px solid #8B4513;
-  border-radius: 10px;
+  border-radius: 4px;
 }
-a:hover, .btn-control:hover {
+a:hover, .btn-control:hover, input[type=submit]:hover {
   outline: none !important;
   background-color: #999900;
   color: white;
+  border: 2px solid #630;
   border-radius: 4px;
   box-shadow: 3px 3px 3px #666600;
 }
 
 
-a:active,  .btn-control:active {
+a:active,  .btn-control:active, input[type=submit]:active {
   outline: none !important;
   background-color: #666600;
-  box-shadow: 3px 3px 3px #666600;
+  box-shadow: 3px 3px 3px 2px white;
   color: white;
 
+}
+
+.highlight, .highlight_2>a:hover {
+  border: 1px solid black;
 }
 
 .highlight_2>a:active {

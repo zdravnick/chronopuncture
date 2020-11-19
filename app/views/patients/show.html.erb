@@ -18,7 +18,7 @@
     <%= f.label " Выберите время: " %>
     <%= f.datetime_select :date, default: DateTime.now %>
     <%= f.datetime_select :birthdate, default: @patient.birthdate %>
-    <%= f.submit "Рассчитать" %>
+    <%= f.submit   "Рассчитать", class: "form_button" %>
     <% end %>
   </p>
 
