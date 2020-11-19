@@ -1,76 +1,3 @@
-  if lunar_palace.between?(15, 28)
-    lunar_palace_opposite = lunar_palace - 14
-  elsif lunar_palace.between?(1, 14)
-    lunar_palace_opposite = lunar_palace + 14
-  else
-  end
-end
-# выводим точки по секторам, мужские и женские
-#
-def points_of_lunar_palaces(lunar_palace_opposite)
-   result = []
-  case lunar_palace_opposite
-    when 1
-      result << { men: [ Point.find_by(name: 'F.1')], woman: [Point.find_by(name: 'Vb.41')] }
-    when 2
-      result << { men: [ Point.find_by(name: 'F.4') ], woman: [ Point.find_by(name: 'Vb.44') ]  }
-    when 3
-      result << { men: [ Point.find_by(name: 'F.3') ], woman: [ Point.find_by(name: 'Vb.34') ]  }
-    when 4
-      result << { men: [ Point.find_by(name: 'F.3'), Point.find_by(name: 'Vb.37') ],
-       woman: [ Point.find_by(name: 'Vb.37'), Point.find_by(name: 'F.3') ]  }
-    when 5
-      result << { men: [ Point.find_by(name: 'F.5'), Point.find_by(name: 'Vb.40') ],
-       woman: [ Point.find_by(name: 'F.5'), Point.find_by(name: 'Vb.40') ]  }
-    when 6
-      result << { men: [ Point.find_by(name: 'F.2') ], woman: [ Point.find_by(name: 'Vb.38') ]  }
-    when 7
-      result << { men: [ Point.find_by(name: 'F.8') ], woman: [ Point.find_by(name: 'Vb.43') ]  }
-    when 8
-      result << { men: [ Point.find_by(name: 'R.1') ], woman: [ Point.find_by(name: 'V.65') ]  }
-    when 9
-      result << { men: [ Point.find_by(name: 'R.7') ], woman: [ Point.find_by(name: 'V.67') ]  }
-    when 10
-      result << { men: [ Point.find_by(name: 'R.3') ], woman: [ Point.find_by(name: 'V.40') ]  }
-    when 11
-      result << { men: [ Point.find_by(name: 'R.3'), Point.find_by(name: 'V.58') ],
-        woman: [ Point.find_by(name: 'R.3'), Point.find_by(name: 'V.58') ]  }
-    when 12
-      result << { men: [ Point.find_by(name: 'R.4'), Point.find_by(name: 'V.64') ],
-        woman: [ Point.find_by(name: 'R.4'), Point.find_by(name: 'V.64') ]  }
-    when 13
-      result << { men: [ Point.find_by(name: 'R.2') ], woman: [ Point.find_by(name: 'V.60') ]  }
-    when 14
-      result << { men: [ Point.find_by(name: 'R.10') ], woman: [ Point.find_by(name: 'V.66') ]  }
-    when 15
-      result << { men: [ Point.find_by(name: 'P.11') ], woman: [ Point.find_by(name: 'Gi.3') ]  }
-    when 16
-      result << { men: [ Point.find_by(name: 'P.8') ], woman: [ Point.find_by(name: 'Gi.1') ]  }
-    when 17
-      result << { men: [ Point.find_by(name: 'P.9') ], woman: [ Point.find_by(name: 'Gi.11') ]  }
-    when 18
-      result << { men: [ Point.find_by(name: 'Gi.6'), Point.find_by(name: 'P.9') ],
-        woman: [ Point.find_by(name: 'Gi.6'), Point.find_by(name: 'Gi.11') ]  }
-    when 19
-      result << { men: [ Point.find_by(name: 'Gi.4'), Point.find_by(name: 'P.7') ],
-        woman: [ Point.find_by(name: 'P.7'), Point.find_by(name: 'Gi.4') ]  }
-    when 20
-      result << { men: [ Point.find_by(name: 'P.10') ], woman: [ Point.find_by(name: 'Gi.5') ]  }
-    when 21
-      result << { men: [ Point.find_by(name: 'P.5') ], woman: [ Point.find_by(name: 'Gi.2') ]  }
-    when 22
-      result << { men: [ Point.find_by(name: 'C.9'), Point.find_by(name: 'Mc.9') ],
-        woman: [ Point.find_by(name: 'Ig.3') ]  }
-    when 23
-      result << { men: [ Point.find_by(name: 'C.4'), Point.find_by(name: 'Mc.5') ],
-        woman: [ Point.find_by(name: 'Ig.1') ]  }
-    when 24
-      result << { men: [ Point.find_by(name: 'C.7'), Point.find_by(name: 'Mc.7') ],
-        woman: [ Point.find_by(name: 'Ig.8') ]  }
-    when 25
-      result << { men: [ Point.find_by(name: 'Ig.7'), Point.find_by(name: 'C.7'),
-        Point.find_by(name: 'Mc.7') ],
-        woman: [ Point.find_by(name: 'Ig.7'), Point.find_by(name: 'C.7'),
         Point.find_by(name: 'Mc.7') ]  }
     when 26
       result << { men: [ Point.find_by(name: 'Ig.4'), Point.find_by(name: 'C.5'),
@@ -197,4 +124,77 @@ exit
 City.last
 config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
 puts config
+exit
+Point.find_by name: 'V.62'
+Point.find_by name: 'R.6'
+Meridian.find_by name: 'Почки'
+Meridian.find_by alias_ru: 'Почки'
+Point.create(name: 'R.6', alias_ru: 'Чжао-хай', meridian_id: 4)
+Point.find_by name: 'R.6'
+Point.find_by name: 'TR.5'
+Point.find_by name: 'Tr.5'
+Meridian.find_by alias_ru: 'Тройной Обогреватель'
+Meridian.find_by alias_ru: 'Почки'
+Point.create(name: 'Tr.5', alias_ru: 'Вай-гуань', meridian_id: 11)
+reload!
+Point.find_by name: 'Tr.5'
+Point.find_by name: 'GB.41'
+Point.find_by name: 'Gи.41'
+Point.find_by name: 'Gb.41'
+Meridian.find_by alias_ru: 'Желчный Пузырь'
+Point.create(name: 'Vb.41', alias_ru: 'Цзу-линь-ци', meridian_id: 12)
+a = Point.find_by(name: 'Vb.41')
+a.update(own_element: 'Wood')
+a.save
+a
+a = Point.find_by(name: 'Rp.4')
+Meridian.find_by alias_ru: 'Селезенка'
+Point.create(name: 'Rp.4', alias_ru: 'Гунь-сунь', meridian_id: 6)
+a = Point.find_by(name: 'Rp.4')
+a.update serial_number: 4
+a = Point.find_by(name: 'Vb.41')
+a
+a.update serial_number: 41
+a
+a = Point.find_by(name: 'Rp.4')
+Point.create(name: 'Rp.4', alias_ru: 'Гунь-сунь', meridian_id: 6, serial_number: 4)
+a = Point.find_by(name: 'Tr.5')
+b = Point.find_by(name: 'Tr.5')
+reload!
+b
+a
+a=nil
+a
+b
+c
+b.update serial_number: 5
+b.update function: 'Lo'
+b
+leque = Point.find_by(name: 'P.7')
+leque
+leque.update function: 'Lo'
+wai = Point.find_by(name: 'Tr.5')
+wai
+zu = Point.find_by(name: 'Vb.41')
+zu
+zu.update finction: 'Lo'
+zu.update function: 'Lo'
+zhao = Point.find_by(name: 'R.6')
+zhao
+zhao.update(serial_number: 6, function: 'Lo')
+zhao
+shen = Point.find_by(name: 'V.62')
+shen
+shen.update function: 'Lo'
+hou = Point.find_by(name: 'Ig.3')
+hou
+hou.update function: 'Lo'
+hou
+nei = Point.find_by(name: 'Mc.6')
+nei
+nei.update function: 'Lo'
+nei
+lie = Point.find_by(name: 'P.7')
+lie
+reload!
 exit
