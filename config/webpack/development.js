@@ -1,5 +1,4 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-
+const path = require("path")
 const environment = require("./environment")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = environment.toWebpackConfig()
