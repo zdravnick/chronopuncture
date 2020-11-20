@@ -479,7 +479,8 @@ a {
   border-radius: 4px;
   padding: 0.05%;
   margin: 10px;
-
+  padding: 3px 4px 2px 4px;
+  font-size: 1.8vmax;
 }
 
 #name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,
@@ -490,6 +491,7 @@ a {
   border-radius: 4px;
   padding: 3px 4px 3px 4px;
   margin: 3px;
+  width:40%;
 }
 
 #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
@@ -517,15 +519,15 @@ a {
 }
 
 
-.btn-control, input[type=submit], #patient_city_id {
+.btn-control, input[type=submit], #patient_city_id  {
   background-color: wheat;
   box-shadow: 3px 3px 3px #630;
   cursor: pointer;
   border: 2px solid #8B4513;
   border-radius: 4px;
   padding: 3px 4px 2px 4px;
-  font-size: 1.6vmax;
   margin-bottom: 10px;
+  font-size: 1.6vmax;
 }
 
 a:hover, .btn-control:hover, input[type=submit]:hover {
