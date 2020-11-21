@@ -2,9 +2,7 @@ class PatientsController < ApplicationController
 
   before_action :authenticate_doctor!, except: :color_mode_action
 
-
-
-def color_mode_action
+  def color_mode_action
     cookies.signed[:color_mode_cookie] = params[:color_mode_param]
     redirect_back fallback_location: root_path
   end
@@ -13,9 +11,8 @@ def color_mode_action
     @patient =  Patient.new
   end
 
-def create
-
-   @patient =  Patient.create(
+  def create
+    @patient =  Patient.create(
       doctor: current_doctor,
       name: params[:name],
       birthdate: DateTime.civil(params["birthdate(1i)"].to_i,
@@ -26,8 +23,7 @@ def create
       city_id: params["city_id"]
     )
     redirect_to patient_path(@patient) rescue redirect_to patients_path flash.notice = 'Имени у пациента нет!'
-
-end
+  end
 
   def index
     @patients = current_doctor.patients.order(updated_at: :desc).page params[:page]

@@ -13,10 +13,10 @@
 
   </head>
   <body class="<%= cookies.signed[:color_mode_cookie] || 'theme-light' %>">
-  <%= change_theme_link('theme-light', 'День')%>
-  <%= change_theme_link('theme-dark', 'Ночь')%>
-  <%= change_theme_link('theme-olive', 'Оливка')%>
-  <%= change_theme_link('theme-grey', 'Серый')%>
+  <div class="btn_mode"> <%= change_theme_link('theme-light', 'День')%> </div>
+  <div class="btn_mode"> <%= change_theme_link('theme-dark', 'Ночь')%> </div>
+  <div class="btn_mode"> <%= change_theme_link('theme-olive', 'Оливка')%> </div>
+  <div class="btn_mode"> <%= change_theme_link('theme-grey', 'Серый')%> </div>
 
 
 

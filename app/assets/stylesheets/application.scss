@@ -18,7 +18,6 @@
 outline: none !important
 }
 
-
 html, body {
 /*  background-image: url(/assets/coffee_4.jpg);
   background-size: cover;
@@ -33,20 +32,72 @@ html, body {
   /*font-weight: bold;*/
  }
 
+.btn_mode {
+  display: inline-block;
+}
+
+
+
 .theme-light {
-  filter: invert(0%);
-   background-color:    #dfddb9;
+  $background_color:    #dfddb9;
+  $background_color_button: wheat;
+  background-color: $background_color;
+
+  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+    background-color: $background_color_button;
+  }
+  .patient_delete_control {
+    background-color: rgba(255, 127, 80, 1);
+    border: 2px solid black;
+  }
 }
 
 .theme-dark {
   filter: invert(10%);
-  background-color:  darkolivegreen;
-  color: orange;
+  $background_color:  darkolivegreen;
+  $background_color_button: orange;
+  $font_color: rgba(255, 165, 0, 1);
+  $background_color_input_field: olive;
+
+  color: $font_color;
+  background-color: $background_color;
+
+  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+    background-color: transparentize(($font_color + 25%), 0.3);
+    border: 2px solid black;
+  }
+  #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
+  #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
+  #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
+  #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
+  #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
+    background-color: ($background_color_input_field + 10%);
+    box-shadow: 3px 3px 3px #630;
+    border: 2px solid black;
+  }
+  .patient_delete_control {
+    background-color: rgba(255, 127, 80, 1);
+    border: 2px solid black;
+  }
 }
 
 .theme-olive {
   background-color:  rgba(128, 128, 0, 0.7);
+  $background_color_input_field: olive;
+  $font_color: rgba(255, 165, 0, 1);
   color: black;
+
+  #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
+  #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
+  #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
+  #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
+  #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
+    background-color: ($background_color_input_field + 50%);
+  }
+  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+    background-color: transparentize(($font_color + 25%), 0.3);
+    border: 2px solid black;
+  }
 }
 
 .page, .prev, .next, .last, .first {
@@ -470,12 +521,13 @@ ol, td {
 }
 
 a {
+  display: inline-block;
   margin-bottom: 4px;
   background-color: #afaa50;
   text-decoration: none;
   color: black;
   box-shadow: 3px 3px 3px #630;
-  border: 2px solid olive;
+  border: 2px solid rgba(128, 128, 0, 1);
   border-radius: 4px;
   padding: 0.05%;
   margin: 10px;
@@ -485,7 +537,7 @@ a {
 
 #name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,
 #patient_name, #doctor_email, #doctor_phone, #doctor_password {
-  font-size: 1.5vmax;
+  font-size: 1.6vmax;
   background-color: rgba(245, 222, 179, 0.7);
   border: 2px solid #8B4513;
   border-radius: 4px;
@@ -519,6 +571,7 @@ a {
 }
 
 
+
 .btn-control, input[type=submit], #patient_city_id  {
   background-color: wheat;
   box-shadow: 3px 3px 3px #630;
@@ -541,10 +594,12 @@ a:hover, .btn-control:hover, input[type=submit]:hover {
 
 
 a:active,  .btn-control:active, input[type=submit]:active {
+  color: white;
   outline: none !important;
   background-color: #666600;
-  box-shadow: 3px 3px 3px 2px white;
-  color: white;
+  box-shadow: inset -1px -1px 2px white;
+  border: 2px solid white;
+  transform: scale(0.95);
 
 }
 
@@ -559,7 +614,7 @@ a:active,  .btn-control:active, input[type=submit]:active {
 
 .patient_delete_control {
   margin-left: 15px;
-  background-color: #FF7F50;
+  background-color: rgba(255, 127, 80, 1);
 
 }
 
@@ -568,7 +623,6 @@ a:active,  .btn-control:active, input[type=submit]:active {
   border: 3px solid red;
   background-color: black;
   box-shadow: 4px 4px 4px #FF7F50;
-  transform: scale(1.05);
 }
 
 
