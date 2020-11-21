@@ -93,10 +93,26 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
     background-color: ($background_color_input_field + 50%);
+    border: 2px solid #630;
   }
   .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     background-color: transparentize(($font_color + 25%), 0.3);
+    border: 2px solid #630;
+  }
+  a {
+    border: 2px solid #630;
+  }
+}
+
+.theme-grey {
+  filter: invert(10%);
+  background-color: grey;
+  color: black;
+  a, .btn-control, input[type=submit] {
     border: 2px solid black;
+  }
+  .btn-control:hover, input[type=submit]:hover {
+    border: 2px solid lightgrey;
   }
 }
 
@@ -118,11 +134,6 @@ html, body {
   max-width: 10vmin;
 }
 
-.theme-grey {
-  filter: invert(10%);
-  background-color: grey;
-  color: black;
-}
 .canvas-style {
     border: 5px solid red;
 }
