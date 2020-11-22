@@ -2,6 +2,17 @@
 
  <% @title="Wu_Yun" %>
   <h4> Пациент: <%= @patient.name %>,  Дата рождения: <%= @patient.birthdate.strftime("%d.%m.%Y") %></h4>
+
+<div class="wu_yun_energyes_map">
+  <div>
+    Сильный слой: <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
+  </div>
+ <div>
+   меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)
+ </div>
+
+</div>
+
   <table>
     <tr>
       <td>СИЛЬНЫЙ СЛОЙ: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %></td>
