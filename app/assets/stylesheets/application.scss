@@ -19,7 +19,7 @@
 outline: none !important
 }
 
-$font_size: 1em;
+$font_size: 1rem;
 body {
   font-size: $font_size;
 }
@@ -34,7 +34,14 @@ html, body {
 }
 
 @media (max-width: 901px) {
-  body{
+  body, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
+  #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
+  #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
+  #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
+  #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
+  #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
+  #patient_diagnosis, #patient_name, #doctor_email, #doctor_phone, #doctor_password,
+  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: ($font_size *3);
   }
 
@@ -44,18 +51,7 @@ html, body {
   $background_color:    #dfddb9;
   $background_color_button: wheat;
   background-color: $background_color;
-  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    background-color: $background_color_button;
-    font-size: $font_size;
-  }
-   #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
-  #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
-  #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
-  #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
-  #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id
-  .patient_delete_control {
-    font-size: $font_size;
-  }
+
 }
 
 .theme-dark {
@@ -80,12 +76,10 @@ html, body {
     background-color: ($background_color_input_field + 10%);
     box-shadow: 3px 3px 3px #630;
     border: 2px solid black;
-    font-size: $font_size;
   }
   .patient_delete_control {
     background-color: rgba(255, 127, 80, 1);
     border: 2px solid black;
-    font-size: $font_size;
   }
 }
 
@@ -102,12 +96,11 @@ html, body {
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
     background-color: ($background_color_input_field + 50%);
     border: 2px solid #630;
-    font-size: $font_size;
   }
   .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     background-color: transparentize(($font_color + 25%), 0.3);
     border: 2px solid #630;
-    font-size: $font_size;
+
   }
   a {
     border: 2px solid #630;
@@ -558,14 +551,13 @@ a {
 
 #name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,
 #patient_name, #doctor_email, #doctor_phone, #doctor_password {
-  // font-size: 1.6vmax;
   background-color: rgba(245, 222, 179, 0.7);
   border: 2px solid #8B4513;
   border-radius: 4px;
   padding: 3px 4px 3px 4px;
   margin: 3px;
   width:40%;
-  font-size: $font_size;
+
 }
 
 #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
@@ -573,7 +565,6 @@ a {
 #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
 #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
 #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
-  // font-size: 1.6vmax;
   background-color: #afaa50;
   box-shadow: 3px 3px 3px #630;
   cursor: pointer;
