@@ -48,11 +48,15 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
-  #patient_diagnosis, #patient_name, #doctor_email, #doctor_phone, #doctor_password,
-  .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: ($font_size *3);
   }
-
+  #doctor_email, #doctor_phone, #doctor_password {
+    font-size: ($font_size *6);
+  }
+  input[type=email]{
+    width:  max-content;
+  }
 }
 
 .theme-light {
@@ -564,8 +568,7 @@ a {
   border-radius: 4px;
   padding: 3px 4px 3px 4px;
   margin: 3px;
-  width:40%;
-
+  width:50%;
 }
 
 #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
