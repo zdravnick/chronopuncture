@@ -4,75 +4,109 @@
   <h4> Пациент: <%= @patient.name %>,  Дата рождения: <%= @patient.birthdate.strftime("%d.%m.%Y") %></h4>
 
 <div class="wu_yun_energyes_map">
-  <div>
-    Сильный слой: <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
+  <div class="full">
+    <p>
+      Сильный слой: <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
+    </p>
+    <p>
+      меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %>
+     (<%= @full_layer.leg_meridian_element %>, <%= @full_layer.arm_meridian_element %>)
+    </p>
+    <p>
+      СИЛЬНЫЙ СТВОЛ: <%= @full_trunk_year.serial_number %>, <%= link_to @full_trunk_year.year_meridian.alias_ru, meridian_path(id: @full_trunk_year.year_meridian.id), action: :show %>
+    </p>
+      <p>
+        Энергия Ствола: <%=  @full_trunk_year.trunk_energy %>
+      </p>
+      <p>
+        СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %>
+      </p>
+      <p>
+        ( меридиан: <%= @full_branch_year.day_meridian.energy_name %>, ветвь: <%= @full_branch_year.day_meridian.element_branch %> )
+      </p>
+
+
   </div>
- <div>
-   меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)
- </div>
+
+<div class="empty">
+
+    <table>Слабый слой:
+     <% @empty_layer.each do |elem| %>
+      <tr>
+        <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
+      </tr>
+         <td>
+            меридианы: <%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>, <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %> (<%= elem.leg_meridian.energy_name %> , <%= elem.arm_meridian.energy_name %>)
+        </td>
+      <% end %>
+    </table>
+
+
+    <p>
+      Слабый ствол:  <%= @empty_trunk_year.serial_number %>, <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %> <%= @empty_trunk_year_trunk_energy %>, (<%= @empty_trunk_year.year_meridian.energy_name %>)
+    </p>
+  <p>
+    СЛАБАЯ ВЕТВЬ: <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (<%= @empty_branch_year.day_meridian.energy_name %>, <%= @empty_branch_year.day_meridian.element_branch %>)
+  </p>
 
 </div>
 
+<div class="lost">
+  <table>
+    <caption>Потерянная Ци:</caption>
+    <tr>
+      <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
+      <td>
+        <%= @missing_energy_name = energy_name %>
+      </td>
+    </tr>
+      <% end %>
+    </table>
+    Меридианы Потерянной Ци:
+    <% @missing_energies_meridians.compact.each do |elem| %>
+    <%= link_to elem.alias_ru, meridian_path(id: elem.id), action: :show %>
+    <% end %>
+  </div>
+
+</div>
+
+
+
   <table>
     <tr>
-      <td>СИЛЬНЫЙ СЛОЙ: <%= link_to @full_layer.name , layer_path(id:  @full_layer.id), action: :show %></td>
+
     </tr>
     <tr>
       <td>
-        меридианы: <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %> (<%= @full_layer.leg_meridian_element %>) , <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %> (<%= @full_layer.arm_meridian_element %>)
+
       </td>
       <td>
-        <ul>Слабый слой(слои):
-         <% @empty_layer.each do |elem| %>
-          <li>
-            <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
-          </li>
-            <ul>
-              <li>
-                меридианы: <%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>
-                <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %>
-              </li>
-            </ul>
-          <% end %>
-        </ul>
+
       </td>
     </tr>
     <tr>
+
       <td>
-        СИЛЬНЫЙ СТВОЛ: <%= @full_trunk_year.serial_number %>, <%= link_to @full_trunk_year.year_meridian.alias_ru, meridian_path(id: @full_trunk_year.year_meridian.id), action: :show %>, ( Энергия Ствола: <%=  @full_trunk_year.trunk_energy %>)
-      </td>
-      <td>
-        СЛАБЫЙ СТВОЛ:  <%= @empty_trunk_year.serial_number %>, <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %> <%= @empty_trunk_year_trunk_energy %>, Энергия меридиана: (<%= @empty_trunk_year.year_meridian.energy_name %>)
+
       </td>
     </tr>
     <tr>
+
+    </tr>
+    <tr>
       <td>
-        СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %> (<%= @full_branch_year.day_meridian.energy_name %>), id:<%= @full_branch_year.id %>
+
+      </td>
+      <td>
+
       </td>
     </tr>
     <tr>
       <td>
-         Энергия Ветви: <%= @full_branch_year.day_meridian.element_branch %>, Энергия Меридиана: <%= @full_branch_year.day_meridian.energy_name %>
+
       </td>
       <td>
-        СЛАБАЯ ВЕТВЬ: <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (<%= @empty_branch_year.day_meridian.energy_name %>)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <ul> <h4> Отсутствующая Ци: </h4>
-          <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
-            <li>
-              <%= @missing_energy_name = energy_name %>
-            </li>
-          <% end %>
-        </ul>
-      </td>
-      <td>
-        Меридианы Отсутствующей Ци:
-        <% @missing_energies_meridians.compact.each do |elem| %>
-        <%= link_to elem.alias_ru, meridian_path(id: elem.id), action: :show %>
-        <% end %>
+
       </td>
     </tr>
   </table>

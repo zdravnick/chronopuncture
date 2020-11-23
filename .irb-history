@@ -1,6 +1,3 @@
-      result << { men: [ Point.find_by(name: 'C.8'), Point.find_by(name: 'Mc.8') ],
-        woman: [ Point.find_by(name: 'Ig.5') ]  }
-    when 28
       result << { men: [ Point.find_by(name: 'C.3'), Point.find_by(name: 'Mc.3') ],
         woman: [ Point.find_by(name: 'Ig.2') ]  }
   end
@@ -197,4 +194,7 @@ Doctor.create(name: 'Сан',email: 'nick4vk@yandex.ru', city_id: 10)
 reload!
 doctor.last
 Doctor.last
+exit
+Meridian.find_by(alias_ru: "Желудок")
+учше
 exit
