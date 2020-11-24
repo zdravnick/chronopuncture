@@ -44,9 +44,6 @@ html, body {
 
 
 @media (min-width: 320px) and (max-width: 725px) {
-  .theme-light, .theme-dark, .theme-olive, .theme-grey {
-    width: min-content;
-  }
   #doctor_email, #doctor_phone, #doctor_password {
   font-size: calc(42px + 4vmin);
   }
@@ -57,6 +54,7 @@ html, body {
         "empty"
         "lost";
     }
+    width: min-content;
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -71,9 +69,6 @@ html, body {
 
 
 @media (min-width: 726px) and (max-width: 1025px) {
-  .theme-light, .theme-dark, .theme-olive, .theme-grey {
-    width: min-content;
-  }
   $font_size: calc(24px + 4vmin);
   #doctor_email, #doctor_phone, #doctor_password {
   font-size: $font_size;
@@ -85,6 +80,7 @@ html, body {
         "empty"
         "lost";
     }
+    width: min-content;
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,

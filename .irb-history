@@ -1,15 +1,3 @@
-      result << { men: [ Point.find_by(name: 'C.3'), Point.find_by(name: 'Mc.3') ],
-        woman: [ Point.find_by(name: 'Ig.2') ]  }
-  end
-  return result
-end
-points_of_lunar_palaces(lunar_palace_opposite)[0][:men].each{ |e| puts  "#{e.name}"}
-points_of_lunar_palaces(lunar_palace_opposite)[0][:woman].each{ |e| puts "#{e.name}"}
-exit
-LunarPalaces
-LunarPalace
-exit
-LunarPalace.new(year: , month: , day: )
 LunarPalace.new(year: 2020, month:1 , day:1 )
 ctiveRecord::Base.connection.instance_of? 
 ActiveRecord::Base.connection.instance_of? 
@@ -197,4 +185,16 @@ Doctor.last
 exit
 Meridian.find_by(alias_ru: "Желудок")
 учше
+exit
+Point.find_all.where(alias_ru: "Гунь-сунь")
+Point.find_each.where(alias_ru: "Гунь-сунь")
+Point.find_each(alias_ru: "Гунь-сунь")
+Point.find_by(alias_ru: "Гунь-сунь")
+Point.where(alias_ru: "Гунь-сунь")
+a = Point(92)
+a = Point.find(92)
+a
+a.dextroy
+a.destroy
+Point.where(alias_ru: "Гунь-сунь")
 exit
