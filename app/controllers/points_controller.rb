@@ -10,6 +10,7 @@ class PointsController < ApplicationController
   skip_before_action :prepare, only: [:change_color]
   skip_before_action :prepare, only: [:show_point_of_meridian]
   skip_before_action :prepare, only: [:lunar_palaces]
+  skip_before_action :prepare, only: [:wu_yun_liu_thi_trunk]
 
   def show_point
     @point = Point.all.find(params[:id])
@@ -209,7 +210,7 @@ class PointsController < ApplicationController
   def wu_yun_liu_thi_trunk
     @patient = Patient.find(params["patient_id"])
     @patient_city = @patient.city
-    @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
+    # @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
     Time.use_zone(@patient.city.time_zone) do
       @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
         params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
