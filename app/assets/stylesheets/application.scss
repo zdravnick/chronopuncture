@@ -19,7 +19,7 @@
 outline: none !important
 }
 
-$font_size: 1.5vmax;
+$font_size: 1.1em;
 
 body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -45,7 +45,7 @@ html, body {
 
 @media (min-width: 320px) and (max-width: 725px) {
   #doctor_email, #doctor_phone, #doctor_password {
-  font-size: calc(42px + 4vmin);
+  font-size: 2.5em;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
@@ -63,15 +63,13 @@ html, body {
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    font-size: calc(32px + 4vmin);
+    font-size: 2em;
   }
 }
 
-
 @media (min-width: 726px) and (max-width: 1025px) {
-  $font_size: calc(24px + 4vmin);
   #doctor_email, #doctor_phone, #doctor_password {
-  font-size: $font_size;
+  font-size: 1.5em;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
@@ -89,7 +87,7 @@ html, body {
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    font-size: $font_size;
+    font-size: 1.2em;
   }
 }
 
@@ -121,8 +119,6 @@ input[type=email]{
   width:  max-content;
 }
 
-
-
 .theme-light {
   $background_color:  #dfddb9;
   $background_color_button: wheat;
@@ -150,7 +146,7 @@ input[type=email]{
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
     background-color: ($background_color_input_field + 10%);
-    box-shadow: 3px 3px 3px #630;
+    // box-shadow: 3px 3px 3px #630;
     border: 2px solid black;
   }
   .patient_delete_control {
@@ -273,7 +269,7 @@ input[type=email]{
 
   background: orange;
   cursor: pointer;
-  box-shadow: -2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
+  // box-shadow: -2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
 }
 
 
@@ -471,7 +467,7 @@ cursor: pointer;
 
 input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
-  box-shadow: 3px 3px 3px #000000;
+  // box-shadow: 3px 3px 3px #000000;
   background: rgba(128, 128, 0, 0.5);
   border-radius: 1px;
   border: 1px solid black;
@@ -656,7 +652,7 @@ a {
 #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
 #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
   background-color: #afaa50;
-  box-shadow: 3px 3px 3px #630;
+  // box-shadow: 3px 3px 3px #630;
   cursor: pointer;
   border: 2px solid olive;
   border-radius: 4px;

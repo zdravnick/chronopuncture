@@ -15,9 +15,16 @@
     <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
     <% hidden_field_tag(:city, current_doctor.city) %>
     <%= hidden_field_tag(:patient_id, @patient.id) %>
-    <%= f.label " Выберите время: " %>
-    <%= f.datetime_select :date, default: DateTime.now %>
-    <%= f.datetime_select :birthdate, default: @patient.birthdate %>
+    <%= f.label " Выберите время сеанса: " %>
+    <p>
+      <%= f.datetime_select :date, default: DateTime.now %>
+    </p>
+    <p>
+      <%= f.label "День рождения пациента: " %>
+    </p>
+    <p>
+      <%= f.datetime_select :birthdate, default: @patient.birthdate %>
+    </p>
     <%= f.submit   "Рассчитать", class: "form_button" %>
     <% end %>
   </p>
