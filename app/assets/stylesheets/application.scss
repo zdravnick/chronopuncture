@@ -14,12 +14,11 @@
  *= require_self
  */
 
-
 *{
 outline: none !important
 }
 
-$font_size: 1.1em;
+$font_size: 1rem;
 
 body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -41,11 +40,14 @@ html, body {
 .btn_mode {
   display: inline-block;
 }
+.theme-light, .theme-dark, .theme-olive, .theme-grey{
+  width: 100%;
+}
 
 
 @media (min-width: 320px) and (max-width: 725px) {
   #doctor_email, #doctor_phone, #doctor_password {
-  font-size: 2.5em;
+  font-size: 1.3rem;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
@@ -54,7 +56,6 @@ html, body {
         "empty"
         "lost";
     }
-    width: min-content;
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -63,13 +64,13 @@ html, body {
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    font-size: 2em;
+    font-size: 1.3rem;
   }
 }
 
 @media (min-width: 726px) and (max-width: 1025px) {
   #doctor_email, #doctor_phone, #doctor_password {
-  font-size: 1.5em;
+  font-size: 1.1rem;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
@@ -78,7 +79,6 @@ html, body {
         "empty"
         "lost";
     }
-    width: min-content;
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -87,7 +87,7 @@ html, body {
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    font-size: 1.2em;
+    font-size: 1.1rem;
   }
 }
 
@@ -113,6 +113,10 @@ html, body {
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: $font_size;
   }
+}
+
+.wu_yun_container {
+  display: grid;
 }
 
 input[type=email]{
@@ -658,6 +662,16 @@ a {
   border-radius: 4px;
   padding: 3px 4px 1px 4px;
   margin: 0.5%;
+}
+
+#_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
+#date__1i:hover, #date__2i:hover, #date__3i:hover, #_visited_at_5i:hover,
+#_visited_at_4i:hover, #_visited_at_3i:hover, #_visited_at_2i:hover, #_visited_at_1i:hover,
+#_birthdate_5i:hover, #_birthdate_4i:hover, #_birthdate_3i:hover, #_birthdate_2i:hover,
+#_birthdate_1i:hover, #patient_birthdate_5i:hover, #patient_birthdate_4i:hover,
+#patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
+#city_id:hover{
+  color: white;
 }
 
 // #_date_3i:option {
