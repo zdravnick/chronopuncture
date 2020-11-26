@@ -63,8 +63,17 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
-  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit],
+  #patient_city_id, .slider {
     font-size: 1.3rem;
+  }
+  .slider {
+    height: 14rem;
+    width: 1ch;
+    color: black;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: rgba(255, 165, 0, 0.7);
   }
 }
 
@@ -86,8 +95,17 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
-  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit],
+  #patient_city_id, .slider {
     font-size: 1.1rem;
+  }
+  .slider {
+    height: 14rem;
+    width: 1ch;
+    color: black;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: rgba(255, 165, 0, 0.7);
   }
 }
 
@@ -127,7 +145,9 @@ input[type=email]{
   $background_color:  #dfddb9;
   $background_color_button: wheat;
   background-color: $background_color;
-
+  .slider {
+   background-color: #d0cc95;
+  }
 }
 
 .theme-dark {
@@ -136,7 +156,10 @@ input[type=email]{
   $background_color_button: orange;
   $font_color: rgba(255, 165, 0, 1);
   $background_color_input_field: olive;
-
+  .slider {
+    color: black;
+   background-color: rgba(255, 165, 0, 0.7);
+  }
   color: $font_color;
   background-color: $background_color;
 
@@ -164,6 +187,9 @@ input[type=email]{
   $background_color_input_field: olive;
   $font_color: rgba(255, 165, 0, 1);
   color: black;
+  .slider {
+    background-color: rgba(255, 165, 0, 0.7);
+  }
 
   #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -192,6 +218,9 @@ input[type=email]{
   }
   .btn-control:hover, input[type=submit]:hover {
     border: 2px solid lightgrey;
+  }
+  .slider {
+    background-color: #d0cc95;
   }
 }
 
@@ -260,7 +289,8 @@ input[type=email]{
 
 .histogramme {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(auto-fill, 8%);
+  justify-content: center;
   grid-template-rows: 25vmax 400px;
 
 }
