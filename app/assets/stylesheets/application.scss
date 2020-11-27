@@ -291,6 +291,9 @@ input[type=email]{
   justify-content: center;
   grid-template-rows: 25vmax minmax(25vmax, 20em);
   border: solid 2px #000;
+  input[type="checkbox"] {
+    display: none;
+}
 
 }
 
@@ -307,9 +310,9 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-input {
-  display: none;
-}
+// .histogramme:input {
+//   display: none;
+// }
 
 .lung9_wrapper, .stomach36_wrapper {
   cursor: pointer;
