@@ -47,7 +47,7 @@ html, body {
 
 @media (min-width: 320px) and (max-width: 725px) {
   #doctor_email, #doctor_phone, #doctor_password {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
@@ -65,7 +65,11 @@ html, body {
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id, .slider {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+  }
+  .histogramme {
+    margin-left: 5vmax;
+    margin-right: 5vmax;
   }
 }
 
@@ -91,14 +95,10 @@ html, body {
   #patient_city_id, .slider {
     font-size: 1.1rem;
   }
-  // .slider {
-  //   height: 14rem;
-  //   width: 1ch;
-  //   color: black;
-  //   text-align: center;
-  //   word-wrap: break-word;
-  //   background-color: rgba(255, 165, 0, 0.7);
-  // }
+  .histogramme {
+    margin-left: 5vmax;
+    margin-right: 5vmax;
+  }
 }
 
 @media (min-width: 1026px) {
@@ -310,16 +310,12 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-// .histogramme:input {
-//   display: none;
-// }
-
 .lung9_wrapper, .stomach36_wrapper {
   cursor: pointer;
   border: 1px solid olive;
   border-radius: 15%;
-  margin-bottom: 0.3rem;
-  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  margin-bottom: 0.2rem;
+  padding: 0.1rem;
 }
 
 .lung9_wrapper:hover, .stomach36_wrapper:hover {
