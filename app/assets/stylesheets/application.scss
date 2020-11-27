@@ -67,14 +67,6 @@ html, body {
   #patient_city_id, .slider {
     font-size: 1.3rem;
   }
-  .slider {
-    height: 14rem;
-    width: 1ch;
-    color: black;
-    text-align: center;
-    word-wrap: break-word;
-    background-color: rgba(255, 165, 0, 0.7);
-  }
 }
 
 @media (min-width: 726px) and (max-width: 1025px) {
@@ -99,14 +91,14 @@ html, body {
   #patient_city_id, .slider {
     font-size: 1.1rem;
   }
-  .slider {
-    height: 14rem;
-    width: 1ch;
-    color: black;
-    text-align: center;
-    word-wrap: break-word;
-    background-color: rgba(255, 165, 0, 0.7);
-  }
+  // .slider {
+  //   height: 14rem;
+  //   width: 1ch;
+  //   color: black;
+  //   text-align: center;
+  //   word-wrap: break-word;
+  //   background-color: rgba(255, 165, 0, 0.7);
+  // }
 }
 
 @media (min-width: 1026px) {
@@ -221,6 +213,7 @@ input[type=email]{
   }
   .slider {
     background-color: #d0cc95;
+    border-radius: 5%;
   }
 }
 
@@ -242,27 +235,32 @@ input[type=email]{
   max-width: 10vmax;
 }
 
-// .wu_yun_energyes_map {
-//   display: grid;
-//   grid-template-columns: minmax(1fr, auto);
-//   grid-template-areas:
-//     "full empty"
-//     "lost lost";
-// }
-
 .full {
   grid-area: full;
-  background-color: rgba(255, 165, 0, 0.5);
+  background-color: rgba(255, 165, 0, 0.4);
 }
 
 .empty{
   grid-area: empty;
-  background-color: rgba(128, 128, 0, 0.5);
+  background-color: rgba(128, 128, 0, 0.4);
 }
 
 .lost {
   grid-area: lost;
-  background-color: rgba(238, 130, 238, 0.5);
+  background-color: rgba(238, 130, 238, 0.4);
+}
+
+
+.full_table, .empty_table {
+  width: 100%;
+  table-layout: fixed;
+  white-space: nowrap;
+  padding-left: 2%;
+}
+
+
+.wu_yun_first_cell {
+  width: 25%;
 }
 
 .reversed_list {
@@ -291,21 +289,41 @@ input[type=email]{
   display: grid;
   grid-template-columns: repeat(auto-fill, 8%);
   justify-content: center;
-  grid-template-rows: 25vmax 400px;
+  grid-template-rows: 25vmax minmax(25vmax, 20em);
+  border: solid 2px #000;
 
 }
 
- input[type=range]::-webkit-slider-thumb {
+.wu_yun_advanced_energies_and_houses {
+  display: grid;
+}
+
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 10px;
   height: 35px;
   border: 3px solid #000000;
-
   background: orange;
   cursor: pointer;
-  // box-shadow: -2px 2px 2px #000000, 0px 0px 1px #0d0d0d;
 }
 
+input {
+  display: none;
+}
+
+.lung9_wrapper, .stomach36_wrapper {
+  cursor: pointer;
+  border: 1px solid olive;
+  border-radius: 15%;
+  margin-bottom: 0.3rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+}
+
+.lung9_wrapper:hover, .stomach36_wrapper:hover {
+  background-color: #999900;
+  color: white;
+  border: 1px solid white;
+}
 
 .indicator {
   max-width: 100%;
@@ -393,6 +411,16 @@ input[type=email]{
    display: grid;
   justify-items: center;
 }
+
+.slider {
+    width: 3rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 165, 0, 0.7);
+    border: 1px solid olive;
+    border-radius: 5%;
+  }
 
 #wood_yin {
 background: rgb(114,243,114);
@@ -667,7 +695,8 @@ a {
   padding: 0.05%;
   margin: 10px;
   padding: 3px 4px 2px 4px;
-  // font-size: 1.8vmax;
+  min-width: 8rem;
+  text-align: center;
 }
 
 #name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,

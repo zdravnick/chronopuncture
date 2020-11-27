@@ -17,15 +17,17 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
+      <div class="wu_yun_oninput">
         <form oninput="output.value = Math.round(slide_wood_yin.value)">
           <div class="slider_wrapper ">
-            <div class="slider" > Печень </div>
+            <div class="slider" >F</div>
             <input type="range" value="<%= value %>" step="5" id="slide_wood_yin" >Инь
               <output class="output" name="output" for="range">
                <%= value %>
               </output>
             </div>
         </form>
+      </div>
     <div class="container_label">
       <div class="container_label">
         <div class="liver8_wrapper" id=liver8_wrapper>
@@ -78,15 +80,17 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-      <form oninput="output.value = Math.round(slide_wood_yang.value)">
-        <div class="slider_wrapper ">
-          <div class="slider"> Желчный </div>
-          <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
-            <output class="output" name="output" for="range">
-              50
-            </output>
-          </div>
-      </form>
+      <div class="wu_yun_oninput">
+        <form oninput="output.value = Math.round(slide_wood_yang.value)">
+          <div class="slider_wrapper ">
+            <div class="slider">Gb</div>
+            <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
+              <output class="output" name="output" for="range">
+                50
+              </output>
+            </div>
+        </form>
+      </div>
       <div class="container_label">
         <label>
           <input type="checkbox" id="gallBladder44"
@@ -136,15 +140,17 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_fire_yin.value)">
-        <div class="slider_wrapper ">
-          <div class="slider"> Сердце  </div>
-         <input type="range" value="50" step="5" id="slide_fire_yin">Инь
-            <output class="output" name="output" for="range">
-              50
-            </output>
-          </div>
-      </form>
+      <div class="wu_yun_oninput">
+        <form oninput="output.value = Math.round(slide_fire_yin.value)">
+          <div class="slider_wrapper ">
+            <div class="slider">C</div>
+           <input type="range" value="50" step="5" id="slide_fire_yin">Инь
+              <output class="output" name="output" for="range">
+                50
+              </output>
+            </div>
+        </form>
+      </div>
     <div class="container_label">
         <label>
           <input type="checkbox" id="heart9"
@@ -199,15 +205,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_fire_yang.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_fire_yang.value)">
         <div class="slider_wrapper ">
-          <div class="slider"> Тонкий</div>
-         <input type="range" value="50" step="5" id="slide_fire_yang">Ян
+          <div class="slider">Ig</div>
+            <input type="range" value="50" step="5" id="slide_fire_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
-          </div>
+        </div>
       </form>
+    </div>
+
       <div class="container_label">
         <label>
           <input type="checkbox" id="smallInt3"
@@ -250,15 +259,18 @@
         </div>
       </div>
     </div>
-    <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
-        <div class="slider_wrapper ">
-          <div class="slider"> Перикард </div>
-     <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
-            <output class="output" name="output" for="range">
-              50
-            </output>
+      <div class="wu_yun_oninput">
+        <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
+          <div class="slider_wrapper ">
+            <div class="slider">Mc</div>
+              <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
+              <output class="output" name="output" for="range">
+                50
+              </output>
           </div>
-      </form>
+        </form>
+      </div>
+
       <div class="container_label">
         <label>
           <input type="checkbox" id="heartGuard9"
@@ -302,15 +314,18 @@
         </div>
       </div>
     </div>
-    <form oninput="output.value = Math.round(slide_fire_in_earth_yang.value)">
-        <div class="slider_wrapper ">
-         <div class="slider"> Тройной </div>
-      <input type="range" value="50" step="5" id="slide_fire_in_earth_yang">Ян
-            <output class="output" name="output" for="range">
-              50
-            </output>
+      <div class="wu_yun_oninput">
+        <form oninput="output.value = Math.round(slide_fire_in_earth_yang.value)">
+          <div class="slider_wrapper ">
+            <div class="slider">Tr</div>
+              <input type="range" value="50" step="5" id="slide_fire_in_earth_yang">Ян
+              <output class="output" name="output" for="range">
+                50
+              </output>
           </div>
-      </form>
+        </form>
+      </div>
+
       <div class="container_label">
         <label>
           <input type="checkbox" id="tripleHeater1"
@@ -360,15 +375,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_earth_yin.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_earth_yin.value)">
         <div class="slider_wrapper ">
-          <div class="slider"> Селезенка </div>
-       <input type="range" value="50" step="5" id="slide_earth_yin">Инь
+          <div class="slider">Rp</div>
+            <input type="range" value="50" step="5" id="slide_earth_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
-          </div>
+        </div>
       </form>
+    </div>
+
           <div class="container_label">
       <label>
         <input type="checkbox" id="spleen2"
@@ -417,15 +435,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_earth_yang.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_earth_yang.value)">
         <div class="slider_wrapper ">
-          <div class="slider"> Желудок </div>
-       <input type="range" value="50" step="5" id="slide_earth_yang">Ян
+          <div class="slider">E</div>
+            <input type="range" value="50" step="5" id="slide_earth_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
-          </div>
+        </div>
       </form>
+    </div>
+
       <div class="container_label">
         <div class="lung9_wrapper" id="lung9Copy_wrapper" >
         <label>
@@ -478,15 +499,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_metal_yin.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_metal_yin.value)">
         <div class="slider_wrapper ">
-         <div class="slider"> Легкие </div>
-      <input type="range" value="50" step="5" id="slide_metal_yin">Инь
+         <div class="slider">P</div>
+            <input type="range" value="50" step="5" id="slide_metal_yin">Инь
             <output class="output" name="output" for="range">
               50
             </output>
-          </div>
+        </div>
       </form>
+    </div>
+
     <div class="container_label">
       <div class="lung9_wrapper" id=lung9_wrapper>
         <label>
@@ -535,15 +559,17 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_metal_yang.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_metal_yang.value)">
         <div class="slider_wrapper ">
-          <div class="slider"> Толстый </div>
-       <input type="range" value="50" step="5" id="slide_metal_yang">Ян
+          <div class="slider">Gi</div>
+            <input type="range" value="50" step="5" id="slide_metal_yang">Ян
             <output class="output" name="output" for="range">
               50
             </output>
-          </div>
+        </div>
       </form>
+    </div>
       <div class="container_label">
         <label>
         <input type="checkbox" id=""
@@ -592,17 +618,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-      <form oninput="output.value = Math.round(slide_water_yin.value)">
-        <div class="slider_wrapper ">
-          <div class="slider">
-            Почки
+      <div class="wu_yun_oninput">
+        <form oninput="output.value = Math.round(slide_water_yin.value)">
+          <div class="slider_wrapper ">
+            <div class="slider">R</div>
+              <input type="range" value="50" step="5" id="slide_water_yin">Инь
+              <output class="output" name="output" for="range">
+                50
+            </output>
           </div>
-          <input type="range" value="50" step="5" id="slide_water_yin">Инь
-          <output class="output" name="output" for="range">
-            50
-          </output>
-        </div>
-      </form>
+        </form>
+      </div>
+
       <div class="container_label">
         <div class="stomach36_wrapper" id="stomach36Copy2_wrapper">
           <label>
@@ -655,15 +682,18 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-    <form oninput="output.value = Math.round(slide_water_yang.value)">
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_water_yang.value)">
         <div class="slider_wrapper ">
-              <div class="slider"> Мочевой </div>
-      <input type="range" value="50" step="5" id="slide_water_yang">Ян
+          <div class="slider">V</div>
+            <input type="range" value="50" step="5" id="slide_water_yang">Ян
             <output class="output" name="output" for="range">
               50
-            </output>
-          </div>
+          </output>
+        </div>
       </form>
+    </div>
+
       <div class="container_label">
       <label>
         <input type="checkbox" id="bladder67"
@@ -695,7 +725,6 @@
     </div>
    </div>
 
-</div>
 
 
 <script type="text/javascript">
@@ -711,7 +740,7 @@
 
 <script type="text/javascript">
       slide_fire_yin.addEventListener( "change", function() {
-        document.querySelector("fire_yin").style.height=(slide_fire_yin.value+"%");
+        document.querySelector("#fire_yin").style.height=(slide_fire_yin.value+"%");
     });
 </script>
 <script type="text/javascript">
@@ -726,7 +755,7 @@
 </script>
 <script type="text/javascript">
       slide_fire_in_earth_yang.addEventListener( "change", function() {
-        document.querySelector("#fire_in_earth_yin").style.height=(slide_fire_in_earth_yang.value+"%");
+        document.querySelector("#fire_in_earth_yang").style.height=(slide_fire_in_earth_yang.value+"%");
     });
 </script>
 <script type="text/javascript">
@@ -759,3 +788,4 @@
         document.querySelector("#water_yang").style.height=(slide_water_yang.value+"%");
     });
 </script>
+</div>

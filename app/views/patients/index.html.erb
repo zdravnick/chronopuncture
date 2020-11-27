@@ -102,10 +102,16 @@
     <div>
       <h3><%= label_tag( "Добавить пациента") %></h3>
       <%= form_with local: true, method: :post, url: patients_path do |f| %>
+      <p>
         <%= f.label  "Имя" %>
+      </p>
         <%= f.text_field :name  %>
-        <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
+        <p>
+          <%= f.label 'Дата рождения' %>
+        </p>
+        <p>
+          <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
+        </p>
         <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
         <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
                 <%= f.label 'Место рождения (выбрать ближайший город): ' %>
