@@ -8,26 +8,33 @@
       <table class="full_table">
         <tr>
           <td class="wu_yun_first_cell">
-            Сильный слой:
+             Сильный слой:
           </td>
-          <td>
-            <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
+          <td> <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
           </td>
         </tr>
         <tr>
-          <td>
+          <td class="wu_yun_first_cell">
             меридианы:
-            <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %>, <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %>
+          </td>
+          <td>
+             <%=link_to @full_layer.leg_meridian.alias_ru , meridian_path(id: @full_layer.leg_meridian.id), action: :show  %>, <%= link_to  @full_layer.arm_meridian.alias_ru, meridian_path(id: @full_layer.arm_meridian.id) %>
           </td>
         </tr>
         <tr>
+          <td class="wu_yun_first_cell">
+            Сильный ствол:
+          </td>
           <td>
-            СИЛЬНЫЙ СТВОЛ: <%= link_to @full_trunk_year.year_meridian.alias_ru, meridian_path(id: @full_trunk_year.year_meridian.id), action: :show %>
+             <%= link_to @full_trunk_year.year_meridian.alias_ru, meridian_path(id: @full_trunk_year.year_meridian.id), action: :show %>
           </td>
         </tr>
         <tr>
+          <td class="wu_yun_first_cell">
+            Сильная ветвь:
+          </td>
           <td>
-            СИЛЬНАЯ ВЕТВЬ: <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %>
+           <%= link_to @full_branch_year.day_meridian.alias_ru, meridian_path(id: @full_branch_year.day_meridian.id), action: :show %>
           (ветвь: <%= @full_branch_year.day_meridian.element_branch %>)
           </td>
         </tr>
@@ -38,24 +45,34 @@
       <table class="empty_table">
        <% @empty_layer.each do |elem| %>
         <tr>
-          <td>Слабый слой:
-            <%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
+          <td class="wu_yun_first_cell">
+            Слабый слой:
+          </td>
+          <td><%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
           </td>
         </tr>
         <tr>
-          <td>меридианы:
-            <%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>, <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %>
+          <td class="wu_yun_first_cell">
+            меридианы:
+          </td>
+          <td><%= link_to elem.leg_meridian.alias_ru, meridian_path(id:  elem.leg_meridian.id),action: :show  %>, <%= link_to elem.arm_meridian.alias_ru, meridian_path(id: elem.arm_meridian.id), action: :show %>
           </td>
           <% end %>
         </tr>
         <tr>
+          <td class="wu_yun_first_cell">
+            Слабый ствол:
+          </td>
           <td>
-            Слабый ствол: <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %> <%= @empty_trunk_year_trunk_energy %>
+             <%= link_to @empty_trunk_year.year_meridian.alias_ru, meridian_path(id: @empty_trunk_year.year_meridian.id), action: :show %> <%= @empty_trunk_year_trunk_energy %>
           </td>
         </tr>
         <tr>
+          <td class="wu_yun_first_cell">
+            Слабая ветвь:
+          </td>
           <td>
-            СЛАБАЯ ВЕТВЬ: <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (ветвь: <%= @empty_branch_year.day_meridian.element_branch %>)
+            <%= link_to @empty_branch_year.day_meridian.alias_ru, meridian_path(id:  @empty_branch_year.day_meridian.id), action: :show %> (ветвь: <%= @empty_branch_year.day_meridian.element_branch %>)
           </td>
         </tr>
       </table>

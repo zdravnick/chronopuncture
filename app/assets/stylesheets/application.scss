@@ -70,9 +70,8 @@ html, body {
   .histogramme {
     width: 90%;
     align-self: left;
-    margin-left: 5vmax;
-    margin-right: 5vmax;
   }
+
   .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
     min-width: 6vmin;
     max-width: 6vmin;
@@ -81,6 +80,11 @@ html, body {
     border: 2px solid white;
     border-color: transparent;
   }
+
+  .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover {
+    background-color: transparent;
+  }
+
   .indicator {
     transition: none;
   }
@@ -120,6 +124,7 @@ html, body {
     border: 2px solid olive;
     border-radius: 15%;
   }
+
   .indicator {
     transition: none;
   }
@@ -282,10 +287,26 @@ input[type=email]{
 .full_table, .empty_table {
   width: 100%;
   table-layout: fixed;
-  white-space: nowrap;
+  // white-space: pre-line;
   padding-left: 2%;
+  // text-align: justify;
 }
 
+.full_table tr:nth-child(odd) {
+  background-color: lighten(rgba(255, 165, 0, 0.4), 30%);
+}
+.full_table tr:nth-child(even) {
+  background-color: lighten(rgba(255, 165, 0, 0.4), 10%);
+}
+
+
+.empty_table tr:nth-child(odd) {
+  background-color: lighten(rgba(128, 128, 0, 0.4), 15%);
+}
+
+.empty_table tr:nth-child(even) {
+  background-color: lighten(rgba(128, 128, 0, 0.4), 5%);
+}
 
 .wu_yun_first_cell {
   width: 25%;
@@ -321,8 +342,11 @@ input[type=email]{
   border: solid 2px #000;
   input[type="checkbox"] {
     display: none;
+  }
 }
 
+.histogramme_header{
+  text-align: center;
 }
 
 .wu_yun_advanced_energies_and_houses {
@@ -695,9 +719,9 @@ ul>li {
   padding: 5px;
 }
 
-table, tr, td, td>a{
-  border-spacing: 5px 4px;
-}
+// table, tr, td, td>a{
+//   border-spacing: 5px 4px;
+// }
 
 ul {
     margin-bottom: 20px;
@@ -720,6 +744,7 @@ a {
   margin: 10px;
   padding: 3px 4px 2px 4px;
   min-width: 8rem;
+  max-width: 20vmin;
   text-align: center;
 }
 
