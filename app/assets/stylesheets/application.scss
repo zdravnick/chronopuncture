@@ -67,15 +67,11 @@ html, body {
   #patient_city_id, .slider {
     font-size: 1.1rem;
   }
-  .histogramme {
-    width: 90%;
-    align-self: left;
-  }
 
   .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
     min-width: 6vmin;
     max-width: 6vmin;
-    font-size: 3vmin;
+    font-size: 4vmin;
     font-weight: bold;
     border: 2px solid white;
     border-color: transparent;
@@ -113,10 +109,7 @@ html, body {
     font-size: 3vmin;
     font-size: 1.1rem;
   }
-  .histogramme {
-    margin-left: 5vmax;
-    margin-right: 5vmax;
-  }
+
   .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
     min-width: 6vmin;
     // max-width: 9vmin;
