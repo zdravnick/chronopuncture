@@ -512,15 +512,17 @@
     </div>
 
     <div class="container_label">
-      <div class="lung9_wrapper" id=lung9_wrapper>
-        <label>
+
+        <label class="lung9_wrapper">
+          <div id=lung9_wrapper>
           <input type="checkbox"  class="lung9" id="lung9"
           data-name="lung9"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.lung9"
             data-action="change->barChartCheckboxes#lung9Effect"  >P.9
+          </div>
         </label>
-      </div>
+
       <div class="lung8_wrapper" id=lung8_wrapper>
         <label>
           <input type="checkbox" class="lung8" id="lung8" data-name="lung8"
@@ -631,23 +633,24 @@
       </div>
 
       <div class="container_label">
-        <div class="stomach36_wrapper" id="stomach36Copy2_wrapper">
-          <label>
+        <label class="stomach36_wrapper">
+          <div id="stomach36Copy2_wrapper">
             <input type="checkbox" class="stomach36" id="stomach36Copy2"
               data-name="stomach36Copy2"
               data-controller="barChartCheckboxes"
               data-target="barChartCheckboxes.stomach36Copy2"
               data-action="change->barChartCheckboxes#stomach36Effect" >E.36/2
-          </label>
-        </div>
-      <div class="lung8_wrapper" id=lung8_wrapper>
-        <label>
-          <input type="checkbox" class="lung8" id="lung8Copy1" data-name="lung8Copy1"
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.lung8"
-            data-action="change->barChartCheckboxes#lung8Effect" >P.8/1
+          </div>
         </label>
-      </div>
+        <label class="lung8_wrapper">
+          <div id=lung8_wrapper>
+            <input type="checkbox" class="lung8" id="lung8Copy1" data-name="lung8Copy1"
+              data-controller="barChartCheckboxes"
+              data-target="barChartCheckboxes.lung8"
+              data-action="change->barChartCheckboxes#lung8Effect" >P.8/1
+          </div>
+        </label>
+
 
       <label>
         <input type="checkbox" id="kidney10"

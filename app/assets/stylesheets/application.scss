@@ -71,6 +71,10 @@ html, body {
     margin-left: 5vmax;
     margin-right: 5vmax;
   }
+  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
 }
 
 @media (min-width: 726px) and (max-width: 1025px) {
@@ -98,6 +102,9 @@ html, body {
   .histogramme {
     margin-left: 5vmax;
     margin-right: 5vmax;
+  }
+  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+    font-weight: bold;
   }
 }
 
@@ -310,18 +317,17 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-.lung9_wrapper, .stomach36_wrapper {
+.lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
   cursor: pointer;
-  border: 1px solid olive;
+  border: 2px solid olive;
   border-radius: 15%;
   margin-bottom: 0.2rem;
   padding: 0.1rem;
 }
 
-.lung9_wrapper:hover, .stomach36_wrapper:hover {
-  background-color: #999900;
-  color: white;
-  border: 1px solid white;
+.lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover {
+  border: 2px solid black;
+  background-color: coral;
 }
 
 .indicator {
@@ -407,12 +413,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .slider_wrapper {
-   display: grid;
+  display: grid;
   justify-items: center;
 }
 
 .slider {
-    width: 3rem;
     color: black;
     font-weight: bold;
     text-align: center;
