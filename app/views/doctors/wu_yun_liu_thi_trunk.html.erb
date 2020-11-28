@@ -87,16 +87,13 @@
             <%= @missing_energy_name = energy_name %>,
           </td>
           <% end %>
-          <td>
-           Меридианы Потерянной Ци:
+          <td> Меридианы Потерянной Ци:
             <% @missing_energies_meridians.compact.each do |elem| %>
             <%= link_to elem.alias_ru, meridian_path(id: elem.id), action: :show %>
             <% end %>
           </td>
         </tr>
-
-        </table>
-
+      </table>
     </div>
   </div>
 </div>
