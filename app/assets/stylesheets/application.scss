@@ -68,6 +68,8 @@ html, body {
     font-size: 1.1rem;
   }
   .histogramme {
+    width: 90%;
+    align-self: left;
     margin-left: 5vmax;
     margin-right: 5vmax;
   }
@@ -76,6 +78,8 @@ html, body {
     max-width: 6vmin;
     font-size: 3vmin;
     font-weight: bold;
+    border: 2px solid white;
+    border-color: transparent;
   }
   .indicator {
     transition: none;
@@ -113,6 +117,8 @@ html, body {
     min-width: 9vmin;
     max-width: 9vmin;
     font-weight: bold;
+    border: 2px solid olive;
+    border-radius: 15%;
   }
   .indicator {
     transition: none;
@@ -140,6 +146,10 @@ html, body {
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: $font_size;
+  }
+  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+    border: 2px solid olive;
+    border-radius: 15%;
   }
 }
 
@@ -331,8 +341,6 @@ input[type=range]::-webkit-slider-thumb {
 .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
   text-align: center;
   cursor: pointer;
-  border: 2px solid olive;
-  border-radius: 15%;
   margin-bottom: 0.2rem;
   padding: 0.1rem;
 }
