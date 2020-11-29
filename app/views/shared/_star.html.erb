@@ -34,20 +34,23 @@
       </div>
     <div class="container_label">
       <div class="container_label">
-        <div class="liver8_wrapper" id=liver8_wrapper>
-          <label>
-            <input type="checkbox" id="liver8"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.liver8"
-              data-action="change->barChartCheckboxes#liver8Effect" >F.8
-          </label>
-        </div>
 
-      <label>
-        <input type="checkbox" id="liver1"
-          data-controller="barChartCheckboxes"
-          data-target="barChartCheckboxes.liver1"
-          data-action="change->barChartCheckboxes#liver1Effect" >F.1
+      <label class="liver8_wrapper">
+        <div id=liver8_wrapper>
+          <input type="checkbox" id="liver8"
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes.liver8"
+            data-action="change->barChartCheckboxes#liver8Effect" >F.8
+        </div>
+      </label>
+
+      <label class="liver1_wrapper">
+        <div id=liver1_wrapper>
+          <input type="checkbox" id="liver1"
+            data-controller="barChartCheckboxes"
+            data-target="barChartCheckboxes.liver1"
+            data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
       </label>
 
       <label>

@@ -68,7 +68,7 @@ html, body {
     font-size: 1.1rem;
   }
 
-  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper {
     min-width: 7vmin;
     max-width: 7vmin;
     font-size: 4vmin;
@@ -77,7 +77,8 @@ html, body {
     border-color: transparent;
   }
 
-  .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover {
+  .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .lung8_wrapper:hover,
+  .liver1_wrapper:hover {
     background-color: transparent;
   }
 
@@ -110,7 +111,7 @@ html, body {
     font-size: 1.1rem;
   }
 
-  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper {
     min-width: 6vmin;
     max-width: 6vmin;
     font-weight: bold;
@@ -145,7 +146,7 @@ html, body {
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: $font_size;
   }
-  .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper {
     border: 2px solid olive;
     border-radius: 15%;
   }
