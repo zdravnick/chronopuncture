@@ -27,7 +27,7 @@ body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, #doctor_email, #doctor_phone, #doctor_password,
-  .btn_mode>a, .btn-control, input[type=submit],
+  #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id  {
   font-size: $font_size;
 }
@@ -46,7 +46,7 @@ html, body {
 
 
 @media (min-width: 320px) and (max-width: 725px) {
-  #doctor_email, #doctor_phone, #doctor_password {
+  #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id {
   font-size: 1.1rem;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
@@ -69,8 +69,8 @@ html, body {
   }
 
   .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
-    min-width: 6vmin;
-    max-width: 6vmin;
+    min-width: 7vmin;
+    max-width: 7vmin;
     font-size: 4vmin;
     font-weight: bold;
     border: 2px solid white;
@@ -87,7 +87,7 @@ html, body {
 }
 
 @media (min-width: 726px) and (max-width: 1025px) {
-  #doctor_email, #doctor_phone, #doctor_password {
+  #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id {
   font-size: 1.1rem;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
@@ -112,7 +112,7 @@ html, body {
 
   .lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
     min-width: 6vmin;
-    // max-width: 9vmin;
+    max-width: 6vmin;
     font-weight: bold;
     border: 2px solid olive;
     border-radius: 15%;
@@ -124,7 +124,7 @@ html, body {
 }
 
 @media (min-width: 1026px) {
-  #doctor_email, #doctor_phone, #doctor_password {
+  #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id{
   font-size: $font_size;
   }
   .theme-light, .theme-dark, .theme-olive, .theme-grey {
@@ -720,9 +720,9 @@ ul {
     margin-bottom: 20px;
 }
 
-ol, td {
-  font-weight: bold;
-}
+// ol, td {
+//   font-weight: bold;
+// }
 
 a {
   display: inline-block;
@@ -737,12 +737,13 @@ a {
   margin: 10px;
   padding: 3px 4px 2px 4px;
   min-width: 8rem;
-  max-width: 20vmin;
+  // max-width: 20vmin;
   text-align: center;
 }
 
 #name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,
-#patient_name, #doctor_email, #doctor_phone, #doctor_password {
+#patient_name, #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation,
+#doctor_city_id, #doctor_city_id {
   background-color: rgba(245, 222, 179, 0.7);
   border: 2px solid #8B4513;
   border-radius: 4px;
