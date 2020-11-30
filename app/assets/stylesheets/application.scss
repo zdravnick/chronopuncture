@@ -281,9 +281,7 @@ input[type=email]{
 .full_table, .empty_table {
   width: 100%;
   table-layout: fixed;
-  // white-space: pre-line;
   padding-left: 2%;
-  // text-align: justify;
 }
 
 .full_table tr:nth-child(odd) {
@@ -304,7 +302,20 @@ input[type=email]{
 
 .wu_yun_first_cell {
   width: 25%;
+  padding-left: 1%;
 }
+
+.full_table tr:first-child {
+border-bottom: 1px solid #000;
+}
+
+// .full_table tr:first-child {
+//   background-color: lighten(rgba(255, 165, 0, 0.4), 10%);
+// }
+
+// .empty_table tr:first-child {
+//   background-color: lighten(rgba(128, 128, 0, 0.4), 5%);
+// }
 
 .reversed_list {
   -webkit-transform: rotate(180deg);
