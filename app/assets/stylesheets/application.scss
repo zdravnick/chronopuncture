@@ -367,14 +367,15 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-.lung9_wrapper, .stomach36_wrapper, .lung8_wrapper {
+.lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper {
   text-align: center;
   cursor: pointer;
   margin-bottom: 0.2rem;
   padding: 0.1rem;
 }
 
-.lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover {
+.lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .liver1_wrapper:hover,
+.liver8_wrapper:hover {
   border: 2px solid black;
   background-color: coral;
 }
@@ -414,7 +415,7 @@ input[type=range]::-webkit-slider-thumb {
   align-items: end;
 }
 
-.liver1_selected, .liver8_selected, .gallBladder44_selected, .spleen2_selected,
+.liver1_selected, .liver1Copy1_selected, .liver8_selected, .gallBladder44_selected, .spleen2_selected,
  .spleen3_selected, .kidney10_selected, .kidney7_selected, .lung9_selected, .lung9Copy1_selected,
  .lung9Copy2_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
   .heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,

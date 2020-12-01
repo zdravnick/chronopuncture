@@ -25,7 +25,7 @@ export default class extends Controller {
     })();
   }
 
-  static targets = ["liver8",  "liver1", "lungCopy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
+  static targets = ["liver8",  "liver1", "liver1Copy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
   "smallInt3", "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
   "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", "woodYang",
   "fireYin", "fireYang", "earthYin", "earthYang", "metalYin", "metalYang", "waterYin", "waterYang",
@@ -75,7 +75,7 @@ export default class extends Controller {
       let energyIndicatorHeight = getComputedStyle(document.querySelector("#" + energy)).height;
       let energyCurrentValue = Math.round((parseInt(energyIndicatorHeight)/parseInt(containerHeight))*100);
       if (document.querySelector("#" + point).checked == false){
-        percentage = percentage * -1
+        percentage = percentage * -1;
       }
     document.querySelector("#" + energy).style.height = (energyCurrentValue + percentage) + "%";
     document.querySelector("#" + energy + "_range").classList.toggle(point + "_selected");
@@ -122,6 +122,7 @@ export default class extends Controller {
       metal_yang: -10,
       water_yang: 10
     }
+    let point = event.target.dataset.name;
     this.colorateEnergies('liver8', energies);
   }
 
@@ -136,7 +137,8 @@ export default class extends Controller {
       water_yin: 10,
       water_yang: 10
     }
-    this.colorateEnergies('liver1', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   gallBladder44Effect() {

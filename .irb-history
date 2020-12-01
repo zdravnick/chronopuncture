@@ -1,26 +1,3 @@
-LunarPalace.new(year: 2020, month:1 , day:1 )
-ctiveRecord::Base.connection.instance_of? 
-ActiveRecord::Base.connection.instance_of? 
-ActiveRecord::Base.connection
-ActiveRecord::Base.connection.instance_of?
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "mysql"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "psql"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "PostgresQL"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "Postgresql"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "Postgres"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "postgresQL"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "postgresql"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "postgres"
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "pg"
-adapter_type = connection.adapter_name.downcase.to_sym
-case adapter_type
-when :mysql
-  # do the MySQL part
-when :sqlite
-  # do the SQLite3 part
-when :postgresql
-  # etc.
-else
   raise NotImplementedError, "Unknown adapter type '#{adapter_type}'"
 end
 ActiveRecord::Base.connection.instance_values["config"][:adapter] == "PostgreSQL"
@@ -197,4 +174,27 @@ a
 a.dextroy
 a.destroy
 Point.where(alias_ru: "Гунь-сунь")
+exit
+Energy.all
+Element.all
+Element.map{|el| p e.name}
+Element.tap{|el| p e.name}
+Element.all.map{|el| p e.name}
+Element.where{|el| p e.name}
+Element.all.each{|el| p e.name}
+Element.all.map{|el| p el.name}
+Element.find(1)
+Meridian.all.map{|m| p m.id, m.alias_ru }
+gb = Element.find(1)
+gb.season_meridian_first
+gb = Element.find(1)
+Element.find(1)
+Element.find(2)
+Element.find(3)
+Element.find(4)
+Element.find(5)
+Element.create(name: "Earthly Fire",  yin_yang: "Yin", wu_xing_meridian_id: 1, 
+Meridian.all.map{|m| p m.id, m.alias_ru }
+Element.find(6)
+Element.find(7)
 exit

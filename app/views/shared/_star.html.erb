@@ -46,7 +46,8 @@
 
       <label class="liver1_wrapper">
         <div id=liver1_wrapper>
-          <input type="checkbox" id="liver1"
+          <input type="checkbox" id="liver1" class="liver1"
+            data-name="liver1"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.liver1"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
@@ -159,12 +160,15 @@
         </form>
       </div>
     <div class="container_label">
-        <label>
-          <input type="checkbox" id="heart9"
+      <label class="liver1_wrapper">
+        <div id=liver1Copy1_wrapper>
+          <input type="checkbox" class="liver1" id="liver1Copy1"
+            data-name="liver1Copy1"
             data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.heart9"
-            data-action="change->barChartCheckboxes#heart9Effect" >C.9
-        </label>
+            data-target="barChartCheckboxes.liver1Copy1"
+            data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
+      </label>
 
           <label class="stomach36_wrapper">
             <div id="stomach36Copy1_wrapper">
@@ -179,7 +183,8 @@
 
       <label>
         <div class="lung8_wrapper" id=lung8_wrapper>
-          <input type="checkbox" class="lung8" id="lung8Copy2" data-name="lung8Copy2"
+          <input type="checkbox" class="lung8" id="lung8Copy2"
+            data-name="lung8Copy2"
             data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.lung8"
             data-action="change->barChartCheckboxes#lung8Effect" >P.8

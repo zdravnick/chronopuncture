@@ -1,25 +1,20 @@
 {
   "name": "chronopuncture",
   "private": true,
-  "engines": {
-    "node": "15.x"
-  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
+    "@rails/webpacker": "4.3.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-   "dev": "webpack --mode development",
-   "build": "webpack --mode production"
-}
+    "dev": "webpack --mode development ./src/index.js --output ./dist/main.js --watch",
+    "build": "webpack --mode production ./src/index.js --output ./dist/main.js --watch"
+  }
 }
