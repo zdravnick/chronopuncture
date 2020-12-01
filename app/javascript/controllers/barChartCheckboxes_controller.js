@@ -130,9 +130,10 @@ export default class extends Controller {
     let energies = {
       wood_yin: 10,
       wood_yang: -10,
-      fire_yin: -10,
+      fire_yin: 10,
       fire_in_earth_yin: 10,
-      earth_yin: 10,
+      earth_yin: -10,
+      fire_yang: -10,
       metal_yang: -10,
       water_yin: 10,
       water_yang: 10
