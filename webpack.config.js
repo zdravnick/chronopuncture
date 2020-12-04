@@ -1,20 +1,25 @@
-const webpack = require('webpack');
-const path = require('path');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import OptimizeCssAssetsPlugin from '../../../src/';
+
 module.exports = {
-  entry: { main: './src/index.js' },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
-  },
+  entry: './index',
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      }
-    ]
-  }
-}
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: { loader: 'style-loader' },
+          use: {
+            loader: 'css-loader'
+          }
+        })
+      },
+    ],
+  },
+  plugins: [
+    new ExtractTextPlugin('file.css'),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /optimize-me\.css/g
+    })
+  ],
+};

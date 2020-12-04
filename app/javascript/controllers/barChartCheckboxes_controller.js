@@ -4,7 +4,11 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   connect(){
+    alert(2)
+    console.log('helloooy!')
     // подсветка и блокировка алиасов каждой выбранной точки-чекбокса
+    // ewqeeqweqweee
+    // eqweqwewqeqe
     //
     const blockPoints = (function(){
       document.querySelectorAll("input[type=checkbox]").forEach((checkbox) => {
@@ -14,8 +18,8 @@ export default class extends Controller {
               event.preventDefault();
             } else {
               document.querySelectorAll("."+ event.currentTarget.classList[0] + '_wrapper').forEach((point)  => {
-              point.classList.toggle('similar_points');
-            })
+                point.classList.toggle('similar_points');
+              })
               event.currentTarget.parentElement.parentElement.classList.toggle("checked_point");
               event.currentTarget.parentElement.parentElement.classList.remove("similar_points");
             }
@@ -25,8 +29,9 @@ export default class extends Controller {
     })();
   }
 
-  static targets = ["liver8",  "liver1", "liver1Copy1", "lung8", "heart9", "spleen2", "spleen3", "stomach41", "stomach36",
-  "smallInt3", "smallInt5", "smallInt8", "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
+  static targets = ["liver8",  "liver1", "liver1Copy1", "liver1Copy2", "liver1Copy3", "lung8", "heart9",
+  "spleen2", "spleen3", "stomach41", "stomach36", "smallInt3", "smallInt5", "smallInt8",
+  "heartGuard9", "heartGuard8", "heartGuard7", "tripleHeater1",
   "tripleHeater3", "tripleHeater6", "kidney10", "kidney7", "gallBladder44", "woodYin", "woodYang",
   "fireYin", "fireYang", "earthYin", "earthYang", "metalYin", "metalYang", "waterYin", "waterYang",
   "indicator", "wood_yin_range", "indicatorWrapper" ]
@@ -142,7 +147,7 @@ export default class extends Controller {
     this.colorateEnergies(point, energies);
   }
 
-  gallBladder44Effect() {
+  gallBladder43Effect() {
     let energies = {
       wood_yin: -10,
       metal_yin: 10,
@@ -153,7 +158,8 @@ export default class extends Controller {
       fire_in_earth_yin: -10,
       fire_in_earth_yang: 10
     }
-    this.colorateEnergies('gallBladder44', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   stomach41Effect() {

@@ -4,10 +4,10 @@
     Баланс по Количеству
   </p>
 </div>
-<div class="histogramme">
+<div class="histogramme" data-controller="barChartCheckboxes" >
   <div class="wood_yin">
     <div class="indicator_wrapper" id="indicator_wrapper">
-      <div id="wood_yin_range" data-controller="barChartCheckboxes"
+      <div id="wood_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYin">
         <div class="indicator_background" id="wood_yin_indicator_background" data-id="woodYin">
@@ -38,17 +38,15 @@
       <label class="liver8_wrapper">
         <div id=liver8_wrapper>
           <input type="checkbox" id="liver8"
-            data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.liver8"
             data-action="change->barChartCheckboxes#liver8Effect" >F.8
         </div>
       </label>
 
       <label class="liver1_wrapper">
-        <div id=liver1_wrapper>
+        <div id="liver1_wrapper">
           <input type="checkbox" id="liver1" class="liver1"
             data-name="liver1"
-            data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.liver1"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
         </div>
@@ -56,14 +54,12 @@
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >F.
       </label>
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >F.
       </label>
@@ -73,7 +69,7 @@
 
   <div class="wood_yang">
     <div class="indicator_wrapper">
-      <div id="wood_yang_range" data-controller="barChartCheckboxes"
+      <div id="wood_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="woodYang"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="woodYang">
         <div class="indicator_background" id="wood_yang_indicator_background" data-id="woodYang" >
@@ -101,46 +97,34 @@
       </div>
       <div class="container_label">
 
-        <label class="gallBladder44_wrapper">
-          <div id=gallBladder44_wrapper>
-            <input type="checkbox" class="gallBladder44" id="gallBladder44"
-              data-name="gallBladder44"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.gallBladder44"
-              data-action="change->barChartCheckboxes#gallBladder44Effect" >Gb.44
+        <label class="gallBladder43_wrapper">
+          <div id="gallBladder43_wrapper">
+            <input type="checkbox" class="gallBladder43" id="gallBladder43"
+              data-name="gallBladder43"
+
+              data-target="barChartCheckboxes.gallBladder43"
+              data-action="change->barChartCheckboxes#gallBladder43Effect" >Gb.43
           </div>
         </label>
 
-        <label class="liver1_wrapper">
-          <div id=liver1Copy2_wrapper>
-            <input type="checkbox" class="liver1" id="liver1Copy2"
-              data-name="liver1Copy2"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.liver1Copy2"
-              data-action="change->barChartCheckboxes#liver1Effect" >F.1
-          </div>
+
+      <label class="liver1_wrapper">
+        <div id="liver1Copy2_wrapper">
+          <input type="checkbox" class="liver1" id="liver1Copy2"
+            data-name="liver1Copy2"
+
+            data-target="barChartCheckboxes.liver1Copy2"
+            data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
       </label>
 
-        <label>
-          <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Gb.41
-        </label>
-
-        <label>
-          <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Gb.40
-        </label>
     </div>
 
   </div>
 
   <div class="fire_yin">
     <div class="indicator_wrapper">
-      <div id="fire_yin_range" data-controller="barChartCheckboxes"
+      <div id="fire_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYin"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYin">
         <div class="indicator_background" id="fire_yin_indicator_background" data-id="fireYin" >
@@ -166,43 +150,80 @@
             </div>
         </form>
       </div>
-    <div class="container_label">
+    <div class="container_label"  >
       <label class="liver1_wrapper">
-        <div id=liver1Copy1_wrapper>
+        <div id="liver1Copy1_wrapper">
           <input type="checkbox" class="liver1" id="liver1Copy1"
             data-name="liver1Copy1"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.liver1Copy1"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
         </div>
       </label>
+      <label class="stomach36_wrapper">
+          <div id="stomach36_wrapper">
+            <input type="checkbox" class="stomach36" id="stomach36"
+              data-name="stomach36"
+              data-target="barChartCheckboxes.stomach36"
+              data-action="change->barChartCheckboxes#stomach36Effect" >E.36
+          </div>
+        </label>
 
-          <label class="stomach36_wrapper">
-            <div id="stomach36Copy1_wrapper">
-              <input type="checkbox" class="stomach36" id="stomach36Copy1"
-                data-name="stomach36Copy1"
-                data-controller="barChartCheckboxes"
-                data-target="barChartCheckboxes.stomach36Copy1"
-                data-action="change->barChartCheckboxes#stomach36Effect" >E.36
-            </div>
-          </label>
-
-
-      <label>
-        <div class="lung8_wrapper" id=lung8_wrapper>
-          <input type="checkbox" class="lung8" id="lung8Copy2"
-            data-name="lung8Copy2"
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.lung8"
-            data-action="change->barChartCheckboxes#lung8Effect" >P.8
+      <label class="stomach36_wrapper">
+        <div id="stomach36Copy1_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36Copy1"
+            data-name="stomach36Copy1"
+            data-target="barChartCheckboxes.stomach36Copy1"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
         </div>
       </label>
+      <label class="stomach36_wrapper">
+        <div id="stomach36Copy2_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36Copy2"
+            data-name="stomach36Copy2"
+            data-target="barChartCheckboxes.stomach36Copy2"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
+        </div>
+      </label>
+
+      <label class="stomach36_wrapper">
+        <div id="stomach36Copy3_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36Copy3"
+            data-name="stomach36Copy3"
+            data-target="barChartCheckboxes.stomach36Copy3"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
+        </div>
+      </label>
+     <label class="stomach36_wrapper">
+        <div id="stomach36Copy4_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36Copy4"
+            data-name="stomach36Copy4"
+            data-target="barChartCheckboxes.stomach36Copy4"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
+        </div>
+      </label>
+
       <label class="lung9_wrapper">
         <div id="lung9Copy2_wrapper" >
           <input type="checkbox" class="lung9" id="lung9Copy2"
             data-name="lung9Copy2"
-            data-controller="barChartCheckboxes"
             data-target="barChartCheckboxes.lung9Copy2"
+            data-action="change->barChartCheckboxes#lung9Effect" >P.9
+        </div>
+      </label>
+      <label class="lung9_wrapper">
+        <div id="lung9Copy3_wrapper" >
+          <input type="checkbox" class="lung9" id="lung9Copy3"
+            data-name="lung9Copy3"
+            data-target="barChartCheckboxes.lung9Copy3"
+            data-action="change->barChartCheckboxes#lung9Effect" >P.9
+        </div>
+      </label>
+      <label class="lung9_wrapper">
+        <div id="lung9Copy4_wrapper" >
+          <input type="checkbox" class="lung9" id="lung9Copy4"
+            data-name="lung9Copy4"
+            data-target="barChartCheckboxes.lung9Copy4"
             data-action="change->barChartCheckboxes#lung9Effect" >P.9
         </div>
       </label>
@@ -211,7 +232,7 @@
 
   <div class="fire_yang">
     <div class="indicator_wrapper">
-      <div id="fire_yang_range" data-controller="barChartCheckboxes"
+      <div id="fire_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="fireYang"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="fireYang">
         <div class="indicator_background" id="fire_yang_indicator_background" data-id="fireYang" >
@@ -241,28 +262,28 @@
       <div class="container_label">
         <label>
           <input type="checkbox" id="smallInt3"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.smallInt3"
             data-action="change->barChartCheckboxes#smallInt3Effect" >Ig.3
         </label>
 
         <label>
           <input type="checkbox" id="smallInt5"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.smallInt5"
             data-action="change->barChartCheckboxes#smallInt5Effect" >Ig.5
         </label>
 
         <label>
           <input type="checkbox" id="smallInt8"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.smallInt8"
             data-action="change->barChartCheckboxes#smallInt8Effect" >Ig.8
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Ig
         </label>
@@ -272,7 +293,7 @@
 
   <div class="fe0">
     <div class="indicator_wrapper">
-      <div id="fire_in_earth_yin_range" data-controller="barChartCheckboxes"
+      <div id="fire_in_earth_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
@@ -295,28 +316,28 @@
       <div class="container_label">
         <label>
           <input type="checkbox" id="heartGuard9"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.heartGuard9"
             data-action="change->barChartCheckboxes#heartGuard9Effect" >Mc.9
         </label>
 
         <label>
           <input type="checkbox" id="heartGuard8"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.heartGuard8"
             data-action="change->barChartCheckboxes#heartGuard8Effect" >Mc.8
         </label>
 
         <label>
           <input type="checkbox" id="heartGuard7"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.heartGuard7"
             data-action="change->barChartCheckboxes#heartGuard7Effect" >Mc.7
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Mc
         </label>
@@ -327,7 +348,7 @@
 
   <div class="fe1">
     <div class="indicator_wrapper">
-      <div id="fire_in_earth_yang_range" data-controller="barChartCheckboxes"
+      <div id="fire_in_earth_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
       <div class="indicator_background">
@@ -350,28 +371,28 @@
       <div class="container_label">
         <label>
           <input type="checkbox" id="tripleHeater1"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.tripleHeater1"
             data-action="change->barChartCheckboxes#tripleHeater1Effect" >Tr.1
         </label>
 
         <label>
           <input type="checkbox" id="tripleHeater3"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.tripleHeater3"
             data-action="change->barChartCheckboxes#tripleHeater3Effect" >Tr.3
         </label>
 
         <label>
           <input type="checkbox" id="tripleHeater6"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.tripleHeater6"
             data-action="change->barChartCheckboxes#tripleHeater6Effect" >Tr.6
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Tr
         </label>
@@ -381,7 +402,7 @@
 
   <div class="earth_yin">
     <div class="indicator_wrapper">
-      <div id="earth_yin_range" data-controller="barChartCheckboxes"
+      <div id="earth_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="earthYin"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="earthYin">
         <div class="indicator_background" id="earth_yin_indicator_background" data-id="earthYin" >
@@ -411,28 +432,28 @@
           <div class="container_label">
       <label>
         <input type="checkbox" id="spleen2"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes.spleen2"
           data-action="change->barChartCheckboxes#spleen2Effect">Rp.2
       </label>
 
       <label>
         <input type="checkbox" id="spleen3"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes.spleen3"
           data-action="change->barChartCheckboxes#spleen3Effect" >Rp.3
       </label>
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >F.
       </label>
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >F.
       </label>
@@ -441,7 +462,7 @@
 
   <div class="earth_yang">
     <div class="indicator_wrapper">
-      <div id="earth_yang_range" data-controller="barChartCheckboxes"
+      <div id="earth_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="earthYang"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="earthYang">
         <div class="indicator_background" id="earth_yin_indicator_background" data-id="earthYang" >
@@ -473,32 +494,21 @@
         <label>
            <input type="checkbox" class="lung9" id="lung9Copy1"
             data-name="lung9Copy1"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.lung9Copy"
             data-action="change->barChartCheckboxes#lung9Effect" >P.9
         </label>
       </div>
-
-        <label class="stomach36_wrapper">
-          <div  id="stomach36_wrapper">
-            <input type="checkbox" class="stomach36" id="stomach36"
-              data-name="stomach36"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.stomach36"
-              data-action="change->barChartCheckboxes#stomach36Effect" >E.36
-          </div>
-        </label>
-
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >E
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >E
         </label>
@@ -507,7 +517,7 @@
 
   <div class="metal_yin">
     <div class="indicator_wrapper">
-      <div id="metal_yin_range" data-controller="barChartCheckboxes"
+      <div id="metal_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="metalYin"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="metalYin">
         <div class="indicator_background" id="metal_yin_indicator_background" data-id="metalYin" >
@@ -535,21 +545,20 @@
     </div>
 
     <div class="container_label">
+      <label class="lung9_wrapper">
+        <div id=lung9_wrapper>
+        <input type="checkbox"  class="lung9" id="lung9"
+        data-name="lung9"
 
-        <label class="lung9_wrapper">
-          <div id=lung9_wrapper>
-          <input type="checkbox"  class="lung9" id="lung9"
-          data-name="lung9"
-            data-controller="barChartCheckboxes"
-            data-target="barChartCheckboxes.lung9"
-            data-action="change->barChartCheckboxes#lung9Effect"  >P.9
-          </div>
-        </label>
+          data-target="barChartCheckboxes.lung9"
+          data-action="change->barChartCheckboxes#lung9Effect"  >P.9
+        </div>
+      </label>
 
       <div class="lung8_wrapper" id=lung8_wrapper>
         <label>
           <input type="checkbox" class="lung8" id="lung8" data-name="lung8"
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes.lung8"
             data-action="change->barChartCheckboxes#lung8Effect" >P.8
         </label>
@@ -559,7 +568,7 @@
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >P.
       </label>
@@ -569,7 +578,7 @@
 
   <div class="metal_yang">
      <div class="indicator_wrapper">
-      <div id="metal_yang_range" data-controller="barChartCheckboxes"
+      <div id="metal_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="metalYang"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="metalYang">
         <div class="indicator_background" id="metal_yang_indicator_background" data-id="metalYang" >
@@ -598,28 +607,28 @@
       <div class="container_label">
         <label>
         <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Gi
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Gi
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Gi
         </label>
 
         <label>
           <input type="checkbox" id=""
-            data-controller="barChartCheckboxes"
+
             data-target="barChartCheckboxes."
             data-action="change->barChartCheckboxes#" >Gi
         </label>
@@ -628,7 +637,7 @@
 
   <div class="water_yin">
     <div class="indicator_wrapper">
-      <div id="water_yin_range" data-controller="barChartCheckboxes"
+      <div id="water_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="waterYin"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="waterYin">
         <div class="indicator_background" id="water_yin_indicator_background" data-id="waterYin" >
@@ -656,35 +665,17 @@
       </div>
 
       <div class="container_label">
-        <label class="stomach36_wrapper">
-          <div id="stomach36Copy2_wrapper">
-            <input type="checkbox" class="stomach36" id="stomach36Copy2"
-              data-name="stomach36Copy2"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.stomach36Copy2"
-              data-action="change->barChartCheckboxes#stomach36Effect" >E.36
-          </div>
-        </label>
-        <label class="lung8_wrapper">
-          <div id=lung8_wrapper>
-            <input type="checkbox" class="lung8" id="lung8Copy1" data-name="lung8Copy1"
-              data-controller="barChartCheckboxes"
-              data-target="barChartCheckboxes.lung8"
-              data-action="change->barChartCheckboxes#lung8Effect" >P.8
-          </div>
-        </label>
-
 
       <label>
         <input type="checkbox" id="kidney10"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes.kidney10"
           data-action="change->barChartCheckboxes#kidney10Effect" >R.10
       </label>
 
       <label>
         <input type="checkbox" id="kidney7"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes.kidney7"
           data-action="change->barChartCheckboxes#kidney7Effect" >R.7
       </label>
@@ -693,7 +684,7 @@
 
   <div class="water_yang">
     <div class="indicator_wrapper">
-      <div id="water_yang_range" data-controller="barChartCheckboxes"
+      <div id="water_yang_range"
         data-target="barChartCheckboxes.indicatorWrapper"  data-id="waterYang"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange" data-id="waterYang">
         <div class="indicator_background" id="water_yang_indicator_background" data-id="waterYang" >
@@ -723,28 +714,28 @@
       <div class="container_label">
       <label>
         <input type="checkbox" id="bladder67"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >V.67
       </label>
 
       <label>
         <input type="checkbox" id="bladder66"
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >V.66
       </label>
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >V.65
       </label>
 
       <label>
         <input type="checkbox" id=""
-          data-controller="barChartCheckboxes"
+
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >V.40
       </label>
