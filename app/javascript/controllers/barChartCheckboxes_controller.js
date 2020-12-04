@@ -4,12 +4,8 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   connect(){
-    alert(2)
-    console.log('helloooy!')
+    console.log('hello, i\'m bar_contr')
     // подсветка и блокировка алиасов каждой выбранной точки-чекбокса
-    // ewqeeqweqweee
-    // eqweqwewqeqe
-    //
     const blockPoints = (function(){
       document.querySelectorAll("input[type=checkbox]").forEach((checkbox) => {
         checkbox.addEventListener(
