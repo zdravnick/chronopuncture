@@ -4,7 +4,7 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   connect(){
-    console.log('hello, i\'m bar_contr')
+    console.log('hella, i\'m bar_contr')
     // подсветка и блокировка алиасов каждой выбранной точки-чекбокса
     const blockPoints = (function(){
       document.querySelectorAll("input[type=checkbox]").forEach((checkbox) => {
@@ -113,7 +113,6 @@ export default class extends Controller {
   }
 
   liver8Effect() {
-
     let energies = {
       wood_yang: -10,
       fire_yin: 10,
@@ -124,7 +123,7 @@ export default class extends Controller {
       water_yang: 10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies('liver8', energies);
+    this.colorateEnergies(point, energies);
   }
 
   liver1Effect() {
