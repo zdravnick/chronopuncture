@@ -56,6 +56,13 @@ html, body {
         "empty"
         "lost";
     }
+
+    .indicator_background {
+      display: grid;
+      opacity: 95%;
+      max-width: 35%;
+      min-width: 35%;
+    }
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -82,10 +89,6 @@ html, body {
   .liver1_wrapper:hover, .gallBladder43_wrapper:hover {
     background-color: transparent;
   }
-
-  .indicator {
-    transition: none;
-  }
 }
 
 @media (min-width: 726px) and (max-width: 1025px) {
@@ -99,6 +102,13 @@ html, body {
         "empty"
         "lost";
     }
+
+    .indicator_background {
+    display: grid;
+    opacity: 95%;
+    max-width: 25%;
+    min-width: 25%;
+  }
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -119,10 +129,6 @@ html, body {
     font-weight: bold;
     border: 2px solid olive;
     border-radius: 15%;
-  }
-
-  .indicator {
-    transition: none;
   }
 }
 
@@ -153,6 +159,10 @@ html, body {
     border: 2px solid olive;
     border-radius: 15%;
   }
+}
+
+#patient_name {
+  cursor: auto;
 }
 
 .wu_yun_container {
@@ -346,7 +356,7 @@ border-bottom: 1px solid #000;
   display: grid;
   grid-template-columns: repeat(auto-fill, 8%);
   justify-content: center;
-  grid-template-rows: 25vmax minmax(25vmax, 20em);
+  grid-template-rows: 25vmax minmax(25vmax, 25em);
   border: solid 2px #000;
   input[type="checkbox"] {
     display: none;

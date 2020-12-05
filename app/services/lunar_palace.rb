@@ -91,6 +91,7 @@ class LunarPalace
   end
   # выводим точки по секторам, мужские и женские
   #
+
   def points_of_lunar_palaces
     result = []
     case lunar_palace_opposite

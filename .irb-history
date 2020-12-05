@@ -1,7 +1,3 @@
-  raise NotImplementedError, "Unknown adapter type '#{adapter_type}'"
-end
-ActiveRecord::Base.connection.instance_values["config"][:adapter] == "PostgreSQL"
-ActiveRecord::ConnectionAdapters::AbstractAdapter::Version
 adapter_name()
 ActiveRecord::Base.connection.adapter_name 
 ActiveRecord::Base.connection.adapter_name == 'MySQL'
@@ -197,4 +193,8 @@ Element.create(name: "Earthly Fire",  yin_yang: "Yin", wu_xing_meridian_id: 1,
 Meridian.all.map{|m| p m.id, m.alias_ru }
 Element.find(6)
 Element.find(7)
+exit
+38%28
+учше
+exit
 exit

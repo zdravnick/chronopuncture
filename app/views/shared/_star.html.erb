@@ -29,48 +29,46 @@
               <output class="output" name="output" for="range">
                <%= value %>
               </output>
-            </div>
+          </div>
         </form>
       </div>
     <div class="container_label">
       <div class="container_label">
-
-      <label class="liver8_wrapper">
-        <div id="liver8_wrapper">
-          <input type="checkbox" class="liver8" id="liver8"
-            data-name="liver8"
-            data-target="barChartCheckboxes.liver8"
-            data-action="change->barChartCheckboxes#liver8Effect" >F.8
+        <label class="liver8_wrapper">
+          <div id="liver8_wrapper">
+            <input type="checkbox" class="liver8" id="liver8"
+              data-name="liver8"
+              data-target="barChartCheckboxes.liver8"
+              data-action="change->barChartCheckboxes#liver8Effect" >F.8
+          </div>
+        </label>
+        <label class="liver1_wrapper">
+          <div id="liver1_wrapper">
+            <input type="checkbox" id="liver1" class="liver1"
+              data-name="liver1"
+              data-target="barChartCheckboxes.liver1"
+              data-action="change->barChartCheckboxes#liver1Effect" >F.1
+          </div>
+        </label>
+        <label class="lung9_wrapper">
+          <div id=lung9_wrapper>
+          <input type="checkbox" class="lung9" id="lung9"
+            data-name="lung9"
+            data-target="barChartCheckboxes.lung9"
+            data-action="change->barChartCheckboxes#lung9Effect"  >P.9
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" id=""
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >F.
+        </label>
+        <label>
+          <input type="checkbox" id=""
+            data-target="barChartCheckboxes."
+            data-action="change->barChartCheckboxes#" >F.
+        </label>
         </div>
-      </label>
-      <label class="liver1_wrapper">
-        <div id="liver1_wrapper">
-          <input type="checkbox" id="liver1" class="liver1"
-            data-name="liver1"
-            data-target="barChartCheckboxes.liver1"
-            data-action="change->barChartCheckboxes#liver1Effect" >F.1
-        </div>
-      </label>
-      <label class="lung9_wrapper">
-        <div id=lung9_wrapper>
-        <input type="checkbox" class="lung9" id="lung9"
-          data-name="lung9"
-          data-target="barChartCheckboxes.lung9"
-          data-action="change->barChartCheckboxes#lung9Effect"  >P.9
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" id=""
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >F.
-      </label>
-
-      <label>
-        <input type="checkbox" id=""
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >F.
-      </label>
-      </div>
     </div>
   </div>
 
@@ -91,43 +89,43 @@
       <% total_element_influence = @patient.total_element_influence(element) %>
       <% value = 50 + total_element_influence %>
     </div>
-      <div class="wu_yun_oninput">
-        <form oninput="output.value = Math.round(slide_wood_yang.value)">
-          <div class="slider_wrapper ">
-            <div class="slider">Gb</div>
-            <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
-              <output class="output" name="output" for="range">
-                50
-              </output>
-            </div>
-        </form>
-      </div>
-      <div class="container_label">
-        <label class="liver8_wrapper">
-          <div id="liver8Copy1_wrapper">
-            <input type="checkbox" class="liver8" id="liver8Copy1"
-              data-name="liver8Copy1"
-              data-target="barChartCheckboxes.liver8Copy1"
-              data-action="change->barChartCheckboxes#liver8Effect" >F.8
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_wood_yang.value)">
+        <div class="slider_wrapper ">
+          <div class="slider">Gb</div>
+          <input type="range" value="50" step="5"  id="slide_wood_yang">Ян
+            <output class="output" name="output" for="range">
+              50
+            </output>
           </div>
-        </label>
-        <label class="liver1_wrapper">
-          <div id="liver1Copy1_wrapper">
-            <input type="checkbox" class="liver1" id="liver1Copy1"
-              data-name="liver1Copy1"
-              data-target="barChartCheckboxes.liver1Copy1"
-              data-action="change->barChartCheckboxes#liver1Effect" >F.1
-          </div>
-        </label>
-        <label class="lung9_wrapper">
-          <div id="lung9Copy_wrapper" >
-           <input type="checkbox" class="lung9" id="lung9Copy1"
-            data-name="lung9Copy1"
-            data-target="barChartCheckboxes.lung9Copy"
-            data-action="change->barChartCheckboxes#lung9Effect" >P.9
-          </div>
-        </label>
-        <label class="gallBladder43_wrapper">
+      </form>
+    </div>
+    <div class="container_label">
+      <label class="liver8_wrapper">
+        <div id="liver8Copy1_wrapper">
+          <input type="checkbox" class="liver8" id="liver8Copy1"
+            data-name="liver8Copy1"
+            data-target="barChartCheckboxes.liver8Copy1"
+            data-action="change->barChartCheckboxes#liver8Effect" >F.8
+        </div>
+      </label>
+      <label class="liver1_wrapper">
+        <div id="liver1Copy1_wrapper">
+          <input type="checkbox" class="liver1" id="liver1Copy1"
+            data-name="liver1Copy1"
+            data-target="barChartCheckboxes.liver1Copy1"
+            data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
+      </label>
+      <label class="lung9_wrapper">
+        <div id="lung9Copy_wrapper" >
+         <input type="checkbox" class="lung9" id="lung9Copy1"
+          data-name="lung9Copy1"
+          data-target="barChartCheckboxes.lung9Copy"
+          data-action="change->barChartCheckboxes#lung9Effect" >P.9
+        </div>
+      </label>
+      <label class="gallBladder43_wrapper">
         <div id="gallBladder43_wrapper">
           <input type="checkbox" class="gallBladder43" id="gallBladder43"
             data-name="gallBladder43"
@@ -136,7 +134,6 @@
         </div>
       </label>
     </div>
-
   </div>
 
   <div class="fire_yin">
@@ -176,20 +173,20 @@
             data-action="change->barChartCheckboxes#liver8Effect" >F.8
         </div>
       </label>
-      <label class="stomach36_wrapper">
-        <div id="stomach36_wrapper">
-          <input type="checkbox" class="stomach36" id="stomach36"
-            data-name="stomach36"
-            data-target="barChartCheckboxes.stomach36"
-            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
-        </div>
-      </label>
       <label class="liver1_wrapper">
         <div id="liver1Copy2_wrapper">
           <input type="checkbox" class="liver1" id="liver1Copy2"
             data-name="liver1Copy2"
             data-target="barChartCheckboxes.liver1Copy2"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
+      </label>
+      <label class="stomach36_wrapper">
+        <div id="stomach36_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36"
+            data-name="stomach36"
+            data-target="barChartCheckboxes.stomach36"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
         </div>
       </label>
       <label class="lung9_wrapper">
@@ -281,72 +278,68 @@
       <div id="fire_in_earth_yin_range"
         data-target="barChartCheckboxes.indicatorWrapper"
         data-action="click->barChartCheckboxes#IndicatorWrapperRange">
-      <div class="indicator_background">
-        <div class="indicator" id="fire_in_earth_yin"></div>
+        <div class="indicator_background">
+          <div class="indicator" id="fire_in_earth_yin"></div>
         </div>
       </div>
     </div>
-      <div class="wu_yun_oninput">
-        <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
-          <div class="slider_wrapper ">
-            <div class="slider">Mc</div>
-              <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
-              <output class="output" name="output" for="range">
-                50
-              </output>
-          </div>
-        </form>
-      </div>
-
-      <div class="container_label">
-        <label class="liver8_wrapper">
-          <div id="liver8Copy4_wrapper">
-            <input type="checkbox" class="liver8" id="liver8Copy4"
-              data-name="liver8Copy4"
-              data-target="barChartCheckboxes.liver8Copy4"
-              data-action="change->barChartCheckboxes#liver8Effect" >F.8
-          </div>
-        </label>
-        <label class="liver1_wrapper">
-          <div id="liver1Copy4_wrapper">
-            <input type="checkbox" class="liver1" id="liver1Copy4"
-              data-name="liver1Copy4"
-              data-target="barChartCheckboxes.liver1Copy4"
-              data-action="change->barChartCheckboxes#liver1Effect" >F.1
-          </div>
-        </label>
-        <label class="stomach36_wrapper">
-          <div id="stomach36Copy1_wrapper">
-            <input type="checkbox" class="stomach36" id="stomach36Copy1"
-              data-name="stomach36Copy1"
-              data-target="barChartCheckboxes.stomach36Copy1"
-              data-action="change->barChartCheckboxes#stomach36Effect" >E.36
-          </div>
-        </label>
-        <label>
-          <input type="checkbox" id="heartGuard9"
-            data-target="barChartCheckboxes.heartGuard9"
-            data-action="change->barChartCheckboxes#heartGuard9Effect" >Mc.9
-        </label>
-        <label>
-          <input type="checkbox" id="heartGuard8"
-            data-target="barChartCheckboxes.heartGuard8"
-            data-action="change->barChartCheckboxes#heartGuard8Effect" >Mc.8
-        </label>
-        <label>
-          <input type="checkbox" id="heartGuard7"
-            data-target="barChartCheckboxes.heartGuard7"
-            data-action="change->barChartCheckboxes#heartGuard7Effect" >Mc.7
-        </label>
-
-        <label>
-          <input type="checkbox" id=""
-            data-target="barChartCheckboxes."
-            data-action="change->barChartCheckboxes#" >Mc
-        </label>
+    <div class="wu_yun_oninput">
+      <form oninput="output.value = Math.round(slide_fire_in_earth_yin.value)">
+        <div class="slider_wrapper">
+          <div class="slider">Mc</div>
+            <input type="range" value="50" step="5" id="slide_fire_in_earth_yin">Инь
+            <output class="output" name="output" for="range">
+              50
+            </output>
+        </div>
+      </form>
     </div>
-
-
+    <div class="container_label">
+      <label class="liver8_wrapper">
+        <div id="liver8Copy4_wrapper">
+          <input type="checkbox" class="liver8" id="liver8Copy4"
+            data-name="liver8Copy4"
+            data-target="barChartCheckboxes.liver8Copy4"
+            data-action="change->barChartCheckboxes#liver8Effect" >F.8
+        </div>
+      </label>
+      <label class="liver1_wrapper">
+        <div id="liver1Copy4_wrapper">
+          <input type="checkbox" class="liver1" id="liver1Copy4"
+            data-name="liver1Copy4"
+            data-target="barChartCheckboxes.liver1Copy4"
+            data-action="change->barChartCheckboxes#liver1Effect" >F.1
+        </div>
+      </label>
+      <label class="stomach36_wrapper">
+        <div id="stomach36Copy1_wrapper">
+          <input type="checkbox" class="stomach36" id="stomach36Copy1"
+            data-name="stomach36Copy1"
+            data-target="barChartCheckboxes.stomach36Copy1"
+            data-action="change->barChartCheckboxes#stomach36Effect" >E.36
+        </div>
+      </label>
+      <label>
+        <input type="checkbox" id="heartGuard9"
+          data-target="barChartCheckboxes.heartGuard9"
+          data-action="change->barChartCheckboxes#heartGuard9Effect" >Mc.9
+      </label>
+      <label>
+        <input type="checkbox" id="heartGuard8"
+          data-target="barChartCheckboxes.heartGuard8"
+          data-action="change->barChartCheckboxes#heartGuard8Effect" >Mc.8
+      </label>
+      <label>
+        <input type="checkbox" id="heartGuard7"
+          data-target="barChartCheckboxes.heartGuard7"
+          data-action="change->barChartCheckboxes#heartGuard7Effect" >Mc.7
+      </label>
+      <label>
+        <input type="checkbox" id=""
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >Mc
+      </label>
+    </div>
   </div>
 
   <div class="fe1">
@@ -404,7 +397,6 @@
             data-action="change->barChartCheckboxes#" >Tr
         </label>
     </div>
-
   </div>
 
   <div class="earth_yin">
@@ -481,7 +473,8 @@
           data-action="change->barChartCheckboxes#" >F.
       </label>
     </div>
-   </div>
+  </div>
+
 
   <div class="earth_yang">
     <div class="indicator_wrapper">
@@ -584,7 +577,6 @@
           data-action="change->barChartCheckboxes#" >P.
       </label>
     </div>
-
   </div>
 
   <div class="metal_yang">
@@ -706,12 +698,6 @@
           data-target="barChartCheckboxes.kidney10"
           data-action="change->barChartCheckboxes#kidney10Effect" >R.10
       </label>
-
-      <label>
-        <input type="checkbox" id="kidney7"
-          data-target="barChartCheckboxes.kidney7"
-          data-action="change->barChartCheckboxes#kidney7Effect" >R.7
-      </label>
       <label class="liver1_wrapper">
         <div id="liver1Copy7_wrapper">
           <input type="checkbox" class="liver1" id="liver1Copy7"
@@ -719,6 +705,11 @@
             data-target="barChartCheckboxes.liver1Copy7"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
         </div>
+      </label>
+      <label>
+        <input type="checkbox" id="kidney7"
+          data-target="barChartCheckboxes.kidney7"
+          data-action="change->barChartCheckboxes#kidney7Effect" >R.7
       </label>
       <label class="stomach36_wrapper">
         <div id="stomach36Copy4_wrapper">
@@ -768,7 +759,7 @@
       </form>
     </div>
 
-      <div class="container_label">
+    <div class="container_label">
       <label class="liver8_wrapper">
         <div id="liver8Copy8_wrapper">
           <input type="checkbox" class="liver8" id="liver8Copy8"
@@ -777,17 +768,6 @@
             data-action="change->barChartCheckboxes#liver8Effect" >F.8
         </div>
       </label>
-      <label>
-        <input type="checkbox" id="bladder67"
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >V.67
-      </label>
-
-      <label>
-        <input type="checkbox" id="bladder66"
-          data-target="barChartCheckboxes."
-          data-action="change->barChartCheckboxes#" >V.66
-      </label>
       <label class="liver1_wrapper">
         <div id="liver1Copy8_wrapper">
           <input type="checkbox" class="liver1" id="liver1Copy8"
@@ -795,6 +775,16 @@
             data-target="barChartCheckboxes.liver1Copy8"
             data-action="change->barChartCheckboxes#liver1Effect" >F.1
         </div>
+      </label>
+      <label>
+        <input type="checkbox" id="bladder67"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.67
+      </label>
+      <label>
+        <input type="checkbox" id="bladder66"
+          data-target="barChartCheckboxes."
+          data-action="change->barChartCheckboxes#" >V.66
       </label>
       <label class="stomach36_wrapper">
         <div id="stomach36Copy5_wrapper">
@@ -823,70 +813,70 @@
           data-target="barChartCheckboxes."
           data-action="change->barChartCheckboxes#" >V.40
       </label>
+      </div>
     </div>
-   </div>
 
 
 
-<script type="text/javascript">
-      slide_wood_yin.addEventListener( "change", function() {
-       document.querySelector("#wood_yin").style.height=(slide_wood_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_wood_yang.addEventListener( "change", function() {
-        document.querySelector("#wood_yang").style.height=(slide_wood_yang.value+"%");
-    });
-</script>
+  <script type="text/javascript">
+        slide_wood_yin.addEventListener( "change", function() {
+         document.querySelector("#wood_yin").style.height=(slide_wood_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_wood_yang.addEventListener( "change", function() {
+          document.querySelector("#wood_yang").style.height=(slide_wood_yang.value+"%");
+      });
+  </script>
 
-<script type="text/javascript">
-      slide_fire_yin.addEventListener( "change", function() {
-        document.querySelector("#fire_yin").style.height=(slide_fire_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_fire_yang.addEventListener( "change", function() {
-        document.querySelector("#fire_yang").style.height=(slide_fire_yang.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_fire_in_earth_yin.addEventListener( "change", function() {
-        document.querySelector("#fire_in_earth_yin").style.height=(slide_fire_in_earth_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_fire_in_earth_yang.addEventListener( "change", function() {
-        document.querySelector("#fire_in_earth_yang").style.height=(slide_fire_in_earth_yang.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_earth_yin.addEventListener( "change", function() {
-        document.querySelector("#earth_yin").style.height=(slide_earth_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_earth_yang.addEventListener( "change", function() {
-        document.querySelector("#earth_yang").style.height=(slide_earth_yang.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_metal_yin.addEventListener( "change", function() {
-        document.querySelector("#metal_yin").style.height=(slide_metal_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_metal_yang.addEventListener( "change", function() {
-        document.querySelector("#metal_yang").style.height=(slide_metal_yang.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_water_yin.addEventListener( "change", function() {
-        document.querySelector("#water_yin").style.height=(slide_water_yin.value+"%");
-    });
-</script>
-<script type="text/javascript">
-      slide_water_yang.addEventListener( "change", function() {
-        document.querySelector("#water_yang").style.height=(slide_water_yang.value+"%");
-    });
-</script>
+  <script type="text/javascript">
+        slide_fire_yin.addEventListener( "change", function() {
+          document.querySelector("#fire_yin").style.height=(slide_fire_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_fire_yang.addEventListener( "change", function() {
+          document.querySelector("#fire_yang").style.height=(slide_fire_yang.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_fire_in_earth_yin.addEventListener( "change", function() {
+          document.querySelector("#fire_in_earth_yin").style.height=(slide_fire_in_earth_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_fire_in_earth_yang.addEventListener( "change", function() {
+          document.querySelector("#fire_in_earth_yang").style.height=(slide_fire_in_earth_yang.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_earth_yin.addEventListener( "change", function() {
+          document.querySelector("#earth_yin").style.height=(slide_earth_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_earth_yang.addEventListener( "change", function() {
+          document.querySelector("#earth_yang").style.height=(slide_earth_yang.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_metal_yin.addEventListener( "change", function() {
+          document.querySelector("#metal_yin").style.height=(slide_metal_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_metal_yang.addEventListener( "change", function() {
+          document.querySelector("#metal_yang").style.height=(slide_metal_yang.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_water_yin.addEventListener( "change", function() {
+          document.querySelector("#water_yin").style.height=(slide_water_yin.value+"%");
+      });
+  </script>
+  <script type="text/javascript">
+        slide_water_yang.addEventListener( "change", function() {
+          document.querySelector("#water_yang").style.height=(slide_water_yang.value+"%");
+      });
+  </script>
 </div>
