@@ -75,7 +75,7 @@ html, body {
     font-size: 1.1rem;
   }
 
-  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
+  .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
   .gallBladder43_wrapper, .kidney10_wrapper {
     // min-width: 7vmin;
     // max-width: 7vmin;
@@ -104,11 +104,11 @@ html, body {
     }
 
     .indicator_background {
-    display: grid;
-    opacity: 95%;
-    max-width: 25%;
-    min-width: 25%;
-  }
+      display: grid;
+      opacity: 95%;
+      max-width: 25%;
+      min-width: 25%;
+    }
   }
   body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
@@ -122,7 +122,7 @@ html, body {
     font-size: 1rem;
   }
 
-  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
+  .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
   .gallBladder43_wrapper, .kidney10_wrapper {
     min-width: 7vmin;
     max-width: 7vmin;
@@ -154,7 +154,7 @@ html, body {
   #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
     font-size: $font_size;
   }
-  .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
+  .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
   .gallBladder43_wrapper, .kidney10_wrapper {
     border: 2px solid olive;
     border-radius: 15%;
@@ -380,12 +380,21 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-.lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
+.stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
 .gallBladder43_wrapper, .kidney10_wrapper {
   text-align: center;
   cursor: pointer;
   margin-bottom: 0.2rem;
   padding: 0.1rem;
+}
+
+.stub_wrapper {
+  font-weight: normal;
+  color: olive;
+  mix-blend-mode: luminosity;
+  border: 2px solid white;
+  border-color: transparent;
+  cursor: auto;
 }
 
 .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .liver1_wrapper:hover,
@@ -430,18 +439,18 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .liver1_selected, .liver1Copy1_selected, .liver1Copy2_selected, .liver1Copy3_selected,
-.liver1Copy4_selected, .liver1Copy5_selected, .liver1Copy6_selected, .liver1Copy7_selected,
-.liver1Copy8_selected, .liver8_selected, .liver8Copy1_selected, .liver8Copy2_selected,
-.liver8Copy3_selected, .liver8Copy4_selected, .liver8Copy5_selected, .liver8Copy6_selected,
-.liver8Copy7_selected, .liver8Copy8_selected, .gallBladder43_selected,
-.gallBladder43Copy1_selected, .gallBladder43Copy2_selected, .gallBladder43Copy3_selected,
-.gallBladder43Copy4_selected, .gallBladder43Copy5_selected, .gallBladder43Copy6_selected,
-.gallBladder43Copy7_selected, .gallBladder43Copy8_selected,
-.spleen2_selected, .spleen3_selected, .kidney10_selected,
-.kidney7_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
-.lung9Copy3_selected, .lung9Copy4_selected, .lung9Copy5_selected, .lung9Copy6_selected,
-.lung9Copy7_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
-.heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,
+  .liver1Copy4_selected, .liver1Copy5_selected, .liver1Copy6_selected, .liver1Copy7_selected,
+  .liver1Copy8_selected, .liver8_selected, .liver8Copy1_selected, .liver8Copy2_selected,
+  .liver8Copy3_selected, .liver8Copy4_selected, .liver8Copy5_selected, .liver8Copy6_selected,
+  .liver8Copy7_selected, .liver8Copy8_selected, .gallBladder43_selected,
+  .gallBladder43Copy1_selected, .gallBladder43Copy2_selected, .gallBladder43Copy3_selected,
+  .gallBladder43Copy4_selected, .gallBladder43Copy5_selected, .gallBladder43Copy6_selected,
+  .gallBladder43Copy7_selected, .gallBladder43Copy8_selected,
+  .spleen2_selected, .spleen3_selected, .kidney10_selected,
+  .kidney7_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
+  .lung9Copy3_selected, .lung9Copy4_selected, .lung9Copy5_selected, .lung9Copy6_selected,
+  .lung9Copy7_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
+  .heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,
   .heartGuard9_selected, .heartGuard8_selected, .heartGuard7_selected, .tripleHeater1_selected,
   .tripleHeater3_selected, .tripleHeater6_selected, .stomach41_selected, .stomach36_selected,
   .stomach36Copy1_selected, .stomach36Copy2_selected, .stomach36Copy3_selected,
