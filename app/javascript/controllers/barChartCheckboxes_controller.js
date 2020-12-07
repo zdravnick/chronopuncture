@@ -332,7 +332,8 @@ export default class extends Controller {
       water_yang: -10,
       water_yin: 5
     }
-    this.colorateEnergies('kidney10', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   // end of controller
