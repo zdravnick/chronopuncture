@@ -114,6 +114,7 @@ export default class extends Controller {
 
   liver8Effect() {
     let energies = {
+      wood_yin: 10,
       wood_yang: -10,
       fire_yin: 10,
       fire_yang: -10,
@@ -130,7 +131,7 @@ export default class extends Controller {
       wood_yang: -10,
       fire_yin: 10,
       fire_in_earth_yin: 10,
-      earth_yin: -10,
+      earth_yang: -10,
       fire_yang: -10,
       metal_yang: -10,
       water_yin: 10,
@@ -169,6 +170,7 @@ export default class extends Controller {
 
   stomach36Effect() {
     let energies = {
+      metal_yin: -10,
       earth_yang: 10,
       metal_yang: 10,
       fire_yin: 10,
@@ -315,22 +317,22 @@ export default class extends Controller {
       wood_yin: 10,
       wood_yang: 10,
       fire_in_earth_yang: 10,
-      earth_yang: -10,
       metal_yang: -10,
       water_yang: -10
     }
-    this.colorateEnergies('kidney7', energies);
+    let point = event.target.dataset.name;
+    this.colorateEnergies(point, energies);
   }
 
   kidney10Effect() {
     let energies = {
       wood_yin: 10,
-      wood_yang: 10,
-      fire_in_earth_yang: 10,
       earth_yang: -10,
+      fire_yang: -10,
+      fire_in_earth_yang: -10,
       metal_yang: -10,
       water_yang: -10,
-      water_yin: 5
+      water_yin: 10
     }
     let point = event.target.dataset.name;
     this.colorateEnergies(point, energies);

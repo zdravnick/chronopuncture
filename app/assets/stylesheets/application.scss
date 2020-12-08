@@ -76,7 +76,7 @@ html, body {
   }
 
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney10_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper {
     // min-width: 7vmin;
     // max-width: 7vmin;
     font-size: 0.9rem;
@@ -86,7 +86,7 @@ html, body {
   }
 
   .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .lung8_wrapper:hover,
-  .liver1_wrapper:hover, .gallBladder43_wrapper:hover, .kidney10_wrapper:hover {
+  .liver1_wrapper:hover, .gallBladder43_wrapper:hover, .kidney7_wrapper:hover, .kidney10_wrapper:hover {
     background-color: transparent;
   }
 }
@@ -123,7 +123,7 @@ html, body {
   }
 
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney10_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper {
     min-width: 7vmin;
     max-width: 7vmin;
     font-weight: bold;
@@ -155,7 +155,7 @@ html, body {
     font-size: $font_size;
   }
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney10_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper {
     border: 2px solid olive;
     border-radius: 15%;
   }
@@ -277,7 +277,7 @@ input[type=email]{
 
 .full {
   grid-area: full;
-  background-color: rgba(255, 165, 0, 0.4);
+  background-color: rgba(255, 165, 0, 0.5);
 }
 
 .empty{
@@ -287,21 +287,22 @@ input[type=email]{
 
 .lost {
   grid-area: lost;
-  background-color: rgba(238, 130, 238, 0.4);
+  // background-color: tan;
+  background: rgb(255,165,0);
+background: linear-gradient(90deg, rgba(255,165,0,0.5) 0%, rgba(128,128,0,0.8) 100%);
 }
 
 
 .full_table, .empty_table {
   width: 100%;
   table-layout: fixed;
-  padding-left: 2%;
 }
 
-.full_table tr:nth-child(odd) {
-  background-color: lighten(rgba(255, 165, 0, 0.4), 30%);
-}
+// .full_table tr:nth-child(odd) {
+//   background-color: lighten(rgba(255, 165, 0, 0.4), 30%);
+// }
 .full_table tr:nth-child(even) {
-  background-color: lighten(rgba(255, 165, 0, 0.4), 10%);
+  background-color: darken(rgba(255, 165, 0, 0.3), 10%);
 }
 
 
@@ -381,7 +382,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-.gallBladder43_wrapper, .kidney10_wrapper {
+.gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper {
   text-align: center;
   cursor: pointer;
   margin-bottom: 0.2rem;
@@ -398,7 +399,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .liver1_wrapper:hover,
-.liver8_wrapper:hover, .gallBladder43_wrapper:hover, .kidney10_wrapper:hover {
+.liver8_wrapper:hover, .gallBladder43_wrapper:hover, .kidney7_wrapper:hover, .kidney10_wrapper:hover {
   border: 2px solid black;
   background-color: coral;
 }
@@ -448,8 +449,9 @@ input[type=range]::-webkit-slider-thumb {
   .gallBladder43Copy7_selected, .gallBladder43Copy8_selected,
   .spleen2_selected, .spleen3_selected, .kidney10_selected, .kidney10Copy1_selected,
   .kidney10Copy2_selected, .kidney10Copy3_selected, .kidney10Copy4_selected,
-  .kidney10Copy5_selected, .kidney10Copy6_selected,
-  .kidney7_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
+  .kidney10Copy5_selected, .kidney10Copy6_selected, .kidney10Copy7_selected, .kidney7_selected,
+  .kidney7_selected, .kidney7Copy1_selected, .kidney7Copy2_selected, .kidney7Copy3_selected,
+  .kidney7Copy4_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
   .lung9Copy3_selected, .lung9Copy4_selected, .lung9Copy5_selected, .lung9Copy6_selected,
   .lung9Copy7_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
   .lung8Copy3_selected, .lung8Copy4_selected, .lung8Copy5_selected, .lung8Copy6_selected,
@@ -786,7 +788,7 @@ a {
   padding: 0.05%;
   margin: 10px;
   padding: 3px 4px 2px 4px;
-  min-width: 8rem;
+  // min-width: 8rem;
   // max-width: 20vmin;
   text-align: center;
 }
