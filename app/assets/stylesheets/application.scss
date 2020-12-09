@@ -295,8 +295,8 @@ input[type=email]{
   // background-color: tan;
   // background: rgb(255,165,0);
   // background: linear-gradient(90deg, rgba(255,165,0,0.5) 0%, rgba(128,128,0,0.8) 100%);
-  background: rgb(255,165,0);
-  background: linear-gradient(90deg, rgba(255,165,0,1) 0%, DarkKhaki 25%, DarkKhaki 70%, rgba(128,128,0,1) 100%);
+  border: 1px solid lemonchiffon;
+  background: linear-gradient(90deg, #9e9947 0%, lemonchiffon 25%, lemonchiffon 70%, #9e9947 100%);
 }
 
 

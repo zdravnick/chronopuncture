@@ -4,7 +4,6 @@ import { Controller } from "stimulus"
 export default class extends Controller {
 
   connect(){
-    console.log('hella, i\'m bar_contr')
     // подсветка и блокировка алиасов каждой выбранной точки-чекбокса
     const blockPoints = (function(){
       document.querySelectorAll("input[type=checkbox]").forEach((checkbox) => {
@@ -89,7 +88,7 @@ export default class extends Controller {
         fire_yin: 10,
         fire_yang:  -10,
         earth_yin: 10,
-        metal_yang: -5,
+        metal_yang: -10,
         water_yin: 10,
         water_yang: -5
       }
