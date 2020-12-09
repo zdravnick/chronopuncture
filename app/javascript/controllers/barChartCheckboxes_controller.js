@@ -283,7 +283,9 @@ export default class extends Controller {
     water_yin: 10,
     water_yang: 10
     }
-    this.colorateEnergies('heartGuard8', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   heartGuard7Effect() {

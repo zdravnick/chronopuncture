@@ -1,5 +1,3 @@
-adapter_name()
-ActiveRecord::Base.connection.adapter_name 
 ActiveRecord::Base.connection.adapter_name == 'MySQL'
 ActiveRecord::Base.connection.adapter_name == 'MySQL2'
 ActiveRecord::Base.connection.adapter_name == 'Mysql2'
@@ -197,4 +195,6 @@ exit
 38%28
 учше
 exit
+exit
+Element.last
 exit

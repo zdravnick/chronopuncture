@@ -76,7 +76,8 @@ html, body {
   }
 
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper,
+  .heartGuard8_wrapper {
     // min-width: 7vmin;
     // max-width: 7vmin;
     font-size: 0.9rem;
@@ -87,7 +88,7 @@ html, body {
 
   .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .lung8_wrapper:hover,
   .liver1_wrapper:hover, .gallBladder43_wrapper:hover, .kidney7_wrapper:hover, .kidney10_wrapper:hover,
-  .heartGuard9_wrapper:hover {
+  .heartGuard9_wrapper:hover, .heartGuard8_wrapper:hover {
     background-color: transparent;
   }
 }
@@ -124,7 +125,8 @@ html, body {
   }
 
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper,
+  .heartGuard8_wrapper {
     min-width: 7vmin;
     max-width: 7vmin;
     font-weight: bold;
@@ -156,7 +158,8 @@ html, body {
     font-size: $font_size;
   }
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper {
+  .gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper,
+  .heartGuard8_wrapper {
     border: 2px solid olive;
     border-radius: 15%;
   }
@@ -365,7 +368,7 @@ border-bottom: 1px solid #000;
   display: grid;
   grid-template-columns: repeat(auto-fill, 8%);
   justify-content: center;
-  grid-template-rows: 25vmax minmax(25vmax, 25em);
+  grid-template-rows: 25vmax minmax(25vmax, 30em);
   border: solid 2px #000;
   input[type="checkbox"] {
     display: none;
@@ -390,7 +393,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
-.gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper {
+.gallBladder43_wrapper, .kidney7_wrapper, .kidney10_wrapper, .heartGuard9_wrapper,
+.heartGuard8_wrapper {
   text-align: center;
   cursor: pointer;
   margin-bottom: 0.2rem;
@@ -408,7 +412,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .lung9_wrapper:hover, .stomach36_wrapper:hover, .lung8_wrapper:hover, .liver1_wrapper:hover,
 .liver8_wrapper:hover, .gallBladder43_wrapper:hover, .kidney7_wrapper:hover, .kidney10_wrapper:hover,
-.heartGuard9_wrapper:hover {
+.heartGuard9_wrapper:hover, .heartGuard8_wrapper:hover {
   border: 2px solid black;
   background-color: coral;
 }
