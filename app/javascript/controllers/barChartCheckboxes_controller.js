@@ -69,18 +69,18 @@ export default class extends Controller {
 
 // раскрашиваем изменившиеся при выборе чекбокса-"точки" столбики-"энергии"
 //
-  colorateEnergies(point, energies) {
+  colorateEnergies(point, pointClass, energies) {
     let containerHeight = getComputedStyle(document.querySelector(".indicator_wrapper")).height;
     for (let energy in energies) {
       let percentage = energies[energy];
       let energyIndicatorHeight = getComputedStyle(document.querySelector("#" + energy)).height;
       let energyCurrentValue = Math.round((parseInt(energyIndicatorHeight)/parseInt(containerHeight))*100);
-      if (document.querySelector("#" + point).checked == false){
+      document.querySelector("#" + energy).parentElement.parentElement.classList.toggle("selected_energyes");
+      if (document.querySelector("[data-name='"+point+"']").checked == false){
         percentage = percentage * -1;
       }
-    document.querySelector("#" + energy).style.height = (energyCurrentValue + percentage) + "%";
-    document.querySelector("#" + energy + "_range").classList.toggle(point + "_selected");
-  }
+      document.querySelector("#" + energy).style.height = (energyCurrentValue + percentage) + "%";
+    }
   }
 
   lung9Effect() {
@@ -94,7 +94,8 @@ export default class extends Controller {
         water_yang: -5
       }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   lung8Effect() {
@@ -109,7 +110,8 @@ export default class extends Controller {
       water_yang: -5
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   liver8Effect() {
@@ -122,7 +124,8 @@ export default class extends Controller {
       metal_yang: -10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   liver1Effect() {
@@ -138,7 +141,8 @@ export default class extends Controller {
       water_yang: 10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   gallBladder43Effect() {
@@ -154,7 +158,8 @@ export default class extends Controller {
       fire_in_earth_yang: 10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   stomach41Effect() {
@@ -179,7 +184,8 @@ export default class extends Controller {
       water_yang: 10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   spleen2Effect() {
@@ -220,7 +226,9 @@ export default class extends Controller {
     fire_in_earth_yin: 10,
     water_yang: -10
   }
-  this.colorateEnergies('heart9', energies)
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   smallInt3Effect() {
@@ -255,11 +263,14 @@ export default class extends Controller {
 
   heartGuard9Effect() {
    let energies = {
+    fire_in_earth_yin: 10,
     earth_yang: -10,
     earth_yin: 10,
     metal_yang: -10
     }
-    this.colorateEnergies('heartGuard9', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   heartGuard8Effect() {
@@ -321,7 +332,8 @@ export default class extends Controller {
       water_yang: -10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   kidney10Effect() {
@@ -335,7 +347,8 @@ export default class extends Controller {
       water_yin: 10
     }
     let point = event.target.dataset.name;
-    this.colorateEnergies(point, energies);
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   // end of controller
