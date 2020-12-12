@@ -5,7 +5,6 @@ class PointsController < ApplicationController
 
   before_action :prepare
 
-
   skip_before_action :prepare, only: [:show_point]
   skip_before_action :prepare, only: [:change_color]
   skip_before_action :prepare, only: [:show_point_of_meridian]

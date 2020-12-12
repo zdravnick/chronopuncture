@@ -1,41 +1,3 @@
-ActiveRecord::Base.connection.adapter_name == 'MySQL'
-ActiveRecord::Base.connection.adapter_name == 'MySQL2'
-ActiveRecord::Base.connection.adapter_name == 'Mysql2'
-ActiveRecord::Base.connection
-ActiveRecord::Base.connection.adapter_name
-exit
-exit
-Patient.last
-Visit.last
-exit
-Point.last
-Visit.last
-exit
-RAILS_ENV = test bin / rake webpacker: clobber
-exit
-ActiveRecord::Base.connection.adapter_name
-exit
-ActiveRecord::Base.connection.adapter_name
-exit
-Patient.last
-Visit.last
-Visit.last.patient
-exit
-Visit.last
-exit
-ActiveRecord::Base.table_name
-Rails.configuration
- Rails.configuration.database_configuration[Rails.env]
-exit
-exit
-ActiveRecord::Base.connection.adapter_name
-heroku pg:info
-heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
-exit
-config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
-puts config
-exit
-Doctor.last
 City.last
 ActiveRecord::Base.connection.adapter_name
 exit
@@ -197,4 +159,42 @@ exit
 exit
 exit
 Element.last
+exit
+Doctor.last
+Doctor.fires
+Doctor.first
+Doctor.where(email: "consilium1@yandex.ru")
+i = Doctor.where(email: "consilium1@yandex.ru")
+i.update(moderator: true)
+i.save
+i
+i = Doctor.where(email: "consilium1@yandex.ru")
+i
+i = Doctor.where(moderator: true)
+Doctor.where(moderator: true)
+exit
+Doctor.last.has_paid?
+Doctor.last
+Doctor.last
+exit
+i = Doctor.where(email: "consilium1@yandex.ru")
+i
+Doctor.last
+sun = Doctor.last
+sun
+sun.update( has_paid: true)
+sun
+i = Doctor.where(email: "test@test.ru")
+i
+reload!
+i = Doctor.where(email: "est@test.ru")
+i
+i.destroy
+i.delete
+i.update(email: "test@test.ru")
+i
+exit
+nick = Doctor.where(email: "nick4vk@yandex.ru")
+nick
+nick.update(has_paid: false)
 exit

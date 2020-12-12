@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'points/show_point', to: 'points#show_point'
   get 'points/change_color'
   get 'points/lunar_palaces'
+  get  'pages/pay'
   root 'patients#index'
   get 'patients/color_mode_route',  to: 'patients#color_mode_action',  as: :color_mode_helper
 

@@ -26,6 +26,7 @@
         </ul>
       </nav>
       <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
+      <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
       <h3>Город доктора: <%= current_doctor.city.name %></h3>
       <h3>Таймзона доктора: <%= current_doctor.city.time_zone %></h3>
   <% end %>

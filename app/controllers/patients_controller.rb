@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
 
   before_action :authenticate_doctor!, except: :color_mode_action
+  # skip_before_action :require_payment
 
   def color_mode_action
     cookies.signed[:color_mode_cookie] = params[:color_mode_param]
