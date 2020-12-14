@@ -1,21 +1,3 @@
-City.last
-ActiveRecord::Base.connection.adapter_name
-exit
-config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
-puts config
-exit
-config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
-puts config
-exit
-City.first
-exit
-City.first
-City.all
-City.first
-exit
-config   = Rails.configuration.database_configuration
-config
-database = config[Rails.env]["database"]
 
 database.
 database.size
@@ -197,4 +179,22 @@ exit
 nick = Doctor.where(email: "nick4vk@yandex.ru")
 nick
 nick.update(has_paid: false)
+exit
+Patient.arel_table(name: 'Nick')
+Patient.arel_table[:name]
+Patient.arel_table[:name => 'nick']
+Patient.arel_table[:name => 'Кобозев']
+a = Patient.where(name: "кобозев".capitalize)
+a
+a = Patient.where(name: "Кобозев".capitalize)
+ф
+a
+Patient.last
+Patient.last.name.downcase
+Patients.where(name.matches("%#{params[:name]}%"))
+Patient.where(name.matches("%#{params[:name]}%"))
+Patient.all.where(name.matches("%#{params[:name]}%"))
+params[:name] = 'кобоз'
+a = params[:name]
+a
 exit

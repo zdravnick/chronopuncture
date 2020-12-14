@@ -83,8 +83,8 @@
         <caption>Потерянная Ци:</caption>
         <tr>
           <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
-          <td>
-            <%= @missing_energy_name = energy_name %>,
+          <td >
+             <span class="td_lost_qi"><%= @missing_energy_name = energy_name %></span>,
           </td>
           <% end %>
           <td> Меридианы Потерянной Ци:
