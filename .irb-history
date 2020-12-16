@@ -1,200 +1,200 @@
-
-database.
-database.size
-config.database.size
-exit
-City.all
-exit
-City.last
-exit
-City.last
-exit
-City.first
-exit
-2015%28
-exit
-учше
-exit
-City.last
-config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
-puts config
-exit
-Point.find_by name: 'V.62'
-Point.find_by name: 'R.6'
-Meridian.find_by name: 'Почки'
-Meridian.find_by alias_ru: 'Почки'
-Point.create(name: 'R.6', alias_ru: 'Чжао-хай', meridian_id: 4)
-Point.find_by name: 'R.6'
-Point.find_by name: 'TR.5'
-Point.find_by name: 'Tr.5'
-Meridian.find_by alias_ru: 'Тройной Обогреватель'
-Meridian.find_by alias_ru: 'Почки'
-Point.create(name: 'Tr.5', alias_ru: 'Вай-гуань', meridian_id: 11)
-reload!
-Point.find_by name: 'Tr.5'
-Point.find_by name: 'GB.41'
-Point.find_by name: 'Gи.41'
-Point.find_by name: 'Gb.41'
-Meridian.find_by alias_ru: 'Желчный Пузырь'
-Point.create(name: 'Vb.41', alias_ru: 'Цзу-линь-ци', meridian_id: 12)
-a = Point.find_by(name: 'Vb.41')
-a.update(own_element: 'Wood')
-a.save
-a
-a = Point.find_by(name: 'Rp.4')
-Meridian.find_by alias_ru: 'Селезенка'
-Point.create(name: 'Rp.4', alias_ru: 'Гунь-сунь', meridian_id: 6)
-a = Point.find_by(name: 'Rp.4')
-a.update serial_number: 4
-a = Point.find_by(name: 'Vb.41')
-a
-a.update serial_number: 41
-a
-a = Point.find_by(name: 'Rp.4')
-Point.create(name: 'Rp.4', alias_ru: 'Гунь-сунь', meridian_id: 6, serial_number: 4)
-a = Point.find_by(name: 'Tr.5')
-b = Point.find_by(name: 'Tr.5')
-reload!
-b
-a
-a=nil
-a
-b
-c
-b.update serial_number: 5
-b.update function: 'Lo'
-b
-leque = Point.find_by(name: 'P.7')
-leque
-leque.update function: 'Lo'
-wai = Point.find_by(name: 'Tr.5')
-wai
-zu = Point.find_by(name: 'Vb.41')
-zu
-zu.update finction: 'Lo'
-zu.update function: 'Lo'
-zhao = Point.find_by(name: 'R.6')
-zhao
-zhao.update(serial_number: 6, function: 'Lo')
-zhao
-shen = Point.find_by(name: 'V.62')
-shen
-shen.update function: 'Lo'
-hou = Point.find_by(name: 'Ig.3')
-hou
-hou.update function: 'Lo'
-hou
-nei = Point.find_by(name: 'Mc.6')
-nei
-nei.update function: 'Lo'
-nei
-lie = Point.find_by(name: 'P.7')
-lie
-reload!
-exit
-City.find_by(name: 'Белая Церковь')
-Doctor.create(name: 'Сан',email: 'nick4vk@yandex.ru', city_id: 10)
-reload!
-doctor.last
-Doctor.last
-exit
-Meridian.find_by(alias_ru: "Желудок")
-учше
-exit
-Point.find_all.where(alias_ru: "Гунь-сунь")
-Point.find_each.where(alias_ru: "Гунь-сунь")
-Point.find_each(alias_ru: "Гунь-сунь")
-Point.find_by(alias_ru: "Гунь-сунь")
-Point.where(alias_ru: "Гунь-сунь")
-a = Point(92)
-a = Point.find(92)
-a
-a.dextroy
-a.destroy
-Point.where(alias_ru: "Гунь-сунь")
-exit
-Energy.all
-Element.all
-Element.map{|el| p e.name}
-Element.tap{|el| p e.name}
-Element.all.map{|el| p e.name}
-Element.where{|el| p e.name}
-Element.all.each{|el| p e.name}
-Element.all.map{|el| p el.name}
-Element.find(1)
-Meridian.all.map{|m| p m.id, m.alias_ru }
-gb = Element.find(1)
-gb.season_meridian_first
-gb = Element.find(1)
-Element.find(1)
-Element.find(2)
-Element.find(3)
-Element.find(4)
-Element.find(5)
-Element.create(name: "Earthly Fire",  yin_yang: "Yin", wu_xing_meridian_id: 1, 
-Meridian.all.map{|m| p m.id, m.alias_ru }
-Element.find(6)
-Element.find(7)
-exit
-38%28
-учше
-exit
-exit
-Element.last
-exit
-Doctor.last
-Doctor.fires
-Doctor.first
-Doctor.where(email: "consilium1@yandex.ru")
-i = Doctor.where(email: "consilium1@yandex.ru")
-i.update(moderator: true)
-i.save
-i
-i = Doctor.where(email: "consilium1@yandex.ru")
-i
-i = Doctor.where(moderator: true)
-Doctor.where(moderator: true)
-exit
-Doctor.last.has_paid?
-Doctor.last
-Doctor.last
-exit
-i = Doctor.where(email: "consilium1@yandex.ru")
-i
-Doctor.last
-sun = Doctor.last
-sun
-sun.update( has_paid: true)
-sun
-i = Doctor.where(email: "test@test.ru")
-i
-reload!
-i = Doctor.where(email: "est@test.ru")
-i
-i.destroy
-i.delete
-i.update(email: "test@test.ru")
-i
-exit
-nick = Doctor.where(email: "nick4vk@yandex.ru")
-nick
-nick.update(has_paid: false)
-exit
-Patient.arel_table(name: 'Nick')
-Patient.arel_table[:name]
-Patient.arel_table[:name => 'nick']
-Patient.arel_table[:name => 'Кобозев']
-a = Patient.where(name: "кобозев".capitalize)
-a
-a = Patient.where(name: "Кобозев".capitalize)
-ф
-a
-Patient.last
-Patient.last.name.downcase
-Patients.where(name.matches("%#{params[:name]}%"))
-Patient.where(name.matches("%#{params[:name]}%"))
-Patient.all.where(name.matches("%#{params[:name]}%"))
 params[:name] = 'кобоз'
 a = params[:name]
 a
+exit
+Doctor.last
+Doctor.find_by(email: "consilium1@yandex.ru")
+exit
+Doctor.last
+Doctor.last.paid_until
+alex = Doctor.where(email: "nick4vk@yandex.ru")
+alex
+alex.update paid_until: '16.01.2021'
+alex
+alex.paid_until - DateTime.now
+alex.paid_until
+alex.email
+alex.moderator
+Doctor.last.paid_until
+Doctor.last
+Doctor.first
+Doctor.where(email: "nick4vk@yandex.ru").paid_until
+reload!
+Doctor.where(email: "nick4vk@yandex.ru").paid_until
+Doctor.where(email: "nick4vk@yandex.ru")
+alex = Doctor.where(email: "nick4vk@yandex.ru")
+alex.paid_until
+alex.email
+Patient.last
+Patient.last.name
+exit
+Patient.last.birthdate
+alex = Doctor.where(email: "nick4vk@yandex.ru")
+alex.name
+alex.paid_until
+alex = Doctor.find_by(email: "nick4vk@yandex.ru")
+alex.name
+alex.paid_until
+alex.paid_until - DateTime.now
+(alex.paid_until - DateTime.now).to_days
+(alex.paid_until - DateTime.now).to_day
+(alex.paid_until - DateTime.now)/3600
+(alex.paid_until - DateTime.now)/3600/34
+(alex.paid_until - DateTime.now)
+alex.paid_until.days - DateTime.now.days
+alex.paid_until.day - DateTime.now.day
+alex.paid_until
+time_ago_in_words(alex.paid_until.day - DateTime.now.day)
+time_ago_in_words(DateTime.now)
+distance_of_time_in_words(alex.paid_until.day - DateTime.now.day)
+Datetime.now+10.days
+DateTime.now+10.days
+a = DateTime.now+10.days
+distance_of_time_in_words(alex.paid_until - DateTime.now)
+distance_of_time_in_words(a  - DateTime.now)
+a
+a- DateTime.now
+(a- DateTime.now)/1.day
+(a.to_i - DateTime.now.to_i)/1.day
+time_ago_in_words(DateTime.tomorrow)
+time_ago_in_words(DateTime.now+10.days)
+time_ago_in_words(DateTime.now)
+time_ago_in_words(3.minutes.ago)
+time_ago_in_words(3.minutes.from_now)
+time_ago_in_words(ActionView::Helpers::DateHelper)
+time_ago_in_words.ActionView::Helpers::DateHelper
+ActionView::Helpers::DateHelper.time_ago_in_words
+(a.to_i - DateTime.now.to_i)/1.day
+a
+(alex.paid_until.to_i - DateTime.now.to_i)/1.day
+alex.paid_until
+alex
+Time.current
+ return 0 unless paid_until <= Time.current
+paid_until = DateTime.now+1.day
+paid_until
+(paid_until.to_i - DateTime.now.to_i)/1.day
+paid_until = DateTime.now+2.day
+(paid_until.to_i - DateTime.now.to_i)/1.day
+(paid_until.to_i - DateTime.now.to_i)/1.hour
+(paid_until.to_i - DateTime.now.to_i)/1.min
+(paid_until.to_i - DateTime.now.to_i)/1.minute
+paid_until = DateTime.now+1.day[A
+(paid_until.to_i - DateTime.now.to_i)/1.minute
+(paid_until - DateTime.now)
+paid_until - DateTime.now
+28783371887/2880000000
+paid_until.in_sec - DateTime.now.in_sec
+ DateTime.now.sec
+ DateTime.now.seconds
+ DateTime.now.second
+ DateTime.now.second
+ DateTime.now.second
+ DateTime.now.second
+ DateTime.now.second
+ DateTime.now.second
+
+DateTime.now
+paid_until
+(paid_until.to_i - DateTime.now.to_i)/1.second
+paid_until =DateTime.now+40.sec
+paid_until =DateTime.now+40.second
+paid_until
+(paid_until.to_i - DateTime.now.to_i)/1.second
+Patient.last
+Doctor.last
+exit
+Doctor.find_by(email: 'nick4vk@yandex.ru')
+a = Doctor.find_by(email: 'nick4vk@yandex.ru')
+a
+a.update paid_until: 'DateTime.now+1.month'
+a.paid_until
+a
+a.update paid_until: 'DateTime.now+30.days'
+a
+DateTime.now+30.days
+a.update (paid_until: ('DateTime.now+1.month)')
+a
+a
+a.update (paid_until: ('DateTime.now+1.month'))
+a
+a.update paid_until: ('DateTime.now+1.month')
+a
+a.update name: 'Sun'
+a
+a.update paid_until: '16.01.2021'
+a
+reload!
+(paid_until.to_i - DateTime.now.to_i)/1.second
+(a.paid_until.to_i - DateTime.now.to_i)/1.second
+me = Doctor.find_by(email: 'consilium1@yandex.ru')
+me
+me.has_paid
+me.update paid_until: 16.01.2021
+me.update paid_until: '16.01.2021'
+a.update moderator: true
+a
+a.update moderator: false
+me.update paid_until: '1.01.2021'
+me.update paid_until: '18.12.2020'
+me.update paid_until: '17.12.2020'
+me.update paid_until: '18.12.2020 15:30'
+me.update paid_until
+meюpaid_until
+me.paid_until
+me
+me.update paid_until: '16.12.2020'
+alex.update paid_until: '16.12.2020'
+a.update paid_until: '16.12.2020'
+a
+a.update paid_until: '17.12.2020'
+a.update paid_until: '17.1.2020'
+a.paid_until - Time.now
+me.update paid_until: nil
+me
+nil - Time.now
+me.update paid_until: '15.12.2020'
+a.update paid_until: '15.12.2019'
+a.update paid_until: '17.12.2020'
+  (paid_until.to_i - DateTime.now.to_i)/1.second
+  (a.paid_until.to_i - DateTime.now.to_i)/1.second
+22167/3600
+me.update paid_until: '15.12.2020'
+me.update paid_until: '15.12.2019'
+a.update paid_until: '15.12.2019'
+me.update paid_until: '15.12.2020'
+me.update paid_until: nil
+nil > 0
+a.update paid_until: '17.12.2019'
+a.update paid_until: '17.12.2020'
+a.paid_until.in_time_zone('UTC')
+a.paid_until.in_time_zone('UTC')
+A
+a
+me
+a.city
+a.city.time_zone
+me.update paid_until: '17.12.2020'
+me.update paid_until: nil
+a.update paid_until: '18.12.2020.in_time_zone('Kyiv')'
+a.update paid_until: "18.12.2020.in_time_zone('Kyiv')"
+a.paid_until
+a.paid_until.in_time_zone('Kyiv')
+Time.parce(a.paid_until)
+Time.parse(a.paid_until)
+Time.parse(a.paid_until.to_time)
+a.paid_until.to_time
+a.paid_until.to_time.in_time_zone('Kyiv')
+a.update paid_until: "17.12.2020"
+a.update paid_until: "17.1.2021"
+me
+exit
+me
+me = Doctor.find_by(email: 'consilium1@yandex.ru')
+me
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+ale
+alex
+alex.update paid_until: '19.12.2020'
+alex.update paid_until: '19.1.2021'
 exit

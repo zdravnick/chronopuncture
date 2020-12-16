@@ -14,8 +14,7 @@ class ApplicationController < ActionController::Base
   def require_payment
     return if doctor_signed_in? == false
     return if controller_name.in?(%w[sessions registrations])  || (controller_name == 'pages' && action_name == 'pay')
-    return if current_doctor&.has_paid? || current_doctor&.moderator?
-
+    return if current_doctor&.paid_period_seconds_left  > 0 || current_doctor&.moderator?
     redirect_to pages_pay_path
   end
 

@@ -14,7 +14,12 @@ class Doctor < ApplicationRecord
   has_many :patients
   has_many :visits, through: :patients
 
-
+def paid_period_seconds_left
+  return 0 if paid_until == nil
+  return 0 unless paid_until
+  return 0 unless paid_until >= DateTime.current
+  (paid_until.to_i - DateTime.current.to_i)/1.second
+end
 
 end
 

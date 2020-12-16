@@ -118,7 +118,7 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
-  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit],
+  #patient_diagnosis, #patient_name, .paid_until, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id, .slider {
     font-size: 3vmin;
     font-size: 1rem;
@@ -154,7 +154,7 @@ html, body {
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
-  #patient_diagnosis, #patient_name, .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
+  #patient_diagnosis, #patient_name, .btn_mode>a, .paid_until, .btn-control, input[type=submit], #patient_city_id {
     font-size: $font_size;
   }
   .stub_wrapper, .lung8_wrapper, .lung9_wrapper, .stomach36_wrapper, .liver1_wrapper, .liver8_wrapper,
@@ -281,20 +281,18 @@ input[type=email]{
 
 .full {
   grid-area: full;
-  background-color: rgba(255, 165, 0, 0.5);
+  // background-color: rgba(255, 193, 77, 0.5);
+  background-color: rgba(255, 219, 153, 0.6);
 }
 
 .empty{
   grid-area: empty;
-  background-color: darkkhaki;
+  background-color: #d0cc95;
 }
 
 .lost {
   grid-area: lost;
   display: grid;
-  // background-color: tan;
-  // background: rgb(255,165,0);
-  // background: linear-gradient(90deg, rgba(255,165,0,0.5) 0%, rgba(128,128,0,0.8) 100%);
   border: 1px solid lemonchiffon;
   background: linear-gradient(90deg, #9e9947 0%, lemonchiffon 25%, lemonchiffon 70%, #9e9947 100%);
 }
@@ -309,7 +307,7 @@ input[type=email]{
   justify-self: center;
 }
 .td_lost_qi {
-  background-color: rgba(255, 165, 0, 0.7);
+  background-color: #dfddb9;
   border-radius: 4px;
   margin: 10px;
   padding: 3px 4px 2px 4px;
@@ -320,12 +318,12 @@ input[type=email]{
   border: 2px solid olive;
 }
 
-.empty_table a{
-  background-color: rgba(255, 165, 0, 0.5);
+.full_table a, .empty_table a{
+  background-color: #dfddb9;
 }
 
 .lost_table a{
-  background-color: rgba(255, 165, 0, 0.7);
+  background-color: #dfddb9;
 }
 
 
@@ -334,7 +332,7 @@ input[type=email]{
 }
 
 .full_table tr:nth-child(even) {
-  background-color: darken(rgba(255, 165, 0, 0.3), 10%);
+  background-color: darken(rgba(255, 219, 153, 0.6), 10%);
 }
 
 
@@ -343,7 +341,7 @@ input[type=email]{
 // }
 
 .empty_table tr:nth-child(even) {
-  background-color: darken(darkkhaki , 10%);
+  background-color: darken(#d0cc95 , 10%);
 }
 
 .wu_yun_first_cell {
@@ -791,9 +789,9 @@ background-color: #bfbb73;
   background-color: yellow;
 }
 
-.navigation>ul>li>a{
- background-color: lightblue;
-}
+// .navigation>ul>li>a{
+//  background-color: lightblue;
+// }
 
 ul>li {
   list-style-type: disc;
@@ -873,7 +871,15 @@ a {
 //   padding: 3px 4px 1px 4px;
 // }
 
-
+.paid_until {
+  background-color: wheat;
+  border: 2px solid #8B4513;
+  border-bottom: 5px solid #630;
+  border-right: 3px solid #630;
+  border-radius: 4px;
+  padding: 3px 4px 2px 4px;
+  margin-bottom: 10px;
+}
 
 .btn-control, input[type=submit], #patient_city_id  {
   background-color: wheat;
