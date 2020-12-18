@@ -26,7 +26,7 @@
             <%= link_to "страница доктора", patients_path, class: 'btn-control'  %>
             <%= link_to 'Личный кабинет', edit_doctor_registration_path, class: 'btn-control', :method => :get %>
             <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
-            <%= link_to 'English', root_path(locale: :en) %> <%= link_to 'Русский', root_path(locale: :ru) %>
+            <%= link_to 'English', root_path(locale: :en), class: 'btn-control' %> <%= link_to 'Русский', root_path(locale: :ru), class: 'btn-control' %>
         <% end %>
         <h3>Город доктора: <%= current_doctor.city.name %></h3>
         <h3>Таймзона доктора: <%= current_doctor.city.time_zone %></h3>
