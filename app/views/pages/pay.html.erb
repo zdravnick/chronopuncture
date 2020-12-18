@@ -1,4 +1,20 @@
 <%= link_to 'Выйти', destroy_doctor_session_path, class: 'btn-control', :method => :delete, data: { confirm: 'Уверены, выходим?' } %>
 <%= link_to 'English', root_path(locale: :en) %> <%= link_to 'Русский', root_path(locale: :ru) %>
+<% if  current_doctor&.paid_period_seconds_left == nil  && current_doctor&.moderator? == false %>
+  <h1>Нужно внести абонплату</h1>
+<% elsif  current_doctor&.paid_period_seconds_left <= 0 && current_doctor&.moderator? == false %>
+  <h1>Время истекло, пора внести абонплату</h1>
+  <% end %>
 <h1>Номер карты: 4276721865276224</h1>
 <h1>Оплата за месяц 300 руб</h1>
+ current_doctor.paid_period_seconds_left  <%= (current_doctor.paid_until - DateTime.current)/1.second %>
+<h3>Бесплатные плюшки:</h3>
+
+<p>
+  <h3>МЕТОД ЛИНГУЙБАФА</h3>
+  <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
+  <%= f.label "Выберите время: " %>
+  <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
+  <%= f.submit "Рассчитать" %>
+  <% end %>
+</p>

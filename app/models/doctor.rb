@@ -11,15 +11,24 @@ class Doctor < ApplicationRecord
                     uniqueness: true
 
   belongs_to :city
-  has_many :patients
+
+  has_many :patients do # @doctor.patients.active
+    def active
+      if proxy_association.owner.paid_period_seconds_left > 0 || proxy_association.owner.moderator?
+        self
+      else
+        self.where(id: self.first.try(:id))
+      end
+    end
+  end
+
   has_many :visits, through: :patients
 
-def paid_period_seconds_left
-  return 0 if paid_until == nil
-  return 0 unless paid_until
-  return 0 unless paid_until >= DateTime.current
-  (paid_until.to_i - DateTime.current.to_i)/1.second
-end
+  def paid_period_seconds_left
+    return 0 if self.paid_until == nil
+    return 0 if self.paid_until <= DateTime.current
+    self.paid_until.to_i - DateTime.current.to_i
+  end
 
 end
 

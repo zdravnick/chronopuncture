@@ -1,81 +1,3 @@
-params[:name] = 'кобоз'
-a = params[:name]
-a
-exit
-Doctor.last
-Doctor.find_by(email: "consilium1@yandex.ru")
-exit
-Doctor.last
-Doctor.last.paid_until
-alex = Doctor.where(email: "nick4vk@yandex.ru")
-alex
-alex.update paid_until: '16.01.2021'
-alex
-alex.paid_until - DateTime.now
-alex.paid_until
-alex.email
-alex.moderator
-Doctor.last.paid_until
-Doctor.last
-Doctor.first
-Doctor.where(email: "nick4vk@yandex.ru").paid_until
-reload!
-Doctor.where(email: "nick4vk@yandex.ru").paid_until
-Doctor.where(email: "nick4vk@yandex.ru")
-alex = Doctor.where(email: "nick4vk@yandex.ru")
-alex.paid_until
-alex.email
-Patient.last
-Patient.last.name
-exit
-Patient.last.birthdate
-alex = Doctor.where(email: "nick4vk@yandex.ru")
-alex.name
-alex.paid_until
-alex = Doctor.find_by(email: "nick4vk@yandex.ru")
-alex.name
-alex.paid_until
-alex.paid_until - DateTime.now
-(alex.paid_until - DateTime.now).to_days
-(alex.paid_until - DateTime.now).to_day
-(alex.paid_until - DateTime.now)/3600
-(alex.paid_until - DateTime.now)/3600/34
-(alex.paid_until - DateTime.now)
-alex.paid_until.days - DateTime.now.days
-alex.paid_until.day - DateTime.now.day
-alex.paid_until
-time_ago_in_words(alex.paid_until.day - DateTime.now.day)
-time_ago_in_words(DateTime.now)
-distance_of_time_in_words(alex.paid_until.day - DateTime.now.day)
-Datetime.now+10.days
-DateTime.now+10.days
-a = DateTime.now+10.days
-distance_of_time_in_words(alex.paid_until - DateTime.now)
-distance_of_time_in_words(a  - DateTime.now)
-a
-a- DateTime.now
-(a- DateTime.now)/1.day
-(a.to_i - DateTime.now.to_i)/1.day
-time_ago_in_words(DateTime.tomorrow)
-time_ago_in_words(DateTime.now+10.days)
-time_ago_in_words(DateTime.now)
-time_ago_in_words(3.minutes.ago)
-time_ago_in_words(3.minutes.from_now)
-time_ago_in_words(ActionView::Helpers::DateHelper)
-time_ago_in_words.ActionView::Helpers::DateHelper
-ActionView::Helpers::DateHelper.time_ago_in_words
-(a.to_i - DateTime.now.to_i)/1.day
-a
-(alex.paid_until.to_i - DateTime.now.to_i)/1.day
-alex.paid_until
-alex
-Time.current
- return 0 unless paid_until <= Time.current
-paid_until = DateTime.now+1.day
-paid_until
-(paid_until.to_i - DateTime.now.to_i)/1.day
-paid_until = DateTime.now+2.day
-(paid_until.to_i - DateTime.now.to_i)/1.day
 (paid_until.to_i - DateTime.now.to_i)/1.hour
 (paid_until.to_i - DateTime.now.to_i)/1.min
 (paid_until.to_i - DateTime.now.to_i)/1.minute
@@ -197,4 +119,82 @@ ale
 alex
 alex.update paid_until: '19.12.2020'
 alex.update paid_until: '19.1.2021'
+exit
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex.update paid_until: nil
+alex.update paid_until: '19.01.2021'
+exit
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex.update paid_until: nil
+alex.update paid_until: '19.01.2021'
+exit
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex.update paid_until: '16.01.2020'
+my_date_time = Time.now + 4.days
+distance_of_time_in_words(from_time, from_time - 45.seconds, include_seconds: true)
+from_time = Time.now-10.minutes
+distance_of_time_in_words(from_time, from_time - 45.seconds, include_seconds: true)
+ paid_until = DateTime.current-1.days
+  (paid_until - DateTime.current)/1.second
+t =  (paid_until - DateTime.current)/1.second
+t.class
+t > 0
+t =  (paid_until - DateTime.current)
+t
+t =  (paid_until.to_i - DateTime.current.to_i)
+t
+t.class
+t =  (paid_until.to_i - DateTime.current.to_i)/1.second
+t
+t.class
+paid_until.class
+paid_until.to_seconds
+paid_until.to_seconds
+paid_until.to_sec
+alex
+alex.update paid_until: 17.12.2020 23:00
+alex.update paid_until: '17.12.2020 23:00'
+alex
+alex.update paid_until: '17.12.2020 23:00, +2'
+alex
+alex.paid_until.in_time_zone(alex.city.time_zone)
+alex.update paid_until: '17.12.2020 22:30'
+alex.update paid_until: '18.12.2020 00:30'
+alex.update paid_until: '19.12.2020 00:30'
+(paid_until.to_i
+     - DateTime.current.to_i)/1.second
+paid_until.to_i
+paid_until
+alex.paid_until
+me
+Doctor.last
+me = Doctor.find_by(email: 'consilium1@yandex.ru')
+me
+Doctor.first
+Doctor.all.each( |d| p d.paid_until)
+Doctor.all.each{ |d| p d.paid_until}
+paid_until
+alex.save
+paid_until
+exit
+paid_until
+paid_until
+reload!
+alex
+Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex.update paid_until: '16.12.2020 00:30'
+alex.update paid_until: '20.12.2020 00:30'
+alex.update paid_until: '17.12.2020 00:30'
+alex.update paid_until: '21.12.2020 00:30'
+alex.update paid_until: '16.12.2020 00:30'
+alex
+exit
+alex = Doctor.find_by(email: 'nick4vk@yandex.ru')
+alex.update paid_until: '22.12.2020 00:30'
+alex.update paid_until: '17.12.2020 00:30'
+alex.update paid_until: '22.12.2020 00:30'
+alex.update paid_until: '17.12.2020 00:30'
+alex.update paid_until: '22.01.2021 00:30'
+alex.update paid_until: '22.01.2021 00:30'exit
 exit

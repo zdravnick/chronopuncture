@@ -40,7 +40,7 @@ html, body {
 .btn_mode {
   display: inline-block;
 }
-.theme-light, .theme-dark, .theme-olive, .theme-grey{
+.theme-light, .theme-bright, .theme-olive, .theme-grey{
   width: 100%;
 }
 
@@ -49,7 +49,7 @@ html, body {
   #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id {
   font-size: 1.1rem;
   }
-  .theme-light, .theme-dark, .theme-olive, .theme-grey {
+  .theme-light, .theme-bright, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
       grid-template-areas:
         "full"
@@ -97,7 +97,7 @@ html, body {
   #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id {
   font-size: 1.1rem;
   }
-  .theme-light, .theme-dark, .theme-olive, .theme-grey {
+  .theme-light, .theme-bright, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
       grid-template-areas:
         "full"
@@ -139,7 +139,7 @@ html, body {
   #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation, #doctor_city_id{
   font-size: $font_size;
   }
-  .theme-light, .theme-dark, .theme-olive, .theme-grey {
+  .theme-light, .theme-bright, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
       display: grid;
       grid-template-columns: minmax(1fr, auto);
@@ -184,31 +184,49 @@ input[type=email]{
   .slider {
    background-color: #d0cc95;
   }
+  .list_control {
+    background-color: darken($background_color, 10%);
+    border: 1px solid rgba(128, 128, 0, 1);
+    box-shadow: 1px 1px 6px  rgba(128, 128, 0, 0.8);
+  }
 }
 
-.theme-dark {
-  filter: invert(10%);
-  $background_color:  darkolivegreen;
-  $background_color_button: orange;
-  $font_color: rgba(255, 165, 0, 1);
+// .theme-light {
+//   $background_color:  #e8e6ca;
+//   $background_color_button: wheat;
+//   background-color: $background_color;
+//   .btn-control {
+//     background-color: #f9ebd2;
+//   }
+//   .slider {
+//    background-color: #f7f7ed;
+//   }
+// }
+
+.theme-bright {
+
+  $background_color:  #efeedc;
+  $background_color_button: #f7f7ed;
+  $font_color: black;
   $background_color_input_field: olive;
   .slider {
     color: black;
-   background-color: rgba(255, 165, 0, 0.7);
+    background-color: #f7f7ed;
   }
   color: $font_color;
   background-color: $background_color;
 
   .btn_mode>a, .btn-control, input[type=submit], #patient_city_id {
-    background-color: transparentize(($font_color + 25%), 0.3);
-    border: 2px solid black;
+    background-color: #f9ebd2;
+    border: 2px solid #8B4513;
+    box-shadow: 3px 3px 3px rgba(102, 51, 0, 0.5);
   }
   #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
   #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
   #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
   #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
   #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
-    background-color: ($background_color_input_field + 10%);
+    background-color: #d8d5a6;
     // box-shadow: 3px 3px 3px #630;
     border: 2px solid black;
   }
@@ -225,6 +243,12 @@ input[type=email]{
   color: black;
   .slider {
     background-color: rgba(255, 165, 0, 0.7);
+  }
+
+  .list_control {
+    background-color: rgba(128, 128, 0, 0.8);
+    border: 1px solid darkolivegreen;
+    box-shadow: 1px 1px 6px  rgba(128, 128, 0, 1);
   }
 
   #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
@@ -247,18 +271,75 @@ input[type=email]{
 
 .theme-grey {
   filter: invert(10%);
-  background-color: grey;
+  $background_color: #8c8c8c;
+  background-color: $background_color;
+  $background_color_input_field: lightgrey;
   color: black;
   a, .btn-control, input[type=submit] {
-    border: 2px solid black;
+    border: 2px solid #630;
   }
   .btn-control:hover, input[type=submit]:hover {
-    border: 2px solid lightgrey;
+    background-color: #630;
+    border: 2px solid black;
+    box-shadow: 2px 2px 6px  black;
   }
+
+  .list_control {
+    background-color: lighten($background_color, 15%);
+    border: 2px solid #630;
+    box-shadow: 2px 2px 6px  white;
+  }
+
+  .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
+  #date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
+  #_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
+  #_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
+  #patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id,
+  #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
+  #patient_diagnosis, #patient_name, #doctor_email, #doctor_phone, #doctor_password,
+  #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
+  #patient_city_id {
+    background-color: $background_color_input_field;
+    border: 2px solid #630;
+  }
+
+  #_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
+  #date__1i:hover, #date__2i:hover, #date__3i:hover, #_visited_at_5i:hover,
+  #_visited_at_4i:hover, #_visited_at_3i:hover, #_visited_at_2i:hover, #_visited_at_1i:hover,
+  #_birthdate_5i:hover, #_birthdate_4i:hover, #_birthdate_3i:hover, #_birthdate_2i:hover,
+  #_birthdate_1i:hover, #patient_birthdate_5i:hover, #patient_birthdate_4i:hover,
+  #patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
+  #city_id:hover{
+    background-color: #630;
+    border: 2px solid black;
+  }
+
   .slider {
     background-color: #d0cc95;
     border-radius: 5%;
   }
+}
+
+.list_control_wrapper {
+  display: grid;
+  justify-items: center;
+}
+
+.label_with_fix_width {
+  min-width: 10rem;
+  width: 10rem;
+}
+
+.list_control {
+  width: 75%;
+  justify-self: center;
+  justify-content: space-evenly;
+  background-color: #e8e6ca;
+  border: 1px solid olive;
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+  padding: 0.5%;
+  box-shadow: 1px 1px 6px  #9e9947;
 }
 
 .page, .prev, .next, .last, .first {
@@ -633,7 +714,7 @@ background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%
 }
 
 input {
-cursor: pointer;
+cursor: auto;
 }
 
 #slide_wood_yang, #slide_wood_yin, #slide_fire_yin, #slide_fire_yang, #slide_fire_in_earth_yin,

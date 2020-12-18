@@ -9,94 +9,99 @@
     <% else %>
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
-  <div>
-
-    <%= form_with  local: true, method: :get, url: patients_path do |f| %>
-    <%= f.label  'Поиск по имени'  %>
-    <%= f.text_field :name %>
-    <%= f.submit "Искать", class: 'btn-control' %>
-    <% end %>
-
-    <p><%= form_with  local: true, method: :get, url: patients_path do |f| %>
-    <%= f.label  'Поиск по диагнозу'  %>
-    <%= f.text_field :diagnosis %>
-    <%= f.submit "Искать", class: 'btn-control' %>
-    <% end %></p>
+  <div class="list_control_wrapper">
+    <div class="list_control">
+      <%= form_with  local: true, method: :get, url: patients_path do |f| %>
+      <%= f.label "Поиск по имени\u00a0\u00a0\u00a0\u00a0" %>
+      <%= f.text_field :name %>
+      <%= f.submit "Искать", class: 'btn-control' %>
+      <% end %>
+    </div>
+    <div class="list_control">
+      <%= form_with  local: true, method: :get, url: patients_path do |f| %>
+      <%= f.label  'Поиск по диагнозу'  %>
+      <%= f.text_field :diagnosis %>
+      <%= f.submit "Искать", class: 'btn-control' %>
+      <% end %>
+    </div>
   </div>
+</div>
 
-<p>
-    <h3>МЕТОД ЛИНГУЙБАФА</h3>
+<div class="list_control_wrapper">
+  <div class="list_control">
+    <h3>ЛИНГУЙБАФА</h3>
     <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
     <% end %>
-</p>
+  </div>
 
-<p>
+
+  <div class="list_control">
     <h3>ЛИНГУЙБАФА на неделю</h3>
     <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
     <%= f.submit "На неделю" %>
     <% end %>
-</p>
+  </div>
 
-  <p>
+  <div class="list_control">
     <h3>МЕТОД "24 минуты"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
     <%= f.label " Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
     <% end %>
-  </p>
+  </div>
 
-  <p>
+  <div class="list_control">
     <h3>МЕТОД "24 минуты - 2"</h3>
     <%= form_with local: true, method: :get, url: points_infusion_2_path do |f| %>
     <%= f.label " Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit "Рассчитать" %>
     <% end %>
-  </p>
+ </div>
 
-  <p>
+  <div class="list_control">
     <h3>24 минуты на неделю</h3>
     <%= form_with local: true, method: :get, url: points_infusion_7_times_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
     <%= f.submit "На неделю" %>
     <% end %>
-</p>
+  </div>
 
-   <p>
+  <div class="list_control">
     <h3>methods_mix</h3>
     <%= form_with local: true, method: :get, url: points_methods_mix_path do |f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
     <%= f.submit "На неделю" %>
     <% end %>
-  </p>
+  </div>
 
-  <p>
+  <div class="list_control">
     <h3>МЕТОД НАГАНЬФА</h3>
     <%= form_with html: {target: '_blank', class: "form-control"}, local: true, method: :get, url: points_naganfa_path do|f| %>
     <%= f.label "Выберите время: " %>
     <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
     <%= f.submit  "Рассчитать"%>
     <% end %>
-  </p>
+  </div>
 
-    <p>
-      <h3>НАГАНЬФА на неделю</h3>
-      <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
-      <%= f.label "Выберите время: " %>
-      <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-      <%= f.submit "На неделю" %>
-      <% end %>
-    </p>
+  <div class="list_control">
+    <h3>НАГАНЬФА на неделю</h3>
+    <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
+    <%= f.label "Выберите время: " %>
+    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+    <%= f.submit "На неделю" %>
+    <% end %>
+   </div>
 
-  <p>
+  <div class="list_control">
     <div>
       <h3><%= label_tag( "Добавить пациента") %></h3>
       <%= form_with local: true, method: :post, url: patients_path do |f| %>
@@ -117,18 +122,24 @@
         <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
       <% end %>
     </div>
-  </p>
+  </div>
+</div>
 
-  <h3>Список пациентов </h3>
 
-    <%  @patients.each do |i| %>
-      <div class="patient_list_control" ><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.strftime( "%d.%m.%y") + "г.  в " + i.birthdate.strftime( "%H:%M")  + " " + i.diagnosis.to_s %></div>
-    <div class="li-control">
-      <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
-   </div>
-    <p></p>
-    <% end %>
-    <%= paginate @patients %>
+    <div class="list_control_wrapper">
+      <h2>Список пациентов </h2>
+      <%  @patients.each do |i| %>
+      <div class="list_control"><%= "Карта № " + " " + i.id.to_s + " " + i.name.to_s + " " + i.birthdate.strftime( "%d.%m.%y") + "г.  в " + i.birthdate.strftime( "%H:%M")  + " " + i.diagnosis.to_s %>
+        <div class="li-control">
+          <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
+        </div>
+      </div>
+
+      <% end %>
+
+      <%= paginate @patients %>
+    </div>
+
 
 
 <h5>ТОЧКИ ТРАНСФОРМАЦИИ У-СИН:</h5>

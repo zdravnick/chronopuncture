@@ -27,7 +27,7 @@ class PatientsController < ApplicationController
   end
 
   def index
-    @patients = current_doctor.patients.order(updated_at: :desc).page params[:page]
+    @patients = current_doctor.patients.active.order(updated_at: :desc).page params[:page]
     name = Patient.arel_table[:name]
     Patient.where(name.matches("%#{params[:name]}%"))
     if params[:name].present?

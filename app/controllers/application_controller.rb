@@ -8,13 +8,14 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :require_payment, except: :color_mode_action
+  before_action :require_payment, except: :color_mode_action, except: :linguibafa
 
 
   def require_payment
     return if doctor_signed_in? == false
     return if controller_name.in?(%w[sessions registrations])  || (controller_name == 'pages' && action_name == 'pay')
     return if current_doctor&.paid_period_seconds_left  > 0 || current_doctor&.moderator?
+    return if (controller_name == 'patients' && ( action_name == 'index' || action_name == 'show'  ))
     redirect_to pages_pay_path
   end
 
