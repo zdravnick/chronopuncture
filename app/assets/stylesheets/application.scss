@@ -30,6 +30,7 @@ body, .wu_yun_energyes_map, .full, .empty, .lost, #_date_3i, #_date_2i, #_date_1
   #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id  {
   font-size: $font_size;
+  font-family: Calibri;
 }
 
 html, body {
@@ -274,20 +275,25 @@ input[type=email]{
   $background_color: #8c8c8c;
   background-color: $background_color;
   $background_color_input_field: lightgrey;
+  $shadow_color_for_grey_theme: olive;
+  $border_color_for_grey_theme: black;
+  $color_hover: darkolivegreen;
+  $box_shadow_color_1: black;
+
   color: black;
-  a, .btn-control, input[type=submit] {
-    border: 2px solid #630;
+  a, .btn-control, input[type=submit], .list_control {
+    border: 2px solid $border_color_for_grey_theme;
+    box-shadow: 2px 2px 6px  $shadow_color_for_grey_theme;
   }
   .btn-control:hover, input[type=submit]:hover {
-    background-color: #630;
+    background-color: $shadow_color_for_grey_theme;
     border: 2px solid black;
-    box-shadow: 2px 2px 6px  black;
+    box-shadow: 2px 2px 6px  $color_hover;
   }
 
   .list_control {
     background-color: lighten($background_color, 15%);
-    border: 2px solid #630;
-    box-shadow: 2px 2px 6px  white;
+    border: 2px solid $border_color_for_grey_theme;
   }
 
   .wu_yun_energyes_map, .full, .empty, .lost, .paid_until, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
@@ -300,7 +306,8 @@ input[type=email]{
   #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id {
     background-color: $background_color_input_field;
-    border: 2px solid #630;
+    border: 2px solid $border_color_for_grey_theme;
+    box-shadow: 2px 2px 6px  $shadow_color_for_grey_theme;
   }
 
   #_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
@@ -310,8 +317,9 @@ input[type=email]{
   #_birthdate_1i:hover, #patient_birthdate_5i:hover, #patient_birthdate_4i:hover,
   #patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
   #city_id:hover{
-    background-color: #630;
-    border: 2px solid black;
+    background-color: $shadow_color_for_grey_theme;
+    border: 2px solid $border_color_for_grey_theme;
+    box-shadow: 2px 2px 6px  $color_hover;
   }
 
   .slider {
