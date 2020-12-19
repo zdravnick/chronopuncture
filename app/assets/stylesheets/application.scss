@@ -276,24 +276,24 @@ input[type=email]{
   background-color: $background_color;
   $background_color_input_field: lightgrey;
   $shadow_color_for_grey_theme: olive;
-  $border_color_for_grey_theme: black;
+  $border_color_for_grey_theme: #1a1a00;
   $color_hover: darkolivegreen;
   $box_shadow_color_1: black;
 
   color: black;
   a, .btn-control, input[type=submit], .list_control {
-    border: 2px solid $border_color_for_grey_theme;
+    border: 1px solid $border_color_for_grey_theme;
     box-shadow: 2px 2px 6px  $shadow_color_for_grey_theme;
   }
   .btn-control:hover, input[type=submit]:hover {
     background-color: $shadow_color_for_grey_theme;
-    border: 2px solid black;
+    border: 1px solid black;
     box-shadow: 2px 2px 6px  $color_hover;
   }
 
   .list_control {
     background-color: lighten($background_color, 15%);
-    border: 2px solid $border_color_for_grey_theme;
+    border: 1px solid $border_color_for_grey_theme;
   }
 
   .wu_yun_energyes_map, .full, .empty, .lost, .paid_until, #_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
@@ -306,7 +306,7 @@ input[type=email]{
   #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
   #patient_city_id {
     background-color: $background_color_input_field;
-    border: 2px solid $border_color_for_grey_theme;
+    border: 1px solid $border_color_for_grey_theme;
     box-shadow: 2px 2px 6px  $shadow_color_for_grey_theme;
   }
 
@@ -318,7 +318,7 @@ input[type=email]{
   #patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
   #city_id:hover{
     background-color: $shadow_color_for_grey_theme;
-    border: 2px solid $border_color_for_grey_theme;
+    border: 1px solid $border_color_for_grey_theme;
     box-shadow: 2px 2px 6px  $color_hover;
   }
 
