@@ -17,8 +17,8 @@
       <% if current_doctor&.paid_until != nil %>
         <span class="paid_until">Оплачено еще: <%= distance_of_time_in_words(Time.current.in_time_zone(current_doctor.city.time_zone), current_doctor&.paid_until)%></span>
         <% end %>
-      <div class="btn_mode"> <%= change_theme_link('theme-light', 'Базовая')%> </div>
-      <div class="btn_mode"> <%= change_theme_link('theme-bright', 'Светлая')%> </div>
+      <div class="btn_mode"> <%= change_theme_link('theme-light', 'Светлая')%> </div>
+      <div class="btn_mode"> <%= change_theme_link('theme-bright', 'Яркая')%> </div>
       <div class="btn_mode"> <%= change_theme_link('theme-olive', 'Оливка')%> </div>
       <div class="btn_mode"> <%= change_theme_link('theme-grey', 'Серая')%> </div>
       <% if  doctor_signed_in? %>
