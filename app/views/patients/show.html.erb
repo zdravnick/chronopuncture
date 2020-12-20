@@ -1,35 +1,26 @@
-  <table>
-    <tr>
-      <td><%= @patient.name + " " + @patient.birthdate.strftime( "%d.%m.%y") %><td>
-      <td><%= @patient.diagnosis %><td>
-      <% if  @patient.city %>
-        <td>Родился в г. <%= @patient.city.name %><td>
+<div class="list_control_wrapper">
+  <div class="list_control list_control_patients_show"> <span class="bold_text_element"> <%= @patient.name.to_s + ", " %> </span> <%= @patient.birthdate.strftime( "%d.%m.%y") + "г., был(а) " + @patient.visits.last.visited_at.strftime( "%d.%m.%y")  + ", диагноз: " + @patient.diagnosis.to_s %>. <span class="bold_text_element"> Визитов: <%=@patient.visits.count %></span>
+  </div>
+  <div class="list_control list_control_patients_show">
+      <h3>МЕТОД СЛОЖНОГО БАЛАНСА</h3>
+      <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
+      <% hidden_field_tag(:city, current_doctor.city) %>
+      <%= hidden_field_tag(:patient_id, @patient.id) %>
+      <%= f.label " Выберите время сеанса: " %>
+      <p>
+        <%= f.datetime_select :date, default: DateTime.now %>
+      </p>
+      <p>
+        <%= f.label "День рождения пациента: " %>
+      </p>
+      <p>
+        <%= f.datetime_select :birthdate, default: @patient.birthdate %>
+      </p>
+      <%= f.submit   "Рассчитать", class: "form_button" %>
       <% end %>
-      <td >Номер карты: <%=  @patient.id %><td>
-      <td>Визитов: <%= @patient.visits.count %><td>
-    </tr>
-  </table>
+  </div>
 
-  <p>
-    <h3>МЕТОД СЛОЖНОГО БАЛАНСА</h3>
-    <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
-    <% hidden_field_tag(:city, current_doctor.city) %>
-    <%= hidden_field_tag(:patient_id, @patient.id) %>
-    <%= f.label " Выберите время сеанса: " %>
-    <p>
-      <%= f.datetime_select :date, default: DateTime.now %>
-    </p>
-    <p>
-      <%= f.label "День рождения пациента: " %>
-    </p>
-    <p>
-      <%= f.datetime_select :birthdate, default: @patient.birthdate %>
-    </p>
-    <%= f.submit   "Рассчитать", class: "form_button" %>
-    <% end %>
-  </p>
-
-  <p>
+  <div class="list_control list_control_patients_show">
     <h3>МЕТОД У ЮНЬ ЛЮ ЦИ</h3>
     <%= form_with local: true, method: :get, url: points_wu_yun_liu_thi_path do |f| %>
     <%  hidden_field_tag(:city, current_doctor.city) %>
@@ -39,9 +30,9 @@
     <%= f.datetime_select :birthdate, default: @patient.birthdate %>
     <%= f.submit "Рассчитать" %>
     <% end %>
-  </p>
+  </div>
 
-  <p>
+  <div class="list_control list_control_patients_show">
     <h3>МЕТОД У ЮНЬ ЛЮ ЦИ_TRUNK</h3>
     <%= form_with local: true, method: :get, url: points_wu_yun_liu_thi_trunk_path do |f| %>
     <%  hidden_field_tag(:city, current_doctor.city) %>
@@ -50,9 +41,9 @@
     <%= f.datetime_select :birthdate, default: @patient.birthdate %>
     <%= f.submit "Рассчитать" %>
     <% end %>
-  </p>
+  </div>
 
-  <p>
+  <div class="list_control list_control_patients_show">
     <h3>МЕТОД ЛУННЫХ ДВОРЦОВ </h3>
     <%= form_tag points_lunar_palaces_path, method: "get" do  %>
     <%= hidden_field_tag(:patient_id, @patient.id) %>
@@ -60,27 +51,27 @@
     <%= date_select(:date, nil, { start_year: 1930, end_year: Date.today.year, default: Date.today-30.years, order: [:day, :month, :year] } )%>
     <%= submit_tag "Рассчитать" %>
     <% end %>
-    </p>
+  </div>
 
-    <div>
-      <h3><%= label_tag( "Добавить сеанс") %></h3>
-      <%= form_with local: true, method: :post, url: visits_path, html: {onsubmit: "return confirm('Сохраняем сеанс?');"} do |f| %>
-        <%= hidden_field_tag(:patient_id, @patient.id) %>
-        <%= f.label 'Дата сеанса:' %>
-        <%= f.datetime_select( :visited_at, default: DateTime.now) %>
-        <h4>Примечание к сеанcу:</h4>
-        <p><%= f.text_area :visit_description, :value => @patient.visits.last&.visit_description.to_s, size: "48x3" %></p>
+  <div class="list_control list_control_patients_show">
+    <h3><%= label_tag( "Добавить сеанс") %></h3>
+    <%= form_with local: true, method: :post, url: visits_path, html: {onsubmit: "return confirm('Сохраняем сеанс?');"} do |f| %>
+      <%= hidden_field_tag(:patient_id, @patient.id) %>
+      <%= f.label 'Дата сеанса:' %>
+      <%= f.datetime_select( :visited_at, default: DateTime.now) %>
+      <h4>Примечание к сеанcу:</h4>
+      <p><%= f.text_area :visit_description, :value => @patient.visits.last&.visit_description.to_s, size: "48x3" %></p>
 
-        <h4>Лечение:</h4>
-        <p><%= f.text_area :treatment, :value => @patient.visits.last&.treatment.to_s, size: "48x3" %></p>
-        <p><%= f.submit "Добавить сеанс", class: 'btn-control' %></p>
-      <% end %>
-    </div>
-  </p>
+      <h4>Лечение:</h4>
+      <p><%= f.text_area :treatment, :value => @patient.visits.last&.treatment.to_s, size: "48x3" %></p>
+      <p><%= f.submit "Добавить сеанс", class: 'btn-control' %></p>
+    <% end %>
+  </div>
 
   <h3>Объем лечения:</h3>
-  <ol class="reversed_list">
-    <% @patient.visits.each do |t| %>
+  <div class="list_control list_control_patients_show">
+    <ol class="reversed_list">
+      <% @patient.visits.each do |t| %>
         <ul class="reversed_list_without_bullets">
           <li>
             <%= t.visit_description %>
@@ -94,11 +85,11 @@
         </ul>
         <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %>
         </li>
-    <% end %>
-  </ol>
+      <% end %>
+    </ol>
+  </div>
 
-  <p>
-  <div>
+  <div class="list_control list_control_patients_show">
     <h3><%= label_tag( "Изменить данные пациента") %></h3>
     <%= form_with model: @patient, local: true, method: :patch, html: {onsubmit: "return confirm('Вы уверены?');"} do |f| %>
       <%= f.label "Имя" %>
@@ -128,3 +119,5 @@
   <div class="li-control">
     <%= link_to 'Грохнуть пациента', patient_path(@patient), action: :delete,  method: :delete, data: { confirm: 'Вы уверены, удаляем пациента из базы?' }, class: 'btn-control patient_delete_control' %>
   </div>
+
+</div>

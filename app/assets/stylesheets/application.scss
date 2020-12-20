@@ -409,15 +409,46 @@ input[type=email]{
 }
 
 .list_control {
-  width: 75%;
+  display: grid;
+  width: 65%;
   justify-self: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #e8e6ca;
   border: 1px solid olive;
   border-radius: 0.2rem;
   margin-bottom: 1rem;
   padding: 0.5%;
   box-shadow: 1px 1px 6px  #9e9947;
+  white-space: normal;
+  overflow-x: hidden;
+}
+
+.list_control_patients_show ol ul {
+  display: grid;
+  // width: 90%;
+  justify-self: center;
+  justify-content: space-between;
+  background-color: #e8e6ca;
+  border: 1px solid #1a1a00;
+  border-radius: 0.2rem;
+  // margin-bottom: 1rem;
+  // box-shadow: 1px 1px 6px  #9e9947;
+  white-space: normal;
+  overflow-x: hidden;
+  padding: 1px;
+}
+
+.list_control_patients_show ol {
+  padding-right: 1rem;
+}
+
+
+.list_control_patients_show {
+  width: 90%;
+}
+
+.bold_text_element {
+  font-weight: 600;
 }
 
 .page, .prev, .next, .last, .first {
