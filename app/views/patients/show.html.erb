@@ -74,17 +74,21 @@
       <% @patient.visits.each do |t| %>
         <ul class="reversed_list_without_bullets">
           <li>
-            <%= t.visit_description %>
+             <%= t.visit_description %>
           </li>
           <li>
             <%= t.treatment %>
           </li>
-            <li >
-              <%= link_to 'Удалить сеанс', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
-            </li>
+          <li>
+            <%= link_to 'Удалить сеанс', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
+          </li>
         </ul>
-        <li><%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %>
+       <span class="bold_text_element">
+        <li class="reversed_list_decsr">
+          <%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %>
         </li>
+        </span>
+
       <% end %>
     </ol>
   </div>

@@ -419,8 +419,8 @@ input[type=email]{
   margin-bottom: 1rem;
   padding: 0.5%;
   box-shadow: 1px 1px 6px  #9e9947;
-  white-space: normal;
-  overflow-x: hidden;
+  // white-space: normal;
+  // overflow-x: hidden;
 }
 
 .list_control_patients_show ol ul {
@@ -431,11 +431,11 @@ input[type=email]{
   background-color: #e8e6ca;
   border: 1px solid #1a1a00;
   border-radius: 0.2rem;
+  padding: 1px;
   // margin-bottom: 1rem;
   // box-shadow: 1px 1px 6px  #9e9947;
-  white-space: normal;
-  overflow-x: hidden;
-  padding: 1px;
+  // white-space: normal;
+  // overflow-x: hidden;
 }
 
 .list_control_patients_show ol {
@@ -557,8 +557,15 @@ border-bottom: 1px solid #000;
 }
 
 .reversed_list>li {
-  margin-right: 20px;
-  margin-bottom: 25px;
+  margin-right: 1rem;
+  // margin-bottom: 1rem;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.reversed_list_decsr {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
