@@ -129,7 +129,7 @@
     <div class="list_control_wrapper">
       <h2>Список пациентов </h2>
       <%  @patients.each do |i| %>
-      <div class="list_control"> <span class="list_control_patient_name"> <%= i.name.to_s + ", " %> </span> <%= i.birthdate.strftime( "%d.%m.%y") + "г., был(а) " + i.visits.last.visited_at.strftime( "%d.%m.%y")  + ", диагноз: " + i.diagnosis.to_s %>
+      <div class="list_control"> <span class="bold_text_element"> <%= i.name + ", " %> </span> <%= i.birthdate.strftime( "%d.%m.%y") %>
         <div class="li-control">
           <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
         </div>

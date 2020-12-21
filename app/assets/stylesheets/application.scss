@@ -166,6 +166,7 @@ html, body {
   }
 }
 
+
 #patient_name {
   cursor: auto;
 }
@@ -387,17 +388,69 @@ input[type=email]{
     border-radius: 5%;
   }
 }
+// end of theme-grey
 
-// a:hover, .btn-control:hover, input[type=submit]:hover {
-//   outline: none !important;
-//   background-color: #999900;
-//   color: white;
-//   border: 2px solid #1a1a00;
-//   border-radius: 4px;
-//   box-shadow: 3px 3px 3px #666600;
-// }
+a {
+  display: inline-grid;
+  // margin-bottom: 4px;
+  background-color: #afaa50;
+  text-decoration: none;
+  color: black;
+  padding: 0.05%;
+  margin: 10px;
+  padding: 3px 4px 2px 4px;
+  min-width: 8rem;
+  max-width: 10rem;
+  text-align: center;
+  border: 1px solid #666600;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px #666600;
+}
+
+#name, #diagnosis, #description, #patient_description, #patient_diagnosis,
+#patient_name, #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation,
+#doctor_city_id, #doctor_city_id {
+  background-color: rgba(245, 222, 179, 0.7);
+  border: 2px solid #8B4513;
+  border-radius: 4px;
+  padding: 3px 4px 3px 4px;
+  margin: 3px;
+  min-width:50%;
+}
 
 
+#visit_description, #treatment {
+  // border: 1px solid #666600;
+  // border-radius: 4px;
+  // padding: 3px 4px 3px 4px;
+  // margin-left: 1rem;
+  // margin-bottom: 0.5rem;
+}
+
+
+
+#_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
+#date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
+#_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
+#_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
+#patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
+  background-color: #afaa50;
+  cursor: pointer;
+  border: 2px solid olive;
+  border-radius: 4px;
+  padding: 3px 4px 1px 4px;
+  margin: 0.5%;
+}
+
+#_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
+#date__1i:hover, #date__2i:hover, #date__3i:hover, #_visited_at_5i:hover,
+#_visited_at_4i:hover, #_visited_at_3i:hover, #_visited_at_2i:hover, #_visited_at_1i:hover,
+#_birthdate_5i:hover, #_birthdate_4i:hover, #_birthdate_3i:hover, #_birthdate_2i:hover,
+#_birthdate_1i:hover, #patient_birthdate_5i:hover, #patient_birthdate_4i:hover,
+#patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
+#city_id:hover{
+  color: white;
+}
 .list_control_wrapper {
   display: grid;
   justify-items: center;
@@ -414,13 +467,11 @@ input[type=email]{
   justify-self: center;
   justify-content: space-between;
   background-color: #e8e6ca;
-  border: 1px solid olive;
+  border: 1px solid #1a1a00;
   border-radius: 0.2rem;
   margin-bottom: 1rem;
   padding: 0.5%;
   box-shadow: 1px 1px 6px  #9e9947;
-  // white-space: normal;
-  // overflow-x: hidden;
 }
 
 .list_control_patients_show ol ul {
@@ -431,20 +482,36 @@ input[type=email]{
   background-color: #e8e6ca;
   border: 1px solid #1a1a00;
   border-radius: 0.2rem;
-  padding: 1px;
   // margin-bottom: 1rem;
-  // box-shadow: 1px 1px 6px  #9e9947;
-  // white-space: normal;
-  // overflow-x: hidden;
+  // margin-left: 1rem;
+  padding: 0.5%;
+  box-shadow: 1px 1px 6px  #9e9947;
 }
-
-.list_control_patients_show ol {
-  padding-right: 1rem;
-}
-
 
 .list_control_patients_show {
   width: 90%;
+  justify-self: center;
+  justify-content: space-between;
+  background-color: #cfcc96;
+  border: 1px solid olive;
+  box-shadow: 1px 1px 6px rgba(128, 128, 0, 0.8);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.form_text_area {
+  display: grid;
+  width: 95%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form_button {
+  margin-top: 0.5rem;
+}
+
+.visit_description_label {
+  margin-top: 0.5rem;
 }
 
 .bold_text_element {
@@ -487,7 +554,6 @@ input[type=email]{
   background: linear-gradient(90deg, #9e9947 0%, lemonchiffon 25%, lemonchiffon 70%, #9e9947 100%);
 }
 
-
 .full_table, .empty_table {
   width: 100%;
   table-layout: fixed;
@@ -496,6 +562,7 @@ input[type=email]{
 .lost_table {
   justify-self: center;
 }
+
 .td_lost_qi {
   background-color: #dfddb9;
   border-radius: 4px;
@@ -516,7 +583,6 @@ input[type=email]{
   background-color: #dfddb9;
 }
 
-
 .td_lost_qi {
   border: 2px solid #630;
 }
@@ -524,7 +590,6 @@ input[type=email]{
 .full_table tr:nth-child(even) {
   background-color: darken(rgba(255, 219, 153, 0.6), 10%);
 }
-
 
 // .empty_table tr:nth-child(odd) {
 //   background-color: lighten( DarkKhaki, 15%);
@@ -540,7 +605,7 @@ input[type=email]{
 }
 
 .full_table tr:first-child {
-border-bottom: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
 
 // .full_table tr:first-child {
@@ -558,7 +623,6 @@ border-bottom: 1px solid #000;
 
 .reversed_list>li {
   margin-right: 1rem;
-  // margin-bottom: 1rem;
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
@@ -668,29 +732,6 @@ input[type=range]::-webkit-slider-thumb {
   align-items: end;
 }
 
-// .liver1_selected,  .liver8_selected, .gallBladder43_selected,
-//   .gallBladder43Copy1_selected, .gallBladder43Copy2_selected, .gallBladder43Copy3_selected,
-//   .gallBladder43Copy4_selected, .gallBladder43Copy5_selected, .gallBladder43Copy6_selected,
-//   .gallBladder43Copy7_selected, .gallBladder43Copy8_selected,
-//   .spleen2_selected, .spleen3_selected, .kidney10_selected, .kidney10Copy1_selected,
-//   .kidney10Copy2_selected, .kidney10Copy3_selected, .kidney10Copy4_selected,
-//   .kidney10Copy5_selected, .kidney10Copy6_selected, .kidney10Copy7_selected, .kidney7_selected,
-//   .kidney7_selected, .kidney7Copy1_selected, .kidney7Copy2_selected, .kidney7Copy3_selected,
-//   .kidney7Copy4_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
-//   .lung9Copy3_selected, .lung9Copy4_selected, .lung9Copy5_selected, .lung9Copy6_selected,
-//   .lung9Copy7_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
-//   .lung8Copy3_selected, .lung8Copy4_selected, .lung8Copy5_selected, .lung8Copy6_selected,
-//   .lung8Copy7_selected,
-//   .heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,
-//   .heartGuard9_selected, .heartGuard8_selected, .heartGuard7_selected, .tripleHeater1_selected,
-//   .tripleHeater3_selected, .tripleHeater6_selected, .stomach41_selected, .stomach36_selected,
-//   .stomach36Copy1_selected, .stomach36Copy2_selected, .stomach36Copy3_selected,
-//   .stomach36Copy4_selected, .stomach36Copy5_selected, .kidney10_wrapper_selected  {
-//   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
-//   border-right: 1px solid #4d4d00;
-//   border-left: 1px solid #4d4d00;
-// }
-
 .selected_energyes {
   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
   border-right: 1px solid #4d4d00;
@@ -729,7 +770,6 @@ input[type=range]::-webkit-slider-thumb {
   background: linear-gradient(90deg, rgba(183,179,123,1) 8%, rgba(210,207,173,1) 25%, rgba(237,236,222,1) 50%, rgba(210,207,173,1) 75%, rgba(183,179,123,1) 92%);
   justify-items: center;
   align-items: end;
-
 }
 
 .slider_wrapper {
@@ -738,73 +778,73 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .slider {
-    color: black;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(255, 165, 0, 0.7);
-    border: 1px solid olive;
-    border-radius: 5%;
-  }
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 165, 0, 0.7);
+  border: 1px solid olive;
+  border-radius: 5%;
+}
 
 #wood_yin {
-background: rgb(114,243,114);
-background: linear-gradient(90deg, rgba(114,243,114,1) 5%, rgba(0,179,0,1) 20%, rgba(0,128,0,1) 50%, rgba(0,179,0,1) 80%, rgba(114,243,114,1) 95%);
+  background: rgb(114,243,114);
+  background: linear-gradient(90deg, rgba(114,243,114,1) 5%, rgba(0,179,0,1) 20%, rgba(0,128,0,1) 50%, rgba(0,179,0,1) 80%, rgba(114,243,114,1) 95%);
 }
 
 #wood_yang {
-background: rgb(0,128,0);
-background: linear-gradient(90deg, rgba(0,128,0,1) 5%, rgba(0,230,0,1) 25%, rgba(114,243,114,1) 50%, rgba(0,230,0,1) 75%, rgba(0,128,0,1) 95%);
+  background: rgb(0,128,0);
+  background: linear-gradient(90deg, rgba(0,128,0,1) 5%, rgba(0,230,0,1) 25%, rgba(114,243,114,1) 50%, rgba(0,230,0,1) 75%, rgba(0,128,0,1) 95%);
 }
 
 #fire_yin {
-background: rgb(254,154,155);
-background: linear-gradient(90deg, rgba(254,154,155,1) 5%, rgba(254,103,105,1) 20%, rgba(203,1,4,1) 50%, rgba(254,103,105,1) 80%, rgba(254,154,155,1) 95%);
+  background: rgb(254,154,155);
+  background: linear-gradient(90deg, rgba(254,154,155,1) 5%, rgba(254,103,105,1) 20%, rgba(203,1,4,1) 50%, rgba(254,103,105,1) 80%, rgba(254,154,155,1) 95%);
 }
 
 #fire_yang {
-background: rgb(203,1,4);
-background: linear-gradient(90deg, rgba(203,1,4,1) 5%, rgba(254,103,105,1) 25%, rgba(254,154,155,1) 50%, rgba(254,103,105,1) 75%, rgba(203,1,4,1) 95%);
+  background: rgb(203,1,4);
+  background: linear-gradient(90deg, rgba(203,1,4,1) 5%, rgba(254,103,105,1) 25%, rgba(254,154,155,1) 50%, rgba(254,103,105,1) 75%, rgba(203,1,4,1) 95%);
 }
 
 #fire_in_earth_yin {
   background: rgb(255,189,103);
-background: linear-gradient(90deg, rgba(255,189,103,1) 5%, rgba(230,145,0,1) 20%, rgba(255,105,51,1) 50%, rgba(230,145,0,1) 80%, rgba(255,189,103,1) 95%);
+  background: linear-gradient(90deg, rgba(255,189,103,1) 5%, rgba(230,145,0,1) 20%, rgba(255,105,51,1) 50%, rgba(230,145,0,1) 80%, rgba(255,189,103,1) 95%);
 }
 
 #fire_in_earth_yang {
   background: rgb(255,105,51);
-background: linear-gradient(90deg, rgba(255,105,51,1) 0%, rgba(255,190,77,1) 20%, rgba(255,218,153,1) 50%, rgba(255,190,77,1) 80%, rgba(255,105,51,1) 100%);
+  background: linear-gradient(90deg, rgba(255,105,51,1) 0%, rgba(255,190,77,1) 20%, rgba(255,218,153,1) 50%, rgba(255,190,77,1) 80%, rgba(255,105,51,1) 100%);
 }
 
 #earth_yin {
-background: rgb(255,255,0);
-background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,221,26,1) 20%, rgba(230,195,0,1) 50%, rgba(255,221,26,1) 80%, rgba(255,255,0,1) 100%);}
+  background: rgb(255,255,0);
+  background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,221,26,1) 20%, rgba(230,195,0,1) 50%, rgba(255,221,26,1) 80%, rgba(255,255,0,1) 100%);}
 
 #earth_yang {
   /*background-color: #ffffb3;*/
   /*background: rgb(255,255,0);
-background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,255,102,1) 20%, rgba(255,255,179,1) 50%, rgba(255,255,102,1) 80%, rgba(255,255,0,1) 100%);*/
+  background: linear-gradient(90deg, rgba(255,255,0,1) 0%, rgba(255,255,102,1) 20%, rgba(255,255,179,1) 50%, rgba(255,255,102,1) 80%, rgba(255,255,0,1) 100%);*/
 
-background: rgb(255, 221, 26);
-background: linear-gradient(90deg, rgba(255, 221, 26, 1) 0%, rgba(255,236,128,1) 20%, rgba(255,255,128,1) 50%, rgba(255,236,128,1) 80%, rgba(255, 221, 26, 1) 100%);
+  background: rgb(255, 221, 26);
+  background: linear-gradient(90deg, rgba(255, 221, 26, 1) 0%, rgba(255,236,128,1) 20%, rgba(255,255,128,1) 50%, rgba(255,236,128,1) 80%, rgba(255, 221, 26, 1) 100%);
 }
 #metal_yin {
  background: rgb(204,204,204);
-background: linear-gradient(90deg, rgba(204,204,204,1) 5%, rgba(153,153,153,1) 20%, rgba(115,115,115,1) 50%, rgba(153,153,153,1) 80%, rgba(204,204,204,1) 95%);
+  background: linear-gradient(90deg, rgba(204,204,204,1) 5%, rgba(153,153,153,1) 20%, rgba(115,115,115,1) 50%, rgba(153,153,153,1) 80%, rgba(204,204,204,1) 95%);
 }
 
 #metal_yang {
   background: rgb(128,128,128);
-background: linear-gradient(90deg, rgba(128,128,128,1) 5%, rgba(179,179,179,1) 20%, rgba(217,217,217,1) 50%, rgba(179,179,179,1) 80%, rgba(128,128,128,1) 95%);
+  background: linear-gradient(90deg, rgba(128,128,128,1) 5%, rgba(179,179,179,1) 20%, rgba(217,217,217,1) 50%, rgba(179,179,179,1) 80%, rgba(128,128,128,1) 95%);
 }
 
 #water_yin {
-background: rgb(157,208,225);
-background: linear-gradient(90deg, rgba(157,208,225,1) 5%, rgba(54,145,176,1) 20%, rgba(36,97,117,1) 50%, rgba(54,145,176,1) 80%, rgba(157,208,225,1) 95%);}
+  background: rgb(157,208,225);
+  background: linear-gradient(90deg, rgba(157,208,225,1) 5%, rgba(54,145,176,1) 20%, rgba(36,97,117,1) 50%, rgba(54,145,176,1) 80%, rgba(157,208,225,1) 95%);}
 
 #water_yang {
   background: rgb(42,113,137);
-background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%, rgba(177,218,231,1) 50%, rgba(99,180,207,1) 80%, rgba(42,113,137,1) 95%);
+  background: linear-gradient(90deg, rgba(42,113,137,1) 5%, rgba(99,180,207,1) 20%, rgba(177,218,231,1) 50%, rgba(99,180,207,1) 80%, rgba(42,113,137,1) 95%);
 }
 
  .wood_yin, .wood_yang, .fire_yin, .fire_yang, .fe0, .fe1, .earth_yin, .earth_yang, .metal_yin,
@@ -853,7 +893,6 @@ cursor: auto;
 
 input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
-  // box-shadow: 3px 3px 3px #000000;
   background: rgba(128, 128, 0, 0.5);
   border-radius: 1px;
   border: 1px solid black;
@@ -938,16 +977,14 @@ input[type=range]::-webkit-slider-runnable-track {
 .infusion_7 {
   text-align: center;
   white-space: nowrap;
-  /*border-collapse :collapse;*/
 }
 
 .infusion_7_points>td>a {
   padding: 0px 6px;
-
 }
 
 .infusion_7_points>td>a {
- text-decoration: none;
+  text-decoration: none;
 }
 
 .infusion_7 .table_next_day {
@@ -957,16 +994,12 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 1px solid darkolivegreen;
 }
 
-/*.infusion_7 tr:nth-child(even) {
-background-color: #cfcc96;
-}*/
-
 .infusion_7_points:nth-child(odd) {
-background-color: #cfcc96;
+  background-color: #cfcc96;
 }
 
 .infusion_7_points:nth-child(even) {
-background-color: #bfbb73;
+  background-color: #bfbb73;
 }
 
 .infusion_7_time_mark:nth-child(1n){
@@ -986,87 +1019,16 @@ background-color: #bfbb73;
   background-color: yellow;
 }
 
-// .navigation>ul>li>a{
-//  background-color: lightblue;
-// }
 
-ul>li {
-  list-style-type: disc;
-  padding: 5px;
-}
-
-// table, tr, td, td>a{
-//   border-spacing: 5px 4px;
+// ul>li {
+//   list-style-type: disc;
+//   padding: 5px;
 // }
 
 ul {
     margin-bottom: 20px;
 }
 
-// ol, td {
-//   font-weight: bold;
-// }
-
-a {
-  display: inline-block;
-  margin-bottom: 4px;
-  background-color: #afaa50;
-  text-decoration: none;
-  color: black;
-  box-shadow: 3px 3px 3px #630;
-  border: 2px solid #630;
-  border-radius: 4px;
-  padding: 0.05%;
-  margin: 10px;
-  padding: 3px 4px 2px 4px;
-  // min-width: 8rem;
-  // max-width: 20vmin;
-  text-align: center;
-}
-
-#name, #diagnosis, #description, #visit_description, #treatment, #patient_description, #patient_diagnosis,
-#patient_name, #doctor_email, #doctor_phone, #doctor_password, #doctor_password_confirmation,
-#doctor_city_id, #doctor_city_id {
-  background-color: rgba(245, 222, 179, 0.7);
-  border: 2px solid #8B4513;
-  border-radius: 4px;
-  padding: 3px 4px 3px 4px;
-  margin: 3px;
-  min-width:50%;
-}
-
-#_date_3i, #_date_2i, #_date_1i, #_date_4i, #_date_5i, #date__1i,
-#date__2i, #date__3i, #_visited_at_5i, #_visited_at_4i, #_visited_at_3i,
-#_visited_at_2i, #_visited_at_1i, #_birthdate_5i, #_birthdate_4i, #_birthdate_3i,
-#_birthdate_2i, #_birthdate_1i, #patient_birthdate_5i, #patient_birthdate_4i,
-#patient_birthdate_3i, #patient_birthdate_2i, #patient_birthdate_1i, #city_id {
-  background-color: #afaa50;
-  // box-shadow: 3px 3px 3px #630;
-  cursor: pointer;
-  border: 2px solid olive;
-  border-radius: 4px;
-  padding: 3px 4px 1px 4px;
-  margin: 0.5%;
-}
-
-#_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
-#date__1i:hover, #date__2i:hover, #date__3i:hover, #_visited_at_5i:hover,
-#_visited_at_4i:hover, #_visited_at_3i:hover, #_visited_at_2i:hover, #_visited_at_1i:hover,
-#_birthdate_5i:hover, #_birthdate_4i:hover, #_birthdate_3i:hover, #_birthdate_2i:hover,
-#_birthdate_1i:hover, #patient_birthdate_5i:hover, #patient_birthdate_4i:hover,
-#patient_birthdate_3i:hover, #patient_birthdate_2i:hover, #patient_birthdate_1i:hover,
-#city_id:hover{
-  color: white;
-}
-
-// #_date_3i:option {
-//   background-color: rgba(245, 222, 179, 1);
-//   box-shadow: 3px 3px 3px #630;
-//   cursor: pointer;
-//   border: 2px solid #8B4513;
-//   border-radius: 4px;
-//   padding: 3px 4px 1px 4px;
-// }
 
 .paid_until {
   background-color: wheat;
@@ -1111,16 +1073,16 @@ a:active,  .btn-control:active, input[type=submit]:active {
 .patient_delete_control {
   margin-left: 15px;
   background-color: rgba(255, 127, 80, 1);
+  margin-top: 2px;
 
 }
 
 .patient_delete_control:hover {
-  color: orangered;
-  border: 3px solid red;
-  background-color: black;
-  box-shadow: 4px 4px 4px #FF7F50;
+  color: orangered !important;
+  border: 1px solid red !important;
+  background-color: black !important;
+  box-shadow: 3px 2px 3px #FF7F50 !important;
 }
-
 
 .patient_delete_control:active {
   color: white;
@@ -1128,10 +1090,6 @@ a:active,  .btn-control:active, input[type=submit]:active {
   background-color: black;
   box-shadow: inset -2px -2px 2px white;
   transform: scale(0.95);
-
 }
 
-.li-control {
-  margin-top: 2px;
-}
 
