@@ -1,5 +1,3 @@
-(paid_until.to_i - DateTime.now.to_i)/1.hour
-(paid_until.to_i - DateTime.now.to_i)/1.min
 (paid_until.to_i - DateTime.now.to_i)/1.minute
 paid_until = DateTime.now+1.day[A
 (paid_until.to_i - DateTime.now.to_i)/1.minute
@@ -198,3 +196,5 @@ alex.update paid_until: '17.12.2020 00:30'
 alex.update paid_until: '22.01.2021 00:30'
 alex.update paid_until: '22.01.2021 00:30'exit
 exit
+arr = (0..500).to_a
+arr
