@@ -1,6 +1,6 @@
 
    <% @title="patients" %>
-    <% if current_doctor.email.to_s == "nick4vk@yandex.ru" %>
+    <% if current_doctor.email.to_s == "nick4vk@yandex.ru" && current_doctor.paid_period_seconds_left > 0 %>
     <h1>Сашычка, мои поздравления! Таперича ты тоже доктор!</h1>
     <% end %>
   <% if doctor_signed_in? %>
@@ -102,39 +102,54 @@
    </div>
 
   <div class="list_control">
-    <div>
-      <h3><%= label_tag( "Добавить пациента") %></h3>
-      <%= form_with local: true, method: :post, url: patients_path do |f| %>
-      <p>
+    <h3><%= label_tag( "Добавить пациента") %></h3>
+    <%= form_with local: true, method: :post, url: patients_path do |f| %>
+      <div class="bold_text_element  margin_bottom_1rem">
         <%= f.label  "Имя" %>
-      </p>
         <%= f.text_field :name  %>
-        <p>
-          <%= f.label 'Дата рождения' %>
-        </p>
-        <p>
-          <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
-        </p>
-        <p><%= f.text_area :description,  placeholder: 'Описание', size: "48x3" %></p>
-        <p><%= f.text_area :diagnosis, placeholder: 'Диагноз:', size: "48x3" %></p>
-                <%= f.label 'Место рождения (выбрать ближайший город): ' %>
-        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %></p>
-        <p><%= f.submit  "Добавить пациента", class: 'btn-control' %></p>
-      <% end %>
-    </div>
+      </div>
+      <div class="bold_text_element  margin_bottom_1rem">
+        <%= f.label 'Дата рождения' %>
+        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
+      </div>
+      <div class='form_text_area'>
+        <%= f.text_area :description,  placeholder: 'Описание', rows: 5, maxlength: '2000'  %>
+      </div>
+      <div class='form_text_area'>
+        <%= f.text_area :diagnosis, placeholder: 'Диагноз:', rows: 5, maxlength: '2000'%>
+      </div>
+      <div class="bold_text_element  margin_bottom_1rem">
+        <%= f.label 'Место рождения (выбрать ближайший город): ' %>
+      </div>
+      <div  class="margin_bottom_1rem">
+        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %>
+      </div>
+      <div>
+        <%= f.submit  "Добавить пациента", class: 'btn-control' %>
+      </div>
+    <% end %>
   </div>
 </div>
 
 
     <div class="list_control_wrapper">
       <h2>Список пациентов </h2>
-      <%  @patients.each do |i| %>
-      <div class="list_control"> <span class="bold_text_element"> <%= i.name + ", " %> </span> <%= i.birthdate.strftime( "%d.%m.%y") %>
-        <div class="li-control">
-          <%= link_to 'Страница пациента', patient_path(id: i.id), action: :show, class: 'btn-control' %>
+      <%  @patients.each do |patient| %>
+        <div class="list_control_patients_show">
+          <span class="bold_text_element"><%= patient.name + ", " %></span>  <%= patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + patient&.diagnosis %>
+          <div>
+            Визитов: <%=patient.visits.count %>
+          </div>
+            <span class="bold_text_element"> Последний визит:
+              <% if patient.visits.last %>
+                <%=  patient.visits.last&.visited_at.strftime( "%d.%m.%y") %>
+              <% else %>
+              <% end %>
+            </span>
+          <div class="li-control">
+            <%= link_to 'Страница пациента', patient_path(id: patient.id), action: :show, class: 'btn-control' %>
+          </div>
         </div>
-      </div>
-
       <% end %>
 
       <%= paginate @patients %>

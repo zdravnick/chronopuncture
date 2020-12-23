@@ -1,0 +1,7 @@
+<div class="list_control_patients_show">  <span class="bold_text_element"><%= @patient.name + ", " %> </span>  <%= @patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + @patient&.diagnosis %>. Визитов: <%=@patient.visits.count %> <span class="bold_text_element"> Последний визит:
+    <% if @patient.visits.last %>
+      <%=  @patient.visits.last&.visited_at.strftime( "%d.%m.%y") %>
+    <% else %>
+    <% end %>
+    </span>
+  </div>

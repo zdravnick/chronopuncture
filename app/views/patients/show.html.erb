@@ -1,11 +1,6 @@
 <div class="list_control_wrapper">
-  <div class="list_control_patients_show">  <span class="bold_text_element"><%= @patient.name + ", " %> </span>  <%= @patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + @patient&.diagnosis %>. Визитов: <%=@patient.visits.count %> <span class="bold_text_element"> Последний визит:
-    <% if @patient.visits.last %>
-      <%=  @patient.visits.last&.visited_at.strftime( "%d.%m.%y") %>
-    <% else %>
-    <% end %>
-    </span>
-  </div>
+  <%= render partial: 'patients/patient_short_info' %>
+
   <div class="list_control_patients_show">
       <h3>МЕТОД СЛОЖНОГО БАЛАНСА</h3>
       <%= form_with local: true, method: :get, url: points_complex_balance_path do |f| %>
@@ -108,12 +103,9 @@
             <%= link_to 'Удалить сеанс', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
           </li>
         </ul>
-
         <li class="reversed_list_decsr bold_text_element">
           <%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %>
         </li>
-
-
       <% end %>
     </ol>
   </div>

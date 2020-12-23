@@ -1,12 +1,3 @@
-(paid_until.to_i - DateTime.now.to_i)/1.minute
-paid_until = DateTime.now+1.day[A
-(paid_until.to_i - DateTime.now.to_i)/1.minute
-(paid_until - DateTime.now)
-paid_until - DateTime.now
-28783371887/2880000000
-paid_until.in_sec - DateTime.now.in_sec
- DateTime.now.sec
- DateTime.now.seconds
  DateTime.now.second
  DateTime.now.second
  DateTime.now.second
@@ -198,3 +189,12 @@ alex.update paid_until: '22.01.2021 00:30'exit
 exit
 arr = (0..500).to_a
 arr
+Doctor.last
+alex = Doctor.find_by(email: "nick4vk@yandex.ru")
+alex
+alex.update paid_until: "22.12.2000"
+alex
+alex.update paid_until: "22.01.2021"
+alex.update paid_until: "22.01.2000"
+alex.update paid_until: "22.01.2021"
+exit

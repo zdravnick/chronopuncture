@@ -2,7 +2,7 @@
 <%= link_to 'English', root_path(locale: :en) %> <%= link_to 'Русский', root_path(locale: :ru) %>
 <% if  current_doctor&.paid_period_seconds_left == nil  && current_doctor&.moderator? == false %>
   <h1>Нужно внести абонплату</h1>
-<% elsif  current_doctor&.paid_period_seconds_left <= 0 && current_doctor&.moderator? == false %>
+<% elsif current_doctor&.paid_period_seconds_left <= 0 && current_doctor&.moderator? == false %>
   <h1>Время истекло, пора внести абонплату</h1>
   <% end %>
 <h1>Номер карты: 4276721865276224</h1>

@@ -168,7 +168,7 @@ html, body {
 
 
 #patient_name {
-  min-width: 80%;
+  min-width: 85%;
   cursor: auto;
 }
 
@@ -193,6 +193,7 @@ input[type=email]{
   .slider {
    background-color: #d0cc95;
   }
+
   .list_control {
     background-color: darken($background_color, 10%);
     border: 1px solid rgba(128, 128, 0, 1);
@@ -211,6 +212,10 @@ input[type=email]{
     background-color: $background_color_button;
     border: 1px solid $border_color_for_bright_theme;
     box-shadow: 2px 2px 6px  $shadow_color_for_bright_theme;
+  }
+
+  .btn-control {
+    background-color: #efeedc;
   }
 
   #_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
@@ -258,7 +263,7 @@ input[type=email]{
   #name, #diagnosis, #description, #visit_description, #treatment, #patient_description,
   #patient_diagnosis, #patient_name, #doctor_email, #doctor_phone, #doctor_password,
   #doctor_password_confirmation, #doctor_city_id, .btn_mode>a, .btn-control, input[type=submit],
-  #patient_city_id {
+  #patient_city_id, .list_control_patients_show ol ul {
     background-color: $background_color_input_field;
     border: 1px solid $border_color_for_light_theme;
     box-shadow: 2px 2px 6px  $shadow_color_for_light_theme;
@@ -276,7 +281,11 @@ input[type=email]{
     box-shadow: 2px 2px 6px  $shadow_color_for_light_theme_hover;
   }
 
-  .patient_delete_control {
+  .btn-control {
+    background-color: #e7e5cb;
+  }
+
+  .patient_delete_control, {
     background-color: rgba(255, 127, 80, 1);
     border: 2px solid black;
   }
@@ -494,7 +503,7 @@ a {
 }
 
 .list_control_patients_show {
-  display: grid;
+  // display: grid;
   width: 90%;
   // justify-self: center;
   // justify-content: space-between;
@@ -507,6 +516,16 @@ a {
 }
 
 .list_control_patients_show textarea {
+  display: grid;
+  min-width: 90%;
+  max-width: 90%;
+  // margin-left: 5%;
+  margin-bottom: 1rem;
+  border: 1px solid #1a1a00;
+  border-radius: 0.2rem;
+}
+
+.list_control textarea {
   display: grid;
   min-width: 90%;
   max-width: 90%;
