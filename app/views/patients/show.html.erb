@@ -91,23 +91,27 @@
   <h3>Сеансы:</h3>
   <div class="list_control_patients_show">
     <ol class="reversed_list">
-      <% @patient.visits.each do |t| %>
+      <% @visits.each do |visit| %>
         <ul class="reversed_list_without_bullets">
           <li>
-             <%= t.visit_description %>
+             <%= visit.visit_description %>
           </li>
           <li>
-            <%= t.treatment %>
+            <%= visit.treatment %>
           </li>
           <li>
-            <%= link_to 'Удалить сеанс', t , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
+            <%= link_to 'Удалить сеанс', visit , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
           </li>
         </ul>
         <li class="reversed_list_decsr bold_text_element">
-          <%= t.visited_at.strftime( "%d.%m.%y") + "г. в " + t.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + t.visited_at.strftime("%j") %>
+          <%= visit.visited_at.strftime( "%d.%m.%y") + "г. в " + visit.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + visit.visited_at.strftime("%j") %>
         </li>
       <% end %>
+
     </ol>
+    <%= paginate @visits %>
+
+
   </div>
 
   <div class="list_control_patients_show">

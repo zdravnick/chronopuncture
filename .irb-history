@@ -2,8 +2,6 @@
  DateTime.now.second
  DateTime.now.second
  DateTime.now.second
- DateTime.now.second
- DateTime.now.second
 
 DateTime.now
 paid_until
@@ -197,4 +195,6 @@ alex
 alex.update paid_until: "22.01.2021"
 alex.update paid_until: "22.01.2000"
 alex.update paid_until: "22.01.2021"
+exit
+Trunk.find_by(serial_number: 6)
 exit

@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:city_id, :email, :phone, :password)}
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:city_id, :email, :phone, :password).merge(paid_until: 24.hours.from_now)}
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:city_id, :email, :phone, :password, :current_password)}
   end
 

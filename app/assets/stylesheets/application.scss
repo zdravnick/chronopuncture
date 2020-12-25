@@ -487,6 +487,9 @@ a {
   margin-bottom: 1rem;
 }
 
+.padding_top_0_5_rem {
+  padding-top: 0.5rem;
+}
 
 .list_control_patients_show ol ul {
   display: grid;
@@ -523,6 +526,7 @@ a {
   margin-bottom: 1rem;
   border: 1px solid #1a1a00;
   border-radius: 0.2rem;
+  padding-left: 1%;
 }
 
 .list_control textarea {

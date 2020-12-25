@@ -4,6 +4,8 @@ class Trunk < ApplicationRecord
 
   def self.trunk_year_wu_yun_definition(date)
     ranges = [
+      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1938, 1, 31)..DateTime.new(1939, 2, 18) },
+      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1939, 2, 19)..DateTime.new(1940, 2, 7) },
       { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1940, 2, 8)..DateTime.new(1941, 1, 26) },
 
       { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1941, 1, 27)..DateTime.new(1942, 2, 14) },
