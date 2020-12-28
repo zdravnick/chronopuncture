@@ -143,7 +143,7 @@ html, body {
   .theme-light, .theme-bright, .theme-olive, .theme-grey {
     .wu_yun_energyes_map {
       display: grid;
-      grid-template-columns: minmax(1fr, auto);
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
         "full empty"
         "lost lost";
@@ -409,12 +409,21 @@ a {
   padding: 0.05%;
   margin: 10px;
   padding: 3px 4px 2px 4px;
-  min-width: 8rem;
-  max-width: 10rem;
+  // min-width: 8rem;
+  // max-width: 10rem;
   text-align: center;
   border: 1px solid #666600;
   border-radius: 4px;
   box-shadow: 3px 3px 3px #666600;
+}
+
+a:active,  .btn-control:active, input[type=submit]:active {
+  color: white;
+  outline: none !important;
+  background-color: #666600;
+  box-shadow: inset -1px -1px 2px white;
+  border: 2px solid white;
+  transform: scale(0.95);
 }
 
 #name, #diagnosis, #description, #doctor_email, #doctor_phone,
@@ -448,7 +457,7 @@ a {
   border: 2px solid olive;
   border-radius: 4px;
   padding: 3px 4px 1px 4px;
-  margin: 0.5%;
+  margin-right: 0.5%;
 }
 
 #_date_3i:hover, #_date_2i:hover, #_date_1i:hover, #_date_4i:hover, #_date_5i:hover,
@@ -460,10 +469,87 @@ a {
 #city_id:hover{
   color: white;
 }
-.list_control_wrapper {
+
+.patients_index_wrapper   {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  // // grid-auto-flow: dense;
+  // grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+.patient_list_header, .patient_list_pagination {
   display: grid;
   justify-items: center;
 }
+
+.column_1_wrapper, .column_2_wrapper, .column_3_wrapper {
+  display: grid;
+  justify-items: stretch;
+  height: fit-content;
+}
+
+.patients_list_header {
+  text-align: center;
+}
+
+// #patients_list {
+//   width: 90%;
+// }
+
+.index_hot_btn {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+}
+ #common_methods_list_show, #btn_find_patient_form {
+  display: grid;
+  width: 10rem;
+  justify-content: center;
+}
+
+#patients_list_show_hidden, #common_methods_list_show_hidden,
+#btn_find_patient_form_hidden {
+  display: block;
+  background-color: tan;
+  position: fixed;
+  right: 0;
+  bottom: 5%;
+  background-color: orange;
+  // z-index: 99999;
+}
+
+#common_methods_list_show_hidden {
+  bottom: 10%;
+  // z-index: 99998;
+}
+
+#btn_find_patient_form_hidden {
+    bottom: 0;
+  // z-index: 99997;
+}
+
+#btn_patients_list_show {
+  display: none;
+}
+
+.btn_patients_list_show {
+  display: grid !important;
+  background-color: orange;
+  // width: 30%;
+}
+
+.patients_list_hide, .hide_common_methods, .find_patient_form_hide {
+  display: none;
+}
+
+.patients_list_show, .show_common_methods, .find_patient_form_show {
+  display: grid;
+}
+
+.add_patient_name_field {
+  width: 90%;
+}
+
 
 .label_with_fix_width {
   min-width: 10rem;
@@ -472,7 +558,7 @@ a {
 
 .list_control {
   display: grid;
-  width: 65%;
+  // width: 65%;
   justify-self: center;
   justify-content: space-between;
   background-color: #e8e6ca;
@@ -504,12 +590,24 @@ a {
   padding: 0.5%;
   box-shadow: 1px 1px 6px  #9e9947;
 }
-
-.list_control_patients_show {
+.add_patient {
+  // display: grid;
+  height: fit-content;
+  justify-content: space-between;
+  background-color: #cfcc96;
+  border: 1px solid #1a1a00;
+  border-radius: 0.2rem;
+  box-shadow: 1px 1px 6px rgba(128, 128, 0, 0.8);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.list_control_patients_show, .patients_find {
   // display: grid;
   width: 90%;
-  // justify-self: center;
-  // justify-content: space-between;
+  justify-self: center;
+  justify-content: space-between;
+  max-height: fit-content;
   background-color: #cfcc96;
   border: 1px solid #1a1a00;
   border-radius: 0.2rem;
@@ -561,8 +659,8 @@ a {
 
 .page, .prev, .next, .last, .first {
   display: inline-grid;
-  min-width: 8vmax;
-  max-width: 12vmax;
+  min-width: 4rem;
+  max-width: 4rem;
   text-align: center;
 }
 
@@ -1092,16 +1190,6 @@ ul {
   padding: 3px 4px 2px 4px;
   margin-bottom: 10px;
   // font-size: 1.6vmax;
-}
-
-a:active,  .btn-control:active, input[type=submit]:active {
-  color: white;
-  outline: none !important;
-  background-color: #666600;
-  box-shadow: inset -1px -1px 2px white;
-  border: 2px solid white;
-  transform: scale(0.95);
-
 }
 
 .highlight, .highlight_2>a:hover {

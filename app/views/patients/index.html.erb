@@ -1,214 +1,258 @@
 
    <% @title="patients" %>
     <% if current_doctor.email.to_s == "nick4vk@yandex.ru" && current_doctor.paid_period_seconds_left > 0 %>
-    <h1>Сашычка, мои поздравления! Таперича ты тоже доктор!</h1>
+    <h4>Сашычка, мои поздравления! Таперича ты тоже доктор!</h4>
     <% end %>
   <% if doctor_signed_in? %>
-      <span>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %></span>
-    <h4>Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :)</h4>
+      <h4>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %>, Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :) </h4>
     <% else %>
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
   <% end %>
-  <div class="list_control_wrapper">
-    <div class="list_control_patients_show  padding_top_0_5_rem">
+  <div div class="patients_index_wrapper">
+    <div class="patients_find padding_top_0_5_rem">
       <%= form_with  local: true, method: :get, url: patients_path do |f| %>
-        <div>
-          <%= f.label "Поиск по имени\u00a0\u00a0\u00a0\u00a0" %>
-          <%= f.text_field :name %>
-          <%= f.submit "Искать", class: 'btn-control' %>
-        </div>
-      <% end %>
-    </div>
-    <div class="list_control_patients_show   padding_top_0_5_rem">
-      <%= form_with  local: true, method: :get, url: patients_path do |f| %>
-        <div>
-          <%= f.label  'Поиск по диагнозу'  %>
-          <%= f.text_field :diagnosis %>
-          <%= f.submit "Искать", class: 'btn-control' %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="list_control_wrapper">
-  <div class="list_control_patients_show">
-    <h3>ЛИНГУЙБАФА</h3>
-    <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
-    <%= f.submit "Рассчитать" %>
-    <% end %>
-  </div>
-
-
-  <div class="list_control_patients_show">
-    <h3>ЛИНГУЙБАФА на неделю</h3>
-    <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "На неделю" %>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>МЕТОД "24 минуты"</h3>
-    <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
-    <%= f.label " Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
-    <%= f.submit "Рассчитать" %>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>МЕТОД "24 минуты - 2"</h3>
-    <%= form_with local: true, method: :get, url: points_infusion_2_path do |f| %>
-    <%= f.label " Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
-    <%= f.submit "Рассчитать" %>
-    <% end %>
- </div>
-
-  <div class="list_control_patients_show">
-    <h3>24 минуты на неделю</h3>
-    <%= form_with local: true, method: :get, url: points_infusion_7_times_path do |f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "На неделю" %>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>methods_mix</h3>
-    <%= form_with local: true, method: :get, url: points_methods_mix_path do |f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "На неделю" %>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>МЕТОД НАГАНЬФА</h3>
-    <%= form_with html: {target: '_blank', class: "form-control"}, local: true, method: :get, url: points_naganfa_path do|f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
-    <%= f.submit  "Рассчитать"%>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>НАГАНЬФА на неделю</h3>
-    <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
-    <%= f.label "Выберите время: " %>
-    <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-    <%= f.submit "На неделю" %>
-    <% end %>
-   </div>
-
-  <div class="list_control_patients_show">
-    <h3><%= label_tag( "Добавить пациента") %></h3>
-    <%= form_with local: true, method: :post, url: patients_path do |f| %>
-      <div class="bold_text_element  margin_bottom_1rem">
-        <%= f.label  "Имя" %>
-        <%= f.text_field :name  %>
-      </div>
-      <div class="bold_text_element  margin_bottom_1rem">
-        <%= f.label 'Дата рождения' %>
-        <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
-      </div>
-      <div class='form_text_area'>
-        <%= f.text_area :description,  placeholder: 'Описание', rows: 5, maxlength: '2000'  %>
-      </div>
-      <div class='form_text_area'>
-        <%= f.text_area :diagnosis, placeholder: 'Диагноз:', rows: 5, maxlength: '2000'%>
-      </div>
-      <div class="bold_text_element  margin_bottom_1rem">
-        <%= f.label 'Место рождения (выбрать ближайший город): ' %>
-      </div>
-      <div  class="margin_bottom_1rem">
-        <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %>
-      </div>
       <div>
-        <%= f.submit  "Добавить пациента", class: 'btn-control' %>
+        <%= f.label "Поиск по имени\u00a0\u00a0\u00a0\u00a0" %>
+        <%= f.text_field :name %>
+        <%= f.submit "Искать", class: 'btn-control' %>
       </div>
-    <% end %>
+      <% end %>
+      <div class="padding_top_0_5_rem">
+        <%= form_with  local: true, method: :get, url: patients_path do |f| %>
+          <div>
+            <%= f.label  'Поиск по диагнозу'  %>
+            <%= f.text_field :diagnosis %>
+            <%= f.submit "Искать", class: 'btn-control' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<div class="patients_index_wrapper" data-controller="patientsIndex">
+  <div class="index_hot_btn">
+  <div id="btn_find_patient_form" class="btn-control"
+    data-action="click->patientsIndex#findPatientForm">
+    Добавить пациента
+  </div>
+  <div id="common_methods_list_show" class="btn-control"
+    data-action="click->patientsIndex#showCommonMethods">
+    Список общих методов
+  </div>
+  <div id="btn_patients_list_show" class="btn-control"
+    data-action="click->patientsIndex#showPatients">
+    Cписок пациентов
   </div>
 </div>
 
+  <div class="column_1_wrapper  ">
 
-    <div class="list_control_wrapper">
-      <h2>Список пациентов </h2>
-      <%  @patients.each do |patient| %>
-        <div class="list_control_patients_show">
-          <span class="bold_text_element"><%= patient.name + ", " %></span>  <%= patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + patient&.diagnosis %>
-          <div>
-            Визитов: <%=patient.visits.count %>
-          </div>
-            <span class="bold_text_element"> Последний визит:
+    <div id="find_patient_form" class="add_patient find_patient_form_hide" >
+      <h3><%= label_tag( "Добавить пациента") %></h3>
+      <%= form_with local: true, method: :post, url: patients_path do |f| %>
+        <div class="bold_text_element  margin_bottom_1rem">
+          <%= f.label  "Имя" %>
+          <%= f.text_field :name, class: "add_patient_name_field"  %>
+        </div>
+        <div class="bold_text_element  margin_bottom_1rem">
+          <%= f.label 'Дата рождения' %>
+          <%= f.datetime_select(:birthdate, start_year: 1920, end_year: DateTime.current.year, default: {year: 30.years.ago.year, hour: 12, min: 01} )%>
+        </div>
+        <div class='form_text_area'>
+          <%= f.text_area :description,  placeholder: 'Описание', rows: 5, maxlength: '2000'  %>
+        </div>
+        <div class='form_text_area'>
+          <%= f.text_area :diagnosis, placeholder: 'Диагноз:', rows: 5, maxlength: '2000'%>
+        </div>
+        <div class="bold_text_element  margin_bottom_1rem">
+          <%= f.label 'Место рождения (выбрать ближайший город): ' %>
+        </div>
+        <div  class="margin_bottom_1rem">
+          <%= f.collection_select(:city_id, City.all.sort_by(&:name), :id, :name, { :selected => current_doctor.city&.id}  ) %>
+        </div>
+        <div>
+          <%= f.submit  "Добавить пациента", class: 'btn-control' %>
+        </div>
+      <% end %>
+      <div id="btn_find_patient_form_hidden" class="btn-control"
+        data-action="click->patientsIndex#findPatientForm">
+        Скрыть "добавить пациента"
+      </div>
+    </div> <!-- end of add_patient -->
+  </div> <!-- end of column_1_wrapper -->
+
+  <div class="column_2_wrapper">
+
+    <div id="common_methods_list"  class="hide_common_methods">
+
+      <div class="list_control_patients_show">
+        <h3>ЛИНГУЙБАФА</h3>
+        <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
+        <%= f.submit "Рассчитать" %>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>ЛИНГУЙБАФА на неделю</h3>
+        <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+        <%= f.submit "На неделю" %>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>МЕТОД "24 минуты"</h3>
+        <%= form_with local: true, method: :get, url: points_infusion_path do |f| %>
+        <%= f.label " Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
+        <%= f.submit "Рассчитать" %>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+          <h3>МЕТОД "24 минуты - 2"</h3>
+          <%= form_with local: true, method: :get, url: points_infusion_2_path do |f| %>
+          <%= f.label " Выберите время: " %>
+          <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
+          <%= f.submit "Рассчитать" %>
+          <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>24 минуты на неделю</h3>
+        <%= form_with local: true, method: :get, url: points_infusion_7_times_path do |f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+        <%= f.submit "На неделю" %>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>methods_mix</h3>
+        <%= form_with local: true, method: :get, url: points_methods_mix_path do |f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+        <%= f.submit "На неделю" %>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>МЕТОД НАГАНЬФА</h3>
+        <%= form_with html: {target: '_blank', class: "form-control"}, local: true, method: :get, url: points_naganfa_path do|f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
+        <%= f.submit  "Рассчитать"%>
+        <% end %>
+      </div>
+
+      <div class="list_control_patients_show">
+        <h3>НАГАНЬФА на неделю</h3>
+        <%= form_with local: true, method: :get, url: points_naganfa_7_times_path do |f| %>
+        <%= f.label "Выберите время: " %>
+        <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
+        <%= f.submit "На неделю" %>
+        <% end %>
+      </div>
+      <div id="common_methods_list_show_hidden" class="btn-control"
+        data-action="click->patientsIndex#showCommonMethods">
+        Скрыть методы
+      </div>
+    </div> <!-- end of common_methods_list-->
+  </div> <!-- end of column_2_wrapper-->
+
+
+  <div class="column_3_wrapper">
+
+    <div id="patients_list" class="patients_list_show">
+      <div class="patients_list_header">
+        <h3>Список пациентов</h3>
+      </div>
+        <%  @patients.each do |patient| %>
+          <div class="list_control_patients_show">
+            <span class="bold_text_element"><%= patient.name + ", " %></span>  <%= patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + patient&.diagnosis %>
+            <div>
+              Визитов: <%=patient.visits.count %>,
+              Последний визит:
               <% if patient.visits.last %>
                 <%=  patient.visits.last&.visited_at.strftime( "%d.%m.%y") %>
               <% else %>
+              Сегодня первый раз
               <% end %>
-            </span>
-          <div class="li-control">
-            <%= link_to 'Страница пациента', patient_path(id: patient.id), action: :show, class: 'btn-control' %>
+              <div class="li-control">
+                <%= link_to 'Страница пациента', patient_path(id: patient.id), action: :show,class: 'btn-control' %>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <%= paginate @patients %>
+      <div class="patient_list_pagination">
+        <%= paginate @patients %>
+      </div>
+      <div id="patients_list_show_hidden" class="btn-control"
+      data-action="click->patientsIndex#showPatients">
+      Скрыть пациентов
     </div>
+      </div>
+  </div> <!-- end of column_3_wrapper -->
+</div>
 
 
+  <div class="column_3_wrapper">
+    <div>
+      <h5>ТОЧКИ ТРАНСФОРМАЦИИ У-СИН:</h5>
+      <h5>ИНЬСКИЕ:</h5><ul>
+        <li>Печень питаем:      R.7  Фу-лю (металл) </li>
+        <li>Сердце и Перикард (слабее) питаем: F.8  Цюй-цюань (вода) </li>
+        <li>Селезенку питаем:   C.9  Шао-чун (дерево) и, сильнее: Mc.9 Чжун-чун </li>
+        <li>Легкие питаем:      Rp.2 Да-ду (огонь)</li>
+        <li>Почки питаем:       P.9  Тай-юань (земля)</li>
+      </ul>
+      <h5>ЯНСКИЕ:</h5>
+      <ul>
+        <li>Желчный питаем:  V.67  Чжи-инь (металл)</li>
+        <li>Тонкий и Тройной(слабее) питаем:   Gb.43 Ся-си (вода)</li>
+        <li>Желудок питаем:  Ig.3  Хоу-си (дерево) и, сильнее: Tr.3 Чжун-чжу</li>
+        <li>Толстый питаем:  E.41  Цзе-си (огонь)</li>
+        <li>Мочевой питаем:  Gi.11  Цюй-чи (земля)</li>
+      </ul>
 
-<h5>ТОЧКИ ТРАНСФОРМАЦИИ У-СИН:</h5>
-<h5>ИНЬСКИЕ:</h5><ul>
-  <li>Печень питаем:      R.7  Фу-лю (металл) </li>
-  <li>Сердце и Перикард (слабее) питаем: F.8  Цюй-цюань (вода) </li>
-  <li>Селезенку питаем:   C.9  Шао-чун (дерево) и, сильнее: Mc.9 Чжун-чун </li>
-  <li>Легкие питаем:      Rp.2 Да-ду (огонь)</li>
-  <li>Почки питаем:       P.9  Тай-юань (земля)</li>
-</ul>
-<h5>ЯНСКИЕ:</h5>
-<ul>
-  <li>Желчный питаем:  V.67  Чжи-инь (металл)</li>
-  <li>Тонкий и Тройной(слабее) питаем:   Gb.43 Ся-си (вода)</li>
-  <li>Желудок питаем:  Ig.3  Хоу-си (дерево) и, сильнее: Tr.3 Чжун-чжу</li>
-  <li>Толстый питаем:  E.41  Цзе-си (огонь)</li>
-  <li>Мочевой питаем:  Gi.11  Цюй-чи (земля)</li>
-</ul>
-
-<h5>ТОЧКИ "КАЧЕСТВА" У-СИН: ("элемент в элементе")</h5>
-<h5>ИНЬСКИЕ:</h5><ul>
-  <li>Печень питаем: R.10 Инь-гу (вода) </li>
-  <li>Сердце и Перикард(слабее) питаем: F.1 Да-дунь (дерево) </li>
-  <li>Селезенку питаем:   C.8 Шао-фу (огонь) и, сильнее: Mc.8 Лао-гун </li>
-  <li>Легкие питаем:      Rp.3 Тай-бай (земля) </li>
-  <li>Почки питаем:       P.8 Цзин-цюй (металл)  </li>
-</ul>
-<h5>ЯНСКИЕ:</h5><ul>
-  <li>Желчный питаем: V.66 Цзу-тун-гу(вода) </li>
-  <li>Тонкий и Тройной(слабее) питаем:  Vb.41 Цзу-линь-ци(дерево) </li>
-  <li>Желудок питаем:  Ig.5 Ян-гу(огонь) и Tr.6 Чжи-гоу </li>
-  <li>Толстый питаем:  E.36 Цзу-сань-ли(земля) </li>
-  <li>Мочевой питаем:  Gi.1 Шан-ян(металл)  </li>
-</ul>
+      <h5>ТОЧКИ "КАЧЕСТВА" У-СИН: ("элемент в элементе")</h5>
+      <h5>ИНЬСКИЕ:</h5><ul>
+        <li>Печень питаем: R.10 Инь-гу (вода) </li>
+        <li>Сердце и Перикард(слабее) питаем: F.1 Да-дунь (дерево) </li>
+        <li>Селезенку питаем:   C.8 Шао-фу (огонь) и, сильнее: Mc.8 Лао-гун </li>
+        <li>Легкие питаем:      Rp.3 Тай-бай (земля) </li>
+        <li>Почки питаем:       P.8 Цзин-цюй (металл)  </li>
+      </ul>
+      <h5>ЯНСКИЕ:</h5><ul>
+        <li>Желчный питаем: V.66 Цзу-тун-гу(вода) </li>
+        <li>Тонкий и Тройной(слабее) питаем:  Vb.41 Цзу-линь-ци(дерево) </li>
+        <li>Желудок питаем:  Ig.5 Ян-гу(огонь) и Tr.6 Чжи-гоу </li>
+        <li>Толстый питаем:  E.36 Цзу-сань-ли(земля) </li>
+        <li>Мочевой питаем:  Gi.1 Шан-ян(металл)  </li>
+      </ul>
 
 
-<h5>ТОЧКИ ТРАНСФОРМАЦИИ СЕЗОННОЙ ЦИ:</h5>
-<ul>
-  <li> ДЕРЕВО(P, Gi) питаем: Gb.44 Цзу-цяо-инь (металл), Th.1 Гуань-чун (металл)</li>
-  <li> ОГОНЬ(C, Rp) питаем: Gi.2 Эр-цзянь(вода), P.5 Чи-цзе(вода) </li>
-  <li> ЗЕМЛЮ(E, Ig, F, Mc) питаем: С.9 Шао-чун, Rp.1 Инь-бай(дерево)  </li>
-  <li> МЕТАЛЛ(R, V) питаем: E.41 Цзе-си(огонь),  Ig.5 Ян-гу(огонь),
-       Мс.8 Лао-гун(огонь), F.2 Син-цзянь(огонь)  </li>
-  <li> ВОДУ(Gb, Th) питаем: V.40 Вэй-чжун(земля), R.3 Тай-си(земля)  </li>
-</ul>
-<h5>ТОЧКИ КАЧЕСТВА СЕЗОННОЙ ЦИ:</h5> бабушка питает
-<ul>
-  <li> ДЕРЕВО(P, Gi) питаем: Vb.43 Ся-си(вода) и Th.2 Е-мэнь(вода) </li>
-  <li> ОГОНЬ(c, Rp) питаем: Gi.3 Син-цзянь и P.11 Шао-шан </li>
-  <li> ЗЕМЛЮ(E, Ig, F, Mc) питаем: C.8 Шао-фу(огонь)  и Rp.2 Да-ду(огонь) </li>
-  <li> МЕТАЛЛ(R, V) питаем: E.36 Цзу-сань-ли(земля), Ig.8 Сяо-хай(земля), F.3 Тай-чун(земля), Mc.7 Да-лин(земля) </li>
-  <li> ВОДУ(Gb, Th) питаем: V.67 Чжи-инь(металл) и R.7 Фу-лю(металл) </li>
-</ul>
+      <h5>ТОЧКИ ТРАНСФОРМАЦИИ СЕЗОННОЙ ЦИ:</h5>
+      <ul>
+        <li> ДЕРЕВО(P, Gi) питаем: Gb.44 Цзу-цяо-инь (металл), Th.1 Гуань-чун (металл)</li>
+        <li> ОГОНЬ(C, Rp) питаем: Gi.2 Эр-цзянь(вода), P.5 Чи-цзе(вода) </li>
+        <li> ЗЕМЛЮ(E, Ig, F, Mc) питаем: С.9 Шао-чун, Rp.1 Инь-бай(дерево)  </li>
+        <li> МЕТАЛЛ(R, V) питаем: E.41 Цзе-си(огонь),  Ig.5 Ян-гу(огонь),
+             Мс.8 Лао-гун(огонь), F.2 Син-цзянь(огонь)  </li>
+        <li> ВОДУ(Gb, Th) питаем: V.40 Вэй-чжун(земля), R.3 Тай-си(земля)  </li>
+      </ul>
+      <h5>ТОЧКИ КАЧЕСТВА СЕЗОННОЙ ЦИ: (бабушка питает)</h5>
+      <ul>
+        <li> ДЕРЕВО(P, Gi) питаем: Vb.43 Ся-си(вода) и Th.2 Е-мэнь(вода) </li>
+        <li> ОГОНЬ(c, Rp) питаем: Gi.3 Син-цзянь и P.11 Шао-шан </li>
+        <li> ЗЕМЛЮ(E, Ig, F, Mc) питаем: C.8 Шао-фу(огонь)  и Rp.2 Да-ду(огонь) </li>
+        <li> МЕТАЛЛ(R, V) питаем: E.36 Цзу-сань-ли(земля), Ig.8 Сяо-хай(земля), F.3 Тай-чун(земля), Mc.7 Да-лин(земля) </li>
+        <li> ВОДУ(Gb, Th) питаем: V.67 Чжи-инь(металл) и R.7 Фу-лю(металл) </li>
+      </ul>
+    </div>
+  </div>

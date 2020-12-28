@@ -55,14 +55,14 @@ class PatientsController < ApplicationController
 
 
   def show
-    @patient = Patient.find(params[:id])
+    @patient = current_doctor.patients.active.find(params[:id])
     @visits = @patient.visits.page params[:page]
     @cities = City.all
   end
 
 
   def update
-      @patient = Patient.find(params[:id])
+      @patient = current_doctor.patients.active.find(params[:id])
       @patient.update(
         doctor: current_doctor,
         name: params[:patient][:name],
@@ -81,13 +81,11 @@ class PatientsController < ApplicationController
     end
 
   def destroy
-
-    if doctor_signed_in?
-      Patient.find(params[:id]).destroy
-      respond_to do |format|
+    @patient = current_doctor.patients.active.find(params[:id])
+    @patient.destroy!
+    respond_to do |format|
       format.html { redirect_to patients_path, notice: 'Пациент удален, доктор' }
       format.json { head :no_content }
-      end
     end
   end
 

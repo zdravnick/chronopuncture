@@ -109,8 +109,9 @@
       <% end %>
 
     </ol>
-    <%= paginate @visits %>
-
+    <div>
+      <%= paginate @visits %>
+    </div>
 
   </div>
 
@@ -138,7 +139,7 @@
         <%= f.text_area :diagnosis, placeholder: 'Диагноз', rows: 5, maxlength: '2000', class: 'form_text_area' %>
       </div>
       <%= f.label 'Место рождения (выбрать ближайший областной центр)' %>
-      <%= f.collection_select(:city_id, City.all.sort_by{|s| s.name}, :id, :name,  {:selected => @patient.city&.id} ) %></p>
+      <%= f.collection_select(:city_id, @cities.sort_by{|s| s.name}, :id, :name,  {:selected => @patient.city&.id} ) %></p>
       <div>
         <h5>Tongue</h5>
         <%= f.collection_check_boxes :tongue_chinese_disease_ids, ChineseDisease.all, :id, :name %>
