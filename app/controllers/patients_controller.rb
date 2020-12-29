@@ -34,6 +34,8 @@ class PatientsController < ApplicationController
       @patients = @patients.where(name.matches("%#{params[:name]}%"))
       if @patients.count == 1
         redirect_to patient_path(@patients.first)
+      elsif @patients.count == 0
+       redirect_to root_path, notice: 'Нет такого пациента, доктор!'
       end
     end
 
@@ -62,22 +64,22 @@ class PatientsController < ApplicationController
 
 
   def update
-      @patient = current_doctor.patients.active.find(params[:id])
-      @patient.update(
-        doctor: current_doctor,
-        name: params[:patient][:name],
-        birthdate: Time.zone.local(params[:patient]["birthdate(1i)"].to_i,
-        params[:patient]["birthdate(2i)"].to_i, params[:patient]["birthdate(3i)"].to_i,
-        params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i).in_time_zone('UTC'),
-        diagnosis: params[:patient]["diagnosis"],
-        description: params[:patient]["description"],
-        city_id: params[:patient]["city_id"],
-        pulse_chinese_disease_ids: params[:patient][:pulse_chinese_disease_ids],
-        tongue_chinese_disease_ids: params[:patient][:tongue_chinese_disease_ids],
-      )
+    @patient = current_doctor.patients.active.find(params[:id])
+    @patient.update(
+      doctor: current_doctor,
+      name: params[:patient][:name],
+      birthdate: Time.zone.local(params[:patient]["birthdate(1i)"].to_i,
+      params[:patient]["birthdate(2i)"].to_i, params[:patient]["birthdate(3i)"].to_i,
+      params[:patient]["birthdate(4i)"].to_i,params[:patient]["birthdate(5i)"].to_i).in_time_zone('UTC'),
+      diagnosis: params[:patient]["diagnosis"],
+      description: params[:patient]["description"],
+      city_id: params[:patient]["city_id"],
+      pulse_chinese_disease_ids: params[:patient][:pulse_chinese_disease_ids],
+      tongue_chinese_disease_ids: params[:patient][:tongue_chinese_disease_ids],
+    )
 
-      redirect_back(fallback_location: patients_path)
-      # flash[:notice] = 'Данные пациента обновлены, доктор'
+    redirect_back(fallback_location: patients_path)
+    # flash[:notice] = 'Данные пациента обновлены, доктор'
     end
 
   def destroy
