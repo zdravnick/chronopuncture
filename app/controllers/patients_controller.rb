@@ -35,7 +35,7 @@ class PatientsController < ApplicationController
       if @patients.count == 1
         redirect_to patient_path(@patients.first)
       elsif @patients.count == 0
-       redirect_to root_path, notice: 'Нет такого пациента, доктор!'
+        redirect_to root_path, notice: 'Нет такого пациента, доктор!'
       end
     end
 

@@ -1,4 +1,3 @@
- value too long for type character varying(255)
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_185019) do
+ActiveRecord::Schema.define(version: 2021_01_05_122844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,17 +153,6 @@ ActiveRecord::Schema.define(version: 2020_12_16_185019) do
     t.string "big_nutrition_point", limit: 255
     t.string "small_nutrition_point", limit: 255
     t.index ["name"], name: "idx_16690_index_points_on_name"
-  end
-
-  create_table "truncs", force: :cascade do |t|
-    t.integer "serial_number"
-    t.string "name", limit: 255
-    t.string "element", limit: 255
-    t.integer "year_meridian_id"
-    t.string "alias_ru", limit: 255
-    t.string "alias_ch", limit: 255
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "trunks", force: :cascade do |t|

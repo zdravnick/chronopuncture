@@ -20,18 +20,6 @@
 
   <div class="list_control_patients_show">
     <h3>МЕТОД У ЮНЬ ЛЮ ЦИ</h3>
-    <%= form_with local: true, method: :get, url: points_wu_yun_liu_thi_path do |f| %>
-    <%  hidden_field_tag(:city, current_doctor.city) %>
-    <%= hidden_field_tag(:patient_id, @patient.id) %>
-    <%= f.label " Выберите время: " %>
-    <%= f.datetime_select :date, default: DateTime.now %>
-    <%= f.datetime_select :birthdate, default: @patient.birthdate %>
-    <%= f.submit "Рассчитать" %>
-    <% end %>
-  </div>
-
-  <div class="list_control_patients_show">
-    <h3>МЕТОД У ЮНЬ ЛЮ ЦИ_TRUNK</h3>
     <%= form_with local: true, method: :get, url: points_wu_yun_liu_thi_trunk_path do |f| %>
     <%  hidden_field_tag(:city, current_doctor.city) %>
     <%= hidden_field_tag(:patient_id, @patient.id) %>
