@@ -9,7 +9,6 @@
 <% end %>
   <h2>Солнечное время в г. <%= @doctor_city.name.to_s %> сейчас: <%= @sun_time.to_s(:short) %></h2>
 
-
  <table class = "infusion_7" >
    <% @opened_points.each do |day| %>
     <caption class="table_next_day"><%= I18n.l(day[0][:date].to_datetime, :format => '%d %b, %A') %> </caption>

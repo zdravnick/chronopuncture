@@ -4,6 +4,7 @@
     <h4>Сашычка, мои поздравления! Таперича ты тоже доктор!</h4>
     <% end %>
   <% if doctor_signed_in? %>
+
       <h4>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %>, Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :) </h4>
     <% else %>
       <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
@@ -13,7 +14,7 @@
       <%= form_with  local: true, method: :get, url: patients_path do |f| %>
       <div>
         <%= f.label "Поиск по имени\u00a0\u00a0\u00a0\u00a0" %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, value: params[:name] %>
         <%= f.submit "Искать", class: 'btn-control' %>
       </div>
       <% end %>
@@ -21,7 +22,7 @@
         <%= form_with  local: true, method: :get, url: patients_path do |f| %>
           <div>
             <%= f.label  'Поиск по диагнозу'  %>
-            <%= f.text_field :diagnosis %>
+            <%= f.text_field :diagnosis, value: params[:diagnosis] %>
             <%= f.submit "Искать", class: 'btn-control' %>
           </div>
         <% end %>
@@ -47,7 +48,6 @@
 </div>
 
   <div class="column_1_wrapper  ">
-
     <div id="find_patient_form" class="list_control_patients_show find_patient_form_hide" >
       <h3><%= label_tag( "Добавить пациента") %></h3>
       <%= form_with local: true, method: :post, url: patients_path do |f| %>
@@ -188,7 +188,6 @@
             </div>
           </div>
         <% end %>
-
       <div class="patient_list_pagination">
         <%= paginate @patients %>
       </div>

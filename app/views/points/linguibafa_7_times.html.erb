@@ -14,7 +14,7 @@
 <h4>@offset_timezone_doctor разница солн/местн, сек: <%=  @offset_timezone_doctor %></h4>
 <h4></h4>
 <h4>разница солн/местн, сек:<%= @offset_timezone_doctor %> </h4>
-<h4>offset_for_time_table: <%= @offset_for_time_table  %>, <%= @offset_for_time_table.class %> </h4>
+<h4>offset_for_time_table: <%= @offset_for_time_table %>, <%= @offset_for_time_table.class %> </h4>
 
 <% if params[:a]%>
   <%=link_to 'Сброс точки', params.permit!.merge({a: nil}) %>

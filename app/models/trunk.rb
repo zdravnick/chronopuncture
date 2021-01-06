@@ -71,7 +71,8 @@ class Trunk < ApplicationRecord
       { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1996, 2, 18)..DateTime.new(1997, 2, 6) },
       { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1997, 2, 7)..DateTime.new(1998, 1, 27) },
       { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) }
+      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) },
+      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2000, 2, 5)..DateTime.new(2001, 1, 23) }
     ]
     ranges.find do |range|
       range[:dates].include?(date.to_date)
