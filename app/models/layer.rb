@@ -14,7 +14,7 @@ class Layer < ApplicationRecord
     SHAO_YANG = 'Shao Yang'
   end
 
-  def self.ranges_of_lunar_year
+  def self.ranges_of_lunar_years_halves
     {
       DateTime.new(1937, 2, 11)..DateTime.new(1937, 8, 5) =>  Layer::NAMES::TAI_YIN,
       DateTime.new(1937, 8, 6)..DateTime.new(1938, 1, 30) =>  Layer::NAMES::TAI_YANG,
@@ -145,12 +145,10 @@ class Layer < ApplicationRecord
       DateTime.new(2000, 2, 5)..DateTime.new(2000, 7, 30) =>  Layer::NAMES::TAI_YANG,
       DateTime.new(2000, 7, 31)..DateTime.new(2001, 1, 23) =>  Layer::NAMES::TAI_YIN,
     }
-
   end
 
   def self.full_layer_wu_yun(date)
-
-    layer_name = self.ranges_of_lunar_year.find do |range, name|
+    layer_name = self.ranges_of_lunar_years_halves.find do |range, name|
       range.include?(date)
     end.try(:last)
     if layer_name

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_122844) do
+ActiveRecord::Schema.define(version: 2021_01_07_125413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_122844) do
     t.integer "season_meridian_first_id"
     t.integer "trunk_meridian_id"
     t.integer "season_meridian_second_id"
+    t.string "alias_ru"
   end
 
   create_table "layers", force: :cascade do |t|
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_122844) do
     t.integer "arm_meridian_id", default: 0, null: false
     t.string "element_ke", limit: 255
     t.integer "own_element_id"
+    t.string "alias_ru"
     t.index ["name"], name: "idx_16661_index_layers_on_name"
   end
 

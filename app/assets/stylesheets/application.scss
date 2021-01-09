@@ -401,6 +401,15 @@ input[type=email]{
     background-color: #d0cc95;
     border-radius: 5%;
   }
+
+  .empty_table tr:nth-child(even) {
+    background-color: darken(#d0cc95, 5%);
+  }
+
+  .empty_table tr:nth-child(odd) {
+  background-color: lighten(#d0cc95, 5%);
+}
+
 }
 // end of theme-grey
 

@@ -2,8 +2,8 @@ class Trunk < ApplicationRecord
 
   belongs_to :year_meridian, class_name: 'Meridian'
 
-  def self.trunk_year_wu_yun_definition(date)
-    ranges = [
+  def self.ranges_of_trunk_years
+    [
       { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1938, 1, 31)..DateTime.new(1939, 2, 18) },
       { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1939, 2, 19)..DateTime.new(1940, 2, 7) },
       { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1940, 2, 8)..DateTime.new(1941, 1, 26) },
@@ -72,10 +72,34 @@ class Trunk < ApplicationRecord
       { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1997, 2, 7)..DateTime.new(1998, 1, 27) },
       { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
       { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2000, 2, 5)..DateTime.new(2001, 1, 23) }
+      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2000, 2, 5)..DateTime.new(2001, 1, 23) },
+      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(2001, 1, 24)..DateTime.new(2002, 2, 11) },
+      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(2002, 2, 12)..DateTime.new(2003, 1, 31) },
+      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(2003, 2, 1)..DateTime.new(2004, 1, 21) },
+
+      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2020, 1, 24)..DateTime.new(2021, 2, 11) },
+      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(2020, 2, 12)..DateTime.new(2022, 1, 31) },
     ]
-    ranges.find do |range|
+  end
+
+  def self.trunk_year_wu_yun_definition(date)
+    self.ranges_of_trunk_years.find do |range|
       range[:dates].include?(date.to_date)
+    end
+  end
+
+  def self.number_of_lunar_day
+    range_of_years = self.ranges_of_trunk_years.find do |range|
+      range[:dates].include?(DateTime.current.to_date)
+    end
+    if range_of_years
+     ( DateTime.current - range_of_years[:dates].first() ).to_i
+    end
+  end
+
+  def self.forbidden_action
+    if (340..365).include?(number_of_lunar_day)
+       'Левая нога'
     end
   end
 

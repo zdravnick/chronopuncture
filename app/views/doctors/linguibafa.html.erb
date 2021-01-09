@@ -3,8 +3,6 @@
 <% elsif  current_doctor&.paid_period_seconds_left <= 0 && current_doctor&.moderator? == false %>
   <%= link_to 'Назад', root_path, class: 'btn-control' %>
   <% end %>
-
-
   <h4>ЛИНГУЙБАФА: открыта точка: <%=  @opened_points_linguibafa.alias_ru %></h4>
   <h4>ЛИНГУЙБАФА: связующая точка: <%=  @tie_point_linguibafa.alias_ru %></h4>
   <h4>МЕСТНОЕ ВРЕМЯ: <%=  @doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone).to_s(:short) %></h4>

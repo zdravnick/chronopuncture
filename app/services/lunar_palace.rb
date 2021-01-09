@@ -67,7 +67,6 @@ class LunarPalace
   end
 
   def lunar_palace
-    # binding.pry
     sum = day + month + year + lunar_palaces_leap_correction
     if sum > 28
       sum%28

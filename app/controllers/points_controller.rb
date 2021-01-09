@@ -11,6 +11,7 @@ class PointsController < ApplicationController
   skip_before_action :prepare, only: [:lunar_palaces]
   skip_before_action :prepare, only: [:wu_yun_liu_thi_trunk]
 
+
   def show_point
     @point = Point.all.find(params[:id])
     render 'points/show'
@@ -83,7 +84,6 @@ class PointsController < ApplicationController
       sum_of_numbers_linguibafa(@doctor_city, date)
     {date: date, tie_point: tie_point_linguibafa(@doctor_city, date) }
     end
-
   end
 
   helper_method :opened_point_linguibafa
@@ -93,6 +93,7 @@ class PointsController < ApplicationController
   helper_method :sun_time
   helper_method :sun_time_difference
   helper_method :slider
+  helper_method :number_of_lunar_day
 
   def slider
 
@@ -161,54 +162,10 @@ class PointsController < ApplicationController
     # There is TIME.now in the table!
   end
 
-  # def wu_yun_liu_thi
-  #   @patient = Patient.find(params["patient_id"])
-  #   @patient_city = @patient.city
-  #   @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
-  #   Time.use_zone(@patient.city.time_zone) do
-  #     @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
-  #       params["birthdate(2i)"].to_i,params["birthdate(3i)"].to_i,
-  #       params["birthdate(4i)"].to_i,params["birthdate(5i)"].to_i)
-  #     @patient_birthdate_utc = @patient_birthdate.in_time_zone('UTC')
-  #     @full_layer = Layer.all.full_layer_wu_yun(@patient_birthdate_utc.to_date)
-  #     @empty_layer_name = Layer.all.empty_layer_wu_yun_table(@full_layer)
-  #     @empty_layer = (@empty_layer_name.map do |elem|
-  #       Layer.all.empty_layer_wu_yun(elem)
-  #       end
-  #       )
-  #     @full_trunc_year =
-  #       Trunc.trunc_year_wu_yun_definition(@patient_birthdate_utc.to_date)[:value]
-  #     @empty_trunc_year = Trunc.empty_trunc_year_wu_yun_definition(@full_trunc_year)
-  #     @full_branch_year = Branch.full_branch_year_wu_yun(@patient_birthdate_utc)
-  #     @empty_branch_year = Branch.empty_branch_year_wu_yun(@full_branch_year)
-  #     @base_star_wu_yun =  [ 'Wood', 'Fire', 'Earth', 'Metal', 'Water' ]
-  #     @star_5_energies_wu_yun =
-  #       [ @full_layer.leg_meridian_element, @full_layer.arm_meridian_element,
-  #         @full_trunc_year.element, @full_trunc_year.year_meridian.energy_name,
-  #         @full_branch_year.day_meridian.energy_name
-  #       ]
-  #     @star_season_energies_wu_yun =
-  #       [
-  #         @full_layer.leg_meridian.element_branch , @full_layer.arm_meridian.element_branch ,
-  #         @full_trunc_year.year_meridian.element_branch, @full_branch_year.day_meridian.element_branch
-  #       ]
-
-  #     @star_5_energies_wu_yun_remainder = @base_star_wu_yun - @star_5_energies_wu_yun
-  #     @star_5_energies_wu_yun_remainder_meridians = Meridian.where(energy_name: @star_5_energies_wu_yun_remainder)
-
-  #     @star_season_energies_wu_yun_remainder = @base_star_wu_yun - @star_season_energies_wu_yun
-  #     @star_season_energies_wu_yun_remainder_meridians = Meridian.where(element_branch: @star_season_energies_wu_yun_remainder)
-
-  #     @ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
-  #     @missing_energies_meridians = Meridian.where(id: @ids)
-
-  #   end
-  #   render "doctors/wu_yun_liu_thi"
-  # end
-
   def wu_yun_liu_thi_trunk
     @patient = Patient.find(params["patient_id"])
     @patient_city = @patient.city
+    @number_of_lunar_day = Trunk.number_of_lunar_day
     # @guard_doctor = guard(@doctor_city, @sun_datetime_zone )
     Time.use_zone(@patient.city.time_zone) do
       @patient_birthdate = Time.zone.local(params["birthdate(1i)"].to_i,
@@ -247,6 +204,7 @@ class PointsController < ApplicationController
       @ids = @star_5_energies_wu_yun_remainder_meridians.map(&:id) & @star_season_energies_wu_yun_remainder_meridians.map(&:id)
       @missing_energies_meridians = Meridian.where(id: @ids)
       @change_color = change_color
+
     end
     render "doctors/wu_yun_liu_thi_trunk"
   end
@@ -284,7 +242,6 @@ class PointsController < ApplicationController
   def guard_infusion_7
     guard = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   end
-
 
   def eot(date)
     pi = (Math::PI) # pi
@@ -342,16 +299,27 @@ class PointsController < ApplicationController
     (city[:lng]*4).minutes + eot(date).seconds
   end
 
-  def number_of_day_calculation(city, date)
-    if date.month < 3
-      mon = date.mon + 12
-      year = date.year - 1
-      else
-      mon = date.mon
-      year = date.year
-    end
-    number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
-  end
+  # def number_of_day_calculation(city, date)
+  #   if date.month < 3
+  #     mon = date.mon + 12
+  #     year = date.year - 1
+  #     else
+  #     mon = date.mon
+  #     year = date.year
+  #   end
+  #   number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
+  # end
+
+
+  # def forbidden_action_60_days_prepare
+  #   city = current_doctor.city
+  #   date = DateTime.current.in_time_zone(current_doctor.city.time_zone)
+  #   day_num = number_of_day_calculation(city, date) % 60
+  #   case day_num
+  #   when 8, 38
+  #     @message = 'В левую жопу нельзя колоть'
+  #   end
+  # end
 
   def trunc_day_calculation(city, date)
     trunc_day = number_of_day_calculation(city, date) % 10

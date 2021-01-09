@@ -10,7 +10,7 @@
           <td class="wu_yun_first_cell">
              Сильный слой:
           </td>
-          <td> <%= link_to  @full_layer.name , layer_path(id:  @full_layer.id), action: :show %>
+          <td> <%= link_to  @full_layer.alias_ru , layer_path(id:  @full_layer.id), action: :show %>
           </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@
           <td class="wu_yun_first_cell">
             Слабый слой:
           </td>
-          <td><%= link_to elem.name, layer_path(id:  elem.id), action: :show  %>
+          <td><%= link_to elem.alias_ru, layer_path(id:  elem.id), action: :show  %>
           </td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@
         <tr>
           <% @missing_energies_meridians.map(&:energy_name).uniq.each do |energy_name| %>
           <td >
-             <span class="td_lost_qi"><%= @missing_energy_name = energy_name %></span>,
+             <span class="td_lost_qi"><%= energy_name %></span>,
           </td>
           <% end %>
           <td> Меридианы Потерянной Ци:
