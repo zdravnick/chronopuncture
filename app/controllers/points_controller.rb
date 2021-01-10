@@ -32,6 +32,7 @@ class PointsController < ApplicationController
   end
 
   def prepare
+
     @doctor_city = current_doctor.city
     @doctor_current_datetime_utc = Time.zone.local(params["date(1i)"].to_i,
       params["date(2i)"].to_i,params["date(3i)"].to_i,
@@ -42,7 +43,7 @@ class PointsController < ApplicationController
     @trunc_day = trunc_day_calculation(@doctor_city, @sun_datetime_zone)
     @offset_timezone_doctor =
       (@doctor_current_datetime_utc.in_time_zone(current_doctor.city.time_zone) - @sun_datetime_zone).to_i
-    @brunch_day = brunch_day_calculation(@doctor_city, @sun_datetime_zone)
+    @branch_day = branch_day_calculation(@doctor_city, @sun_datetime_zone)
     @trunc_hour = trunc_hour_calculation(@doctor_city, @sun_datetime_zone)
     @brunch_hour = brunch_hour_calculation(@doctor_city, @sun_datetime_zone)
     @guard = guard(@doctor_city, @sun_datetime_zone)
@@ -94,10 +95,6 @@ class PointsController < ApplicationController
   helper_method :sun_time_difference
   helper_method :slider
   helper_method :number_of_lunar_day
-
-  def slider
-
-  end
 
   def infusion
     @points_infusion = points_infusion
@@ -310,36 +307,25 @@ class PointsController < ApplicationController
   #   number_of_day = (((mon + 1)) * 30.6).truncate  + (year * 365.25).truncate + date.day - 114
   # end
 
-
-  # def forbidden_action_60_days_prepare
-  #   city = current_doctor.city
-  #   date = DateTime.current.in_time_zone(current_doctor.city.time_zone)
-  #   day_num = number_of_day_calculation(city, date) % 60
-  #   case day_num
-  #   when 8, 38
-  #     @message = 'В левую жопу нельзя колоть'
+  # def trunc_day_calculation(city, date)
+  #   trunc_day = number_of_day_calculation(city, date) % 10
+  #   if trunc_day > 4
+  #     trunc_day -= 4
+  #     else
+  #     trunc_day += 6
   #   end
   # end
 
-  def trunc_day_calculation(city, date)
-    trunc_day = number_of_day_calculation(city, date) % 10
-    if trunc_day > 4
-      trunc_day -= 4
-      else
-      trunc_day += 6
-    end
-  end
-
-  def brunch_day_calculation(city, date)
-    brunch_day = number_of_day_calculation(city, date) % 12
-    if brunch_day < 3
-      brunch_day += 10
-    elsif brunch_day == 0
-      brunch_day = 12
-      else
-      brunch_day -= 2
-    end
-  end
+  # def branch_day_calculation(city, date)
+  #   branch_day = number_of_day_calculation(city, date) % 12
+  #   if branch_day < 3
+  #     branch_day += 10
+  #   elsif branch_day == 0
+  #     branch_day = 12
+  #     else
+  #     branch_day -= 2
+  #   end
+  # end
 
   def brunch_hour_calculation(city, time)
     case time.hour
@@ -399,8 +385,8 @@ class PointsController < ApplicationController
     end
   end
 
-  def brunch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
-    case brunch_day_calculation(city, date)
+  def branch_day_definition_linguibafa(city, date) # таблица соответствия числа ветви дня
+    case branch_day_calculation(city, date)
     when 2, 5, 8, 11 then 10
     when 9, 10 then 9
     when 3, 4 then 8
@@ -430,7 +416,7 @@ class PointsController < ApplicationController
   end
 
   def sum_of_numbers_linguibafa(city, date)
-    trunc_day_definition_linguibafa(city, date) + brunch_day_definition_linguibafa(city, date) +
+    trunc_day_definition_linguibafa(city, date) + branch_day_definition_linguibafa(city, date) +
     trunc_hour_definition_linguibafa(city, date) + brunch_hour_definition_linguibafa(city, date)
   end
 

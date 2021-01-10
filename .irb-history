@@ -1,44 +1,3 @@
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1947, 1, 21)..DateTime.new(1948, 2, 9) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1948, 2, 10)..DateTime.new(1949, 1, 28) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1949, 1, 29)..DateTime.new(1950, 2, 16) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1950, 2, 17)..DateTime.new(1951, 2, 5) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1951, 2, 6)..DateTime.new(1952, 1, 26) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1952, 1, 27)..DateTime.new(1953, 2, 13) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1953, 2, 14)..DateTime.new(1954, 2, 2) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1954, 2, 3)..DateTime.new(1955, 1, 23) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1955, 1, 24)..DateTime.new(1956, 2, 11) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1956, 2, 12)..DateTime.new(1957, 1, 30) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1957, 1, 31)..DateTime.new(1958, 2, 17) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1958, 2, 18)..DateTime.new(1959, 2, 7) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1959, 2, 8)..DateTime.new(1960, 1, 27) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1960, 1, 28)..DateTime.new(1961, 2, 14) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1961, 2, 15)..DateTime.new(1962, 2, 4) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1962, 2, 5)..DateTime.new(1963, 1, 24) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1963, 1, 25)..DateTime.new(1964, 2, 12) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1964, 2, 13)..DateTime.new(1965, 2, 1) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1965, 2, 2)..DateTime.new(1966, 1, 20) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1966, 1, 21)..DateTime.new(1967, 2, 8) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1967, 2, 9)..DateTime.new(1968, 1, 29) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1968, 1, 30)..DateTime.new(1969, 2, 16) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1969, 2, 17)..DateTime.new(1970, 2, 5) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1970, 2, 6)..DateTime.new(1971, 1, 26) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1971, 1, 27)..DateTime.new(1972, 2, 14) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1972, 2, 15)..DateTime.new(1973, 2, 2) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1973, 2, 3)..DateTime.new(1974, 1, 22) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1974, 1, 23)..DateTime.new(1975, 2, 10) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1975, 2, 11)..DateTime.new(1976, 1, 30) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1976, 1, 31)..DateTime.new(1977, 2, 17) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1977, 2, 18)..DateTime.new(1978, 2, 6) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1978, 2, 7)..DateTime.new(1979, 1, 27) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1979, 1, 28)..DateTime.new(1980, 2, 15) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1980, 2, 16)..DateTime.new(1981, 2, 4) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1981, 2, 5)..DateTime.new(1982, 1, 24) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1982, 1, 25)..DateTime.new(1983, 2, 12) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1983, 2, 13)..DateTime.new(1984, 2, 1) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1984, 2, 2)..DateTime.new(1985, 2, 19) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1985, 2, 20)..DateTime.new(1986, 2, 8) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1986, 2, 9)..DateTime.new(1987, 1, 28) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1987, 1, 29)..DateTime.new(1988, 2, 16) },
       { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1988, 2, 17)..DateTime.new(1989, 2, 5) },
       { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1989, 2, 6)..DateTime.new(1990, 1, 26) },
       { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1990, 1, 27)..DateTime.new(1991, 2, 14) },
@@ -197,4 +156,45 @@ Point.find_by(name: 'E.30')
 reload!
 Meridian.find_by(alias_ru: 'Желудок')
 Meridian.find_by(name: 'Stomach')
+exit
+Trunk.all.find_by(id: 5)
+Trunk.find_by(id: 5)
+Trunk.find(5)
+Trunk.first
+exi
+exit
+Trunk.first
+Trunk.where( forbidden_action_by_days: nil ).update (forbidden_action_by_days: )
+Trunk.where( forbidden_action_by_days: nil ).update 
+Trunk.first.update(forbidden_action_by_days: 'Голова' )
+Trunk.first
+Trunk.second
+Trunk.second.update(forbidden_action_by_days: 'Передняя поверхность шеи' )
+Trunk.find(3)
+Trunk.find(3).update(forbidden_action_by_days: 'Плечи')
+Trunk.find(3)
+Trunk.find(4)
+Trunk.find(4).update(forbidden_action_by_days: 'Область сердца')
+Trunk.find(5)
+Trunk.find(5).update(forbidden_action_by_days: 'Живот')
+Trunk.find(6)
+Trunk.find(6).update(forbidden_action_by_days: 'Подреберья')
+Trunk.find(7)
+Trunk.find(7).update(forbidden_action_by_days: 'Поясница')
+Trunk.find(8).update(forbidden_action_by_days: 'Колени')
+Trunk.find(9).update(forbidden_action_by_days: 'Область почек')
+Trunk.find(10).update(forbidden_action_by_days: 'Стопа')
+Trunk.each{ |t| p t.name}
+Trunk.all.each{ |t| p t.name}
+Trunk.all.each{ |t| p t.name, t.forbidden_action_by_days}
+Trunk.first
+Trunk.all.each{ |t| p t.id, t.forbidden_action_by_days}
+Trunk.first.name
+Trunk.first.forbidden_action_by_days
+Trunk.first.id
+exit
+Brunch.last
+Branch.last
+Branch.first
+учше
 exit
