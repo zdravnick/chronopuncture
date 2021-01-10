@@ -31,12 +31,13 @@
             <%= render partial: "pages/pay" %>
         <% end %>
         <h4>Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %></h4>
-      <% end %>
-<%=  render partial: "shared/forbidden_action_60_days" %>
- <h4>Номер лунного дня: <%= @number_of_lunar_day %></h4>
+        <%=  render partial: "shared/forbidden_action_60_days" %>
+       <h4>Номер лунного дня: <%= @number_of_lunar_day %></h4>
 
-  <h4> Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <%= @trunk_today %>, энергия Ствола: <%= @trunk_energy %>, Запрет: <%= @forbidden_action_by_days %> </h4>
-  <h4>Ветвь дня: <%=  @branch_day %>, Запрет: <%=  @forbidden_action_by_branch %></h4>
+        <h4> Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <%= @trunk_today %>, энергия Ствола: <%= @trunk_energy %>, Запрет: <%= @forbidden_action_by_days %> </h4>
+        <h4>Ветвь дня: <%=  @branch_day %>, Запрет: <%=  @forbidden_action_by_branch %></h4>
+      <% end %>
+
 
 
 
