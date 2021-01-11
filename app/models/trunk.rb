@@ -88,6 +88,7 @@ class Trunk < ApplicationRecord
     end
   end
 
+# попытка считать дни сезонов и запреты по "весна-лето-осень-зима-межсезонье"
   def self.number_of_lunar_day
     range_of_years = self.ranges_of_trunk_years.find do |range|
       range[:dates].include?(DateTime.current.to_date)
@@ -99,7 +100,7 @@ class Trunk < ApplicationRecord
 
   def self.forbidden_action
     if (340..365).include?(number_of_lunar_day)
-       'Левая нога'
+       'тест метода trunk.forbidden_action'
     end
   end
 

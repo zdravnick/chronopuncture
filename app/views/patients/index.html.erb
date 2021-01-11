@@ -3,12 +3,16 @@
     <% if current_doctor.email.to_s == "nick4vk@yandex.ru" && current_doctor.paid_period_seconds_left > 0 %>
     <h4>Сашычка, мои поздравления! Таперича ты тоже доктор!</h4>
     <% end %>
-  <% if doctor_signed_in? %>
+    <div class="patients_list_show">
+      <div class="list_control_patients_show">
+        <% if doctor_signed_in? %>
+            Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %>, Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :)
+          <% else %>
+            <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
+        <% end %>
+      </div>
+    </div>
 
-      <h4>Здравствуйте, <%= current_doctor.name.to_s + " " + "(" + current_doctor.email.to_s + ")" %>, Пациентов у вас, доктор: <%= current_doctor.patients.count %>  :) </h4>
-    <% else %>
-      <%= link_to 'Войти',  new_doctor_session_path , class: 'btn-control' %> или <%= link_to 'Зарегистрироваться', new_doctor_registration_path %>
-  <% end %>
   <div div class="patients_index_wrapper">
     <div class="patients_find padding_top_0_5_rem">
       <%= form_with  local: true, method: :get, url: patients_path do |f| %>

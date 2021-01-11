@@ -1,26 +1,3 @@
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1988, 2, 17)..DateTime.new(1989, 2, 5) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1989, 2, 6)..DateTime.new(1990, 1, 26) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1990, 1, 27)..DateTime.new(1991, 2, 14) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1991, 2, 15)..DateTime.new(1992, 2, 3) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1992, 2, 4)..DateTime.new(1993, 1, 21) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1993, 1, 22)..DateTime.new(1994, 2, 9) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1994, 2, 10)..DateTime.new(1995, 1, 29) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1995, 1, 30)..DateTime.new(1996, 2, 17) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1996, 2, 18)..DateTime.new(1997, 2, 6) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1997, 2, 7)..DateTime.new(1998, 1, 27) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2000, 2, 5)..DateTime.new(2001, 1, 23) }
-    ]
-  end
-  def number_of_lunar_day(ranges_of_trunk_years)
-    ranges_of_trunk_years.find do |range|
-      range[:dates].include?(DateTime.current.to_date)
-      range[:value] = ( DateTime.current - range[:dates].first() ).to_i
-    end
-  end
-  number_of_lunar_day(ranges_of_trunk_years)
-DateTime.current.to_date
 (DateTime.current-25.years).to_date
  def number_of_lunar_day(ranges_of_trunk_years)
     ranges_of_trunk_years.find do |range|
@@ -197,4 +174,27 @@ Brunch.last
 Branch.last
 Branch.first
 учше
+exit
+Layer.last
+Layer.find(3)
+Trunk.last
+Layer.find(3)
+exit
+Layer.find(3)
+Layer.find(4)
+Layer.find(5)
+Layer.find(6)
+Trunk.first
+Trunk.second
+Trunk.find(3)
+Trunk.find(4)
+Trunk.find(5)
+Trunk.find(6)
+Trunk.find(7)
+Trunk.find(8)
+Trunk.find(9)
+Trunk.find(10)
+Trunk.find(11)
+exit
+Trunk.find(6)
 exit
