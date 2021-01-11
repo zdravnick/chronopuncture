@@ -30,22 +30,24 @@
             <% elsif current_doctor&.paid_period_seconds_left < 0 || current_doctor&.moderator? == false %>
             <%= render partial: "pages/pay" %>
         <% end %>
-        <div class="patients_list_show">
+      <% end %>
+      <div class="patients_list_show">
           <div class="list_control_patients_show">
             Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %>
-            <p>
+            <br>
               <%=  render partial: "shared/forbidden_action_60_days" %>
-            </p>
-            Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <%= @trunk_today %>, энергия Ствола: <%= @trunk_energy %>, Запрет: <%= @forbidden_action_by_days %>
-            Ветвь дня: <%=  @branch_day %>, Запрет: <%=  @forbidden_action_by_branch %>
+            <br>
+            Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <%= @trunk_today %>, энергия Ствола: <%= @trunk_energy %>, Запрет: <strong><%= @forbidden_action_by_days %></strong>
+            <br>
+              Ветвь дня: <%=  @branch_day %>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
+
           </div>
         </div>
-
-      <% end %>
     </section>
       <p class="notice"><%= notice %></p> <!-- это от гема devise -->
       <p class="alert"><%= alert %></p>
       <!--  это от гема devise -->
+
       <%= yield %>
 
 
