@@ -887,11 +887,30 @@ input[type=range]::-webkit-slider-thumb {
   align-items: end;
 }
 
-.selected_energyes {
+.liver1_selected, .liver1Copy1_selected, .liver1Copy2_selected, .liver1Copy3_selected,
+.liver1Copy4_selected, .liver1Copy5_selected, .liver1Copy6_selected, .liver1Copy7_selected,
+.liver1Copy8_selected, .liver8_selected, .liver8Copy1_selected, .liver8Copy2_selected,
+.liver8Copy3_selected, .liver8Copy4_selected, .liver8Copy5_selected, .liver8Copy6_selected,
+.liver8Copy7_selected, .liver8Copy8_selected, .gallBladder43_selected,
+.spleen2_selected, .spleen3_selected, .kidney10_selected,
+.kidney7_selected, .lung9_selected, .lung9Copy1_selected, .lung9Copy2_selected,
+.lung9Copy3_selected, .lung9Copy4_selected, .lung9Copy5_selected, .lung9Copy6_selected,
+.lung9Copy7_selected, .lung8_selected, .lung8Copy1_selected, .lung8Copy2_selected,
+.heart9_selected, .smallInt3_selected, .smallInt5_selected, .smallInt8_selected,
+.heartGuard9_selected, .heartGuard8_selected, .heartGuard8Copy1_selected, .heartGuard7_selected, .tripleHeater1_selected,
+.tripleHeater3_selected, .tripleHeater6_selected, .stomach41_selected, .stomach36_selected,
+.stomach36Copy1_selected, .stomach36Copy2_selected, .stomach36Copy3_selected,
+.stomach36Copy4_selected, .stomach36Copy5_selected  {
   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
   border-right: 1px solid #4d4d00;
   border-left: 1px solid #4d4d00;
 }
+
+// .selected_energyes {
+//   background: linear-gradient(0deg, rgba(72,61,139,0.75) 20%, rgba(213,201,238,0.5) 80%);
+//   border-right: 1px solid #4d4d00;
+//   border-left: 1px solid #4d4d00;
+// }
 
 .container_label{
   display: grid;

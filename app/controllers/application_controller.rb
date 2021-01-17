@@ -66,6 +66,7 @@ class ApplicationController < ActionController::Base
       @trunk_today = trunk.id
       @forbidden_action_by_days = trunk.forbidden_action_by_days
       @trunk_energy = trunk.trunk_energy
+      @trunk_meridian = trunk.year_meridian.alias_ru
     end
   end
 
@@ -177,11 +178,11 @@ class ApplicationController < ActionController::Base
 
       if [29, 41].include?(day_num)
         @forbidden_acu_day_60_days = 'Не лучший день для мужчин по 60-дневному циклу'
-      elsif [22, 51, 52].include?(day_num)
-        @forbidden_acu_day_60_days = 'Не лучший день для женщин по 60-дневному циклу'
-      elsif [8, 42, 43, 44].include?(day_num)
-        @forbidden_acu_day_60_days = 'Не лучший день для мужчин и женщин по 60-дневному циклу'
-      else
+        elsif [22, 51, 52].include?(day_num)
+          @forbidden_acu_day_60_days = 'Не лучший день для женщин по 60-дневному циклу'
+        elsif [8, 42, 43, 44].include?(day_num)
+          @forbidden_acu_day_60_days = 'Не лучший день для мужчин и женщин по 60-дневному циклу'
+        else
         @forbidden_acu_day_60_days = 'Все хорошо, колите, доктор, колите'
       end
     end

@@ -1,3 +1,8 @@
-Запрет по 60-дневному циклу: <strong><%= @forbidden_action_60_days %></strong>
-<br>
-Качество дня по 60-дневному циклу: <strong><%= @forbidden_acu_day_60_days %></strong>
+<%= cache [:forbidden_action_60_days, Date.current, current_doctor.city.time_zone] do  %>
+
+  Запрет по 60-дневному циклу: <strong><%= @forbidden_action_60_days %></strong>
+  <br>
+  Качество дня по 60-дневному циклу: <strong><%= @forbidden_acu_day_60_days %></strong>
+
+<%= Time.now %>
+<% end  %>

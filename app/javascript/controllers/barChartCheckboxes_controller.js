@@ -79,6 +79,7 @@ export default class extends Controller {
         percentage = percentage * -1;
       }
       document.querySelector("#" + energy).style.height = (energyCurrentValue + percentage) + "%";
+      document.querySelector("#" + energy + "_range").classList.toggle(pointClass + "_selected");
     }
   }
 
@@ -169,7 +170,9 @@ export default class extends Controller {
       water_yin: 5,
       water_yang: 10
     }
-    this.colorateEnergies('stomach41', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   stomach36Effect() {
@@ -197,7 +200,9 @@ export default class extends Controller {
     fire_yang: 10,
     earth_yang: 5
     }
-    this.colorateEnergies('spleen2', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   spleen3Effect() {
@@ -209,8 +214,10 @@ export default class extends Controller {
     fire_yang: 10,
     earth_yin: 10,
     earth_yang: 5
-  }
-  this.colorateEnergies('spleen3', energies);
+    }
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
 
@@ -235,7 +242,9 @@ export default class extends Controller {
     earth_yin: -10,
     earth_yang: 10
     }
-    this.colorateEnergies('smallInt3', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   smallInt5Effect() {
@@ -246,7 +255,9 @@ export default class extends Controller {
     water_yin: 10,
     water_yang: 10
     }
-    this.colorateEnergies('smallInt5', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   smallInt8Effect() {
@@ -257,7 +268,9 @@ export default class extends Controller {
     water_yin: 10,
     water_yang: 10
     }
-    this.colorateEnergies('smallInt8', energies);
+    let point = event.target.dataset.name;
+    let pointClass = event.target.classList[0];
+    this.colorateEnergies(point, pointClass, energies);
   }
 
   heartGuard9Effect() {

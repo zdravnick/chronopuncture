@@ -1,200 +1,200 @@
-(DateTime.current-25.years).to_date
- def number_of_lunar_day(ranges_of_trunk_years)
-    ranges_of_trunk_years.find do |range|
-      range[:dates].include?((DateTime.current-25.years).to_date)
-      range[:value] = ( DateTime.current - range[:dates].first() ).to_i
-    end
-  end
-  number_of_lunar_day(ranges_of_trunk_years)
-def number_of_lunar_day(ranges_of_trunk_years)
-    ranges_of_trunk_years.find do |range|
-      range[:dates].include?((DateTime.current-25.years).to_date)
-      ( DateTime.current - range[:dates].first() ).to_i
-    end
-  end
-  number_of_lunar_day(ranges_of_trunk_years)
-reload!
-reload!
-  def ranges_of_trunk_years
-    [
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1938, 1, 31)..DateTime.new(1939, 2, 18) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1939, 2, 19)..DateTime.new(1940, 2, 7) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1940, 2, 8)..DateTime.new(1941, 1, 26) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1941, 1, 27)..DateTime.new(1942, 2, 14) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1942, 2, 15)..DateTime.new(1943, 2, 4) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1943, 2, 5)..DateTime.new(1944, 1, 24) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1944, 1, 25)..DateTime.new(1945, 2, 12) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1945, 2, 13)..DateTime.new(1946, 2, 1) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1946, 2, 2)..DateTime.new(1947, 1, 20) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1947, 1, 21)..DateTime.new(1948, 2, 9) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1948, 2, 10)..DateTime.new(1949, 1, 28) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1949, 1, 29)..DateTime.new(1950, 2, 16) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1950, 2, 17)..DateTime.new(1951, 2, 5) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1951, 2, 6)..DateTime.new(1952, 1, 26) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1952, 1, 27)..DateTime.new(1953, 2, 13) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1953, 2, 14)..DateTime.new(1954, 2, 2) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1954, 2, 3)..DateTime.new(1955, 1, 23) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1955, 1, 24)..DateTime.new(1956, 2, 11) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1956, 2, 12)..DateTime.new(1957, 1, 30) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1957, 1, 31)..DateTime.new(1958, 2, 17) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1958, 2, 18)..DateTime.new(1959, 2, 7) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1959, 2, 8)..DateTime.new(1960, 1, 27) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1960, 1, 28)..DateTime.new(1961, 2, 14) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1961, 2, 15)..DateTime.new(1962, 2, 4) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1962, 2, 5)..DateTime.new(1963, 1, 24) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1963, 1, 25)..DateTime.new(1964, 2, 12) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1964, 2, 13)..DateTime.new(1965, 2, 1) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1965, 2, 2)..DateTime.new(1966, 1, 20) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1966, 1, 21)..DateTime.new(1967, 2, 8) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1967, 2, 9)..DateTime.new(1968, 1, 29) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1968, 1, 30)..DateTime.new(1969, 2, 16) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1969, 2, 17)..DateTime.new(1970, 2, 5) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1970, 2, 6)..DateTime.new(1971, 1, 26) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1971, 1, 27)..DateTime.new(1972, 2, 14) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1972, 2, 15)..DateTime.new(1973, 2, 2) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1973, 2, 3)..DateTime.new(1974, 1, 22) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1974, 1, 23)..DateTime.new(1975, 2, 10) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1975, 2, 11)..DateTime.new(1976, 1, 30) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1976, 1, 31)..DateTime.new(1977, 2, 17) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1977, 2, 18)..DateTime.new(1978, 2, 6) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1978, 2, 7)..DateTime.new(1979, 1, 27) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1979, 1, 28)..DateTime.new(1980, 2, 15) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1980, 2, 16)..DateTime.new(1981, 2, 4) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1981, 2, 5)..DateTime.new(1982, 1, 24) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1982, 1, 25)..DateTime.new(1983, 2, 12) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1983, 2, 13)..DateTime.new(1984, 2, 1) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1984, 2, 2)..DateTime.new(1985, 2, 19) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1985, 2, 20)..DateTime.new(1986, 2, 8) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1986, 2, 9)..DateTime.new(1987, 1, 28) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1987, 1, 29)..DateTime.new(1988, 2, 16) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1988, 2, 17)..DateTime.new(1989, 2, 5) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1989, 2, 6)..DateTime.new(1990, 1, 26) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(1990, 1, 27)..DateTime.new(1991, 2, 14) },
-      { value: Trunk.find_by(serial_number: 8), dates: DateTime.new(1991, 2, 15)..DateTime.new(1992, 2, 3) },
-      { value: Trunk.find_by(serial_number: 9), dates: DateTime.new(1992, 2, 4)..DateTime.new(1993, 1, 21) },
-      { value: Trunk.find_by(serial_number: 10), dates: DateTime.new(1993, 1, 22)..DateTime.new(1994, 2, 9) },
-      { value: Trunk.find_by(serial_number: 1), dates: DateTime.new(1994, 2, 10)..DateTime.new(1995, 1, 29) },
-      { value: Trunk.find_by(serial_number: 2), dates: DateTime.new(1995, 1, 30)..DateTime.new(1996, 2, 17) },
-      { value: Trunk.find_by(serial_number: 3), dates: DateTime.new(1996, 2, 18)..DateTime.new(1997, 2, 6) },
-      { value: Trunk.find_by(serial_number: 4), dates: DateTime.new(1997, 2, 7)..DateTime.new(1998, 1, 27) },
-      { value: Trunk.find_by(serial_number: 5), dates: DateTime.new(1998, 1, 28)..DateTime.new(1999, 2, 15) },
-      { value: Trunk.find_by(serial_number: 6), dates: DateTime.new(1999, 2, 16)..DateTime.new(2000, 2, 4) },
-      { value: Trunk.find_by(serial_number: 7), dates: DateTime.new(2000, 2, 5)..DateTime.new(2001, 1, 23) }
-    ]
-  end
-  def number_of_lunar_day
-    x = ranges_of_trunk_years.find do |range|
-     range[:dates].include?((DateTime.current-25.years).to_date)
-    end
-    ( DateTime.current - x[:dates].first() ).to_i
-    
-  end
-  number_of_lunar_day
-a = [2,3,4,5,6,7].find do |x|
-    x == 5
-  end
-a
-exxxit
+def arr_reading(reading_point)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(reading_point)
+arr2 = []
+def arr_reading(reading_point)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(reading_point)
+def arr_reading(arr2, reading_point)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(reading_point)
+arr2
 exit
-(0..10).includes(9)
-(0..10).include(9)
-(0..10).include?(9)
-(1..72).to_a.count
-(0..71).to_a.count
-(72..89).to_a.count
-(90..162).to_a.count
-(90..161).to_a.count
-(162..179).to_a.count
-(180..252).to_a.count
-(180..251).to_a.count
-(252..269).to_a.count
-(DateTime.new(2021, 2, 11) - DateTime.new(2020, 1, 24) )
-(DateTime.new(2004, 1, 21) - DateTime.new(2003, 2, 1) ).to_i
-(DateTime.new(2003, 1, 31) - DateTime.new(2002, 2, 12) ).to_i
-(DateTime.new(1995, 1, 29) - DateTime.new(1994, 2, 10) ).to_i
-Trunk.last
-Trunk.first
-City.last
+arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
+arr2 = []
+start_arr = arr.find_index(arr.first)
+end_arr = arr.find_index(arr.last)
+def arr_reading(arr2, reading_point)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(reading_point)
+arr_reading(arr2, reading_point, end_arr)
+arr_reading(reading_point, end_arr)
+arr_reading(arr2, reading_point)
 exit
-Point.find_by(alias_ru: 'Ци-чун')
-Point.last
-Meridian.find_by(alias_ru: 'Желудок')
-qi-chong =  Point.create name: 'E.30', alias_ru: "Ци-чун", alias_ch: "气冲", meridian_id: 9, serial_number: 30
-qi-chong =  Point.create (name: 'E.30', alias_ru: "Ци-чун", alias_ch: "气冲", meridian_id: 9, serial_number: 30)
-2-2
-qi-chong =  Point.create(name: 'E.30', alias_ru: "Ци-чун", alias_ch: "气冲", meridian_id: 9, serial_number: 30)
-qichong =  Point.create(name: 'E.30', alias_ru: "Ци-чун", alias_ch: "气冲", meridian_id: 9, serial_number: 30)
-POint.last
-Point.last
-qichong =  Point.create(name: 'E.30', alias_ru: "Ци-чун", alias_en: 'Qi-chong',  alias_cn: "气冲", meridian_id: 9, serial_number: 30)
-qichong.save
-Point.find_by(name: 'Qi-chong')
-Point.find_by(name: 'E.30')
-reload!
-Meridian.find_by(alias_ru: 'Желудок')
-Meridian.find_by(name: 'Stomach')
+arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
+arr2 = []
+start_arr = arr.find_index(arr.first)
+end_arr = arr.find_index(arr.last)
+def arr_reading(arr2, reading_point, end_arr)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(arr2, reading_point, end_arr)
+arr
+arr2
+end_arr
+reading_point
+def arr_reading(arr, reading_point, end_arr)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(arr, reading_point, end_arr)
+def arr_reading(arr, arr2, reading_point, end_arr)
+  arr2 << arr[reading_point..end_arr]
+end
+reading_point = 4
+arr_reading(arr, arr2, reading_point, end_arr)
+arr
+def arr_reading(arr, arr2, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 4
+arr_reading(arr, arr2, reading_point)
+arr[start_arr..(reading_point-1)]
+arr.find_index("Th.5")
+arr
+arr2 = []
 exit
-Trunk.all.find_by(id: 5)
-Trunk.find_by(id: 5)
-Trunk.find(5)
-Trunk.first
-exi
-exit
-Trunk.first
-Trunk.where( forbidden_action_by_days: nil ).update (forbidden_action_by_days: )
-Trunk.where( forbidden_action_by_days: nil ).update 
-Trunk.first.update(forbidden_action_by_days: 'Голова' )
-Trunk.first
-Trunk.second
-Trunk.second.update(forbidden_action_by_days: 'Передняя поверхность шеи' )
-Trunk.find(3)
-Trunk.find(3).update(forbidden_action_by_days: 'Плечи')
-Trunk.find(3)
-Trunk.find(4)
-Trunk.find(4).update(forbidden_action_by_days: 'Область сердца')
-Trunk.find(5)
-Trunk.find(5).update(forbidden_action_by_days: 'Живот')
-Trunk.find(6)
-Trunk.find(6).update(forbidden_action_by_days: 'Подреберья')
-Trunk.find(7)
-Trunk.find(7).update(forbidden_action_by_days: 'Поясница')
-Trunk.find(8).update(forbidden_action_by_days: 'Колени')
-Trunk.find(9).update(forbidden_action_by_days: 'Область почек')
-Trunk.find(10).update(forbidden_action_by_days: 'Стопа')
-Trunk.each{ |t| p t.name}
-Trunk.all.each{ |t| p t.name}
-Trunk.all.each{ |t| p t.name, t.forbidden_action_by_days}
-Trunk.first
-Trunk.all.each{ |t| p t.id, t.forbidden_action_by_days}
-Trunk.first.name
-Trunk.first.forbidden_action_by_days
-Trunk.first.id
-exit
-Brunch.last
-Branch.last
-Branch.first
+arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
+arr2 = []
+def arr_reading(arr, arr2, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 4
+arr_reading(arr, arr2, reading_point)
+arr
+arr[4]
 учше
 exit
-Layer.last
-Layer.find(3)
+arr = %w[маша ела кашу мама мыла раму папа ставил елку]
+arr2 = []
+def arr_reading(arr, arr2, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 4
+arr_reading(arr, arr2, reading_point)
+arr_reading(arr, arr2, reading_point)exit
+exit
+def arr_reading(arr, arr2, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, arr2, reading_point)
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, reading_point)
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, reading_point)
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, reading_point)arr = %w[маша ела кашу мама мыла раму папа ставил елку]
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, reading_point)
+exit
+arr = %w[маша ела кашу мама мыла раму папа ставил елку]
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, reading_point)
+arr = %w[маша ела кашу мама мыла раму папа ставил елку]
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+reading_point = 3
+arr_reading(arr, 2)
+arr_reading(arr, 3)
+arr_reading(arr, 5)
+arr_reading(arr, 6)
+exit
+arr = %w[маша ела кашу мама мыла раму папа ставил елку]
+def arr_reading(arr, reading_point)
+  start_arr = arr.find_index(arr.first)
+  end_arr = arr.find_index(arr.last)
+  arr2 = []
+  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
+end
+# reading_point = 3
+arr_reading(arr, 3))
+arr_reading(arr, 3)
+arr
 Trunk.last
-Layer.find(3)
+Trunk.last.day_meridian
+Trunk.last.day_meridian_id
+Trunk.last.year_meridian
 exit
-Layer.find(3)
-Layer.find(4)
-Layer.find(5)
-Layer.find(6)
-Trunk.first
-Trunk.second
-Trunk.find(3)
-Trunk.find(4)
-Trunk.find(5)
-Trunk.find(6)
-Trunk.find(7)
-Trunk.find(8)
-Trunk.find(9)
-Trunk.find(10)
-Trunk.find(11)
+Trunk.last
+Trunk.last.year_meridian
+Meridian.find_by(alias_ru: 'Перикард')
+Element.last
+Energy
+Energy.last
 exit
-Trunk.find(6)
+Point.last
+POint.find_by(name: 'Vb.41')
+Point.find_by(name: 'Vb.41')
+Point.find_by(name: 'Vb.41').update serial_number: 41
+Point.where{name: 'Vb.41'}
+Point.where(name: 'Vb.41')
+Point.where(name: 'Vb.41').count
+Point.find(90)
+a = Point.find(90)
+a.destroy
+Point.where(name: 'Vb.41').count
+Point.where(name: 'Vb.41')
+vb44 = Point.find(33)
+vb41 = Point.find(33)
+vb41
+vb41.update function: nil
+vb41
+Point.where(name: 'Vb.37')
+vb37 = Point.find(77)
+vb37
+vb37.update function: 'Lo'
+vb37
 exit

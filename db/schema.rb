@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_133142) do
+ActiveRecord::Schema.define(version: 2021_01_15_135549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,13 @@ ActiveRecord::Schema.define(version: 2021_01_10_133142) do
     t.integer "own_element_id"
     t.string "alias_ru"
     t.index ["name"], name: "idx_16661_index_layers_on_name"
+  end
+
+  create_table "lines", force: :cascade do |t|
+    t.string "yin_yang"
+    t.string "age"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "meridians", force: :cascade do |t|
