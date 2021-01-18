@@ -145,7 +145,7 @@ class ApplicationController < ActionController::Base
         when 16, 46
           @forbidden_action_60_days = 'Межреберья'
         when 17, 47
-          @forbidden_action_60_days = "Точка #{Point.find_by(name: 'Qi-chong')}"
+          @forbidden_action_60_days =  'Ци-чун'
         when 18, 48
           @forbidden_action_60_days = 'Внутренняя поверхность бедра'
         when 19, 49
@@ -161,7 +161,7 @@ class ApplicationController < ActionController::Base
         when 24, 54
           @forbidden_action_60_days = 'Ян- и Инь-каналы рук'
         when 25, 55
-          @forbidden_action_60_days = "Меридиан #{Meridian.find_by(name: 'Stomach')}"
+          @forbidden_action_60_days = "Меридиан Желудка"
         when 26, 56
           @forbidden_action_60_days = 'Грудь'
         when 27, 57

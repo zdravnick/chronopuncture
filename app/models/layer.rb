@@ -172,12 +172,11 @@ class Layer < ApplicationRecord
       elsif full_layer.name == YANG_MING
        result << [ SHAO_YIN, SHAO_YANG ]
        return result.flatten
-
     end
   end
 
   def self.empty_layer_wu_yun(empty_layer_name)
-    Layer.find_by(name: empty_layer_name)
+   empty_layer_wu_yun = Layer.find_by(name: empty_layer_name)
   end
 
 end

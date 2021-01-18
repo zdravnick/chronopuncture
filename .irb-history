@@ -1,14 +1,3 @@
-def arr_reading(reading_point)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(reading_point)
-arr2 = []
-def arr_reading(reading_point)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(reading_point)
 def arr_reading(arr2, reading_point)
   arr2 << arr[reading_point..end_arr]
 end
@@ -197,4 +186,15 @@ vb37 = Point.find(77)
 vb37
 vb37.update function: 'Lo'
 vb37
+exit
+Line.first
+exit
+Point.find_by(name: 'Qi-chong')
+Point.find_by(name: 'Ци-чун')
+Point.find_by(alias_ru: 'Ци-чун')
+Point.find_by(name: 'E.30').alias_ru
+<PatientsController:0x00007fcfd22bfa80>
+exit
+Meridian.find_by(alias_ru: 'Желудок')
+учше
 exit

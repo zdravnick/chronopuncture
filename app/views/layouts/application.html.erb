@@ -39,7 +39,7 @@
               <br>
               Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <strong><%= @trunk_today %></strong>, энергия Ствола: <strong><%= @trunk_energy %></strong>, меридиан Ствола: <strong><%= @trunk_meridian %></strong>, Запрет: <strong><%= @forbidden_action_by_days %></strong>
               <br>
-                Ветвь дня: <%=  @branch_day %>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
+                Ветвь дня: <strong><%=  @branch_day %></strong>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
 
             </div>
         </div>

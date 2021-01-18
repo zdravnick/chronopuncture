@@ -1,6 +1,14 @@
 <%= cache [:forbidden_action_60_days, Date.current, current_doctor.city.time_zone] do  %>
 
-  Запрет по 60-дневному циклу: <strong><%= @forbidden_action_60_days %></strong>
+  Запрет по 60-дневному циклу:
+  <% if  @forbidden_action_60_days == 'Ци-чун'%>
+  <%= link_to 'Точка Ци-чун', controller: :points, action: :show_point, id: 94 %>
+  <% elsif @forbidden_action_60_days == 'Меридиан Желудка' %>
+  <%= link_to 'Меридиан Желудка', controller: :meridians, action: :show, id: 9 %>
+  <% else %>
+  <strong><%= @forbidden_action_60_days %></strong>
+  <% end  %>
+
   <br>
   Качество дня по 60-дневному циклу: <strong><%= @forbidden_acu_day_60_days %></strong>
 
