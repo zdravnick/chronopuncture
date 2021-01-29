@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_135549) do
+ActiveRecord::Schema.define(version: 2021_01_29_134344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,9 @@ ActiveRecord::Schema.define(version: 2021_01_15_135549) do
     t.string "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "dotted_solid"
+    t.integer "point_id"
+    t.integer "trigram_id"
   end
 
   create_table "meridians", force: :cascade do |t|
@@ -162,6 +165,17 @@ ActiveRecord::Schema.define(version: 2021_01_15_135549) do
     t.string "big_nutrition_point", limit: 255
     t.string "small_nutrition_point", limit: 255
     t.index ["name"], name: "idx_16690_index_points_on_name"
+  end
+
+  create_table "trigrams", force: :cascade do |t|
+    t.string "name"
+    t.string "alias_ru"
+    t.string "alias_cn"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "line_1_id"
+    t.integer "line_2_id"
+    t.integer "line_3_id"
   end
 
   create_table "trunks", force: :cascade do |t|

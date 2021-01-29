@@ -54,13 +54,13 @@ class PatientsController < ApplicationController
 
   def display_point
     @point = Point.find(params[:id])
-    render "points/show"
+    render "points/ "
   end
 
 
   def show
     @patient = current_doctor.patients.active.find(params[:id])
-    @visits = @patient.visits.page params[:page]
+    @visits = @patient.visits.order(visited_at: :desc).page params[:page]
     @cities = City.all
   end
 

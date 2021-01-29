@@ -95,7 +95,7 @@
         <%= form_with local: true, method: :get, url: points_linguibafa_path do |f| %>
         <%= f.label "Выберите время: " %>
         <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone) %>
-        <%= f.submit "Рассчитать" %>
+        <%= f.submit "Рассчитать", data: { disable_with: false } %>
         <% end %>
       </div>
 
@@ -104,7 +104,7 @@
         <%= form_with local: true, method: :get, url: points_linguibafa_7_times_path do |f| %>
         <%= f.label "Выберите время: " %>
         <%=  f.datetime_select  :date, default: DateTime.now.in_time_zone(current_doctor.city.time_zone)%>
-        <%= f.submit "На неделю" %>
+        <%= f.submit "На неделю", data: { disable_with: false } %>
         <% end %>
       </div>
 
@@ -179,7 +179,7 @@
           <div class="list_control_patients_show">
             <span class="bold_text_element"><%= patient.name + ", " %></span>  <%= patient.birthdate.strftime( "%d.%m.%y") + "," %>  диагноз: <%= + patient&.diagnosis %>
             <div>
-              Визитов: <%=patient.visits.count %>,
+              Визитов:  <strong> <%=patient.visits.count %></strong>,
               Последний визит:
               <% if patient.visits.last %>
                 <%=  patient.visits.last&.visited_at.strftime( "%d.%m.%y") %>

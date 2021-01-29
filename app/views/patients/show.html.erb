@@ -80,7 +80,19 @@
   <h3>Сеансы:</h3>
   <div class="list_control_patients_show">
     <ol class="reversed_list">
+      <% previous_visit = @visits.last %>
+      <% visit_num = 0 %>
       <% @visits.each do |visit| %>
+        <%  if defined?(previous_visit) && ( last_visit_in_course = (previous_visit.visited_at.to_date - visit.visited_at.to_date).to_i) > 7 %>
+        <h3>
+         <%=  "ПЕРЕРЫВ #{(visit.visited_at.to_date - previous_visit.visited_at.to_date).to_i} ДНЕЙ" %>
+        </h3>
+        <% end %>
+        <div class="reversed_list_decsr bold_text_element">
+          <% visit_num += 1 %>
+          <strong><%= ( @patient.visits.count + 1) - visit_num  %>.</strong>
+          <%= visit.visited_at.strftime( "%d.%m.%y") + "г. в " + visit.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + visit.visited_at.strftime("%j") %>
+        </div>
         <ul class="reversed_list_without_bullets">
           <li>
              <%= visit.visit_description %>
@@ -92,9 +104,8 @@
             <%= link_to 'Удалить сеанс', visit , action: :delete,  method: :delete, data: { confirm: 'Точно удалить сеанс?' }, class: 'btn-control'  %>
           </li>
         </ul>
-        <li class="reversed_list_decsr bold_text_element">
-          <%= visit.visited_at.strftime( "%d.%m.%y") + "г. в " + visit.visited_at.strftime( "%H:%M") + ". " + "Номер дня в году: " + visit.visited_at.strftime("%j") %>
-        </li>
+
+        <%  previous_visit = visit %>
       <% end %>
 
     </ol>

@@ -1,200 +1,200 @@
-def arr_reading(arr2, reading_point)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(reading_point)
-arr2
+Trigram.third
 exit
-arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
-arr2 = []
-start_arr = arr.find_index(arr.first)
-end_arr = arr.find_index(arr.last)
-def arr_reading(arr2, reading_point)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(reading_point)
-arr_reading(arr2, reading_point, end_arr)
-arr_reading(reading_point, end_arr)
-arr_reading(arr2, reading_point)
-exit
-arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
-arr2 = []
-start_arr = arr.find_index(arr.first)
-end_arr = arr.find_index(arr.last)
-def arr_reading(arr2, reading_point, end_arr)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(arr2, reading_point, end_arr)
-arr
-arr2
-end_arr
-reading_point
-def arr_reading(arr, reading_point, end_arr)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(arr, reading_point, end_arr)
-def arr_reading(arr, arr2, reading_point, end_arr)
-  arr2 << arr[reading_point..end_arr]
-end
-reading_point = 4
-arr_reading(arr, arr2, reading_point, end_arr)
-arr
-def arr_reading(arr, arr2, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 4
-arr_reading(arr, arr2, reading_point)
-arr[start_arr..(reading_point-1)]
-arr.find_index("Th.5")
-arr
-arr2 = []
-exit
-arr = %w[ R.6 Mc.6 P.7 Th.5 Gb.41 Rp.4 Ig.3 V.62 ]
-arr2 = []
-def arr_reading(arr, arr2, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 4
-arr_reading(arr, arr2, reading_point)
-arr
-arr[4]
-учше
-exit
-arr = %w[маша ела кашу мама мыла раму папа ставил елку]
-arr2 = []
-def arr_reading(arr, arr2, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 4
-arr_reading(arr, arr2, reading_point)
-arr_reading(arr, arr2, reading_point)exit
-exit
-def arr_reading(arr, arr2, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, arr2, reading_point)
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, reading_point)
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, reading_point)
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, reading_point)arr = %w[маша ела кашу мама мыла раму папа ставил елку]
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, reading_point)
-exit
-arr = %w[маша ела кашу мама мыла раму папа ставил елку]
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, reading_point)
-arr = %w[маша ела кашу мама мыла раму папа ставил елку]
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-reading_point = 3
-arr_reading(arr, 2)
-arr_reading(arr, 3)
-arr_reading(arr, 5)
-arr_reading(arr, 6)
-exit
-arr = %w[маша ела кашу мама мыла раму папа ставил елку]
-def arr_reading(arr, reading_point)
-  start_arr = arr.find_index(arr.first)
-  end_arr = arr.find_index(arr.last)
-  arr2 = []
-  arr2 << arr[reading_point..end_arr] + arr[start_arr..(reading_point-1)]
-end
-# reading_point = 3
-arr_reading(arr, 3))
-arr_reading(arr, 3)
-arr
-Trunk.last
-Trunk.last.day_meridian
-Trunk.last.day_meridian_id
-Trunk.last.year_meridian
-exit
-Trunk.last
-Trunk.last.year_meridian
-Meridian.find_by(alias_ru: 'Перикард')
-Element.last
-Energy
-Energy.last
+Trigram.third
+Trigram.third.line_2
+Trigram.third.line_2_id
+Line.first
+Trigram.first
+Meridian.last
+Points.last
+Point.last
+Point.last.meridian
+Trigram.first.line_1
+Line.all.find_by(id: 2)
+trigram.line_1_id = 1
+Line.find_by(id: 2)
+Trigram.first.line_yin
+Trigram.first.line_ids
+Point.last
 exit
 Point.last
-POint.find_by(name: 'Vb.41')
-Point.find_by(name: 'Vb.41')
-Point.find_by(name: 'Vb.41').update serial_number: 41
-Point.where{name: 'Vb.41'}
-Point.where(name: 'Vb.41')
-Point.where(name: 'Vb.41').count
-Point.find(90)
-a = Point.find(90)
-a.destroy
-Point.where(name: 'Vb.41').count
-Point.where(name: 'Vb.41')
-vb44 = Point.find(33)
-vb41 = Point.find(33)
-vb41
-vb41.update function: nil
-vb41
-Point.where(name: 'Vb.37')
-vb37 = Point.find(77)
-vb37
-vb37.update function: 'Lo'
-vb37
+Trigram.first.line_1
+Trigram.first
+Trigram.first.line_1_id
+Line.last
+helper.trigram
+helper.trigram(Trigram.first)
+helper.trigram(Trigram.first)
+helper.trigram(Trigram.second)
+helper.trigram(Trigram.first)
+helper.trigram(Trigram.second)
+helper.trigram(Trigram.third)
 exit
+helper.trigram(Trigram.third)
+helper.trigram(Trigram.third)
+helper.trigram(Trigram.first)
+exit
+helper.trigram(Trigram.first)
+helper.trigram(Trigram.third)
+exit
+helper.trigram(Trigram.third)
+Trigram.find(1)
 Line.first
 exit
-Point.find_by(name: 'Qi-chong')
-Point.find_by(name: 'Ци-чун')
-Point.find_by(alias_ru: 'Ци-чун')
-Point.find_by(name: 'E.30').alias_ru
-<PatientsController:0x00007fcfd22bfa80>
-exit
-Meridian.find_by(alias_ru: 'Желудок')
+helper.trigram(Trigram.third)
 учше
+exit
+helper.trigram(Trigram.third)
+Trigram.all.each{|t| p t.name }
+Trigram.all.each{|t| p t.line_1_id  line_2_id }
+Trigram.all.each{|t| p t.line_1_id,  line_2_id }
+Trigram.all.each{|t| p t.line_1_id,  t.line_2_id }
+Trigram.all.each do |t1, t2|  
+end
+Trigram.all.each do |t|  
+if t.line_1_id == "yin"
+puts 'Иневая!"
+else
+puts 'Янская!"
+end
+end
+puts 'Янская!'
+end
+end
+puts 'Янская!'
+2-2
+helper.trigram(Trigram.third)
+exit
+Point.find_by(name: 'E.36')
+Point.find_by(name: 'E.36').name
+Visit.last
+Trigram.last
+Point.last
+reload!
+Point.last
+Trigram.last
+Line.last
+exit
+Line.last
+Line.first
+exit
+Line.last.point_id
+Line.last.update point_id: 1
+Point.find_by name: 'F.1'
+Line.last.update point_id: 6
+exit
+Line.last.update point_id: 6
+Line.last.update point_id: 66
+Line.last
+Line.last.update (point_id: 6)
+Line.last.update(point_id: 6)
+exit
+Line.last.update(point_id: 6)
+Line.last
+Line.last.update point_id: 6
+exit
+Line.last.update point_id: 6
+Line.last.update(point_id: 6)
+a = Line.last
+a.update(point_id: 6)
+exixt
+exit
+Line.last.update(point_id: 6)
+exit
+Line.last.update(point_id: 6)
+exit
+Line.last.update(point_id: 6)
+exit
+Line.last.update(point_id: 6)
+exit
+Line.last.update(point_id: 6)
+Line.last.point_id
+Line.last.point_id = 6
+Line.last.point_id
+Line.last.update(point_id: 6)
+POint.find(6)
+Point.find(6)
+exit
+Point.find(6)
+Line.last.update(point_id: 6)
+Line.last
+Line.last.update(age: 6)
+a = Line.last
+a.update(age: 6)
+a.errors
+a
+exit
+Line.last
+Line.last.update(point_id: 6)
+Line.last.errors
+Line.last.update(trigram_id: 1)
+Line.last.update(trigram_id: 1)
+exit
+Line.last.update(trigram_id: 1)
+Line.last
+Line.first.update(trigram_id: 1)
+Line.first
+Line.first.trigram
+Line.first.trigram_id
+Line.last.trigram_id
+Trigram.find(1)
+Meridian.last
+Meridian.last.strong_nutrition_season_point
+Line.last.update(point_id: 6)
+Line.last
+Line.last.point
+Line.last.point_Id
+Line.last.point_id
+Patient.last
+Patient.last.doctor
+Trigram.find(1).line_1
+Trigram.find(1).line_1_id
+Trigram.find(1).lines_
+Trigram.find(1)
+exit
+Trigram.find(1).line_1
+Trigram.find(1).line_1_id
+Trigram.find(1)
+Trigram.find(1).line_1
+exit
+Trigram.find(1).line_1
+exit
+Trigram.find(1).line_3
+Trigram.find(1).line_2
+Trigram.find(1).line_1
+exit
+Point.last
+Line.last
+Line.last.point
+exit
+Line.last.point
+Line.first.point
+учше
+учше
+exit
+Line.first.point
+Line.дфые.point
+Line.last.point
+Line.last
+Line.find(1)
+arr = %w(a b c b e)
+arr
+arr.first
+arr.first.id
+arr.first.id?
+arr[0]
+arr[1]
+Trigram.first
+Line.last.point
+Line.last.point.name
+Line.last.point.alias_ru
+LIne.first
+Line.first
+Point.find_by(name: 'F.2')
+Line.last.update point_id: 46
+Line.first.update point_id: 6
+Line.first
+Line.first.point
+exit
+Line.find(1)
 exit

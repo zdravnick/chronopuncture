@@ -551,6 +551,91 @@ a:active,  .btn-control:active, input[type=submit]:active {
   // width: 30%;
 }
 
+ // TRIGRAM CSS begin
+
+// .line_yang {
+//   display: flex;
+//   background-color: orange;
+//   height: 1rem;
+//   width: 8rem;
+//   margin-bottom: 5px;
+//   margin-top: 5px;
+//   border: 2px solid #000;
+//   // border-radius: 10px;
+//   }
+
+.trigrams {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none
+}
+
+.trigrams_child {
+  margin-left: 3%;
+}
+
+
+.line_yin, .line_yang {
+  display: flex;
+  justify-content: space-between;
+  height: 1rem;
+  width: 8rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 1rem  // выравниваем текст по вертикали.
+  // border: 2px solid transparent;
+  // border-radius: 10px;
+}
+
+
+.line_yin_part_1, .line_yin_part_3 {
+  height: 1rem;
+  width: 35%;
+  background-color: orange;
+  // border-radius: 10px;
+  border: 2px solid #000;
+}
+
+.line_yang_part_1, .line_yang_part_3 {
+  height: 1rem;
+  width: 35%;
+  background-color: orange;
+  // border-radius: 10px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.line_yang_part_1 {
+  border-left: 2px solid #000;
+}
+
+.line_yang_part_3 {
+  border-right: 2px solid #000;
+}
+
+.line_yin_part_transparent {
+  height: 1rem;
+  width: 30%;
+  background-color: none;
+  text-align: center;
+}
+
+.line_yang_part_2 {
+  height: 1rem;
+  width: 30%;
+  background-color: orange;
+  border-top: 2px solid orange;
+  border-bottom: 2px solid orange;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+// TRIGRAM CSS end
+
+// .line_yang_part_2_transparent {
+//   background-color: tan;
+// }
+
 .patients_list_hide, .hide_common_methods, .find_patient_form_hide {
   display: none;
 }
@@ -772,26 +857,26 @@ a:active,  .btn-control:active, input[type=submit]:active {
 .reversed_list {
   min-width: 90%;
   max-width: 90%;
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  // -webkit-transform: rotate(180deg);
+  // transform: rotate(180deg);
 }
 
 .reversed_list>li {
   margin-right: 1rem;
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+  // -webkit-transform: rotate(-180deg);
+  // transform: rotate(-180deg);
 }
 
 .reversed_list_decsr {
   margin-right: 1rem;
-  margin-bottom: 1rem;
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+  margin-top: 1rem;
+  // -webkit-transform: rotate(-180deg);
+  // transform: rotate(-180deg);
 }
 
 .reversed_list_without_bullets {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  // -webkit-transform: rotate(180deg);
+  // transform: rotate(180deg);
   margin-bottom: 0px;
 }
 

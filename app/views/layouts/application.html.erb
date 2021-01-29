@@ -10,7 +10,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   </head>
   <body class="<%= cookies.signed[:color_mode_cookie] || 'theme-light' %>">
     <section>
@@ -31,15 +30,22 @@
             <%= render partial: "pages/pay" %>
 
       <% end %>
+      <ul class="trigrams">
+        <% Trigram.all.each do |t|%>
+         <li class="trigrams_child"><%= trigram t %></li>
+
+        <% end %>
+      </ul>
         <div class="patients_list_show">
             <div class="list_control_patients_show">
               Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %>
+
               <br>
                 <%=  render partial: "shared/forbidden_action_60_days" %>
               <br>
               Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <strong><%= @trunk_today %></strong>, энергия Ствола: <strong><%= @trunk_energy %></strong>, меридиан Ствола: <strong><%= @trunk_meridian %></strong>, Запрет: <strong><%= @forbidden_action_by_days %></strong>
               <br>
-                Ветвь дня: <strong><%=  @branch_day %></strong>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
+                Ветвь дня: <strong><%=  @branch_day_id %></strong>, энергия Ветви: <strong><%=  @branch_own_element %></strong>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
 
             </div>
         </div>

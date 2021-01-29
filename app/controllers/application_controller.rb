@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
   before_action :forbidden_action_60_days
 
 
-
   protected
 
   def configure_permitted_parameters
@@ -74,8 +73,10 @@ class ApplicationController < ActionController::Base
     if current_doctor
       city = current_doctor.city
       date = DateTime.current.in_time_zone(current_doctor.city.time_zone)
-      @branch_day = Branch.find(branch_day_calculation(city, date)).id
-      case @branch_day
+      branch_of_day = Branch.find(branch_day_calculation(city, date))
+      @branch_day_id = branch_of_day.id
+      @branch_own_element = branch_of_day.own_element
+      case @branch_day_id
         when 1
           @forbidden_action_by_branch = 'Область глаз'
         when 2
@@ -110,8 +111,8 @@ class ApplicationController < ActionController::Base
     if current_doctor
       city = current_doctor.city
       date = DateTime.current.in_time_zone(current_doctor.city.time_zone)
-      day_num = number_of_day_calculation(city, date) % 60
-      case day_num
+      @day_num = number_of_day_calculation(city, date) % 60
+      case @day_num
         when 1, 31
           @forbidden_action_60_days = 'Большой палец стопы'
         when 2, 32
@@ -172,21 +173,17 @@ class ApplicationController < ActionController::Base
           @forbidden_action_60_days = 'Задняя поверхность коленей и голеней'
         when 30, 60
           @forbidden_action_60_days = 'Область предплюсневых костей стопы'
-        else
-          @forbidden_action_60_days = 'Ошибка в методе forbidden_action_60_days'
         end
 
-      if [29, 41].include?(day_num)
-        @forbidden_acu_day_60_days = 'Не лучший день для мужчин по 60-дневному циклу'
-        elsif [22, 51, 52].include?(day_num)
-          @forbidden_acu_day_60_days = 'Не лучший день для женщин по 60-дневному циклу'
-        elsif [8, 42, 43, 44].include?(day_num)
-          @forbidden_acu_day_60_days = 'Не лучший день для мужчин и женщин по 60-дневному циклу'
+      if [29, 41].include?(@day_num)
+        @forbidden_acu_day_60_days = 'Не лучший день для мужчин'
+        elsif [22, 51, 52].include?(@day_num)
+          @forbidden_acu_day_60_days = 'Не лучший день для женщин'
+        elsif [8, 42, 43, 44].include?(@day_num)
+          @forbidden_acu_day_60_days = 'Не лучший день для мужчин'
         else
-        @forbidden_acu_day_60_days = 'Все хорошо, колите, доктор, колите'
+        @forbidden_acu_day_60_days = 'Хороший день, колите, доктор, колите'
       end
     end
   end
-
-
 end
