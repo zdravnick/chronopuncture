@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_134344) do
+ActiveRecord::Schema.define(version: 2021_02_01_124117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_134344) do
     t.string "dotted_solid"
     t.integer "point_id"
     t.integer "trigram_id"
+    t.string "name"
+    t.string "alias_ru"
   end
 
   create_table "meridians", force: :cascade do |t|

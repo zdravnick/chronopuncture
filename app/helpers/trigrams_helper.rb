@@ -5,7 +5,7 @@ module TrigramsHelper
   end
 
   def actual_point_sedated
-   actual_point = Point.find_by(name: 'E.36').name
+   actual_point = Point.find_by(name: 'Vb.43').name
   end
 
   def trigram(trigram)
