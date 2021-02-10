@@ -13,7 +13,7 @@ module TrigramsHelper
       if  Line.find_by(id: trigram.line_3_id).yin_yang == 'yin'
         content_tag :div, '', class: "line_yin" do
           content_tag(:div, '', class: "line_yin_part_1") +
-          content_tag(:div, '', class: "line_yin_part_transparent") +
+          content_tag(:div, "#{trigram.line_1.point&.name}", class: "line_yin_part_transparent") +
           content_tag(:div, '', class: "line_yin_part_3")
         end
       else
@@ -26,7 +26,7 @@ module TrigramsHelper
       if  Line.find_by(id: trigram.line_2_id).yin_yang == 'yin'
         content_tag :div, '', class: "line_yin" do
           content_tag(:div, '', class: "line_yin_part_1") +
-          content_tag(:div, "#{trigram.line_2.point.name}", class: "line_yin_part_transparent") +
+          content_tag(:div, "#{trigram.line_2.point&.name}", class: "line_yin_part_transparent") +
           content_tag(:div, '', class: "line_yin_part_3")
         end
       else
@@ -45,13 +45,7 @@ module TrigramsHelper
       if  Line.find_by(id: trigram.line_1_id).yin_yang == 'yin'
         content_tag :div, '', class: "line_yin" do
           content_tag(:div, '', class: "line_yin_part_1") +
-          content_tag(:div,
-            if actual_point_stimulated
-               "#{actual_point_stimulated}"
-            else
-              'none'
-            end,
-            class: "line_yin_part_transparent") +
+          content_tag(:div, "#{trigram.line_1.point&.name}", class: "line_yin_part_transparent") +
           content_tag(:div, '', class: "line_yin_part_3")
         end
       else

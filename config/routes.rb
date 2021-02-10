@@ -27,11 +27,13 @@ Rails.application.routes.draw do
   resources :layers
   resources :meridians
   resources :branches
-  resources :truncs
   resources :trunks
+  resources :trigrams
+  resources :hexagrams
 
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-    resources :doctors, :points, :patients, :visits, :layers, :meridians, :branches, :trunks, :trigrams
+    resources :doctors, :points, :patients, :visits, :layers, :meridians, :branches, :trunks,
+    :trigrams, :hexagrams
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

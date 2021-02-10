@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lower_trigram_id: 1
+  upper_trigram_id: 1
+  favorable: false
+
+two:
+  name: MyString
+  lower_trigram_id: 1
+  upper_trigram_id: 1
+  favorable: false

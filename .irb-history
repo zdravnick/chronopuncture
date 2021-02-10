@@ -1,200 +1,200 @@
-Trigram.all.each{|t| p t.line_1_id,  t.line_2_id }
-Trigram.all.each do |t1, t2|  
-end
-Trigram.all.each do |t|  
-if t.line_1_id == "yin"
-puts 'Иневая!"
-else
-puts 'Янская!"
-end
-end
-puts 'Янская!'
-end
-end
-puts 'Янская!'
-2-2
-helper.trigram(Trigram.third)
-exit
-Point.find_by(name: 'E.36')
-Point.find_by(name: 'E.36').name
-Visit.last
-Trigram.last
-Point.last
-reload!
-Point.last
-Trigram.last
+Line.find(2)
+Line.find(2).point
+Line.дфые
 Line.last
+Line.create id: 3, yin_yang: "yang", name: "gall bladder 3", alias_ru: "желчный 3"
+Line.last
+Line.last
+Line.create yin_yang: "yang", name: "gall bladder 3", alias_ru: "желчный 3"
+Line.all.count
+Line.create(yin_yang: "yang", name: "gall bladder 3", alias_ru: "желчный 3")
+wxit
 exit
+Line.all.count
 Line.last
 Line.first
-exit
-Line.last.point_id
-Line.last.update point_id: 1
-Point.find_by name: 'F.1'
-Line.last.update point_id: 6
-exit
-Line.last.update point_id: 6
-Line.last.update point_id: 66
+Line.last.update name: "gall bladder 2"
 Line.last
-Line.last.update (point_id: 6)
-Line.last.update(point_id: 6)
-exit
-Line.last.update(point_id: 6)
+Line.last.point
+Line.last.save
 Line.last
-Line.last.update point_id: 6
-exit
-Line.last.update point_id: 6
-Line.last.update(point_id: 6)
-a = Line.last
-a.update(point_id: 6)
-exixt
-exit
-Line.last.update(point_id: 6)
-exit
-Line.last.update(point_id: 6)
-exit
-Line.last.update(point_id: 6)
-exit
-Line.last.update(point_id: 6)
-exit
-Line.last.update(point_id: 6)
-Line.last.point_id
-Line.last.point_id = 6
-Line.last.point_id
-Line.last.update(point_id: 6)
-POint.find(6)
-Point.find(6)
-exit
-Point.find(6)
-Line.last.update(point_id: 6)
+Line.last.update alias_ru: 'желчный 2'
 Line.last
-Line.last.update(age: 6)
-a = Line.last
-a.update(age: 6)
-a.errors
-a
-exit
-Line.last
-Line.last.update(point_id: 6)
-Line.last.errors
-Line.last.update(trigram_id: 1)
-Line.last.update(trigram_id: 1)
-exit
-Line.last.update(trigram_id: 1)
-Line.last
-Line.first.update(trigram_id: 1)
+Line.ашкые
 Line.first
-Line.first.trigram
-Line.first.trigram_id
-Line.last.trigram_id
-Trigram.find(1)
-Meridian.last
-Meridian.last.strong_nutrition_season_point
-Line.last.update(point_id: 6)
 Line.last
-Line.last.point
-Line.last.point_Id
-Line.last.point_id
-Patient.last
-Patient.last.doctor
-Trigram.find(1).line_1
-Trigram.find(1).line_1_id
-Trigram.find(1).lines_
-Trigram.find(1)
-exit
-Trigram.find(1).line_1
-Trigram.find(1).line_1_id
-Trigram.find(1)
-Trigram.find(1).line_1
-exit
-Trigram.find(1).line_1
-exit
-Trigram.find(1).line_3
-Trigram.find(1).line_2
-Trigram.find(1).line_1
-exit
-Point.last
-Line.last
-Line.last.point
-exit
-Line.last.point
-Line.first.point
-учше
-учше
-exit
-Line.first.point
-Line.дфые.point
-Line.last.point
-Line.last
-Line.find(1)
-arr = %w(a b c b e)
-arr
-arr.first
-arr.first.id
-arr.first.id?
-arr[0]
-arr[1]
-Trigram.first
-Line.last.point
-Line.last.point.name
-Line.last.point.alias_ru
+Line.new(id: 3)
+Line.find(3).update yin_yang: 'yang'
+Line.new(id: 2)
+Line.new(id: 1)
 LIne.first
 Line.first
-Point.find_by(name: 'F.2')
-Line.last.update point_id: 46
-Line.first.update point_id: 6
-Line.first
-Line.first.point
+Line.find(2)
+Line.find(3)
 exit
-Line.find(1)
-exit
-Point.find_by(name: 'Gb.43'
-Point.find_by(name: 'Gb.43')
-Point.find_by(name: 'GB.43')
-Point.find_by(name: 'Gb.44')
-Point.find_by(name: 'Gb.41')
-Meridian.find_by(alias_ru: 'Желчный пузырь')
-Meridian.find_by(alias_ru: 'Желчный')
-Meridian.find_by(alias_ru: 'Желчный Пузырь')
-пи = Meridian.find_by(alias_ru: 'Желчный Пузырь')
-gb = Meridian.find_by(alias_ru: 'Желчный Пузырь')
-gb.each{ |point|  p point.name}
-gb = Meridian.find_by(alias_ru: 'Желчный Пузырь')
-gb
-Points.where{meridian_id: 12}
-Points.where(meridian_id: 12)
-Points.where(point.meridian_id: 12)
-Point.where(meridian_id: 12)
-Point.where(meridian_id: 12).name
-Point.where(meridian_id: 12).each{|point| p point.name }
-exit
-Trigram.last
-Trigram.last.line_1
-Trigram.last.line_1.point
-Trigram.last.line_1.meridian
-Trigram.last.line_1.point.meridian
-Trigram.last.line_1.point.meridian.element_branch
-Line.first
-exit
-Line.last
-Trigram.last.line_1
-Trigram.last.line_1.point
-Trigram.last.line_1.point.meridian
-exit
-Line.last
-exit
-Line.last
-Trigram.last.line_1
-Line.first
-Line.first
-gb_1 = Line.first
-gb_1
-gb_1.update name: 'gall bladder 1', alias_ru: 'желчный 1'
-gb_1
-Trigram.last.line_1
-Trigram.last.line_2
+Line.create(yin_yang: "yang", name: "gall bladder 3", alias_ru: "желчный 3")
 Line.all.count
-Date.new(1990, 02, 31)
-Date.new(1990, 02, 28)
-учше
+POint.find_by(name: 'Vb.43')
+Point.find_by(name: 'Vb.43')
+Point.find_by(name: 'Vb.41')
+Line.find(3).update point_id: 33
+Line.find_by(3)
+Line.find(3)
+Line.find(2)
+Line.find(3).update trigram_id: 1
+Line.all.count
+Line.find(3)
+POint.find_by(name: 
+POint.find_by(name: 'Vb.40')
+Point.find_by(name: 'Vb.40')
+Line.find(4)
+Line.find(4)Line.last
+Line.last
+Line.create(yin_yang: "yang", name: "gall bladder 4", alias_ru: "желчный 4", name: 'gall bladder 4',alias_ru: "желчный 4", point_id: 60 )
+Line.last
+Line.last.update trigram_id: 1
+Line.last
+Line.last.point
+exit
+Line.last.point
+exit
+Point.find_by(name: 'Vb.39')
+Point.find_by(name: 'Vb.38')
+Line.create(yin_yang: "yang", name: "gall bladder 5", alias_ru: "желчный 5", name: 'gall bladder 5',alias_ru: "желчный 5", point_id: 24 )
+Point.
+Line.last.update trigram_id: 1
+Line.last
+Point.find_by(name: 'Vb.34')
+Point.find_by(name: 'Vb.34')
+Line.create(yin_yang: "yang", name: "gall bladder 6", alias_ru: "желчный 6", name: 'gall bladder 6',alias_ru: "желчный 6", point_id: 15 )
+Line.last.update trigram_id: 1
+Line.last
+Line.all.count
+Line.count
+exit
+Line.last
+exit
+Line.create(yin_yang: "yin", name: "liver 1", alias_ru: "печень 1", ,alias_ru: "печень 1")
+Line.create(yin_yang: "yin", name: "liver 1", alias_ru: "печень 1")
+Line.last
+Point.find_by(name: 'F.1')
+Line.last.update point_id: 6
+Line.last.update trigram_id: 8
+Line.last
+Point.find_by(name: 'F.2')
+Line.create(yin_yang: "yin", name: "liver 3", alias_ru: "печень 3", trigram_id: 8, point_id: )
+Line.last
+Point.find_by(name: 'F.3')
+Line.create(yin_yang: "yin", name: "liver 3", alias_ru: "печень 3", trigram_id: 8, point_id: 38)
+Point.find_by(name: 'F.4')
+Line.create(yin_yang: "yin", name: "liver 4", alias_ru: "печень 4", trigram_id: 8, point_id: 29)
+Point.find_by(name: 'F.5')
+Point.find_by(name: 'F.6')
+Point.create(name: 'F.6', alias_ru: 'Чжун-ду', function: 'lo' )
+Point.last
+Point.create(name: 'F.6', alias_ru: 'Чжун-ду', function: 'lo', meridian_id: 2 )
+Point.last
+Point.create(name: 'F.6', alias_ru: 'Чжун-ду', function: 'lo', meridian_id: 95)
+Line.create(yin_yang: "yin", name: "liver 4", alias_ru: "печень 4", trigram_id: 8, point_id: 95)
+Line.last
+Point.find_by(name: 'F.8')
+Line.find(10)
+Line.find(11)
+Line.find(11).update name: "liver 5", alias_ru: "печень 5"
+Line.find(11)
+Point.find_by(name: 'F.8')
+Line.create(yin_yang: "yin", name: "liver 6", alias_ru: "печень 6", trigram_id: 8, point_id: 20)
+Line.last
+Trigram.last
+Trigram.last.update line_1_id: 7
+exit
+Hexagram
+Hexagram.new
+Trigram.first
+Line.find(2)
+Meridian.find_by(name: 'Vb')
+Meridian.find_by(name: 'Gb')
+Meridian.find_by(alias_ru: 'Желчный')
+Meridian.find_by(alias_ru: 'Желчный пузырь')
+Meridian.last
+Meridian.find_by(alias_ru: 'Желчный Пузырь')
+Hexagram.create lower_trigram_id: 1,  upper_trigram_id: 2, meridian_id: 12
+a = Hexagram(1)
+a = Hexagram.find(1)
+a
+a.lower_trigram
+a.lower_trigram_id
+a.update upper_trigram_id: 1
+a
+a.asve
+a.save
+ Hexagram.find(1)
+Trigram.first
+exit
+exit
+exit
+Hexagram.find(1)
+Hexagram.find(1).lower_trigram
+Hexagram.find(1).upper_trigram
+exit
+Hexagram.find(1).lower_trigram.line_1
+exit
+Hexagram.find(1).lower_trigram.line_1
+Hexagram.find(1)
+Hexagram.find(1).meridian
+Hexagram.find(1).lower_trigram.line_1
+Hexagram.find(1).lower_trigram.line_1.point
+exit
+Hexagram.find(1).lower_trigram.line_1.point
+Hexagram.find(1)
+Hexagram.find(1).update favorable: true
+Hexagram.find(1)
+Hexagram.find(1).update favorable: nil
+Hexagram.find(1).update favorable: nil
+Hexagram.find(1)
+Hexagram.find(1)
+exit
+Trigram.last.name
+Hexagram.find(1)
+exit
+Hexagram.all.count
+Trigram.all.each{ |t| p t.name }
+Trigram.find_by(name: 'dui')
+Trigram.find_by(name: 'Dui')
+Trigram.find_by(name: 'Li')
+Trigram.create name: 'Xun' alias_ru: 'Сюнь', alias_ch: '巽', line_1_id: 1, line_2_id: 2, line_3_id:2 
+Trigram.create name: 'Xun', alias_ru: 'Сюнь', alias_ch: '巽', line_1_id: 1, line_2_id: 2, line_3_id:2 
+Trigram.create name: 'Xun', alias_ru: 'Сюнь', alias_cn: '巽', line_1_id: 1, line_2_id: 2, line_3_id:2 
+Hexagram.last
+Hexagram.last.update name: 'Творчество'
+Hexagram.last
+Hexagram.create: name: 'Внутренняя Правда', lower_trigram_id: 2, upper_trigram_id: 5, favorable: true
+Hexagram.create name: 'Внутренняя Правда', lower_trigram_id: 2, upper_trigram_id: 5, favorable: true
+Hexagram.last
+Hexagram.last.upper_trigram
+Hexagram.last.upper_trigram.line_1
+Hexagram.last.upper_trigram.line_2
+Hexagram.last.upper_trigram.line_3
+Line.all.count
+Line.all.each{|l| p l.name, l.ying_yang  }
+Line.all.each{|l| p l.name, l.yin_yang  }
+Line.last
+Line.first
+Line.second
+Line.create yin_yang: 'yang', name: 'yang'
+Line.last
+Line.create yin_yang: 'yin', name: 'yin'
+Hexagram.last
+Trigram.find(2)
+Trigram.find(2).update line_1_id: 13, line_2_id: 13, line_3_id: 14
+Trigram.find(2)
+Trigram.find(3)
+Trigram.find(3).update line_1_id: 14, line_2_id: 13, line_3_id: 13
+Trigram.find(3)
+Line.find(14)
+Trigram.find(2)
+Hexagram.last
+Hexagram.last.lower_trigram
+Hexagram.last.upper_trigram
+Trigram.find(5).update line_1_id: 14, line_2_id: 13, line_3_id: 13
 exit

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_124117) do
+ActiveRecord::Schema.define(version: 2021_02_10_112103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(version: 2021_02_01_124117) do
     t.integer "trunk_meridian_id"
     t.integer "season_meridian_second_id"
     t.string "alias_ru"
+  end
+
+  create_table "hexagrams", force: :cascade do |t|
+    t.string "name"
+    t.integer "lower_trigram_id"
+    t.integer "upper_trigram_id"
+    t.boolean "favorable"
+    t.integer "meridian_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "layers", force: :cascade do |t|

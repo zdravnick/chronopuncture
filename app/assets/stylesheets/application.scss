@@ -572,6 +572,7 @@ a:active,  .btn-control:active, input[type=submit]:active {
 
 .trigrams_child {
   margin-left: 3%;
+  list-style-type: none
 }
 
 
@@ -616,14 +617,14 @@ a:active,  .btn-control:active, input[type=submit]:active {
 
 .line_yin_part_transparent {
   height: 1rem;
-  width: 30%;
+  width: 36%;
   background-color: none;
   text-align: center;
 }
 
 .line_yang_part_2 {
   height: 1rem;
-  width: 30%;
+  width: 36%;
   background-color: orange;
   border-top: 2px solid orange;
   border-bottom: 2px solid orange;

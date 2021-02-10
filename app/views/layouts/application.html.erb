@@ -36,18 +36,28 @@
 
         <% end %>
       </ul>
+      <ul class="hexagrams">
+        <% Hexagram.all.each do |h|%>
+        <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
+          <div>
+            <li class="trigrams_child"><%= trigram h.upper_trigram %></li>
+            <li class="trigrams_child"><%= trigram h.lower_trigram %></li>
+          </div>
+          <% end %>
+        <% end %>
+      </ul>
         <div class="patients_list_show">
-            <div class="list_control_patients_show">
-              Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %>
+          <div class="list_control_patients_show">
+            Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %>
 
-              <br>
-                <%=  render partial: "shared/forbidden_action_60_days" %>
-              <br>
-              Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <strong><%= @trunk_today %></strong>, энергия Ствола: <strong><%= @trunk_energy %></strong>, меридиан Ствола: <strong><%= @trunk_meridian %></strong>, Запрет: <strong><%= @forbidden_action_by_days %></strong>
-              <br>
-                Ветвь дня: <strong><%=  @branch_day_id %></strong>, энергия Ветви: <strong><%=  @branch_own_element %></strong>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
+            <br>
+              <%=  render partial: "shared/forbidden_action_60_days" %>
+            <br>
+            Ствол дня сегодня, <%= Date.current.in_time_zone(current_doctor.city.time_zone).strftime("%d.%m.%Y") %>: <strong><%= @trunk_today %></strong>, энергия Ствола: <strong><%= @trunk_energy %></strong>, меридиан Ствола: <strong><%= @trunk_meridian %></strong>, Запрет: <strong><%= @forbidden_action_by_days %></strong>
+            <br>
+              Ветвь дня: <strong><%=  @branch_day_id %></strong>, энергия Ветви: <strong><%=  @branch_own_element %></strong>, Запрет: <strong><%=  @forbidden_action_by_branch %></strong>
 
-            </div>
+          </div>
         </div>
       <% end %>
     </section>

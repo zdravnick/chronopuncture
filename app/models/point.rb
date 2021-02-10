@@ -5,7 +5,7 @@ class Point < ApplicationRecord
   #   find(:all, conditions: ['name LIKE ?', "#{letter}%"], order: 'name ASC')
   # end
 
-  belongs_to :meridian
+  belongs_to :meridian, optional: true
   has_many :lines
 
 end
