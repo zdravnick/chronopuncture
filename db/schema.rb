@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_112103) do
+ActiveRecord::Schema.define(version: 2021_02_17_133819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,19 @@ ActiveRecord::Schema.define(version: 2021_02_10_112103) do
     t.integer "meridian_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "number"
+    t.integer "line_1_point_id"
+    t.integer "line_2_point_id"
+    t.integer "line_3_point_id"
+    t.integer "line_4_point_id"
+    t.integer "line_5_point_id"
+    t.integer "line_6_point_id"
+    t.integer "line_1_id"
+    t.integer "line_2_id"
+    t.integer "line_3_id"
+    t.integer "line_4_id"
+    t.integer "line_5_id"
+    t.integer "line_6_id"
   end
 
   create_table "layers", force: :cascade do |t|

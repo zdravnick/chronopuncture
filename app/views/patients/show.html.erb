@@ -14,7 +14,7 @@
       <div>
         <%= f.label "День рождения пациента: " %>
         <%= f.datetime_select :birthdate, default: @patient.birthdate %>
-        <%= f.submit   "Рассчитать", class: "form_button" %>
+        <%= f.submit   "Рассчитать", class: "form_button", data: { disable_with: false } %>
       </div>
       <% end %>
   </div>
@@ -26,7 +26,7 @@
     <%= hidden_field_tag(:patient_id, @patient.id) %>
     <%= f.label " Выберите время: " %>
     <%= f.datetime_select :birthdate, default: @patient.birthdate %>
-    <%= f.submit "Рассчитать" %>
+    <%= f.submit "Рассчитать", data: { disable_with: false } %>
     <% end %>
   </div>
 
@@ -36,7 +36,7 @@
     <%= hidden_field_tag(:patient_id, @patient.id) %>
     <%= label_tag " Выберите дату события: " %>
     <%= date_select(:date, nil, { start_year: 1930, end_year: Date.today.year, default: Date.today-30.years, order: [:day, :month, :year] } )%>
-    <%= submit_tag "Рассчитать" %>
+    <%= submit_tag "Рассчитать", data: { disable_with: false } %>
     <% end %>
   </div>
 
@@ -71,7 +71,7 @@
         <%= f.text_area :treatment, :value => @patient.visits.last&.treatment, rows:5, class: 'form_text_area' %>
       </div>
       <div>
-        <%= f.submit "Добавить сеанс", class: 'btn-control form_button' %>
+        <%= f.submit "Добавить сеанс", class: 'btn-control form_button', data: {disable_with: false} %>
       </div>
       <% end %>
 

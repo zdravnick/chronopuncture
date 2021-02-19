@@ -1,11 +1,11 @@
 module TrigramsHelper
 
   def actual_point_stimulated
-   actual_point = Point.find_by(name: 'R.3').name
+   actual_point = '#'
   end
 
   def actual_point_sedated
-   actual_point = Point.find_by(name: 'Vb.43').name
+   actual_point = '##'
   end
 
   def trigram(trigram)

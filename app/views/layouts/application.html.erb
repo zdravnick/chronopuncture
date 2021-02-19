@@ -31,21 +31,26 @@
 
       <% end %>
       <ul class="trigrams">
-        <% Trigram.all.each do |t|%>
+        <% Trigram.all.sort.each do |t|%>
+        <div>
          <li class="trigrams_child"><%= trigram t %></li>
+         <li class="trigrams_child"> <%= t.name %>, <%= t.id %> </li>
+        </div>
+        <% end %>
+      </ul>
 
-        <% end %>
-      </ul>
-      <ul class="hexagrams">
-        <% Hexagram.all.each do |h|%>
-        <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
-          <div>
-            <li class="trigrams_child"><%= trigram h.upper_trigram %></li>
-            <li class="trigrams_child"><%= trigram h.lower_trigram %></li>
-          </div>
+        <ul class="hexagrams">
+          <% Hexagram.all.sort_by{ |h| h.number }.each do |h|%>
+          <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
+              <li class="trigrams_child"><%= hexagram h %></li>
+              <li class="trigrams_child"> num= <%= h.number %></li>
+              <li class="trigrams_child"><%= h.name %></li>
+              <% if h.meridian %>
+                <li class="trigrams_child"><%= h.meridian.alias_ru %></li>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
+        </ul>
         <div class="patients_list_show">
           <div class="list_control_patients_show">
             Город: <%= current_doctor.city.name %>, Таймзона: <%= current_doctor.city.time_zone %>

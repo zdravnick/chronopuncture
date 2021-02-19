@@ -7,5 +7,6 @@ class Point < ApplicationRecord
 
   belongs_to :meridian, optional: true
   has_many :lines
+  has_many :hexagrams
 
 end

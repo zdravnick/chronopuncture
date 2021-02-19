@@ -564,14 +564,18 @@ a:active,  .btn-control:active, input[type=submit]:active {
 //   // border-radius: 10px;
 //   }
 
+.hexagrams li, .trigrams li {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
 .trigrams {
   display: flex;
   flex-wrap: wrap;
-  list-style-type: none
+  list-style-type: none;
 }
 
 .trigrams_child {
-  margin-left: 3%;
   list-style-type: none
 }
 
