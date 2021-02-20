@@ -564,7 +564,14 @@ a:active,  .btn-control:active, input[type=submit]:active {
 //   // border-radius: 10px;
 //   }
 
+.table_hexagrams {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+}
+
 .hexagrams li, .trigrams li {
+  min-width: 200px;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
@@ -576,6 +583,7 @@ a:active,  .btn-control:active, input[type=submit]:active {
 }
 
 .trigrams_child {
+  text-align: -webkit-center;
   list-style-type: none
 }
 

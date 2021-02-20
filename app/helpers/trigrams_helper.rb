@@ -1,11 +1,11 @@
 module TrigramsHelper
 
   def actual_point_stimulated
-   actual_point = '#'
+   actual_point = ''
   end
 
   def actual_point_sedated
-   actual_point = '##'
+   actual_point = ''
   end
 
   def trigram(trigram)
