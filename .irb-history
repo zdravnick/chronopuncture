@@ -1,11 +1,3 @@
-Hexagram.find(1).update line_1_id: 2, line_2_id: 2, line_3_id: 2, line_4_id: 2, line_5_id: 2, line_6_id: 2
-Hexagram.find(14)
-Hexagram.find(14).update number: 1
-Hexagram.find(13).update number: 2
-Meridian.find_by(name: 'Почка')
-Meridian.find_by(name: 'Почки')
-Meridian.find_by(alias_ru: 'Почки')
-Points.where(meridian_id: 4).sort_by{|p| p.name}.each{ |point| p "___", point.id, point.name  }
 Point.all.where(meridian_id: 4).sort_by{|p| p.name}.each{ |point| p "___", point.id, point.name  }
 Point.all.where(meridian_id: 2).sort_by{|point| point.name }.each{ |point| p '___', point.name, point.id}
 Point.all.where(meridian_id: 4).sort_by{|point| point.name}.each{ |point| p "___", point.id, point.name  }
@@ -197,4 +189,12 @@ Point.all.where(1 < meridian_id: < 4)
 Point.all.where(1 < (meridian_id:) < 4)
 Point.all.where(1 < meridian_id: < 4)
 Point.all.where(meridian_id: true)
+exit
+Hexagram.find(16)
+Hexagram.find(16).update line_1_id: 2, line_2_id: 2, line_3_id: 2, line_4_id: 2, line_5_id: 2, line_6_id: 2
+exit
+Hexagram.find(16)
+Hexagram.find(16).meridian_id
+Meridian.find(id: Hexagram.find(16).meridian_id)
+Meridian.find(Hexagram.find(16).meridian_id)
 exit

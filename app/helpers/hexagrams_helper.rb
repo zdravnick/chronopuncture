@@ -9,7 +9,6 @@ module HexagramsHelper
       line_4_point = compared_hexagram.present? ? ((hexagram.line_4.yin_yang != compared_hexagram.line_4.yin_yang) ? hexagram.line_4_point : nil) : hexagram.line_4_point
       line_5_point = compared_hexagram.present? ? ((hexagram.line_5.yin_yang != compared_hexagram.line_5.yin_yang) ? hexagram.line_5_point : nil) : hexagram.line_5_point
       line_6_point = compared_hexagram.present? ? ((hexagram.line_6.yin_yang != compared_hexagram.line_6.yin_yang) ? hexagram.line_6_point : nil) : hexagram.line_6_point
-
       [
         if  hexagram.line_6.yin_yang == 'yin'
           content_tag :div, '', class: "line_yin" do
@@ -91,6 +90,7 @@ module HexagramsHelper
           end
         end
       ].join.html_safe
+
     end
 
 end

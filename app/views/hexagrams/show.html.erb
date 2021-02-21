@@ -3,25 +3,23 @@
    <li class="trigrams_child"><%= @hexagram.name %></li>
 </ul>
 Сколько подходящих: <%= @hexagram.favorable_with_hexagrams(Hexagram.favorable).count %>
-<table class="table_hexagrams">
-  <% @hexagram.favorable_with_hexagrams(Hexagram.favorable).each do |h| %>
-    <tr class="hexagrams">
-      <td class="trigrams_child">
-          <%= hexagram(@hexagram, compared_hexagram: h) %>
-          <% if @hexagram.number != h.number %>
-           <%= @hexagram.number %>, <%= @hexagram.name %>
-          </td>
-          <td>
-            =>
-          </td>
-          <td>
-            <%= hexagram(h) %>
-            <%= h.number %>, <%= h.name %>
 
-          </td>
-        <% end %>
-    </tr>
+<div class="favorable_hexagram_wrapper">
+  <% @hexagram.favorable_with_hexagrams(Hexagram.favorable).each do |h| %>
+    <% if @hexagram.number != h.number %>
+      <div class="favorable_hexagram">
+        <div class="favorable_hexagram_child">
+          <div class="favorable_hexagram_child_title"><%= @hexagram.name %></div>
+          <div><%= hexagram(@hexagram, compared_hexagram: h) %></div>
+        </div>
+
+        <div class="favorable_hexagram_child">
+          <div class="favorable_hexagram_child_title"><%= h.name %></div>
+          <div><%= hexagram(h) %></div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</table>
-<br>
+</div>
+
 

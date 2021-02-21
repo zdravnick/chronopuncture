@@ -40,7 +40,7 @@
       </ul>
 
         <ul class="hexagrams">
-          <% Hexagram.all.where(meridian_id: (1..12).to_a).sort_by{ |h| h.number }.each do |h|%>
+          <% Hexagram.where.not(meridian_id: nil).sort_by{ |h| h.number }.each do |h|%>
           <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
               <li class="trigrams_child"><%= hexagram h %></li>
               <li class="trigrams_child"> num= <%= h.number %>, id= <%= h.id %></li>
