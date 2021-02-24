@@ -39,15 +39,7 @@
         <% end %>
       </ul>
 
-        <ul class="hexagrams">
-          <% Hexagram.where.not(meridian_id: nil).sort_by{ |h| h.number }.each do |h|%>
-          <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
-              <li class="trigrams_child"><%= hexagram h %></li>
-              <li class="trigrams_child"> num= <%= h.number %>, id= <%= h.id %></li>
-              <li class="trigrams_child"><%= h.name %></li>
-            <% end %>
-          <% end %>
-        </ul>
+
         <h3>Благоприятные гексаграммы</h3>
          <ul class="hexagrams">
           <% Hexagram.favorable.sort_by{ |h| h.number }.each do |h|%>

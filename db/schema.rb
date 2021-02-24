@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_133819) do
+ActiveRecord::Schema.define(version: 2021_02_23_171340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2021_02_17_133819) do
     t.integer "line_4_id"
     t.integer "line_5_id"
     t.integer "line_6_id"
+    t.integer "paired_meridian_id"
+    t.integer "paired_hexagram_id"
   end
 
   create_table "layers", force: :cascade do |t|
@@ -218,7 +220,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_133819) do
 
   create_table "visits", force: :cascade do |t|
     t.datetime "visited_at"
-    t.string "treatment", limit: 255
+    t.string "treatment", limit: 2000
     t.integer "patient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

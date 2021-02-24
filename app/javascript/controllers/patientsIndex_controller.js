@@ -13,6 +13,11 @@ export default class extends Controller {
     document.getElementById('btn_patients_list_show').classList.toggle('btn_patients_list_show');
   }
 
+  showHexagramsWithMeridians(){
+    document.getElementById('hexagrams_with_meridians_list').classList.toggle('show_hexagrams_with_meridians_list');
+    document.getElementById('hexagrams_with_meridians_list').classList.toggle('hide_hexagrams_with_meridians_list');
+  }
+
   showCommonMethods(){
     document.getElementById('common_methods_list').classList.toggle('show_common_methods');
     document.getElementById('common_methods_list').classList.toggle('hide_common_methods');

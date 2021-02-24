@@ -7,6 +7,8 @@ class Hexagram < ApplicationRecord
   belongs_to :lower_trigram, class_name: 'Trigram', optional: true
   belongs_to :upper_trigram, class_name: 'Trigram', optional: true
   belongs_to :meridian, optional: true
+  belongs_to :paired_meridian, class_name: 'Meridian', optional: true
+  belongs_to :paired_hexagram, class_name: 'Hexagram', optional: true
 
   belongs_to :line_1, class_name: 'Line', optional: true
   belongs_to :line_2, class_name: 'Line', optional: true

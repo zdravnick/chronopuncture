@@ -514,16 +514,16 @@ a:active,  .btn-control:active, input[type=submit]:active {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   width: 100%;
 }
- #common_methods_list_show, #btn_find_patient_form {
+ #common_methods_list_show, #btn_find_patient_form, #btn_hexagrams_with_meridians_list_show,
+ #btn_patients_list_show {
   display: grid;
   width: 10rem;
   justify-content: center;
 }
 
-#patients_list_show_hidden, #common_methods_list_show_hidden,
+#patients_list_show_hidden, #common_methods_list_show_hidden, #btn_hexagrams_with_meridians_list_show_hidden,
 #btn_find_patient_form_hidden {
   display: block;
-  // background-color: tan;
   position: fixed;
   right: 0;
   bottom: 5%;
@@ -543,6 +543,10 @@ a:active,  .btn-control:active, input[type=submit]:active {
 
 #btn_patients_list_show {
   display: none;
+}
+
+#btn_hexagrams_with_meridians_list_show_hidden {
+  bottom: 15%;
 }
 
 .btn_patients_list_show {
@@ -577,7 +581,7 @@ a:active,  .btn-control:active, input[type=submit]:active {
   display: flex;
   flex-direction: row;
   border: 1px solid olive;
-  align-items: flex-end;
+  // align-items: flex-end;
   margin: 0.5rem;
 }
 
@@ -618,7 +622,8 @@ a:active,  .btn-control:active, input[type=submit]:active {
 }
 
 
-.line_yin, .line_yang {
+.line_yin, .line_yang, .paired_hexagram_points_line,
+.paired_hexagram_points_line_display_none {
   display: flex;
   justify-content: space-between;
   height: 1rem;
@@ -631,6 +636,13 @@ a:active,  .btn-control:active, input[type=submit]:active {
   // border-radius: 10px;
 }
 
+.paired_hexagram_points_line {
+  background-color: tan;
+}
+
+.paired_hexagram_points_line_display_none {
+  display: none;
+}
 
 .line_yin_part_1, .line_yin_part_3 {
   height: 1rem;
@@ -648,6 +660,7 @@ a:active,  .btn-control:active, input[type=submit]:active {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
 }
+
 
 .line_yang_part_1 {
   border-left: 2px solid #000;
@@ -679,11 +692,11 @@ a:active,  .btn-control:active, input[type=submit]:active {
 //   background-color: tan;
 // }
 
-.patients_list_hide, .hide_common_methods, .find_patient_form_hide {
+.patients_list_hide, .hide_common_methods, .find_patient_form_hide, .hide_hexagrams_with_meridians_list {
   display: none;
 }
 
-.patients_list_show, .show_common_methods, .find_patient_form_show {
+.patients_list_show, .show_common_methods, .find_patient_form_show, .show_hexagrams_with_meridians_list {
   display: grid;
 }
 

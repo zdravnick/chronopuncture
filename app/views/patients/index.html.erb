@@ -45,6 +45,10 @@
     data-action="click->patientsIndex#showCommonMethods">
     Список общих методов
   </div>
+  <div id="btn_hexagrams_with_meridians_list_show" class="btn-control"
+    data-action="click->patientsIndex#showHexagramsWithMeridians">
+    Гексаграммы меридианов
+  </div>
   <div id="btn_patients_list_show" class="btn-control"
     data-action="click->patientsIndex#showPatients">
     Cписок пациентов
@@ -168,6 +172,23 @@
     </div> <!-- end of common_methods_list-->
   </div> <!-- end of column_2_wrapper-->
 
+  <div class="column_4_wrapper">
+    <div id="hexagrams_with_meridians_list"  class="hide_hexagrams_with_meridians_list">
+      <ul class="hexagrams">
+        <% Hexagram.where.not(meridian_id: nil).sort_by{ |h| h.number }.each do |h|%>
+        <%= link_to hexagram_path(id: h.id), controller: 'hexagrams', action: 'show' do %>
+            <li class="trigrams_child"><%= hexagram h %></li>
+            <li class="trigrams_child"> num= <%= h.number %>, id= <%= h.id %></li>
+            <li class="trigrams_child"><%= h.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+      <div id="btn_hexagrams_with_meridians_list_show_hidden" class="btn-control"
+        data-action="click->patientsIndex#showHexagramsWithMeridians">
+        Скрыть гексаграммы
+      </div>
+    </div> <!-- end of hexagrams_with_meridians_list-->
+  </div> <!-- end of column_4_wrapper-->
 
   <div class="column_3_wrapper">
 
@@ -196,12 +217,12 @@
         <%= paginate @patients %>
       </div>
       <div id="patients_list_show_hidden" class="btn-control"
-      data-action="click->patientsIndex#showPatients">
-      Скрыть пациентов
-    </div>
+        data-action="click->patientsIndex#showPatients">
+        Скрыть пациентов
       </div>
+    </div>
   </div> <!-- end of column_3_wrapper -->
-</div>
+
 
 
   <div class="column_3_wrapper">
