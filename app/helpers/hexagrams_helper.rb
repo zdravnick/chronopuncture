@@ -3,12 +3,43 @@ module HexagramsHelper
   def hexagram(hexagram, compared_hexagram: nil)
       # при разнице линий показываем точку
 
+      # (6..1).to_a.map do |index|
+      #   line_point = if compared_hexagram.present?
+      #     ((hexagram.send("line_#{index}").yin_yang != compared_hexagram.send("line_#{index}").yin_yang) ? hexagram.send("line_#{index}_point") : nil)
+      #   else
+      #     hexagram.line_1_point
+      #   end
+
+      #   line_paired_point = if hexagram.paired_hexagram && compared_hexagram.present?
+      #     ((hexagram.line_1.yin_yang != compared_hexagram.line_1.yin_yang) ? hexagram.line_1_point : nil)
+      #   else
+      #     hexagram.send("line_#{index}_point")
+      #   end
+
+      #   if hexagram.send("line_#{index}").yin_yang == 'yin'
+      #     content_tag :div, '', class: "line_yin" do
+      #       content_tag(:div, '', class: "line_yin_part_#{index}") +
+      #       content_tag(:div, "#{line_6_point && line_6_point.name}", class: "line_yin_part_transparent") +
+      #       content_tag(:div, '', class: "line_yin_part_3")
+      #     end
+      #   else
+      #     content_tag(:div, '', class: 'line_yang') do
+      #       content_tag(:div, '', class: "line_yang_part_1") +
+      #       content_tag(:div, "#{line_{index}_point && line_{index}_point.name}", class: "line_yang_part_2") +
+      #       content_tag(:div, '', class: "line_yang_part_3")
+
+      #     end
+      #   end
+      # end.join.html_safe
+
       line_1_point = compared_hexagram.present? ? ((hexagram.line_1.yin_yang != compared_hexagram.line_1.yin_yang) ? hexagram.line_1_point : nil) : hexagram.line_1_point
       line_2_point = compared_hexagram.present? ? ((hexagram.line_2.yin_yang != compared_hexagram.line_2.yin_yang) ? hexagram.line_2_point : nil) : hexagram.line_2_point
       line_3_point = compared_hexagram.present? ? ((hexagram.line_3.yin_yang != compared_hexagram.line_3.yin_yang) ? hexagram.line_3_point : nil) : hexagram.line_3_point
       line_4_point = compared_hexagram.present? ? ((hexagram.line_4.yin_yang != compared_hexagram.line_4.yin_yang) ? hexagram.line_4_point : nil) : hexagram.line_4_point
       line_5_point = compared_hexagram.present? ? ((hexagram.line_5.yin_yang != compared_hexagram.line_5.yin_yang) ? hexagram.line_5_point : nil) : hexagram.line_5_point
       line_6_point = compared_hexagram.present? ? ((hexagram.line_6.yin_yang != compared_hexagram.line_6.yin_yang) ? hexagram.line_6_point : nil) : hexagram.line_6_point
+
+
       if hexagram.paired_hexagram && compared_hexagram.present?
         line_1_paired_point = compared_hexagram.present? ? ((hexagram.line_1.yin_yang != compared_hexagram.line_1.yin_yang) ? hexagram.paired_hexagram.line_1_point.name : nil)
           : hexagram.paired_hexagram.line_1_point.name
@@ -23,6 +54,8 @@ module HexagramsHelper
         line_6_paired_point = compared_hexagram.present? ? ((hexagram.line_6.yin_yang != compared_hexagram.line_6.yin_yang) ? hexagram.paired_hexagram.line_6_point.name : nil)
           : hexagram.paired_hexagram.line_6_point.name
       end
+
+
       [
         if  hexagram.line_6.yin_yang == 'yin'
           content_tag :div, '', class: "line_yin" do

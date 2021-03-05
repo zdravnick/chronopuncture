@@ -1,200 +1,200 @@
-Point.all.where(meridian_id: 10).sort_by{|point| point.name }.each{ |point|  puts '---', point.id, point.name }
-Hexagram.create name: 'Толстый Кишечник', number: 51, favorable: false, line_1_id: 2, line_2_id: 1, line_3_id: 1, line_4_id: 2, line_5_id: 1, line_6_id: 1, meridian_id: 10, line_1_point_id: 31, line_2_point_id: 22, line_3_point_id: 13, line_4_point_id: 63, line_5_point_id: 4, line_6_point_id: 44
-Hexagram.create name: 'Возбуждение', number: 51, favorable: true, line_1_id: 2, line_2_id: 1, line_3_id: 1, line_4_id: 2, line_5_id: 1, line_6_id: 1
-Hexagram.create name: 'Сияние', number: 30, favorable: true, line_1_id: 2, line_2_id: 1, line_3_id: 2, line_4_id: 2, line_5_id: 1, line_6_id: 2
-Hexagram.create name: 'Сосредоточенность', number: 52, favorable: true, line_1_id: 1, line_2_id: 1, line_3_id: 2, line_4_id: 1, line_5_id: 1, line_6_id: 2
-Meridian.find_by(alias_ru: 'Легкое')
-Meridian.find_by(alias_ru: 'Легкие')
-Point.all.where(meridian_id: 5).sort_by{|point| point.name }.each{ |point|  puts '---', point.id, point.name }
-Point.all.where(meridian_id: 5).sort_by{|point| point.name }.reverse.each{ |point|  puts '---', point.id, point.name }
-Hexagram.create name: 'Легкие', number: 57, favorable: false, line_1_id: 1, line_2_id: 2, line_3_id: 2, line_4_id: 1, line_5_id: 2, line_6_id: 2, meridian_id: 5, line_1_point_id: 36, line_2_point_id: 27, line_3_point_id: 18, line_4_point_id: 9, line_5_point_id: 83, line_6_point_id: 49
-Hexagram.create name: 'Проникновение', number: 57, favorable: true, line_1_id: 1, line_2_id: 2, line_3_id: 2, line_4_id: 1, line_5_id: 2, line_6_id: 2
-Meridian.find_by(alias_ru: 'Желудок')
-Point.all.where(meridian_id: 9).sort_by{|point| point.name }.reverse.each{ |point|  puts '---', point.id, point.name }
-Point.all.where(meridian_id: 9).sort_by{|point| point.name }.each{ |point|  puts '---', point.id, point.name }
-Hexagram.create name: 'Желудок', number: 29, favorable: false, line_1_id: 1, line_2_id: 2, line_3_id: 1, line_4_id: 1, line_5_id: 2, line_6_id: 1, meridian_id: 9, line_1_point_id: 21, line_2_point_id: 12, line_3_point_id: 66, line_4_point_id: 62, line_5_point_id: 43, line_6_point_id: 35 
-update name: 'Повторная Опасность', number: 29, favorable: true, line_1_id: 1, line_2_id: 2, line_3_id: 1, line_4_id: 1, line_5_id: 2, line_6_id: 1
-Line.first
-helper.hexagram Hexagram.last
-Hexagram.
-helper.hexagram Hexagram.first
-helper.hexagram Hexagram.find(10)
- Hexagram.find(10)
-helper.trigram Trigram.last
-helper.hexagram Hexagram.find(10)
-reload!
-helper.hexagram Hexagram.find(10)
- Hexagram.find(1)
- Hexagram.find_by(name: 'Творчество')
- Hexagram.find_by(name: 'Творчество').update (favorable: false)
- Hexagram.find_by(name: 'Творчество').update favorable: false
-Hexagram.create name: 'Приумножение', number: 42, favorable: true, line_1_id: 2, line_2_id: 1, line_3_id: 1, line_4_id: 1, line_5_id: 2, line_6_id: 2
-Hexagram.create name: 'Возврат', number: 24, favorable: true, line_1_id: 2, line_2_id: 1, line_3_id: 1, line_4_id: 1, line_5_id: 1, line_6_id: 1
-Hexagram.create name: 'Жертвенник', number: 50, favorable: true, line_1_id: 1, line_2_id: 1, line_3_id: 2, line_4_id: 2, line_5_id: 1, line_6_id: 2
-Hexagram.find_by(name: 'Жертвенник').destroy
-Hexagram.create name: 'Жертвенник', number: 50, favorable: true, line_1_id: 1, line_2_id: 2, line_3_id: 2, line_4_id: 2, line_5_id: 1, line_6_id: 2
-Hexagram.create name: 'Постоянство', number: 32, favorable: true, line_1_id: 1, line_2_id: 2, line_3_id: 2, line_4_id: 2, line_5_id: 1, line_6_id: 1
-Hexagram.find_by(name: 'Повторная Опасность')
-Hexagram.find_by(name: 'Повторная Опасность').update favorable: false
-Hexagram.create name: 'Приближение', number: 8, favorable: true, line_1_id: 1, line_2_id: 1, line_3_id: 1, line_4_id: 1, line_5_id: 2, line_6_id: 1
-Hexagram.find(8)
-Hexagram.find(8).update name: 'Посещение'
-Hexagram.create name: 'Взаимодействие', number: 31, favorable: true, line_1_id: 1, line_2_id: 1, line_3_id: 2, line_4_id: 2, line_5_id: 2, line_6_id: 1
-Hexagram.find_by(name: 'Сосредоточенность').update favorable: false
-Hexagram.fiтв(25)
-Hexagram.find(25)
-Hexagram.find(25).update favorable: false
-Hexagram.create name: 'Порча', number: 18, favorable: true, line_1_id: 1, line_2_id: 2, line_3_id: 2, line_4_id: 1, line_5_id: 1, line_6_id: 2
-Hexagram.find(39).update name: 'Исправление'
-Hexagram.find(13)
-Point.all.where(meridian_id: 5)
-Point.all.where(meridian_id:.between(1..10)
-Point.all.where(meridian_id:.between(1..10))
-Point.all.where(meridian_id.between(1..10))
-Point.all.where([0,1,2,3].includes?(meridian_id:))
-Point.all.where([0,1,2,3].includes?(2))
-[0,1,2,3].includes?(2)
-[0,1,2,3].include?(2)
-Point.all.where([0,1,2,3].include?(2))
-Point.all.find_by(meridian_id:)
-Point.all.find_by(meridian_id: 1)
-Point.all.where(meridian_id:)
-Point.all.where(meridian_id:1)
-Point.all.where(1 < meridian_id: < 4)
-Point.all.where(1 < (meridian_id:) < 4)
-Point.all.where(1 < meridian_id: < 4)
-Point.all.where(meridian_id: true)
+  (param = add_1) + '1, '
+end
+method_1(add_1)
+method_1
+method_1(2)
+add_1 = 'num: '
+def method_1(param)
+  param + '1, '
+end
+def method_2
+  '2, '
+end
+def method_3(add_1)
+  puts method_1(add_1) + method_2 + '3'
+end
+method_3(add_1)
+def method_3(add_1)
+  puts method_1(add_1) + add_1 +  method_2 + '3'
+end
+method_3(add_1)
+def method_3(add_1)
+  puts add_1 + method_1 + add_1 +  method_2 + '3'
+end
+method_3(add_1)
 exit
-Hexagram.find(16)
-Hexagram.find(16).update line_1_id: 2, line_2_id: 2, line_3_id: 2, line_4_id: 2, line_5_id: 2, line_6_id: 2
+add_1 = 'num: '
+def method_1
+  '1'
+end
+def method_2
+  '2, '
+end
+def method_3(add_1)
+  puts add_1 + method_1 + add_1 +  method_2 + '3'
+end
+method_3(add_1)
+add_1 = 'num: '
+def method_1
+  '1, '
+end
+def method_2
+  '2, '
+end
+def method_3(add_1)
+  puts add_1 + method_1 + add_1 +  method_2 + '3'
+end
+method_3(add_1)
+method_!
+method_`
+method_1
+method_1
+method_3
+method_3(add_1)
+end
+def method_3(add_1)
+  add_1 + method_1 + add_1 +  method_2 + '3'
+end
+method_3(add_1)
 exit
-Hexagram.find(16)
-Hexagram.find(16).meridian_id
-Meridian.find(id: Hexagram.find(16).meridian_id)
-Meridian.find(Hexagram.find(16).meridian_id)
+add_1 = 'num: '
+def method_1
+  '1, '
+end
+def method_2
+  '2, '
+end
+def method_3(add_1)
+  [method_1, method_2, '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1)
 exit
-Hexagram.find(16)
+add_1 = 'num: '
+add_2 = '-'
+def method_1(add_2)
+  add_2 + '1, '
+end
+def method_2
+  '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2, '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1)
+method_3(add_1, add_2)
 exit
-Hexagram.find(16)
-Meridian.find_by(alias_ru: 'Почка')
-Meridian.find_by(alias_ru: 'Почки')
-Hexagram.find(16).update paired_meridian_id: 4
-Hexagram.find(16).paired_meridian
-Hexagram.find(16).meridian
-reload!
-Hexagram.find(16).paired_meridian
-Meridian.find_by(alias_ru: 'Почки')
-Hexagram.find(16).paired_meridian.hexagram
+add_1 = 'num: '
+add_2 = '-'
+def method_1(param = 0)
+  param + '1, '
+end
+def method_2(param = 0)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1)
+method_3(add_1, add_2)
+method_3(add_1, nil)
+method_3(add_1, 0)
+method_3(add_1, '0')
+method_3(add_1, 0.to_i)
+method_3(add_1, (0.to_i))
+method_3(add_1, '0')
+method_3(add_1, add_2)
 exit
-
-Meridian.find_by(alias_ru: 'Почки')
+add_1 = 'num: '
+add_2 = '-'
+def method_1(param || '')
+  param + '1, '
+end
+def method_2(param = 0)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1)
+2-2
 exit
-Hexagram.find(16)
-Hexagram.find_by(name: 'Почка')
-Hexagram.find(16).update paired_hexagram_id: 15
-Hexagram.find(16)
-Hexagram.find_by(name: 'Почка').update paired_hexagram_id: 16
-Hexagram.find_by(name: 'Почка')
-Hexagram.find(15)
-Hexagram.find(16).paired_hexagram
-Hexagram.find(15).paired_hexagram
-reload!
-Hexagram.find(15).paired_hexagram
-Hexagram.find(15).paired_hexagram_id
-reload!
-Hexagram.find(15).paired_hexagram_id
-Hexagram.find(15).paired_hexagram
-Hexagram.find(16).paired_hexagram
-Hexagram.find(14)
-Hexagram.find(14).paired_hexagram
-Hexagram.find(1)
-Hexagram.find(2)
-Hexagram.find(3)
-Hexagram.find(4)
-Hexagram.find(5)
-Hexagram.find(6)
-Hexagram.find(7)
-Hexagram.find(8)
-Hexagram.find(9)
-Hexagram.find(10)
-Hexagram.find(11)
-Hexagram.find(12)
-Hexagram.find(13)
-Hexagram.find(14)
-Hexagram.find(13).update paired_hexagram_id: 14
-Hexagram.find(14).update paired_hexagram_id: 13
-Hexagram.find(13)
-Hexagram.find(14).update paired_hexagram
-Hexagram.find(14).paired_hexagram
-Hexagram.find(14).paired_hexagram.line_1_point
-Hexagram.find(14).paired_hexagram.meridian
-Hexagram.find(17)
-Hexagram.find(18)
-Hexagram.find(19)
-Hexagram.find(20)
-Hexagram.find(18).update paired_hexagram_id: 20
-Hexagram.find(20).update paired_hexagram_id: 18
-Hexagram.find(21)
-Hexagram.find(21).update paired_hexagram_id: 19
-Hexagram.find(19).update paired_hexagram_id: 21
-Hexagram.find(21).paired_hexagram
-Hexagram.find(22)
-Hexagram.find(23)
-Hexagram.find(24)
-Hexagram.find(23).update paired_hexagram_id: 24
-Hexagram.find(24).update paired_hexagram_id: 23
-Hexagram.find(25)
-Hexagram.find(26)
-Hexagram.find(27)
-Hexagram.find(28)
-Hexagram.find(29)
-Hexagram.find(30)
-Hexagram.find(28).update paired_hexagram_id: 30
-Hexagram.find(30).update paired_hexagram_id: 28
-Hexagram.find(31)
-Hexagram.find(32)
-Hexagram.find(33)
-Hexagram.find(34)
-Hexagram.find(35)
-Hexagram.find(36)
-Hexagram.find(37)
-Hexagram.find(38)
-Hexagram.find(39)
-Hexagram.find(40)
-Hexagram.where.not(paired_hexagram_id: nil).each{ |h| puts "-----", h.name }
-Hexagram.where.not(paired_hexagram_id: nil).sort.each{ |h| puts "-----", h.name }
+exit
+add_1 = 'num: '
+add_2 = '-'
+def method_1(param ||= '')
+  param + '1, '
+end
+def method_2(param = 0)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1)
+cadd_1 = 'num: '
+add_2 = '-'
+def method_1(param ||= '')
+  param + '1, '
+end
+def method_2(param = 0)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1, add_2)
+cccexit
+exit
+add_1 = 'num: '
+add_2 = '-'
+def method_1(*param)
+  param + '1, '
+end
+def method_2(*param)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1, add_2)
+add_1 = 'num: '
+add_2 = '-'
+def method_1(param)
+  param + '1, '
+end
+def method_2(param)
+  param + '2, '
+end
+def method_3(add_1, add_2)
+  [method_1(add_2), method_2(add_2), '3'].map do |elem|
+    add_1 + elem
+  end
+end
+method_3(add_1, add_2)
+method_3(add_1, '8')
+method_3(add_1, nil)
+('a', 'b').concat
+('a', 'b').concate
+('a', 'b').concatenate
+exit
 учше
+"йцукенгшщзхъфывапролджэячсмитьбю".chars
+"йцукенгшщзхъфывапролджэячсмитьбю".chars.sort
+exit
 exit
 Meridian.last
-Hexagram.last
-Meridian.find_by(alias_ru: 'Желудок')
-Hexagram.find_by(meridian_id: 9)
-Hexagram.find(28)
-Hexagram.find(29)
-Hexagram.find(31)
-Hexagram.find(27)
-Hexagram.find(32)
-Hexagram.find_by(name: 'Толстый Кишечник')
-Hexagram.find(23)
-Hexagram.find(24).update paired_hexagram_id: 30
-Hexagram.find(23)
-Hexagram.find(24)
-Hexagram.find(24)
-Hexagram.find(24).update paired_hexagram_id: 28
-Hexagram.find(24)
-Hexagram.find(23).update paired_hexagram_id: 30
-Hexagram.find(23)
-Hexagram.find(23).paired_hexagram
-paired_point = %w(mouse cat dog pig)
-paired_point
-paired_point = ["mouse", "cat", "dog", "pig"]
-
-
-animals = ["mouse", "cat", "dog", "pig"]
-eat = %w(bread, meat, egg, milk)
-eat
-animals.each do |anim, e|
-puts anim, e
-end
-exti
-exit
+учше

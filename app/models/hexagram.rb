@@ -3,6 +3,7 @@ class Hexagram < ApplicationRecord
 
 
   scope :favorable, -> { where(favorable: true) }
+  scope :with_trigrams, -> { where.not(lower_trigram_id: nil, upper_trigram_id: nil) }
 
   belongs_to :lower_trigram, class_name: 'Trigram', optional: true
   belongs_to :upper_trigram, class_name: 'Trigram', optional: true

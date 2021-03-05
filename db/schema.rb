@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_171340) do
+ActiveRecord::Schema.define(version: 2021_02_26_125032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -203,6 +203,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_171340) do
     t.integer "line_1_id"
     t.integer "line_2_id"
     t.integer "line_3_id"
+    t.string "nature"
   end
 
   create_table "trunks", force: :cascade do |t|
